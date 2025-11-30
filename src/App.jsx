@@ -165,7 +165,7 @@ const App = () => {
                 I believe in proving competence through building. Here are live systems I'm developing right now to solve real operational problems.
               </p>
             </div>
-            <a href="https://linkedin.com/in/patrickmcheyser" target="_blank" rel="noreferrer" className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
+            <a href="https://www.linkedin.com/in/patrick-mcheyser-a8758bb1/" target="_blank" rel="noreferrer" className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
               <span>Follow the build on LinkedIn</span>
               <ExternalLink size={16} />
             </a>
@@ -269,14 +269,14 @@ const App = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <a
-              href="mailto:hello@mcheyser.com"
+              href="mailto:patrick@mcheyser.com"
               className="px-8 py-4 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition-all flex items-center space-x-2"
             >
               <Mail size={18} />
               <span>Email Me</span>
             </a>
             <a
-              href="https://linkedin.com/in/patrickmcheyser"
+              href="https://www.linkedin.com/in/patrick-mcheyser-a8758bb1/"
               target="_blank"
               rel="noreferrer"
               className="px-8 py-4 bg-blue-50 text-blue-700 border border-blue-100 font-semibold rounded-lg hover:bg-blue-100 transition-all flex items-center space-x-2"
@@ -287,7 +287,7 @@ const App = () => {
           </div>
 
           <div className="border-t border-slate-100 pt-10 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} Patrick McHeyser. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Odyssey Business Strategy LLC. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-slate-900 transition-colors">Boulder, CO</a>
               <span className="text-slate-300">•</span>
