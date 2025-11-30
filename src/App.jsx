@@ -100,12 +100,12 @@ const App = () => {
             <div className="absolute inset-0 bg-blue-100 rounded-[2rem] transform rotate-2 scale-95 opacity-50 -z-10"></div>
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
               <img
-                src="IMG_3758.jpg"
+                src="IMG_3933.jpeg"
                 alt="Patrick McHeyser"
                 className="w-full h-auto object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 max-w-xs hidden md:block">
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 max-w-xs hidden md:block z-10">
               <p className="text-slate-500 text-sm font-medium mb-1">Recent Result</p>
               <p className="text-slate-900 font-bold text-lg">52% revenue growth</p>
               <p className="text-slate-500 text-sm">for healthcare client via custom sales workflow.</p>
@@ -225,8 +225,8 @@ const App = () => {
               <div className="order-2 md:order-1">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg">
                    <img
-                    src="IMG_3933.jpg"
-                    alt="Patrick McHeyser Seated"
+                    src="IMG_3758.jpeg"
+                    alt="Patrick McHeyser"
                     className="w-full h-auto object-cover"
                   />
                 </div>
