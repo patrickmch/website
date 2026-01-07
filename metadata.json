@@ -1,0 +1,8 @@
+{
+  "name": "MCHEYSER - Fractional Community Operations",
+  "description": "Professional website for Patrick McHeyser, providing fractional community operations and systems implementation services.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
