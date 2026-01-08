@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { CheckCircle2, XCircle, ArrowRight, MessageSquare, ShieldCheck, HeartPulse, Compass, Sparkles, ArrowUpRight } from 'lucide-react';
+import { CheckCircle2, XCircle, ArrowRight, Sparkles, ArrowUpRight } from 'lucide-react';
 
 // Custom hook for scroll animations
 const useScrollAnimation = () => {
@@ -57,8 +57,8 @@ const HomePage: React.FC = () => {
               Fractional Community Leadership
             </div>
             <h1 className="animate-on-scroll delay-1 text-5xl md:text-7xl lg:text-8xl font-serif text-evergreen leading-[1.05] mb-8">
-              Your community should thrive <span className="italic">without you.</span> <br />
-              <span className="text-copper">And it can.</span>
+              Stop managing your community. <br />
+              <span className="text-copper italic">Start leading it.</span>
             </h1>
             <p className="animate-on-scroll delay-2 text-xl md:text-2xl text-charcoal/70 font-light leading-relaxed mb-10">
               I help health & wellness educators build communities that stay engaged, connected, and converting.
@@ -79,8 +79,8 @@ const HomePage: React.FC = () => {
           <div className="relative animate-on-scroll delay-2">
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative z-10 border-[12px] border-white">
               <img
-                src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1000"
-                alt="Confident community leader"
+                src="/hero-photo.jpeg"
+                alt="Patrick McHeyser"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,19 +97,13 @@ const HomePage: React.FC = () => {
         }} />
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
           <div className="relative order-2 lg:order-1 animate-on-scroll">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square bg-white/5 rounded-2xl flex items-center justify-center p-8 backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-all duration-500">
-                <MessageSquare size={48} className="text-sand/50" />
-              </div>
-              <div className="aspect-square bg-white/5 rounded-2xl flex items-center justify-center p-8 translate-y-8 backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-all duration-500">
-                <ShieldCheck size={48} className="text-sand/50" />
-              </div>
-              <div className="aspect-square bg-white/5 rounded-2xl flex items-center justify-center p-8 backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-all duration-500">
-                <HeartPulse size={48} className="text-sand/50" />
-              </div>
-              <div className="aspect-square bg-white/5 rounded-2xl flex items-center justify-center p-8 translate-y-8 backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-all duration-500">
-                <Compass size={48} className="text-sand/50" />
-              </div>
+            <div className="aspect-[4/5] md:aspect-square rounded-[2rem] overflow-hidden relative">
+              <img
+                src="/overwhelmed.png"
+                alt="Overwhelmed community founder"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-evergreen/60 via-transparent to-transparent"></div>
             </div>
           </div>
           <div className="order-1 lg:order-2">
@@ -318,36 +312,33 @@ const HomePage: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div className="space-y-8">
               <h2 className="animate-on-scroll text-4xl md:text-5xl lg:text-6xl font-serif text-evergreen leading-tight">
-                The community work I do today started <span className="italic">long before</span> online business.
+                The facilitation skills I use today weren't learned in <span className="italic">conference rooms.</span>
               </h2>
               <div className="space-y-6 text-lg text-charcoal/70 font-light leading-relaxed">
-                <p className="animate-on-scroll text-2xl font-serif text-evergreen italic">The Short Story</p>
-                <p className="animate-on-scroll delay-1">I've spent the last 10 years building communities in places where connection wasn't optional. I started as a wilderness guide. Not the campfire version. The high-stakes version.</p>
-                <p className="animate-on-scroll delay-2">I spent years facilitating leadership programs for <span className="font-medium text-evergreen">Fortune 500 executive teams, military special operations groups, and MBA programs.</span></p>
-                <p className="animate-on-scroll delay-3">Real teams. Real pressure. Real people who needed to trust each other fast. That's where I learned how to read group dynamics, build psychological safety, and turn strangers into teams by the end of the day. Skills most "community managers" never develop.</p>
-                <p className="animate-on-scroll text-2xl font-serif text-evergreen italic">The Transition</p>
-                <p className="animate-on-scroll delay-1">Later, I moved into tech and spent time as a software engineer. Which means I understand the systems side too. But the facilitation? That was the thing I couldn't ignore. So I took everything I learned out in the field: group dynamics, human behavior, leadership, emotional intelligence, and brought it into online communities.</p>
-                <p className="animate-on-scroll delay-2">And everything clicked.</p>
-                <p className="animate-on-scroll text-2xl font-serif text-evergreen italic">Where I Am Now</p>
-                <p className="animate-on-scroll delay-1">Today I actively manage and facilitate online communities for wellness educators, coaches, and founders who care deeply about their work. I'm based in Boulder, Colorado. If I'm not in a Zoom room, I'm probably skiing, climbing, or running a ridgeline somewhere. Helping you build a community that matters and doesn't depend on you to hold it together.</p>
+                <p className="animate-on-scroll delay-1">For a decade, I facilitated leadership development programs in the wilderness—leading <span className="font-medium text-evergreen">Fortune 500 executive teams, military special operations units, and MBA cohorts</span> through high-stakes environments where trust wasn't optional and you couldn't fake connection.</p>
+                <p className="animate-on-scroll delay-2">That's where I learned to read group dynamics, create psychological safety, and turn strangers into functioning teams. Real facilitation skills that most community managers have never developed.</p>
+                <p className="animate-on-scroll delay-3">The last three years, I've focused on entrepreneurship—specifically helping wellness entrepreneurs build communities that actually work. I manage communities and masterminds where the results speak for themselves: <span className="font-medium text-evergreen">80-90% retention rates, organic referrals, members who genuinely connect.</span></p>
+                <p className="animate-on-scroll delay-4">I also built software systems for years as an engineer, so the technical side doesn't intimidate me. But tech isn't what transforms a cold community into a warm one. <span className="italic">Facilitation is.</span></p>
+                <p className="animate-on-scroll delay-5 text-charcoal/50">Based in Boulder, Colorado. When I'm not working: backcountry skiing, rock climbing, trail running.</p>
+                <p className="animate-on-scroll text-xl font-medium text-evergreen">I work with founders and coaches who genuinely care about their members and want to build communities that create real transformation.</p>
               </div>
               <Link to="/apply" className="animate-on-scroll btn-primary inline-flex items-center gap-2 bg-evergreen text-stone px-10 py-4 rounded-full font-semibold">
                 Apply to Work With Me
                 <ArrowUpRight size={18} />
               </Link>
             </div>
-            <div className="relative animate-on-scroll">
+            <div className="relative animate-on-scroll lg:translate-x-8">
               <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-[16px] border-white">
                 <img
-                  src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"
-                  alt="Boulder, Colorado wilderness"
+                  src="/about-hero.png"
+                  alt="Wilderness leadership"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 w-56 md:w-72 aspect-square rounded-2xl overflow-hidden border-8 border-white shadow-2xl rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1544168190-79c17527004f?auto=format&fit=crop&q=80&w=600"
-                  alt="M. Heyser in natural setting"
+                  src="/about-small.jpeg"
+                  alt="Patrick McHeyser"
                   className="w-full h-full object-cover"
                 />
               </div>
