@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -21,8 +21,37 @@
                         charcoal: '#1D1D1B',
                     },
                     fontFamily: {
-                        serif: ['Cormorant Garamond', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out forwards',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                        'slide-right': 'slideRight 0.6s ease-out forwards',
+                        'slide-left': 'slideLeft 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        slideRight: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
                     }
                 }
             }
@@ -30,11 +59,155 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        body { background-color: #F6F4F1; color: #1D1D1B; font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
-        .transition-all { transition: all 0.3s ease-in-out; }
+        body {
+            background-color: #F6F4F1;
+            color: #1D1D1B;
+            font-family: 'DM Sans', system-ui, sans-serif;
+        }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+        /* Grain texture overlay */
+        .grain::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            z-index: 1;
+        }
+        .grain > * { position: relative; z-index: 2; }
+
+        /* Scroll animation utilities */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+        .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-5 { transition-delay: 0.5s; }
+
+        /* Button hover effects */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        .btn-primary:hover::before {
+            transform: translateX(100%);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(15, 57, 35, 0.3);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Link hover underline animation */
+        .link-hover {
+            position: relative;
+        }
+        .link-hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        .link-hover:hover::after {
+            width: 100%;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F6F4F1; }
+        ::-webkit-scrollbar-thumb { background: #D9C8A9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B67A4A; }
+
         /* Fix for sticky header scroll overlap */
         section { scroll-margin-top: 80px; }
+
+        /* Form input animations */
+        .form-input {
+            background: transparent;
+            border-bottom: 2px solid rgba(246, 244, 241, 0.2);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: #B67A4A;
+            box-shadow: 0 4px 12px -4px rgba(182, 122, 74, 0.3);
+        }
+
+        /* Custom radio button */
+        .radio-custom {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(246, 244, 241, 0.3);
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .radio-custom:checked {
+            border-color: #B67A4A;
+            background: #B67A4A;
+        }
+        .radio-custom:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Floating label */
+        .floating-label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: all 0.2s ease;
+            pointer-events: none;
+            color: rgba(246, 244, 241, 0.5);
+        }
+        .form-input:focus ~ .floating-label,
+        .form-input:not(:placeholder-shown) ~ .floating-label {
+            top: -8px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #D9C8A9;
+        }
     </style>
 <script type="importmap">
 {
