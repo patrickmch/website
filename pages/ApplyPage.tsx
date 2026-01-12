@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageSquare, Heart, Shield, ArrowUpRight, Check } from 'lucide-react';
+import { MessageSquare, Heart, Shield, ArrowUpRight, Check, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 // Custom hook for scroll animations
 const useScrollAnimation = () => {
@@ -29,12 +30,32 @@ const useScrollAnimation = () => {
 
 const ApplyPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const scrollRef = useScrollAnimation();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    window.scrollTo(0, 0);
+    setSubmitting(true);
+    setError(null);
+
+    const form = e.currentTarget;
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setSubmitted(true);
+      window.scrollTo(0, 0);
+    } catch (err: any) {
+      console.error('EmailJS error:', err);
+      setError(err?.text || 'Something went wrong. Please try again or email me directly at patrick@mcheyser.com');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -114,6 +135,9 @@ const ApplyPage: React.FC = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-10">
+              {/* Hidden field for form identification */}
+              <input type="hidden" name="_subject" value="New Application from mcheyser.com" />
+
               {/* Name & Email Row */}
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="relative">
@@ -121,6 +145,7 @@ const ApplyPage: React.FC = () => {
                   <input
                     required
                     type="text"
+                    name="name"
                     className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
                     placeholder="Jane Doe"
                   />
@@ -130,6 +155,7 @@ const ApplyPage: React.FC = () => {
                   <input
                     required
                     type="email"
+                    name="email"
                     className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
                     placeholder="jane@example.com"
                   />
@@ -142,6 +168,7 @@ const ApplyPage: React.FC = () => {
                 <input
                   required
                   type="text"
+                  name="website"
                   className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
                   placeholder="www.example.com or @yourhandle"
                 />
@@ -152,6 +179,7 @@ const ApplyPage: React.FC = () => {
                 <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Tell me about your community</label>
                 <p className="text-stone/40 text-sm mb-3">Current size, platform, type — a couple sentences is perfect.</p>
                 <textarea
+                  name="community"
                   rows={3}
                   className="w-full form-input py-4 text-lg text-stone resize-none placeholder:text-stone/30 outline-none"
                   placeholder="e.g., 500-member Slack community for yoga teachers..."
@@ -163,6 +191,7 @@ const ApplyPage: React.FC = () => {
                 <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">What's the biggest challenge you're facing right now?</label>
                 <input
                   type="text"
+                  name="challenge"
                   className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
                   placeholder="Engagement is dropping, members aren't connecting..."
                 />
@@ -192,6 +221,7 @@ const ApplyPage: React.FC = () => {
                   <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Where do you want to be in 6 months?</label>
                   <input
                     type="text"
+                    name="goals"
                     className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
                     placeholder="Taking a vacation without checking Slack..."
                   />
@@ -200,6 +230,7 @@ const ApplyPage: React.FC = () => {
                   <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Why now?</label>
                   <input
                     type="text"
+                    name="why_now"
                     className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
                     placeholder="I'm burnt out, launching a new program..."
                   />
@@ -210,6 +241,7 @@ const ApplyPage: React.FC = () => {
               <div className="relative">
                 <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Anything else you want me to know?</label>
                 <textarea
+                  name="additional"
                   rows={2}
                   className="w-full form-input py-4 text-lg text-stone resize-none placeholder:text-stone/30 outline-none"
                   placeholder="Optional"
@@ -233,11 +265,31 @@ const ApplyPage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Error Message */}
+              {error && (
+                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-red-200 text-center">
+                  {error}
+                </div>
+              )}
+
               {/* Submit */}
               <div className="pt-8">
-                <button type="submit" className="btn-primary w-full bg-sand text-evergreen py-5 rounded-full text-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-copper hover:text-stone">
-                  Submit Application
-                  <ArrowUpRight size={20} />
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="btn-primary w-full bg-sand text-evergreen py-5 rounded-full text-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-copper hover:text-stone disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Application
+                      <ArrowUpRight size={20} />
+                    </>
+                  )}
                 </button>
                 <p className="mt-4 text-center text-sm text-stone/40 flex items-center justify-center gap-2">
                   <Check size={14} />
