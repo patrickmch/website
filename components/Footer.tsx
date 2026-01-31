@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-copper mb-8">Navigation</h4>
             <ul className="space-y-4 text-stone/60 text-sm tracking-wide">
-              <li><Link to="/#about" className="hover:text-sand transition-colors link-hover">About M. Heyser</Link></li>
+              <li><Link to="/#about" className="hover:text-sand transition-colors link-hover">About Patrick</Link></li>
               <li><Link to="/#services" className="hover:text-sand transition-colors link-hover">Services & Method</Link></li>
               <li><Link to="/#results" className="hover:text-sand transition-colors link-hover">Client Results</Link></li>
               <li><Link to="/apply" className="hover:text-sand transition-colors link-hover">Start Application</Link></li>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone/30 uppercase tracking-[0.3em] gap-4 text-center">
-          <p>© {new Date().getFullYear()} M. Heyser. Facilitating human connection since 2014.</p>
+          <p>© {new Date().getFullYear()} Patrick McHeyser. Facilitating human connection since 2014.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-stone transition-colors link-hover">Privacy</a>
             <a href="#" className="hover:text-stone transition-colors link-hover">Terms</a>
