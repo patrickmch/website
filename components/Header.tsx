@@ -123,7 +123,7 @@ const Header: React.FC = () => {
               }`}
               style={{ transitionDelay: '300ms' }}
             >
-              Apply to Work With Me
+              Apply for a Consultation
               <ArrowUpRight size={18} />
             </Link>
           </nav>
@@ -135,7 +135,7 @@ const Header: React.FC = () => {
             }`}
             style={{ transitionDelay: '400ms' }}
           >
-            <p>Fractional Community Leadership</p>
+            <p>Operational Strategy + Technical Execution</p>
             <p className="mt-1">Boulder, Colorado</p>
           </div>
         </div>

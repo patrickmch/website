@@ -65,9 +65,13 @@ const ApplyPage: React.FC = () => {
           <div className="w-20 h-20 bg-evergreen/10 text-evergreen rounded-full flex items-center justify-center mx-auto mb-8">
             <Heart size={40} />
           </div>
-          <h2 className="text-4xl font-serif text-evergreen mb-6">Application Received</h2>
-          <p className="text-xl text-charcoal/60 leading-relaxed mb-8">
-            Thank you for being so open. I personally read every application and will get back to you within 48 hours to discuss next steps.
+          <h2 className="text-4xl font-serif text-evergreen mb-6">Got it. I'll be in touch.</h2>
+          <p className="text-xl text-charcoal/60 leading-relaxed mb-4">
+            I read every one of these personally. Expect to hear from me within 48 hours.
+          </p>
+          <p className="text-lg text-charcoal/40 leading-relaxed mb-8">
+            If it's urgent, email me directly at{' '}
+            <a href="mailto:patrick@mcheyser.com" className="text-copper hover:text-evergreen transition-colors underline">patrick@mcheyser.com</a>.
           </p>
           <button
             onClick={() => window.location.href = '#/'}
@@ -84,9 +88,9 @@ const ApplyPage: React.FC = () => {
     <div className="bg-stone" ref={scrollRef}>
       {/* Hero */}
       <section className="pt-20 pb-16 md:pt-32 md:pb-24 max-w-7xl mx-auto px-6 text-center grain relative">
-        <h1 className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-serif text-evergreen mb-6 leading-tight">Let's see if your community is ready for real support.</h1>
+        <h1 className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-serif text-evergreen mb-6 leading-tight">Let's figure out where your operation is stuck.</h1>
         <p className="animate-on-scroll delay-1 text-xl md:text-2xl text-charcoal/50 max-w-3xl mx-auto font-light leading-relaxed">
-          No pressure, no hard sell. Just a good conversation to see if this is the right fit for you and your members.
+          30 minutes. No pitch. I'll ask a few sharp questions, you'll tell me what's going on, and we'll figure out if I can help.
         </p>
       </section>
 
@@ -96,18 +100,18 @@ const ApplyPage: React.FC = () => {
           {[
             {
               icon: <MessageSquare className="text-copper" size={28} />,
-              title: "You tell me about your community.",
-              desc: "Where it is now, where you want it to go, what's getting in the way."
+              title: "You tell me what's broken.",
+              desc: "Where the friction is, what you've tried, what's getting in the way."
             },
             {
               icon: <Shield className="text-copper" size={28} />,
-              title: "I'll give you honest feedback.",
-              desc: "If I'm not the right person, I'll tell you. And I'll explain why."
+              title: "I'll be straight with you.",
+              desc: "If I'm not the right person for this, I'll say so. And I'll point you toward who is."
             },
             {
               icon: <Heart className="text-copper" size={28} />,
-              title: "If it's a match, we'll talk next steps.",
-              desc: "Clear, simple, grounded. No \"closing tactics.\""
+              title: "If it's a fit, we move.",
+              desc: "Clear next steps, no runaround. I work fast once I know the problem."
             }
           ].map((item, i) => (
             <div key={i} className={`animate-on-scroll delay-${i + 1} bg-white p-10 rounded-[2rem] border border-sand/20 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
@@ -130,13 +134,13 @@ const ApplyPage: React.FC = () => {
 
           <div className="relative">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif text-sand mb-3">Start Your Application</h2>
-              <p className="text-stone/50">Takes about 5 minutes</p>
+              <h2 className="text-3xl md:text-4xl font-serif text-sand mb-3">Request a Strategy Call</h2>
+              <p className="text-stone/50">Takes about 60 seconds.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-10">
               {/* Hidden field for form identification */}
-              <input type="hidden" name="_subject" value="New Application from mcheyser.com" />
+              <input type="hidden" name="_subject" value="New Consultation Request from mcheyser.com" />
 
               {/* Name & Email Row */}
               <div className="grid md:grid-cols-2 gap-8">
@@ -151,7 +155,7 @@ const ApplyPage: React.FC = () => {
                   />
                 </div>
                 <div className="relative">
-                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Email Address</label>
+                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Email</label>
                   <input
                     required
                     type="email"
@@ -162,107 +166,62 @@ const ApplyPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Website */}
+              {/* Company Name & Website Row */}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="relative">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Company Name</label>
+                  <input
+                    required
+                    type="text"
+                    name="company"
+                    className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
+                    placeholder="Acme Corp"
+                  />
+                </div>
+                <div className="relative">
+                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Company Website <span className="normal-case tracking-normal text-stone/30">(optional)</span></label>
+                  <input
+                    type="text"
+                    name="website"
+                    className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
+                    placeholder="www.example.com"
+                  />
+                </div>
+              </div>
+
+              {/* Biggest Headache */}
               <div className="relative">
-                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Business Website / Instagram</label>
+                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">What's the biggest operational headache you're dealing with right now?</label>
+                <textarea
+                  required
+                  name="challenge"
+                  rows={2}
+                  className="w-full form-input py-4 text-lg text-stone resize-none placeholder:text-stone/30 outline-none"
+                  placeholder="e.g., We're spending 20 hours a week on manual data entry that should be automated..."
+                />
+              </div>
+
+              {/* What does your company do */}
+              <div className="relative">
+                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">What does your company do, roughly?</label>
                 <input
                   required
                   type="text"
-                  name="website"
+                  name="company_type"
                   className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
-                  placeholder="www.example.com or @yourhandle"
+                  placeholder="e.g., B2B SaaS, healthcare practice, e-commerce..."
                 />
               </div>
 
-              {/* Community Info */}
+              {/* How'd you hear about me */}
               <div className="relative">
-                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Tell me about your community</label>
-                <p className="text-stone/40 text-sm mb-3">Current size, platform, type — a couple sentences is perfect.</p>
-                <textarea
-                  name="community"
-                  rows={3}
-                  className="w-full form-input py-4 text-lg text-stone resize-none placeholder:text-stone/30 outline-none"
-                  placeholder="e.g., 500-member Slack community for yoga teachers..."
-                />
-              </div>
-
-              {/* Challenge */}
-              <div className="relative">
-                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">What's the biggest challenge you're facing right now?</label>
+                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">How'd you hear about me? <span className="normal-case tracking-normal text-stone/30">(optional)</span></label>
                 <input
                   type="text"
-                  name="challenge"
+                  name="referral"
                   className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
-                  placeholder="Engagement is dropping, members aren't connecting..."
+                  placeholder="Referral, LinkedIn, Google..."
                 />
-              </div>
-
-              {/* Involvement Level */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-4">How involved do you currently feel in running your community?</label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {[
-                    { value: "everything", label: "I'm doing everything" },
-                    { value: "most", label: "I'm doing most things" },
-                    { value: "some", label: "I'm doing some things" },
-                    { value: "barely", label: "I'm barely present" }
-                  ].map((opt) => (
-                    <label key={opt.value} className="flex items-center gap-4 p-4 border border-stone/10 rounded-xl cursor-pointer hover:bg-stone/5 hover:border-stone/20 transition-all group">
-                      <input type="radio" name="involvement" value={opt.value} className="radio-custom shrink-0" />
-                      <span className="text-stone/70 group-hover:text-stone transition-colors">{opt.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Goals Row */}
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="relative">
-                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Where do you want to be in 6 months?</label>
-                  <input
-                    type="text"
-                    name="goals"
-                    className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
-                    placeholder="Taking a vacation without checking Slack..."
-                  />
-                </div>
-                <div className="relative">
-                  <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Why now?</label>
-                  <input
-                    type="text"
-                    name="why_now"
-                    className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
-                    placeholder="I'm burnt out, launching a new program..."
-                  />
-                </div>
-              </div>
-
-              {/* Anything Else */}
-              <div className="relative">
-                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">Anything else you want me to know?</label>
-                <textarea
-                  name="additional"
-                  rows={2}
-                  className="w-full form-input py-4 text-lg text-stone resize-none placeholder:text-stone/30 outline-none"
-                  placeholder="Optional"
-                />
-              </div>
-
-              {/* Budget */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-4">Budget Comfort Level</label>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    { value: "1.5-2k", label: "$1.5k–2k/month" },
-                    { value: "2-3k", label: "$2k–3k/month" },
-                    { value: "not-sure", label: "Not sure yet" }
-                  ].map((opt) => (
-                    <label key={opt.value} className="flex items-center gap-3 px-5 py-3 border border-stone/10 rounded-full cursor-pointer hover:bg-stone/5 hover:border-stone/20 transition-all group">
-                      <input type="radio" name="budget" value={opt.value} className="radio-custom shrink-0" />
-                      <span className="text-stone/70 group-hover:text-stone transition-colors text-sm">{opt.label}</span>
-                    </label>
-                  ))}
-                </div>
               </div>
 
               {/* Error Message */}
@@ -286,7 +245,7 @@ const ApplyPage: React.FC = () => {
                     </>
                   ) : (
                     <>
-                      Submit Application
+                      Request a Call
                       <ArrowUpRight size={20} />
                     </>
                   )}
@@ -307,9 +266,9 @@ const ApplyPage: React.FC = () => {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
         <div className="max-w-2xl mx-auto px-6 relative">
-          <h2 className="animate-on-scroll text-3xl md:text-4xl font-serif text-sand mb-6">I take care of the communities I lead.</h2>
+          <h2 className="animate-on-scroll text-3xl md:text-4xl font-serif text-sand mb-6">I take the businesses I work with seriously.</h2>
           <p className="animate-on-scroll delay-1 text-lg text-stone/60 mb-12 leading-relaxed">
-            Your members matter to you. They'll matter to me too. If we work together, I'm all in: steady leadership, real connection, and the kind of facilitation that actually moves people.
+            Your operation matters. Your customers matter. If we work together, I'm not phoning it in — I'm embedded in the work, building real solutions, and staying until they run. That's the only way I know how to do this.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 600, behavior: 'smooth' })}

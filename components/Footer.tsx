@@ -16,13 +16,13 @@ const Footer: React.FC = () => {
         {/* CTA Section */}
         <div className="text-center mb-20 border-b border-white/5 pb-20">
           <h2 className="text-3xl md:text-5xl font-serif mb-8 text-sand max-w-2xl mx-auto leading-tight">
-            You don't have to hold your whole community together alone.
+            You've got a great business with a messy operation. Let's fix that.
           </h2>
           <p className="text-xl text-stone/50 mb-10 font-light">
-            There's a better way. And you can have it.
+            One conversation. No pitch. Just an honest look at what's not working.
           </p>
           <Link to="/apply" className="btn-primary bg-copper text-stone px-12 py-5 rounded-full text-xl font-semibold inline-flex items-center gap-2 hover:bg-sand hover:text-charcoal">
-            Apply to Work With Me
+            Apply for a Consultation
             <ArrowUpRight size={20} />
           </Link>
         </div>
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               mcheyser<span className="text-copper">.</span>
             </h3>
             <p className="text-stone/50 max-w-md text-lg font-light leading-relaxed">
-              Fractional Community Operations & Leadership for health and wellness founders who care deeply about their people.
+              Operational strategy and technical execution for growing companies that need someone who ships — not someone who slides.
             </p>
           </div>
 
@@ -42,9 +42,9 @@ const Footer: React.FC = () => {
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-copper mb-8">Navigation</h4>
             <ul className="space-y-4 text-stone/60 text-sm tracking-wide">
               <li><Link to="/#about" className="hover:text-sand transition-colors link-hover">About Patrick</Link></li>
-              <li><Link to="/#services" className="hover:text-sand transition-colors link-hover">Services & Method</Link></li>
-              <li><Link to="/#results" className="hover:text-sand transition-colors link-hover">Client Results</Link></li>
-              <li><Link to="/apply" className="hover:text-sand transition-colors link-hover">Start Application</Link></li>
+              <li><Link to="/#services" className="hover:text-sand transition-colors link-hover">How I Work</Link></li>
+              <li><Link to="/#results" className="hover:text-sand transition-colors link-hover">What People Say</Link></li>
+              <li><Link to="/apply" className="hover:text-sand transition-colors link-hover">Apply for a Consultation</Link></li>
             </ul>
           </div>
 
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <span className="block text-[10px] uppercase opacity-40 mb-1 tracking-widest">Email</span>
-                <a href="mailto:hello@mcheyser.com" className="hover:text-sand transition-colors link-hover">hello@mcheyser.com</a>
+                <a href="mailto:patrick@mcheyser.com" className="hover:text-sand transition-colors link-hover">patrick@mcheyser.com</a>
               </li>
               <li>
                 <span className="block text-[10px] uppercase opacity-40 mb-1 tracking-widest">Social</span>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone/30 uppercase tracking-[0.3em] gap-4 text-center">
-          <p>© {new Date().getFullYear()} Patrick McHeyser. Facilitating human connection since 2014.</p>
+          <p>&copy; {new Date().getFullYear()} Patrick McHeyser. Building things that work since 2014.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-stone transition-colors link-hover">Privacy</a>
             <a href="#" className="hover:text-stone transition-colors link-hover">Terms</a>
