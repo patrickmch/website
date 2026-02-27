@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               mcheyser<span className="text-copper">.</span>
             </h3>
             <p className="text-stone/50 max-w-md text-lg font-light leading-relaxed">
-              Operational strategy and technical execution for growing companies that need someone who ships — not someone who slides.
+              Operational strategy and technical execution for growing companies that need someone who ships - not someone who slides.
             </p>
           </div>
 
@@ -43,7 +43,6 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-stone/60 text-sm tracking-wide">
               <li><Link to="/#about" className="hover:text-sand transition-colors link-hover">About Patrick</Link></li>
               <li><Link to="/#services" className="hover:text-sand transition-colors link-hover">How I Work</Link></li>
-              <li><Link to="/#results" className="hover:text-sand transition-colors link-hover">What People Say</Link></li>
               <li><Link to="/apply" className="hover:text-sand transition-colors link-hover">Apply for a Consultation</Link></li>
             </ul>
           </div>

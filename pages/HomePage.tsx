@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
               <span className="text-copper italic">I find it and fix it.</span>
             </h1>
             <p className="animate-on-scroll delay-2 text-xl md:text-2xl text-charcoal/70 font-light leading-relaxed mb-10">
-              I help growing companies untangle messy operations, build the right technology, and get closer to their customers — so the business actually scales.
+              I help growing companies untangle messy operations, build the right technology, and get closer to their customers - so the business actually scales.
             </p>
             <div className="animate-on-scroll delay-3 flex flex-col sm:flex-row gap-4 items-center">
               <Link to="/apply" className="btn-primary w-full sm:w-auto bg-evergreen text-stone px-10 py-5 rounded-full text-lg font-semibold text-center inline-flex items-center justify-center gap-2">
@@ -128,14 +128,14 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="animate-on-scroll text-4xl md:text-6xl font-serif text-evergreen mb-8">You don't need another consultant with a slide deck. You need someone who ships.</h2>
           <p className="animate-on-scroll delay-1 text-xl text-charcoal/60 max-w-3xl mx-auto mb-16 leading-relaxed">
-            I work inside your operation — not above it. Here's what that looks like.
+            I work inside your operation - not above it. Here's what that looks like.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {[
-              { title: "Diagnose", desc: "I get inside your workflows, talk to your team, and figure out where time and money are actually being lost. Not where you think they're being lost — where they really are." },
+              { title: "Diagnose", desc: "I get inside your workflows, talk to your team, and figure out where time and money are actually being lost. Not where you think they're being lost - where they really are." },
               { title: "Build", desc: "I design and implement the fix. Sometimes that's an AI system. Sometimes it's a custom tool. Sometimes it's restructuring a process that nobody questioned because \"that's how we've always done it.\"" },
-              { title: "Connect", desc: "I talk to your customers and partners the way a founder would — with curiosity, not a script. I find out what they actually need and bring that intelligence back so you can act on it." },
+              { title: "Connect", desc: "I talk to your customers and partners the way a founder would - with curiosity, not a script. I find out what they actually need and bring that intelligence back so you can act on it." },
               { title: "Operationalize", desc: "I don't hand you a plan and walk away. I stay until the system runs without me. That's the whole point." }
             ].map((item, i) => (
               <div key={i} className={`animate-on-scroll delay-${i + 1} bg-white p-10 rounded-[2rem] shadow-sm border border-sand/20 text-left hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
@@ -189,7 +189,7 @@ const HomePage: React.FC = () => {
                 <ul className="space-y-5">
                   {[
                     "Systems handle the repetitive work and your team focuses on what matters",
-                    "You have real insight into what customers need — and you're acting on it",
+                    "You have real insight into what customers need - and you're acting on it",
                     "Technology actually fits your operation instead of fighting it",
                     "Growth comes from systems and relationships, not just your hustle",
                     "Partnerships are active, warm, and generating real opportunities",
@@ -227,8 +227,8 @@ const HomePage: React.FC = () => {
           <div className="space-y-0">
             {[
               { title: "Embed", desc: "I learn your business the way a new operator would. I talk to your team. I sit in your workflows. I understand the problem before I touch anything." },
-              { title: "Diagnose", desc: "I map where the real friction lives — the bottlenecks, the manual work, the missed connections between your team and your customers. Usually it's not where people think it is." },
-              { title: "Build", desc: "I design and implement solutions. AI agents, custom software, workflow tools, partnership frameworks — whatever the diagnosis calls for. I write code. I build systems. I get it into production." },
+              { title: "Diagnose", desc: "I map where the real friction lives - the bottlenecks, the manual work, the missed connections between your team and your customers. Usually it's not where people think it is." },
+              { title: "Build", desc: "I design and implement solutions. AI agents, custom software, workflow tools, partnership frameworks - whatever the diagnosis calls for. I write code. I build systems. I get it into production." },
               { title: "Operationalize", desc: "I make sure it works without me. I train your team, document everything, and stay hands-on until the system is running clean. Then I step back." }
             ].map((item, i) => (
               <div key={i} className={`animate-on-scroll delay-${i + 1} group`}>
@@ -268,7 +268,7 @@ const HomePage: React.FC = () => {
                   "You're running a growing company (roughly 10–100 people) and things are getting messy",
                   "You know technology could help but you're not sure where to start",
                   "You want someone who can talk to your engineers AND your customers",
-                  "You've got real operational pain — not just a vague feeling that you should \"do AI\"",
+                  "You've got real operational pain - not just a vague feeling that you should \"do AI\"",
                   "You value people who get things done over people who talk about getting things done",
                   "You want a partner who embeds in your business, not one who emails you a PDF"
                 ].map((item, i) => (
@@ -313,13 +313,13 @@ const HomePage: React.FC = () => {
                 I learned to lead in the <span className="italic">backcountry.</span> Then I learned to build in code. Now I do both.
               </h2>
               <div className="space-y-6 text-lg text-charcoal/70 font-light leading-relaxed">
-                <p className="animate-on-scroll delay-1">For seven years, I ran leadership programs for <span className="font-medium text-evergreen">Fortune 500 executives and military special operations teams</span> at NOLS — the National Outdoor Leadership School. Not team-building retreats. Real expeditions where groups had to function under pressure, make decisions with incomplete information, and trust each other when it mattered.</p>
-                <p className="animate-on-scroll delay-2">That's where I learned how people actually work — not the org chart version, but the real version. How to read a room. How to get a stuck group moving. How to build trust fast.</p>
+                <p className="animate-on-scroll delay-1">For seven years, I ran leadership programs for <span className="font-medium text-evergreen">Fortune 500 executives and military special operations teams</span> at NOLS - the National Outdoor Leadership School. Not team-building retreats. Real expeditions where groups had to function under pressure, make decisions with incomplete information, and trust each other when it mattered.</p>
+                <p className="animate-on-scroll delay-2">That's where I learned how people actually work - not the org chart version, but the real version. How to read a room. How to get a stuck group moving. How to build trust fast.</p>
                 <p className="animate-on-scroll delay-3">Then I spent years as a software engineer, building CRM systems, workflow tools, and the kind of internal software that either makes a company run smoothly or drives everyone crazy.</p>
                 <p className="animate-on-scroll delay-4">Now I put both together. I walk into companies where the operation is tangled, the technology isn't working the way it should, and the people are frustrated. I figure out what's actually broken, build the fix, and make sure it sticks.</p>
                 <p className="animate-on-scroll delay-5">I've done <span className="font-medium text-evergreen">AI systems audits for healthcare practices, built custom automation for startups, run go-to-market strategy for early-stage companies,</span> and managed customer relationships for firms that needed someone who could actually listen.</p>
                 <p className="animate-on-scroll text-charcoal/50">Based in Colorado. When I'm not working: climbing, skiing, running in the mountains.</p>
-                <p className="animate-on-scroll text-xl font-medium text-evergreen">I work with leaders who want things to actually work — not just look good on a slide.</p>
+                <p className="animate-on-scroll text-xl font-medium text-evergreen">I work with leaders who want things to actually work - not just look good on a slide.</p>
               </div>
               <Link to="/apply" className="animate-on-scroll btn-primary inline-flex items-center gap-2 bg-evergreen text-stone px-10 py-4 rounded-full font-semibold">
                 Apply for a Consultation
@@ -346,7 +346,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. TESTIMONIALS */}
+      {/* 8. TESTIMONIALS - Hidden until real testimonials are available
       <section id="results" className="py-24 md:py-32 bg-evergreen text-stone scroll-mt-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -363,7 +363,7 @@ const HomePage: React.FC = () => {
               },
               {
                 name: "Name TBD",
-                text: "He's the rare person who can sit in a technical architecture meeting and then have a warm, human conversation with a frustrated customer — and be great at both."
+                text: "He's the rare person who can sit in a technical architecture meeting and then have a warm, human conversation with a frustrated customer - and be great at both."
               },
               {
                 name: "Name TBD",
@@ -377,7 +377,7 @@ const HomePage: React.FC = () => {
                   </div>
                   <p className="text-xl font-serif text-stone/90 leading-relaxed mb-8">"{t.text}"</p>
                 </div>
-                <p className="font-semibold text-copper uppercase tracking-widest text-xs">— {t.name}</p>
+                <p className="font-semibold text-copper uppercase tracking-widest text-xs">- {t.name}</p>
               </div>
             ))}
           </div>
@@ -387,6 +387,7 @@ const HomePage: React.FC = () => {
           </Link>
         </div>
       </section>
+      */}
 
       {/* 9. FINAL CTA */}
       <section className="py-24 md:py-40 bg-white text-center relative overflow-hidden grain">

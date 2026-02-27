@@ -268,7 +268,7 @@ const ApplyPage: React.FC = () => {
         <div className="max-w-2xl mx-auto px-6 relative">
           <h2 className="animate-on-scroll text-3xl md:text-4xl font-serif text-sand mb-6">I take the businesses I work with seriously.</h2>
           <p className="animate-on-scroll delay-1 text-lg text-stone/60 mb-12 leading-relaxed">
-            Your operation matters. Your customers matter. If we work together, I'm not phoning it in — I'm embedded in the work, building real solutions, and staying until they run. That's the only way I know how to do this.
+            Your operation matters. Your customers matter. If we work together, I'm not phoning it in - I'm embedded in the work, building real solutions, and staying until they run. That's the only way I know how to do this.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 600, behavior: 'smooth' })}
