@@ -9,7 +9,7 @@ Active. Full copy rewrite completed (Feb 2026) — repositioned from "community 
 ## Quick Start
 
 ```bash
-cd ~/code/mcheyser-site
+cd ~/projects/mcheyser/mcheyser-site
 npm install
 npm run dev  # Vite dev server
 npm run build  # Build to dist/

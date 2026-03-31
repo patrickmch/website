@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ApplyPage from './pages/ApplyPage';
+import IntakePage from './pages/IntakePage';
 
 // Component to handle route change side effects
 const RouteChangeHandler: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/apply" element={<ApplyPage />} />
+              <Route path="/intake/denver-zen-den" element={<IntakePage />} />
             </Routes>
           </main>
           <Footer />
