@@ -54,14 +54,14 @@ const HomePage: React.FC = () => {
           <div className="max-w-2xl">
             <div className="animate-on-scroll inline-flex items-center gap-2 px-4 py-1.5 bg-evergreen/5 rounded-full text-evergreen text-xs font-semibold uppercase tracking-widest mb-6 border border-evergreen/10">
               <Sparkles size={14} className="text-copper" />
-              Operational Strategy + Technical Execution
+              AI Implementation for Growing Businesses
             </div>
             <h1 className="animate-on-scroll delay-1 text-5xl md:text-7xl lg:text-8xl font-serif text-evergreen leading-[1.05] mb-8">
-              Your operation has friction. <br />
-              <span className="text-copper italic">I find it and fix it.</span>
+              I build AI systems that <br />
+              <span className="text-copper italic">run your operations.</span>
             </h1>
             <p className="animate-on-scroll delay-2 text-xl md:text-2xl text-charcoal/70 font-light leading-relaxed mb-10">
-              I help growing companies untangle messy operations, build the right technology, and get closer to their customers - so the business actually scales.
+              Not chatbots. Not dashboards. Real AI agents that handle your invoicing, monitor your product, file your taxes, and manage vendor outreach. Built on organized knowledge about your specific business.
             </p>
             <div className="animate-on-scroll delay-3 flex flex-col sm:flex-row gap-4 items-center">
               <Link to="/apply" className="btn-primary w-full sm:w-auto bg-evergreen text-stone px-10 py-5 rounded-full text-lg font-semibold text-center inline-flex items-center justify-center gap-2">
@@ -73,7 +73,7 @@ const HomePage: React.FC = () => {
               </Link>
             </div>
             <p className="animate-on-scroll delay-4 mt-6 text-sm text-charcoal/40 font-medium ml-2">
-              No pitch. Just a real conversation about what's slowing you down.
+              No pitch. Just a real conversation about what AI can do for your operation.
             </p>
           </div>
           <div className="relative animate-on-scroll delay-2">
@@ -108,15 +108,15 @@ const HomePage: React.FC = () => {
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="animate-on-scroll text-4xl md:text-5xl font-serif mb-8 text-sand leading-tight">
-              You didn't start this company to spend your days fighting your own systems.
+              You didn't start this company to spend your days on tasks a machine should handle.
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-stone/70 font-light">
-              <p className="animate-on-scroll delay-1">But here you are. Processes that made sense at five people are breaking at thirty. Your team is spending hours on work that should take minutes. You know AI and automation could help, but every solution you've looked at feels either too generic or too expensive to figure out.</p>
-              <p className="animate-on-scroll delay-2 font-medium text-stone">And the growth side isn't any easier.</p>
-              <p className="animate-on-scroll delay-3">You're so busy keeping the engine running that you don't have time to actually talk to your customers, build the partnerships that would open new doors, or think strategically about where the business goes next.</p>
+              <p className="animate-on-scroll delay-1">But here you are. Manually tracking hours and sending invoices. Pulling data from five different platforms to get a single answer. Checking your community for feedback three times a day because nothing alerts you when something breaks. You know AI could change this. But every AI tool you've tried just gives you a chatbot that doesn't know your business.</p>
+              <p className="animate-on-scroll delay-2 font-medium text-stone">The gap isn't intelligence. AI is already smart enough.</p>
+              <p className="animate-on-scroll delay-3">The gap is context. AI doesn't know your clients, your data, your workflows, or your rules. That's what I build.</p>
             </div>
             <Link to="/apply" className="animate-on-scroll delay-4 inline-flex items-center gap-3 mt-12 text-copper font-semibold text-xl hover:text-sand transition-colors group">
-              You need someone who can do both
+              You need someone who builds, not advises
               <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
@@ -126,17 +126,17 @@ const HomePage: React.FC = () => {
       {/* 3. WHAT I ACTUALLY DO */}
       <section id="services" className="py-24 md:py-32 bg-stone relative grain">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="animate-on-scroll text-4xl md:text-6xl font-serif text-evergreen mb-8">You don't need another consultant with a slide deck. You need someone who ships.</h2>
+          <h2 className="animate-on-scroll text-4xl md:text-6xl font-serif text-evergreen mb-8">You don't need another AI chatbot. You need systems that know your business and do real work.</h2>
           <p className="animate-on-scroll delay-1 text-xl text-charcoal/60 max-w-3xl mx-auto mb-16 leading-relaxed">
-            I work inside your operation - not above it. Here's what that looks like.
+            I work inside your operation, not above it. Here's what that looks like.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {[
-              { title: "Diagnose", desc: "I get inside your workflows, talk to your team, and figure out where time and money are actually being lost. Not where you think they're being lost - where they really are." },
-              { title: "Build", desc: "I design and implement the fix. Sometimes that's an AI system. Sometimes it's a custom tool. Sometimes it's restructuring a process that nobody questioned because \"that's how we've always done it.\"" },
-              { title: "Connect", desc: "I talk to your customers and partners the way a founder would - with curiosity, not a script. I find out what they actually need and bring that intelligence back so you can act on it." },
-              { title: "Operationalize", desc: "I don't hand you a plan and walk away. I stay until the system runs without me. That's the whole point." }
+              { title: "Assess", desc: "I map your workflows, talk to your team, and identify the places where AI can replace manual work. Not guessing -- measuring where time and money actually go." },
+              { title: "Build Context", desc: "I organize your business knowledge -- clients, processes, records, rules -- into a structured layer that AI can access. This is the foundation everything else runs on." },
+              { title: "Deploy Agents", desc: "I build custom AI agents for specific jobs. Invoicing. Customer triage. Research and outreach. Each agent gets the right context for its job, plus the tools to act on it." },
+              { title: "Review", desc: "AI systems aren't set-and-forget. I build in human review steps, monitor performance, and refine the agents as your business changes. Then I train your team to maintain it." }
             ].map((item, i) => (
               <div key={i} className={`animate-on-scroll delay-${i + 1} bg-white p-10 rounded-[2rem] shadow-sm border border-sand/20 text-left hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
                 <h3 className="text-2xl font-serif mb-4 text-evergreen group-hover:text-copper transition-colors">{item.title}</h3>
@@ -167,12 +167,12 @@ const HomePage: React.FC = () => {
                 </h3>
                 <ul className="space-y-5">
                   {[
-                    "Your team wastes hours on repetitive work nobody's automated",
-                    "You're guessing what your customers actually want",
+                    "Your team wastes hours on repetitive work that should be automated",
+                    "You're pulling data from multiple systems just to get basic answers",
                     "New tools get bought but never fully adopted",
-                    "Growth depends on you personally doing everything",
-                    "Partnerships stall because nobody has time to nurture them",
-                    "You know you should be using AI but don't know where to start"
+                    "Growth depends on you personally tracking and doing everything",
+                    "Customer feedback disappears into forums nobody checks",
+                    "You know AI could help but every tool you've tried feels generic"
                   ].map((item, i) => (
                     <li key={i} className="flex gap-4 text-charcoal/60 text-lg group">
                       <XCircle className="text-red-400/70 shrink-0 mt-1 group-hover:text-red-500 transition-colors" size={20} />
@@ -188,12 +188,12 @@ const HomePage: React.FC = () => {
                 </h3>
                 <ul className="space-y-5">
                   {[
-                    "Systems handle the repetitive work and your team focuses on what matters",
-                    "You have real insight into what customers need - and you're acting on it",
-                    "Technology actually fits your operation instead of fighting it",
-                    "Growth comes from systems and relationships, not just your hustle",
-                    "Partnerships are active, warm, and generating real opportunities",
-                    "AI is working for you in the places where it makes the biggest difference"
+                    "AI agents handle repetitive operations and your team focuses on real work",
+                    "Business data flows through a unified context layer you can actually query",
+                    "Technology fits your operation because it was built for your operation",
+                    "Growth comes from systems that run without you, not your personal bandwidth",
+                    "Customer feedback gets triaged automatically -- problems surface in minutes",
+                    "AI knows YOUR business -- your clients, your rates, your rules, your voice"
                   ].map((item, i) => (
                     <li key={i} className="flex gap-4 text-stone/90 text-lg group">
                       <CheckCircle2 className="text-copper shrink-0 mt-1 group-hover:text-sand transition-colors" size={20} />
@@ -205,7 +205,7 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className="animate-on-scroll mt-16 text-center">
-              <p className="text-2xl font-serif italic text-evergreen/80 mb-8">"It's not magic. It's showing up, doing the work, and building things that last."</p>
+              <p className="text-2xl font-serif italic text-evergreen/80 mb-8">"The systems run. You review. The business grows without adding headcount."</p>
               <Link to="/apply" className="btn-primary bg-copper text-stone px-12 py-5 rounded-full text-xl font-semibold inline-flex items-center gap-2">
                 Let's Talk About Your Operation
                 <ArrowRight size={20} />
@@ -221,15 +221,15 @@ const HomePage: React.FC = () => {
         <div className="max-w-5xl mx-auto px-6 relative">
           <div className="text-center mb-20">
             <h2 className="animate-on-scroll text-4xl md:text-6xl font-serif text-evergreen mb-6">How I Work</h2>
-            <p className="animate-on-scroll delay-1 text-xl text-charcoal/50">Most consultants audit from the outside and hand you a report. <span className="font-semibold text-evergreen">I work from the inside out.</span></p>
+            <p className="animate-on-scroll delay-1 text-xl text-charcoal/50">Most AI vendors sell you a chatbot and walk away. <span className="font-semibold text-evergreen">I build the system from the inside out.</span></p>
           </div>
 
           <div className="space-y-0">
             {[
-              { title: "Embed", desc: "I learn your business the way a new operator would. I talk to your team. I sit in your workflows. I understand the problem before I touch anything." },
-              { title: "Diagnose", desc: "I map where the real friction lives - the bottlenecks, the manual work, the missed connections between your team and your customers. Usually it's not where people think it is." },
-              { title: "Build", desc: "I design and implement solutions. AI agents, custom software, workflow tools, partnership frameworks - whatever the diagnosis calls for. I write code. I build systems. I get it into production." },
-              { title: "Operationalize", desc: "I make sure it works without me. I train your team, document everything, and stay hands-on until the system is running clean. Then I step back." }
+              { title: "Assess", desc: "I learn your business the way a new operator would. I talk to your team, sit in your workflows, and measure where time goes. I understand the problem before I touch anything." },
+              { title: "Plan", desc: "I design the AI system architecture. What context needs to be organized, what agents to build, what tools to connect, and what human review steps to include. You approve the plan before anything gets built." },
+              { title: "Execute", desc: "I build the context layer and deploy the agents. I write the code, connect the tools, set up the monitoring, and get it into production. This is where the work actually gets done." },
+              { title: "Review", desc: "I make sure it works. I run the system with your team, catch edge cases, refine the agents, and document everything. Then I step back and the system runs without me." }
             ].map((item, i) => (
               <div key={i} className={`animate-on-scroll delay-${i + 1} group`}>
                 <div className="flex items-start gap-6 md:gap-10 py-10 border-b border-sand/30 hover:border-copper/50 transition-colors">
@@ -265,12 +265,12 @@ const HomePage: React.FC = () => {
               </h3>
               <ul className="space-y-5">
                 {[
-                  "You're running a growing company (roughly 10–100 people) and things are getting messy",
-                  "You know technology could help but you're not sure where to start",
-                  "You want someone who can talk to your engineers AND your customers",
-                  "You've got real operational pain - not just a vague feeling that you should \"do AI\"",
-                  "You value people who get things done over people who talk about getting things done",
-                  "You want a partner who embeds in your business, not one who emails you a PDF"
+                  "You're running a growing business ($500K-$10M) and manual processes are holding you back",
+                  "You know AI could help but you need someone who builds, not someone who advises",
+                  "You want AI systems built for your business, not a generic chatbot",
+                  "You have real operational pain -- invoicing, data management, customer monitoring, vendor outreach",
+                  "You want things that actually work, not a strategy deck about what could work someday",
+                  "You want a partner who builds the system and stays until it runs clean"
                 ].map((item, i) => (
                   <li key={i} className="text-lg text-charcoal/70 flex items-start gap-4 group">
                     <span className="w-2 h-2 bg-copper rounded-full shrink-0 mt-2.5 group-hover:scale-150 transition-transform"></span>
@@ -289,8 +289,8 @@ const HomePage: React.FC = () => {
                 {[
                   "You're looking for a traditional management consulting engagement with big deliverable decks",
                   "You need someone to own a full-time role permanently",
-                  "You want a pure technical contractor who just writes code to spec",
-                  "You're not ready to actually change how things work",
+                  "You want a generic AI chatbot or off-the-shelf automation",
+                  "You're not ready to share your business data and processes with an AI system",
                   "You're looking for the cheapest option"
                 ].map((item, i) => (
                   <li key={i} className="text-lg text-charcoal/40 flex items-start gap-4 italic">
@@ -310,16 +310,16 @@ const HomePage: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div className="space-y-8">
               <h2 className="animate-on-scroll text-4xl md:text-5xl lg:text-6xl font-serif text-evergreen leading-tight">
-                I learned to lead in the <span className="italic">backcountry.</span> Then I learned to build in code. Now I do both.
+                I learned to lead in the <span className="italic">backcountry.</span> Then I learned to build in code. Now I build AI systems.
               </h2>
               <div className="space-y-6 text-lg text-charcoal/70 font-light leading-relaxed">
                 <p className="animate-on-scroll delay-1">For seven years, I ran leadership programs for <span className="font-medium text-evergreen">Fortune 500 executives and military special operations teams</span> at NOLS - the National Outdoor Leadership School. Not team-building retreats. Real expeditions where groups had to function under pressure, make decisions with incomplete information, and trust each other when it mattered.</p>
                 <p className="animate-on-scroll delay-2">That's where I learned how people actually work - not the org chart version, but the real version. How to read a room. How to get a stuck group moving. How to build trust fast.</p>
                 <p className="animate-on-scroll delay-3">Then I spent years as a software engineer, building CRM systems, workflow tools, and the kind of internal software that either makes a company run smoothly or drives everyone crazy.</p>
-                <p className="animate-on-scroll delay-4">Now I put both together. I walk into companies where the operation is tangled, the technology isn't working the way it should, and the people are frustrated. I figure out what's actually broken, build the fix, and make sure it sticks.</p>
-                <p className="animate-on-scroll delay-5">I've done <span className="font-medium text-evergreen">AI systems audits for healthcare practices, built custom automation for startups, run go-to-market strategy for early-stage companies,</span> and managed customer relationships for firms that needed someone who could actually listen.</p>
+                <p className="animate-on-scroll delay-4">Now I build AI systems that combine both. I walk into companies where the operation is manual, the data is scattered, and the team is drowning in repetitive work. I organize their business knowledge into a context layer, build AI agents that handle specific operations, and set up the infrastructure so it runs without me.</p>
+                <p className="animate-on-scroll delay-5">I've built <span className="font-medium text-evergreen">automated invoicing systems that track work across GitHub, calendars, and screen recordings. I've set up autonomous product monitoring that triages user feedback every 15 minutes. I've built tax filing systems</span> that pull from Venmo, Zelle, email, and bank records, then navigate the filing site and fill in every field.</p>
                 <p className="animate-on-scroll text-charcoal/50">Based in Colorado. When I'm not working: climbing, skiing, running in the mountains.</p>
-                <p className="animate-on-scroll text-xl font-medium text-evergreen">I work with leaders who want things to actually work - not just look good on a slide.</p>
+                <p className="animate-on-scroll text-xl font-medium text-evergreen">I build AI systems for leaders who want their operations to actually run -- not just look good on a slide.</p>
               </div>
               <Link to="/apply" className="animate-on-scroll btn-primary inline-flex items-center gap-2 bg-evergreen text-stone px-10 py-4 rounded-full font-semibold">
                 Apply for a Consultation
@@ -394,10 +394,10 @@ const HomePage: React.FC = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-b from-sand/20 to-transparent rounded-full blur-3xl"></div>
         <div className="max-w-4xl mx-auto px-6 relative">
           <h2 className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-serif text-evergreen mb-8 leading-tight">
-            You've got a great business with a messy operation. Let's fix that.
+            Your business is growing but your operations aren't keeping up. Let's fix that with AI that knows your business.
           </h2>
           <p className="animate-on-scroll delay-1 text-xl md:text-2xl text-charcoal/50 mb-12 font-light">
-            One conversation. No pitch. Just an honest look at what's not working and what we could do about it.
+            One conversation. No pitch. Just an honest look at what's manual, what's messy, and what AI can take off your plate.
           </p>
           <Link to="/apply" className="animate-on-scroll delay-2 btn-primary bg-evergreen text-stone px-12 md:px-16 py-5 md:py-6 rounded-full text-xl md:text-2xl font-semibold inline-flex items-center gap-3">
             Apply for a Consultation

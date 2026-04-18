@@ -134,7 +134,7 @@ const Header: React.FC = () => {
             }`}
             style={{ transitionDelay: '400ms' }}
           >
-            <p>Operational Strategy + Technical Execution</p>
+            <p>AI Systems for Growing Businesses</p>
             <p className="mt-1">Boulder, Colorado</p>
           </div>
         </div>
