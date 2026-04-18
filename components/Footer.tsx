@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
         {/* CTA Section */}
         <div className="text-center mb-20 border-b border-white/5 pb-20">
           <h2 className="text-3xl md:text-5xl font-serif mb-8 text-sand max-w-2xl mx-auto leading-tight">
-            You've got a great business with a messy operation. Let's fix that.
+            Your business is growing but your operations aren't keeping up. Let's fix that with AI.
           </h2>
           <p className="text-xl text-stone/50 mb-10 font-light">
-            One conversation. No pitch. Just an honest look at what's not working.
+            One conversation. No pitch. Just an honest look at what's manual, what's messy, and what AI can take off your plate.
           </p>
           <Link to="/apply" className="btn-primary bg-copper text-stone px-12 py-5 rounded-full text-xl font-semibold inline-flex items-center gap-2 hover:bg-sand hover:text-charcoal">
             Apply for a Consultation
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               mcheyser<span className="text-copper">.</span>
             </h3>
             <p className="text-stone/50 max-w-md text-lg font-light leading-relaxed">
-              Operational strategy and technical execution for growing companies that need someone who ships - not someone who slides.
+              AI implementation for growing businesses. I build context layers, custom agents, and the infrastructure that makes AI actually useful.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <span className="block text-[10px] uppercase opacity-40 mb-1 tracking-widest">Social</span>
-                <a href="#" className="hover:text-sand transition-colors link-hover">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/patrickmcheyser/" target="_blank" rel="noopener noreferrer" className="hover:text-sand transition-colors link-hover">LinkedIn</a>
               </li>
             </ul>
           </div>
