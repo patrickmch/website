@@ -54,14 +54,14 @@ const HomePage: React.FC = () => {
           <div className="max-w-2xl">
             <div className="animate-on-scroll inline-flex items-center gap-2 px-4 py-1.5 bg-evergreen/5 rounded-full text-evergreen text-xs font-semibold uppercase tracking-widest mb-6 border border-evergreen/10">
               <Sparkles size={14} className="text-copper" />
-              AI Implementation for Growing Businesses
+              For Businesses Done Being Pitched AI
             </div>
             <h1 className="animate-on-scroll delay-1 text-5xl md:text-7xl lg:text-8xl font-serif text-evergreen leading-[1.05] mb-8">
-              I build AI systems that <br />
-              <span className="text-copper italic">run your operations.</span>
+              You've been pitched AI twenty times. <br />
+              <span className="text-copper italic">This isn't one of those.</span>
             </h1>
             <p className="animate-on-scroll delay-2 text-xl md:text-2xl text-charcoal/70 font-light leading-relaxed mb-10">
-              Not chatbots. Not dashboards. Real AI agents that handle your invoicing, monitor your product, file your taxes, and manage vendor outreach. Built on organized knowledge about your specific business.
+              I build AI systems that actually run in your business. Invoicing, vendor outreach, customer monitoring, and the operational work that's quietly eating your team's time. The kind that keeps working after the hype cycle moves on.
             </p>
             <div className="animate-on-scroll delay-3 flex flex-col sm:flex-row gap-4 items-center">
               <Link to="/apply" className="btn-primary w-full sm:w-auto bg-evergreen text-stone px-10 py-5 rounded-full text-lg font-semibold text-center inline-flex items-center justify-center gap-2">
@@ -133,8 +133,8 @@ const HomePage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {[
-              { title: "Assess", desc: "I map your workflows, talk to your team, and identify the places where AI can replace manual work. Not guessing -- measuring where time and money actually go." },
-              { title: "Build Context", desc: "I organize your business knowledge -- clients, processes, records, rules -- into a structured layer that AI can access. This is the foundation everything else runs on." },
+              { title: "Assess", desc: "I map your workflows, talk to your team, and identify the places where AI can replace manual work. I measure where time and money actually go instead of guessing." },
+              { title: "Build Context", desc: "I organize your business knowledge so AI can access it: your clients, your processes, your records, your rules. This is the foundation everything else runs on." },
               { title: "Deploy Agents", desc: "I build custom AI agents for specific jobs. Invoicing. Customer triage. Research and outreach. Each agent gets the right context for its job, plus the tools to act on it." },
               { title: "Review", desc: "AI systems aren't set-and-forget. I build in human review steps, monitor performance, and refine the agents as your business changes. Then I train your team to maintain it." }
             ].map((item, i) => (
@@ -192,8 +192,8 @@ const HomePage: React.FC = () => {
                     "Business data flows through a unified context layer you can actually query",
                     "Technology fits your operation because it was built for your operation",
                     "Growth comes from systems that run without you, not your personal bandwidth",
-                    "Customer feedback gets triaged automatically -- problems surface in minutes",
-                    "AI knows YOUR business -- your clients, your rates, your rules, your voice"
+                    "Customer feedback gets triaged automatically, so problems surface in minutes",
+                    "AI knows YOUR business. Your clients, your rates, your rules, your voice."
                   ].map((item, i) => (
                     <li key={i} className="flex gap-4 text-stone/90 text-lg group">
                       <CheckCircle2 className="text-copper shrink-0 mt-1 group-hover:text-sand transition-colors" size={20} />
@@ -268,7 +268,7 @@ const HomePage: React.FC = () => {
                   "You're running a growing business ($500K-$10M) and manual processes are holding you back",
                   "You know AI could help but you need someone who builds, not someone who advises",
                   "You want AI systems built for your business, not a generic chatbot",
-                  "You have real operational pain -- invoicing, data management, customer monitoring, vendor outreach",
+                  "You have real operational pain: invoicing, data management, customer monitoring, vendor outreach",
                   "You want things that actually work, not a strategy deck about what could work someday",
                   "You want a partner who builds the system and stays until it runs clean"
                 ].map((item, i) => (
@@ -319,7 +319,7 @@ const HomePage: React.FC = () => {
                 <p className="animate-on-scroll delay-4">Now I build AI systems that combine both. I walk into companies where the operation is manual, the data is scattered, and the team is drowning in repetitive work. I organize their business knowledge into a context layer, build AI agents that handle specific operations, and set up the infrastructure so it runs without me.</p>
                 <p className="animate-on-scroll delay-5">I've built <span className="font-medium text-evergreen">automated invoicing systems that track work across GitHub, calendars, and screen recordings. I've set up autonomous product monitoring that triages user feedback every 15 minutes. I've built tax filing systems</span> that pull from Venmo, Zelle, email, and bank records, then navigate the filing site and fill in every field.</p>
                 <p className="animate-on-scroll text-charcoal/50">Based in Colorado. When I'm not working: climbing, skiing, running in the mountains.</p>
-                <p className="animate-on-scroll text-xl font-medium text-evergreen">I build AI systems for leaders who want their operations to actually run -- not just look good on a slide.</p>
+                <p className="animate-on-scroll text-xl font-medium text-evergreen">I build AI systems for leaders who want their operations to actually run, not just look good on a slide.</p>
               </div>
               <Link to="/apply" className="animate-on-scroll btn-primary inline-flex items-center gap-2 bg-evergreen text-stone px-10 py-4 rounded-full font-semibold">
                 Apply for a Consultation
