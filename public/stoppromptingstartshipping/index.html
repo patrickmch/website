@@ -244,7 +244,7 @@
             padding: 22px 18px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
         }
 
         .workflow .node:not(:last-child)::after {
@@ -270,15 +270,6 @@
 
         .node.review {
             border-color: var(--sage);
-        }
-
-        .node .node-label {
-            color: var(--copper);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
         }
 
         .node strong {
@@ -500,29 +491,24 @@
             <div class="subtitle">The workflow</div>
             <div class="workflow">
                 <div class="node primary">
-                    <div class="node-label">Context</div>
-                    <strong>Question + product context</strong>
-                    <span>Customer question, product behavior, codebase, prior answers, tone, and instructions.</span>
+                    <strong>Customer question comes in</strong>
+                    <span>A customer asks for help in Skool, which triggers the workflow.</span>
                 </div>
                 <div class="node primary">
-                    <div class="node-label">Model</div>
-                    <strong>Claude drafts a response</strong>
-                    <span>It uses the context to produce a first pass against the goal.</span>
+                    <strong>Claude drafts with context</strong>
+                    <span>Product facts, codebase, prior answers, tone, and instructions shape the response.</span>
                 </div>
                 <div class="node tool">
-                    <div class="node-label">Tool</div>
                     <strong>Humanizer checks the draft</strong>
-                    <span>Cleans stiff, generic, or obviously AI-written language.</span>
+                    <span>A tool catches stiff, generic, or obviously AI-written language.</span>
                 </div>
                 <div class="node review">
-                    <div class="node-label">Human Review</div>
                     <strong>Telegram approval</strong>
-                    <span>Approve, edit, or reject before anything reaches the customer.</span>
+                    <span>Human review: approve, edit, or reject before it reaches the customer.</span>
                 </div>
                 <div class="node tool">
-                    <div class="node-label">Tool</div>
                     <strong>Approved response posts back</strong>
-                    <span>If it is not ready, it gets edited, revised, or stopped.</span>
+                    <span>A tool sends the approved answer back to the customer in Skool.</span>
                 </div>
             </div>
         </section>
