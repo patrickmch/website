@@ -247,6 +247,61 @@
             justify-content: center;
         }
 
+        .step-1 { grid-column: 1; grid-row: 1; }
+        .step-2 { grid-column: 2; grid-row: 1; }
+        .step-3 { grid-column: 3; grid-row: 1; }
+        .step-4 { grid-column: 3; grid-row: 2; }
+        .step-5 { grid-column: 2; grid-row: 2; }
+        .step-6 { grid-column: 1; grid-row: 2; }
+
+        .flow-step::after {
+            position: absolute;
+            color: var(--copper);
+            font-family: Georgia, serif;
+            font-size: 2.2rem;
+            line-height: 1;
+            z-index: 2;
+        }
+
+        .step-1::after,
+        .step-2::after {
+            content: "→";
+            right: -27px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .step-3::after {
+            content: "↓";
+            left: 50%;
+            bottom: -32px;
+            transform: translateX(-50%);
+        }
+
+        .step-4::after,
+        .step-5::after {
+            content: "←";
+            left: -27px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .step-number {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid var(--sand);
+            color: var(--copper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
         .answer-tag {
             color: var(--copper);
             font-size: 0.76rem;
@@ -431,6 +486,8 @@
                 grid-template-rows: none;
             }
             .workflow .node { height: auto; min-height: 180px; }
+            .workflow .node { grid-column: auto; grid-row: auto; }
+            .flow-step::after { display: none; }
             .workflow .wide { grid-column: auto; }
             .nav { display: none; }
         }
@@ -501,11 +558,13 @@
         <section class="slide">
             <div class="subtitle">Spot the pieces</div>
             <div class="workflow">
-                <div class="node primary">
+                <div class="node primary flow-step step-1">
+                    <div class="step-number">1</div>
                     <strong>Customer question comes in</strong>
                     <span>The workflow gathers product facts, prior answers, tone, and instructions around it.</span>
                 </div>
-                <div class="node primary goal-node">
+                <div class="node primary goal-node flow-step step-2">
+                    <div class="step-number">2</div>
                     <strong>A response that is...</strong>
                     <div class="goal-lines">
                         <span>Accurate to product</span>
@@ -515,19 +574,23 @@
                         <span>Easy to approve/edit</span>
                     </div>
                 </div>
-                <div class="node primary">
+                <div class="node primary flow-step step-3">
+                    <div class="step-number">3</div>
                     <strong>Claude drafts</strong>
                     <span>A first-pass answer gets written against the criteria.</span>
                 </div>
-                <div class="node tool">
+                <div class="node tool flow-step step-4">
+                    <div class="step-number">4</div>
                     <strong>Humanizer checks the draft</strong>
                     <span>Stiff, generic, or obviously AI-written language gets flagged.</span>
                 </div>
-                <div class="node review">
+                <div class="node review flow-step step-5">
+                    <div class="step-number">5</div>
                     <strong>Telegram approval</strong>
                     <span>Human review: approve, edit, or reject before it reaches the customer.</span>
                 </div>
-                <div class="node tool">
+                <div class="node tool flow-step step-6">
+                    <div class="step-number">6</div>
                     <strong>Approved response posts back</strong>
                     <span>The finished answer goes back to the customer in Skool.</span>
                 </div>
@@ -537,12 +600,14 @@
         <section class="slide">
             <div class="subtitle">The answer key</div>
             <div class="workflow">
-                <div class="node primary">
+                <div class="node primary flow-step step-1">
+                    <div class="step-number">1</div>
                     <div class="answer-tag">Context</div>
                     <strong>Customer question comes in</strong>
                     <span>The workflow gathers product facts, prior answers, tone, and instructions around it.</span>
                 </div>
-                <div class="node primary goal-node">
+                <div class="node primary goal-node flow-step step-2">
+                    <div class="step-number">2</div>
                     <div class="answer-tag">Goal</div>
                     <strong>A response that is...</strong>
                     <div class="goal-lines">
@@ -553,22 +618,26 @@
                         <span>Easy to approve/edit</span>
                     </div>
                 </div>
-                <div class="node primary">
+                <div class="node primary flow-step step-3">
+                    <div class="step-number">3</div>
                     <div class="answer-tag">Model</div>
                     <strong>Claude drafts</strong>
                     <span>A first-pass answer gets written against the criteria.</span>
                 </div>
-                <div class="node tool">
+                <div class="node tool flow-step step-4">
+                    <div class="step-number">4</div>
                     <div class="answer-tag">Tool</div>
                     <strong>Humanizer checks the draft</strong>
                     <span>Stiff, generic, or obviously AI-written language gets flagged.</span>
                 </div>
-                <div class="node review">
+                <div class="node review flow-step step-5">
+                    <div class="step-number">5</div>
                     <div class="answer-tag">Human Review</div>
                     <strong>Telegram approval</strong>
                     <span>Approve, edit, or reject before it reaches the customer.</span>
                 </div>
-                <div class="node tool">
+                <div class="node tool flow-step step-6">
+                    <div class="step-number">6</div>
                     <div class="answer-tag">Tool</div>
                     <strong>Approved response posts back</strong>
                     <span>A tool sends the approved answer back to the customer in Skool.</span>
