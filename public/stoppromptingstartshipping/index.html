@@ -229,22 +229,35 @@
         .workflow {
             width: min(1180px, 100%);
             display: grid;
-            grid-template-columns: 1fr 0.12fr 1fr 0.12fr 1fr 0.12fr 1fr 0.12fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 18px 12px;
-            align-items: center;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
             margin-top: 24px;
         }
 
         .node {
-            min-height: 224px;
+            position: relative;
+            height: 258px;
             background: white;
             border: 2px solid var(--stone-dark);
             border-radius: 8px;
-            padding: 18px 18px;
+            padding: 22px 18px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+        }
+
+        .workflow .node:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -23px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--copper);
+            font-family: Georgia, serif;
+            font-size: 2rem;
+            line-height: 1;
+            z-index: 1;
         }
 
         .node.primary {
@@ -281,13 +294,6 @@
             font-size: clamp(0.95rem, 1.08vw, 1.12rem);
             line-height: 1.25;
             opacity: 0.76;
-        }
-
-        .arrow {
-            color: var(--copper);
-            font-size: 2.5rem;
-            text-align: center;
-            font-family: Georgia, serif;
         }
 
         .workflow .wide {
@@ -402,8 +408,14 @@
                 grid-template-columns: 1fr;
                 grid-template-rows: none;
             }
+            .workflow .node { height: auto; min-height: 180px; }
+            .workflow .node:not(:last-child)::after {
+                right: 50%;
+                top: auto;
+                bottom: -26px;
+                transform: translateX(50%) rotate(90deg);
+            }
             .workflow .wide { grid-column: auto; }
-            .arrow { transform: rotate(90deg); }
             .nav { display: none; }
         }
     </style>
@@ -414,7 +426,7 @@
             <div class="subtitle">Stop Prompting, Start Shipping</div>
             <h1>AI Agents 101</h1>
             <div class="accent-line"></div>
-            <p>A model is not a workflow.</p>
+            <p>Models answer questions. Workflows move work.</p>
         </section>
 
         <section class="slide">
@@ -492,25 +504,21 @@
                     <strong>Customer question in Skool</strong>
                     <span>A real customer asks for help where they already work.</span>
                 </div>
-                <div class="arrow">→</div>
                 <div class="node primary">
                     <div class="node-label">Model + Context</div>
                     <strong>Claude drafts with context</strong>
                     <span>Product behavior, codebase, customer context, tone, and instructions.</span>
                 </div>
-                <div class="arrow">→</div>
                 <div class="node tool">
                     <div class="node-label">Tool</div>
                     <strong>Humanizer checks the draft</strong>
                     <span>Cleans stiff, generic, or obviously AI-written language.</span>
                 </div>
-                <div class="arrow">→</div>
                 <div class="node review">
                     <div class="node-label">Human Review</div>
                     <strong>Telegram approval</strong>
                     <span>Approve, edit, or reject before anything reaches the customer.</span>
                 </div>
-                <div class="arrow">→</div>
                 <div class="node tool">
                     <div class="node-label">Tool</div>
                     <strong>Approved response posts back</strong>
