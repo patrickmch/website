@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agents 101 — Agentic Workflows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --evergreen: #0F3923;
+            --sand: #D9C8A9;
+            --copper: #B67A4A;
+            --stone: #F6F4F1;
+            --charcoal: #1D1D1B;
+            --stone-dark: #EDE9E3;
+            --sage: #6D856F;
+            --cream: #FFFDF8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--stone);
+            color: var(--charcoal);
+            font-family: 'DM Sans', system-ui, sans-serif;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: 0;
+        }
+
+        .deck {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 64px 96px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .subtitle {
+            color: var(--copper);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--evergreen);
+            font-size: clamp(4.6rem, 6vw, 6.6rem);
+            line-height: 1.03;
+            text-align: center;
+            max-width: 1180px;
+        }
+
+        h2 {
+            color: var(--evergreen);
+            font-size: clamp(3.4rem, 4.6vw, 5.2rem);
+            line-height: 1.08;
+            text-align: center;
+            max-width: 1120px;
+        }
+
+        p {
+            font-size: clamp(1.45rem, 2vw, 2rem);
+            line-height: 1.45;
+            text-align: center;
+            max-width: 940px;
+            color: var(--charcoal);
+            opacity: 0.88;
+        }
+
+        .accent-line {
+            width: 72px;
+            height: 4px;
+            background: var(--sand);
+            margin: 32px auto;
+            border-radius: 4px;
+        }
+
+        .two-col {
+            width: min(1120px, 100%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: stretch;
+            margin-top: 24px;
+        }
+
+        .card {
+            background: white;
+            border: 2px solid var(--stone-dark);
+            border-radius: 8px;
+            padding: 34px 38px;
+        }
+
+        .card h3 {
+            color: var(--evergreen);
+            font-size: clamp(2rem, 2.8vw, 3rem);
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .card p {
+            font-size: clamp(1.25rem, 1.65vw, 1.7rem);
+            line-height: 1.35;
+            text-align: left;
+            max-width: none;
+        }
+
+        .concept-grid {
+            width: min(1180px, 100%);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 34px;
+        }
+
+        .concept {
+            min-height: 240px;
+            background: white;
+            border: 2px solid var(--stone-dark);
+            border-radius: 8px;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .concept .label {
+            color: var(--copper);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .concept p {
+            font-size: clamp(1.05rem, 1.35vw, 1.4rem);
+            line-height: 1.32;
+            text-align: left;
+            max-width: none;
+            opacity: 0.86;
+        }
+
+        .problem-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            width: min(1120px, 100%);
+            margin-top: 34px;
+        }
+
+        .problem-step {
+            background: white;
+            border: 2px solid var(--stone-dark);
+            border-radius: 8px;
+            min-height: 170px;
+            padding: 28px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--charcoal);
+            font-size: clamp(1.25rem, 1.6vw, 1.65rem);
+            line-height: 1.24;
+            font-weight: 600;
+        }
+
+        .goal-box {
+            width: min(1060px, 100%);
+            background: white;
+            border: 2px solid var(--stone-dark);
+            border-radius: 8px;
+            padding: 38px 46px;
+            margin-top: 28px;
+        }
+
+        .goal-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 28px;
+            list-style: none;
+        }
+
+        .goal-list li {
+            position: relative;
+            padding-left: 28px;
+            font-size: clamp(1.45rem, 1.85vw, 2rem);
+            line-height: 1.26;
+        }
+
+        .goal-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 10px;
+            height: 10px;
+            background: var(--copper);
+            border-radius: 50%;
+        }
+
+        .workflow {
+            width: min(1180px, 100%);
+            display: grid;
+            grid-template-columns: 1fr 0.12fr 1fr 0.12fr 1fr 0.12fr 1fr 0.12fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 18px 12px;
+            align-items: center;
+            margin-top: 24px;
+        }
+
+        .node {
+            min-height: 224px;
+            background: white;
+            border: 2px solid var(--stone-dark);
+            border-radius: 8px;
+            padding: 18px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .node.primary {
+            border-color: var(--evergreen);
+        }
+
+        .node.tool {
+            border-color: var(--copper);
+        }
+
+        .node.review {
+            border-color: var(--sage);
+        }
+
+        .node .node-label {
+            color: var(--copper);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .node strong {
+            color: var(--evergreen);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.55rem, 2vw, 2.05rem);
+            line-height: 1.02;
+            font-weight: 600;
+        }
+
+        .node span {
+            margin-top: 9px;
+            font-size: clamp(0.95rem, 1.08vw, 1.12rem);
+            line-height: 1.25;
+            opacity: 0.76;
+        }
+
+        .arrow {
+            color: var(--copper);
+            font-size: 2.5rem;
+            text-align: center;
+            font-family: Georgia, serif;
+        }
+
+        .workflow .wide {
+            grid-column: 1 / 10;
+            min-height: 96px;
+            background: var(--cream);
+        }
+
+        .workflow .wide strong {
+            font-size: clamp(1.55rem, 2vw, 2.1rem);
+        }
+
+        .workflow .wide span {
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+        }
+
+        .map-grid {
+            width: min(1120px, 100%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .map-row {
+            background: white;
+            border: 2px solid var(--stone-dark);
+            border-radius: 8px;
+            padding: 22px 26px;
+        }
+
+        .map-row .term {
+            display: block;
+            color: var(--copper);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .map-row .value {
+            color: var(--charcoal);
+            font-size: clamp(1.25rem, 1.55vw, 1.6rem);
+            line-height: 1.25;
+        }
+
+        .takeaway {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: var(--evergreen);
+            font-size: clamp(3.2rem, 4.7vw, 5.3rem);
+            line-height: 1.08;
+            text-align: center;
+            max-width: 1100px;
+            font-weight: 600;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 32px;
+            right: 40px;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .nav button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--sand);
+            background: white;
+            color: var(--charcoal);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav button:hover {
+            border-color: var(--copper);
+            background: var(--stone);
+        }
+
+        .progress {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            background: var(--copper);
+            transition: width 0.35s ease;
+            z-index: 100;
+        }
+
+        .counter {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            color: var(--sand);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .slide { padding: 44px 28px; }
+            .two-col, .map-grid, .goal-list { grid-template-columns: 1fr; }
+            .concept-grid { grid-template-columns: 1fr; }
+            .problem-list { grid-template-columns: 1fr 1fr; }
+            .workflow {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+            }
+            .workflow .wide { grid-column: auto; }
+            .arrow { transform: rotate(90deg); }
+            .nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck">
+        <section class="slide active">
+            <div class="subtitle">Stop Prompting, Start Shipping</div>
+            <h1>AI Agents 101</h1>
+            <div class="accent-line"></div>
+            <p>A model is not a workflow.</p>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">The shift</div>
+            <h2>From asking AI for an answer to putting AI inside a business process.</h2>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">Two useful terms</div>
+            <div class="two-col">
+                <div class="card">
+                    <h3>Agent</h3>
+                    <p>An AI system that can pursue a task by deciding some of what to do next.</p>
+                </div>
+                <div class="card">
+                    <h3>Agentic workflow</h3>
+                    <p>A repeatable business process where AI handles parts of the work inside a controlled structure.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">The five pieces</div>
+            <h2>What makes a workflow agentic?</h2>
+            <div class="concept-grid">
+                <div class="concept">
+                    <div class="label">Model</div>
+                    <p>The reasoning engine. Claude, ChatGPT, Gemini, and the systems built on top of them.</p>
+                </div>
+                <div class="concept">
+                    <div class="label">Context</div>
+                    <p>Everything the model sees: the prompt, product facts, code, docs, history, tone, and instructions.</p>
+                </div>
+                <div class="concept">
+                    <div class="label">Tools</div>
+                    <p>Things the workflow can use: search, connectors, messaging, posting, cleanup, and formatting.</p>
+                </div>
+                <div class="concept">
+                    <div class="label">Goal</div>
+                    <p>What good looks like. The standard the workflow can check against.</p>
+                </div>
+                <div class="concept">
+                    <div class="label">Human Review</div>
+                    <p>Where judgment stays with a person before high-stakes action happens.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">Case study</div>
+            <h2>MTRO customer success</h2>
+            <div class="problem-list">
+                <div class="problem-step">Customer asks a product question</div>
+                <div class="problem-step">Founder has to notice it</div>
+                <div class="problem-step">Someone researches the answer</div>
+                <div class="problem-step">A careful response gets posted manually</div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">The goal</div>
+            <h2>A response that is...</h2>
+            <div class="goal-box">
+                <ul class="goal-list">
+                    <li>Accurate to the current product</li>
+                    <li>Specific to the customer’s question</li>
+                    <li>Clear and human-sounding</li>
+                    <li>Careful about promises</li>
+                    <li>Easy for a human to approve or edit quickly</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">The workflow</div>
+            <div class="workflow">
+                <div class="node primary">
+                    <div class="node-label">Input</div>
+                    <strong>Customer question in Skool</strong>
+                    <span>A real customer asks for help where they already work.</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="node primary">
+                    <div class="node-label">Model + Context</div>
+                    <strong>Claude drafts with context</strong>
+                    <span>Product behavior, codebase, customer context, tone, and instructions.</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="node tool">
+                    <div class="node-label">Tool</div>
+                    <strong>Humanizer checks the draft</strong>
+                    <span>Cleans stiff, generic, or obviously AI-written language.</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="node review">
+                    <div class="node-label">Human Review</div>
+                    <strong>Telegram approval</strong>
+                    <span>Approve, edit, or reject before anything reaches the customer.</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="node tool">
+                    <div class="node-label">Tool</div>
+                    <strong>Approved response posts back</strong>
+                    <span>If it is not ready, it gets edited, revised, or stopped.</span>
+                </div>
+
+                <div class="node wide">
+                    <div class="node-label">Why this matters</div>
+                    <strong>The goal is not to remove the human.</strong>
+                    <span>It is to remove the blank page, the searching, and the coordination so the human can focus on judgment.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">Mapped to the case study</div>
+            <div class="map-grid">
+                <div class="map-row">
+                    <span class="term">Model</span>
+                    <span class="value">Claude drafts and reasons through the customer question.</span>
+                </div>
+                <div class="map-row">
+                    <span class="term">Context</span>
+                    <span class="value">Customer question, product behavior, codebase, prior answers, tone, and instructions.</span>
+                </div>
+                <div class="map-row">
+                    <span class="term">Tools</span>
+                    <span class="value">Skool connector, Telegram approval, humanizer, and internal search.</span>
+                </div>
+                <div class="map-row">
+                    <span class="term">Goal</span>
+                    <span class="value">Accurate, specific, human-sounding, safe to approve quickly.</span>
+                </div>
+                <div class="map-row">
+                    <span class="term">Human Review</span>
+                    <span class="value">Approve, edit, or reject before a high-value customer sees it.</span>
+                </div>
+                <div class="map-row">
+                    <span class="term">Leverage</span>
+                    <span class="value">The founder spends less time searching and more time exercising judgment.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="subtitle">The takeaway</div>
+            <div class="takeaway">The model is only one piece. The workflow is where the leverage is.</div>
+            <div class="accent-line"></div>
+            <p>Chris is going to go deeper on the tools and connectors layer that makes this possible.</p>
+        </section>
+    </div>
+
+    <div class="nav">
+        <button onclick="prev()" aria-label="Previous">&#8592;</button>
+        <button onclick="next()" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter"></div>
+
+    <script>
+        const slides = Array.from(document.querySelectorAll('.slide'));
+        let current = 0;
+
+        function show(index, updateHash = true) {
+            if (index < 0 || index >= slides.length) return;
+            slides[current].classList.remove('active');
+            current = index;
+            slides[current].classList.add('active');
+            document.getElementById('progress').style.width =
+                ((current + 1) / slides.length * 100) + '%';
+            document.getElementById('counter').textContent =
+                (current + 1) + ' / ' + slides.length;
+            if (updateHash) history.replaceState(null, '', '#' + (current + 1));
+        }
+
+        function next() { show(current + 1); }
+        function prev() { show(current - 1); }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                event.preventDefault();
+                next();
+            }
+            if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                prev();
+            }
+        });
+
+        let touchStartX = 0;
+        document.addEventListener('touchstart', event => {
+            touchStartX = event.touches[0].clientX;
+        });
+        document.addEventListener('touchend', event => {
+            const diff = event.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(diff) > 50) diff > 0 ? prev() : next();
+        });
+
+        const requestedSlide = parseInt(location.hash.replace('#', ''), 10);
+        show(Number.isFinite(requestedSlide) ? requestedSlide - 1 : 0, false);
+    </script>
+</body>
+</html>
