@@ -102,6 +102,22 @@
             border-radius: 4px;
         }
 
+        .byline {
+            color: var(--copper);
+            font-size: clamp(1.05rem, 1.3vw, 1.35rem);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        .positioning {
+            font-size: clamp(1.35rem, 1.75vw, 1.85rem);
+            line-height: 1.38;
+            max-width: 900px;
+            margin-top: 18px;
+        }
+
         .two-col {
             width: min(1120px, 100%);
             display: grid;
@@ -417,7 +433,8 @@
             <div class="subtitle">Stop Prompting, Start Shipping</div>
             <h1>AI Agents 101</h1>
             <div class="accent-line"></div>
-            <p>Models answer questions. Workflows move work.</p>
+            <p class="byline">Presented by Patrick McHeyser</p>
+            <p class="positioning">Helping founders north of $1M ARR or funding grow without hiring by turning critical recurring work into AI-run systems.</p>
         </section>
 
         <section class="slide">
