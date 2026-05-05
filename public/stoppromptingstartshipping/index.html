@@ -458,22 +458,22 @@
                 </div>
                 <div class="concept">
                     <div class="label">Context</div>
-                    <p>Everything the model sees: the prompt, product facts, code, docs, history, tone, and instructions.</p>
+                    <p>The information packaged for the model before it responds: question, product facts, docs, code, history, tone, and instructions.</p>
                 </div>
                 <div class="concept">
                     <div class="label">Tools</div>
-                    <p>Things the workflow can use: search, connectors, messaging, posting, cleanup, and formatting.</p>
+                    <p>External actions the workflow can call: search records, send messages, run checks, format text, or post back.</p>
                 </div>
                 <div class="concept">
                     <div class="label">Goal</div>
-                    <p>What good looks like. The standard the workflow can check against.</p>
+                    <p>What done looks like. The standard the workflow can check against.</p>
                 </div>
             </div>
         </section>
 
         <section class="slide">
             <div class="subtitle">Case study</div>
-            <h2>MTRO customer success</h2>
+            <h2>Customer success case study</h2>
             <div class="problem-list">
                 <div class="problem-step">Customer asks a product question</div>
                 <div class="problem-step">Founder has to notice it</div>
@@ -500,14 +500,14 @@
             <div class="subtitle">The workflow</div>
             <div class="workflow">
                 <div class="node primary">
-                    <div class="node-label">Input</div>
-                    <strong>Customer question in Skool</strong>
-                    <span>A real customer asks for help where they already work.</span>
+                    <div class="node-label">Context</div>
+                    <strong>Question + product context</strong>
+                    <span>Customer question, product behavior, codebase, prior answers, tone, and instructions.</span>
                 </div>
                 <div class="node primary">
-                    <div class="node-label">Model + Context</div>
-                    <strong>Claude drafts with context</strong>
-                    <span>Product behavior, codebase, customer context, tone, and instructions.</span>
+                    <div class="node-label">Model</div>
+                    <strong>Claude drafts a response</strong>
+                    <span>It uses the context to produce a first pass against the goal.</span>
                 </div>
                 <div class="node tool">
                     <div class="node-label">Tool</div>
