@@ -227,75 +227,29 @@
         }
 
         .workflow {
-            width: min(1180px, 100%);
+            width: min(1120px, 100%);
             display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px 28px;
             align-items: stretch;
-            margin-top: 18px;
-        }
-
-        .workflow-goal {
-            width: min(1080px, 100%);
-            background: white;
-            border: 2px solid var(--stone-dark);
-            border-radius: 8px;
-            padding: 18px 24px;
             margin-top: 24px;
-        }
-
-        .workflow-goal strong {
-            display: block;
-            color: var(--evergreen);
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(1.7rem, 2.2vw, 2.35rem);
-            line-height: 1.05;
-            margin-bottom: 12px;
-        }
-
-        .goal-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .goal-chips span {
-            background: var(--stone);
-            border: 1px solid var(--stone-dark);
-            border-radius: 999px;
-            padding: 7px 12px;
-            font-size: clamp(0.92rem, 1.02vw, 1.05rem);
-            line-height: 1.15;
         }
 
         .node {
             position: relative;
-            height: 224px;
+            height: 260px;
             background: white;
             border: 2px solid var(--stone-dark);
             border-radius: 8px;
-            padding: 22px 18px;
+            padding: 22px 24px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .workflow .node:not(:last-child)::after {
-            content: "→";
-            position: absolute;
-            right: -23px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--copper);
-            font-family: Georgia, serif;
-            font-size: 2rem;
-            line-height: 1;
-            z-index: 1;
-        }
-
         .answer-tag {
             color: var(--copper);
-            font-size: 0.82rem;
+            font-size: 0.76rem;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -317,16 +271,51 @@
         .node strong {
             color: var(--evergreen);
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(1.55rem, 2vw, 2.05rem);
+            font-size: clamp(1.45rem, 1.9vw, 1.95rem);
             line-height: 1.02;
             font-weight: 600;
         }
 
         .node span {
             margin-top: 9px;
-            font-size: clamp(0.95rem, 1.08vw, 1.12rem);
+            font-size: clamp(0.92rem, 1.04vw, 1.08rem);
             line-height: 1.25;
             opacity: 0.76;
+        }
+
+        .goal-lines {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 9px 14px;
+            margin-top: 14px;
+        }
+
+        .goal-lines span {
+            position: relative;
+            padding-left: 15px;
+            font-size: clamp(0.9rem, 0.98vw, 1.02rem);
+            line-height: 1.18;
+            opacity: 0.82;
+        }
+
+        .goal-lines span::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.42em;
+            width: 6px;
+            height: 6px;
+            background: var(--copper);
+            border-radius: 50%;
+        }
+
+        .node.goal-node {
+            justify-content: flex-start;
+        }
+
+        .node.goal-node strong {
+            font-size: clamp(1.3rem, 1.72vw, 1.8rem);
+            margin-bottom: 2px;
         }
 
         .workflow .wide {
@@ -442,12 +431,6 @@
                 grid-template-rows: none;
             }
             .workflow .node { height: auto; min-height: 180px; }
-            .workflow .node:not(:last-child)::after {
-                right: 50%;
-                top: auto;
-                bottom: -26px;
-                transform: translateX(50%) rotate(90deg);
-            }
             .workflow .wide { grid-column: auto; }
             .nav { display: none; }
         }
@@ -517,28 +500,28 @@
 
         <section class="slide">
             <div class="subtitle">Spot the pieces</div>
-            <div class="workflow-goal">
-                <strong>A response that is...</strong>
-                <div class="goal-chips">
-                    <span>Accurate to the current product</span>
-                    <span>Specific to the customer’s question</span>
-                    <span>Clear and human-sounding</span>
-                    <span>Careful about promises</span>
-                    <span>Easy to approve or edit quickly</span>
-                </div>
-            </div>
             <div class="workflow">
                 <div class="node primary">
                     <strong>Customer question comes in</strong>
-                    <span>A customer asks for help in Skool, which triggers the workflow.</span>
+                    <span>The workflow gathers product facts, prior answers, tone, and instructions around it.</span>
+                </div>
+                <div class="node primary goal-node">
+                    <strong>A response that is...</strong>
+                    <div class="goal-lines">
+                        <span>Accurate to product</span>
+                        <span>Specific to question</span>
+                        <span>Human-sounding</span>
+                        <span>Careful with promises</span>
+                        <span>Easy to approve/edit</span>
+                    </div>
                 </div>
                 <div class="node primary">
-                    <strong>Claude drafts with context</strong>
-                    <span>Product facts, codebase, prior answers, tone, and instructions shape the response.</span>
+                    <strong>Claude drafts</strong>
+                    <span>A first-pass answer gets written against the criteria.</span>
                 </div>
                 <div class="node tool">
                     <strong>Humanizer checks the draft</strong>
-                    <span>A tool catches stiff, generic, or obviously AI-written language.</span>
+                    <span>Stiff, generic, or obviously AI-written language gets flagged.</span>
                 </div>
                 <div class="node review">
                     <strong>Telegram approval</strong>
@@ -546,39 +529,39 @@
                 </div>
                 <div class="node tool">
                     <strong>Approved response posts back</strong>
-                    <span>A tool sends the approved answer back to the customer in Skool.</span>
+                    <span>The finished answer goes back to the customer in Skool.</span>
                 </div>
             </div>
         </section>
 
         <section class="slide">
             <div class="subtitle">The answer key</div>
-            <div class="workflow-goal">
-                <div class="answer-tag">Goal</div>
-                <strong>A response that is...</strong>
-                <div class="goal-chips">
-                    <span>Accurate to the current product</span>
-                    <span>Specific to the customer’s question</span>
-                    <span>Clear and human-sounding</span>
-                    <span>Careful about promises</span>
-                    <span>Easy to approve or edit quickly</span>
-                </div>
-            </div>
             <div class="workflow">
                 <div class="node primary">
-                    <div class="answer-tag">Input / Trigger</div>
+                    <div class="answer-tag">Context</div>
                     <strong>Customer question comes in</strong>
-                    <span>A customer asks for help in Skool, which triggers the workflow.</span>
+                    <span>The workflow gathers product facts, prior answers, tone, and instructions around it.</span>
+                </div>
+                <div class="node primary goal-node">
+                    <div class="answer-tag">Goal</div>
+                    <strong>A response that is...</strong>
+                    <div class="goal-lines">
+                        <span>Accurate to product</span>
+                        <span>Specific to question</span>
+                        <span>Human-sounding</span>
+                        <span>Careful with promises</span>
+                        <span>Easy to approve/edit</span>
+                    </div>
                 </div>
                 <div class="node primary">
-                    <div class="answer-tag">Model + Context</div>
-                    <strong>Claude drafts with context</strong>
-                    <span>Product facts, codebase, prior answers, tone, and instructions shape the response.</span>
+                    <div class="answer-tag">Model</div>
+                    <strong>Claude drafts</strong>
+                    <span>A first-pass answer gets written against the criteria.</span>
                 </div>
                 <div class="node tool">
                     <div class="answer-tag">Tool</div>
                     <strong>Humanizer checks the draft</strong>
-                    <span>A tool catches stiff, generic, or obviously AI-written language.</span>
+                    <span>Stiff, generic, or obviously AI-written language gets flagged.</span>
                 </div>
                 <div class="node review">
                     <div class="answer-tag">Human Review</div>
