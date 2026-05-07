@@ -88,9 +88,9 @@ const ApplyPage: React.FC = () => {
     <div className="bg-stone" ref={scrollRef}>
       {/* Hero */}
       <section className="pt-20 pb-16 md:pt-32 md:pb-24 max-w-7xl mx-auto px-6 text-center grain relative">
-        <h1 className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-serif text-evergreen mb-6 leading-tight">Let's figure out where your operation is stuck.</h1>
+        <h1 className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-serif text-evergreen mb-6 leading-tight">Let's find the work you should not have to keep carrying.</h1>
         <p className="animate-on-scroll delay-1 text-xl md:text-2xl text-charcoal/50 max-w-3xl mx-auto font-light leading-relaxed">
-          30 minutes. No pitch. I'll ask a few sharp questions, you'll tell me what's going on, and we'll figure out if I can help.
+          30 minutes. No pitch. I'll ask where the founder is still in the loop, what keeps repeating, and whether there is a real system worth building.
         </p>
       </section>
 
@@ -100,18 +100,18 @@ const ApplyPage: React.FC = () => {
           {[
             {
               icon: <MessageSquare className="text-copper" size={28} />,
-              title: "You tell me what's broken.",
-              desc: "Where the friction is, what you've tried, what's getting in the way."
+              title: "You tell me what's still on your plate.",
+              desc: "Where the work repeats, where the team waits on you, and what you have already tried."
             },
             {
               icon: <Shield className="text-copper" size={28} />,
-              title: "I'll be straight with you.",
-              desc: "If I'm not the right person for this, I'll say so. And I'll point you toward who is."
+              title: "I'll look for leverage.",
+              desc: "If the work is valuable, recurring, and systematizable, we will see it quickly. If it is not, I will say so."
             },
             {
               icon: <Heart className="text-copper" size={28} />,
-              title: "If it's a fit, we move.",
-              desc: "Clear next steps, no runaround. I work fast once I know the problem."
+              title: "If it's a fit, we start small.",
+              desc: "Clear next steps, no runaround. I get inside the workflow, run the first version, then build what repeats."
             }
           ].map((item, i) => (
             <div key={i} className={`animate-on-scroll delay-${i + 1} bg-white p-10 rounded-[2rem] border border-sand/20 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
@@ -134,13 +134,13 @@ const ApplyPage: React.FC = () => {
 
           <div className="relative">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif text-sand mb-3">Request a Strategy Call</h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-sand mb-3">Request a Fit Call</h2>
               <p className="text-stone/50">Takes about 60 seconds.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-10">
               {/* Hidden field for form identification */}
-              <input type="hidden" name="_subject" value="New Consultation Request from mcheyser.com" />
+              <input type="hidden" name="_subject" value="New Fit Call Request from mcheyser.com" />
 
               {/* Name & Email Row */}
               <div className="grid md:grid-cols-2 gap-8">
@@ -191,13 +191,13 @@ const ApplyPage: React.FC = () => {
 
               {/* Biggest Headache */}
               <div className="relative">
-                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">What's the biggest operational headache you're dealing with right now?</label>
+                <label className="block text-xs font-semibold uppercase tracking-[0.15em] text-sand/60 mb-3">What critical recurring work is still too dependent on you or your senior team?</label>
                 <textarea
                   required
                   name="challenge"
                   rows={2}
                   className="w-full form-input py-4 text-lg text-stone resize-none placeholder:text-stone/30 outline-none"
-                  placeholder="e.g., We're spending 20 hours a week on manual data entry that should be automated..."
+                  placeholder="e.g., Customer follow-up, support, reporting, sales ops, QA, internal coordination..."
                 />
               </div>
 
@@ -209,7 +209,7 @@ const ApplyPage: React.FC = () => {
                   type="text"
                   name="company_type"
                   className="w-full form-input py-4 text-lg text-stone placeholder:text-stone/30 outline-none"
-                  placeholder="e.g., B2B SaaS, healthcare practice, e-commerce..."
+                  placeholder="e.g., B2B SaaS, funded startup, services business, marketplace..."
                 />
               </div>
 
@@ -245,7 +245,7 @@ const ApplyPage: React.FC = () => {
                     </>
                   ) : (
                     <>
-                      Request a Call
+                      Request a Fit Call
                       <ArrowUpRight size={20} />
                     </>
                   )}
@@ -268,7 +268,7 @@ const ApplyPage: React.FC = () => {
         <div className="max-w-2xl mx-auto px-6 relative">
           <h2 className="animate-on-scroll text-3xl md:text-4xl font-serif text-sand mb-6">I take the businesses I work with seriously.</h2>
           <p className="animate-on-scroll delay-1 text-lg text-stone/60 mb-12 leading-relaxed">
-            Your operation matters. Your customers matter. If we work together, I'm not phoning it in - I'm embedded in the work, building real solutions, and staying until they run. That's the only way I know how to do this.
+            Your operation matters. Your customers matter. If we work together, I'm not hovering above the business - I'm inside the work, building real solutions, and staying until they run clean. That's the only way I know how to do this.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 600, behavior: 'smooth' })}

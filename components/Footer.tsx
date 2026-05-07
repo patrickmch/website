@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
         {/* CTA Section */}
         <div className="text-center mb-20 border-b border-white/5 pb-20">
           <h2 className="text-3xl md:text-5xl font-serif mb-8 text-sand max-w-2xl mx-auto leading-tight">
-            Your business is growing but your operations aren't keeping up. Let's fix that with AI.
+            Your business is growing, but too much still runs through you. Let's turn that work into systems.
           </h2>
           <p className="text-xl text-stone/50 mb-10 font-light">
-            One conversation. No pitch. Just an honest look at what's manual, what's messy, and what AI can take off your plate.
+            One conversation. No pitch. Just an honest look at what's recurring, what's valuable, and what should stop living on the founder's plate.
           </p>
           <Link to="/apply" className="btn-primary bg-copper text-stone px-12 py-5 rounded-full text-xl font-semibold inline-flex items-center gap-2 hover:bg-sand hover:text-charcoal">
             Apply for a Consultation
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               mcheyser<span className="text-copper">.</span>
             </h3>
             <p className="text-stone/50 max-w-md text-lg font-light leading-relaxed">
-              AI implementation for growing businesses. I build context layers, custom agents, and the infrastructure that makes AI actually useful.
+              Technical Chief of Staff for founders who want to grow without hiring. I turn critical recurring work into AI-assisted systems your team can run.
             </p>
           </div>
 
