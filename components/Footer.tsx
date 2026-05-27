@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               mcheyser<span className="text-copper">.</span>
             </h3>
             <p className="text-stone/50 max-w-md text-lg font-light leading-relaxed">
-              Technical Chief of Staff for founders who want to grow without hiring. I turn critical recurring work into AI-assisted systems your team can run.
+              AI systems and technical strategy for founders who want to grow without hiring. I turn critical recurring work into AI-assisted systems your team can run.
             </p>
           </div>
 

@@ -54,10 +54,10 @@ const HomePage: React.FC = () => {
           <div className="max-w-2xl">
             <div className="animate-on-scroll inline-flex items-center gap-2 px-4 py-1.5 bg-evergreen/5 rounded-full text-evergreen text-xs font-semibold uppercase tracking-widest mb-6 border border-evergreen/10">
               <Sparkles size={14} className="text-copper" />
-              Technical Chief of Staff + AI Systems
+              AI Systems + Technical Strategy
             </div>
             <h1 className="animate-on-scroll delay-1 text-5xl md:text-6xl lg:text-7xl font-serif text-evergreen leading-[1.05] mb-8">
-              Technical Chief of Staff for founders who want to grow without hiring.
+              I help founder-led companies turn bottlenecks into AI-powered systems.
             </h1>
             <p className="animate-on-scroll delay-2 text-xl md:text-2xl text-charcoal/70 font-light leading-relaxed mb-10">
               I embed inside founder-led companies, take critical recurring work off the founder's plate, and turn it into AI-assisted systems your team can run.
@@ -115,7 +115,7 @@ const HomePage: React.FC = () => {
               <p className="animate-on-scroll delay-3">You need someone who can get inside the work, run the first version, and build the system that removes it from your plate.</p>
             </div>
             <Link to="/apply" className="animate-on-scroll delay-4 inline-flex items-center gap-3 mt-12 text-copper font-semibold text-xl hover:text-sand transition-colors group">
-              You need a technical Chief of Staff
+              You need someone who can build the system
               <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
@@ -125,7 +125,7 @@ const HomePage: React.FC = () => {
       {/* 3. WHAT I ACTUALLY DO */}
       <section id="services" className="py-24 md:py-32 bg-stone relative grain">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="animate-on-scroll text-4xl md:text-6xl font-serif text-evergreen mb-8">Most fractional Chiefs of Staff help you manage the work. I help you remove, systematize, and automate it.</h2>
+          <h2 className="animate-on-scroll text-4xl md:text-6xl font-serif text-evergreen mb-8">I find the work that keeps running through you. Then I remove, systematize, and automate it.</h2>
           <p className="animate-on-scroll delay-1 text-xl text-charcoal/60 max-w-3xl mx-auto mb-16 leading-relaxed">
             The work starts inside the business, where the real context lives.
           </p>
@@ -313,16 +313,14 @@ const HomePage: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div className="space-y-8">
               <h2 className="animate-on-scroll text-4xl md:text-5xl lg:text-6xl font-serif text-evergreen leading-tight">
-                I learned to lead in the <span className="italic">backcountry.</span> Then I learned to build in code. Now I work as a technical Chief of Staff.
+                I learned to lead in the <span className="italic">backcountry.</span> Then I learned to build in code. Now I help companies turn operational bottlenecks into AI-powered systems.
               </h2>
               <div className="space-y-6 text-lg text-charcoal/70 font-light leading-relaxed">
-                <p className="animate-on-scroll delay-1">For seven years, I ran leadership programs for <span className="font-medium text-evergreen">Fortune 500 executives and military special operations teams</span> at NOLS - the National Outdoor Leadership School. Not team-building retreats. Real expeditions where groups had to function under pressure, make decisions with incomplete information, and trust each other when it mattered.</p>
-                <p className="animate-on-scroll delay-2">That's where I learned how people actually work - not the org chart version, but the real version. How to read a room. How to get a stuck group moving. How to build trust fast.</p>
-                <p className="animate-on-scroll delay-3">Then I spent years as a software engineer, building CRM systems, workflow tools, and the kind of internal software that either makes a company run smoothly or drives everyone crazy.</p>
-                <p className="animate-on-scroll delay-4">Now I combine both as a technical Chief of Staff for founders who need more leverage. I get inside messy workflows, run the work, and build the AI-assisted systems that make the work repeatable.</p>
-                <p className="animate-on-scroll delay-5">I've built <span className="font-medium text-evergreen">automated QA systems, customer success workflows that draft responses from product context, invoicing systems that track work across tools, and go-to-market workflows</span> that keep research and follow-up moving.</p>
+                <p className="animate-on-scroll delay-1">I spent seven years at NOLS running international leadership programs for <span className="font-medium text-evergreen">Fortune 500 execs, military special ops teams, and Wharton MBAs</span>. I coached 300+ leaders across 25+ expeditions where people had to make decisions under pressure with incomplete information. That's where I learned how people actually work.</p>
+                <p className="animate-on-scroll delay-2">I taught myself to code on nights and weekends because I kept seeing problems I knew I could solve, and I went from customer success to senior software engineer.</p>
+                <p className="animate-on-scroll delay-3">I've driven <span className="font-medium text-evergreen">52% revenue growth in six months</span> for a client, built systems that run a rental portfolio at 95%+ occupancy on near-autopilot, designed go-to-market motions reaching 500+ executives, and grew engagement 3x in a 180k-person community within 60 days.</p>
+                <p className="animate-on-scroll delay-4">I get inside the work, run it myself, build the system that removes it from the founder's plate, and then turn what repeats into AI-powered infrastructure the team can run going forward.</p>
                 <p className="animate-on-scroll text-charcoal/50">Based in Colorado. When I'm not working: climbing, skiing, running in the mountains.</p>
-                <p className="animate-on-scroll text-xl font-medium text-evergreen">I help founders grow with systems before they add headcount.</p>
               </div>
               <Link to="/apply" className="animate-on-scroll btn-primary inline-flex items-center gap-2 bg-evergreen text-stone px-10 py-4 rounded-full font-semibold">
                 Apply for a Consultation
