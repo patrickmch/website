@@ -38,9 +38,10 @@ vite.config.ts     — Vite configuration
 
 ## Deployment
 
-- **Domain**: mcheyser.com
-- **No deployment config exists.** No Railway/Vercel/Netlify/Docker files. Has a `dist/` build output. Needs a deployment story.
+- **Domain**: mcheyser.com — DNS at Namecheap (NS `dns1/dns2.registrar-servers.com`), apex → Railway.
+- **Host**: live on Railway (`server: railway-hikari`). One service serves the static build; no built-in path routing to other services.
 - Git remote: `patrickmch/website`
+- Sibling deliverables host: `content.mcheyser.com` (separate Railway project `mcheyser-content`) serves PIN-gated client deliverables at paths, e.g. `/psyche`.
 
 ## Env Vars
 
