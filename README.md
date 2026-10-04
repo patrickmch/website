@@ -25,6 +25,15 @@ MODE=preview npm run screenshots       # the production build
 
 Needs Playwright with Chromium. If Playwright is installed globally, point at it with `PLAYWRIGHT_PATH=/path/to/node_modules/playwright`.
 
+## Adversarial review by outside models
+
+```bash
+TILES=1 npm run screenshots          # page tiles the models can read
+GEMINI_API_KEY=... OPENAI_API_KEY=... XAI_API_KEY=... npm run review
+```
+
+Each reply lands in `review-out/<provider>.md`. The Codex CLI is used automatically when it is signed in (`codex login --device-auth` works without a browser) and no `OPENAI_API_KEY` is set. With no provider at all, `EMIT=1 npm run review` writes the prompt, the packet, and the images to `review-out/packet` for pasting into a chat interface. In a cloud environment, the hosts `api.openai.com`, `auth.openai.com`, `chatgpt.com`, and `api.x.ai` must be on the network allowlist.
+
 ## Environment variables
 
 The contact form sends through EmailJS. Set these at build time:

@@ -6,6 +6,9 @@
  *   GEMINI_API_KEY  -> Google Gemini   (GEMINI_MODEL, default gemini-2.5-pro)
  *   OPENAI_API_KEY  -> OpenAI          (OPENAI_MODEL, default gpt-5)
  *   XAI_API_KEY     -> xAI Grok        (XAI_MODEL, default grok-4)
+ *   codex CLI, signed in (`codex login` or `codex login --device-auth` with a
+ *   ChatGPT subscription) -> OpenAI through Codex (CODEX_MODEL optional).
+ *   The codex provider is skipped when OPENAI_API_KEY is set, to avoid two OpenAI reviews.
  * Replies are written to OUT (default ./review-out) as <provider>.md.
  *
  * Usage:
@@ -18,12 +21,14 @@
  *      so they can be pasted into a chat interface by hand).
  */
 import { readFile, readdir, writeFile, mkdir, copyFile } from 'node:fs/promises';
+import { spawn, spawnSync } from 'node:child_process';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 
 const ROOT = process.cwd();
 const SCREENSHOTS = process.env.SCREENSHOTS || 'screenshots';
 const OUT = process.env.OUT || 'review-out';
-const ONLY = (process.env.ONLY || 'gemini,openai,xai').split(',').map((s) => s.trim());
+const ONLY = (process.env.ONLY || 'gemini,openai,xai,codex').split(',').map((s) => s.trim());
 const DRY_RUN = process.env.DRY_RUN === '1';
 const EMIT = process.env.EMIT === '1';
 
@@ -228,10 +233,79 @@ async function callXai(packet) {
   return { model, text: json.choices?.[0]?.message?.content || '' };
 }
 
+function codexSignedIn() {
+  const status = spawnSync('codex', ['login', 'status'], { encoding: 'utf8' });
+  if (status.error || status.status !== 0) return false;
+  return !/not logged in/i.test(`${status.stdout}\n${status.stderr}`);
+}
+
+async function callCodex(packet) {
+  const model = process.env.CODEX_MODEL || '(codex default)';
+  const tilesDir = path.resolve(ROOT, SCREENSHOTS, 'tiles');
+  const imageArgs = packet.images.flatMap((image) => [
+    '-i',
+    image.name.startsWith('og.png') ? path.join(ROOT, 'public/og.png') : path.join(tilesDir, image.name),
+  ]);
+  const promptFile = path.join(tmpdir(), `mcheyser-review-prompt-${Date.now()}.md`);
+  await writeFile(promptFile, `${BRIEF}\n\n${packet.text}${imageIntro(packet.images)}`);
+  const outFile = path.join(OUT, 'codex.last-message.md');
+  const args = [
+    'exec',
+    '--skip-git-repo-check',
+    '--ephemeral',
+    '-s',
+    'read-only',
+    '-C',
+    ROOT,
+    '-o',
+    outFile,
+    ...(process.env.CODEX_MODEL ? ['-m', process.env.CODEX_MODEL] : []),
+    ...imageArgs,
+    '-',
+  ];
+  const text = await new Promise((resolve, reject) => {
+    const child = spawn('codex', args, { stdio: ['pipe', 'pipe', 'pipe'] });
+    let stderr = '';
+    child.stderr.on('data', (chunk) => {
+      stderr += chunk;
+    });
+    child.stdout.on('data', () => undefined);
+    const timer = setTimeout(() => {
+      child.kill();
+      reject(new Error('codex timed out after 20 minutes'));
+    }, 20 * 60 * 1000);
+    child.on('error', (error) => {
+      clearTimeout(timer);
+      reject(error);
+    });
+    child.on('close', async (code) => {
+      clearTimeout(timer);
+      if (code !== 0) {
+        reject(new Error(`codex exited with ${code}: ${stderr.slice(-800)}`));
+        return;
+      }
+      try {
+        resolve(await readFile(outFile, 'utf8'));
+      } catch (error) {
+        reject(error);
+      }
+    });
+    readFile(promptFile).then((prompt) => child.stdin.end(prompt));
+  });
+  return { model, text };
+}
+
 const providers = [
   { id: 'gemini', key: 'GEMINI_API_KEY', call: callGemini },
   { id: 'openai', key: 'OPENAI_API_KEY', call: callOpenAI },
   { id: 'xai', key: 'XAI_API_KEY', call: callXai },
+  {
+    id: 'codex',
+    key: null,
+    available: () => !process.env.OPENAI_API_KEY && codexSignedIn(),
+    skipReason: process.env.OPENAI_API_KEY ? 'OPENAI_API_KEY is set, the openai provider covers it' : 'codex CLI not installed or not signed in',
+    call: callCodex,
+  },
 ];
 
 const packet = await buildPacket();
@@ -262,8 +336,12 @@ if (DRY_RUN) {
 let sent = 0;
 for (const provider of providers) {
   if (!ONLY.includes(provider.id)) continue;
-  if (!process.env[provider.key]) {
+  if (provider.key && !process.env[provider.key]) {
     console.log(`${provider.id}: skipped (${provider.key} not set)`);
+    continue;
+  }
+  if (provider.available && !provider.available()) {
+    console.log(`${provider.id}: skipped (${provider.skipReason})`);
     continue;
   }
   sent += 1;
@@ -283,5 +361,7 @@ for (const provider of providers) {
   }
 }
 if (!sent) {
-  console.log('No provider keys found. Set GEMINI_API_KEY, OPENAI_API_KEY, or XAI_API_KEY, or use EMIT=1 for a manual packet.');
+  console.log(
+    'No provider available. Set GEMINI_API_KEY, OPENAI_API_KEY, or XAI_API_KEY, sign in to the codex CLI, or use EMIT=1 for a manual packet.'
+  );
 }
