@@ -1,0 +1,162 @@
+# Design review, October 2026: findings and dispositions
+
+Three outside models reviewed the redesign on 3 and 4 October 2026 with the same packet: `docs/design-spec.md`, `docs/website-copy-2026-10.md`, the full source of the branch at `1472a7f`, and 31 screenshot tiles of every page at 1440px and 390px with review mode on. The brief (`BRIEF` in `scripts/adversarial-review.mjs`) told them to attack the concept and the spec as well as the build. Their full replies are in `review-out/`.
+
+| Reviewer | Model | Time | Findings | Verdict in one line |
+| --- | --- | --- | --- | --- |
+| Gemini | gemini-2.5-pro (API) | 61s | 10 | Ship after the majors; the hash router is the biggest risk |
+| Codex | Codex CLI 0.160.0, Patrick's default model | 212s | 30 | Not unchanged: proof and the offer need to come earlier, and the contact path must be verified |
+| Grok | Grok CLI, default model | 972s | 27 | Not as is: the design puts a brand system in front of a plain letter, and the drawings read as costume |
+
+The independent Claude session named in spec section 13 did not run: the cloud session that was to host it was stopped before it produced output. This local session reviewed the screenshots itself and its own observations are listed under "This session" below.
+
+Severities are the reviewers' own. Where this session disagrees, the disposition says so. Commits are on `redesign-2026-10`:
+
+| Commit | Scope |
+| --- | --- |
+| `29e0a78` | Screenshot tooling: public-composition set, overflow at 360, 768 and 1024px |
+| `d3be95c` | `scripts/check-production.mjs` rewritten with one assertion per fix (50 failures before the fixes, 0 after) |
+| `19c9365` | Routing: BrowserRouter, old `#/` links rewritten, per-route metadata, focus on navigation, intake page in its own chunk |
+| `af836ef` | Accessibility: focus on ink, keyboard menu, table semantics, 44px targets, input borders, scroll margins |
+| `5eb7924`, `d95779e` | Diagrams: measured fans, phone branch labels, elbow leader, node sizing, Fig. 4 circle, Fig. 5 caption and columns, captions |
+| `f5513ba` | Home, footer, motion, token, social image, wordmark, favicon, invented heading |
+| `0c428b7` | Contact form: focus, alert, honeypot, mail library on demand |
+| `0601519` | Spec amendments and project docs |
+
+## Dispositions
+
+Disposition values: **fixed** (with the commit), **fixed in part** (what was done and what was not), **declined** (with the reason), **deferred** (Patrick's decision, see the last section), **open** (verified at launch).
+
+### Gemini
+
+| # | Severity | Where | What | Disposition |
+| --- | --- | --- | --- | --- |
+| G1 | major | `App.tsx` routing | `/#/` URLs look dated, hurt search and analytics | **fixed** `19c9365`: BrowserRouter with real paths. The live Railway host and `vite preview` already serve `index.html` for every path (probed before the change). Old `#/` links are rewritten on arrival. Each route sets its canonical link and Open Graph title, description and URL. Prerendering static HTML per route is deferred (see decisions) |
+| G2 | major | `Figure.tsx` annotation leader | Straight line where the spec says a two-segment elbow | **fixed** `5eb7924`. Re-graded minor: a craft detail, not a reader-facing defect |
+| G3 | major | `App.tsx` skip link | `onClick` is "insufficient for keyboard users" | **declined**: pressing Enter on a focused link dispatches a click event, so the handler already runs for keyboard users. With real paths the `href="#main"` also works natively |
+| G4 | minor | `base.css` link underline | `--mark` underline is 3.3:1 on paper | **declined**: the underline exceeds the 3:1 non-text minimum, the link text is ink, and the orange underline is the pen rule in `CLAUDE.md` (Patrick's) |
+| G5 | minor | `AboutPage.tsx` `sizes="350px"` | Browser may download a larger image than needed | **declined with evidence**: the photo is hidden below 1024px and lazy, and 350px is its only rendered width. Measured on the build: at 390px no ridge file is requested; at 1440px (1x and 2x) the 800w file is |
+| G6 | minor | `Header.tsx` menu | Body scroll not locked behind the open menu | **declined**: the panel pushes content down beneath a sticky header and is two rows tall (spec 5.1). Locking scroll is the overlay pattern, which the spec rejects |
+| G7 | minor | Fig. 6 outcomes | Stacked column on desktop leaves space; use the 2 by 2 grid | **declined**: the fan needs four vertical targets. Each branch now meets its node exactly (`5eb7924`), which was the real weakness |
+| G8 | minor | spec 7.1 | "H3-level heading styled as H2" is confusing | **fixed** in the spec, `0601519`: it is an H2 |
+| G9 | taste | spec 3.1 `--mark` | Orange too bright; mute to `#D15B2F` | **declined**: the tokens are fixed by Patrick's instruction. The only change to `--mark` is one unit of green for contrast (C21) |
+| G10 | taste | spec 3.2 type | Source superfamily is generic; try IBM Plex | **declined**: tokens fixed. Noted for Patrick |
+
+### Codex
+
+| # | Severity | Where | What | Disposition |
+| --- | --- | --- | --- | --- |
+| C1 | blocker | Contact submission | End-to-end delivery is not demonstrated; the failure and retry path is unverified | **open until launch**: a real note goes through the live form in the launch step and the result is recorded below. The failure path, the retry (button re-enabled), the honeypot and the success path are now exercised by `npm run check` with the provider mocked, so nothing is sent (`d3be95c`, `0c428b7`) |
+| C2 | major | Fig. 2 | "Build and test it with the team" contradicts the Sprint ending at findings | **fixed** `5eb7924`: the caption now reads "How the work gets looked at, then changed. A Discovery Sprint covers the first three steps." The screen-reader description says building is scoped separately. Spec amended |
+| C3 | major | Proof | No testimonial, deliverable or named engagement on the published site | **deferred** to Patrick (open question 4). Nothing can be fabricated |
+| C4 | major | Home order (spec 7.1) | The offer and the person come after the hero diagram, four cards, the approach and three examples | **deferred** to Patrick: section order is the copy doc's order and the spec's principle 5 is a deliberate choice. Recommendation in the last section |
+| C5 | major | `Fan` on phones | Branches collapse to one arrow, so Fig. 3 reads as a sequence and Fig. 4 loses "one record, three documents" | **fixed** `5eb7924`: on phones a fan is a labelled connector ("both go in", "one of these", "carries into each", "then one of these") and the stacked boxes get a bracket |
+| C6 | major | `Fan` geometry | Endpoints at equal fractions of the stretched height miss the nodes; Fig. 4's upper branch ends above "Work order" | **fixed** `5eb7924`: the fan measures the real centres of the boxes on both sides, on resize and font load. The check measured the miss at 32px before and 0px after |
+| C7 | major | `.field__input` | Border 1.45:1 and fill 1.08:1 against the page | **fixed** `af836ef`: idle border is `--stroke` (3.8:1 on the input fill). Spec amended |
+| C8 | major | `base.css` focus in the ink block | Ink outline on ink background is invisible | **fixed** `af836ef`: `.ink-block :focus-visible` is paper |
+| C9 | major | Route and menu focus | No focus handoff on navigation; Escape strands focus | **fixed** `19c9365` (a new page moves focus to `main`, not on back and forward) and `af836ef` (Escape returns focus to the Menu toggle). Both are asserted by the check |
+| C10 | major | Contact success | The form unmounts under the focused button and a new status region is not reliably announced | **fixed** `0c428b7`: the confirmation receives focus. Asserted with the provider mocked |
+| C11 | major | Discoverability | One document for four pages; client-side titles do not give independently served metadata | **fixed in part** `19c9365`: real paths, canonical and Open Graph per route. Codex is right that prerendered HTML per route is the complete answer; it is deferred because Railway's static serving of nested paths cannot be verified before a deploy. See decisions |
+| C12 | major | `IntakePage.tsx` | A named client's intake is publicly routable; `noindex` is not privacy | **deferred** to Patrick (open question 3). Mitigation now: the page is its own chunk, not in the marketing bundle (`19c9365`). Recommendation: remove the route |
+| C13 | major, copy | Discovery Sprint terms | No duration, time commitment, fee range or visible deliverable | **deferred** to Patrick: the words are fixed by the copy doc, and the FAQ answers the fee question deliberately |
+| C14 | major, copy | Fig. 1 caption | "where work usually waits" states a diagnosis as fact | **fixed** `5eb7924`: "In this example, the work waits for a pricing decision." Re-graded minor |
+| C15 | minor | Figs. 3 and 4 | Human approval is a footnote, not a step | **declined**: Fig. 3's centre node says "prepared for review" and one output says "Ready for review"; Fig. 4 says "Checked by a person before it goes out." A separate approval gate would clutter both drawings |
+| C16 | minor | Fig. 1 on phones | Five stacked boxes cost about 500px to say one thing | **deferred** to Patrick: Grok found the same stack readable. A three-node phone variant (the social image already defines one) is a small change if wanted |
+| C17 | minor | Figure type | Mono at 13 to 14px is the smallest text on the page; use sans at 15 to 16px | **declined**: mono figure text is the spec's type system, and the screenshots read cleanly at 14px/500 |
+| C18 | minor | Fig. 5 on phones | Value and annotation become flex siblings | **fixed** `5eb7924`: the annotation sits under the value in its own column |
+| C19 | minor | `.board thead` | `display:none` removes the headers from the accessibility tree | **fixed** `af836ef`: visually hidden instead, with explicit table roles |
+| C20 | minor | Hit areas | Small button 40px, nav links 36px, wordmark and footer links smaller | **fixed** `af836ef`: all at least 44px, asserted by the check |
+| C21 | minor | `tokens.css` | Ink on `#D9622B` is 4.49:1, under the spec's 4.5:1 | **fixed** `f5513ba`: `--mark` is `#D9632B` (one unit of green), 4.52:1. Calculated, not rounded. The only token touched; favicon, style tile and spec follow |
+| C22 | minor | Review screenshots | The dashed slots change the composition reviewers see | **fixed** `29e0a78`: `REVIEW=0` writes the public set, which was looked at. The person slot moved below its row (`f5513ba`) so the public layout no longer depends on it |
+| C23 | minor | QA coverage | Missing breakpoints, forced reduced motion, no keyboard or delivery checks | **fixed in part** `29e0a78`, `d3be95c`: overflow at 360, 768 and 1024px; keyboard menu, form paths, focus, transfer size in the check. Draw-on verified by hand (dash offset sampled 1 to 0 over about 600ms). Still untested by script: screen-reader reading order and layout shift |
+| C24 | minor | Fonts and performance | No measured transfer or layout shift; Google Fonts is a third party | **measured**: Home cold transfer 571 KB including fonts (budget 600 KB). Self-hosting fonts deferred to Patrick (recommended later) |
+| C25 | minor | `scroll-behavior: smooth`; scroll reset | A second motion idea; reading position lost on back | **fixed** `f5513ba` (no smooth scroll) and `19c9365` (no scroll-to-top on back and forward) |
+| C26 | minor | Problem cards | 01 to 04 imply a sequence | **fixed** `f5513ba`: the four problems are unnumbered; the three stages keep their numbers |
+| C27 | taste | Wordmark at header size | The device does not survive 22px | **fixed in part** `f5513ba`: one stroke at header size. The raised c stays (spec 4.1) |
+| C28 | taste | Circles everywhere | The same mark for different meanings | **declined**: one circle per figure marking the step that matters is the concept. Noted for Patrick |
+| C29 | taste | About | Personality before professional substance | **deferred** with the climbing photo (open question 1) |
+| C30 | minor | `og.png` | Too detailed for card size | **fixed** `f5513ba`: labels only, larger promise and annotation, tested at card size |
+
+### Grok
+
+| # | Severity | Where | What | Disposition |
+| --- | --- | --- | --- | --- |
+| X1 | blocker | Fig. 5, Fig. 1 caption, proof | Invented names and job numbers read as a real board or as costume; "Illustrative." is the only hedge; no proof is published | **fixed in part** `5eb7924`: Fig. 5 carries the visible title "Example job board" and Fig. 1's caption says what this example shows. **Declined**: stripping names and numbers, because the drawings are meant to look like real work and are labelled as examples twice. Proof: deferred (open question 4) |
+| X2 | major | Home first screen | A system before a face; "or AI tools" in the hero; the person on tile 4 | **deferred** to Patrick: the hero words and the section order are the copy doc's. See decisions |
+| X3 | major | The pen is spent | Orange on the button, every link underline, the active nav item and the card numbers | **declined**: the button and underline uses are Patrick's rule in `CLAUDE.md`. The card numbers are gone (`f5513ba`). Noted for Patrick as the main concept-level disagreement |
+| X4 | major | Wordmark and favicon | Stretched strokes become a blot; the favicon curve reads as a smile | **fixed in part** `f5513ba`: one stroke at header size, a shorter favicon stroke. Close-ups at 1x and 3x showed a small pen dash, not a blot. The raised c stays (spec 4.1) |
+| X5 | major | Fig. 1 desktop | Labels wrap and boxes differ in height | **fixed** `5eb7924`, `d95779e`: boxes size to their text, share the slack and are one height; sublabels stay on one line from 1200px (measured at 1200, 1280 and 1440px) |
+| X6 | major | Fig. 5 | "Crew B" breaks; the phone annotation collides with the circle | **fixed** `5eb7924`: who and next columns do not wrap; the phone annotation sits under the value. A full-width table was not needed after the fix |
+| X7 | major | Fig. 2 | Repeats the paragraphs; grid hole at column 8 | **fixed in part** `5eb7924`: columns 8 to 12, and the caption now adds what the paragraphs do not (which steps are the Sprint). Deleting the figure is declined; noted for Patrick |
+| X8 | major | Fig. 6 | Redraws the next section; the desktop fan knots; sublabels not in the spec | **fixed in part** `5eb7924`: the fan is measured, so the knot is gone. Sublabels kept and the spec amended. Deleting the figure is declined; noted for Patrick |
+| X9 | major | "Fig." and "Illustrative." | The apparatus turns a letter into a white paper | **declined**: the findings-document register is the concept (spec 2 and 5.4). Noted for Patrick. The spec's "two spaces" is amended to one |
+| X10 | major | Working Together | Commercial terms are the quietest text on the page | **deferred** to Patrick (copy) |
+| X11 | major | Stage cards | A generic services grid, and a hidden heading not in the copy | **fixed in part** `f5513ba`: the invented hidden heading "How we work together" is removed. The cards stay (spec 7.2) |
+| X12 | major | Climbing photo | Sells a different practice; the loudest orange on the site | **deferred** to Patrick (open question 1). Recommendation: cut it |
+| X13 | major | "Work directly with me" row | Designed around a slot production removes; a future quote would be a footnote | **fixed** `f5513ba`: the slot sits below the whole row at full width; the public composition was screenshotted and looked at |
+| X14 | major | Focus on the Sprint link | Ink ring on ink | **fixed** `af836ef` |
+| X15 | major | Form submit | Focus thrown away; "Sending" shown twice; error should alert with a mailto; spec centres the success copy | **fixed** `0c428b7`: focus moves to the confirmation, the error is a `role="alert"` with a mailto link, the live region announces sending without showing it twice. Spec amended: success copy left-aligned |
+| X16 | major | One HTML file | Every page shares the home title and image for crawlers and chat apps | **fixed in part** `19c9365` (real paths, canonical and Open Graph per route). Prerendering and a second social image for Working Together are deferred |
+| X17 | major | Intake page | A named client's intake in the public bundle | **deferred** to Patrick (open question 3); now its own chunk. Recommendation: remove the route |
+| X18 | major | Figs. 3, 4, 5 | Wireframes of software that does not exist; Fig. 4's circle swallows the flag | **fixed in part** `5eb7924`: Fig. 4 circles the empty gap only. The rest is declined: the drawings show work and its outcomes, not product chrome, and the spec lists their content |
+| X19 | minor | Header button 40px; "Let's talk" on Contact | Below the 44px rule; a self-link beside Send | **fixed in part** `af836ef` (44px). The header stays the same on every page |
+| X20 | minor | Sticky header | A focused field can scroll under it | **fixed** `af836ef`: `scroll-margin-top` on fields and headings |
+| X21 | minor | Form protection | No honeypot or rate limit; polite error; address not a link | **fixed in part** `0c428b7`: honeypot, alert, mailto. Rate limiting is an EmailJS dashboard setting (Patrick). A copy clause naming the form provider is deferred (copy) |
+| X22 | minor | Bundle contents | Review strings and the invented heading ship; unused italics in the font URL; EmailJS on Home | **fixed in part** `0c428b7` (EmailJS loads on send), `f5513ba` (heading gone). **Declined**: italic faces are only fetched when italic text renders, and the proof-slot labels are not placeholder testimonials |
+| X23 | minor | Social image and spec mismatches | Name line and sans tagline not in the spec; smooth scroll | **fixed** `f5513ba` (smooth scroll, image sizing) and the spec amended to match the image |
+| X24 | minor | `PenCircle` draw-on | The path appears after the class, so the hero circle never animates; padding crowds connectors | **declined with evidence**: sampled on the build without reduced motion, the hero path exists before the class lands and its dash offset runs 1 to 0 over about 600ms. Fig. 4's circle now sits on the gap only |
+| X25 | minor | spec 5.8 | `role="group"` would wipe the figure role; the hidden text repeats the nodes | **fixed** in the spec `0601519` (native figure). The descriptions stay because they carry the arrows, which the boxes alone do not |
+| X26 | taste | Palette, type, radius, green, eyebrow | A known independent-consultant kit | **declined**: tokens and type are fixed by Patrick's instruction. Noted |
+| X27 | taste | Section padding | Tuned like a specimen | **declined** (spec 3.3). Noted |
+
+### The handoff's own flags
+
+| # | Where | What | Disposition |
+| --- | --- | --- | --- |
+| H1 | Routing | Search engines see one page | **fixed** `19c9365` (prerendering deferred) |
+| H2 | Problem cards | 01 to 04 suggest a sequence | **fixed** `f5513ba` |
+| H3 | Fonts | Self-host the three families | **deferred** to Patrick (recommended as a follow-up) |
+| H4 | Fig. 6 | Sublabels the spec did not list | **fixed** in the spec `0601519` |
+| H5 | Figures | Spec says `role="group"`, build uses `<figure>` | **fixed** in the spec `0601519` |
+| H6 | Fig. 1 on phones | Five stacked nodes run long | **deferred** (see C16) |
+| H7 | Footer | The copy doc's "Patrick McHeyser" line only in the copyright | **fixed** `f5513ba` |
+
+### This session
+
+| # | Where | What | Disposition |
+| --- | --- | --- | --- |
+| S1 | Fig. 1 desktop | Node boxes of different heights, centre-aligned, looked jittery | **fixed** `5eb7924`, `d95779e` |
+| S2 | Fig. 3 desktop | The pen circle touched the node above it | **fixed** `5eb7924` (16px stack gap) |
+| S3 | Review tooling | Codex 0.147.0 could not run Patrick's configured model | **fixed** outside the repo: `npm i -g @openai/codex@latest` on eagle (0.160.0). Untracked machine change; rollback `npm i -g @openai/codex@0.144.6` |
+
+## What changed and what was kept
+
+Changed, in short: real paths with old links preserved and per-route metadata; focus, keyboard and contrast fixes; fans that meet their nodes and phone diagrams that keep their meaning; captions that say what each example is and which steps are the Sprint; the four problems unnumbered; the footer name line; the form's focus, alert and honeypot; one unit of green in `--mark`; a tidier wordmark stroke and favicon; a social image that reads at card size.
+
+Kept, on purpose: the concept and its register (paper, ink, one pen, "Fig." captions, "Illustrative."); the tokens and type; the orange button and link underlines; all six figures; the section order and every visitor-facing word in the copy doc. Three reviewers argued against parts of this. The arguments are summarised next so Patrick can rule on them.
+
+## Concept-level disagreements for Patrick
+
+1. **The pen is spent on buttons and links** (Grok 3, Codex 28). Both say orange on the primary button, every link underline and the active nav item means the circle no longer reads as a pen. Kept: it is the rule in `CLAUDE.md`. If you agree with them, the change is an ink button and ink underlines, with orange only on pen marks and "Discovery Sprint". Cost: the header loses its one warm element.
+2. **The person and the offer come late on Home** (Codex 4, Grok 2). Both want the portrait and the Discovery Sprint within the first screen or two. Kept: the copy doc's order and principle 5. Grok also wants "or AI tools" out of the hero paragraph. That is a copy decision.
+3. **Fig. 2 and Fig. 6 restate their paragraphs** (Grok 7 and 8, Codex 2 on Fig. 2). Kept, with the captions and geometry fixed. If you would rather have fewer drawings, these two are the ones to cut.
+4. **"Fig." and "Illustrative."** (Grok 9). Grok reads the apparatus as a white paper, not a letter. Kept: it is the concept.
+5. **Invented detail in Fig. 5** (Grok 1). Kept with the visible "Example job board" title. If you want it plainer, replace "Maria" with "Office" and drop the job numbers.
+6. **Prerendering** (Codex 11, Grok 16). Real paths are in. A build step that writes static HTML per route with its own metadata is the complete answer and is worth doing once the site is live and the host's handling of nested paths can be checked.
+7. **Self-hosted fonts** (Codex 24, handoff). Transfer is under budget. Self-hosting removes a third-party request and is a good follow-up.
+
+## Open questions from spec section 14, with recommendations
+
+1. **Climbing photograph on About.** Recommend cutting it. Two reviewers called it the wrong story, it is the loudest orange on the site, and phones never see it, so the page tells two stories.
+2. **LinkedIn link in the footer.** Recommend keeping it. Grok said keep; this audience looks people up.
+3. **Intake page.** Recommend removing the route now unless that engagement is live. Two reviewers graded it major, and the page addresses a named contact about a meeting that has passed.
+4. **Testimonials and sample deliverable.** The slots render nothing until real material exists. All three reviewers say the strongest proof is one redacted findings deliverable a visitor can open. Recommend making that the first proof to chase.
+5. **Documentary photographs.** No change. Decide after launch.
+
+## Verification
+
+On `d95779e` and later: `npm run typecheck` clean; `npm run build` clean; `npm run check` passes all assertions (it was 50 failures on `54aea42` before the fixes); `TILES=1 npm run screenshots` and `OUT=screenshots/public REVIEW=0 npm run screenshots` report no horizontal overflow at 1440, 390, 360, 768 and 1024px, no failed requests and no console errors. Home cold transfer, including fonts: 571 KB. The three reviewers' round-two replies are recorded below.
+
+## Round two
+
+Pending.
