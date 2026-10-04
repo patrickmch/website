@@ -9,7 +9,7 @@ export default function OgPage() {
         <Wordmark size="display" asText />
         <p className="og__tag">Operations and technology for growing businesses.</p>
       </div>
-      <Flow annotated>
+      <Flow annotated className="flow--even">
         <Node label="Request comes in" />
         <Connector />
         <Node label="Price decided" marked annotation="work waits here" />

@@ -501,16 +501,20 @@
     min-width: 0;
   }
 
-  /* Nodes size to their text and share the slack; a row's boxes are all one height. */
   .flow > .node {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* A row of nodes only (Fig. 1): boxes size to their text, share the slack, and are one height. */
+  .flow--even > .node {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
     align-self: stretch;
-    min-width: 0;
   }
 
-  .flow > .node > .node__box {
+  .flow--even > .node > .node__box {
     flex: 1 1 auto;
   }
 
