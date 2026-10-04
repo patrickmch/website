@@ -128,7 +128,7 @@ Scale (fluid, `clamp()` between 360px and 1280px viewports):
 ### 4.1 Wordmark
 
 - Text, not an image: `McHeyser` set in Source Serif 4 at weight 600, 22px in the header, 28px in the footer, every letter at the same size.
-- Beneath the whole word runs a hand-drawn pen underline in `--mark`: the same PenUnderline used under "Discovery Sprint", 2px, from the M through the r, just under the baseline. One stroke at header and footer size, two at display size (the social image). It is the brand idea in miniature: one pen mark on the page, and the same hand that circles the held-up step in the figures.
+- Beneath the whole word runs a hand-drawn pen underline in `--mark`: the same PenUnderline used under "Discovery Sprint", from the M through the r, in a band 0.08em to 0.28em below the baseline (through the descender of the y). The stroke scales with the type so it stays a fine pen: 1.25px under the 22px header, 1.5px under the 28px footer, 2px under the 96px social image. One stroke at header and footer size, two at display size. It is the brand idea in miniature: one pen mark on the page, and the same hand that circles the held-up step in the figures.
 - Amended 4 October 2026 on Patrick's review of the build: the earlier raised `c` (0.6em, baseline-shifted, with a short stroke beneath it) read as too small and oddly underlined at header size. Three outside reviewers had said the same. The historical superscript is gone; the pen underline stays.
 - The wordmark is a single link to Home with the accessible name "McHeyser, home".
 - Inside the ink block and anywhere on ink, the wordmark is `--paper` with the stroke still `--mark`.

@@ -10,10 +10,13 @@ export function PenUnderline({
   className = '',
   strokes = 2,
   height = 12,
+  strokeWidth,
 }: {
   className?: string;
   strokes?: 1 | 2;
   height?: number;
+  /** In CSS pixels; the stylesheet's 2px applies when unset. */
+  strokeWidth?: number;
 }) {
   const ref = useRef<SVGSVGElement>(null);
   const parent = useParentSize(ref);
@@ -34,8 +37,8 @@ export function PenUnderline({
       aria-hidden="true"
       focusable="false"
     >
-      {w > 0 && <path d={first} pathLength={1} />}
-      {w > 0 && strokes === 2 && <path d={second} pathLength={1} />}
+      {w > 0 && <path d={first} pathLength={1} style={strokeWidth ? { strokeWidth } : undefined} />}
+      {w > 0 && strokes === 2 && <path d={second} pathLength={1} style={strokeWidth ? { strokeWidth } : undefined} />}
     </svg>
   );
 }

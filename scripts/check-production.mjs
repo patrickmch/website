@@ -268,14 +268,14 @@ try {
   expect((await page.evaluate(() => document.activeElement?.tagName)) === 'H1', 'focus should move to the page heading after navigating');
   expect(new URL(page.url()).pathname === '/about', 'nav click should reach /about');
 
-  // The wordmark stroke is drawn at 2 CSS pixels (non-scaling), so it should contain the pen colour at header size.
+  // The wordmark stroke is a thin pen line, so its rendered pixels should carry the pen colour (antialiased pixels count).
   const strokeShot = await page.locator('.site-header .wordmark__stroke').screenshot({ scale: 'css' });
   const { PNG } = require('pngjs');
   const png = PNG.sync.read(strokeShot);
   let orange = 0;
   for (let i = 0; i < png.data.length; i += 4) {
     const [r, g, b] = [png.data[i], png.data[i + 1], png.data[i + 2]];
-    if (r > 190 && g > 70 && g < 130 && b < 80) orange += 1;
+    if (r > 200 && g < 200 && b < 170 && r - b > 60) orange += 1;
   }
   expect(orange >= 8, `header wordmark stroke should render in the pen colour (found ${orange} orange pixels)`);
 
