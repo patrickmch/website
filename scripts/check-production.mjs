@@ -85,6 +85,8 @@ try {
   const expectedTitles = {
     '/': 'Patrick McHeyser | Operations and technology consulting',
     '/working-together': 'Working Together | Patrick McHeyser',
+    '/work': 'Client Work | Patrick McHeyser',
+    '/work/mtro-pro': 'MTRO PRO: Customer Success and QA Automation | Patrick McHeyser',
     '/about': 'About Patrick McHeyser',
     '/contact': "Let's Talk | Patrick McHeyser",
   };
@@ -192,7 +194,7 @@ try {
   expect(fig1?.includes('In this example'), `Fig. 1 caption should say what this example shows, got: ${fig1}`);
   const fig2 = await text(page, '.approach__figure .figure__caption');
   expect(fig2?.includes('first three steps'), `Fig. 2 caption should say which steps the Sprint covers, got: ${fig2}`);
-  expect((await text(page, '.board caption')) === 'Example job board', 'Fig. 5 should carry a visible "Example job board" caption');
+  expect((await page.locator('.work-feature a[href="/work/mtro-pro"]').count()) === 1, 'Home should link its published client story');
   expect(
     (await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)) === 'auto',
     'html should not use smooth scrolling (one motion idea)'
@@ -230,32 +232,46 @@ try {
     // Annotation leader is an elbow (two segments) at desktop widths.
     const leader = document.querySelector('.hero__figure .annotation--above .annotation__leader-d');
     out.leaderD = leader?.getAttribute('d') || '';
-    // Fig. 4: fan arrowheads meet the document nodes.
-    const docs = Array.from(document.querySelectorAll('.stack--docs .node__box')).map((n) => {
-      const r = n.getBoundingClientRect();
-      return r.top + r.height / 2;
-    });
-    const fan = document.querySelector('.stack--docs')?.closest('.flow')?.querySelector('.fan--out');
-    const heads = fan ? Array.from(fan.querySelectorAll('.arrowhead')).map((a) => { const r = a.getBoundingClientRect(); return r.top + r.height / 2; }) : [];
-    out.fanMiss = docs.map((d, i) => Math.round(Math.abs(d - (heads[i] ?? -999))));
-    // Fig. 4: the pen circle sits on the empty PO field, not the whole row.
-    out.gapCircle = !!document.querySelector('.record__key .pen-circle');
     // Fig. 2 sits in grid columns 8 to 12.
     const approachFigure = document.querySelector('.approach__figure');
     out.approachStart = approachFigure ? getComputedStyle(approachFigure).gridColumnStart : '';
-    // Fig. 5: who and next columns do not wrap.
-    const who = document.querySelector('.board tbody tr:nth-child(3) td:nth-child(3)');
-    out.whoNowrap = who ? getComputedStyle(who).whiteSpace === 'nowrap' : false;
     return out;
   });
   expect(new Set(geometry.fig1Heights).size === 1, `Fig. 1 node boxes should be equal height, got ${geometry.fig1Heights.join(',')}`);
   expect(!geometry.fig1Overflow, 'Fig. 1 node text overflows its box');
   expect(geometry.fig1WhereLines.every((h) => h < 22), `Fig. 1 "where" lines should fit on one line at 1280px, heights ${geometry.fig1WhereLines.join(',')}`);
   expect(/H[^A-Z]*V|V[^A-Z]*H/.test(geometry.leaderD), `annotation leader should be an elbow, got d="${geometry.leaderD}"`);
-  expect(geometry.fanMiss.length === 3 && geometry.fanMiss.every((m) => m <= 3), `Fig. 4 fan arrowheads miss the document nodes by ${geometry.fanMiss.join(',')}px`);
-  expect(geometry.gapCircle, 'Fig. 4 pen circle should be on the PO number field name');
   expect(geometry.approachStart === '8', `Fig. 2 should start at grid column 8, got ${geometry.approachStart}`);
-  expect(geometry.whoNowrap, 'Fig. 5 who/next columns should not wrap');
+
+  /* ---------- Published client-work journeys ---------- */
+  await page.goto(url('/work'), { waitUntil: 'load' });
+  await page.getByRole('link', { name: 'See the work', exact: true }).click();
+  await page.getByRole('heading', { name: 'Automating the work around a growing SaaS platform.', exact: true }).waitFor();
+  await page.locator('.work-diagram').first().waitFor();
+  expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
+  expect(await page.locator('main figure').count() === 2, 'Story should show customer-success and QA diagrams');
+  expect(await page.locator('a[href="https://mtropro.com/"]').count() === 1, 'Story must link to the client site');
+  expect((await page.locator('main').innerText()).includes('Weekly time savings have not yet been measured.'), 'Story must distinguish implemented work from unmeasured savings');
+  await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
+  expect(new URL(page.url()).pathname === '/contact', 'Story CTA must lead to the contact form');
+  for (const width of [360, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of ['/work', '/work/mtro-pro']) {
+      await page.goto(url(route), { waitUntil: 'load' });
+      await settle(page);
+      const layout = await page.evaluate(() => ({
+        overflow: document.documentElement.scrollWidth > innerWidth + 1,
+        clipped: [...document.querySelectorAll('.work-diagram .node__label, .work-diagram .node__where')].some(n => n.scrollWidth > n.clientWidth + 1),
+      }));
+      expect(!layout.overflow && !layout.clipped, `${route} at ${width}px: diagram text or page overflows`);
+    }
+  }
+  await page.setViewportSize({ width: 1280, height: 800 });
+  for (const route of ['/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
+    await page.goto(url(route), { waitUntil: 'load' });
+    await page.waitForTimeout(300);
+    expect(new URL(page.url()).pathname === '/', 'Unpublished work must not have an accessible story route');
+  }
 
   /* ---------- Focus and keyboard ---------- */
   await page.goto(url('/'), { waitUntil: 'load' });
@@ -420,25 +436,7 @@ try {
     }
   });
   await mpage.waitForTimeout(300);
-  const mobileFacts = await mpage.evaluate(() => {
-    const thead = document.querySelector('.board thead');
-    const ths = Array.from(document.querySelectorAll('.board th'));
-    const labels = Array.from(document.querySelectorAll('.fan__label')).map((l) => l.textContent?.trim()).filter(Boolean);
-    const value = document.querySelector('.board__mark')?.getBoundingClientRect();
-    const note = document.querySelector('.board__cell--marked .annotation')?.getBoundingClientRect();
-    return {
-      theadDisplay: thead ? getComputedStyle(thead).display : 'missing',
-      headers: ths.length,
-      headerRoles: ths.every((th) => th.getAttribute('role') === 'columnheader'),
-      tableRole: document.querySelector('.board')?.getAttribute('role'),
-      labels,
-      annotationBelow: value && note ? note.top >= value.bottom - 2 && Math.abs(note.left - value.left) <= 6 : false,
-    };
-  });
-  expect(mobileFacts.theadDisplay !== 'none', 'Fig. 5 header row must stay in the accessibility tree on phones (not display:none)');
-  expect(mobileFacts.headers === 4 && mobileFacts.headerRoles && mobileFacts.tableRole === 'table', 'Fig. 5 should keep explicit table semantics');
-  expect(mobileFacts.labels.length === 3, `Home phone diagrams should label their branches (fan labels), got ${JSON.stringify(mobileFacts.labels)}`);
-  expect(mobileFacts.annotationBelow, 'Fig. 5 phone annotation should sit below the circled value, left-aligned with it');
+  expect(await mpage.locator('.work-preview .node').count() === 3, 'Home should show the three-step client-work preview on mobile');
   const edge = await mpage.evaluate(() => {
     const over = [];
     for (const svg of document.querySelectorAll('.pen-circle')) {

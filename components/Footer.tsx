@@ -17,6 +17,9 @@ export default function Footer() {
               <Link to="/working-together">Working Together</Link>
             </li>
             <li>
+              <Link to="/work">Client Work</Link>
+            </li>
+            <li>
               <Link to="/about">About</Link>
             </li>
             <li>

@@ -17,9 +17,9 @@ related: []
 ## Content brief
 
 - Write for owners and operations leaders at growth-oriented businesses around $5 million to $25 million in annual revenue. The industry focus remains open.
-- Home is the landing page. Navigation is **Working Together | About | Let's talk**, with the McHeyser wordmark linking Home.
+- Home is the landing page. Navigation is **Working Together | Client Work | About | Let's talk**, with the McHeyser wordmark linking Home.
 - Preserve the original operations-and-technology positioning. The offer combines understanding an operating problem with hands-on implementation. Discovery Sprint is the promoted first engagement.
-- The three examples on Home describe possible improvements. They are illustrative, not case studies or measured client results.
+- Home features the published MTRO PRO engagement. Unpublished client material is excluded from site source and builds.
 - Bracketed editorial notes are production notes, not visitor-facing copy. Bold button labels have their destinations listed under Shared site copy.
 - Testimonial and sample placements need real, approved material. Keep those placements identifiable during design review; omit unfilled proof blocks from a published page. No placeholder quotation should appear as a real endorsement.
 - Existing photographs of Patrick may be reused. The copy does not prescribe typography, colors, imagery, or layout.
@@ -64,21 +64,17 @@ I build and test the changes with the people who will use them. We work through 
 
 My focus is on businesses around $5 million to $25 million in annual revenue, where the owners and operations leaders want to grow and are ready to improve how the business runs.
 
-#### What this can look like
+### Selected client work
 
-Here are examples of the kinds of improvements we can make.
+Automating the work around a growing SaaS platform.
 
-**A quoting tool that follows your rules.**
+For MTRO PRO, I built automation for customer-account research, follow-up preparation and support intake, alongside browser-based QA for core product journeys. The work brings customer context and test evidence into a form people can act on.
 
-The tool brings together the job details and pricing rules, prepares a quote for review, and flags requests that need someone's judgment.
+Client: MTRO PRO
 
-**Customer paperwork with less retyping.**
+Link: See the work → /work/mtro-pro
 
-Information you've already collected carries into the documents your team needs. Missing details are flagged, and a person checks the paperwork before it's used.
-
-**A shared view of work that needs attention.**
-
-The team can see which jobs are waiting for information or a decision, who is responsible, and what needs to happen next.
+Link: View client work → /work
 
 ### Start with a Discovery Sprint.
 
@@ -263,7 +259,7 @@ Something went wrong while sending your note. Please try again or email patrick@
 
 **Site name:** McHeyser
 
-**Navigation:** Working Together | About | Let's talk
+**Navigation:** Working Together | Client Work | About | Let's talk
 
 | Link or action | Destination |
 | --- | --- |
@@ -294,3 +290,99 @@ patrick@mcheyser.com
 | Working Together | Working Together \| Patrick McHeyser | Start with a focused Discovery Sprint to understand an operating problem and decide what to change. Explore the process, deliverables, and implementation work. |
 | About | About Patrick McHeyser | Meet Patrick McHeyser, a Boulder-based software engineer and operations consultant who works directly with your team to understand problems and implement improvements. |
 | Contact | Let's Talk \| Patrick McHeyser | Tell Patrick what is getting harder to manage as your business grows. Start a conversation about the problem and whether he can help. |
+
+
+## Client Work
+
+### Client work
+
+Software, automation and AI built around the work a business needs to do. Explore the operating problem, the system behind the change and the work it takes on.
+
+Featured client: MTRO PRO
+
+Automating the work around a growing SaaS platform.
+
+For MTRO PRO, I built automation for customer-account research, follow-up preparation and support intake, alongside browser-based QA for core product journeys. The work brings customer context and test evidence into a form people can act on.
+
+Link: See the work → /work/mtro-pro
+
+## MTRO PRO story
+
+### Automating the work around a growing SaaS platform.
+
+MTRO PRO · Software for mid-term rental operators
+
+External link: Visit MTRO PRO → https://mtropro.com/
+
+A rental software business has two recurring jobs: help customers get value from the product, and keep checking that the product works as it changes. Both involve substantial work across systems.
+
+### Customer success starts with the account’s actual situation.
+
+Has the customer completed setup? Added properties? Connected payments? Replied to the last message or booked a call? The answers sit across product activity, customer records, calendars and communication channels.
+
+I built automation to gather that account context and support the next follow-up. A separate support intake process brings in-app help requests into a review queue. People can assess the situation, edit a proposed response and approve communication with the customer.
+
+### QA follows the journeys customers depend on.
+
+I built and used an AI-assisted testing process that exercises browser workflows, records evidence, identifies failures and supports retesting after changes. The work includes booking, lease signing, payments, calendars and guest-facing behavior.
+
+One documented booking-flow review followed a lease from signing through checkout and payment status, including notification checks and paths where the expected behavior did not occur. The output was a reproducible account of what worked, what failed and what needed attention.
+
+### What the systems take on.
+
+Together, these systems take on account research, queue monitoring and repeated test execution. Human judgment remains in customer conversations, defect prioritization and release decisions.
+
+Weekly time savings have not yet been measured.
+
+### System diagrams
+
+Customer success
+
+Account context supports the next customer conversation. People review and approve communication.
+
+Accessible description: Account evidence feeds automated preparation, then a review queue, followed by human review and customer communication. Support requests also enter the review queue.
+
+- Account evidence: Product activity, customer records, messages and bookings
+- Gather and prepare: Assemble context and prepare the next action
+- Review queue: Support requests and proposed follow-ups
+- Human follow-through: Review, approve and help the customer
+
+Product quality
+
+Browser testing produces evidence for repairs and release decisions. Repaired behavior is tested again.
+
+Accessible description: Product journeys and changes guide browser execution. Testing records evidence and reproducible failures, followed by retesting and a human decision on release readiness.
+
+- Journeys and changes: Booking, lease signing, payments and guest flows
+- Browser execution: Run scenarios and capture actual behavior
+- Findings and retest: Document failures and check repairs
+- Release judgment: Prioritize defects and decide readiness
+
+Preview diagram: Customer context → Prepared follow-up → Human review.
+Caption: From account context to a reviewed next step.
+Accessible description: Account context supports follow-up preparation, then a person reviews the proposed next step.
+
+### Story and index closing invitation
+
+Have a similar problem?
+
+Tell me which part of the work needs to get easier.
+
+Button: Let's talk → /contact
+Link: How we work together → /working-together
+Link: All client work → /work
+
+### Links from existing pages
+
+Working Together: See how this takes shape in practice.
+Body: For MTRO PRO, I built systems for customer-success preparation and browser-based product testing.
+Link: Explore the MTRO PRO work → /work/mtro-pro
+
+About link: Explore my client work → /work
+
+### Client Work metadata
+
+/work title: Client Work | Patrick McHeyser
+/work description: Explore software, automation and AI built by Patrick McHeyser around real operating work.
+/work/mtro-pro title: MTRO PRO: Customer Success and QA Automation | Patrick McHeyser
+/work/mtro-pro description: How Patrick McHeyser built customer-account research, support intake and browser-based QA for MTRO PRO, a mid-term rental software platform.

@@ -28,3 +28,11 @@
 - Patrick approved publishing a thumbs-up edit of his ridge portrait and requested one rope strand. Used the built-in image editor for the gesture and rope edits, then exported responsive JPEGs. Prompt: preserve the portrait and scene; change the hand to a thumbs-up, then replace the doubled foreground rope with one strand. This is the explicitly requested exception to the general no-generated-imagery design rule.
 - Original `public/patrick-ridge-{800,1200}.jpg` files remain unchanged. Both generated masters are retained in `docs/photo-variants/`: `patrick-ridge-thumbs-up.png` and `patrick-ridge-thumbs-up-single-rope.png`. About uses the new single-rope 800/1088 JPEGs; no original asset was overwritten.
 - Validation: typecheck, production build/check, original-file diff check, and JPEG dimensions passed. Updated the image dimensions to match the exported 800 x 1065 image.
+
+## 2026-10-04: Client Work and MTRO PRO
+
+- Added `/work` and `/work/mtro-pro`, linked from header/footer, Home, Working Together and About. Home now features the published work rather than the three generic examples.
+- Built two responsive, accessible diagrams using the existing Figure/Flow/Node components. Story explains account research, follow-up preparation, support intake and browser QA. It makes no numerical savings claim. Other story material is excluded from this release.
+- Updated canonical copy before implementation. Added route/metadata, click-through, CTA, external-client-link and diagram-layout checks; removed assertions for the retired Home example diagrams.
+- Typecheck, production build/check, full desktop/mobile screenshots, five-width overflow checks and diff whitespace check passed. Contact-provider checks are mocked; no email was sent. First new-route test attempt checked the DOM before navigation had rendered; fixed the test to wait for the destination diagram and reran successfully.
+- Release target: `patrickmch/website` main, automatically deployed by Railway. Previous live revision `22f4fdc`; rollback is a reviewed revert of this release commit. Live verification follows push.

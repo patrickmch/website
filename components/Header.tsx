@@ -5,6 +5,7 @@ import { ButtonLink } from './Button';
 
 const links = [
   { to: '/working-together', label: 'Working Together' },
+  { to: '/work', label: 'Client Work' },
   { to: '/about', label: 'About' },
 ];
 

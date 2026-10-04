@@ -1,7 +1,7 @@
 import { usePageMeta } from '../hooks/usePageMeta';
 import { asset } from '../lib/asset';
 import { Section, Prose } from '../components/Section';
-import { ButtonLink } from '../components/Button';
+import { ButtonLink, SecondaryLink } from '../components/Button';
 import { ProofSlot } from '../components/ProofSlot';
 
 export default function AboutPage() {
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
       <Section labelledBy="closing-heading" className="closing">
         <h2 id="closing-heading">Let's talk about what you want to improve.</h2>
-        <ButtonLink to="/contact">Let's talk</ButtonLink>
+        <div className="work-actions"><ButtonLink to="/contact">Let's talk</ButtonLink><SecondaryLink to="/work">Explore my client work</SecondaryLink></div>
       </Section>
     </>
   );

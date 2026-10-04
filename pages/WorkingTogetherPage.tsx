@@ -1,6 +1,6 @@
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Section, Prose } from '../components/Section';
-import { ButtonLink } from '../components/Button';
+import { ButtonLink, SecondaryLink } from '../components/Button';
 import { ProofSlot } from '../components/ProofSlot';
 import { InkBlock } from '../components/InkBlock';
 import { PenUnderline } from '../components/marks/PenUnderline';
@@ -194,6 +194,12 @@ export default function WorkingTogetherPage() {
             </li>
           ))}
         </ul>
+      </Section>
+
+      <Section labelledBy="work-example-heading">
+        <div className="section__heading"><h2 id="work-example-heading">See how this takes shape in practice.</h2></div>
+        <Prose><p>For MTRO PRO, I built systems for customer-success preparation and browser-based product testing.</p></Prose>
+        <SecondaryLink to="/work/mtro-pro">Explore the MTRO PRO work</SecondaryLink>
       </Section>
 
       <Section labelledBy="closing-heading" className="closing">

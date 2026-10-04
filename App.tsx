@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import WorkingTogetherPage from './pages/WorkingTogetherPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ClientWorkPage from './pages/ClientWorkPage';
+import MtroWorkPage from './pages/MtroWorkPage';
 import StylePage from './pages/StylePage';
 import OgPage from './pages/OgPage';
 
@@ -84,6 +86,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/working-together" element={<WorkingTogetherPage />} />
+            <Route path="/work" element={<ClientWorkPage />} />
+            <Route path="/work/mtro-pro" element={<MtroWorkPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/apply" element={<Navigate to="/contact" replace />} />

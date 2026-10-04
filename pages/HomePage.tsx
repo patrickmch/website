@@ -7,9 +7,8 @@ import { InkBlock } from '../components/InkBlock';
 import { PenUnderline } from '../components/marks/PenUnderline';
 import { QuoteFlow } from '../components/diagrams/QuoteFlow';
 import { SprintSteps } from '../components/diagrams/SprintSteps';
-import { QuotingTool } from '../components/diagrams/QuotingTool';
-import { Paperwork } from '../components/diagrams/Paperwork';
-import { SharedView } from '../components/diagrams/SharedView';
+
+import { ClientWorkFeature } from '../components/ClientWorkFeature';
 
 const problems = [
   {
@@ -107,46 +106,9 @@ export default function HomePage() {
       </Section>
 
       <Section labelledBy="examples-heading">
-        <div className="section__heading">
-          <h2 id="examples-heading">What this can look like</h2>
-          <p className="lead">Here are examples of the kinds of improvements we can make.</p>
-        </div>
-        <div className="example">
-          <div className="example__text">
-            <h3>A quoting tool that follows your rules.</h3>
-            <p>
-              The tool brings together the job details and pricing rules, prepares a quote for review, and flags
-              requests that need someone's judgment.
-            </p>
-          </div>
-          <div className="example__figure">
-            <QuotingTool />
-          </div>
-        </div>
-        <div className="example example--flip">
-          <div className="example__text">
-            <h3>Customer paperwork with less retyping.</h3>
-            <p>
-              Information you've already collected carries into the documents your team needs. Missing details are
-              flagged, and a person checks the paperwork before it's used.
-            </p>
-          </div>
-          <div className="example__figure">
-            <Paperwork />
-          </div>
-        </div>
-        <div className="example">
-          <div className="example__text">
-            <h3>A shared view of work that needs attention.</h3>
-            <p>
-              The team can see which jobs are waiting for information or a decision, who is responsible, and what
-              needs to happen next.
-            </p>
-          </div>
-          <div className="example__figure">
-            <SharedView />
-          </div>
-        </div>
+        <div className="section__heading"><h2 id="examples-heading">Selected client work</h2></div>
+        <ClientWorkFeature nested />
+        <div className="work-all"><SecondaryLink to="/work">View client work</SecondaryLink></div>
       </Section>
 
       <Section labelledBy="sprint-heading">

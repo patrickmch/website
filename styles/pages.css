@@ -421,3 +421,27 @@
   text-transform: uppercase;
   color: var(--ink-2);
 }
+
+/* Client work: the existing paper, ink and pen diagram system. */
+.work-feature { display: grid; gap: 32px; align-items: center; }
+.work-feature__text > p { margin: 20px 0; max-width: var(--prose); }
+.work-client { color: var(--ink-2); font-size: var(--text-small); font-weight: 600; }
+.work-feature h2, .work-feature h3 { max-width: 25em; }
+.work-all { margin-top: 36px; }
+.work-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.work-story-hero > .section__inner > .link-secondary { margin-bottom: 32px; }
+.work-story-hero .work-client { margin-bottom: 16px; }
+.work-external { display: inline-block; margin-top: 24px; }
+.work-diagram { margin-top: 48px; }
+.work-diagram__label { margin-bottom: 20px; font-weight: 600; }
+.work-flow > .node { flex: 1 1 0; }
+.work-node--human .node__box { border-color: var(--mark); border-width: 2px; }
+.work-preview .node__box { min-height: 68px; display: flex; align-items: center; }
+@media (min-width: 1024px) {
+  .work-feature { grid-template-columns: 1fr 1fr; gap: 56px; }
+}
+@media (min-width: 768px) {
+  .work-flow { align-items: stretch; }
+  .work-flow > .connector { align-self: center; }
+  .work-flow .node__box { height: 100%; }
+}

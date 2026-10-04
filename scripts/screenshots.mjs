@@ -45,6 +45,8 @@ function pageUrl(route, review = REVIEW) {
 const routes = [
   ['home', '/'],
   ['working-together', '/working-together'],
+  ['work', '/work'],
+  ['mtro-pro', '/work/mtro-pro'],
   ['about', '/about'],
   ['contact', '/contact'],
   ['intake', '/intake/denver-zen-den'],

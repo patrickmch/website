@@ -1,6 +1,6 @@
 # McHeyser Site
 
-Marketing site for McHeyser (mcheyser.com): operations and technology consulting for owners and operations leaders at businesses around $5M to $25M in revenue. Four pages: Home, Working Together, About, Contact.
+Marketing site for McHeyser (mcheyser.com): operations and technology consulting for owners and operations leaders at businesses around $5M to $25M in revenue. Core pages: Home, Working Together, Client Work, About, Contact. Client Work includes the published MTRO PRO story at `/work/mtro-pro`.
 
 ## Status
 
@@ -36,7 +36,7 @@ components/Figure.tsx      Figure, Flow, Stack, Node, Connector, Fan, Annotation
 components/diagrams/       the six figures (QuoteFlow, SprintSteps, QuotingTool, Paperwork, SharedView, SprintTimeline)
 components/ProofSlot.tsx   testimonial and sample placeholders (review mode only)
 hooks/useReviewMode.ts     dev, or ?review=1
-pages/                     HomePage, WorkingTogetherPage, AboutPage, ContactPage, IntakePage (retained client page), StylePage and OgPage (dev only)
+pages/                     HomePage, WorkingTogetherPage, ClientWorkPage, MtroWorkPage, AboutPage, ContactPage, IntakePage (retained client page), StylePage and OgPage (dev only)
 scripts/screenshots.mjs    screenshots (REVIEW=0 for the public set) and the overflow check at five widths
 scripts/check-production.mjs  the production check behind npm run check
 scripts/adversarial-review.mjs  sends the review packet to Gemini, Codex and Grok (and the OpenAI and xAI APIs when keyed)
