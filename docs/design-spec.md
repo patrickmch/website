@@ -180,7 +180,7 @@ Each component lists purpose, anatomy, states, responsive behavior, and accessib
 
 ### 5.7 Pen marks
 Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden`:
-- **PenCircle:** an irregular ellipse path that overshoots its start by about a sixth of a turn, as a pen does when circling a word. Stroke 2.5px. Rendered as an absolutely positioned SVG around a diagram node, inset -10px, `preserveAspectRatio="none"`. Draw-on animation per 3.5.
+- **PenCircle:** an irregular ellipse path that overshoots its start by about a sixth of a turn, as a pen does when circling a word. Stroke 2.5px. Rendered as an absolutely positioned SVG around a diagram node, inset about 10px (6px on phones, where the gutter is 16px). Draw-on animation per 3.5.
 - **PenUnderline:** a slightly wavy two-stroke underline. Stroke 2px. Used under the wordmark `c` and under a key phrase in the Discovery Sprint block heading.
 - **PenTick:** a short check mark, two strokes. Stroke 2px. `--resolved` inside figures.
 - **Annotation:** a mono 13px/500 `--mark-text` label with a thin 1px `--mark` leader line (an elbow, two segments, at 768px and up; a short vertical stub below) pointing at the circled node. Placed above-right of the node at 768px and up, directly below the node on small screens.
@@ -199,7 +199,7 @@ Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden
 
 ### 5.10 ProofSlot
 - Props: `kind` ("quote" | "sample"), `note` (the editorial note from the copy doc).
-- **Review mode** (true in `import.meta.env.DEV`, or when the hash route's query contains `review=1`; `review=0` forces off): renders a 2px dashed `--mark` box, 24px padding, with the mono label `PROOF SLOT: TESTIMONIAL` or `PROOF SLOT: SAMPLE DELIVERABLE`, and the note in body style `--ink-2`. The box occupies the final layout position and approximate height (quote: 120px min; sample: 200px min) so reviewers can judge placement.
+- **Review mode** (true in `import.meta.env.DEV`, or when the URL carries `review=1`, which then stays on for the browser session so following a link keeps it; `review=0` switches it off): renders a 2px dashed `--mark` box, 24px padding, with the mono label `PROOF SLOT: TESTIMONIAL` or `PROOF SLOT: SAMPLE DELIVERABLE`, and the note in body style `--ink-2`. The box occupies the final layout position and approximate height (quote: 120px min; sample: 200px min) so reviewers can judge placement.
 - **Published mode:** renders nothing. Not hidden, not empty space. Nothing.
 - No placeholder quote text ever appears. The label says it is a slot.
 
@@ -217,7 +217,7 @@ Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden
 - Error message: mono 13px/500 `--mark-text` below the field, linked by `aria-describedby`; `aria-invalid="true"` on the field.
 - Textarea: 6 rows, vertical resize only.
 - Status region: `aria-live="polite"` paragraph that announces "Sending your note..." (visually hidden while sending, since the button already shows it). The submission error is a separate `role="alert"` paragraph with the address as a `mailto:` link. On success the confirmation replaces the form and receives focus.
-- A visually hidden "Fax" field (`name="fax"`, `aria-hidden`, out of the tab order) is a honeypot: a filled one shows the confirmation and sends nothing.
+- A visually hidden "Reference (leave this blank)" field (`name="reference"`, `aria-hidden`, out of the tab order, a name autofill does not recognise) is a honeypot: a filled one shows the confirmation and sends nothing.
 - Submit: primary button, full width below 480px, auto width above. Disabled while sending with the label "Sending your note..." (from the copy doc). The mail library loads only when a note is sent.
 
 ### 5.14 PageMeta
@@ -234,7 +234,7 @@ Caption: "A quote, as it moves through a business. In this example, the work wai
 Five nodes, left to right (label / where it happens):
 1. Request comes in / email
 2. Job details gathered / re-typed into a spreadsheet
-3. Price decided / waits for the owner
+3. Price decision / waits for the owner (Amended: "Price decided" contradicted its own sublabel)
 4. Quote written / Word template
 5. Quote sent / email, then follow-up
 PenCircle around node 3. Annotation: "work waits here".
@@ -242,7 +242,7 @@ Small screens: nodes stack vertically, arrows point down, annotation sits under 
 
 ### Fig. 2 — How the work gets looked at (Home, "I help you decide what to change")
 Caption: "How the work gets looked at, then changed. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
-A vertical numbered strip with a continuous 1.5px `--stroke` line down the left and four steps:
+A vertical numbered strip with a 1.5px `--stroke` line down the left, in two groups so the Sprint's boundary is in the drawing (Amended): under the mono label "Discovery Sprint", steps 1 to 3; under the mono label "Implementation, scoped separately", step 4.
 1. Walk through real examples with the people doing the work
 2. Find where it is held up
 3. Recommend what to change first
@@ -296,7 +296,7 @@ Section order is the copy doc's order. Every piece of visitor-facing copy comes 
 
 ### 7.2 Working Together
 1. **Hero.** H1 "Start with the work that's slowing you down." three paragraphs, primary button "Let's talk".
-2. **Three stages.** "Understand what needs to change", "Build and put it to work", "Keep improving as the business grows" as a numbered 3-across card grid (01 to 03), each H3 plus paragraph. The section has no heading of its own; the copy doc gives it none, and no invented one is rendered for screen readers either.
+2. **Three stages.** "Understand what needs to change", "Build and put it to work", "Keep improving as the business grows" as a numbered 3-across card grid (01 to 03), each an H2 set at H3 size plus a paragraph (Amended: the section has no heading of its own, so H3s would skip a level). The copy doc gives the section no heading, and no invented one is rendered for screen readers either.
 3. **"Begin with a Discovery Sprint."** H2 and the two paragraphs in the prose column. Then Fig. 6 at full width. Then the three bold lead-ins as H3s with their paragraphs ("First, we agree on the question." / "Then I work through real examples with your team." / "You leave with a recommendation you can act on." including the four-item bulleted list and the closing sentence). Then a **ProofSlot** (sample): "Place an approved sample findings deliverable here when one is ready. Let visitors inspect it without a signup."
 4. **Two short sections side by side** at 768px and up: "What I need from your team" and "What happens afterward", each H2-styled-as-H3 plus paragraphs.
 5. **ProofSlot** (quote): "Approved testimonial about understanding the business, the usefulness of the work, or follow-through."
@@ -306,7 +306,7 @@ Section order is the copy doc's order. Every piece of visitor-facing copy comes 
 The ink block on this page wraps section 3's heading and two paragraphs only (Fig. 6 and the steps sit on paper below it).
 
 ### 7.3 About
-1. **Hero.** H1 "Hi, I'm Patrick McHeyser." two paragraphs in 7 columns; portrait (dog photo, native aspect) in 5 columns. Stacked below 768px, text first.
+1. **Hero.** H1 "Hi, I'm Patrick McHeyser." two paragraphs in 7 columns; portrait (dog photo, native aspect) in columns 9 to 12. Stacked below 768px, text first.
 2. **"I came to software through customer success."** H2, three paragraphs in the prose column. The climbing photograph (`about-hero.png`, resized) sits beside the NOLS paragraph at 4 columns, 1024px and up only, with no caption. Alt: "Patrick McHeyser in a climbing helmet on a mountain ridge." (See open questions.)
 3. **"How I work with your team."** H2, three paragraphs.
 4. **ProofSlot** (quote): "Approved testimonial that supports these working-style claims."
@@ -317,7 +317,7 @@ The ink block on this page wraps section 3's heading and two paragraphs only (Fi
 2. **Form** (prose column width, 640px max): Name, Email, Company, Company website (optional), "What is getting harder to manage as the business grows?" (textarea). Primary button "Send your note". Below the form: "Prefer email? Write to patrick@mcheyser.com." with the address as a mailto link.
 3. **States** per the copy doc: sending label "Sending your note...", success replaces the form with the confirmation paragraph "Thanks for getting in touch. I've received your note and will follow up by email.", error shows "Something went wrong while sending your note. Please try again or email patrick@mcheyser.com." in the status region above the button. Validation messages are the copy doc's table, exactly.
 4. **Validation rules:** Name, Email, Company, and the textarea are required. Email must match a basic address pattern. Website is optional; if present it must contain a dot and no spaces (scheme not required). Validate on submit; after the first submit attempt, re-validate on blur and on change. Focus moves to the first invalid field.
-5. **Submission:** EmailJS `sendForm` with the existing service, template, and public key env vars. Field names stay `name`, `email`, `company`, `website`, `challenge` so the existing EmailJS template keeps working. The old `company_type` and `referral` fields are removed. A hidden `_subject` field carries "New note from mcheyser.com".
+5. **Submission:** EmailJS `send` with the existing service, template, and public key env vars, given a snapshot of the validated, trimmed values (Amended: `sendForm` read the live form after validation). Template parameter names stay `name`, `email`, `company`, `website`, `challenge` so the existing EmailJS template keeps working, and the form fields carry the same names for autofill. The old `company_type` and `referral` fields are removed. `_subject` carries "New note from mcheyser.com". Fields are read-only while a note is sending, and a second submit while sending is ignored.
 
 ### 7.5 Routes
 | Route | Renders |
@@ -383,7 +383,7 @@ Also in `index.html`: `theme-color` = `#F4F2ED`, Open Graph title, description, 
 
 ## 11. Implementation plan
 
-**Stack stays:** React 19, Vite 6, TypeScript, React Router 7 (HashRouter), EmailJS. **Removed:** Tailwind CDN, lucide-react, the Gemini `define` entries in `vite.config.ts` (nothing imports them), the grain and animation CSS in `index.html`.
+**Stack stays:** React 19, Vite 6, TypeScript, React Router 7 (BrowserRouter, amended from HashRouter), EmailJS. **Removed:** Tailwind CDN, lucide-react, the Gemini `define` entries in `vite.config.ts` (nothing imports them), the grain and animation CSS in `index.html`.
 
 **File structure after the build:**
 ```
@@ -453,7 +453,7 @@ The build is done when every line below is true.
 
 **Words**
 - [ ] Every visitor-facing string on all four pages matches `docs/website-copy-2026-10.md` exactly, including button labels, nav labels, footer, form labels, validation messages, and states.
-- [ ] No editorial bracket text is rendered. No placeholder testimonial text exists anywhere in the bundle.
+- [ ] No editorial bracket text is rendered. No placeholder quotation exists anywhere in the bundle (the review-mode slot labels say they are slots and quote nothing).
 - [ ] Page titles and descriptions match section 10.
 
 **Concept**

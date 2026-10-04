@@ -70,7 +70,7 @@ export default function WorkingTogetherPage() {
               <div className="card__n" aria-hidden="true">
                 0{index + 1}
               </div>
-              <h3>{stage.title}</h3>
+              <h2 className="card__title">{stage.title}</h2>
               <p>{stage.body}</p>
             </li>
           ))}

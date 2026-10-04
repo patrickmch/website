@@ -41,8 +41,12 @@ export function PenCircle({
 }) {
   const ref = useRef<SVGSVGElement>(null);
   const parent = useParentSize(ref);
-  const width = parent ? parent.width + padX * 2 : 0;
-  const height = parent ? parent.height + padY * 2 : 0;
+  // On phones the gutters are 16px, so the circle overshoots less (re-measured on resize by useParentSize).
+  const narrow = typeof window !== 'undefined' && window.innerWidth < 480;
+  const px = narrow ? Math.min(padX, 6) : padX;
+  const py = narrow ? Math.min(padY, 6) : padY;
+  const width = parent ? parent.width + px * 2 : 0;
+  const height = parent ? parent.height + py * 2 : 0;
   const d = useMemo(() => (width && height ? penCirclePath(width, height) : ''), [width, height]);
 
   return (
@@ -52,7 +56,7 @@ export function PenCircle({
       viewBox={`0 0 ${width || 1} ${height || 1}`}
       width={width || 1}
       height={height || 1}
-      style={{ top: -padY, left: -padX }}
+      style={{ top: -py, left: -px }}
       aria-hidden="true"
       focusable="false"
     >

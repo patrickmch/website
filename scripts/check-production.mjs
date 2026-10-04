@@ -105,6 +105,17 @@ try {
     expect(slots === 0, `${route}: ${slots} proof slot(s) visible without the review flag`);
     const h1s = await page.locator('h1').count();
     expect(h1s === 1, `${route}: ${h1s} h1 elements`);
+    const skipped = await page.evaluate(() => {
+      let previous = 0;
+      const bad = [];
+      for (const h of document.querySelectorAll('h1, h2, h3, h4, h5, h6')) {
+        const level = Number(h.tagName[1]);
+        if (level > previous + 1) bad.push(`${h.tagName} "${h.textContent?.trim().slice(0, 40)}" after h${previous}`);
+        previous = level;
+      }
+      return bad;
+    });
+    expect(skipped.length === 0, `${route}: heading levels skip: ${skipped.join('; ')}`);
   }
 
   await page.goto(url('/?review=1'), { waitUntil: 'load' });
@@ -116,6 +127,14 @@ try {
     belowRow: !!document.querySelector('.person + .proof-slot'),
   }));
   expect(!personSlot.insideText && personSlot.belowRow, 'person testimonial slot should sit below the row, not inside the text column');
+
+  // The review flag survives following a link, and ?review=0 switches it off.
+  await page.locator('.site-nav__link', { hasText: 'About' }).click();
+  await page.waitForTimeout(400);
+  expect((await page.locator('.proof-slot').count()) > 0, 'review mode should stay on after following a link');
+  await page.goto(url('/about?review=0'), { waitUntil: 'load' });
+  await page.waitForTimeout(300);
+  expect((await page.locator('.proof-slot').count()) === 0, '?review=0 should switch review mode off');
 
   await page.goto(url('/apply'), { waitUntil: 'load' });
   await page.waitForTimeout(300);
@@ -301,7 +320,7 @@ try {
     });
     await page.goto(url('/contact'), { waitUntil: 'load' });
     await settle(page);
-    const hp = page.locator('input[name="fax"]');
+    const hp = page.locator('input[name="reference"]');
     const hasHoneypot = (await hp.count()) === 1;
     expect(hasHoneypot, 'honeypot field should exist');
     if (hasHoneypot) {
@@ -335,7 +354,9 @@ try {
       button: document.querySelector('button[type="submit"]')?.textContent?.trim(),
       status: document.querySelector('.form__status')?.textContent?.trim(),
       statusHidden: document.querySelector('.form__status')?.classList.contains('visually-hidden'),
+      readOnly: Array.from(document.querySelectorAll('.field__input')).every((el) => el.readOnly),
     }));
+    expect(midFlight.readOnly === true, 'fields should be read-only while a note is sending');
     expect(midFlight.button === 'Sending your note...', `button should read "Sending your note..." while sending, got ${midFlight.button}`);
     expect(midFlight.status === 'Sending your note...' && midFlight.statusHidden === true, 'live region should announce sending without showing it twice');
     await page.waitForTimeout(1200);

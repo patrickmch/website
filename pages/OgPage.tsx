@@ -12,7 +12,7 @@ export default function OgPage() {
       <Flow annotated className="flow--even">
         <Node label="Request comes in" />
         <Connector />
-        <Node label="Price decided" marked annotation="work waits here" />
+        <Node label="Price decision" marked annotation="work waits here" />
         <Connector />
         <Node label="Quote sent" />
       </Flow>

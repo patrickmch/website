@@ -10,6 +10,7 @@ type Common = {
   onChange: (value: string) => void;
   onBlur?: () => void;
   autoComplete?: string;
+  readOnly?: boolean;
 };
 
 type InputProps = Common & {
@@ -27,7 +28,7 @@ export type FieldProps = InputProps | TextareaProps;
 
 /** A labeled form field with error wiring (aria-describedby, aria-invalid). */
 export function Field(props: FieldProps) {
-  const { id, name, label, optional = false, error, value, onChange, onBlur, autoComplete } = props;
+  const { id, name, label, optional = false, error, value, onChange, onBlur, autoComplete, readOnly = false } = props;
   const errorId = `${id}-error`;
   const shared = {
     id,
@@ -36,6 +37,7 @@ export function Field(props: FieldProps) {
     onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => onChange(event.target.value),
     onBlur,
     autoComplete,
+    readOnly,
     className: 'field__input',
     'aria-invalid': error ? true : undefined,
     'aria-describedby': error ? errorId : undefined,

@@ -375,8 +375,16 @@
   color: var(--mark-text);
 }
 
-.card h3 {
+.card h3,
+.card .card__title {
   margin-bottom: 10px;
+}
+
+/* A card title that is an H2 in the outline (the stages follow the H1 directly) but set at H3 size. */
+.card .card__title {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 @media (min-width: 768px) {
@@ -739,7 +747,22 @@
   }
 }
 
-/* Steps (Fig. 2) */
+/* Steps (Fig. 2): two groups, each with its own line, so the Sprint's boundary is in the drawing. */
+.steps-group + .steps-group {
+  margin-top: 20px;
+}
+
+.steps-group__label {
+  margin-bottom: 4px;
+  padding-left: 48px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
 .steps {
   position: relative;
   margin: 0;

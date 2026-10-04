@@ -59,10 +59,9 @@ export default function ContactPage() {
     '/contact'
   );
 
-  const formRef = useRef<HTMLFormElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
   const [values, setValues] = useState<Values>(empty);
-  const [fax, setFax] = useState('');
+  const [reference, setReference] = useState('');
   const [errors, setErrors] = useState<Errors>({});
   const [attempted, setAttempted] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -87,6 +86,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (status === 'sending') return;
     setAttempted(true);
     const found = validate(values);
     setErrors(found);
@@ -95,23 +95,29 @@ export default function ContactPage() {
       document.getElementById(`contact-${firstInvalid}`)?.focus();
       return;
     }
-    if (!formRef.current) return;
-
-    // Honeypot: people never see the fax field. A filled one is a bot, which gets the confirmation and nothing is sent.
-    if (fax.trim()) {
+    // Honeypot: people never see the reference field (it is hidden and unrecognisable to autofill).
+    // A filled one is a bot, which gets the confirmation and nothing is sent.
+    if (reference.trim()) {
       setStatus('sent');
       return;
     }
 
+    // Send the values that were validated, trimmed, not whatever the form holds by the time the request goes out.
+    const note = {
+      name: values.name.trim(),
+      email: values.email.trim(),
+      company: values.company.trim(),
+      website: values.website.trim(),
+      challenge: values.challenge.trim(),
+      _subject: 'New note from mcheyser.com',
+    };
+
     setStatus('sending');
     try {
       const { default: emailjs } = await import('@emailjs/browser');
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-      );
+      await emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, note, {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      });
       setStatus('sent');
     } catch (error) {
       console.error('EmailJS error:', error);
@@ -140,22 +146,23 @@ export default function ContactPage() {
             </Prose>
           </div>
         ) : (
-          <form ref={formRef} className="form" onSubmit={handleSubmit} noValidate>
+          <form className="form" onSubmit={handleSubmit} noValidate>
             <input type="hidden" name="_subject" value="New note from mcheyser.com" />
             <div className="visually-hidden" aria-hidden="true">
-              <label htmlFor="contact-fax">Fax</label>
+              <label htmlFor="contact-reference">Reference (leave this blank)</label>
               <input
-                id="contact-fax"
-                name="fax"
+                id="contact-reference"
+                name="reference"
                 type="text"
                 tabIndex={-1}
                 autoComplete="off"
-                value={fax}
-                onChange={(event) => setFax(event.target.value)}
+                value={reference}
+                onChange={(event) => setReference(event.target.value)}
               />
             </div>
             <Field
               id="contact-name"
+              readOnly={sending}
               name="name"
               label="Name"
               autoComplete="name"
@@ -166,6 +173,7 @@ export default function ContactPage() {
             />
             <Field
               id="contact-email"
+              readOnly={sending}
               name="email"
               label="Email"
               type="email"
@@ -178,6 +186,7 @@ export default function ContactPage() {
             />
             <Field
               id="contact-company"
+              readOnly={sending}
               name="company"
               label="Company"
               autoComplete="organization"
@@ -188,6 +197,7 @@ export default function ContactPage() {
             />
             <Field
               id="contact-website"
+              readOnly={sending}
               name="website"
               label="Company website"
               optional
@@ -200,6 +210,7 @@ export default function ContactPage() {
             />
             <Field
               id="contact-challenge"
+              readOnly={sending}
               name="challenge"
               label="What is getting harder to manage as the business grows?"
               as="textarea"
