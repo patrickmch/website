@@ -439,6 +439,15 @@ try {
   expect(mobileFacts.headers === 4 && mobileFacts.headerRoles && mobileFacts.tableRole === 'table', 'Fig. 5 should keep explicit table semantics');
   expect(mobileFacts.labels.length === 3, `Home phone diagrams should label their branches (fan labels), got ${JSON.stringify(mobileFacts.labels)}`);
   expect(mobileFacts.annotationBelow, 'Fig. 5 phone annotation should sit below the circled value, left-aligned with it');
+  const edge = await mpage.evaluate(() => {
+    const over = [];
+    for (const svg of document.querySelectorAll('.pen-circle')) {
+      const r = svg.getBoundingClientRect();
+      if (r.right > window.innerWidth - 6 || r.left < 6) over.push(`${Math.round(r.left)}..${Math.round(r.right)}`);
+    }
+    return over;
+  });
+  expect(edge.length === 0, `pen circles should stay clear of the phone's edges, got ${edge.join(', ')}`);
   await mpage.goto(url('/working-together'), { waitUntil: 'load' });
   await settle(mpage);
   expect((await mpage.locator('.fan__label').count()) === 1, 'Fig. 6 should label its branches on phones');

@@ -24,6 +24,7 @@ Severities are the reviewers' own. Where this session disagrees, the disposition
 | `0601519` | Spec amendments and project docs |
 | `7b7b7b7` | Round two: validated snapshot send, safer honeypot, persistent review flag, heading levels, Fig. 2 boundary, labels, phone circle padding |
 | `a7ac302` | Round two craft: 2px wordmark stroke, disabled button opacity, 16px header button, 1200w portrait, quiet console, focus the heading, and the fresh branch review's minors |
+| `739c809` | Phone circles drawn inside a full-width box, with an edge assertion in the check |
 
 ## Dispositions
 
@@ -266,5 +267,5 @@ Read the diff on a clean export, ran the typecheck and the check there (both pas
 | R-M5 | minor | Fixed sleeps, masked 404s, "transfer" label in the check | **fixed** `a7ac302`: explicit waits, only the failures the script causes are masked, the byte count is labelled as decoded bytes |
 | R-M6 | minor | Three stale spec lines | **fixed** `a7ac302` |
 | R-M7 | minor | C11's reason contradicted the ledger; launch list lacks real-path checks | **fixed** here: C11 reworded above; the launch list in `PROGRESS.md` now includes a fresh load of `/working-together` and `/intake/denver-zen-den` |
-| R-M8 | minor | Phone circles crowd the bracket | **fixed** `7b7b7b7`; checked on the regenerated tiles |
+| R-M8 | minor | Phone circles crowd the bracket | **fixed** `7b7b7b7` and the follow-up commit below: on a box that spans the phone screen the circle is drawn 8px inside the box, as a pen circles the words, and the check asserts every circle stays clear of the screen edges |
 | R-M9 | minor | The lazy intake chunk has no error boundary | **declined**: only reachable by direct link, and any message would be new copy; the route is Patrick's open question 3 |
