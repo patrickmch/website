@@ -26,7 +26,9 @@ export function Paperwork() {
               <span className="record__key">{row.key}</span>
               {row.missing ? (
                 <span className="record__val">
-                  <span className="record__gap" aria-hidden="true" />
+                  <span className="record__gap" aria-hidden="true">
+                    <PenCircle padX={6} padY={5} />
+                  </span>
                   <span className="record__flag">flagged: missing</span>
                 </span>
               ) : (
@@ -35,11 +37,10 @@ export function Paperwork() {
                   on file
                 </span>
               )}
-              {row.missing && <PenCircle padX={8} padY={5} />}
             </div>
           ))}
         </div>
-        <Fan count={3} direction="out" />
+        <Fan count={3} direction="out" mobileLabel="carries into each" />
         <Stack className="stack--docs">
           <Node label="Work order" small />
           <Node label="Contract" small />

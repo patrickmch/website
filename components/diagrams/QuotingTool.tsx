@@ -13,9 +13,9 @@ export function QuotingTool() {
           <Node label="Job details" />
           <Node label="Pricing rules" />
         </Stack>
-        <Fan count={2} direction="in" />
+        <Fan count={2} direction="in" mobileLabel="both go in" />
         <Node label="Draft quote" where="prepared for review" />
-        <Fan count={2} direction="out" />
+        <Fan count={2} direction="out" mobileLabel="one of these" />
         <Stack>
           <Node label="Ready for review" tick />
           <Node label="Needs a judgment call" marked annotation="goes to a person" annotationPlacement="below" />

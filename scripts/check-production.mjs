@@ -189,7 +189,10 @@ try {
     const boxes = Array.from(document.querySelectorAll('.hero__figure .node__box'));
     const heights = boxes.map((b) => Math.round(b.getBoundingClientRect().height));
     out.fig1Heights = heights;
-    out.fig1Overflow = boxes.some((b) => b.scrollWidth > b.clientWidth + 1);
+    // Text runs, not boxes: the pen circle is positioned outside its box on purpose.
+    out.fig1Overflow = Array.from(document.querySelectorAll('.hero__figure .node__label, .hero__figure .node__where')).some(
+      (t) => t.scrollWidth > t.clientWidth + 1
+    );
     out.fig1WhereLines = Array.from(document.querySelectorAll('.hero__figure .node__where')).map((w) => Math.round(w.getBoundingClientRect().height));
     // Annotation leader is an elbow (two segments) at desktop widths.
     const leader = document.querySelector('.hero__figure .annotation--above .annotation__leader-d');
@@ -427,12 +430,13 @@ try {
   expect(!jsBodies.some((js) => js.text.includes('api.emailjs.com')), 'Home should not download the mail provider library');
   await cold.close();
 
-  // A font host that is unreachable from the machine running the check is not a site defect.
-  const fontHost = /fonts\.(googleapis|gstatic)\.com/;
-  const onlyFontFailures = failedRequests.length > 0 && failedRequests.every((u) => fontHost.test(u));
+  // A font host that is unreachable from the machine running the check is not a site defect, and the
+  // provider request this script aborts on purpose is expected to fail.
+  const expectedFailure = (u) => /fonts\.(googleapis|gstatic)\.com/.test(u) || /api\.emailjs\.com/.test(u);
+  const onlyExpectedFailures = failedRequests.length > 0 && failedRequests.every(expectedFailure);
   // The forced failure path logs "EmailJS error:" on purpose; everything else is a defect.
   const bundleErrors = consoleErrors.filter(
-    (t) => !(onlyFontFailures && t.startsWith('Failed to load resource')) && !t.startsWith('EmailJS error:')
+    (t) => !(onlyExpectedFailures && t.startsWith('Failed to load resource')) && !t.startsWith('EmailJS error:')
   );
   expect(bundleErrors.length === 0, `console errors: ${bundleErrors.join(' | ')}`);
 

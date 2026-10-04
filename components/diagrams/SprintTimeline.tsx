@@ -14,7 +14,7 @@ export function SprintTimeline() {
         <Node label="Work through real examples with your team" where="a quote, a handoff, a report" />
         <Connector />
         <Node label="Findings and a recommendation" where="reviewed together" marked />
-        <Fan count={4} direction="out" />
+        <Fan count={4} direction="out" mobileLabel="then one of these" />
         <Stack className="stack--outcomes">
           <Node label="Take it forward with your team" small />
           <Node label="Use another provider" small />

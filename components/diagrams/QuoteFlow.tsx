@@ -5,8 +5,8 @@ export function QuoteFlow() {
   return (
     <Figure
       n={1}
-      caption="A quote, as it moves through a business. The circled step is where work usually waits. Illustrative."
-      description="Five steps in a row. A request comes in by email. Job details are gathered and re-typed into a spreadsheet. A price is decided, which waits for the owner; this step is circled with the note 'work waits here'. The quote is written in a Word template. The quote is sent by email, then followed up."
+      caption="A quote, as it moves through a business. In this example, the work waits for a pricing decision. Illustrative."
+      description="Five steps in a row. A request comes in by email. Job details are gathered and re-typed into a spreadsheet. A price is decided, which waits for the owner; in this example that step is circled with the note 'work waits here'. The quote is written in a Word template. The quote is sent by email, then followed up."
     >
       <Flow annotated>
         <Node label="Request comes in" where="email" />
