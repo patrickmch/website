@@ -12,5 +12,5 @@
 ## What's next
 
 - Patrick's decisions: the open questions in spec section 14 plus the concept-level disagreements listed in the review log.
-- Merge `redesign-2026-10` into `main` (Railway deploys from `main`), confirm the three `VITE_EMAILJS_*` variables on the Railway service, send a real note through the live form, check `https://mcheyser.com/#/apply` lands on the contact page, and confirm `og.png` on a link preview.
+- Merge `redesign-2026-10` into `main` (Railway deploys from `main`), confirm the three `VITE_EMAILJS_*` variables on the Railway service, send a real note through the live form and confirm it arrives with all five fields, check that fresh loads of `https://mcheyser.com/working-together`, `https://mcheyser.com/intake/denver-zen-den` and the old `https://mcheyser.com/#/apply` all land, confirm `og.png` on a link preview, and do a VoiceOver pass of Home and Contact.
 - Real testimonials and a sample findings deliverable: the slots exist and render nothing until then.
