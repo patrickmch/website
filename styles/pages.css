@@ -1,0 +1,427 @@
+/* Page layouts. See docs/design-spec.md section 7. */
+
+#main:focus {
+  outline: none;
+}
+
+/* ---------- Hero ---------- */
+.hero__text {
+  max-width: var(--prose);
+}
+
+.hero__text .eyebrow {
+  margin-bottom: 16px;
+}
+
+.hero__text h1 {
+  margin-bottom: 24px;
+  max-width: 14em;
+}
+
+.hero__text p + p {
+  margin-top: 16px;
+}
+
+.hero__text p {
+  max-width: 36em;
+}
+
+.hero__cta {
+  margin-top: 32px;
+}
+
+.hero__figure {
+  margin-top: 56px;
+}
+
+.proof-slot--after-hero {
+  margin-top: 48px;
+}
+
+@media (min-width: 1024px) {
+  .hero__figure {
+    margin-top: 72px;
+  }
+}
+
+/* ---------- Home: approach and examples ---------- */
+.approach {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 1024px) {
+  .approach {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: start;
+  }
+
+  .approach__text {
+    grid-column: span 7;
+  }
+
+  .approach__figure {
+    grid-column: 9 / span 4;
+    padding-top: 12px;
+  }
+}
+
+.example {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.example + .example {
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.example__text h3 {
+  margin-bottom: 12px;
+}
+
+.example__text p {
+  max-width: 32em;
+}
+
+@media (min-width: 1024px) {
+  .example {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+
+  .example__text {
+    grid-column: span 5;
+  }
+
+  .example__figure {
+    grid-column: span 7;
+  }
+
+  .example--flip .example__figure {
+    order: -1;
+  }
+}
+
+/* ---------- Ink block contents ---------- */
+.ink-block h2 {
+  margin-bottom: 16px;
+  max-width: 16em;
+}
+
+.ink-block__cta {
+  margin-top: 24px;
+}
+
+/* ---------- Home: person ---------- */
+.person {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.person__text h2 {
+  margin-bottom: 16px;
+}
+
+.person__text .link-secondary {
+  margin-top: 16px;
+}
+
+.person__proof {
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .person {
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .person {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .person__photo {
+    grid-column: span 5;
+  }
+
+  .person__text {
+    grid-column: span 7;
+  }
+}
+
+/* ---------- Closing call ---------- */
+.closing h2 {
+  margin-bottom: 16px;
+  max-width: 16em;
+}
+
+.closing .btn {
+  margin-top: 32px;
+}
+
+/* ---------- Working Together ---------- */
+.sprint-figure {
+  margin-top: 48px;
+}
+
+.sprint-steps {
+  margin-top: 56px;
+  max-width: var(--prose);
+}
+
+.sprint-steps h3 {
+  margin-bottom: 8px;
+}
+
+.sprint-steps__item + .sprint-steps__item {
+  margin-top: 32px;
+}
+
+.sprint-proof {
+  margin-top: 48px;
+}
+
+.two-up {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.two-up h2 {
+  margin-bottom: 12px;
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .two-up {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+/* ---------- About ---------- */
+.about-hero {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.about-hero__text h1 {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-hero {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .about-hero__text {
+    grid-column: span 7;
+  }
+
+  .about-hero__photo {
+    grid-column: 9 / span 4;
+  }
+}
+
+.bio {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.bio__photo {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bio {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: start;
+  }
+
+  .bio__text {
+    grid-column: span 7;
+  }
+
+  .bio__photo {
+    display: block;
+    grid-column: 9 / span 4;
+    padding-top: 8px;
+  }
+}
+
+/* ---------- Contact ---------- */
+.contact-form {
+  margin-top: 40px;
+}
+
+/* ---------- Intake (retained client page) ---------- */
+.intake {
+  max-width: 760px;
+}
+
+.intake__q {
+  margin-top: 40px;
+}
+
+.intake__n {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--mark-text);
+}
+
+.intake__q h2 {
+  margin: 8px 0;
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.intake__help {
+  margin-bottom: 12px;
+  color: var(--ink-2);
+}
+
+/* ---------- Style page (dev only) ---------- */
+.style-page section + section {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.style-page h2 {
+  margin-bottom: 24px;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.swatch__chip {
+  height: 64px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.swatch__meta {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.type-row + .type-row {
+  margin-top: 24px;
+}
+
+.type-row .eyebrow {
+  margin-bottom: 6px;
+}
+
+.style-grid {
+  display: grid;
+  gap: 48px;
+}
+
+.style-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.ink-sample {
+  padding: 24px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+}
+
+.mark-sample {
+  position: relative;
+  display: inline-block;
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: var(--text-fig);
+}
+
+/* ---------- Social preview (dev only) ---------- */
+.og {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1200px;
+  height: 630px;
+  padding: 72px 80px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.og__tag {
+  margin-top: 24px;
+  max-width: 26em;
+  font-size: 34px;
+  line-height: 1.3;
+}
+
+.og .node__box {
+  padding: 16px 22px;
+}
+
+.og .node__label {
+  font-size: 20px;
+}
+
+.og .node__where {
+  font-size: 17px;
+}
+
+.og .connector {
+  width: 48px;
+  height: 24px;
+}
+
+.og .annotation__text {
+  font-size: 18px;
+}
+
+.og .annotation--above {
+  bottom: calc(100% + 8px);
+}
+
+.og .annotation--above .annotation__leader {
+  width: 32px;
+  height: 32px;
+}
+
+.og .flow--annotated {
+  padding-top: 56px;
+}
+
+.og__foot {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}

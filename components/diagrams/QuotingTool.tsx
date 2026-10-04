@@ -1,0 +1,26 @@
+import { Figure, Flow, Stack, Node, Fan } from '../Figure';
+
+/** Fig. 3: a quoting tool that follows your rules. */
+export function QuotingTool() {
+  return (
+    <Figure
+      n={3}
+      caption="Routine quotes get drafted. The ones that need judgment get flagged for a person. Illustrative."
+      description="Two inputs, job details and pricing rules, feed a draft quote. The draft goes one of two ways: ready for review, shown with a check mark, or needs a judgment call, which is circled with the note 'goes to a person'."
+    >
+      <Flow>
+        <Stack>
+          <Node label="Job details" />
+          <Node label="Pricing rules" />
+        </Stack>
+        <Fan count={2} direction="in" />
+        <Node label="Draft quote" where="prepared for review" />
+        <Fan count={2} direction="out" />
+        <Stack>
+          <Node label="Ready for review" tick />
+          <Node label="Needs a judgment call" marked annotation="goes to a person" annotationPlacement="below" />
+        </Stack>
+      </Flow>
+    </Figure>
+  );
+}
