@@ -36,3 +36,5 @@
 - Updated canonical copy before implementation. Added route/metadata, click-through, CTA, external-client-link and diagram-layout checks; removed assertions for the retired Home example diagrams.
 - Typecheck, production build/check, full desktop/mobile screenshots, five-width overflow checks and diff whitespace check passed. Contact-provider checks are mocked; no email was sent. First new-route test attempt checked the DOM before navigation had rendered; fixed the test to wait for the destination diagram and reran successfully.
 - Release target: `patrickmch/website` main, automatically deployed by Railway. Previous live revision `22f4fdc`; rollback is a reviewed revert of this release commit. Live verification follows push.
+
+- **Live verified:** release `5f9d7df` pushed to `main`; Railway serves `/work` and `/work/mtro-pro`. Headless Chrome confirmed exact story paragraphs, canonical URL, both diagrams, Home-to-story and story-to-contact navigation, mobile menu and diagram fit at 390px. No contact message sent.
