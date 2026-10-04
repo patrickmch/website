@@ -46,19 +46,22 @@ export default function AboutPage() {
             </div>
             <Prose>
               <p>
-                I started in customer success, helping business customers use software to do their jobs. I taught
-                myself to code and moved into engineering, eventually becoming a senior software engineer. I built
-                internal tools and marketing systems, working directly with the people who relied on them.
+                I started in customer success and taught myself to code, eventually becoming a senior software
+                engineer. I built custom applications and automated marketing workflows, working directly with
+                business teams to translate their needs into working software.
               </p>
               <p>
-                Over nearly seven years at NOLS, I led expeditions and later supervised leadership programs.
-                Participants included executives from Fortune 500 companies, military special operations personnel,
-                and MBA students. The work involved helping people make decisions, communicate, and lead teams in
-                unfamiliar situations.
+                At NOLS, I led leadership intensives for Fortune 500 executives, military special operations
+                personnel, and participants from Wharton and other leading MBA programs. These experiences used
+                demanding wilderness expeditions to develop decision-making, communication, and team leadership.
               </p>
               <p>
-                I also managed instructor training, coordinated program logistics across international locations,
-                and used client feedback to improve how the programs ran.
+                My responsibilities extended to training and supporting instructors, working with international
+                teams, and coordinating complex expedition logistics. I handled emergencies and evacuations,
+                gave difficult performance feedback, and helped instructors develop their judgment and
+                leadership, while using my software skills to automate repetitive work. That experience
+                continues to shape how I work: understanding what people are dealing with, making practical
+                decisions, and carrying improvements through.
               </p>
             </Prose>
           </div>

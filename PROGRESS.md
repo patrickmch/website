@@ -17,3 +17,8 @@
 - Patrick's remaining decisions from the review log: climbing photo, intake route, proof material, prerendering and self-hosted fonts as follow-ups.
 - Visitors who loaded the old site in the days before launch may see it until their cached copy expires (the old host sent no cache headers). A reload fixes it; new visits are unaffected.
 - Real testimonials and a sample findings deliverable: the slots exist and render nothing until then.
+
+## 2026-10-04: Approved About wording
+
+- Applied Patrick's approved paragraph verbatim, keeping software automation integrated with his instructor support, emergency response, performance feedback, and expedition logistics responsibilities. Updated the preceding copy to leadership intensives, Wharton and other leading MBA audiences, and custom applications/marketing automation.
+- Updated `pages/AboutPage.tsx` and `docs/website-copy-2026-10.md`. Typecheck, build, production check, and diff whitespace check passed before release. Scope is About copy only; existing design, photos, and case-study plans are unchanged.
