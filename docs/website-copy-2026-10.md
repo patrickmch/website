@@ -2,8 +2,9 @@
 title: Website Copy for Designer Handoff - October 2026
 type: draft
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-04
 sources:
+  - Patrick's October 4 LinkedIn biography and About-page positioning revision
   - Patrick's October 2026 positioning and website copy brief
   - Patrick's October 3 instruction to complete the copy and leave design to a designer agent
 related: []
@@ -188,27 +189,25 @@ We'll start with a conversation about the problem and whether I can help.
 
 ### Hi, I'm Patrick McHeyser.
 
-I help owners and operations leaders make their businesses easier to run and better able to grow. My work combines understanding the operation with building the software and systems that help it work better.
+I help owners and operations leaders improve how their businesses run and build the capacity to grow. My background spans software engineering, customer success, and executive leadership development.
 
 I'm based in Boulder, Colorado. You'll work directly with me.
 
 > [Editorial: photograph of Patrick.]
 
-### I came to software through customer success.
+### A background in software and executive leadership development.
 
-I taught myself to code and made the move from customer success to software engineering, eventually working as a senior engineer. My background also includes seven years leading international leadership programs with NOLS.
+I started in customer success, helping business customers use software to do their jobs. I taught myself to code and moved into engineering, eventually becoming a senior software engineer. I built internal tools and marketing systems, working directly with the people who relied on them.
 
-In my consulting work, I spend time with the people responsible for the outcome and the people doing the work. Both have information I need: what the business is trying to accomplish, and what happens when a request is incomplete, a system doesn't have the answer, or the usual person is away.
+Over nearly seven years at NOLS, I led expeditions and later supervised leadership programs. Participants included executives from Fortune 500 companies, military special operations personnel, and MBA students. The work involved helping people make decisions, communicate, and lead teams in unfamiliar situations.
 
-That understanding informs what I recommend and what I build.
+I also managed instructor training, coordinated program logistics across international locations, and used client feedback to improve how the programs ran.
 
-### How I work with your team
+### What that experience brings to your business
 
-I'll ask to see recent examples and have people walk me through the job. I want to understand the workarounds as well as the documented process.
+I'm comfortable talking through a decision with an owner, working out the details with the team, and building the software myself. I pay attention to what people need to do their jobs, where responsibilities are unclear, and what makes a change difficult to put into practice.
 
-I'll explain what I find, what I recommend, and what still needs checking. You'll have a chance to challenge the assumptions before committing to the next step.
-
-When we're implementing a change, I build and test it with the people who will use it. We work through the exceptions and agree on how it will be supported once it's in place.
+You can expect clear explanations, room to question my recommendations, and direct involvement as we put the changes to work. My aim is to leave your team with something they understand and can use with confidence.
 
 > [Editorial: approved testimonial that supports these working-style claims.]
 

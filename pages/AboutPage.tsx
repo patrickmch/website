@@ -18,9 +18,8 @@ export default function AboutPage() {
           <div className="about-hero__text hero__text">
             <h1>Hi, I'm Patrick McHeyser.</h1>
             <p className="lead">
-              I help owners and operations leaders make their businesses easier to run and better able to grow. My
-              work combines understanding the operation with building the software and systems that help it work
-              better.
+              I help owners and operations leaders improve how their businesses run and build the capacity to grow.
+              My background spans software engineering, customer success, and executive leadership development.
             </p>
             <p>I'm based in Boulder, Colorado. You'll work directly with me.</p>
           </div>
@@ -43,20 +42,24 @@ export default function AboutPage() {
         <div className="bio">
           <div className="bio__text">
             <div className="section__heading">
-              <h2 id="story-heading">I came to software through customer success.</h2>
+              <h2 id="story-heading">A background in software and executive leadership development.</h2>
             </div>
             <Prose>
               <p>
-                I taught myself to code and made the move from customer success to software engineering, eventually
-                working as a senior engineer. My background also includes seven years leading international leadership
-                programs with NOLS.
+                I started in customer success, helping business customers use software to do their jobs. I taught
+                myself to code and moved into engineering, eventually becoming a senior software engineer. I built
+                internal tools and marketing systems, working directly with the people who relied on them.
               </p>
               <p>
-                In my consulting work, I spend time with the people responsible for the outcome and the people doing
-                the work. Both have information I need: what the business is trying to accomplish, and what happens
-                when a request is incomplete, a system doesn't have the answer, or the usual person is away.
+                Over nearly seven years at NOLS, I led expeditions and later supervised leadership programs.
+                Participants included executives from Fortune 500 companies, military special operations personnel,
+                and MBA students. The work involved helping people make decisions, communicate, and lead teams in
+                unfamiliar situations.
               </p>
-              <p>That understanding informs what I recommend and what I build.</p>
+              <p>
+                I also managed instructor training, coordinated program logistics across international locations,
+                and used client feedback to improve how the programs ran.
+              </p>
             </Prose>
           </div>
           <div className="bio__photo">
@@ -77,20 +80,18 @@ export default function AboutPage() {
 
       <Section labelledBy="how-heading">
         <div className="section__heading">
-          <h2 id="how-heading">How I work with your team</h2>
+          <h2 id="how-heading">What that experience brings to your business</h2>
         </div>
         <Prose>
           <p>
-            I'll ask to see recent examples and have people walk me through the job. I want to understand the
-            workarounds as well as the documented process.
+            I'm comfortable talking through a decision with an owner, working out the details with the team, and
+            building the software myself. I pay attention to what people need to do their jobs, where responsibilities
+            are unclear, and what makes a change difficult to put into practice.
           </p>
           <p>
-            I'll explain what I find, what I recommend, and what still needs checking. You'll have a chance to
-            challenge the assumptions before committing to the next step.
-          </p>
-          <p>
-            When we're implementing a change, I build and test it with the people who will use it. We work through
-            the exceptions and agree on how it will be supported once it's in place.
+            You can expect clear explanations, room to question my recommendations, and direct involvement as we
+            put the changes to work. My aim is to leave your team with something they understand and can use with
+            confidence.
           </p>
         </Prose>
         <ProofSlot
