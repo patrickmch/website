@@ -68,14 +68,14 @@ export default function AboutPage() {
           <div className="bio__photo">
             <img
               className="portrait"
-              src={asset("patrick-ridge-800.jpg")}
-              srcSet={`${asset("patrick-ridge-800.jpg")} 800w, ${asset("patrick-ridge-1200.jpg")} 1200w`}
+              src={asset("patrick-ridge-thumbs-up-single-rope-800.jpg")}
+              srcSet={`${asset("patrick-ridge-thumbs-up-single-rope-800.jpg")} 800w, ${asset("patrick-ridge-thumbs-up-single-rope-1088.jpg")} 1088w`}
               sizes="350px"
               width={800}
-              height={1064}
+              height={1065}
               loading="lazy"
               decoding="async"
-              alt="Patrick McHeyser in a climbing helmet on a mountain ridge."
+              alt="Patrick McHeyser giving a thumbs-up in a climbing helmet on a mountain ridge."
             />
           </div>
         </div>
