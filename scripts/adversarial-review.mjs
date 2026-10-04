@@ -12,7 +12,8 @@
  *   disk (GROK_MODEL optional). Skipped when XAI_API_KEY is set.
  *   The codex provider is skipped when OPENAI_API_KEY is set, to avoid two OpenAI reviews.
  * Keys are also read from .env.local when present.
- * Replies are written to OUT (default ./review-out) as <provider>.md.
+ * Replies are written to OUT (default ./review-out) as <provider>.md. A later round
+ * goes in its own folder: OUT=review-out/round-2 npm run review.
  *
  * Usage:
  *   npm run screenshots -- (with TILES=1) first, then:
@@ -332,7 +333,7 @@ THE PACKET IS ON DISK IN THIS REPOSITORY (${ROOT}). Read it with your file tools
 4. The screenshots, if you can view images: ${tilesDir} holds 1400px-tall tiles named <page>-<desktop|mobile>-<nn>.png for home, working-together, about, and contact. public/og.png is the social preview image. The dashed orange "PROOF SLOT" boxes are placeholders hidden on the published site; judge their placement only.
 If you cannot view images, say so at the top of your review and base the visual findings on the spec and the CSS.
 
-Write the complete review in markdown to review-out/grok.md in this repository, and also print it in full as your final answer.`;
+Write the complete review in markdown to ${path.join(OUT, 'grok.md')} in this repository, and also print it in full as your final answer.`;
 }
 
 async function callGrok(packet) {

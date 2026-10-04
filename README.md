@@ -12,16 +12,22 @@ npm run dev        # Vite dev server on http://localhost:2000
 npm run build      # production build to dist/
 npm run preview    # serve dist/
 npm run typecheck  # tsc --noEmit
+npm run check      # production check: builds with placeholder mail keys, runs scripts/check-production.mjs
 ```
 
-In development the proof-slot placeholders (testimonial and sample deliverable positions) are visible, and two extra routes exist: `/#/style` (style tile) and `/#/og` (social preview template). On the published site, proof slots render nothing unless the route carries `?review=1`.
+In development the proof-slot placeholders (testimonial and sample deliverable positions) are visible, and two extra routes exist: `/style` (style tile) and `/og` (social preview template). On the published site, proof slots render nothing unless the URL carries `?review=1`.
+
+Routes are real paths (`/working-together`, `/about`, `/contact`). The host serves `index.html` for every path. Links from the old hash router (`/#/apply`, `/#/intake/denver-zen-den`) are rewritten to real paths on arrival.
 
 ## Screenshots
 
 ```bash
 npm run screenshots                    # dev server; writes ./screenshots and public/og.png
+OUT=screenshots/public REVIEW=0 npm run screenshots   # the public composition, proof slots hidden
 MODE=preview npm run screenshots       # the production build
 ```
+
+Every run also checks for horizontal overflow at 360, 768 and 1024px.
 
 Needs Playwright with Chromium. If Playwright is installed globally, point at it with `PLAYWRIGHT_PATH=/path/to/node_modules/playwright`.
 
@@ -32,7 +38,7 @@ TILES=1 npm run screenshots          # page tiles the models can read
 GEMINI_API_KEY=... OPENAI_API_KEY=... XAI_API_KEY=... npm run review
 ```
 
-Each reply lands in `review-out/<provider>.md`. The Codex CLI is used automatically when it is signed in (`codex login --device-auth` works without a browser) and no `OPENAI_API_KEY` is set. With no provider at all, `EMIT=1 npm run review` writes the prompt, the packet, and the images to `review-out/packet` for pasting into a chat interface. In a cloud environment, the hosts `api.openai.com`, `auth.openai.com`, `chatgpt.com`, and `api.x.ai` must be on the network allowlist.
+Each reply lands in `review-out/<provider>.md` (`OUT=review-out/round-2 npm run review` for a later round). The Codex CLI is used automatically when it is signed in (`codex login --device-auth` works without a browser) and no `OPENAI_API_KEY` is set; the Grok CLI when it is on the PATH and no `XAI_API_KEY` is set. Findings and their dispositions are logged in `docs/design-review-2026-10.md`. With no provider at all, `EMIT=1 npm run review` writes the prompt, the packet, and the images to `review-out/packet` for pasting into a chat interface. In a cloud environment, the hosts `api.openai.com`, `auth.openai.com`, `chatgpt.com`, and `api.x.ai` must be on the network allowlist.
 
 ## Environment variables
 
@@ -50,13 +56,13 @@ Form field names are `name`, `email`, `company`, `website`, and `challenge`.
 
 ```
 index.html            fonts, meta, Open Graph tags
-App.tsx               routes (HashRouter), skip link, scroll reset
+App.tsx               routes (BrowserRouter), skip link, navigation focus and scroll
 styles/               tokens.css, base.css, components.css, pages.css
 components/           wordmark, header, footer, buttons, figure primitives, pen marks, diagrams, form field
 hooks/                usePageMeta, useReviewMode, useDrawOnView
 pages/                Home, Working Together, About, Contact, the retained intake page, dev-only Style and Og pages
 public/               favicon, portraits, og.png, the hosted talk under stoppromptingstartshipping/
-scripts/              screenshots.mjs, adversarial-review.mjs
+scripts/              screenshots.mjs, check-production.mjs, adversarial-review.mjs
 docs/                 design spec, copy doc, review log
 ```
 

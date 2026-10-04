@@ -1,6 +1,6 @@
 # McHeyser site redesign: design spec (October 2026)
 
-**Status:** approved concept, ready to build.
+**Status:** built, reviewed by three outside models, amended for the review (October 2026). Amendments are marked "Amended" and logged in `docs/design-review-2026-10.md`.
 **Branch:** `redesign-2026-10`.
 **Copy source:** `docs/website-copy-2026-10.md` (the designer handoff). That document prescribes the words. This document prescribes everything else. Where the two disagree on wording, the copy doc wins. Where they disagree on anything visual or structural, this spec wins.
 
@@ -49,15 +49,15 @@ All tokens are CSS custom properties on `:root`. There is no dark theme; this is
 | `--paper-2` | `#ECE9E2` | second paper surface | table stripes, input backgrounds, the form card | keep subtle |
 | `--ink` | `#16202B` | primary ink | headings, body text, primary icon strokes, the ink block background, button hover fill | |
 | `--ink-2` | `#3D4854` | secondary ink | captions, eyebrows, secondary text, form helper text | 8.3:1 on paper, passes small text |
-| `--stroke` | `#6B7682` | drawing stroke | diagram node borders and connectors, dividers inside figures, disabled text | 4.15:1 on paper. **Not for text under 24px.** |
+| `--stroke` | `#6B7682` | drawing stroke | diagram node borders and connectors, dividers inside figures, idle input borders, disabled text | 4.15:1 on paper, 3.8:1 on paper-2. **Not for text under 24px.** |
 | `--line` | `#CFCBC2` | hairline | section rules, header and footer borders, card borders, table rules | |
-| `--mark` | `#D9622B` | the pen | pen circles, underlines, ticks, the primary button fill, active nav underline | 3.3:1 on paper. **Never small text.** On ink: 4.5:1 |
+| `--mark` | `#D9632B` | the pen | pen circles, underlines, ticks, the primary button fill, active nav underline | 3.3:1 on paper. **Never small text.** Ink on it: 4.52:1 (Amended: was `#D9622B`, which measured 4.49:1 under ink) |
 | `--mark-text` | `#B04A1B` | the pen, for words | small orange text only: diagram annotation labels, form error messages | 4.9:1 on paper |
 | `--resolved` | `#3F7D5C` | after-state | green tick strokes in diagrams showing a step that no longer waits | strokes only |
 | `--resolved-text` | `#2F6A4A` | after-state, for words | small green labels in diagrams | 5.7:1 on paper |
 
 Rules:
-- The primary button is `--mark` fill with `--ink` text (4.5:1). Hover is `--ink` fill with `--paper` text. Never white text on orange.
+- The primary button is `--mark` fill with `--ink` text (4.52:1). Hover is `--ink` fill with `--paper` text. Never white text on orange.
 - Links in running text are `--ink` with a 2px `--mark` underline, offset 3px. Hover: underline becomes `--ink`. Never orange link text.
 - `--mark` strokes are 2px at component scale and 2.5px inside figures.
 - The ink block uses `--paper` text, `--mark` for strokes and the button, and `--line` at 20% opacity for its hairlines.
@@ -102,7 +102,7 @@ Scale (fluid, `clamp()` between 360px and 1280px viewports):
 
 - Container: 1120px max, centered. Gutters: 24px at 768px and up, 16px below.
 - Grid: 12 columns, 32px gap at 1024px and up; collapses to a single column below 768px.
-- Prose column: 680px max, left-aligned, never centered text except the final call to action on Contact's success state.
+- Prose column: 680px max, left-aligned, never centered text (Amended: the Contact success message is left-aligned like everything else).
 - Vertical rhythm: 8px base. Section padding 96px top and bottom at 1024px and up, 64px below. Sections are separated by a 1px `--line` rule across the container, not by background color changes (the ink block is the one exception).
 - Header height 64px. Content starts below it; the header is sticky.
 - Figures span the full container width on Home's hero and the Sprint timeline. In the example rows they take 7 of 12 columns with text in the other 5.
@@ -118,7 +118,7 @@ Scale (fluid, `clamp()` between 360px and 1280px viewports):
 
 - Exactly one motion idea: when a figure scrolls into view, its pen marks draw on (stroke-dashoffset from full length to 0, 600ms, ease-out, 150ms delay). It happens once.
 - Hover transitions on buttons and links: 150ms on color and background only.
-- No fade-ups, slide-ins, parallax, or scroll-triggered opacity on text and blocks.
+- No fade-ups, slide-ins, parallax, or scroll-triggered opacity on text and blocks. No smooth scrolling (Amended: `scroll-behavior: smooth` was a second motion idea).
 - `prefers-reduced-motion: reduce` disables the draw-on; marks render fully drawn.
 
 ---
@@ -129,7 +129,7 @@ Scale (fluid, `clamp()` between 360px and 1280px viewports):
 
 - Text, not an image: `McHeyser` set in Source Serif 4 at weight 600, 22px in the header, 28px in the footer.
 - The `c` is raised: 0.6em size, baseline shifted up by 0.42em, with 0.02em of tracking after the `M`. This is how the name was historically written.
-- Beneath the raised `c` sits a short pen stroke in `--mark`: an inline SVG, 2px stroke, round caps, slightly curved, about 0.5em wide, positioned under the `c`'s baseline. Old manuscripts underlined the superscript `c`. The stroke is authentic to the name and it is the brand idea in miniature: one pen mark on the page.
+- Beneath the raised `c` sits a short pen stroke in `--mark`: an inline SVG, 2px stroke, round caps, slightly curved, about 0.5em wide, positioned under the `c`'s baseline. At header size (22px) it is one stroke; at 28px and above, two (Amended: two strokes merged into a smudge at 22px). Old manuscripts underlined the superscript `c`. The stroke is authentic to the name and it is the brand idea in miniature: one pen mark on the page.
 - The wordmark is a single link to Home with the accessible name "McHeyser, home".
 - Inside the ink block and anywhere on ink, the wordmark is `--paper` with the stroke still `--mark`.
 - No symbol, no monogram, no icon beside it.
@@ -141,7 +141,7 @@ Scale (fluid, `clamp()` between 360px and 1280px viewports):
 ### 4.3 Social preview image
 
 - 1200 by 630 PNG at `public/og.png`, generated by screenshotting a dev-only `/og` route so it uses the real fonts.
-- Content: paper background, wordmark at 96px, the line "Operations and technology for growing businesses," a simplified three-node version of Fig. 1 with the middle node circled, and "Boulder, Colorado" in the mono eyebrow style. No photograph.
+- Content: paper background, wordmark at 96px, the line "Operations and technology for growing businesses." in the body face at 44px, a simplified three-node version of Fig. 1 (labels only, no sublabels) with the middle node circled, and "Patrick McHeyser" and "Boulder, Colorado" in the mono eyebrow style. No photograph. Sized to read at a 400px-wide preview card (Amended).
 
 ---
 
@@ -151,14 +151,14 @@ Each component lists purpose, anatomy, states, responsive behavior, and accessib
 
 ### 5.1 Header
 - Sticky at top, 64px, `--paper` background, 1px `--line` bottom border. No blur, no transparency, no shrink-on-scroll.
-- Left: wordmark. Right (768px and up): `Working Together`, `About` as nav text links, then `Let's talk` as the primary button at small size (12px by 18px padding).
+- Left: wordmark. Right (768px and up): `Working Together`, `About` as nav text links, then `Let's talk` as the primary button at small size (12px by 18px padding, 44px tall). Every header target, the wordmark included, is at least 44px tall.
 - Active nav link gets a 2px `--mark` underline. Hover gets a 2px `--ink` underline.
 - Below 768px: wordmark left; right holds the `Let's talk` button (small) and a `Menu` text toggle (the word "Menu", turning into "Close"; no hamburger icon). Opening pushes a panel down beneath the header containing the two nav links stacked at 20px, 56px tall rows, separated by hairlines. No full-screen overlay. Body scroll is not locked.
 - Accessibility: `<header>` with `<nav aria-label="Primary">`, a skip link ("Skip to content") as the first focusable element, toggle has `aria-expanded` and `aria-controls`, Escape closes the panel.
 
 ### 5.2 Footer
 - `--paper`, 1px `--line` top border, 64px padding.
-- Three columns at 768px and up, stacked below: (1) wordmark at 28px, then "Operations and technology for growing businesses."; (2) nav links: Working Together, About, Let's talk; (3) "Boulder, Colorado", `patrick@mcheyser.com` as a mailto link, and a LinkedIn link (addition beyond the copy doc; see open questions).
+- Three columns at 768px and up, stacked below: (1) wordmark at 28px, then the copy doc's footer lines "Patrick McHeyser" and "Operations and technology for growing businesses."; (2) nav links: Working Together, About, Let's talk; (3) "Boulder, Colorado", `patrick@mcheyser.com` as a mailto link, and a LinkedIn link (addition beyond the copy doc; see open questions).
 - Bottom row, small sans, `--ink-2`: "© {year} Patrick McHeyser". No Privacy or Terms links (the current ones point nowhere).
 
 ### 5.3 Buttons and links
@@ -175,21 +175,22 @@ Each component lists purpose, anatomy, states, responsive behavior, and accessib
 - `<section>` with a top 1px `--line` rule (except the first on a page), section padding per 3.3, and an optional `aria-labelledby` pointing at its H2.
 - Prose column: 680px max, body style, paragraphs separated by 1em.
 
-### 5.6 Numbered list (problems and stages)
-- Items carry a mono number `01`, `02` ... in `--mark-text` at 13px/500 above an H3 and a paragraph. Grid: 2 by 2 at 768px and up (the four problems), 3 across at 1024px and up (the three stages), single column below. Items are cards (1px `--line` border, 24px padding).
+### 5.6 Card lists (problems and stages)
+- The three stages carry a mono number `01`, `02`, `03` in `--mark-text` at 13px/500 above an H3 and a paragraph, because they happen in order. The four problems carry no number (Amended: they are symptoms, not a sequence, and the numbers spent the pen color on decoration). Grid: 2 by 2 at 768px and up (the four problems), 3 across at 1024px and up (the three stages), single column below. Items are cards (1px `--line` border, 24px padding).
 
 ### 5.7 Pen marks
 Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden`:
 - **PenCircle:** an irregular ellipse path that overshoots its start by about a sixth of a turn, as a pen does when circling a word. Stroke 2.5px. Rendered as an absolutely positioned SVG around a diagram node, inset -10px, `preserveAspectRatio="none"`. Draw-on animation per 3.5.
 - **PenUnderline:** a slightly wavy two-stroke underline. Stroke 2px. Used under the wordmark `c` and under a key phrase in the Discovery Sprint block heading.
 - **PenTick:** a short check mark, two strokes. Stroke 2px. `--resolved` inside figures.
-- **Annotation:** a mono 13px/500 `--mark-text` label with a thin 1px `--mark` leader line (an elbow, two segments) pointing at the circled node. Placed above-right of the node at 768px and up, directly below the node on small screens.
+- **Annotation:** a mono 13px/500 `--mark-text` label with a thin 1px `--mark` leader line (an elbow, two segments, at 768px and up; a short vertical stub below) pointing at the circled node. Placed above-right of the node at 768px and up, directly below the node on small screens.
 
 ### 5.8 Figure and diagrams
-- A `Figure` wrapper: `<figure role="group" aria-label="...">` with the diagram, then `<figcaption>` per 5.4. A visually hidden paragraph describes the diagram in words for screen readers.
+- A `Figure` wrapper: a native `<figure>` with `aria-labelledby` pointing at its `<figcaption>` (per 5.4) and `aria-describedby` pointing at a visually hidden paragraph that describes the diagram and its arrows in words (Amended: `role="group"` with `aria-label` would discard the figure role).
 - Diagrams are HTML for anything textual (nodes are `<div>`s with mono text; tables are `<table>`s) and SVG for strokes only (connectors, arrowheads, pen marks). This keeps text readable at every width and selectable.
-- Node: 1.5px `--stroke` border, 2px radius, 10px by 14px padding, label in mono 14px/500 `--ink`, optional second line in mono 13px/400 `--ink-2` naming where the step happens ("email", "spreadsheet").
+- Node: 1.5px `--stroke` border, 2px radius, 10px by 14px padding, label in mono 14px/500 `--ink`, optional second line in mono 13px/400 `--ink-2` naming where the step happens ("email", "spreadsheet"). In a row made only of nodes (Fig. 1) the boxes size to their text, share the slack, and are one height; from 1200px their sublabels stay on one line.
 - Connector: 1.5px `--stroke` line with an open arrowhead. Horizontal between nodes at 768px and up; vertical (nodes stacked, arrow pointing down) below.
+- Fan: one connector splitting into several (or several merging into one). At 768px and up it measures the real centres of the boxes on either side so every branch meets its node. Below 768px it becomes a vertical connector with a short mono label saying how the stacked boxes relate ("both go in", "one of these", "carries into each", "then one of these"), and the stacked boxes get a 1.5px `--stroke` bracket on the left (Amended: stacking alone read as a sequence).
 - Figures never exceed the container width and never scroll horizontally. The exact figures are specified in section 6.
 
 ### 5.9 Portrait
@@ -212,14 +213,15 @@ Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden
 
 ### 5.13 Form fields
 - Label above the field: sans 15px/600 `--ink`. Optional fields say "(optional)" in 400 weight `--ink-2` after the label.
-- Input: `--paper-2` background, 1px `--line` border, 2px radius, 12px by 14px padding, 17px sans, `--ink` text. Focus: 2px `--ink` border, no glow. Invalid: 2px `--mark` border.
+- Input: `--paper-2` background, 1px `--stroke` border (Amended: `--line` was 1.45:1 against the page), 2px radius, 12px by 14px padding, 17px sans, `--ink` text. Focus: 2px `--ink` border, no glow. Invalid: 2px `--mark` border. Fields and headings carry `scroll-margin-top` of 80px so a focused field is not hidden under the sticky header.
 - Error message: mono 13px/500 `--mark-text` below the field, linked by `aria-describedby`; `aria-invalid="true"` on the field.
 - Textarea: 6 rows, vertical resize only.
-- Status region: `aria-live="polite"` paragraph for sending, success, and error messages.
-- Submit: primary button, full width below 480px, auto width above. Disabled while sending with the label "Sending your note..." (from the copy doc).
+- Status region: `aria-live="polite"` paragraph that announces "Sending your note..." (visually hidden while sending, since the button already shows it). The submission error is a separate `role="alert"` paragraph with the address as a `mailto:` link. On success the confirmation replaces the form and receives focus.
+- A visually hidden "Fax" field (`name="fax"`, `aria-hidden`, out of the tab order) is a honeypot: a filled one shows the confirmation and sends nothing.
+- Submit: primary button, full width below 480px, auto width above. Disabled while sending with the label "Sending your note..." (from the copy doc). The mail library loads only when a note is sent.
 
 ### 5.14 PageMeta
-- A `usePageMeta(title, description)` hook sets `document.title` and the `meta[name=description]` content on route change. Titles and descriptions come from the copy doc's metadata table.
+- A `usePageMeta(title, description, path)` hook sets `document.title`, the `meta[name=description]` content, the canonical link, and the Open Graph title, description and URL on route change. Titles and descriptions come from the copy doc's metadata table.
 
 ---
 
@@ -228,7 +230,7 @@ Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden
 All diagram text is illustrative and generic across industries. No real client names, no numbers that read as results, no currency.
 
 ### Fig. 1 — Quote flow (Home hero)
-Caption: "A quote, as it moves through a business. The circled step is where work usually waits. Illustrative."
+Caption: "A quote, as it moves through a business. In this example, the work waits for a pricing decision. Illustrative." (Amended: "where work usually waits" stated a diagnosis as a general fact.)
 Five nodes, left to right (label / where it happens):
 1. Request comes in / email
 2. Job details gathered / re-typed into a spreadsheet
@@ -239,7 +241,7 @@ PenCircle around node 3. Annotation: "work waits here".
 Small screens: nodes stack vertically, arrows point down, annotation sits under node 3.
 
 ### Fig. 2 — How the work gets looked at (Home, "I help you decide what to change")
-Caption: "What a Discovery Sprint does with the work."
+Caption: "How the work gets looked at, then changed. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
 A vertical numbered strip with a continuous 1.5px `--stroke` line down the left and four steps:
 1. Walk through real examples with the people doing the work
 2. Find where it is held up
@@ -249,28 +251,29 @@ Step 2 has a small PenCircle around its number. No annotation.
 
 ### Fig. 3 — A quoting tool that follows your rules (Home example 1)
 Caption: "Routine quotes get drafted. The ones that need judgment get flagged for a person. Illustrative."
-Left: two input nodes stacked, "Job details" and "Pricing rules". Both connect into a center node "Draft quote". The center node connects to two output nodes stacked on the right: "Ready for review" (with a `--resolved` PenTick) and "Needs a judgment call" (PenCircle, annotation "goes to a person").
-Small screens: inputs, center, outputs stack vertically in that order.
+Left: two input nodes stacked, "Job details" and "Pricing rules". Both connect into a center node "Draft quote" (sublabel "prepared for review"). The center node connects to two output nodes stacked on the right: "Ready for review" (with a `--resolved` PenTick) and "Needs a judgment call" (PenCircle, annotation "goes to a person").
+Small screens: inputs, center, outputs stack vertically in that order, the fans labelled "both go in" and "one of these".
 
 ### Fig. 4 — Customer paperwork with less retyping (Home example 2)
 Caption: "Information collected once carries into the documents. Missing details are flagged before anything goes out. Illustrative."
-Left: a "Customer record" card listing five fields as mono rows with a tick or a gap: Customer name ✓, Site address ✓, Contact ✓, PO number (empty, PenCircle, annotation "flagged: missing"), Start date ✓.
+Left: a "Customer record" card listing five fields as mono rows with a tick and "on file", or a gap: Customer name ✓, Site address ✓, Contact ✓, PO number (an empty dashed gap with the PenCircle around the gap itself, followed by the annotation "flagged: missing"), Start date ✓.
 Arrows from the card to three document nodes stacked on the right: "Work order", "Contract", "Invoice".
 Below the documents, a `--resolved-text` mono line with a PenTick: "Checked by a person before it goes out."
+Small screens: the record, then a connector labelled "carries into each", then the three documents.
 
 ### Fig. 5 — A shared view of work that needs attention (Home example 3)
 Caption: "What's waiting, on whom, and what happens next. Illustrative."
-A table with the mono header row `JOB | WAITING ON | WHO | NEXT` and three rows:
+A table titled "Example job board" (a visible `<caption>` in the record-title style, so the invented details read as an example, not a client), with the mono header row `JOB | WAITING ON | WHO | NEXT` and three rows:
 - Quote 118, Hillside | Customer sign-off | Maria | Follow up Thursday
 - Job 2041, Unit 12 | Price decision | Owner | Decide by Friday
 - Order 77, Lot 4 | Nothing | Crew B | Starts Monday
-Row 2's "Price decision" cell gets a PenCircle; annotation "waiting on a decision". Row 3's "Nothing" cell gets a `--resolved` PenTick.
-Small screens: the table becomes a stacked list, each row a card with the four labels and values.
+Row 2's "Price decision" cell gets a PenCircle; annotation "waiting on a decision" beneath the value. Row 3's "Nothing" cell gets a `--resolved` PenTick. The WHO and NEXT columns do not wrap at 640px and up.
+Small screens: the table becomes a stacked list, each row a card with the four labels and values; the header row stays in the accessibility tree and the table keeps explicit ARIA table roles.
 
 ### Fig. 6 — A Discovery Sprint, start to finish (Working Together)
 Caption: "The Sprint ends with the findings and our review of them. What happens next is your call."
-Three nodes left to right: "Agree on the question" → "Work through real examples with your team" → "Findings and a recommendation". From the third node, four short branches fan out to four small nodes: "Take it forward with your team", "Use another provider", "Ask me to scope the next stage", "Stop here". PenCircle around "Findings and a recommendation". No annotation.
-Small screens: the three main nodes stack; the four branch nodes become a 2 by 2 grid beneath.
+Three nodes left to right, each with a sublabel: "Agree on the question" (scope, fee, timing, people) → "Work through real examples with your team" (a quote, a handoff, a report) → "Findings and a recommendation" (reviewed together). From the third node, four short branches fan out to four small nodes: "Take it forward with your team", "Use another provider", "Ask me to scope the next stage", "Stop here". PenCircle around "Findings and a recommendation". No annotation.
+Small screens: the three main nodes stack; a connector labelled "then one of these" leads to the four branch nodes as a 2 by 2 grid beneath.
 
 ### Style page (dev only, `/style`)
 Shows tokens as swatches with hex and contrast, the type scale, the wordmark at three sizes and on ink, the pen marks, buttons in all states, form fields in all states, a ProofSlot, and every figure. Excluded from production routes.
@@ -284,16 +287,16 @@ Section order is the copy doc's order. Every piece of visitor-facing copy comes 
 ### 7.1 Home
 1. **Hero.** Eyebrow "Operations and technology for growing businesses". H1 "Make it easier to take on more business." Lead paragraph, second paragraph (prose column). Primary button "Let's talk" → Contact. Below the text, Fig. 1 at full container width.
 2. **ProofSlot** (quote): "Early trust signal. Use a real, approved client quote with attribution."
-3. **"Where is the extra work coming from?"** H2, then the four problems as a numbered 2 by 2 card grid (01 to 04), each an H3 plus paragraph.
-4. **"I help you decide what to change and carry it through."** H2, three paragraphs in the prose column (7 of 12 columns), Fig. 2 beside them (5 of 12) at 1024px and up, below them otherwise.
-5. **"What this can look like."** H3-level heading styled as H2, intro line "Here are examples of the kinds of improvements we can make." Three example rows. Each row: text (H3 + paragraph) in 5 columns, figure in 7 columns; rows alternate figure side (right, left, right) at 1024px and up. Stacked, text first, below.
+3. **"Where is the extra work coming from?"** H2, then the four problems as an unnumbered 2 by 2 card grid, each an H3 plus paragraph.
+4. **"I help you decide what to change and carry it through."** H2, three paragraphs in the prose column (7 of 12 columns), Fig. 2 beside them in columns 8 to 12 at 1024px and up, below them otherwise.
+5. **"What this can look like."** An H2, intro line "Here are examples of the kinds of improvements we can make." Three example rows. Each row: text (H3 + paragraph) in 5 columns, figure in 7 columns; rows alternate figure side (right, left, right) at 1024px and up. Stacked, text first, below.
 6. **Ink block.** "Start with a Discovery Sprint." paragraph, secondary link "See how we work together" → Working Together.
-7. **"You'll work directly with me."** Portrait (chair photo, 4:5) in 5 columns; H2, paragraph, secondary link "More about Patrick" → About in 7 columns; then a **ProofSlot** (quote): "Approved testimonial about the experience of working with him." The copy's bracket says "photograph of Patrick and an approved testimonial"; the photograph is the portrait and the testimonial is the slot.
+7. **"You'll work directly with me."** Portrait (chair photo, 4:5) in 5 columns; H2, paragraph, secondary link "More about Patrick" → About in 7 columns; then, below the whole row at full container width, a **ProofSlot** (quote): "Approved testimonial about the experience of working with him." The copy's bracket says "photograph of Patrick and an approved testimonial"; the photograph is the portrait and the testimonial is the slot.
 8. **Closing call.** H2 "What is getting harder as your business grows?", paragraph, primary button "Let's talk" → Contact.
 
 ### 7.2 Working Together
 1. **Hero.** H1 "Start with the work that's slowing you down." three paragraphs, primary button "Let's talk".
-2. **Three stages.** "Understand what needs to change", "Build and put it to work", "Keep improving as the business grows" as a numbered 3-across card grid (01 to 03), each H3 plus paragraph.
+2. **Three stages.** "Understand what needs to change", "Build and put it to work", "Keep improving as the business grows" as a numbered 3-across card grid (01 to 03), each H3 plus paragraph. The section has no heading of its own; the copy doc gives it none, and no invented one is rendered for screen readers either.
 3. **"Begin with a Discovery Sprint."** H2 and the two paragraphs in the prose column. Then Fig. 6 at full width. Then the three bold lead-ins as H3s with their paragraphs ("First, we agree on the question." / "Then I work through real examples with your team." / "You leave with a recommendation you can act on." including the four-item bulleted list and the closing sentence). Then a **ProofSlot** (sample): "Place an approved sample findings deliverable here when one is ready. Let visitors inspect it without a signup."
 4. **Two short sections side by side** at 768px and up: "What I need from your team" and "What happens afterward", each H2-styled-as-H3 plus paragraphs.
 5. **ProofSlot** (quote): "Approved testimonial about understanding the business, the usefulness of the work, or follow-through."
@@ -324,11 +327,12 @@ The ink block on this page wraps section 3's heading and two paragraphs only (Fi
 | `/about` | About |
 | `/contact` | Contact |
 | `/apply` | redirects (replace) to `/contact` so old links keep working |
+| `/#/anything` | an old hash-router link: rewritten to `/anything` before the router starts (and on an in-page hash change), so `/#/apply` and `/#/intake/denver-zen-den` still land |
 | `/intake/denver-zen-den` | the existing client intake page, restyled with the new form components, unchanged in content and behavior, still `noindex` |
 | `/style` | dev only |
 | `/og` | dev only |
 
-HashRouter stays (the host serves one static build).
+BrowserRouter with real paths (Amended: the live Railway host and `vite preview` both serve `index.html` for every path, so the hash router's reason no longer held; real paths give each page its own URL, canonical link and Open Graph tags). The review flag is a normal query: `/?review=1`. Prerendering the four pages to static HTML is a possible follow-up, not part of this build.
 
 ---
 
@@ -349,14 +353,16 @@ HashRouter stays (the host serves one static build).
 - Every interactive element has a visible focus style (2px `--ink` outline, 2px offset) and a 44px minimum hit area.
 - All text meets WCAG AA contrast per the token table; no text under 24px uses `--mark`, `--stroke`, or `--resolved`.
 - Color is never the only signal: a circled node also has a text annotation; a ticked row also says "Nothing" or "Ready".
-- Figures have `role="group"`, `aria-label`, and a visually hidden text description. Decorative SVG is `aria-hidden="true"`.
-- Form fields have associated labels, `aria-describedby` error links, `aria-invalid`, and an `aria-live` status region.
+- Figures are native `<figure>` elements labelled by their caption and described by a visually hidden text description. Decorative SVG is `aria-hidden="true"`.
+- Form fields have associated labels, `aria-describedby` error links, `aria-invalid`, an `aria-live` status region, and a `role="alert"` submission error. The confirmation receives focus. Keyboard: Escape closes the phone menu and returns focus to the toggle; a new page moves focus to `main`; a focused field is never hidden under the sticky header.
+- Non-text contrast: idle input borders are `--stroke` (3.8:1 on paper-2); the focus ring inside the ink block is `--paper`.
 - `prefers-reduced-motion` disables the draw-on animation.
 - No layout shift from fonts beyond `display=swap`; image elements carry width and height attributes.
 - No Tailwind CDN, no runtime CSS generation. One CSS bundle built by Vite.
 - Home total transfer under 600KB including fonts and the hero portrait at 800w. Largest image under 160KB at 800w.
 - No console errors or warnings in the production build.
-- No horizontal scroll at 360px, 390px, 768px, 1024px, or 1440px.
+- No horizontal scroll at 360px, 390px, 768px, 1024px, or 1440px (`npm run screenshots` checks all five).
+- `npm run check` builds with placeholder mail keys and runs `scripts/check-production.mjs`, which asserts the items above that can be measured, with the mail provider mocked so nothing is sent.
 
 ---
 
@@ -408,9 +414,10 @@ components/
   diagrams/SprintTimeline.tsx   Fig. 6
   form/Field.tsx                labeled input or textarea with error wiring
 hooks/
-  usePageMeta.ts
+  usePageMeta.ts                title, description, canonical, Open Graph per route
   useReviewMode.ts
   useDrawOnView.ts              IntersectionObserver for pen marks
+  useParentSize.ts              measures a pen mark's parent
 pages/
   HomePage.tsx
   WorkingTogetherPage.tsx
@@ -431,8 +438,9 @@ docs/
   design-spec.md                this document
   design-review-2026-10.md      review findings and dispositions (added after review)
 scripts/
-  screenshots.mjs               Playwright: all routes at 1440 and 390, review mode on
-  adversarial-review.mjs        sends the review packet to Gemini, OpenAI, and xAI
+  screenshots.mjs               Playwright: all routes at 1440 and 390 (REVIEW=0 for the public set), overflow at 360, 768, 1024
+  check-production.mjs          the production check (npm run check)
+  adversarial-review.mjs        sends the review packet to Gemini, Codex, Grok (and the OpenAI and xAI APIs when keyed)
 ```
 
 **Housekeeping in the same branch:** `package.json` name becomes `mcheyser-site`; `README.md` is rewritten for this project (the AI Studio template text goes); `CLAUDE.md` architecture, status, and rules are updated; `PROGRESS.md` is replaced by a short current-state note.
@@ -450,20 +458,21 @@ The build is done when every line below is true.
 
 **Concept**
 - [ ] The only colors in the bundle are the ten tokens (plus transparent and the 20% hairline on ink).
-- [ ] `--mark` appears only as pen strokes, the primary button, the active nav underline, and link underlines.
+- [ ] `--mark` appears only as pen strokes, the primary button, the active nav underline, and link underlines (and `--mark-text` only for annotation labels, form errors, and the three stage numbers).
 - [ ] No gradients, shadows, blur, grain, pills, icon sets, stock or AI imagery.
 - [ ] Exactly one ink block on Home and on Working Together; none on About or Contact.
 - [ ] All six figures exist with the exact content in section 6 and render without horizontal scroll at 360px.
 - [ ] Pen marks draw on once when scrolled into view and are static under reduced motion.
 
 **Structure**
-- [ ] Routes per 7.5, including the `/apply` redirect and the retained intake page.
+- [ ] Routes per 7.5 at real paths, including the `/apply` redirect, the old `#/` link rewrite, and the retained intake page.
 - [ ] ProofSlots render in review mode and render nothing in a production build without the flag.
 - [ ] The contact form validates per 7.4, shows the exact messages, moves focus to the first error, and submits through EmailJS with the five field names.
 
 **Quality**
 - [ ] `npm run build` and `tsc --noEmit` pass with no errors or warnings.
-- [ ] Screenshots of all routes at 1440px and 390px exist and have been looked at.
+- [ ] `npm run check` passes.
+- [ ] Screenshots of all routes at 1440px and 390px exist, in review mode and public mode, and have been looked at.
 - [ ] No console errors in the production preview.
 - [ ] Section 9 requirements hold.
 
@@ -481,6 +490,8 @@ After the build is complete and pushed, four independent reviewers get the same 
 **Brief:** attack both the concept and the execution. Specifically: (1) does the design concept serve a $5M to $25M business owner, or is it designer-pleasing; (2) where does the spec itself make a weak or generic choice (palette, type, wordmark, diagrams, layout); (3) where does the implementation fail the spec; (4) code quality, accessibility, performance, and responsive defects; (5) does the copy land better or worse in this design than it would in a plain page; (6) what would a skeptical owner notice in the first five seconds. Each finding carries a severity (blocker, major, minor, taste) and a concrete fix.
 
 **Disposition:** every finding is logged in `docs/design-review-2026-10.md` with one of: fixed (commit), declined (reason), or deferred (owner decision). Blockers and majors are fixed before the second round. A second round confirms the fixes.
+
+**Round one (3 and 4 October 2026):** Gemini 2.5 Pro, Codex (0.160.0, Patrick's default model) and the Grok CLI reviewed the build at `1472a7f`; the independent Claude session did not run (the cloud session that was to host it was stopped). Their reviews are in `review-out/`. Dispositions and the second round are in the review log.
 
 ---
 
