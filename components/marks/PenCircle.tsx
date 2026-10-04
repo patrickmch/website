@@ -41,11 +41,12 @@ export function PenCircle({
 }) {
   const ref = useRef<SVGSVGElement>(null);
   const parent = useParentSize(ref);
-  // On phones the gutters are 16px and the pen overshoots its ellipse by a few pixels, so a box that
-  // spans the screen gets its circle drawn slightly inside the box, as a pen circles the words.
-  // Re-measured on resize by useParentSize.
-  const narrow = typeof window !== 'undefined' && window.innerWidth < 480;
-  const spansScreen = narrow && !!parent && parent.width > window.innerWidth * 0.6;
+  // Below 768px the diagrams stack and the gutters are 16px, and the pen overshoots its ellipse by a
+  // few pixels, so a box that spans the screen gets its circle drawn slightly inside the box, as a pen
+  // circles the words. On phones every circle also keeps a smaller pad. Re-measured on resize.
+  const viewport = typeof window !== 'undefined' ? window.innerWidth : Infinity;
+  const spansScreen = viewport < 768 && !!parent && parent.width > viewport * 0.6;
+  const narrow = viewport < 480;
   const px = spansScreen ? -8 : narrow ? Math.min(padX, 6) : padX;
   const py = narrow ? Math.min(padY, 6) : padY;
   const width = parent ? parent.width + px * 2 : 0;

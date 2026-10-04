@@ -127,6 +127,7 @@
 
 /* ---------- Wordmark ---------- */
 .wordmark {
+  position: relative;
   display: inline-block;
   font-family: var(--font-serif);
   font-weight: 600;
@@ -148,27 +149,22 @@
   font-size: 96px;
 }
 
-.wordmark__c {
-  position: relative;
-  display: inline-block;
-  margin-left: 0.02em;
-  margin-right: 0.01em;
-  font-size: 0.6em;
-  vertical-align: 0.42em;
-}
-
+/* The pen underline runs the width of the word, just under the baseline, through the descender of the y. */
 .wordmark__stroke {
   position: absolute;
-  left: -0.05em;
-  bottom: -0.22em;
-  width: 1.1em;
-  height: 0.3em;
+  left: -2px;
+  bottom: -1px;
   max-width: none;
+  overflow: visible;
+  pointer-events: none;
 }
 
-/* At header size the two strokes would merge into one; draw one clean stroke. */
-.wordmark--header .pen-underline path + path {
-  display: none;
+.wordmark--footer .wordmark__stroke {
+  bottom: -2px;
+}
+
+.wordmark--display .wordmark__stroke {
+  bottom: -8px;
 }
 
 @media (max-width: 479px) {
@@ -445,11 +441,6 @@
 
 .pen-underline path {
   stroke-width: 2;
-}
-
-/* The wordmark stroke stretches with the letter; non-scaling-stroke keeps it 2px on screen. */
-.pen-underline--scaled path {
-  stroke-width: 2px;
 }
 
 .pen-tick {

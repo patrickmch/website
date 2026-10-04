@@ -2,46 +2,40 @@ import { useRef } from 'react';
 import { useParentSize } from '../../hooks/useParentSize';
 
 /**
- * A slightly wavy two-stroke pen underline.
- * `scaled`: a fixed-proportion version that stretches with its container while
- * the stroke stays 2 CSS pixels (used under the raised c of the wordmark).
- * Otherwise it measures its parent's width and draws at pixel size with a 2px stroke.
+ * A slightly wavy pen underline, drawn at pixel size across its parent's
+ * width (the parent must be `position: relative`). One or two 2px strokes.
+ * Used under the wordmark and under "Discovery Sprint".
  */
-export function PenUnderline({ className = '', scaled = false }: { className?: string; scaled?: boolean }) {
+export function PenUnderline({
+  className = '',
+  strokes = 2,
+  height = 12,
+}: {
+  className?: string;
+  strokes?: 1 | 2;
+  height?: number;
+}) {
   const ref = useRef<SVGSVGElement>(null);
   const parent = useParentSize(ref);
-
-  if (scaled) {
-    return (
-      <svg
-        className={`pen pen-underline pen-underline--scaled ${className}`}
-        viewBox="0 0 100 12"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <path d="M2 6 C 18 3, 36 9, 56 5 S 86 4, 98 7" pathLength={1} vectorEffect="non-scaling-stroke" />
-        <path d="M6 9.5 C 30 7, 58 11, 94 8.5" pathLength={1} vectorEffect="non-scaling-stroke" />
-      </svg>
-    );
-  }
-
   const w = parent ? parent.width + 4 : 0;
-  const first = w ? `M2 6 C ${w * 0.18} 3, ${w * 0.36} 9, ${w * 0.56} 5 S ${w * 0.86} 4, ${w - 2} 7` : '';
-  const second = w ? `M6 9.5 C ${w * 0.3} 7, ${w * 0.58} 11, ${w - 6} 8.5` : '';
+  const k = height / 12; // the strokes were drawn in a 12px-tall box
+  const first = w
+    ? `M2 ${6 * k} C ${w * 0.18} ${3 * k}, ${w * 0.36} ${9 * k}, ${w * 0.56} ${5 * k} S ${w * 0.86} ${4 * k}, ${w - 2} ${7 * k}`
+    : '';
+  const second = w ? `M6 ${9.5 * k} C ${w * 0.3} ${7 * k}, ${w * 0.58} ${11 * k}, ${w - 6} ${8.5 * k}` : '';
 
   return (
     <svg
       ref={ref}
       className={`pen pen-underline ${className}`}
-      viewBox={`0 0 ${w || 1} 12`}
+      viewBox={`0 0 ${w || 1} ${height}`}
       width={w || 1}
-      height={12}
+      height={height}
       aria-hidden="true"
       focusable="false"
     >
       {w > 0 && <path d={first} pathLength={1} />}
-      {w > 0 && <path d={second} pathLength={1} />}
+      {w > 0 && strokes === 2 && <path d={second} pathLength={1} />}
     </svg>
   );
 }

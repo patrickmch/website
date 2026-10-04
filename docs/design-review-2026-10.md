@@ -148,6 +148,12 @@ Kept, on purpose: the concept and its register (paper, ink, one pen, "Fig." capt
 6. **Prerendering** (Codex 11, Grok 16). Real paths are in. A build step that writes static HTML per route with its own metadata is the complete answer and is worth doing once the site is live and the host's handling of nested paths can be checked.
 7. **Self-hosted fonts** (Codex 24, handoff). Transfer is under budget. Self-hosting removes a third-party request and is a good follow-up.
 
+## Patrick's rulings
+
+Recorded as Patrick decides, after seeing the build locally on 4 October 2026.
+
+1. **Wordmark.** The raised c goes. "McHeyser" is set with every letter at the same size and a hand-drawn pen underline runs the full width of the word, the same stroke as the "Discovery Sprint" underline: one stroke in the header and footer, two on the social image. This answers Codex 27, Grok 4, X2-9 and X2-35, and Gemini G2-8, all of which said the device did not survive header size. Spec 4.1 amended.
+
 ## Open questions from spec section 14, with recommendations
 
 1. **Climbing photograph on About.** Recommend cutting it. Two reviewers called it the wrong story, it is the loudest orange on the site, and phones never see it, so the page tells two stories.
