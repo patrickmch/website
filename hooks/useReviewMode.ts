@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 /**
  * Review mode shows proof-slot placeholders so their placement can be judged.
- * On in development. Off in production unless the hash route carries `?review=1`.
+ * On in development. Off in production unless the URL carries `?review=1`.
  * `?review=0` forces it off anywhere.
  */
 export function useReviewMode(): boolean {

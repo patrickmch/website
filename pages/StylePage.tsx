@@ -29,7 +29,7 @@ const colors = [
 
 /** Dev-only style tile: tokens, type, marks, components, every figure. */
 export default function StylePage() {
-  usePageMeta('Style tile | McHeyser', 'Design system reference.');
+  usePageMeta('Style tile | McHeyser', 'Design system reference.', '/style');
   const noop = () => undefined;
 
   return (
@@ -77,7 +77,7 @@ export default function StylePage() {
           <p className="eyebrow">Body, sans 400</p>
           <p>
             I work with your team to find where things are getting held up, improve the process, and build the
-            software, automation, or AI tools that help the work move forward. A <a href="#/">text link</a> looks like
+            software, automation, or AI tools that help the work move forward. A <a href="/">text link</a> looks like
             this.
           </p>
         </div>

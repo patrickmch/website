@@ -1,25 +1,53 @@
-import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect, useRef } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, useNavigationType } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import WorkingTogetherPage from './pages/WorkingTogetherPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import IntakePage from './pages/IntakePage';
 import StylePage from './pages/StylePage';
 import OgPage from './pages/OgPage';
 
-/** Scrolls to the top on every route change. */
-function ScrollManager() {
+// The retained client page loads in its own chunk, so its text is not part of the marketing bundle.
+const IntakePage = lazy(() => import('./pages/IntakePage'));
+
+/**
+ * On a new page (a link click), scrolls to the top and moves focus to main so
+ * keyboard and screen-reader users start at the new content. On back and
+ * forward (POP) the browser restores the reading position itself.
+ */
+function NavigationManager() {
   const { pathname } = useLocation();
+  const navigationType = useNavigationType();
+  const navigate = useNavigate();
+  const first = useRef(true);
+
+  // Old-style links (#/path) that arrive as an in-page hash change, for example
+  // from a bookmarklet or a stale link on the same document, are rewritten too.
+  // Fresh loads are handled in index.tsx before the router starts.
   useEffect(() => {
+    const onHashChange = () => {
+      const legacy = window.location.hash.match(/^#\/(.*)$/);
+      if (legacy) navigate(`/${legacy[1]}`, { replace: true });
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, [navigate]);
+
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    if (navigationType === 'POP') return;
     window.scrollTo(0, 0);
-  }, [pathname]);
+    document.getElementById('main')?.focus({ preventScroll: true });
+  }, [pathname, navigationType]);
   return null;
 }
 
-/** Skip link. Focuses main directly because a plain #main href would be read as a route by the hash router. */
+/** Skip link. Focuses main explicitly so the jump works the same way with every router and browser. */
 function SkipLink() {
   const skip = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -39,24 +67,26 @@ function SkipLink() {
 export default function App() {
   const dev = import.meta.env.DEV;
   return (
-    <HashRouter>
-      <ScrollManager />
+    <BrowserRouter>
+      <NavigationManager />
       <SkipLink />
       <Header />
       <main id="main" tabIndex={-1}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/working-together" element={<WorkingTogetherPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/apply" element={<Navigate to="/contact" replace />} />
-          <Route path="/intake/denver-zen-den" element={<IntakePage />} />
-          {dev && <Route path="/style" element={<StylePage />} />}
-          {dev && <Route path="/og" element={<OgPage />} />}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/working-together" element={<WorkingTogetherPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/apply" element={<Navigate to="/contact" replace />} />
+            <Route path="/intake/denver-zen-den" element={<IntakePage />} />
+            {dev && <Route path="/style" element={<StylePage />} />}
+            {dev && <Route path="/og" element={<OgPage />} />}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 }

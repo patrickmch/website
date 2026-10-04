@@ -39,7 +39,7 @@ const OVERFLOW_WIDTHS = (process.env.OVERFLOW_WIDTHS || '360,768,1024')
 
 /** The URL for a route with the review flag set. One place to change if the router changes. */
 function pageUrl(route, review = REVIEW) {
-  return `${BASE}/#${route}?review=${review}`;
+  return `${BASE}${route}?review=${review}`;
 }
 
 const routes = [
@@ -178,7 +178,7 @@ try {
       ignoreHTTPSErrors: true,
     });
     const page = await context.newPage();
-    await page.goto(`${BASE}/#/og`, { waitUntil: 'load', timeout: 30000 });
+    await page.goto(`${BASE}/og`, { waitUntil: 'load', timeout: 30000 });
     await Promise.race([
       page.evaluate(() => document.fonts.ready),
       new Promise((resolve) => setTimeout(resolve, 8000)),

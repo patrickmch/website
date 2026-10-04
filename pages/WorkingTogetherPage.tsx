@@ -39,7 +39,8 @@ const questions = [
 export default function WorkingTogetherPage() {
   usePageMeta(
     'Working Together | Patrick McHeyser',
-    'Start with a focused Discovery Sprint to understand an operating problem and decide what to change. Explore the process, deliverables, and implementation work.'
+    'Start with a focused Discovery Sprint to understand an operating problem and decide what to change. Explore the process, deliverables, and implementation work.',
+    '/working-together'
   );
 
   return (

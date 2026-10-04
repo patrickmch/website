@@ -6,7 +6,10 @@
  * provider is mocked, nothing is sent), diagram geometry, hit areas, contrast
  * tokens, transfer size, and no console errors.
  *
- * Usage: npm run build && node scripts/check-production.mjs
+ * Usage: npm run check (builds with placeholder EmailJS keys so the form's
+ * network paths can be exercised against a mocked provider), or
+ * npm run build && node scripts/check-production.mjs on a build without keys,
+ * which skips the provider-call assertions and says so.
  * Env: PORT (default 2001), PLAYWRIGHT_PATH, BASE_URL (use a preview server that is already running).
  */
 import { createRequire } from 'node:module';
@@ -122,12 +125,20 @@ try {
   await page.waitForTimeout(300);
   expect(new URL(page.url()).pathname === '/', `/style should not exist in production (got ${page.url()})`);
 
-  /* ---------- Old hash links keep working ---------- */
+  /* ---------- Old hash links keep working: on a fresh load, and as an in-page hash change ---------- */
+  await page.goto('about:blank');
   await page.goto(url('/#/apply'), { waitUntil: 'load' });
   await page.waitForTimeout(400);
   expect(
     new URL(page.url()).pathname === '/contact' && !page.url().includes('#'),
-    `old link /#/apply should land on /contact without a hash (got ${page.url()})`
+    `old link /#/apply (fresh load) should land on /contact without a hash (got ${page.url()})`
+  );
+  await page.goto(url('/'), { waitUntil: 'load' });
+  await page.goto(url('/#/apply'), { waitUntil: 'load' });
+  await page.waitForTimeout(400);
+  expect(
+    new URL(page.url()).pathname === '/contact' && !page.url().includes('#'),
+    `old link /#/apply (in-page hash change) should land on /contact without a hash (got ${page.url()})`
   );
   await page.goto(url('/#/intake/denver-zen-den'), { waitUntil: 'load' });
   await page.waitForTimeout(400);
@@ -419,7 +430,10 @@ try {
   // A font host that is unreachable from the machine running the check is not a site defect.
   const fontHost = /fonts\.(googleapis|gstatic)\.com/;
   const onlyFontFailures = failedRequests.length > 0 && failedRequests.every((u) => fontHost.test(u));
-  const bundleErrors = consoleErrors.filter((text) => !(onlyFontFailures && text.startsWith('Failed to load resource')));
+  // The forced failure path logs "EmailJS error:" on purpose; everything else is a defect.
+  const bundleErrors = consoleErrors.filter(
+    (t) => !(onlyFontFailures && t.startsWith('Failed to load resource')) && !t.startsWith('EmailJS error:')
+  );
   expect(bundleErrors.length === 0, `console errors: ${bundleErrors.join(' | ')}`);
 
   await browser.close();

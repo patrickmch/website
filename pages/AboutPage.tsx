@@ -7,7 +7,8 @@ import { ProofSlot } from '../components/ProofSlot';
 export default function AboutPage() {
   usePageMeta(
     'About Patrick McHeyser',
-    'Meet Patrick McHeyser, a Boulder-based software engineer and operations consultant who works directly with your team to understand problems and implement improvements.'
+    'Meet Patrick McHeyser, a Boulder-based software engineer and operations consultant who works directly with your team to understand problems and implement improvements.',
+    '/about'
   );
 
   return (

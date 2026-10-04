@@ -33,7 +33,8 @@ const problems = [
 export default function HomePage() {
   usePageMeta(
     'Patrick McHeyser | Operations and technology consulting',
-    'Practical help with the processes, software, and administrative work that make growth harder. Work directly with Patrick McHeyser from discovery through implementation.'
+    'Practical help with the processes, software, and administrative work that make growth harder. Work directly with Patrick McHeyser from discovery through implementation.',
+    '/'
   );
 
   return (

@@ -56,7 +56,8 @@ const empty: Values = { name: '', email: '', company: '', website: '', challenge
 export default function ContactPage() {
   usePageMeta(
     "Let's Talk | Patrick McHeyser",
-    'Tell Patrick what is getting harder to manage as your business grows. Start a conversation about the problem and whether he can help.'
+    'Tell Patrick what is getting harder to manage as your business grows. Start a conversation about the problem and whether he can help.',
+    '/contact'
   );
 
   const formRef = useRef<HTMLFormElement>(null);
