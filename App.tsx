@@ -13,15 +13,16 @@ import OgPage from './pages/OgPage';
 const IntakePage = lazy(() => import('./pages/IntakePage'));
 
 /**
- * On a new page (a link click), scrolls to the top and moves focus to main so
- * keyboard and screen-reader users start at the new content. On back and
+ * On a new page (a link click), scrolls to the top and moves focus to the
+ * page's heading (visible focus ring for keyboard users; main as a fallback)
+ * so keyboard and screen-reader users start at the new content. On back and
  * forward (POP) the browser restores the reading position itself.
  */
 function NavigationManager() {
-  const { pathname } = useLocation();
+  const { pathname, key } = useLocation();
   const navigationType = useNavigationType();
   const navigate = useNavigate();
-  const first = useRef(true);
+  const previousKey = useRef<string | null>(null);
 
   // Old-style links (#/path) that arrive as an in-page hash change, for example
   // from a bookmarklet or a stale link on the same document, are rewritten too.
@@ -36,14 +37,21 @@ function NavigationManager() {
   }, [navigate]);
 
   useEffect(() => {
-    if (first.current) {
-      first.current = false;
-      return;
-    }
+    const previous = previousKey.current;
+    previousKey.current = key;
+    if (previous === null) return; // first load
     if (navigationType === 'POP') return;
+    // A redirect (<Navigate replace>) straight off the first load, for example /apply, is still the first load.
+    if (navigationType === 'REPLACE' && previous === 'default') return;
     window.scrollTo(0, 0);
-    document.getElementById('main')?.focus({ preventScroll: true });
-  }, [pathname, navigationType]);
+    const heading = document.querySelector<HTMLElement>('main h1');
+    if (heading) {
+      heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    } else {
+      document.getElementById('main')?.focus({ preventScroll: true });
+    }
+  }, [pathname, key, navigationType]);
   return null;
 }
 

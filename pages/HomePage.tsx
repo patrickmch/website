@@ -178,7 +178,7 @@ export default function HomePage() {
             <img
               className="portrait portrait--4x5"
               src={asset("patrick-seated-800.jpg")}
-              srcSet={`${asset("patrick-seated-800.jpg")} 800w, ${asset("patrick-seated-1600.jpg")} 1600w`}
+              srcSet={`${asset("patrick-seated-800.jpg")} 800w, ${asset("patrick-seated-1200.jpg")} 1200w, ${asset("patrick-seated-1600.jpg")} 1600w`}
               sizes="(min-width: 1024px) 440px, (min-width: 768px) 40vw, 100vw"
               width={800}
               height={1000}

@@ -258,7 +258,6 @@
 
 .btn:disabled {
   cursor: default;
-  opacity: 0.75;
 }
 
 .btn:disabled:hover {
@@ -269,7 +268,6 @@
 .btn--small {
   min-height: 44px;
   padding: 12px 18px;
-  font-size: var(--text-small);
 }
 
 .link-secondary {
@@ -447,6 +445,11 @@
 
 .pen-underline path {
   stroke-width: 2;
+}
+
+/* The wordmark stroke stretches with the letter; non-scaling-stroke keeps it 2px on screen. */
+.pen-underline--scaled path {
+  stroke-width: 2px;
 }
 
 .pen-tick {
@@ -840,6 +843,10 @@
 
 .record__row + .record__row {
   border-top: 1px solid var(--line);
+}
+
+.record__key {
+  position: relative;
 }
 
 .record__val {

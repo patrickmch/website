@@ -3,8 +3,8 @@ import { useParentSize } from '../../hooks/useParentSize';
 
 /**
  * A slightly wavy two-stroke pen underline.
- * `scaled`: a fixed-proportion version whose stroke scales with its container
- * (used under the raised c of the wordmark).
+ * `scaled`: a fixed-proportion version that stretches with its container while
+ * the stroke stays 2 CSS pixels (used under the raised c of the wordmark).
  * Otherwise it measures its parent's width and draws at pixel size with a 2px stroke.
  */
 export function PenUnderline({ className = '', scaled = false }: { className?: string; scaled?: boolean }) {
@@ -20,8 +20,8 @@ export function PenUnderline({ className = '', scaled = false }: { className?: s
         aria-hidden="true"
         focusable="false"
       >
-        <path d="M2 6 C 18 3, 36 9, 56 5 S 86 4, 98 7" pathLength={1} strokeWidth={4} />
-        <path d="M6 9.5 C 30 7, 58 11, 94 8.5" pathLength={1} strokeWidth={4} />
+        <path d="M2 6 C 18 3, 36 9, 56 5 S 86 4, 98 7" pathLength={1} vectorEffect="non-scaling-stroke" />
+        <path d="M6 9.5 C 30 7, 58 11, 94 8.5" pathLength={1} vectorEffect="non-scaling-stroke" />
       </svg>
     );
   }

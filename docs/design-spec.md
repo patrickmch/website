@@ -162,14 +162,14 @@ Each component lists purpose, anatomy, states, responsive behavior, and accessib
 - Bottom row, small sans, `--ink-2`: "© {year} Patrick McHeyser". No Privacy or Terms links (the current ones point nowhere).
 
 ### 5.3 Buttons and links
-- **Primary button:** `--mark` fill, `--ink` text, 2px radius, 14px by 22px padding, 16px/600 sans. Hover: `--ink` fill, `--paper` text. Focus-visible: 2px `--ink` outline, 2px offset. On ink: same fill and text; hover becomes `--paper` fill, `--ink` text. Used for `Let's talk` and `Send your note` only.
+- **Primary button:** `--mark` fill, `--ink` text, 2px radius, 14px by 22px padding, 16px/600 sans (the small header size changes padding only). Hover: `--ink` fill, `--paper` text. Disabled while sending: same fill and text, no opacity change (Amended: 0.75 opacity dropped the label to 2.8:1). Focus-visible: 2px `--ink` outline, 2px offset. On ink: same fill and text; hover becomes `--paper` fill, `--ink` text. Used for `Let's talk` and `Send your note` only.
 - **Secondary link:** inline text link in 16px/600 sans with a 2px `--mark` underline and a trailing arrow glyph (→ drawn as a 16px inline SVG, 1.5px stroke). Used for `See how we work together` and `More about Patrick`.
 - **Text links in prose:** `--ink`, 2px `--mark` underline, 3px offset. Hover: underline turns `--ink`.
 - Buttons are `<a>` when they navigate and `<button>` when they submit. Minimum hit area 44px tall.
 
 ### 5.4 Eyebrow and figure caption
 - **Eyebrow:** mono 13px/500 uppercase `--ink-2`, 16px above the heading it labels. Used for the Home hero tagline ("Operations and technology for growing businesses") and for figure numbering on the style page.
-- **Figure caption:** mono 13px `--ink-2`, placed below the figure, prefixed "Fig. N" in 500 weight followed by two spaces and the caption text. Captions of illustrative figures end with the word "Illustrative."
+- **Figure caption:** mono 13px `--ink-2`, placed below the figure, prefixed "Fig. N" in 500 weight followed by a space and the caption text. Captions of illustrative figures end with the word "Illustrative."
 
 ### 5.5 Section and prose column
 - `<section>` with a top 1px `--line` rule (except the first on a page), section padding per 3.3, and an optional `aria-labelledby` pointing at its H2.
@@ -256,7 +256,7 @@ Small screens: inputs, center, outputs stack vertically in that order, the fans 
 
 ### Fig. 4 — Customer paperwork with less retyping (Home example 2)
 Caption: "Information collected once carries into the documents. Missing details are flagged before anything goes out. Illustrative."
-Left: a "Customer record" card listing five fields as mono rows with a tick and "on file", or a gap: Customer name ✓, Site address ✓, Contact ✓, PO number (an empty dashed gap with the PenCircle around the gap itself, followed by the annotation "flagged: missing"), Start date ✓.
+Left: a "Customer record" card listing five fields as mono rows with a tick and "on file", or a gap: Customer name ✓, Site address ✓, Contact ✓, PO number (the field name circled, an empty dashed gap, then the annotation "flagged: missing"), Start date ✓.
 Arrows from the card to three document nodes stacked on the right: "Work order", "Contract", "Invoice".
 Below the documents, a `--resolved-text` mono line with a PenTick: "Checked by a person before it goes out."
 Small screens: the record, then a connector labelled "carries into each", then the three documents.
@@ -315,7 +315,7 @@ The ink block on this page wraps section 3's heading and two paragraphs only (Fi
 ### 7.4 Contact
 1. **Hero.** H1 "What is getting harder as your business grows?" two paragraphs.
 2. **Form** (prose column width, 640px max): Name, Email, Company, Company website (optional), "What is getting harder to manage as the business grows?" (textarea). Primary button "Send your note". Below the form: "Prefer email? Write to patrick@mcheyser.com." with the address as a mailto link.
-3. **States** per the copy doc: sending label "Sending your note...", success replaces the form with the confirmation paragraph "Thanks for getting in touch. I've received your note and will follow up by email.", error shows "Something went wrong while sending your note. Please try again or email patrick@mcheyser.com." in the status region above the button. Validation messages are the copy doc's table, exactly.
+3. **States** per the copy doc: sending label "Sending your note...", success replaces the form with the confirmation paragraph "Thanks for getting in touch. I've received your note and will follow up by email.", error shows "Something went wrong while sending your note. Please try again or email patrick@mcheyser.com." as an alert above the button, with the address as a mailto link. Validation messages are the copy doc's table, exactly.
 4. **Validation rules:** Name, Email, Company, and the textarea are required. Email must match a basic address pattern. Website is optional; if present it must contain a dot and no spaces (scheme not required). Validate on submit; after the first submit attempt, re-validate on blur and on change. Focus moves to the first invalid field.
 5. **Submission:** EmailJS `send` with the existing service, template, and public key env vars, given a snapshot of the validated, trimmed values (Amended: `sendForm` read the live form after validation). Template parameter names stay `name`, `email`, `company`, `website`, `challenge` so the existing EmailJS template keeps working, and the form fields carry the same names for autofill. The old `company_type` and `referral` fields are removed. `_subject` carries "New note from mcheyser.com". Fields are read-only while a note is sending, and a second submit while sending is ignored.
 
@@ -338,7 +338,7 @@ BrowserRouter with real paths (Amended: the live Railway host and `vite preview`
 
 ## 8. Imagery
 
-- **Portraits.** Two existing photographs are reused: the seated chair portrait (navy shirt, neutral wall) on Home; the portrait with the dog on About. Both are resized to 800px and 1600px widths, JPEG quality 82, stripped of metadata. Originals leave `public/` (they remain in git history).
+- **Portraits.** Two existing photographs are reused: the seated chair portrait (navy shirt, neutral wall) on Home; the portrait with the dog on About. Both are resized to 800px and 1600px widths, JPEG quality 82, stripped of metadata; the seated portrait also has a 1200px width so a 2x laptop takes 170KB rather than 300KB (Amended). Originals leave `public/` (they remain in git history).
 - **Climbing photograph.** `about-hero.png` resized to 800px and 1200px widths as JPEG, used only on About per 7.3. This is the one place the brand orange appears in a photograph, which is a happy accident, not a rule.
 - **Removed:** `overwhelmed.png` (AI-generated, wrong audience), `patrick-photo.jpeg` (byte-identical duplicate of `hero-photo.jpeg`).
 - **Never:** stock photography, AI-generated scenes, screenshots of software, icon illustrations, abstract shapes.
@@ -354,7 +354,7 @@ BrowserRouter with real paths (Amended: the live Railway host and `vite preview`
 - All text meets WCAG AA contrast per the token table; no text under 24px uses `--mark`, `--stroke`, or `--resolved`.
 - Color is never the only signal: a circled node also has a text annotation; a ticked row also says "Nothing" or "Ready".
 - Figures are native `<figure>` elements labelled by their caption and described by a visually hidden text description. Decorative SVG is `aria-hidden="true"`.
-- Form fields have associated labels, `aria-describedby` error links, `aria-invalid`, an `aria-live` status region, and a `role="alert"` submission error. The confirmation receives focus. Keyboard: Escape closes the phone menu and returns focus to the toggle; a new page moves focus to `main`; a focused field is never hidden under the sticky header.
+- Form fields have associated labels, `aria-describedby` error links, `aria-invalid`, an `aria-live` status region, and a `role="alert"` submission error. The confirmation receives focus. Keyboard: Escape closes the phone menu and returns focus to the toggle; a new page moves focus to its H1 (a visible ring for keyboard users); a focused field is never hidden under the sticky header. Nothing is logged to the console in production.
 - Non-text contrast: idle input borders are `--stroke` (3.8:1 on paper-2); the focus ring inside the ink block is `--paper`.
 - `prefers-reduced-motion` disables the draw-on animation.
 - No layout shift from fonts beyond `display=swap`; image elements carry width and height attributes.
@@ -389,7 +389,7 @@ Also in `index.html`: `theme-color` = `#F4F2ED`, Open Graph title, description, 
 ```
 index.html                      fonts, meta, favicon, OG tags, #root
 index.tsx
-App.tsx                         routes, redirect, scroll-to-top, skip link target
+App.tsx                         routes, redirect, old-link rewrite, navigation focus and scroll, skip link target
 styles/
   tokens.css                    custom properties (3.1 to 3.5)
   base.css                      reset, type scale, prose, links, focus, reduced motion

@@ -71,7 +71,11 @@ try {
   const page = await context.newPage();
   const consoleErrors = [];
   page.on('console', (message) => {
-    if (message.type() === 'error') consoleErrors.push(message.text());
+    if (message.type() !== 'error') return;
+    // A resource the script made fail on purpose (the mocked provider, or an unreachable font host) is not a defect.
+    const from = message.location()?.url || '';
+    if (message.text().startsWith('Failed to load resource') && /fonts\.(googleapis|gstatic)\.com|api\.emailjs\.com/.test(from)) return;
+    consoleErrors.push(message.text());
   });
   page.on('pageerror', (error) => consoleErrors.push(error.message));
   const failedRequests = [];
@@ -139,6 +143,7 @@ try {
   await page.goto(url('/apply'), { waitUntil: 'load' });
   await page.waitForTimeout(300);
   expect(new URL(page.url()).pathname === '/contact', `/apply did not redirect to /contact (got ${page.url()})`);
+  expect((await page.evaluate(() => document.activeElement?.tagName)) === 'BODY', 'a fresh load of a redirect route must not move focus');
 
   await page.goto(url('/style'), { waitUntil: 'load' });
   await page.waitForTimeout(300);
@@ -168,6 +173,15 @@ try {
   await page.goto(url('/#/working-together'), { waitUntil: 'load' });
   await page.waitForTimeout(400);
   expect((await page.title()) === expectedTitles['/working-together'], 'old link /#/working-together should open Working Together');
+  await page.goto('about:blank');
+  await page.goto(url('/?review=1#/about'), { waitUntil: 'load' });
+  await page.waitForTimeout(400);
+  expect(new URL(page.url()).pathname === '/about' && (await page.locator('.proof-slot').count()) > 0, 'a query before an old hash should be kept');
+  await page.goto(url('/about?review=0'), { waitUntil: 'load' });
+  // M3: the intake page carries its own metadata
+  await page.goto(url('/intake/denver-zen-den'), { waitUntil: 'load' });
+  await page.waitForTimeout(400);
+  expect((await page.evaluate(() => document.querySelector('link[rel="canonical"]')?.getAttribute('href'))) === `${SITE}/intake/denver-zen-den`, 'intake page should carry its own canonical');
 
   /* ---------- Copy fidelity and content fixes ---------- */
   await page.goto(url('/'), { waitUntil: 'load' });
@@ -225,7 +239,7 @@ try {
     const heads = fan ? Array.from(fan.querySelectorAll('.arrowhead')).map((a) => { const r = a.getBoundingClientRect(); return r.top + r.height / 2; }) : [];
     out.fanMiss = docs.map((d, i) => Math.round(Math.abs(d - (heads[i] ?? -999))));
     // Fig. 4: the pen circle sits on the empty PO field, not the whole row.
-    out.gapCircle = !!document.querySelector('.record__gap .pen-circle');
+    out.gapCircle = !!document.querySelector('.record__key .pen-circle');
     // Fig. 2 sits in grid columns 8 to 12.
     const approachFigure = document.querySelector('.approach__figure');
     out.approachStart = approachFigure ? getComputedStyle(approachFigure).gridColumnStart : '';
@@ -239,7 +253,7 @@ try {
   expect(geometry.fig1WhereLines.every((h) => h < 22), `Fig. 1 "where" lines should fit on one line at 1280px, heights ${geometry.fig1WhereLines.join(',')}`);
   expect(/H[^A-Z]*V|V[^A-Z]*H/.test(geometry.leaderD), `annotation leader should be an elbow, got d="${geometry.leaderD}"`);
   expect(geometry.fanMiss.length === 3 && geometry.fanMiss.every((m) => m <= 3), `Fig. 4 fan arrowheads miss the document nodes by ${geometry.fanMiss.join(',')}px`);
-  expect(geometry.gapCircle, 'Fig. 4 pen circle should be on the empty PO field');
+  expect(geometry.gapCircle, 'Fig. 4 pen circle should be on the PO number field name');
   expect(geometry.approachStart === '8', `Fig. 2 should start at grid column 8, got ${geometry.approachStart}`);
   expect(geometry.whoNowrap, 'Fig. 5 who/next columns should not wrap');
 
@@ -251,8 +265,19 @@ try {
   expect(inkOutline === 'rgb(244, 242, 237)', `focus ring inside the ink block should be paper, got ${inkOutline}`);
   await page.locator('.site-nav__link', { hasText: 'About' }).click();
   await page.waitForTimeout(400);
-  expect((await page.evaluate(() => document.activeElement?.id)) === 'main', 'focus should move to main after navigating');
+  expect((await page.evaluate(() => document.activeElement?.tagName)) === 'H1', 'focus should move to the page heading after navigating');
   expect(new URL(page.url()).pathname === '/about', 'nav click should reach /about');
+
+  // The wordmark stroke is drawn at 2 CSS pixels (non-scaling), so it should contain the pen colour at header size.
+  const strokeShot = await page.locator('.site-header .wordmark__stroke').screenshot({ scale: 'css' });
+  const { PNG } = require('pngjs');
+  const png = PNG.sync.read(strokeShot);
+  let orange = 0;
+  for (let i = 0; i < png.data.length; i += 4) {
+    const [r, g, b] = [png.data[i], png.data[i + 1], png.data[i + 2]];
+    if (r > 190 && g > 70 && g < 130 && b < 80) orange += 1;
+  }
+  expect(orange >= 8, `header wordmark stroke should render in the pen colour (found ${orange} orange pixels)`);
 
   /* ---------- Hit areas, input borders, scroll margins, table semantics ---------- */
   const targets = await page.evaluate(() => {
@@ -446,20 +471,14 @@ try {
   });
   await cpage.waitForLoadState('networkidle');
   await cpage.waitForTimeout(500);
-  notes.push(`Home cold transfer: ${(bytes / 1024).toFixed(0)} KB${fontFailures.length ? ' (font host unreachable, fonts not counted)' : ' including fonts'}`);
+  notes.push(`Home cold load: ${(bytes / 1024).toFixed(0)} KB of decoded bytes (vite preview sends no compression, so this is an upper bound on transfer)${fontFailures.length ? ', font host unreachable so fonts not counted' : ', including fonts'}`);
   if (!fontFailures.length) expect(bytes < 600 * 1024, `Home transfers ${(bytes / 1024).toFixed(0)} KB, budget is 600 KB`);
   expect(!jsBodies.some((js) => js.text.includes('api.emailjs.com')), 'Home should not download the mail provider library');
   await cold.close();
 
-  // A font host that is unreachable from the machine running the check is not a site defect, and the
-  // provider request this script aborts on purpose is expected to fail.
-  const expectedFailure = (u) => /fonts\.(googleapis|gstatic)\.com/.test(u) || /api\.emailjs\.com/.test(u);
-  const onlyExpectedFailures = failedRequests.length > 0 && failedRequests.every(expectedFailure);
-  // The forced failure path logs "EmailJS error:" on purpose; everything else is a defect.
-  const bundleErrors = consoleErrors.filter(
-    (t) => !(onlyExpectedFailures && t.startsWith('Failed to load resource')) && !t.startsWith('EmailJS error:')
-  );
-  expect(bundleErrors.length === 0, `console errors: ${bundleErrors.join(' | ')}`);
+  const unexpectedFailures = failedRequests.filter((u) => !/fonts\.(googleapis|gstatic)\.com|api\.emailjs\.com/.test(u));
+  expect(unexpectedFailures.length === 0, `failed requests: ${unexpectedFailures.join(', ')}`);
+  expect(consoleErrors.length === 0, `console errors: ${consoleErrors.join(' | ')}`);
 
   await browser.close();
 } finally {

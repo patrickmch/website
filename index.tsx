@@ -11,7 +11,10 @@ import './styles/pages.css';
 // before the router reads the URL. A plain fragment such as #main is left alone.
 const legacy = window.location.hash.match(/^#\/(.*)$/);
 if (legacy) {
-  window.history.replaceState(null, '', `/${legacy[1]}`);
+  const target = legacy[1];
+  // A query that sat before the hash (/?x=1#/about) is kept when the hash path has none of its own.
+  const search = target.includes('?') ? '' : window.location.search;
+  window.history.replaceState(null, '', `/${target}${search}`);
 }
 
 const rootElement = document.getElementById('root');

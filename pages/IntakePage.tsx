@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { usePageMeta } from '../hooks/usePageMeta';
 import { Section, Prose } from '../components/Section';
 import { Button } from '../components/Button';
 
@@ -96,8 +97,9 @@ export default function IntakePage() {
   const [checkedSoftware, setCheckedSoftware] = useState<Record<string, boolean>>({});
   const [softwareDetails, setSoftwareDetails] = useState<Record<string, string>>({});
 
+  usePageMeta('Pre-Meeting Intake | Denver Zen Den', 'Pre-meeting intake form.', '/intake/denver-zen-den');
+
   useEffect(() => {
-    document.title = 'Pre-Meeting Intake | Denver Zen Den';
     const meta = document.createElement('meta');
     meta.name = 'robots';
     meta.content = 'noindex, nofollow';
@@ -176,7 +178,7 @@ export default function IntakePage() {
       setSubmitted(true);
       window.scrollTo(0, 0);
     } catch (err: unknown) {
-      console.error('EmailJS error:', err);
+      if (import.meta.env.DEV) console.error('EmailJS error:', err);
       const text = typeof err === 'object' && err && 'text' in err ? String((err as { text?: string }).text) : '';
       setError(text || 'Something went wrong. Please try again or reach out directly.');
     } finally {

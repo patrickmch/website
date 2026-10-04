@@ -16,19 +16,20 @@ export function Paperwork() {
     <Figure
       n={4}
       caption="Information collected once carries into the documents. Missing details are flagged before anything goes out. Illustrative."
-      description="A customer record lists five fields: customer name, site address, contact, PO number, and start date. All are on file except the PO number, which is empty, circled, and flagged as missing. Arrows carry the record into three documents: a work order, a contract, and an invoice. A note beneath says the paperwork is checked by a person before it goes out."
+      description="A customer record lists five fields: customer name, site address, contact, PO number, and start date. All are on file except the PO number, whose name is circled; its value is empty and flagged as missing. Arrows carry the record into three documents: a work order, a contract, and an invoice. A note beneath says the paperwork is checked by a person before it goes out."
     >
       <Flow>
         <div className="record">
           <div className="record__title">Customer record</div>
           {rows.map((row) => (
             <div key={row.key} className={`record__row ${row.missing ? 'record__row--marked' : ''}`}>
-              <span className="record__key">{row.key}</span>
+              <span className="record__key">
+                {row.key}
+                {row.missing && <PenCircle padX={8} padY={4} />}
+              </span>
               {row.missing ? (
                 <span className="record__val">
-                  <span className="record__gap" aria-hidden="true">
-                    <PenCircle padX={6} padY={5} />
-                  </span>
+                  <span className="record__gap" aria-hidden="true" />
                   <span className="record__flag">flagged: missing</span>
                 </span>
               ) : (

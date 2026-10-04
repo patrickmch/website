@@ -120,7 +120,7 @@ export default function ContactPage() {
       });
       setStatus('sent');
     } catch (error) {
-      console.error('EmailJS error:', error);
+      if (import.meta.env.DEV) console.error('EmailJS error:', error);
       setStatus('error');
     }
   };

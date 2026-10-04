@@ -179,7 +179,10 @@ export function Fan({
       const branchBoxes = branches.classList.contains('stack')
         ? Array.from(branches.querySelectorAll(':scope > .node > .node__box'))
         : [branches];
-      if (branchBoxes.length !== count) return;
+      if (branchBoxes.length !== count) {
+        if (import.meta.env.DEV) console.warn(`Fan: expected ${count} branch nodes, found ${branchBoxes.length}`);
+        return;
+      }
       const trunkBox = trunk.querySelector(':scope > .node__box') || trunk;
       const next = { ys: branchBoxes.map(centre), origin: centre(trunkBox) };
       setGeometry((current) =>
