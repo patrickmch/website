@@ -445,3 +445,24 @@
   .work-flow > .connector { align-self: center; }
   .work-flow .node__box { height: 100%; }
 }
+
+/* Client stories share the existing reading column and paper/ink treatment. */
+.work-story-card h2 { max-width: 25em; margin: 16px 0 24px; }
+.work-story-card > .link-secondary { margin-top: 24px; }
+.story-diagram { margin: 48px 0; }
+.story-diagram__image { width: 100%; height: auto; display: block; }
+.story-diagram figcaption { color: var(--ink-2); font-size: var(--text-small); margin-top: 16px; }
+.story-diagram figcaption a { display: inline-block; margin-left: 8px; }
+.story-diagram__mobile { display: none; }
+.story-work-list { margin-top: 48px; }
+.story-work-list dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; border-top: 1px solid var(--line); padding: 24px 0; }
+.story-work-list dt { font-weight: 600; font-size: var(--text-small); margin-bottom: 12px; }
+.story-work-list dd, .story-diagram dd { margin: 0; }
+@media (max-width: 767px) {
+  .story-diagram__image { display: none; }
+  .story-diagram__mobile { display: block; }
+  .story-diagram__mobile > p { margin-bottom: 24px; }
+  .story-diagram__mobile dl > div { border-left: 2px solid var(--mark); padding: 0 0 0 20px; margin-bottom: 24px; }
+  .story-diagram__mobile dt { font-weight: 600; margin-bottom: 8px; }
+  .story-work-list dl { grid-template-columns: 1fr; gap: 20px; }
+}

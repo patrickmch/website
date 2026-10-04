@@ -87,6 +87,9 @@ try {
     '/working-together': 'Working Together | Patrick McHeyser',
     '/work': 'Client Work | Patrick McHeyser',
     '/work/mtro-pro': 'MTRO PRO: Customer Success and QA Automation | Patrick McHeyser',
+    '/work/manufacturing-systems': 'Manufacturing: Quoting and Software Delivery | Patrick McHeyser',
+    '/work/shared-context': 'Healthcare: Shared Context and AI Workflows | Patrick McHeyser',
+    '/work/psyche-digital': 'Psyche Digital: AI in Client Delivery | Patrick McHeyser',
     '/about': 'About Patrick McHeyser',
     '/contact': "Let's Talk | Patrick McHeyser",
   };
@@ -256,7 +259,7 @@ try {
   expect(new URL(page.url()).pathname === '/contact', 'Story CTA must lead to the contact form');
   for (const width of [360, 390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const route of ['/work', '/work/mtro-pro']) {
+    for (const route of ['/work', '/work/mtro-pro', '/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
       await page.goto(url(route), { waitUntil: 'load' });
       await settle(page);
       const layout = await page.evaluate(() => ({
@@ -268,9 +271,24 @@ try {
   }
   await page.setViewportSize({ width: 1280, height: 800 });
   for (const route of ['/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
-    await page.goto(url(route), { waitUntil: 'load' });
-    await page.waitForTimeout(300);
-    expect(new URL(page.url()).pathname === '/', 'Unpublished work must not have an accessible story route');
+    await page.goto(url('/work'), { waitUntil: 'load' });
+    await page.locator(`main a[href="${route}"]`).click();
+    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'Custom quoting software.' : route.includes('shared-context') ? 'An AI assistant' : 'Taking AI further' }).waitFor();
+    expect(new URL(page.url()).pathname === route, 'Client Work must open each published story');
+    const copy = await page.locator('main').innerText();
+    expect(!/prior-year|overstated|consequential calculation errors|cannot be trusted|Internal evidence|clearance|Hi \[Name\]/i.test(copy), `${route}: private details or superseded reporting wording appeared`);
+    if (route.includes('manufacturing')) {
+      expect(copy.includes('tracing management figures back to source transactions'), 'Manufacturing should describe the reporting method');
+      expect(copy.includes('operator testing'), 'Manufacturing must retain implementation status');
+    }
+    if (route.includes('shared-context')) expect(copy.includes('Staff rollout and impact assessment are ongoing; time savings have not yet been measured.'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
+    if (route.includes('psyche')) expect(copy.includes('Psyche has the materials to run that first trial'), 'Psyche must not imply completed adoption');
+    for (const image of await page.locator('.story-diagram__image').all()) {
+      expect(await image.evaluate(img => img.complete && img.naturalWidth > 0), `${route}: diagram must load`);
+    }
+    await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
+    await page.locator('#contact-name').waitFor();
+    expect(new URL(page.url()).pathname === '/contact', 'Every story should reach the contact form');
   }
 
   /* ---------- Focus and keyboard ---------- */

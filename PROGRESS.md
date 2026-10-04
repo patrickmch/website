@@ -38,3 +38,10 @@
 - Release target: `patrickmch/website` main, automatically deployed by Railway. Previous live revision `22f4fdc`; rollback is a reviewed revert of this release commit. Live verification follows push.
 
 - **Live verified:** release `5f9d7df` pushed to `main`; Railway serves `/work` and `/work/mtro-pro`. Headless Chrome confirmed exact story paragraphs, canonical URL, both diagrams, Home-to-story and story-to-contact navigation, mobile menu and diagram fit at 390px. No contact message sent.
+
+## 2026-10-04: Additional client stories
+
+- Added anonymous manufacturing and healthcare stories and a named Psyche Digital story under Client Work. Existing MTRO PRO copy and diagrams are unchanged.
+- Manufacturing reporting describes source tracing and metric definitions; the quoting, software delivery and operator-testing status remain. Healthcare retains ongoing rollout and unmeasured impact. Psyche retains the first-trial status.
+- Added the two approved diagrams, readable mobile text views, workflow breakdowns, story navigation and contact links. Canonical copy is in `docs/website-copy-2026-10.md`.
+- Verified typecheck, production checks, exact approved body copy for healthcare and Psyche, diagram integrity, desktop/mobile screenshots, and overflow checks at 360/390/768/1024/1440 pixels. No mail sent. Live verification follows deployment.

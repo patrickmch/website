@@ -1,6 +1,6 @@
 # McHeyser Site
 
-Marketing site for McHeyser (mcheyser.com): operations and technology consulting for owners and operations leaders at businesses around $5M to $25M in revenue. Core pages: Home, Working Together, Client Work, About, Contact. Client Work includes the published MTRO PRO story at `/work/mtro-pro`.
+Marketing site for McHeyser (mcheyser.com): operations and technology consulting for owners and operations leaders at businesses around $5M to $25M in revenue. Core pages: Home, Working Together, Client Work, About, Contact. Client Work includes named MTRO PRO and Psyche Digital stories, plus anonymous manufacturing and healthcare stories.
 
 ## Status
 

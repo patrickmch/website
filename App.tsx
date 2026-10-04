@@ -8,6 +8,8 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ClientWorkPage from './pages/ClientWorkPage';
 import MtroWorkPage from './pages/MtroWorkPage';
+import ClientStoryPage from './pages/ClientStoryPage';
+import { clientStories } from './content/clientStories';
 import StylePage from './pages/StylePage';
 import OgPage from './pages/OgPage';
 
@@ -88,6 +90,7 @@ export default function App() {
             <Route path="/working-together" element={<WorkingTogetherPage />} />
             <Route path="/work" element={<ClientWorkPage />} />
             <Route path="/work/mtro-pro" element={<MtroWorkPage />} />
+            {clientStories.map(story => <Route key={story.slug} path={`/work/${story.slug}`} element={<ClientStoryPage slug={story.slug} />} />)}
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/apply" element={<Navigate to="/contact" replace />} />
