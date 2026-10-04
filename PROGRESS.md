@@ -9,10 +9,10 @@
 - `npm run typecheck`, `npm run build`, `npm run check` and both screenshot sets pass.
 - Launch checks done on the live site: real paths and the old `/#/apply` link land; a real note went through the live form and arrived (Gmail, 14:55:40 UTC); `og.png`, the favicon, the 1200w portrait and the hosted talk are served.
 - Launch finding fixed the same morning (`97645cc`): the host sent no `Cache-Control`, so `npm start` now runs `scripts/serve.mjs` with `no-cache` for HTML and `immutable` for hashed assets.
+- EmailJS template `template_epa95qj` ("Contact Us") updated on 4 October at 5:12 pm MDT in the dashboard (account under patrick@mcheyser.com): subject "New note from {{name}}", body with Name, Email, Company, Website and the note (line breaks kept), retired fields removed. Verified with a second live send, which arrived with all five fields.
 
 ## What's next
 
-- Patrick: in the EmailJS dashboard, update the template the site uses. It is still the old application template: subject "New Application from {{name}}", and it has no line for `{{company}}` while still listing Community, Involvement, Goals, Why Now, Additional and Budget. Add Company, drop the retired fields, and set the subject to `{{_subject}}` or "New note from {{name}}".
 - Patrick: a link preview (Slack, iMessage, LinkedIn) to confirm `og.png`, and a VoiceOver pass of Home and Contact.
 - Patrick's remaining decisions from the review log: climbing photo, intake route, proof material, prerendering and self-hosted fonts as follow-ups.
 - Visitors who loaded the old site in the days before launch may see it until their cached copy expires (the old host sent no cache headers). A reload fixes it; new visits are unaffected.

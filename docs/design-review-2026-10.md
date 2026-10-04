@@ -155,7 +155,7 @@ Merged as `a4dd7f8` (pull request 4) at 08:51 MDT; Railway's deployment succeede
 | # | Severity | What | Disposition |
 | --- | --- | --- | --- |
 | L1 | major | The host's default static serving sent no `Cache-Control` (only ETag and Last-Modified), so browsers applied heuristic freshness: a visitor who had loaded the old site could keep seeing it for days, and with its asset hashes gone, get a blank page once those were evicted. Seen in the browser pane, which showed the old site at `/` while a never-visited path showed the new one | **fixed** `97645cc`, deployed 08:57: `npm start` runs `scripts/serve.mjs`, which sends `no-cache` for HTML, `immutable` for hashed assets, an hour for other files, gzip, ETags and a real 404 for a missing file. Verified on the live site and with the full production check against the server locally. Copies of the old page cached before the fix expire on their own |
-| L2 | minor | The EmailJS template is the old application template: no Company line, retired fields, subject "New Application from {{name}}" | **Patrick**: edit the template in the EmailJS dashboard (needs his login) |
+| L2 | minor | The EmailJS template is the old application template: no Company line, retired fields, subject "New Application from {{name}}" | **fixed** 4 October, 5:12 pm MDT, in the EmailJS dashboard after Patrick signed in: subject "New note from {{name}}", a clean body with Name, Email, Company, Website and the note (line breaks kept), retired fields gone. A second live send arrived with all five fields |
 
 ## Patrick's rulings
 
