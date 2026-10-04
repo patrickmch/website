@@ -49,7 +49,7 @@ Disposition values: **fixed** (with the commit), **fixed in part** (what was don
 
 | # | Severity | Where | What | Disposition |
 | --- | --- | --- | --- | --- |
-| C1 | blocker | Contact submission | End-to-end delivery is not demonstrated; the failure and retry path is unverified | **open until launch**: a real note goes through the live form in the launch step and the result is recorded below. The failure path, the retry (button re-enabled), the honeypot and the success path are now exercised by `npm run check` with the provider mocked, so nothing is sent (`d3be95c`, `0c428b7`) |
+| C1 | blocker | Contact submission | End-to-end delivery is not demonstrated; the failure and retry path is unverified | **verified at launch** (4 October, 08:55 MDT): a real note sent through the live form arrived in Patrick's inbox at 14:55:40 UTC with name, email, website and challenge, and the reply-to set to the sender. Finding from that email: the EmailJS template is still the old application template and has no line for `company` (it prints the retired Community, Involvement, Goals, Why Now, Additional and Budget fields instead); Patrick updates the template in the EmailJS dashboard. The failure path, the retry, the honeypot and the success path are exercised by `npm run check` with the provider mocked (`d3be95c`, `0c428b7`) |
 | C2 | major | Fig. 2 | "Build and test it with the team" contradicts the Sprint ending at findings | **fixed** `5eb7924`: the caption now reads "How the work gets looked at, then changed. A Discovery Sprint covers the first three steps." The screen-reader description says building is scoped separately. Spec amended |
 | C3 | major | Proof | No testimonial, deliverable or named engagement on the published site | **deferred** to Patrick (open question 4). Nothing can be fabricated |
 | C4 | major | Home order (spec 7.1) | The offer and the person come after the hero diagram, four cards, the approach and three examples | **deferred** to Patrick: section order is the copy doc's order and the spec's principle 5 is a deliberate choice. Recommendation in the last section |
@@ -148,6 +148,15 @@ Kept, on purpose: the concept and its register (paper, ink, one pen, "Fig." capt
 6. **Prerendering** (Codex 11, Grok 16). Real paths are in. A build step that writes static HTML per route with its own metadata is the complete answer and is worth doing once the site is live and the host's handling of nested paths can be checked.
 7. **Self-hosted fonts** (Codex 24, handoff). Transfer is under budget. Self-hosting removes a third-party request and is a good follow-up.
 
+## Launch, 4 October 2026
+
+Merged as `a4dd7f8` (pull request 4) at 08:51 MDT; Railway's deployment succeeded and the new title was live at 08:52. Checks on the live site: fresh loads of `/`, `/working-together`, `/about`, `/contact`, `/apply`, `/intake/denver-zen-den` and an unknown path all serve the new build; the old `/#/apply` link lands on `/contact`; `og.png` (61,962 bytes), `favicon.svg`, the 1200w portrait and the hosted talk are served; a real note through the live form arrived (C1 above).
+
+| # | Severity | What | Disposition |
+| --- | --- | --- | --- |
+| L1 | major | The host's default static serving sent no `Cache-Control` (only ETag and Last-Modified), so browsers applied heuristic freshness: a visitor who had loaded the old site could keep seeing it for days, and with its asset hashes gone, get a blank page once those were evicted. Seen in the browser pane, which showed the old site at `/` while a never-visited path showed the new one | **fixed** `97645cc`, deployed 08:57: `npm start` runs `scripts/serve.mjs`, which sends `no-cache` for HTML, `immutable` for hashed assets, an hour for other files, gzip, ETags and a real 404 for a missing file. Verified on the live site and with the full production check against the server locally. Copies of the old page cached before the fix expire on their own |
+| L2 | minor | The EmailJS template is the old application template: no Company line, retired fields, subject "New Application from {{name}}" | **Patrick**: edit the template in the EmailJS dashboard (needs his login) |
+
 ## Patrick's rulings
 
 Recorded as Patrick decides, after seeing the build locally on 4 October 2026.
@@ -204,7 +213,7 @@ The same packet was sent again at `0601519` (the fixed build with the amended sp
 | C2-6 | major | Fig. 3's two routes both need a person | **declined**: spec content; the caption says which ones need judgment |
 | C2-7 | major | Fig. 4 omits scope, pricing and terms | **declined**: illustrative by design (spec 6) |
 | C2-8 | major | Real paths without prerendered metadata | **deferred**, as C11 |
-| C2-9 | major | Mocked checks cannot prove delivery | **open until launch**, as C1 |
+| C2-9 | major | Mocked checks cannot prove delivery | **verified at launch**, as C1 |
 | C2-10 | major | Fields stay editable while a note sends; the live form is what gets sent | **fixed** `7b7b7b7`: a trimmed snapshot of the validated values is sent with `send`; fields are read-only while sending; a second submit is ignored |
 | C2-11 | major | Back/forward restoration is asserted, not implemented | **declined with evidence**: probed in Chromium, Back restored 2200px and Forward 900px with native `scrollRestoration` |
 | C2-12, 13 | minor | Circles mean different things; repeated pen is decoration | **declined**; noted |
