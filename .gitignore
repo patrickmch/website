@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Review tooling output
+screenshots/
+review-out/packet/
+review-out/*.error.txt
+review-out/codex.last-message.md
