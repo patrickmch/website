@@ -11,7 +11,11 @@
  * Env: OUT (output dir, default ./screenshots), PORT (default 2000),
  *      PLAYWRIGHT_PATH (path to a playwright install if not in node_modules),
  *      OG=0 to skip the social preview image, TILES=1 to also write 1400px-tall
- *      page tiles under OUT/tiles (for reviewers that downscale tall images).
+ *      page tiles under OUT/tiles (for reviewers that downscale tall images),
+ *      REVIEW=0 to screenshot the public composition (proof slots hidden), for
+ *      example `OUT=screenshots/public REVIEW=0 npm run screenshots`,
+ *      OVERFLOW_WIDTHS (default 360,768,1024): extra widths that get the
+ *      horizontal-overflow check without a screenshot.
  */
 import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
@@ -27,6 +31,16 @@ const MODE = process.env.MODE || 'dev';
 const BASE = process.env.BASE_URL || `http://127.0.0.1:${PORT}`;
 const WRITE_OG = MODE === 'dev' && process.env.OG !== '0';
 const TILES = process.env.TILES === '1';
+const REVIEW = process.env.REVIEW === '0' ? '0' : '1';
+const OVERFLOW_WIDTHS = (process.env.OVERFLOW_WIDTHS || '360,768,1024')
+  .split(',')
+  .map((value) => Number(value.trim()))
+  .filter((value) => value > 0);
+
+/** The URL for a route with the review flag set. One place to change if the router changes. */
+function pageUrl(route, review = REVIEW) {
+  return `${BASE}/#${route}?review=${review}`;
+}
 
 const routes = [
   ['home', '/'],
@@ -109,7 +123,7 @@ try {
     });
 
     for (const [name, route] of routes) {
-      await page.goto(`${BASE}/#${route}?review=1`, { waitUntil: 'load', timeout: 30000 });
+      await page.goto(pageUrl(route), { waitUntil: 'load', timeout: 30000 });
       await settle(page);
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth
@@ -133,6 +147,27 @@ try {
       }
     }
     await context.close();
+  }
+
+  // Overflow-only pass at the spec's other breakpoints (section 9), no screenshots.
+  for (const width of OVERFLOW_WIDTHS) {
+    const context = await browser.newContext({
+      viewport: { width, height: 900 },
+      deviceScaleFactor: 1,
+      reducedMotion: 'reduce',
+      ignoreHTTPSErrors: true,
+    });
+    const page = await context.newPage();
+    for (const [name, route] of routes) {
+      await page.goto(pageUrl(route), { waitUntil: 'load', timeout: 30000 });
+      await settle(page);
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth
+      );
+      if (overflow > 0) problems.push(`${name} at ${width}px: horizontal overflow of ${overflow}px`);
+    }
+    await context.close();
+    console.log(`overflow check at ${width}px done`);
   }
 
   if (WRITE_OG) {
@@ -164,5 +199,7 @@ if (problems.length) {
   for (const problem of problems) console.log(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log('\nNo horizontal overflow, no failed requests, and no console errors or warnings.');
+  console.log(
+    `\nNo horizontal overflow at ${[...widths.map(([w]) => w), ...OVERFLOW_WIDTHS].join(', ')}px, no failed requests, and no console errors or warnings.`
+  );
 }

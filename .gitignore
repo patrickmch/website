@@ -25,6 +25,6 @@ dist-ssr
 
 # Review tooling output
 screenshots/
-review-out/packet/
-review-out/*.error.txt
-review-out/codex.last-message.md
+review-out/**/packet/
+review-out/**/*.error.txt
+review-out/**/codex.last-message.md
