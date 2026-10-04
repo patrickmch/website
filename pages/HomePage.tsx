@@ -1,4 +1,5 @@
 import { usePageMeta } from '../hooks/usePageMeta';
+import { asset } from '../lib/asset';
 import { Section, Prose, Eyebrow } from '../components/Section';
 import { ButtonLink, SecondaryLink } from '../components/Button';
 import { ProofSlot } from '../components/ProofSlot';
@@ -178,8 +179,8 @@ export default function HomePage() {
           <div className="person__photo">
             <img
               className="portrait portrait--4x5"
-              src="/patrick-seated-800.jpg"
-              srcSet="/patrick-seated-800.jpg 800w, /patrick-seated-1600.jpg 1600w"
+              src={asset("patrick-seated-800.jpg")}
+              srcSet={`${asset("patrick-seated-800.jpg")} 800w, ${asset("patrick-seated-1600.jpg")} 1600w`}
               sizes="(min-width: 1024px) 440px, (min-width: 768px) 40vw, 100vw"
               width={800}
               height={1000}

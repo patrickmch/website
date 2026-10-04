@@ -1,4 +1,5 @@
 import { usePageMeta } from '../hooks/usePageMeta';
+import { asset } from '../lib/asset';
 import { Section, Prose } from '../components/Section';
 import { ButtonLink } from '../components/Button';
 import { ProofSlot } from '../components/ProofSlot';
@@ -25,8 +26,8 @@ export default function AboutPage() {
           <div className="about-hero__photo">
             <img
               className="portrait"
-              src="/patrick-dog-800.jpg"
-              srcSet="/patrick-dog-800.jpg 800w, /patrick-dog-1600.jpg 1600w"
+              src={asset("patrick-dog-800.jpg")}
+              srcSet={`${asset("patrick-dog-800.jpg")} 800w, ${asset("patrick-dog-1600.jpg")} 1600w`}
               sizes="(min-width: 1024px) 350px, (min-width: 768px) 40vw, 100vw"
               width={800}
               height={1200}
@@ -60,8 +61,8 @@ export default function AboutPage() {
           <div className="bio__photo">
             <img
               className="portrait"
-              src="/patrick-ridge-800.jpg"
-              srcSet="/patrick-ridge-800.jpg 800w, /patrick-ridge-1200.jpg 1200w"
+              src={asset("patrick-ridge-800.jpg")}
+              srcSet={`${asset("patrick-ridge-800.jpg")} 800w, ${asset("patrick-ridge-1200.jpg")} 1200w`}
               sizes="350px"
               width={800}
               height={1064}

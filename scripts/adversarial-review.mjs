@@ -106,7 +106,7 @@ async function buildPacket() {
   }
   const text = `# PACKET 1: DESIGN SPEC\n\n${spec}\n\n# PACKET 2: COPY DOCUMENT\n\n${copy}\n\n# PACKET 3: SITE SOURCE\n${sources.join('')}`;
 
-  const tilesDir = path.join(ROOT, SCREENSHOTS, 'tiles');
+  const tilesDir = path.resolve(ROOT, SCREENSHOTS, 'tiles');
   let files = [];
   try {
     files = (await readdir(tilesDir)).filter((f) => f.endsWith('.png')).sort();
@@ -246,7 +246,7 @@ if (EMIT) {
   await mkdir(path.join(dir, 'images'), { recursive: true });
   await writeFile(path.join(dir, 'prompt.md'), BRIEF);
   await writeFile(path.join(dir, 'packet.md'), packet.text + imageIntro(packet.images));
-  const tilesDir = path.join(ROOT, SCREENSHOTS, 'tiles');
+  const tilesDir = path.resolve(ROOT, SCREENSHOTS, 'tiles');
   for (const image of packet.images) {
     const source = image.name.startsWith('og.png') ? path.join(ROOT, 'public/og.png') : path.join(tilesDir, image.name);
     await copyFile(source, path.join(dir, 'images', image.name.split(' ')[0]));
