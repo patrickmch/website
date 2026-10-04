@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Wordmark } from './Wordmark';
 import { ButtonLink } from './Button';
@@ -14,6 +14,7 @@ function navClass(base: string) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,7 +24,9 @@ export default function Header() {
   useEffect(() => {
     if (!open) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
+      if (event.key !== 'Escape') return;
+      setOpen(false);
+      toggleRef.current?.focus();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -49,6 +52,7 @@ export default function Header() {
             Let's talk
           </ButtonLink>
           <button
+            ref={toggleRef}
             type="button"
             className="menu-toggle"
             aria-expanded={open}

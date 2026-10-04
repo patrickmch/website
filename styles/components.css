@@ -17,7 +17,9 @@
 }
 
 .wordmark-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: none;
   color: inherit;
 }
@@ -35,22 +37,25 @@
 }
 
 .site-nav__link {
-  display: inline-block;
-  padding: 10px 0 8px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: var(--text-ui);
   font-weight: 500;
   line-height: 1;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color var(--t-fast) var(--ease);
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color var(--t-fast) var(--ease);
 }
 
 .site-nav__link:hover {
-  border-bottom-color: var(--ink);
+  text-decoration-color: var(--ink);
 }
 
 .site-nav__link.is-active {
-  border-bottom-color: var(--mark);
+  text-decoration-color: var(--mark);
 }
 
 .site-header__actions {
@@ -193,11 +198,13 @@
 
 .site-footer__nav li + li,
 .site-footer__contact p + p {
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 .site-footer__nav a,
 .site-footer__contact a {
+  display: inline-block;
+  padding-block: 8px;
   font-weight: 500;
 }
 
@@ -250,8 +257,8 @@
 }
 
 .btn--small {
-  min-height: 40px;
-  padding: 11px 16px;
+  min-height: 44px;
+  padding: 12px 18px;
   font-size: var(--text-small);
 }
 
@@ -834,11 +841,18 @@
 }
 
 @media (max-width: 639px) {
+  /* The header row stays in the accessibility tree; the generated labels carry it visually. */
   .board thead {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 
   .board,
+  .board thead,
   .board tbody,
   .board tr,
   .board td {
@@ -891,6 +905,10 @@
 
 .ink-block a:hover {
   text-decoration-color: var(--paper);
+}
+
+.ink-block :focus-visible {
+  outline-color: var(--paper);
 }
 
 .ink-block .btn:hover {
@@ -1006,7 +1024,7 @@
   font-family: var(--font-sans);
   font-size: 17px;
   line-height: 1.4;
-  border: 1px solid var(--line);
+  border: 1px solid var(--stroke);
   border-radius: var(--radius);
   transition: border-color var(--t-fast) var(--ease);
 }
