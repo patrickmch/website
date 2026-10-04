@@ -10,6 +10,7 @@
  *
  * Env: OUT (output dir, default ./screenshots), PORT (default 2000),
  *      PLAYWRIGHT_PATH (path to a playwright install if not in node_modules),
+ *      CHROMIUM_PATH (a Chromium binary outside Playwright's browser cache),
  *      OG=0 to skip the social preview image, TILES=1 to also write 1400px-tall
  *      page tiles under OUT/tiles (for reviewers that downscale tall images).
  */
@@ -88,7 +89,7 @@ const problems = [];
 try {
   await waitForServer(`${BASE}/`);
   await mkdir(path.join(OUT, 'tiles'), { recursive: true });
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 
   for (const [width, label] of widths) {
     const context = await browser.newContext({

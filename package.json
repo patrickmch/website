@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "screenshots": "node scripts/screenshots.mjs",
-    "review": "node scripts/adversarial-review.mjs"
+    "review": "node scripts/adversarial-review.mjs",
+    "review:check": "node scripts/adversarial-review.mjs --check",
+    "review:merge": "node scripts/merge-reviews.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
