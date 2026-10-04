@@ -69,17 +69,14 @@ export default function HomePage() {
         <div className="section__heading">
           <h2 id="problems-heading">Where is the extra work coming from?</h2>
         </div>
-        <ol className="cards cards--2">
-          {problems.map((problem, index) => (
+        <ul className="cards cards--2">
+          {problems.map((problem) => (
             <li key={problem.title} className="card">
-              <div className="card__n" aria-hidden="true">
-                0{index + 1}
-              </div>
               <h3>{problem.title}</h3>
               <p>{problem.body}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </Section>
 
       <Section labelledBy="approach-heading">
@@ -200,13 +197,13 @@ export default function HomePage() {
               </p>
             </Prose>
             <SecondaryLink to="/about">More about Patrick</SecondaryLink>
-            <ProofSlot
-              kind="quote"
-              className="person__proof"
-              note="Approved testimonial about the experience of working with him."
-            />
           </div>
         </div>
+        <ProofSlot
+          kind="quote"
+          className="person__proof"
+          note="Approved testimonial about the experience of working with him."
+        />
       </Section>
 
       <Section labelledBy="closing-heading" className="closing">

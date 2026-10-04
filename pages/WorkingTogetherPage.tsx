@@ -63,10 +63,7 @@ export default function WorkingTogetherPage() {
         </div>
       </Section>
 
-      <Section labelledBy="stages-heading">
-        <h2 id="stages-heading" className="visually-hidden">
-          How we work together
-        </h2>
+      <Section>
         <ol className="cards cards--3">
           {stages.map((stage, index) => (
             <li key={stage.title} className="card">

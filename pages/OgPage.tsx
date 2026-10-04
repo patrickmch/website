@@ -10,11 +10,11 @@ export default function OgPage() {
         <p className="og__tag">Operations and technology for growing businesses.</p>
       </div>
       <Flow annotated>
-        <Node label="Request comes in" where="email" />
+        <Node label="Request comes in" />
         <Connector />
-        <Node label="Price decided" where="waits for the owner" marked annotation="work waits here" />
+        <Node label="Price decided" marked annotation="work waits here" />
         <Connector />
-        <Node label="Quote sent" where="email, then follow-up" />
+        <Node label="Quote sent" />
       </Flow>
       <div className="og__foot">
         <span>Patrick McHeyser</span>

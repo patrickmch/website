@@ -21,7 +21,7 @@ const colors = [
   ['--ink-2', '#3D4854', 'captions, 8.3:1'],
   ['--stroke', '#6B7682', 'drawing strokes'],
   ['--line', '#CFCBC2', 'hairlines'],
-  ['--mark', '#D9622B', 'the pen, 3.3:1'],
+  ['--mark', '#D9632B', 'the pen, 3.3:1'],
   ['--mark-text', '#B04A1B', 'pen words, 4.9:1'],
   ['--resolved', '#3F7D5C', 'tick strokes'],
   ['--resolved-text', '#2F6A4A', 'tick words, 5.7:1'],

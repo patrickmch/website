@@ -166,6 +166,11 @@
   max-width: none;
 }
 
+/* At header size the two strokes would merge into one; draw one clean stroke. */
+.wordmark--header .pen-underline path + path {
+  display: none;
+}
+
 @media (max-width: 479px) {
   .wordmark--display {
     font-size: 64px;
@@ -184,8 +189,13 @@
   grid-template-columns: 1fr;
 }
 
+.site-footer__name {
+  margin-top: 12px;
+  font-weight: 500;
+}
+
 .site-footer__tag {
-  margin-top: 16px;
+  margin-top: 4px;
   max-width: 24em;
 }
 
