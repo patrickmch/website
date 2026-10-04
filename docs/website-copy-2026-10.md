@@ -345,7 +345,7 @@ Accessible description: Account evidence feeds automated preparation, then a rev
 - Account evidence: Product activity, customer records, messages and bookings
 - Gather and prepare: Assemble context and prepare the next action
 - Review queue: Support requests and proposed follow-ups
-- Human follow-through: Review, approve and help the customer
+- Human follow-through: Review, approve and help the customer (circled; annotation "a person decides")
 
 Product quality
 
@@ -356,11 +356,11 @@ Accessible description: Product journeys and changes guide browser execution. Te
 - Journeys and changes: Booking, lease signing, payments and guest flows
 - Browser execution: Run scenarios and capture actual behavior
 - Findings and retest: Document failures and check repairs
-- Release judgment: Prioritize defects and decide readiness
+- Release judgment: Prioritize defects and decide readiness (circled; annotation "a person decides")
 
-Preview diagram: Customer context → Prepared follow-up → Human review.
+Preview diagram: Customer context → Prepared follow-up → Human review (circled; annotation "a person decides").
 Caption: From account context to a reviewed next step.
-Accessible description: Account context supports follow-up preparation, then a person reviews the proposed next step.
+Accessible description: Account context supports follow-up preparation, then a person reviews the proposed next step; that step is circled.
 
 ### Story and index closing invitation
 
@@ -418,27 +418,26 @@ Metadata title: Manufacturing: Quoting and Software Delivery | Patrick McHeyser
 
 Metadata description: Custom quoting software, source-traceable reporting and AI-assisted software delivery for a manufacturer.
 
-Diagram caption: Business judgment defines the work. Separate implementation and verification steps turn that judgment into software, with defects routed back for correction.
+Figure 1 (drawn with the site's figure components, 4 October):
 
-Accessible description: A business requirement passes through implementation, independent checks and release review; reporting is checked against source transactions.
+Caption: Business judgment defines the work. Separate implementation and verification steps turn that judgment into software, with defects routed back for correction.
 
-From business rules to tested software: Software delivery and reporting both start with the meaning of the work.
+- Business judgment: rules + real examples, priorities + acceptance
+- Implementation: bounded specification, AI-assisted build, code checks
+- Independent verification: browser QA, evidence + code review; failures go back to the build
+- Release + operator review: authorized release, feedback from use (circled; annotation "a person decides")
 
-Business judgment: Rules + real examples; Priorities + acceptance; Resolve ambiguity
+Accessible description: Four steps in a row. Business judgment supplies rules, real examples, priorities and acceptance. Implementation is a bounded specification, an AI-assisted build and repeatable code checks. Independent verification is browser-based QA, evidence and code review, with failures kept visible and corrections routed back to the build. Release and operator review, circled as the step where a person decides, covers the tested change, the authorized release and feedback from use, which informs the next requirement.
 
-Implementation: Bounded specification; AI-assisted build; Repeatable code checks
+Figure 2:
 
-Independent verification: Browser-based QA; Evidence + code review; Failures remain visible
+Caption: Reporting: connect the numbers to what happened. Figures are traced to source transactions, definitions are agreed, and known gaps are made explicit.
 
-Release + operator review: Review tested change; Authorized release; Feedback from use; Correct and retest; Operator feedback informs the next requirement
+- Source transactions: trace the report population; check omissions + timing
+- Definitions + corrections: agree what is being measured; repair and reconcile logic
+- Management information: figures traceable to source; known gaps made explicit (check mark)
 
-Reporting: connect the numbers to what happened:
-
-Source transactions: Trace the report population; Check omissions + timing
-
-Definitions + corrections: Agree what is being measured; Repair and reconcile logic
-
-Management information: Figures traceable to source; Known gaps made explicit; People define the business rules and acceptance criteria. Findings feed back into the next iteration.
+Accessible description: Three steps in a row. Source transactions: trace the report population and check omissions and timing. Definitions and corrections: agree what is being measured, repair and reconcile the logic. Management information, shown with a check mark: figures traceable to source, known gaps made explicit.
 
 | Manual friction | What the system or engagement handles | Human responsibility |
 | --- | --- | --- |
@@ -446,8 +445,6 @@ Management information: Figures traceable to source; Known gaps made explicit; P
 | Repeating test steps after software changes | Automated checks and browser QA with evidence | Set acceptance criteria; assess gaps |
 | Tracing dashboard figures back to source transactions | Trace transactions, reconcile definitions and correct calculations | Agree business meaning and source practices |
 | Copying information between operational tools | Integration assessment and scoped implementation | Decide ownership and handoffs |
-
-Diagram link: View full diagram
 
 Card link: Read the story
 
@@ -477,33 +474,22 @@ Metadata title: Healthcare: Shared Context and AI Workflows | Patrick McHeyser
 
 Metadata description: A shared context system connecting business information to AI workflows, with human review and ongoing rollout.
 
-Diagram caption: Existing tools feed a shared context store. Staff reach it through their AI workspace. Reusable workflows also retrieve current source documents when the task requires them.
+Figure 1 (drawn with the site's figure components, 4 October):
 
-Accessible description: Staff use reusable workflows through an AI workspace and controlled MCP connection to shared context; source systems feed collection and validation, with direct retrieval for current documents.
+Caption: Existing tools feed a shared context store. Staff reach it through their AI workspace. Reusable workflows also retrieve current source documents when the task requires them.
 
-Shared context, useful work: A simplified view of the system and the workflows it supports.
+- Collection + validation: from existing tools: operational records, customer records, documents
+- Shared context: related records matched; source references kept; unresolved facts retained
+- Staff + AI workspace: ask a question or start a workflow, through a controlled connection
+- Human review + decision: check the output and its sources; approve the next action (circled; annotation "a person decides")
 
-Staff + AI workspace: Ask a question; Start a workflow
-
-Controlled connection: MCP tools; Access-scoped queries
-
-Shared context: Related records; Source references; Unresolved facts retained
-
-Collection + validation: Collect source records; Match related information; Prepare queryable views
-
-Existing business tools: Operational records; Customer records; Documents + web records
-
-Reusable workflow instructions: Assemble a profile; Prepare recurring documents; Check supporting evidence; Direct authorized retrieval; For current documents and task-specific evidence
-
-Human review + decision: Check the output and its sources; Resolve exceptions; approve the next action; The shared store supplies context. Authorized source connections supply current supporting documents.
+Accessible description: Four steps in a row. Collection and validation collects source records from the existing business tools (operational records, customer records, documents), matches related information and prepares queryable views. Shared context keeps related records, source references and unresolved facts. The staff AI workspace, reached through a controlled connection with access-scoped queries, is where someone asks a question or starts a workflow: assemble a profile, prepare recurring documents, check supporting evidence. Human review and decision, circled as the step where a person decides, checks the output and its sources, resolves exceptions and approves the next action.
 
 | Workflow | What it does | Manual work targeted |
 | --- | --- | --- |
 | Record lookup and profile preparation | Retrieve related information and produce a structured summary | Opening several tools and assembling the same context |
 | Document preparation | Gather required inputs and draft the appropriate paperwork | Re-keying facts into recurring documents |
 | Evidence review | Check supporting documents and return a source-linked checklist | Repeated document comparison before a human decision |
-
-Diagram link: View full diagram
 
 Card link: Read the story
 

@@ -1,44 +1,109 @@
+import type { ReactNode } from 'react';
 import { usePageMeta } from '../hooks/usePageMeta';
-import { Section, Prose } from '../components/Section';
+import { Section, Prose, Eyebrow } from '../components/Section';
 import { ButtonLink, SecondaryLink } from '../components/Button';
+import { ManufacturingDelivery, ManufacturingReporting, SharedContext } from '../components/diagrams/ClientStories';
 import { clientStories } from '../content/clientStories';
 
-function Paragraph({ text }: { text: string }) {
+type Slug = (typeof clientStories)[number]['slug'];
+
+/** The figures each story carries, placed after its body text. */
+const figures: Partial<Record<Slug, ReactNode>> = {
+  'manufacturing-systems': (
+    <>
+      <ManufacturingDelivery />
+      <ManufacturingReporting />
+    </>
+  ),
+  'shared-context': <SharedContext />,
+};
+
+/**
+ * A body paragraph. A bold lead-in in the copy becomes a heading over its
+ * paragraph (spec 3.2): an H2 set at H3 size, since the page's only heading
+ * above it is the H1.
+ */
+function Body({ text }: { text: string }) {
   const lead = text.match(/^\*\*(.+?)\*\* (.*)$/);
-  return <p>{lead ? <><strong>{lead[1]}</strong> {lead[2]}</> : text}</p>;
+  if (!lead) return <p>{text}</p>;
+  return (
+    <>
+      <h2 className="story-body__lead">{lead[1]}</h2>
+      <p>{lead[2]}</p>
+    </>
+  );
 }
 
-export default function ClientStoryPage({ slug }: { slug: typeof clientStories[number]['slug'] }) {
-  const story = clientStories.find(item => item.slug === slug)!;
+/** The story label from the copy doc: the client or sector, then the kind of engagement. */
+function Label({ text }: { text: string }) {
+  const [client, engagement] = text.split(' · ');
+  return (
+    <>
+      <Eyebrow>{client}</Eyebrow>
+      {engagement && <p className="small muted story-engagement">{engagement}</p>}
+    </>
+  );
+}
+
+export default function ClientStoryPage({ slug }: { slug: Slug }) {
+  const story = clientStories.find((item) => item.slug === slug)!;
   usePageMeta(story.metaTitle, story.description, `/work/${story.slug}`);
-  return <>
-    <Section first className="hero work-story-hero">
-      <SecondaryLink to="/work">All client work</SecondaryLink>
-      <div className="hero__text"><p className="work-client">{story.label}</p>
-        <h1>{story.title}</h1><p className="lead">{story.paragraphs[0]}</p>
-      </div>
-    </Section>
-    <Section>
-      <Prose>{story.paragraphs.slice(1).map(text => <Paragraph key={text} text={text} />)}</Prose>
-      {'diagram' in story && <figure className="story-diagram" aria-labelledby="story-diagram-caption">
-        <img className="story-diagram__image" src={story.diagram.src} alt={story.diagram.alt} />
-        <div className="story-diagram__mobile">
-          <p>{story.diagram.alt}</p>
-          <dl>{story.diagram.groups.map(group => <div key={group.label}>
-            <dt>{group.label}</dt><dd>{group.details.join('. ')}</dd>
-          </div>)}</dl>
+  return (
+    <>
+      <Section first className="hero work-story-hero">
+        <SecondaryLink to="/work">All client work</SecondaryLink>
+        <div className="hero__text">
+          <Label text={story.label} />
+          <h1>{story.title}</h1>
+          <p className="lead">{story.paragraphs[0]}</p>
         </div>
-        <figcaption id="story-diagram-caption">{story.diagram.caption} <a href={story.diagram.src}>View full diagram</a></figcaption>
-      </figure>}
-      {'table' in story && <div className="story-work-list">
-        {story.table.rows.map(row => <dl key={row[0]}>{row.map((cell, i) => <div key={cell}>
-          <dt>{story.table.headers[i]}</dt><dd>{cell}</dd>
-        </div>)}</dl>)}
-      </div>}
-    </Section>
-    <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Have a similar problem?</h2>
-      <Prose><p>Tell me which part of the work needs to get easier.</p></Prose>
-      <div className="work-actions"><ButtonLink to="/contact">Let's talk</ButtonLink><SecondaryLink to="/working-together">How we work together</SecondaryLink></div>
-    </Section>
-  </>;
+      </Section>
+
+      <Section>
+        <Prose className="story-body">
+          {story.paragraphs.slice(1).map((text) => (
+            <Body key={text} text={text} />
+          ))}
+        </Prose>
+        {figures[story.slug]}
+        {'table' in story && (
+          <div className="board-wrap story-table">
+            <table className="board" role="table">
+              <thead role="rowgroup">
+                <tr role="row">
+                  {story.table.headers.map((header) => (
+                    <th key={header} scope="col" role="columnheader">
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody role="rowgroup">
+                {story.table.rows.map((row) => (
+                  <tr key={row[0]} role="row">
+                    {row.map((cell, i) => (
+                      <td key={cell} role="cell" data-label={story.table.headers[i]}>
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </Section>
+
+      <Section className="closing" labelledBy="work-contact">
+        <h2 id="work-contact">Have a similar problem?</h2>
+        <Prose>
+          <p>Tell me which part of the work needs to get easier.</p>
+        </Prose>
+        <div className="work-actions">
+          <ButtonLink to="/contact">Let's talk</ButtonLink>
+          <SecondaryLink to="/working-together">How we work together</SecondaryLink>
+        </div>
+      </Section>
+    </>
+  );
 }

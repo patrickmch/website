@@ -516,6 +516,18 @@
     flex: 1 1 auto;
   }
 
+  /* A note under a circled node in an equal-height row sits outside the row, so every box stays the same height. */
+  .flow--even > .node--marked > .annotation--below {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .flow--even:has(> .node--marked > .annotation--below) {
+    padding-bottom: 44px;
+  }
+
   .stack {
     gap: 16px;
   }

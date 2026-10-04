@@ -1,5 +1,5 @@
 import { usePageMeta } from '../hooks/usePageMeta';
-import { Section, Prose } from '../components/Section';
+import { Section, Prose, Eyebrow } from '../components/Section';
 import { ButtonLink, SecondaryLink } from '../components/Button';
 import { ClientWorkFeature } from '../components/ClientWorkFeature';
 import { clientStories } from '../content/clientStories';
@@ -14,7 +14,7 @@ export default function ClientWorkPage() {
     <Section><ClientWorkFeature /></Section>
     {clientStories.map(story => <Section key={story.slug}>
       <article className="work-story-card" aria-labelledby={`${story.slug}-title`}>
-        <p className="work-client">{story.client}</p>
+        <Eyebrow>{story.client}</Eyebrow>
         <h2 id={`${story.slug}-title`}>{story.title}</h2>
         <Prose><p>{story.summary}</p></Prose>
         <SecondaryLink to={`/work/${story.slug}`}>Read the story</SecondaryLink>

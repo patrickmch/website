@@ -324,6 +324,7 @@ The ink block on this page wraps section 3's heading and two paragraphs only (Fi
 |---|---|
 | `/` | Home |
 | `/working-together` | Working Together |
+| `/work`, `/work/mtro-pro`, `/work/<story>` | Client Work (7.6) |
 | `/about` | About |
 | `/contact` | Contact |
 | `/apply` | redirects (replace) to `/contact` so old links keep working |
@@ -333,6 +334,15 @@ The ink block on this page wraps section 3's heading and two paragraphs only (Fi
 | `/og` | dev only |
 
 BrowserRouter with real paths (Amended: the live Railway host and `vite preview` both serve `index.html` for every path, so the hash router's reason no longer held; real paths give each page its own URL, canonical link and Open Graph tags). The review flag is a normal query: `/?review=1`. Prerendering the four pages to static HTML is a possible follow-up, not part of this build.
+
+### 7.6 Client Work (added 4 October 2026)
+
+Pages: `/work` (index), `/work/mtro-pro`, and one page per story in `content/clientStories.ts`. Words are in the Client Work sections of the copy doc. Navigation gains `Client Work` between Working Together and About.
+
+- **Index.** Hero (H1, lead), then the featured MTRO PRO work on the Home example grid (`.example`: text in 5 columns with a mono eyebrow for the client name, the preview figure in 7), then one section per story (eyebrow for the client or sector, H2 title, summary, "Read the story"), then the closing call with the primary button and a secondary link.
+- **Story page.** Hero with "All client work" above it, the eyebrow (the client or sector), a small muted line for the kind of engagement, H1 and the first paragraph as the lead. Body in the prose column; a bold lead-in in the copy is a heading over its paragraph (3.2), an H2 set at H3 size because the hero's H1 is the only heading above it. Figures follow the body, then the workflow table in the board style (5.8, Fig. 5), then the closing call.
+- **Figures.** Drawn with the figure primitives only (5.8): no images of diagrams. On these pages the pen has one meaning: it circles the step where a person decides, with the annotation "a person decides" placed below the node (the circled step is the last in its row, so an above-right annotation would run past the container). Node rows use the equal-height, text-sized row (`flow--even`). MTRO PRO: two four-node lanes (customer success, product quality) and a three-node preview. Manufacturing: a four-node delivery flow and a three-node reporting flow ending in a check mark. Healthcare: a four-node flow from collection and validation to human review (five nodes clipped single words at 768px). Psyche Digital: no figure.
+- **Not used:** orange box borders, pastel fills, a second palette, bold sans labels, middle-dot meta strings, definition-list tables, external SVG files.
 
 ---
 

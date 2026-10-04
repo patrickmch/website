@@ -250,9 +250,11 @@ try {
   await page.goto(url('/work'), { waitUntil: 'load' });
   await page.getByRole('link', { name: 'See the work', exact: true }).click();
   await page.getByRole('heading', { name: 'Automating the work around a growing SaaS platform.', exact: true }).waitFor();
-  await page.locator('.work-diagram').first().waitFor();
+  await page.locator('.story-figure').first().waitFor();
   expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
   expect(await page.locator('main figure').count() === 2, 'Story should show customer-success and QA diagrams');
+  expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles the step where a person decides');
+  expect(await page.locator('.work-node--human, .story-diagram__image, .work-client').count() === 0, 'no orange box borders, image diagrams or ad-hoc client labels on the work pages');
   expect(await page.locator('a[href="https://mtropro.com/"]').count() === 1, 'Story must link to the client site');
   expect((await page.locator('main').innerText()).includes('Weekly time savings have not yet been measured.'), 'Story must distinguish implemented work from unmeasured savings');
   await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
@@ -264,7 +266,7 @@ try {
       await settle(page);
       const layout = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth > innerWidth + 1,
-        clipped: [...document.querySelectorAll('.work-diagram .node__label, .work-diagram .node__where')].some(n => n.scrollWidth > n.clientWidth + 1),
+        clipped: [...document.querySelectorAll('.story-figure .node__label, .story-figure .node__where')].some(n => n.scrollWidth > n.clientWidth + 1),
       }));
       expect(!layout.overflow && !layout.clipped, `${route} at ${width}px: diagram text or page overflows`);
     }
@@ -283,9 +285,20 @@ try {
     }
     if (route.includes('shared-context')) expect(copy.includes('Staff rollout and impact assessment are ongoing; time savings have not yet been measured.'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
     if (route.includes('psyche')) expect(copy.includes('Psyche has the materials to run that first trial'), 'Psyche must not imply completed adoption');
-    for (const image of await page.locator('.story-diagram__image').all()) {
-      expect(await image.evaluate(img => img.complete && img.naturalWidth > 0), `${route}: diagram must load`);
-    }
+    const figures = await page.evaluate(() => ({
+      figures: document.querySelectorAll('main figure.story-figure').length,
+      circles: document.querySelectorAll('main figure .pen-circle').length,
+      images: document.querySelectorAll('main figure img, .story-diagram__image').length,
+      tables: document.querySelectorAll('main table.board').length,
+      leadIns: document.querySelectorAll('.story-body h2.story-body__lead').length,
+      boldSpans: [...document.querySelectorAll('.story-body p > strong')].length,
+    }));
+    const wantFigures = route.includes('manufacturing') ? 2 : route.includes('shared-context') ? 1 : 0;
+    expect(figures.figures === wantFigures, `${route}: expected ${wantFigures} drawn figure(s), got ${figures.figures}`);
+    expect(figures.images === 0, `${route}: diagrams must be drawn, not images`);
+    if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark where a person decides`);
+    if (!route.includes('psyche')) expect(figures.tables === 1, `${route}: the workflow table should use the board style`);
+    expect(figures.boldSpans === 0 && (route.includes('psyche') || figures.leadIns >= 2), `${route}: bold lead-ins should be headings, not bold spans`);
     await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
     await page.locator('#contact-name').waitFor();
     expect(new URL(page.url()).pathname === '/contact', 'Every story should reach the contact form');
