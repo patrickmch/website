@@ -8,7 +8,10 @@
  *   XAI_API_KEY     -> xAI Grok        (XAI_MODEL, default grok-4)
  *   codex CLI, signed in (`codex login` or `codex login --device-auth` with a
  *   ChatGPT subscription) -> OpenAI through Codex (CODEX_MODEL optional).
+ *   grok CLI on the PATH -> xAI through the Grok CLI, which reads the packet from
+ *   disk (GROK_MODEL optional). Skipped when XAI_API_KEY is set.
  *   The codex provider is skipped when OPENAI_API_KEY is set, to avoid two OpenAI reviews.
+ * Keys are also read from .env.local when present.
  * Replies are written to OUT (default ./review-out) as <provider>.md.
  *
  * Usage:
@@ -26,9 +29,27 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 
 const ROOT = process.cwd();
+
+// Keys may live in .env.local (gitignored) on a developer machine.
+try {
+  const envLocal = await readFile(path.join(ROOT, '.env.local'), 'utf8');
+  for (const line of envLocal.split('\n')) {
+    const match = line.match(/^\s*(?:export\s+)?([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
+    if (!match) continue;
+    const [, key, raw] = match;
+    if (process.env[key]) continue;
+    if (['GEMINI_API_KEY', 'OPENAI_API_KEY', 'XAI_API_KEY', 'GROK_API_KEY'].includes(key)) {
+      process.env[key] = raw.replace(/^["']|["']$/g, '');
+    }
+  }
+} catch {
+  // no .env.local
+}
+if (!process.env.XAI_API_KEY && process.env.GROK_API_KEY) process.env.XAI_API_KEY = process.env.GROK_API_KEY;
+
 const SCREENSHOTS = process.env.SCREENSHOTS || 'screenshots';
 const OUT = process.env.OUT || 'review-out';
-const ONLY = (process.env.ONLY || 'gemini,openai,xai,codex').split(',').map((s) => s.trim());
+const ONLY = (process.env.ONLY || 'gemini,openai,xai,codex,grok').split(',').map((s) => s.trim());
 const DRY_RUN = process.env.DRY_RUN === '1';
 const EMIT = process.env.EMIT === '1';
 
@@ -295,6 +316,67 @@ async function callCodex(packet) {
   return { model, text };
 }
 
+function grokInstalled() {
+  const probe = spawnSync('grok', ['--help'], { encoding: 'utf8' });
+  return !probe.error;
+}
+
+function pointerPrompt(packet) {
+  const tilesDir = path.resolve(ROOT, SCREENSHOTS, 'tiles');
+  return `${BRIEF}
+
+THE PACKET IS ON DISK IN THIS REPOSITORY (${ROOT}). Read it with your file tools before you write anything:
+1. docs/design-spec.md (the design spec)
+2. docs/website-copy-2026-10.md (the copy)
+3. The source: ${sourceFiles.join(', ')}
+4. The screenshots, if you can view images: ${tilesDir} holds 1400px-tall tiles named <page>-<desktop|mobile>-<nn>.png for home, working-together, about, and contact. public/og.png is the social preview image. The dashed orange "PROOF SLOT" boxes are placeholders hidden on the published site; judge their placement only.
+If you cannot view images, say so at the top of your review and base the visual findings on the spec and the CSS.
+
+Write the complete review in markdown to review-out/grok.md in this repository, and also print it in full as your final answer.`;
+}
+
+async function callGrok(packet) {
+  const model = process.env.GROK_MODEL || '(grok CLI default)';
+  const outFile = path.join(OUT, 'grok.md');
+  const prompt = pointerPrompt(packet);
+  const args = [...(process.env.GROK_MODEL ? ['-m', process.env.GROK_MODEL] : []), '-p', prompt];
+  const stdout = await new Promise((resolve, reject) => {
+    const child = spawn('grok', args, { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] });
+    let out = '';
+    let err = '';
+    child.stdout.on('data', (chunk) => {
+      out += chunk;
+    });
+    child.stderr.on('data', (chunk) => {
+      err += chunk;
+    });
+    const timer = setTimeout(() => {
+      child.kill();
+      reject(new Error('grok timed out after 20 minutes'));
+    }, 20 * 60 * 1000);
+    child.on('error', (error) => {
+      clearTimeout(timer);
+      reject(error);
+    });
+    child.on('close', (code) => {
+      clearTimeout(timer);
+      if (code !== 0 && !out.trim()) {
+        reject(new Error(`grok exited with ${code}: ${err.slice(-800)}`));
+        return;
+      }
+      resolve(out);
+    });
+  });
+  let text = stdout;
+  try {
+    const written = await readFile(outFile, 'utf8');
+    if (written.trim().length > stdout.trim().length) text = written;
+  } catch {
+    // the CLI did not write the file; use stdout
+  }
+  return { model, text };
+}
+
 const providers = [
   { id: 'gemini', key: 'GEMINI_API_KEY', call: callGemini },
   { id: 'openai', key: 'OPENAI_API_KEY', call: callOpenAI },
@@ -305,6 +387,13 @@ const providers = [
     available: () => !process.env.OPENAI_API_KEY && codexSignedIn(),
     skipReason: process.env.OPENAI_API_KEY ? 'OPENAI_API_KEY is set, the openai provider covers it' : 'codex CLI not installed or not signed in',
     call: callCodex,
+  },
+  {
+    id: 'grok',
+    key: null,
+    available: () => !process.env.XAI_API_KEY && grokInstalled(),
+    skipReason: process.env.XAI_API_KEY ? 'XAI_API_KEY is set, the xai provider covers it' : 'grok CLI not installed',
+    call: callGrok,
   },
 ];
 
