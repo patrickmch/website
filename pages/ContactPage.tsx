@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useEffect, useRef, useState } from 'react';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Section, Prose } from '../components/Section';
 import { Button } from '../components/Button';
@@ -61,10 +60,17 @@ export default function ContactPage() {
   );
 
   const formRef = useRef<HTMLFormElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
   const [values, setValues] = useState<Values>(empty);
+  const [fax, setFax] = useState('');
   const [errors, setErrors] = useState<Errors>({});
   const [attempted, setAttempted] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  // The confirmation replaces the form, so move focus to it: the submit button is gone.
+  useEffect(() => {
+    if (status === 'sent') successRef.current?.focus();
+  }, [status]);
 
   const update = (key: keyof Values) => (value: string) => {
     setValues((current) => ({ ...current, [key]: value }));
@@ -91,8 +97,15 @@ export default function ContactPage() {
     }
     if (!formRef.current) return;
 
+    // Honeypot: people never see the fax field. A filled one is a bot, which gets the confirmation and nothing is sent.
+    if (fax.trim()) {
+      setStatus('sent');
+      return;
+    }
+
     setStatus('sending');
     try {
+      const { default: emailjs } = await import('@emailjs/browser');
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -121,7 +134,7 @@ export default function ContactPage() {
 
       <div className="contact-form">
         {status === 'sent' ? (
-          <div className="form__success" role="status">
+          <div ref={successRef} className="form__success" role="status" tabIndex={-1}>
             <Prose>
               <p className="lead">Thanks for getting in touch. I've received your note and will follow up by email.</p>
             </Prose>
@@ -129,6 +142,18 @@ export default function ContactPage() {
         ) : (
           <form ref={formRef} className="form" onSubmit={handleSubmit} noValidate>
             <input type="hidden" name="_subject" value="New note from mcheyser.com" />
+            <div className="visually-hidden" aria-hidden="true">
+              <label htmlFor="contact-fax">Fax</label>
+              <input
+                id="contact-fax"
+                name="fax"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={fax}
+                onChange={(event) => setFax(event.target.value)}
+              />
+            </div>
             <Field
               id="contact-name"
               name="name"
@@ -185,11 +210,15 @@ export default function ContactPage() {
               error={errors.challenge}
             />
             <div className="form__actions">
-              <p className={`form__status ${status === 'error' ? 'form__status--error' : ''}`} aria-live="polite">
+              <p className={`form__status ${sending ? 'visually-hidden' : ''}`} aria-live="polite">
                 {sending && 'Sending your note...'}
-                {status === 'error' &&
-                  'Something went wrong while sending your note. Please try again or email patrick@mcheyser.com.'}
               </p>
+              {status === 'error' && (
+                <p className="form__status form__status--error" role="alert">
+                  Something went wrong while sending your note. Please try again or email{' '}
+                  <a href="mailto:patrick@mcheyser.com">patrick@mcheyser.com</a>.
+                </p>
+              )}
               <Button disabled={sending}>{sending ? 'Sending your note...' : 'Send your note'}</Button>
             </div>
           </form>

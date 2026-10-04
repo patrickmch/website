@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { Section, Prose } from '../components/Section';
 import { Button } from '../components/Button';
 
@@ -159,6 +158,7 @@ export default function IntakePage() {
     ].join('\n');
 
     try {
+      const { default: emailjs } = await import('@emailjs/browser');
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
