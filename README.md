@@ -68,4 +68,4 @@ docs/                 design spec, copy doc, review log
 
 ## Deployment
 
-Railway serves the static build; the apex domain points there from Namecheap DNS. Pushes to `main` deploy.
+Railway builds `dist/` and runs `npm start`, which is `scripts/serve.mjs`: a small static server that sends `Cache-Control: no-cache` for `index.html` (so a new deploy is picked up on the next visit), `immutable` for the hashed files under `assets/`, an hour for other files, gzip, ETags, and a real 404 for a missing file. The host's default static serving sent no cache headers at all, which could show a returning visitor the previous build for days. The apex domain points at Railway from Namecheap DNS. Pushes to `main` deploy.

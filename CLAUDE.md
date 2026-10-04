@@ -46,7 +46,7 @@ docs/                      design spec, copy doc, review log
 ## Deployment
 
 - **Domain**: mcheyser.com. DNS at Namecheap (NS `dns1/dns2.registrar-servers.com`), apex to Railway.
-- **Host**: Railway (`server: railway-hikari`). One service serves the static build; no built-in path routing to other services.
+- **Host**: Railway (`server: railway-hikari`). One service builds `dist/` and runs `npm start` (`scripts/serve.mjs`, a static server with explicit cache headers: `no-cache` for HTML, `immutable` for hashed assets). No built-in path routing to other services.
 - Git remote: `patrickmch/website`. Pushes to `main` deploy.
 - Sibling deliverables host: `content.mcheyser.com` (separate Railway project `mcheyser-content`) serves PIN-gated client deliverables at paths, e.g. `/psyche`.
 

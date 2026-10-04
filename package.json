@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "screenshots": "node scripts/screenshots.mjs",
     "review": "node scripts/adversarial-review.mjs",
-    "check": "VITE_EMAILJS_PUBLIC_KEY=check VITE_EMAILJS_SERVICE_ID=check VITE_EMAILJS_TEMPLATE_ID=check vite build && node scripts/check-production.mjs"
+    "check": "VITE_EMAILJS_PUBLIC_KEY=check VITE_EMAILJS_SERVICE_ID=check VITE_EMAILJS_TEMPLATE_ID=check vite build && node scripts/check-production.mjs",
+    "start": "node scripts/serve.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
