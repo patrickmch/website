@@ -1,0 +1,1260 @@
+/* Components. See docs/design-spec.md section 5. */
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: var(--header-h);
+}
+
+.wordmark-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-nav {
+  display: none;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--text-ui);
+  font-weight: 500;
+  line-height: 1;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color var(--t-fast) var(--ease);
+}
+
+.site-nav__link:hover {
+  text-decoration-color: var(--ink);
+}
+
+.site-nav__link.is-active {
+  text-decoration-color: var(--mark);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.menu-toggle {
+  min-height: 44px;
+  padding: 10px 6px;
+  background: none;
+  border: 0;
+  font-size: var(--text-ui);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.site-menu {
+  border-top: 1px solid var(--line);
+}
+
+.site-menu[hidden] {
+  display: none;
+}
+
+.site-menu__list {
+  margin: 0;
+  padding-block: 0;
+  list-style: none;
+}
+
+.site-menu__list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.site-menu__link {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.site-menu__link.is-active {
+  text-decoration: underline;
+  text-decoration-color: var(--mark);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+  .site-nav {
+    display: block;
+    margin-left: auto;
+  }
+
+  .site-header__actions {
+    margin-left: 0;
+  }
+
+  .menu-toggle,
+  .site-menu {
+    display: none !important;
+  }
+}
+
+/* ---------- Wordmark ---------- */
+.wordmark {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  line-height: 1;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+
+.wordmark--header {
+  font-size: 22px;
+}
+
+.wordmark--footer {
+  font-size: 28px;
+}
+
+.wordmark--display {
+  font-size: 96px;
+}
+
+/*
+ * The pen underline runs the width of the word in a band 0.08em to 0.28em below the baseline, through
+ * the descender of the y. With line-height 1 the baseline sits 0.149em above the line box, so the
+ * band's bottom is 0.13em below the box at every size.
+ */
+.wordmark__stroke {
+  position: absolute;
+  left: -2px;
+  bottom: -0.13em;
+  max-width: none;
+  overflow: visible;
+  pointer-events: none;
+}
+
+@media (max-width: 479px) {
+  .wordmark--display {
+    font-size: 64px;
+  }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 64px 32px;
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+}
+
+.site-footer__name {
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.site-footer__tag {
+  margin-top: 4px;
+  max-width: 24em;
+}
+
+.site-footer__nav ul,
+.site-footer__contact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__nav li + li,
+.site-footer__contact p + p {
+  margin-top: 2px;
+}
+
+.site-footer__nav a,
+.site-footer__contact a {
+  display: inline-block;
+  padding-block: 8px;
+  font-weight: 500;
+}
+
+.site-footer__bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .site-footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
+/* ---------- Buttons and links ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 14px 22px;
+  background: var(--mark);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-ui);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn:disabled {
+  cursor: default;
+}
+
+.btn:disabled:hover {
+  background: var(--mark);
+  color: var(--ink);
+}
+
+.btn--small {
+  min-height: 44px;
+  padding: 12px 18px;
+}
+
+.link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: var(--text-ui);
+  font-weight: 600;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.arrow path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Sections ---------- */
+.section__inner {
+  padding-block: var(--section-y);
+  border-top: 1px solid var(--line);
+}
+
+.section__inner--first {
+  border-top: 0;
+}
+
+.section__heading {
+  margin-bottom: 32px;
+}
+
+.section__heading h2 {
+  max-width: 20em;
+}
+
+.section__heading .lead {
+  margin-top: 16px;
+  max-width: 32em;
+}
+
+/* ---------- Grid ---------- */
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .col-4 {
+    grid-column: span 4;
+  }
+
+  .col-5 {
+    grid-column: span 5;
+  }
+
+  .col-6 {
+    grid-column: span 6;
+  }
+
+  .col-7 {
+    grid-column: span 7;
+  }
+
+  .col-8 {
+    grid-column: span 8;
+  }
+}
+
+/* ---------- Cards (numbered lists) ---------- */
+.cards {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.card__n {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--mark-text);
+}
+
+.card h3,
+.card .card__title {
+  margin-bottom: 10px;
+}
+
+/* A card title that is an H2 in the outline (the stages follow the H1 directly) but set at H3 size. */
+.card .card__title {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .cards--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Figures ---------- */
+.figure {
+  margin: 0;
+}
+
+.figure__body {
+  position: relative;
+}
+
+.figure__caption {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 48em;
+}
+
+.figure__n {
+  font-weight: 500;
+}
+
+/* Pen marks */
+.pen path {
+  fill: none;
+  stroke: var(--mark);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 600ms ease-out 150ms;
+}
+
+.is-drawn .pen path,
+.pen--static path {
+  stroke-dashoffset: 0;
+}
+
+.pen-circle {
+  position: absolute;
+  max-width: none;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.pen-underline path {
+  stroke-width: 2;
+}
+
+.pen-tick {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.pen-tick path {
+  stroke: var(--resolved);
+  stroke-width: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pen path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}
+
+/* Flow: a row of nodes and connectors (a column on small screens) */
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.flow > .connector {
+  align-self: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 767px) {
+  /* Stacked boxes that a fan joins get a bracket, so they read as one group. */
+  .flow > .stack {
+    margin-left: 6px;
+    padding-left: 12px;
+    border-left: 1.5px solid var(--stroke);
+  }
+}
+
+@media (min-width: 768px) {
+  .flow {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .flow--annotated {
+    padding-top: 44px;
+  }
+
+  .flow > .stack,
+  .flow > .record {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .flow > .node {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* A row of nodes only (Fig. 1): boxes size to their text, share the slack, and are one height. */
+  .flow--even > .node {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  .flow--even > .node > .node__box {
+    flex: 1 1 auto;
+  }
+
+  .stack {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__figure .node__where {
+    white-space: nowrap;
+  }
+}
+
+/* Node */
+.node {
+  position: relative;
+}
+
+.node__box {
+  position: relative;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 1.5px solid var(--stroke);
+  border-radius: var(--radius);
+}
+
+.node__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-fig);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.node__label--tick {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node__where {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  line-height: 1.3;
+  color: var(--ink-2);
+}
+
+.node--small .node__box {
+  padding: 8px 12px;
+}
+
+.node--small .node__label {
+  font-size: var(--text-label);
+  font-weight: 400;
+}
+
+/* Annotation */
+.annotation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.annotation__leader {
+  width: 24px;
+  height: 20px;
+}
+
+.annotation__leader path {
+  fill: none;
+  stroke: var(--mark);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+.annotation__leader-d {
+  display: none;
+}
+
+.annotation__text {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--mark-text);
+}
+
+@media (min-width: 768px) {
+  .annotation--above {
+    position: absolute;
+    left: 56%;
+    bottom: calc(100% + 4px);
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2px;
+    margin-top: 0;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .annotation--above .annotation__leader {
+    width: 24px;
+    height: 24px;
+  }
+
+  .annotation--above .annotation__leader-d {
+    display: block;
+  }
+
+  .annotation--above .annotation__leader-m {
+    display: none;
+  }
+}
+
+/* Connectors */
+.connector {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 32px;
+}
+
+.connector svg {
+  width: 100%;
+  height: 100%;
+}
+
+.connector path {
+  fill: none;
+  stroke: var(--stroke);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.connector__h {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .connector {
+    width: 32px;
+    height: 16px;
+  }
+
+  .connector__h {
+    display: block;
+  }
+
+  .connector__v {
+    display: none;
+  }
+}
+
+/* Fan */
+.fan {
+  position: relative;
+  display: none;
+  flex: 0 0 auto;
+  width: 48px;
+  align-self: stretch;
+}
+
+.fan__lines {
+  width: 100%;
+  height: 100%;
+}
+
+.fan path {
+  fill: none;
+  stroke: var(--stroke);
+  stroke-width: 1.5;
+}
+
+.fan .arrowhead {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.arrowhead {
+  width: 10px;
+  height: 12px;
+}
+
+.arrowhead path {
+  fill: none;
+  stroke: var(--stroke);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Small screens: a vertical connector with a label saying how the stacked boxes relate. */
+.fan-mobile {
+  position: relative;
+  align-self: center;
+}
+
+.fan__label {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  line-height: 1.3;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .fan {
+    display: block;
+  }
+
+  .fan-mobile {
+    display: none;
+  }
+}
+
+/* Steps (Fig. 2): two groups, each with its own line, so the Sprint's boundary is in the drawing. */
+.steps-group + .steps-group {
+  margin-top: 20px;
+}
+
+.steps-group__label {
+  margin-bottom: 4px;
+  padding-left: 48px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.steps {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 15px;
+  border-left: 1.5px solid var(--stroke);
+}
+
+.steps__item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-block: 10px;
+}
+
+.steps__n {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  background: var(--paper);
+  border: 1.5px solid var(--stroke);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+}
+
+.steps__text {
+  padding-top: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--text-fig);
+  line-height: 1.4;
+}
+
+/* Record card (Fig. 4) */
+.record {
+  background: var(--paper);
+  border: 1.5px solid var(--stroke);
+  border-radius: var(--radius);
+}
+
+.record__title {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.record__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: var(--text-fig);
+}
+
+.record__row + .record__row {
+  border-top: 1px solid var(--line);
+}
+
+.record__key {
+  position: relative;
+}
+
+.record__val {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-label);
+  color: var(--ink-2);
+}
+
+.record__val .pen-tick {
+  width: 14px;
+  height: 14px;
+}
+
+.record__gap {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 12px;
+  border-bottom: 1.5px dashed var(--mark);
+}
+
+.record__flag {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--mark-text);
+  white-space: nowrap;
+}
+
+.resolved-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--resolved-text);
+}
+
+/* Board table (Fig. 5) */
+.board-wrap {
+  border: 1.5px solid var(--stroke);
+  border-radius: var(--radius);
+}
+
+.board {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: var(--text-fig);
+}
+
+.board__caption {
+  caption-side: top;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.board__cell-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .board td:nth-child(3),
+  .board td:nth-child(4) {
+    white-space: nowrap;
+  }
+}
+
+.board th {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.board td {
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+.board tbody tr + tr td {
+  border-top: 1px solid var(--line);
+}
+
+.board__cell--marked {
+  position: relative;
+}
+
+
+.board__cell--marked .annotation {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.board__tick {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 639px) {
+  /* The header row stays in the accessibility tree; the generated labels carry it visually. */
+  .board thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .board,
+  .board__caption,
+  .board thead,
+  .board tbody,
+  .board tr,
+  .board td {
+    display: block;
+  }
+
+  .board tr {
+    padding-block: 8px;
+  }
+
+  .board tbody tr + tr {
+    border-top: 1px solid var(--line);
+  }
+
+  .board td {
+    display: flex;
+    gap: 12px;
+    padding: 4px 12px;
+    border: 0 !important;
+  }
+
+  .board td::before {
+    content: attr(data-label);
+    flex: 0 0 92px;
+    padding-top: 2px;
+    font-size: var(--text-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+}
+
+/* ---------- Ink block ---------- */
+.ink-block {
+  padding: 32px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+}
+
+.ink-block h2,
+.ink-block p {
+  color: var(--paper);
+}
+
+.ink-block a {
+  color: var(--paper);
+}
+
+.ink-block a:hover {
+  text-decoration-color: var(--paper);
+}
+
+.ink-block :focus-visible {
+  outline-color: var(--paper);
+}
+
+.ink-block .btn:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.ink-block .prose p {
+  max-width: 36em;
+}
+
+@media (min-width: 768px) {
+  .ink-block {
+    padding: 48px;
+  }
+}
+
+.underlined {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.underlined .pen-underline {
+  position: absolute;
+  left: -2px;
+  bottom: -9px;
+  max-width: none;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* ---------- Proof slot ---------- */
+.proof-slot {
+  padding: 24px;
+  border: 2px dashed var(--mark);
+  border-radius: var(--radius);
+}
+
+.proof-slot--quote {
+  min-height: 120px;
+}
+
+.proof-slot--sample {
+  min-height: 200px;
+}
+
+.proof-slot__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--mark-text);
+}
+
+.proof-slot__note {
+  margin-top: 8px;
+  max-width: 36em;
+  color: var(--ink-2);
+}
+
+.proof-slot__hint {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--ink-2);
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  max-width: var(--prose);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.faq__item + .faq__item {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.faq__item h3 {
+  margin-bottom: 8px;
+}
+
+/* ---------- Forms ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 640px;
+}
+
+.field__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: var(--text-small);
+  font-weight: 600;
+}
+
+.field__optional {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.field__input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--paper-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.4;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.field--invalid .field__input {
+  border-color: var(--mark);
+  outline: 2px solid var(--mark);
+  outline-offset: -1px;
+}
+
+.field__input:focus {
+  border-color: var(--ink);
+  outline: 2px solid var(--ink);
+  outline-offset: -1px;
+}
+
+textarea.field__input {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.field__error {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--mark-text);
+}
+
+.form__status {
+  font-weight: 600;
+}
+
+.form__status--error {
+  color: var(--mark-text);
+}
+
+.form__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.form__note {
+  margin-top: 24px;
+}
+
+.form__success {
+  max-width: var(--prose);
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--ink);
+}
+
+.checkbox-detail {
+  margin: 6px 0 0 28px;
+  max-width: 320px;
+}
+
+@media (max-width: 479px) {
+  .form .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Portrait ---------- */
+.portrait {
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.portrait--4x5 {
+  aspect-ratio: 4 / 5;
+  object-position: top;
+}
+
+/* ---------- Diagram specifics ---------- */
+.board__mark {
+  position: relative;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .flow > .stack--docs {
+    flex: 0 0 180px;
+  }
+
+  .flow > .stack--outcomes {
+    flex: 0 0 220px;
+  }
+}
+
+@media (max-width: 767px) {
+  .stack--outcomes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}

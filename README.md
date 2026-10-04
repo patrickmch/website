@@ -1,20 +1,71 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# McHeyser site
 
-# Run and deploy your AI Studio app
+The marketing site for McHeyser (Patrick McHeyser): operations and technology consulting for growing businesses. Live at [mcheyser.com](https://mcheyser.com).
 
-This contains everything you need to run your app locally.
+Four pages: Home, Working Together, About, Contact. The design concept, tokens, components, and acceptance criteria are in [`docs/design-spec.md`](docs/design-spec.md). The words come from [`docs/website-copy-2026-10.md`](docs/website-copy-2026-10.md).
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ZS5BAjlDN583w-nk4A3Veo8WRS60ZLsj
+## Run
 
-## Run Locally
+```bash
+npm install
+npm run dev        # Vite dev server on http://localhost:2000
+npm run build      # production build to dist/
+npm run preview    # serve dist/
+npm run typecheck  # tsc --noEmit
+npm run check      # production check: builds with placeholder mail keys, runs scripts/check-production.mjs
+```
 
-**Prerequisites:**  Node.js
+In development the proof-slot placeholders (testimonial and sample deliverable positions) are visible, and two extra routes exist: `/style` (style tile) and `/og` (social preview template). On the published site, proof slots render nothing unless the URL carries `?review=1`.
 
+Routes are real paths (`/working-together`, `/about`, `/contact`). The host serves `index.html` for every path. Links from the old hash router (`/#/apply`, `/#/intake/denver-zen-den`) are rewritten to real paths on arrival.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Screenshots
+
+```bash
+npm run screenshots                    # dev server; writes ./screenshots and public/og.png
+OUT=screenshots/public REVIEW=0 npm run screenshots   # the public composition, proof slots hidden
+MODE=preview npm run screenshots       # the production build
+```
+
+Every run also checks for horizontal overflow at 360, 768 and 1024px.
+
+Needs Playwright with Chromium. If Playwright is installed globally, point at it with `PLAYWRIGHT_PATH=/path/to/node_modules/playwright`.
+
+## Adversarial review by outside models
+
+```bash
+TILES=1 npm run screenshots          # page tiles the models can read
+GEMINI_API_KEY=... OPENAI_API_KEY=... XAI_API_KEY=... npm run review
+```
+
+Each reply lands in `review-out/<provider>.md` (`OUT=review-out/round-2 npm run review` for a later round). The Codex CLI is used automatically when it is signed in (`codex login --device-auth` works without a browser) and no `OPENAI_API_KEY` is set; the Grok CLI when it is on the PATH and no `XAI_API_KEY` is set. Findings and their dispositions are logged in `docs/design-review-2026-10.md`. With no provider at all, `EMIT=1 npm run review` writes the prompt, the packet, and the images to `review-out/packet` for pasting into a chat interface. In a cloud environment, the hosts `api.openai.com`, `auth.openai.com`, `chatgpt.com`, and `api.x.ai` must be on the network allowlist.
+
+## Environment variables
+
+The contact form sends through EmailJS. Set these at build time:
+
+```
+VITE_EMAILJS_PUBLIC_KEY
+VITE_EMAILJS_SERVICE_ID
+VITE_EMAILJS_TEMPLATE_ID
+```
+
+Form field names are `name`, `email`, `company`, `website`, and `challenge`.
+
+## Structure
+
+```
+index.html            fonts, meta, Open Graph tags
+App.tsx               routes (BrowserRouter), skip link, navigation focus and scroll
+styles/               tokens.css, base.css, components.css, pages.css
+components/           wordmark, header, footer, buttons, figure primitives, pen marks, diagrams, form field
+hooks/                usePageMeta, useReviewMode, useDrawOnView
+pages/                Home, Working Together, About, Contact, the retained intake page, dev-only Style and Og pages
+public/               favicon, portraits, og.png, the hosted talk under stoppromptingstartshipping/
+scripts/              screenshots.mjs, check-production.mjs, adversarial-review.mjs
+docs/                 design spec, copy doc, review log
+```
+
+## Deployment
+
+Railway serves the static build; the apex domain points there from Namecheap DNS. Pushes to `main` deploy.

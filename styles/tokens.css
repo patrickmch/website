@@ -1,0 +1,58 @@
+/* Design tokens. See docs/design-spec.md section 3. */
+:root {
+  /* 3.1 Color */
+  --paper: #F4F2ED;
+  --paper-2: #ECE9E2;
+  --ink: #16202B;
+  --ink-2: #3D4854;
+  --stroke: #6B7682;
+  --line: #CFCBC2;
+  --mark: #D9632B;
+  --mark-text: #B04A1B;
+  --resolved: #3F7D5C;
+  --resolved-text: #2F6A4A;
+  --line-on-ink: rgba(244, 242, 237, 0.2);
+
+  /* 3.2 Type */
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Source Code Pro', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --text-display: clamp(2.25rem, 1.5rem + 2.6vw, 3.5rem);   /* 36 to 56 */
+  --text-h2: clamp(1.75rem, 1.45rem + 1.3vw, 2.5rem);        /* 28 to 40 */
+  --text-h3: clamp(1.375rem, 1.3rem + 0.25vw, 1.5rem);       /* 22 to 24 */
+  --text-lead: clamp(1.25rem, 1.2rem + 0.25vw, 1.375rem);    /* 20 to 22 */
+  --text-body: clamp(1.0625rem, 1.04rem + 0.1vw, 1.125rem);  /* 17 to 18 */
+  --text-small: 0.9375rem;  /* 15 */
+  --text-label: 0.8125rem;  /* 13 */
+  --text-fig: 0.875rem;     /* 14 */
+  --text-ui: 1rem;          /* 16 */
+
+  /* 3.3 Layout */
+  --container: 1120px;
+  --prose: 680px;
+  --gutter: 16px;
+  --section-y: 64px;
+  --grid-gap: 24px;
+  --header-h: 64px;
+
+  /* 3.4 Shape */
+  --radius: 2px;
+
+  /* 3.5 Motion */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --t-fast: 150ms;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-y: 96px;
+    --grid-gap: 32px;
+  }
+}
