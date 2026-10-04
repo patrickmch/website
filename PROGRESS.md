@@ -6,7 +6,7 @@
 
 - Spec: `docs/design-spec.md` (also GitHub issue #1). Copy: `docs/website-copy-2026-10.md`.
 - All four pages, the `/apply` redirect, and the retained intake page are built per the spec.
-- Review findings and dispositions: `docs/design-review-2026-10.md`.
+- Handoff to the local session: `docs/handoff-2026-10.md`. Review findings and dispositions will go in `docs/design-review-2026-10.md`.
 
 ## What's next
 
