@@ -476,11 +476,11 @@ The build is done when every line below is true.
 
 After the build is complete and pushed, four independent reviewers get the same packet and the same brief: Gemini, Codex (OpenAI), Grok (xAI), and an independent Claude session with no memory of this work.
 
-**Packet:** this spec, the copy doc, full-page screenshots of every route at 1440px and 390px with review mode on, and the full source of the branch.
+**Packet:** this spec, the copy doc, screenshots of every route at 1440px and 390px with review mode on (as 1400px tiles, since some reviewers downscale tall images), the social preview image, and the full source of the branch. The `external-review` skill (`.claude/skills/external-review/SKILL.md`) builds it and sends it; the brief is `docs/review-brief.md`.
 
 **Brief:** attack both the concept and the execution. Specifically: (1) does the design concept serve a $5M to $25M business owner, or is it designer-pleasing; (2) where does the spec itself make a weak or generic choice (palette, type, wordmark, diagrams, layout); (3) where does the implementation fail the spec; (4) code quality, accessibility, performance, and responsive defects; (5) does the copy land better or worse in this design than it would in a plain page; (6) what would a skeptical owner notice in the first five seconds. Each finding carries a severity (blocker, major, minor, taste) and a concrete fix.
 
-**Disposition:** every finding is logged in `docs/design-review-2026-10.md` with one of: fixed (commit), declined (reason), or deferred (owner decision). Blockers and majors are fixed before the second round. A second round confirms the fixes.
+**Disposition:** every finding is logged in `docs/design-review-<date>.md` (written by `scripts/merge-reviews.mjs` from `review-out/`) with one of: fixed (commit), declined (reason), or deferred (owner decision). Blockers and majors are fixed before the second round. A second round confirms the fixes: the same packet, rebuilt from the fixed tree, plus the findings table and their dispositions.
 
 ---
 

@@ -25,6 +25,19 @@ MODE=preview npm run screenshots       # the production build
 
 Needs Playwright with Chromium. If Playwright is installed globally, point at it with `PLAYWRIGHT_PATH=/path/to/node_modules/playwright`.
 
+## External review
+
+Outside models (Gemini, OpenAI or the Codex CLI, Grok) review the spec and the build from one packet and one brief, and every finding gets a disposition in `docs/design-review-<date>.md`. The procedure is the `external-review` skill in `.claude/skills/external-review/SKILL.md`; the short version:
+
+```bash
+npm run review:check                      # which providers have a key, which hosts answer, which models exist
+TILES=1 npm run screenshots               # page tiles for the reviewers
+npm run review                            # sends to every reachable provider; writes review-out/<provider>.md
+npm run review:merge -- --log docs/design-review-$(date +%F).md
+```
+
+Without any key the run writes `review-out/packet/` with paste instructions instead of failing. Keys: `GEMINI_API_KEY`, `OPENAI_API_KEY`, `XAI_API_KEY`. The brief is `docs/review-brief.md`.
+
 ## Environment variables
 
 The contact form sends through EmailJS. Set these at build time:
@@ -47,8 +60,9 @@ components/           wordmark, header, footer, buttons, figure primitives, pen 
 hooks/                usePageMeta, useReviewMode, useDrawOnView
 pages/                Home, Working Together, About, Contact, the retained intake page, dev-only Style and Og pages
 public/               favicon, portraits, og.png, the hosted talk under stoppromptingstartshipping/
-scripts/              screenshots.mjs, adversarial-review.mjs
-docs/                 design spec, copy doc, review log
+scripts/              screenshots.mjs, adversarial-review.mjs, merge-reviews.mjs, check-production.mjs
+docs/                 design spec, copy doc, review brief, review logs
+.claude/skills/       external-review: the adversarial review procedure
 ```
 
 ## Deployment
