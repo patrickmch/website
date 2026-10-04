@@ -7,7 +7,7 @@ export function SharedView() {
   return (
     <Figure
       n={5}
-      caption="What's waiting, on whom, and what happens next. Illustrative."
+      caption="What's waiting, on whom, and what happens next."
       description="An example job board: a table of three jobs with columns for the job, what it is waiting on, who is responsible, and what happens next. Quote 118 at Hillside waits on customer sign-off; Maria follows up Thursday. Job 2041, Unit 12, waits on a price decision from the owner, due Friday; that cell is circled and noted 'waiting on a decision'. Order 77, Lot 4, waits on nothing, shown with a check mark; Crew B starts Monday."
     >
       <div className="board-wrap">

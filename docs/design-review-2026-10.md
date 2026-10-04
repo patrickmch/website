@@ -163,6 +163,8 @@ Recorded as Patrick decides, after seeing the build locally on 4 October 2026.
 
 1. **Wordmark.** The raised c goes. "McHeyser" is set with every letter at the same size and a hand-drawn pen underline runs the full width of the word, the same stroke as the "Discovery Sprint" underline: one stroke in the header and footer, two on the social image. This answers Codex 27, Grok 4, X2-9 and X2-35, and Gemini G2-8, all of which said the device did not survive header size. Spec 4.1 amended.
 
+2. **"Illustrative."** Gone from the four example captions. Patrick read it on the live site as internal text that had leaked through, which is what Grok's X9 and X2-21 argued. The examples are still identified as examples by the section line, Fig. 1's "In this example" and Fig. 5's "Example job board" title. Spec 5.4 and 6 amended. The "Fig. N" prefix stays for now.
+
 ## Open questions from spec section 14, with recommendations
 
 1. **Climbing photograph on About.** Recommend cutting it. Two reviewers called it the wrong story, it is the loudest orange on the site, and phones never see it, so the page tells two stories.

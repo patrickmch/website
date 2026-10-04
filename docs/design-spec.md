@@ -169,7 +169,7 @@ Each component lists purpose, anatomy, states, responsive behavior, and accessib
 
 ### 5.4 Eyebrow and figure caption
 - **Eyebrow:** mono 13px/500 uppercase `--ink-2`, 16px above the heading it labels. Used for the Home hero tagline ("Operations and technology for growing businesses") and for figure numbering on the style page.
-- **Figure caption:** mono 13px `--ink-2`, placed below the figure, prefixed "Fig. N" in 500 weight followed by a space and the caption text. Captions of illustrative figures end with the word "Illustrative."
+- **Figure caption:** mono 13px `--ink-2`, placed below the figure, prefixed "Fig. N" in 500 weight followed by a space and the caption text. (Amended 4 October 2026, Patrick: captions no longer end with the word "Illustrative.", which read as an editorial note left in by mistake. That the drawings are examples is carried by the section line "Here are examples of the kinds of improvements we can make.", Fig. 1's "In this example", and Fig. 5's "Example job board" title.)
 
 ### 5.5 Section and prose column
 - `<section>` with a top 1px `--line` rule (except the first on a page), section padding per 3.3, and an optional `aria-labelledby` pointing at its H2.
@@ -230,7 +230,7 @@ Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden
 All diagram text is illustrative and generic across industries. No real client names, no numbers that read as results, no currency.
 
 ### Fig. 1 — Quote flow (Home hero)
-Caption: "A quote, as it moves through a business. In this example, the work waits for a pricing decision. Illustrative." (Amended: "where work usually waits" stated a diagnosis as a general fact.)
+Caption: "A quote, as it moves through a business. In this example, the work waits for a pricing decision." (Amended: "where work usually waits" stated a diagnosis as a general fact; "Illustrative." removed 4 October.)
 Five nodes, left to right (label / where it happens):
 1. Request comes in / email
 2. Job details gathered / re-typed into a spreadsheet
@@ -250,19 +250,19 @@ A vertical numbered strip with a 1.5px `--stroke` line down the left, in two gro
 Step 2 has a small PenCircle around its number. No annotation.
 
 ### Fig. 3 — A quoting tool that follows your rules (Home example 1)
-Caption: "Routine quotes get drafted. The ones that need judgment get flagged for a person. Illustrative."
+Caption: "Routine quotes get drafted. The ones that need judgment get flagged for a person."
 Left: two input nodes stacked, "Job details" and "Pricing rules". Both connect into a center node "Draft quote" (sublabel "prepared for review"). The center node connects to two output nodes stacked on the right: "Ready for review" (with a `--resolved` PenTick) and "Needs a judgment call" (PenCircle, annotation "goes to a person").
 Small screens: inputs, center, outputs stack vertically in that order, the fans labelled "both go in" and "one of these".
 
 ### Fig. 4 — Customer paperwork with less retyping (Home example 2)
-Caption: "Information collected once carries into the documents. Missing details are flagged before anything goes out. Illustrative."
+Caption: "Information collected once carries into the documents. Missing details are flagged before anything goes out."
 Left: a "Customer record" card listing five fields as mono rows with a tick and "on file", or a gap: Customer name ✓, Site address ✓, Contact ✓, PO number (the field name circled, an empty dashed gap, then the annotation "flagged: missing"), Start date ✓.
 Arrows from the card to three document nodes stacked on the right: "Work order", "Contract", "Invoice".
 Below the documents, a `--resolved-text` mono line with a PenTick: "Checked by a person before it goes out."
 Small screens: the record, then a connector labelled "carries into each", then the three documents.
 
 ### Fig. 5 — A shared view of work that needs attention (Home example 3)
-Caption: "What's waiting, on whom, and what happens next. Illustrative."
+Caption: "What's waiting, on whom, and what happens next."
 A table titled "Example job board" (a visible `<caption>` in the record-title style, so the invented details read as an example, not a client), with the mono header row `JOB | WAITING ON | WHO | NEXT` and three rows:
 - Quote 118, Hillside | Customer sign-off | Maria | Follow up Thursday
 - Job 2041, Unit 12 | Price decision | Owner | Decide by Friday

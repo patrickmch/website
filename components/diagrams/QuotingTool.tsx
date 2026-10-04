@@ -5,7 +5,7 @@ export function QuotingTool() {
   return (
     <Figure
       n={3}
-      caption="Routine quotes get drafted. The ones that need judgment get flagged for a person. Illustrative."
+      caption="Routine quotes get drafted. The ones that need judgment get flagged for a person."
       description="Two inputs, job details and pricing rules, feed a draft quote. The draft goes one of two ways: ready for review, shown with a check mark, or needs a judgment call, which is circled with the note 'goes to a person'."
     >
       <Flow>
