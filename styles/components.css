@@ -150,14 +150,15 @@
 }
 
 /*
- * The pen underline runs the width of the word in a band 0.08em to 0.28em below the baseline, through
- * the descender of the y. With line-height 1 the baseline sits 0.149em above the line box, so the
- * band's bottom is 0.13em below the box at every size.
+ * The pen underline runs the width of the word just under the letters: the stroke sits about 0.04em
+ * to 0.13em below the baseline (1 to 3px at header size), through the top of the y's descender.
+ * With line-height 1 the baseline sits 0.149em above the line box, so the band's bottom is 0.02em
+ * below the box at every size. (Raised on 4 October at Patrick's request; it was 0.08em to 0.28em.)
  */
 .wordmark__stroke {
   position: absolute;
   left: -2px;
-  bottom: -0.13em;
+  bottom: -0.02em;
   max-width: none;
   overflow: visible;
   pointer-events: none;
