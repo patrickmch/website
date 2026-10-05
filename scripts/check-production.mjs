@@ -246,9 +246,42 @@ try {
   expect(/H[^A-Z]*V|V[^A-Z]*H/.test(geometry.leaderD), `annotation leader should be an elbow, got d="${geometry.leaderD}"`);
   expect(geometry.approachStart === '8', `Fig. 2 should start at grid column 8, got ${geometry.approachStart}`);
 
+  /* ---------- The three example figures, now on Working Together ---------- */
+  await page.goto(url('/working-together'), { waitUntil: 'load' });
+  await settle(page);
+  await page.evaluate(async () => {
+    for (let y = 0; y < document.body.scrollHeight; y += 500) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 40));
+    }
+    window.scrollTo(0, 0);
+  });
+  await page.waitForTimeout(300);
+  const examples = await page.evaluate(() => {
+    const out = {};
+    const docs = Array.from(document.querySelectorAll('.stack--docs .node__box')).map((n) => {
+      const r = n.getBoundingClientRect();
+      return r.top + r.height / 2;
+    });
+    const fan = document.querySelector('.stack--docs')?.closest('.flow')?.querySelector('.fan--out');
+    const heads = fan ? Array.from(fan.querySelectorAll('.arrowhead')).map((a) => { const r = a.getBoundingClientRect(); return r.top + r.height / 2; }) : [];
+    out.fanMiss = docs.map((d, i) => Math.round(Math.abs(d - (heads[i] ?? -999))));
+    out.gapCircle = !!document.querySelector('.record__key .pen-circle');
+    const who = document.querySelector('.board tbody tr:nth-child(3) td:nth-child(3)');
+    out.whoNowrap = who ? getComputedStyle(who).whiteSpace === 'nowrap' : false;
+    out.boardCaption = document.querySelector('.board caption')?.textContent?.trim();
+    out.captions = Array.from(document.querySelectorAll('.figure__n')).map((n) => n.textContent?.trim());
+    return out;
+  });
+  expect(examples.fanMiss.length === 3 && examples.fanMiss.every((m) => m <= 3), `Paperwork fan arrowheads miss the document nodes by ${examples.fanMiss.join(',')}px`);
+  expect(examples.gapCircle, 'Paperwork pen circle should be on the PO number field name');
+  expect(examples.whoNowrap, 'job board who/next columns should not wrap');
+  expect(examples.boardCaption === 'Example job board', 'the job board should carry its "Example job board" caption');
+  expect(examples.captions.join(' ') === 'Fig. 1 Fig. 2 Fig. 3 Fig. 4', `Working Together figures should be numbered 1 to 4, got ${examples.captions.join(' ')}`);
+
   /* ---------- Published client-work journeys ---------- */
   await page.goto(url('/work'), { waitUntil: 'load' });
-  await page.getByRole('link', { name: 'See the work', exact: true }).click();
+  await page.locator('.work-feature a[href="/work/mtro-pro"]').click();
   await page.getByRole('heading', { name: 'Automating the work around a growing SaaS platform.', exact: true }).waitFor();
   await page.locator('.story-figure').first().waitFor();
   expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
@@ -256,7 +289,7 @@ try {
   expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles the step where a person decides');
   expect(await page.locator('.work-node--human, .story-diagram__image, .work-client').count() === 0, 'no orange box borders, image diagrams or ad-hoc client labels on the work pages');
   expect(await page.locator('a[href="https://mtropro.com/"]').count() === 1, 'Story must link to the client site');
-  expect((await page.locator('main').innerText()).includes('Weekly time savings have not yet been measured.'), 'Story must distinguish implemented work from unmeasured savings');
+  expect((await page.locator('main').innerText()).includes('with adoption, business impact and time saved still being assessed'), 'Story must distinguish implemented work from unmeasured outcomes');
   await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
   expect(new URL(page.url()).pathname === '/contact', 'Story CTA must lead to the contact form');
   for (const width of [360, 390, 768, 1024, 1440]) {
@@ -283,7 +316,8 @@ try {
       expect(copy.includes('tracing management figures back to source transactions'), 'Manufacturing should describe the reporting method');
       expect(copy.includes('operator testing'), 'Manufacturing must retain implementation status');
     }
-    if (route.includes('shared-context')) expect(copy.includes('Staff rollout and impact assessment are ongoing; time savings have not yet been measured.'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
+    if (route.includes('shared-context')) expect(copy.includes('with staff rollout, business impact and time saved still being assessed'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
+    expect(!copy.includes(' · ') && !/\+ /.test(copy.replace(/\d\+/g, '')), `${route}: no middle-dot labels or plus signs in the words`);
     if (route.includes('psyche')) expect(copy.includes('Psyche has the materials to run that first trial'), 'Psyche must not imply completed adoption');
     const figures = await page.evaluate(() => ({
       figures: document.querySelectorAll('main figure.story-figure').length,
@@ -468,6 +502,52 @@ try {
   });
   await mpage.waitForTimeout(300);
   expect(await mpage.locator('.work-preview .node').count() === 3, 'Home should show the three-step client-work preview on mobile');
+  await mpage.goto(url('/working-together'), { waitUntil: 'load' });
+  await settle(mpage);
+  await mpage.evaluate(async () => {
+    for (let y = 0; y < document.body.scrollHeight; y += 500) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 30));
+    }
+  });
+  await mpage.waitForTimeout(300);
+  const mobileFacts = await mpage.evaluate(() => {
+    const thead = document.querySelector('.board thead');
+    const ths = Array.from(document.querySelectorAll('.board th'));
+    const labels = Array.from(document.querySelectorAll('.fan__label')).map((l) => l.textContent?.trim()).filter(Boolean);
+    const value = document.querySelector('.board__mark')?.getBoundingClientRect();
+    const note = document.querySelector('.board__cell--marked .annotation')?.getBoundingClientRect();
+    return {
+      theadDisplay: thead ? getComputedStyle(thead).display : 'missing',
+      headers: ths.length,
+      headerRoles: ths.every((th) => th.getAttribute('role') === 'columnheader'),
+      tableRole: document.querySelector('.board')?.getAttribute('role'),
+      labels,
+      annotationBelow: value && note ? note.top >= value.bottom - 2 && Math.abs(note.left - value.left) <= 6 : false,
+    };
+  });
+  expect(mobileFacts.theadDisplay !== 'none', 'job board header row must stay in the accessibility tree on phones (not display:none)');
+  expect(mobileFacts.headers === 4 && mobileFacts.headerRoles && mobileFacts.tableRole === 'table', 'job board should keep explicit table semantics');
+  expect(mobileFacts.labels.length === 4, `Working Together phone diagrams should label their branches (fan labels), got ${JSON.stringify(mobileFacts.labels)}`);
+  expect(mobileFacts.annotationBelow, 'job board phone annotation should sit below the circled value, left-aligned with it');
+  const wtEdge = await mpage.evaluate(() => {
+    const over = [];
+    for (const svg of document.querySelectorAll('.pen-circle')) {
+      const r = svg.getBoundingClientRect();
+      if (r.right > window.innerWidth - 6 || r.left < 6) over.push(`${Math.round(r.left)}..${Math.round(r.right)}`);
+    }
+    return over;
+  });
+  expect(wtEdge.length === 0, `Working Together pen circles should stay clear of the phone's edges, got ${wtEdge.join(', ')}`);
+  await mpage.goto(url('/'), { waitUntil: 'load' });
+  await settle(mpage);
+  await mpage.evaluate(async () => {
+    for (let y = 0; y < document.body.scrollHeight; y += 500) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 30));
+    }
+  });
+  await mpage.waitForTimeout(300);
   const edge = await mpage.evaluate(() => {
     const over = [];
     for (const svg of document.querySelectorAll('.pen-circle')) {
@@ -479,7 +559,7 @@ try {
   expect(edge.length === 0, `pen circles should stay clear of the phone's edges, got ${edge.join(', ')}`);
   await mpage.goto(url('/working-together'), { waitUntil: 'load' });
   await settle(mpage);
-  expect((await mpage.locator('.fan__label').count()) === 1, 'Fig. 6 should label its branches on phones');
+  expect((await mpage.locator('.fan__label').count()) === 4, 'Working Together phone figures should carry four branch labels (two on the quoting tool, one on the paperwork, one on the Sprint timeline)');
   await mobile.close();
 
   /* ---------- Transfer size of Home, cold cache ---------- */

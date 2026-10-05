@@ -1,10 +1,10 @@
 import { Figure, Flow, Stack, Node, Fan } from '../Figure';
 
 /** Fig. 3: a quoting tool that follows your rules. */
-export function QuotingTool() {
+export function QuotingTool({ n = 1 }: { n?: number } = {}) {
   return (
     <Figure
-      n={3}
+      n={n}
       caption="Routine quotes get drafted. The ones that need judgment get flagged for a person."
       description="Two inputs, job details and pricing rules, feed a draft quote. The draft goes one of two ways: ready for review, shown with a check mark, or needs a judgment call, which is circled with the note 'goes to a person'."
     >

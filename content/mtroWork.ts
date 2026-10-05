@@ -20,8 +20,7 @@ export const mtroWork = {
     {
       "heading": "What the systems take on.",
       "paragraphs": [
-        "Together, these systems take on account research, queue monitoring and repeated test execution. Human judgment remains in customer conversations, defect prioritization and release decisions.",
-        "Weekly time savings have not yet been measured."
+        "Together, these systems take on account research, queue monitoring and repeated test execution, with adoption, business impact and time saved still being assessed. Human judgment remains in customer conversations, defect prioritization and release decisions."
       ]
     }
   ],

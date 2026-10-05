@@ -108,7 +108,7 @@ export default function HomePage() {
       <Section labelledBy="examples-heading">
         <div className="section__heading"><h2 id="examples-heading">Selected client work</h2></div>
         <ClientWorkFeature nested />
-        <div className="work-all"><SecondaryLink to="/work">View client work</SecondaryLink></div>
+        <div className="work-all"><SecondaryLink to="/work">See all client work</SecondaryLink></div>
       </Section>
 
       <Section labelledBy="sprint-heading">

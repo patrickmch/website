@@ -1,10 +1,10 @@
 import { Figure, Flow, Stack, Node, Connector, Fan } from '../Figure';
 
 /** Fig. 6: a Discovery Sprint, start to finish. */
-export function SprintTimeline() {
+export function SprintTimeline({ n = 4 }: { n?: number } = {}) {
   return (
     <Figure
-      n={6}
+      n={n}
       caption="The Sprint ends with the findings and our review of them. What happens next is your call."
       description="Three steps in a row: agree on the question; work through real examples with your team; findings and a recommendation, which is circled. From the findings, four branches lead to four choices: take it forward with your team, use another provider, ask me to scope the next stage, or stop here."
     >

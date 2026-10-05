@@ -5,6 +5,9 @@ import { ProofSlot } from '../components/ProofSlot';
 import { InkBlock } from '../components/InkBlock';
 import { PenUnderline } from '../components/marks/PenUnderline';
 import { SprintTimeline } from '../components/diagrams/SprintTimeline';
+import { QuotingTool } from '../components/diagrams/QuotingTool';
+import { Paperwork } from '../components/diagrams/Paperwork';
+import { SharedView } from '../components/diagrams/SharedView';
 
 const stages = [
   {
@@ -77,6 +80,49 @@ export default function WorkingTogetherPage() {
         </ol>
       </Section>
 
+      <Section labelledBy="examples-heading">
+        <div className="section__heading">
+          <h2 id="examples-heading">What this can look like</h2>
+          <p className="lead">Here are examples of the kinds of improvements we can make.</p>
+        </div>
+        <div className="example">
+          <div className="example__text">
+            <h3>A quoting tool that follows your rules.</h3>
+            <p>
+              The tool brings together the job details and pricing rules, prepares a quote for review, and flags
+              requests that need someone's judgment.
+            </p>
+          </div>
+          <div className="example__figure">
+            <QuotingTool n={1} />
+          </div>
+        </div>
+        <div className="example example--flip">
+          <div className="example__text">
+            <h3>Customer paperwork with less retyping.</h3>
+            <p>
+              Information you've already collected carries into the documents your team needs. Missing details are
+              flagged, and a person checks the paperwork before it's used.
+            </p>
+          </div>
+          <div className="example__figure">
+            <Paperwork n={2} />
+          </div>
+        </div>
+        <div className="example">
+          <div className="example__text">
+            <h3>A shared view of work that needs attention.</h3>
+            <p>
+              The team can see which jobs are waiting for information or a decision, who is responsible, and what
+              needs to happen next.
+            </p>
+          </div>
+          <div className="example__figure">
+            <SharedView n={3} />
+          </div>
+        </div>
+      </Section>
+
       <Section labelledBy="sprint-heading">
         <InkBlock>
           <h2 id="sprint-heading">
@@ -99,7 +145,7 @@ export default function WorkingTogetherPage() {
         </InkBlock>
 
         <div className="sprint-figure">
-          <SprintTimeline />
+          <SprintTimeline n={4} />
         </div>
 
         <div className="sprint-steps">
@@ -199,7 +245,7 @@ export default function WorkingTogetherPage() {
       <Section labelledBy="work-example-heading">
         <div className="section__heading"><h2 id="work-example-heading">See how this takes shape in practice.</h2></div>
         <Prose><p>For MTRO PRO, I built systems for customer-success preparation and browser-based product testing.</p></Prose>
-        <SecondaryLink to="/work/mtro-pro">Explore the MTRO PRO work</SecondaryLink>
+        <SecondaryLink to="/work/mtro-pro">See the MTRO PRO work</SecondaryLink>
       </Section>
 
       <Section labelledBy="closing-heading" className="closing">

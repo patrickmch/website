@@ -3,7 +3,7 @@ export const clientStories = [
     "slug": "manufacturing-systems",
     "client": "Custom manufacturing",
     "title": "Custom quoting software. A repeatable way to build what comes next.",
-    "label": "Custom manufacturing · Software development, reporting and technical leadership",
+    "label": "Custom manufacturing",
     "summary": "For a growing manufacturer, I moved from assessing the technical work to building a quoting application, making management reporting traceable to source and establishing an AI-assisted process for delivering software. Business rules and operator feedback guide the work from specification through testing and release review.",
     "metaTitle": "Manufacturing: Quoting and Software Delivery | Patrick McHeyser",
     "description": "Custom quoting software, source-traceable reporting and AI-assisted software delivery for a manufacturer.",
@@ -50,7 +50,7 @@ export const clientStories = [
     "slug": "shared-context",
     "client": "Healthcare services",
     "title": "An AI assistant connected to the information the business runs on.",
-    "label": "Healthcare services · Data integration, custom software and AI workflows",
+    "label": "Healthcare services",
     "summary": "I built a shared context system that brings records from existing tools together and makes them available through an AI assistant. Reusable workflows use that context to assemble information, prepare documents and organize checks for human review. Rollout and impact assessment are ongoing.",
     "metaTitle": "Healthcare: Shared Context and AI Workflows | Patrick McHeyser",
     "description": "A shared context system connecting business information to AI workflows, with human review and ongoing rollout.",
@@ -60,7 +60,7 @@ export const clientStories = [
       "**The foundation makes the information usable.** The system preserves source references, distinguishes unresolved information from confirmed facts and limits what a person can retrieve. Connecting tools is only useful if the assistant can tell which record belongs to the case and where an answer came from.",
       "**Reusable workflows turn context into work.** I developed instructions for assembling a profile, preparing paperwork and reviewing whether the required supporting evidence is present. These workflows can use the shared context and retrieve current documents through authorized source connections when needed.",
       "For example, a preparation workflow gathers relevant information and drafts the working document. A review workflow checks the supporting material and returns a checklist with source references and unresolved questions. A person reviews the output and makes the decision.",
-      "The work targets the repeated searching, copying and cross-checking around each case. Staff rollout and impact assessment are ongoing; time savings have not yet been measured."
+      "The work targets the repeated searching, copying and cross-checking around each case, with staff rollout, business impact and time saved still being assessed."
     ],
     "table": {
       "headers": [
@@ -91,7 +91,7 @@ export const clientStories = [
     "slug": "psyche-digital",
     "client": "Psyche Digital",
     "title": "Taking AI further into client delivery",
-    "label": "Psyche Digital · Operations assessment and implementation playbook",
+    "label": "Psyche Digital",
     "summary": "Psyche Digital already used AI for parts of its client work. I examined the work around those tasks and delivered reusable workflows, starter skills and setup guidance for meeting follow-through, onboarding and content production.",
     "metaTitle": "Psyche Digital: AI in Client Delivery | Patrick McHeyser",
     "description": "An operations assessment, implementation guide and reusable AI skills for client delivery at Psyche Digital.",

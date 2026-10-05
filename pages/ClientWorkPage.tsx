@@ -17,7 +17,7 @@ export default function ClientWorkPage() {
         <Eyebrow>{story.client}</Eyebrow>
         <h2 id={`${story.slug}-title`}>{story.title}</h2>
         <Prose><p>{story.summary}</p></Prose>
-        <SecondaryLink to={`/work/${story.slug}`}>Read the story</SecondaryLink>
+        <SecondaryLink to={`/work/${story.slug}`}>See the work</SecondaryLink>
       </article>
     </Section>)}
     <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Have a similar problem?</h2>

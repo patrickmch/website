@@ -13,13 +13,13 @@ export function ManufacturingDelivery() {
       className="story-figure"
     >
       <Flow className="flow--even">
-        <Node label="Business judgment" where="rules + real examples, priorities + acceptance" />
+        <Node label="Business judgment" where="rules and real examples, priorities and acceptance" />
         <Connector />
         <Node label="Implementation" where="bounded specification, AI-assisted build, code checks" />
         <Connector />
-        <Node label="Independent verification" where="browser QA, evidence + code review; failures go back to the build" />
+        <Node label="Independent verification" where="browser QA, evidence and code review; failures go back to the build" />
         <Connector />
-        <Node label="Release + operator review" where="authorized release, feedback from use" marked annotation="a person decides" annotationPlacement="below" />
+        <Node label="Release and operator review" where="authorized release, feedback from use" marked annotation="a person decides" annotationPlacement="below" />
       </Flow>
     </Figure>
   );
@@ -35,9 +35,9 @@ export function ManufacturingReporting() {
       className="story-figure"
     >
       <Flow className="flow--even">
-        <Node label="Source transactions" where="trace the report population; check omissions + timing" />
+        <Node label="Source transactions" where="trace the report population; check omissions and timing" />
         <Connector />
-        <Node label="Definitions + corrections" where="agree what is being measured; repair and reconcile logic" />
+        <Node label="Definitions and corrections" where="agree what is being measured; repair and reconcile logic" />
         <Connector />
         <Node label="Management information" where="figures traceable to source; known gaps made explicit" tick />
       </Flow>
@@ -55,13 +55,13 @@ export function SharedContext() {
       className="story-figure"
     >
       <Flow className="flow--even">
-        <Node label="Collection + validation" where="from existing tools: operational records, customer records, documents" />
+        <Node label="Collection and validation" where="from existing tools: operational records, customer records, documents" />
         <Connector />
         <Node label="Shared context" where="related records matched; source references kept; unresolved facts retained" />
         <Connector />
-        <Node label="Staff + AI workspace" where="ask a question or start a workflow, through a controlled connection" />
+        <Node label="Staff and AI workspace" where="ask a question or start a workflow, through a controlled connection" />
         <Connector />
-        <Node label="Human review + decision" where="check the output and its sources; approve the next action" marked annotation="a person decides" annotationPlacement="below" />
+        <Node label="Human review and decision" where="check the output and its sources; approve the next action" marked annotation="a person decides" annotationPlacement="below" />
       </Flow>
     </Figure>
   );

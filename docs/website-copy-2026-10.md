@@ -19,7 +19,7 @@ related: []
 - Write for owners and operations leaders at growth-oriented businesses around $5 million to $25 million in annual revenue. The industry focus remains open.
 - Home is the landing page. Navigation is **Working Together | Client Work | About | Let's talk**, with the McHeyser wordmark linking Home.
 - Preserve the original operations-and-technology positioning. The offer combines understanding an operating problem with hands-on implementation. Discovery Sprint is the promoted first engagement.
-- Home features the published MTRO PRO engagement. Unpublished client material is excluded from site source and builds.
+- Home features the published MTRO PRO engagement. Unpublished client material is excluded from site source and builds. The three illustrative examples (a quoting tool, customer paperwork, a shared view) sit on Working Together; they describe possible improvements and are not case studies or measured client results.
 - Bracketed editorial notes are production notes, not visitor-facing copy. Bold button labels have their destinations listed under Shared site copy.
 - Testimonial and sample placements need real, approved material. Keep those placements identifiable during design review; omit unfilled proof blocks from a published page. No placeholder quotation should appear as a real endorsement.
 - Existing photographs of Patrick may be reused. The copy does not prescribe typography, colors, imagery, or layout.
@@ -74,7 +74,7 @@ Client: MTRO PRO
 
 Link: See the work → /work/mtro-pro
 
-Link: View client work → /work
+Link: See all client work → /work
 
 ### Start with a Discovery Sprint.
 
@@ -119,6 +119,22 @@ I build software, connect systems, and set up automation and AI around the work 
 ### Keep improving as the business grows
 
 Once a change is in use, we can see what it has resolved and what still needs attention. Further improvements and ongoing support can follow, with the responsibility and scope agreed together.
+
+### What this can look like
+
+Here are examples of the kinds of improvements we can make.
+
+**A quoting tool that follows your rules.**
+
+The tool brings together the job details and pricing rules, prepares a quote for review, and flags requests that need someone's judgment.
+
+**Customer paperwork with less retyping.**
+
+Information you've already collected carries into the documents your team needs. Missing details are flagged, and a person checks the paperwork before it's used.
+
+**A shared view of work that needs attention.**
+
+The team can see which jobs are waiting for information or a decision, who is responsible, and what needs to happen next.
 
 ### Begin with a Discovery Sprint
 
@@ -310,7 +326,7 @@ Link: See the work → /work/mtro-pro
 
 ### Automating the work around a growing SaaS platform.
 
-MTRO PRO · Software for mid-term rental operators
+MTRO PRO
 
 External link: Visit MTRO PRO → https://mtropro.com/
 
@@ -330,9 +346,7 @@ One documented booking-flow review followed a lease from signing through checkou
 
 ### What the systems take on.
 
-Together, these systems take on account research, queue monitoring and repeated test execution. Human judgment remains in customer conversations, defect prioritization and release decisions.
-
-Weekly time savings have not yet been measured.
+Together, these systems take on account research, queue monitoring and repeated test execution, with adoption, business impact and time saved still being assessed. Human judgment remains in customer conversations, defect prioritization and release decisions.
 
 ### System diagrams
 
@@ -370,15 +384,15 @@ Tell me which part of the work needs to get easier.
 
 Button: Let's talk → /contact
 Link: How we work together → /working-together
-Link: All client work → /work
+Link: See all client work → /work
 
 ### Links from existing pages
 
 Working Together: See how this takes shape in practice.
 Body: For MTRO PRO, I built systems for customer-success preparation and browser-based product testing.
-Link: Explore the MTRO PRO work → /work/mtro-pro
+Link: See the MTRO PRO work → /work/mtro-pro
 
-About link: Explore my client work → /work
+About link: See all client work → /work
 
 ### Client Work metadata
 
@@ -395,8 +409,6 @@ About link: Explore my client work → /work
 Custom manufacturing
 
 **Custom quoting software. A repeatable way to build what comes next.**
-
-Custom manufacturing · Software development, reporting and technical leadership
 
 Card: For a growing manufacturer, I moved from assessing the technical work to building a quoting application, making management reporting traceable to source and establishing an AI-assisted process for delivering software. Business rules and operator feedback guide the work from specification through testing and release review.
 
@@ -422,10 +434,10 @@ Figure 1 (drawn with the site's figure components, 4 October):
 
 Caption: Business judgment defines the work. Separate implementation and verification steps turn that judgment into software, with defects routed back for correction.
 
-- Business judgment: rules + real examples, priorities + acceptance
+- Business judgment: rules and real examples, priorities and acceptance
 - Implementation: bounded specification, AI-assisted build, code checks
-- Independent verification: browser QA, evidence + code review; failures go back to the build
-- Release + operator review: authorized release, feedback from use (circled; annotation "a person decides")
+- Independent verification: browser QA, evidence and code review; failures go back to the build
+- Release and operator review: authorized release, feedback from use (circled; annotation "a person decides")
 
 Accessible description: Four steps in a row. Business judgment supplies rules, real examples, priorities and acceptance. Implementation is a bounded specification, an AI-assisted build and repeatable code checks. Independent verification is browser-based QA, evidence and code review, with failures kept visible and corrections routed back to the build. Release and operator review, circled as the step where a person decides, covers the tested change, the authorized release and feedback from use, which informs the next requirement.
 
@@ -433,8 +445,8 @@ Figure 2:
 
 Caption: Reporting: connect the numbers to what happened. Figures are traced to source transactions, definitions are agreed, and known gaps are made explicit.
 
-- Source transactions: trace the report population; check omissions + timing
-- Definitions + corrections: agree what is being measured; repair and reconcile logic
+- Source transactions: trace the report population; check omissions and timing
+- Definitions and corrections: agree what is being measured; repair and reconcile logic
 - Management information: figures traceable to source; known gaps made explicit (check mark)
 
 Accessible description: Three steps in a row. Source transactions: trace the report population and check omissions and timing. Definitions and corrections: agree what is being measured, repair and reconcile the logic. Management information, shown with a check mark: figures traceable to source, known gaps made explicit.
@@ -446,15 +458,13 @@ Accessible description: Three steps in a row. Source transactions: trace the rep
 | Tracing dashboard figures back to source transactions | Trace transactions, reconcile definitions and correct calculations | Agree business meaning and source practices |
 | Copying information between operational tools | Integration assessment and scoped implementation | Decide ownership and handoffs |
 
-Card link: Read the story
+Card link: See the work
 
 ### /work/shared-context
 
 Healthcare services
 
 **An AI assistant connected to the information the business runs on.**
-
-Healthcare services · Data integration, custom software and AI workflows
 
 Card: I built a shared context system that brings records from existing tools together and makes them available through an AI assistant. Reusable workflows use that context to assemble information, prepare documents and organize checks for human review. Rollout and impact assessment are ongoing.
 
@@ -468,7 +478,7 @@ I built a shared context system to connect that information to the team's AI wor
 
 For example, a preparation workflow gathers relevant information and drafts the working document. A review workflow checks the supporting material and returns a checklist with source references and unresolved questions. A person reviews the output and makes the decision.
 
-The work targets the repeated searching, copying and cross-checking around each case. Staff rollout and impact assessment are ongoing; time savings have not yet been measured.
+The work targets the repeated searching, copying and cross-checking around each case, with staff rollout, business impact and time saved still being assessed.
 
 Metadata title: Healthcare: Shared Context and AI Workflows | Patrick McHeyser
 
@@ -478,10 +488,10 @@ Figure 1 (drawn with the site's figure components, 4 October):
 
 Caption: Existing tools feed a shared context store. Staff reach it through their AI workspace. Reusable workflows also retrieve current source documents when the task requires them.
 
-- Collection + validation: from existing tools: operational records, customer records, documents
+- Collection and validation: from existing tools: operational records, customer records, documents
 - Shared context: related records matched; source references kept; unresolved facts retained
-- Staff + AI workspace: ask a question or start a workflow, through a controlled connection
-- Human review + decision: check the output and its sources; approve the next action (circled; annotation "a person decides")
+- Staff and AI workspace: ask a question or start a workflow, through a controlled connection
+- Human review and decision: check the output and its sources; approve the next action (circled; annotation "a person decides")
 
 Accessible description: Four steps in a row. Collection and validation collects source records from the existing business tools (operational records, customer records, documents), matches related information and prepares queryable views. Shared context keeps related records, source references and unresolved facts. The staff AI workspace, reached through a controlled connection with access-scoped queries, is where someone asks a question or starts a workflow: assemble a profile, prepare recurring documents, check supporting evidence. Human review and decision, circled as the step where a person decides, checks the output and its sources, resolves exceptions and approves the next action.
 
@@ -491,15 +501,13 @@ Accessible description: Four steps in a row. Collection and validation collects 
 | Document preparation | Gather required inputs and draft the appropriate paperwork | Re-keying facts into recurring documents |
 | Evidence review | Check supporting documents and return a source-linked checklist | Repeated document comparison before a human decision |
 
-Card link: Read the story
+Card link: See the work
 
 ### /work/psyche-digital
 
 Psyche Digital
 
 **Taking AI further into client delivery**
-
-Psyche Digital · Operations assessment and implementation playbook
 
 Card: Psyche Digital already used AI for parts of its client work. I examined the work around those tasks and delivered reusable workflows, starter skills and setup guidance for meeting follow-through, onboarding and content production.
 
@@ -519,4 +527,4 @@ Metadata title: Psyche Digital: AI in Client Delivery | Patrick McHeyser
 
 Metadata description: An operations assessment, implementation guide and reusable AI skills for client delivery at Psyche Digital.
 
-Card link: Read the story
+Card link: See the work

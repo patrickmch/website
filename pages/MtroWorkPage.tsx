@@ -8,10 +8,9 @@ export default function MtroWorkPage() {
   usePageMeta('MTRO PRO: Customer Success and QA Automation | Patrick McHeyser', 'How Patrick McHeyser built customer-account research, support intake and browser-based QA for MTRO PRO, a mid-term rental software platform.', '/work/mtro-pro');
   return <>
     <Section first className="hero work-story-hero">
-      <SecondaryLink to="/work">All client work</SecondaryLink>
+      <SecondaryLink to="/work">See all client work</SecondaryLink>
       <div className="hero__text">
         <Eyebrow>MTRO PRO</Eyebrow>
-        <p className="small muted story-engagement">Software for mid-term rental operators</p>
         <h1>{mtroWork.title}</h1><p className="lead">{mtroWork.intro}</p>
         <a className="work-external" href="https://mtropro.com/" rel="noopener noreferrer">Visit MTRO PRO</a>
       </div>

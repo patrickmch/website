@@ -227,6 +227,8 @@ Reusable inline SVG primitives, all `--mark`, round caps and joins, `aria-hidden
 
 ## 6. Diagrams: exact content
 
+Figure numbers restart on each page; the "Fig. N" names below are the figures' identities in this document. Since 4 October 2026 the quoting tool, paperwork and job board are Figs. 1 to 3 on Working Together and the Sprint timeline is Fig. 4 there; Home carries Figs. 1 and 2 and the MTRO PRO preview as Fig. 3.
+
 All diagram text is illustrative and generic across industries. No real client names, no numbers that read as results, no currency.
 
 ### Fig. 1 — Quote flow (Home hero)
@@ -289,7 +291,7 @@ Section order is the copy doc's order. Every piece of visitor-facing copy comes 
 2. **ProofSlot** (quote): "Early trust signal. Use a real, approved client quote with attribution."
 3. **"Where is the extra work coming from?"** H2, then the four problems as an unnumbered 2 by 2 card grid, each an H3 plus paragraph.
 4. **"I help you decide what to change and carry it through."** H2, three paragraphs in the prose column (7 of 12 columns), Fig. 2 beside them in columns 8 to 12 at 1024px and up, below them otherwise.
-5. **"What this can look like."** An H2, intro line "Here are examples of the kinds of improvements we can make." Three example rows. Each row: text (H3 + paragraph) in 5 columns, figure in 7 columns; rows alternate figure side (right, left, right) at 1024px and up. Stacked, text first, below.
+5. **"Selected client work."** (Amended 4 October 2026: this slot held "What this can look like" with the three example rows, which moved to Working Together, 7.2.) H2, then the MTRO PRO feature on the example grid: eyebrow, H3 title, summary, "See the work", and the three-node preview figure (Fig. 3 on Home) in 7 columns; then "See all client work". The example row layout that follows still applies to the feature. Original text: an H2, intro line "Here are examples of the kinds of improvements we can make." Three example rows. Each row: text (H3 + paragraph) in 5 columns, figure in 7 columns; rows alternate figure side (right, left, right) at 1024px and up. Stacked, text first, below.
 6. **Ink block.** "Start with a Discovery Sprint." paragraph, secondary link "See how we work together" → Working Together.
 7. **"You'll work directly with me."** Portrait (chair photo, 4:5) in 5 columns; H2, paragraph, secondary link "More about Patrick" → About in 7 columns; then, below the whole row at full container width, a **ProofSlot** (quote): "Approved testimonial about the experience of working with him." The copy's bracket says "photograph of Patrick and an approved testimonial"; the photograph is the portrait and the testimonial is the slot.
 8. **Closing call.** H2 "What is getting harder as your business grows?", paragraph, primary button "Let's talk" → Contact.
@@ -297,7 +299,8 @@ Section order is the copy doc's order. Every piece of visitor-facing copy comes 
 ### 7.2 Working Together
 1. **Hero.** H1 "Start with the work that's slowing you down." three paragraphs, primary button "Let's talk".
 2. **Three stages.** "Understand what needs to change", "Build and put it to work", "Keep improving as the business grows" as a numbered 3-across card grid (01 to 03), each an H2 set at H3 size plus a paragraph (Amended: the section has no heading of its own, so H3s would skip a level). The copy doc gives the section no heading, and no invented one is rendered for screen readers either.
-3. **"Begin with a Discovery Sprint."** H2 and the two paragraphs in the prose column. Then Fig. 6 at full width. Then the three bold lead-ins as H3s with their paragraphs ("First, we agree on the question." / "Then I work through real examples with your team." / "You leave with a recommendation you can act on." including the four-item bulleted list and the closing sentence). Then a **ProofSlot** (sample): "Place an approved sample findings deliverable here when one is ready. Let visitors inspect it without a signup."
+2b. **"What this can look like."** (Moved here from Home on 4 October 2026.) H2, intro line "Here are examples of the kinds of improvements we can make.", then the three example rows exactly as 7.1 described them: text (H3 + paragraph) in 5 columns, figure in 7, sides alternating. The figures are the quoting tool, the paperwork record and the job board, numbered Figs. 1 to 3 on this page.
+3. **"Begin with a Discovery Sprint."** H2 and the two paragraphs in the prose column. Then the Sprint timeline (Fig. 4 on this page; "Fig. 6" in section 6) at full width. Then the three bold lead-ins as H3s with their paragraphs ("First, we agree on the question." / "Then I work through real examples with your team." / "You leave with a recommendation you can act on." including the four-item bulleted list and the closing sentence). Then a **ProofSlot** (sample): "Place an approved sample findings deliverable here when one is ready. Let visitors inspect it without a signup."
 4. **Two short sections side by side** at 768px and up: "What I need from your team" and "What happens afterward", each H2-styled-as-H3 plus paragraphs.
 5. **ProofSlot** (quote): "Approved testimonial about understanding the business, the usefulness of the work, or follow-through."
 6. **"A few practical questions."** H2 and three Q&A pairs per 5.12.
@@ -340,9 +343,10 @@ BrowserRouter with real paths (Amended: the live Railway host and `vite preview`
 Pages: `/work` (index), `/work/mtro-pro`, and one page per story in `content/clientStories.ts`. Words are in the Client Work sections of the copy doc. Navigation gains `Client Work` between Working Together and About.
 
 - **Index.** Hero (H1, lead), then the featured MTRO PRO work on the Home example grid (`.example`: text in 5 columns with a mono eyebrow for the client name, the preview figure in 7), then one section per story (eyebrow for the client or sector, H2 title, summary, "Read the story"), then the closing call with the primary button and a secondary link.
-- **Story page.** Hero with "All client work" above it, the eyebrow (the client or sector), a small muted line for the kind of engagement, H1 and the first paragraph as the lead. Body in the prose column; a bold lead-in in the copy is a heading over its paragraph (3.2), an H2 set at H3 size because the hero's H1 is the only heading above it. Figures follow the body, then the workflow table in the board style (5.8, Fig. 5), then the closing call.
+- **Story page.** Hero with "See all client work" above it, the eyebrow (the client or sector only; the kind of engagement was dropped on 4 October), H1 and the first paragraph as the lead. Body in the prose column; a bold lead-in in the copy is a heading over its paragraph (3.2), an H2 set at H3 size because the hero's H1 is the only heading above it. Figures follow the body, then the workflow table in the board style (5.8, Fig. 5), then the closing call.
 - **Figures.** Drawn with the figure primitives only (5.8): no images of diagrams. On these pages the pen has one meaning: it circles the step where a person decides, with the annotation "a person decides" placed below the node (the circled step is the last in its row, so an above-right annotation would run past the container). Node rows use the equal-height, text-sized row (`flow--even`). MTRO PRO: two four-node lanes (customer success, product quality) and a three-node preview. Manufacturing: a four-node delivery flow and a three-node reporting flow ending in a check mark. Healthcare: a four-node flow from collection and validation to human review (five nodes clipped single words at 768px). Psyche Digital: no figure.
-- **Not used:** orange box borders, pastel fills, a second palette, bold sans labels, middle-dot meta strings, definition-list tables, external SVG files.
+- **Links.** One pattern: "See the work" on every link to a story, "See the MTRO PRO work" where the story is named, "See all client work" for the index.
+- **Not used:** orange box borders, pastel fills, a second palette, bold sans labels, middle-dot meta strings, definition-list tables, external SVG files, "+" in figure words (write "and").
 
 ---
 

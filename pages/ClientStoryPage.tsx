@@ -34,16 +34,6 @@ function Body({ text }: { text: string }) {
   );
 }
 
-/** The story label from the copy doc: the client or sector, then the kind of engagement. */
-function Label({ text }: { text: string }) {
-  const [client, engagement] = text.split(' · ');
-  return (
-    <>
-      <Eyebrow>{client}</Eyebrow>
-      {engagement && <p className="small muted story-engagement">{engagement}</p>}
-    </>
-  );
-}
 
 export default function ClientStoryPage({ slug }: { slug: Slug }) {
   const story = clientStories.find((item) => item.slug === slug)!;
@@ -51,9 +41,9 @@ export default function ClientStoryPage({ slug }: { slug: Slug }) {
   return (
     <>
       <Section first className="hero work-story-hero">
-        <SecondaryLink to="/work">All client work</SecondaryLink>
+        <SecondaryLink to="/work">See all client work</SecondaryLink>
         <div className="hero__text">
-          <Label text={story.label} />
+          <Eyebrow>{story.label}</Eyebrow>
           <h1>{story.title}</h1>
           <p className="lead">{story.paragraphs[0]}</p>
         </div>
