@@ -1,5 +1,12 @@
 # mcheyser-site: progress
 
+## 2026-10-05: Manufacturing story narrative
+
+- Revised only the manufacturing story, its summary and metadata after feedback that the shorter prose still read as a list. The story now follows the engagement from assessment into technical leadership, carrying spreadsheet knowledge into software and establishing a way to maintain it.
+- Used the figures to explain the work: spreadsheet size describes complexity, archived quotes explain how the application was checked, and repeated comparison logic explains the scale of the reporting corrections. Reporting ends with agreed definitions and an internal handover. Operator testing and pending business approval remain explicit.
+- Updated the canonical copy and `content/clientStories.ts`. Other stories, figures and tables are unchanged. Typecheck, production checks, canonical-copy checks and diff whitespace checks passed. A final wording refinement was rebuilt for preview.
+- Continued on `client-stories-stronger-2026-10` for review at `http://localhost:4173/work/manufacturing-systems`. Production release remains a separate decision.
+
 ## 2026-10-05: Client story language review
 
 - Revised the four stories and their summaries on `client-stories-stronger-2026-10`. Updated the canonical copy first, then `content/clientStories.ts` and `content/mtroWork.ts`.
