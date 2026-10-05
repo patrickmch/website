@@ -5,7 +5,7 @@ import { MtroOperations } from '../components/diagrams/MtroOperations';
 import { mtroWork } from '../content/mtroWork';
 
 export default function MtroWorkPage() {
-  usePageMeta('MTRO PRO: Customer Success and QA Automation | Patrick McHeyser', 'How Patrick McHeyser built customer-account research, support intake and browser-based QA for MTRO PRO, a mid-term rental software platform.', '/work/mtro-pro');
+  usePageMeta(mtroWork.metaTitle, mtroWork.description, '/work/mtro-pro');
   return <>
     <Section first className="hero work-story-hero">
       <SecondaryLink to="/work">See a sample of client work</SecondaryLink>

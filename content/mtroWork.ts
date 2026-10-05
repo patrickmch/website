@@ -1,28 +1,27 @@
 export const mtroWork = {
-  "title": "Automating the work around a growing SaaS platform.",
-  "summary": "I helped MTRO PRO prepare for customer conversations and check the product behind them. Daily automation gathers account history before follow-up, while browser tests trace the steps from booking to payment. The account-research and support-intake systems have run in production since July.",
-  "intro": "I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. My work connected two parts of the customer experience: helping the team understand each account and checking that customers could complete booking, lease signing and payment.",
+  "title": "Helping customers get started and the product keep improving.",
+  "summary": "I worked with MTRO PRO's customers and developers, helping operators get set up and turning product problems into repairs and repeatable tests. That work also led to daily account briefs and support intake, giving the team the context for its next customer conversation.",
+  "intro": "I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. I worked directly with operators on setup and product use, and brought their feedback to the developers. The work ranged from helping a customer get started to fixing the software behind a stalled onboarding.",
   "sections": [
     {
-      "heading": "A useful follow-up starts with what has already happened.",
+      "heading": "Customer work shaped the automation.",
       "paragraphs": [
-        "Before contacting a customer, the team needs to know how setup is going, whether payments are connected and what happened in the last conversation. Those answers live across several systems. Product activity tells part of the story, while a message or a booked call may explain what should happen next.",
-        "I built a daily process that gathers those pieces from seven sources, including product activity, messages, the CRM and calendars. It prepares an account brief for staff to review before drafting a follow-up. In-app help requests join the review queue through a separate process that checks every 10 minutes and avoids duplicate entries. Staff can assess the account, edit the proposed response and approve what goes to the customer.",
-        "The brief needs to stay current to be useful. Both processes report their status and raise alerts when something fails, and a separate monitor checks whether the daily job has stopped running. This makes a missed update visible to the person responsible for keeping it running."
+        "Before following up, I needed to know how an account's setup was going and what had happened in the last conversation. A product event could show that payments were connected, while a message or booked call explained what to do next. Gathering that history repeatedly became a clear task to automate.",
+        "I built a daily process that draws from seven sources to prepare an account brief, with incoming help requests collected into a review queue. Staff can check the context and proposed response before contacting the customer. Health checks and alerts make missing updates visible, so an empty brief is not mistaken for an inactive account."
       ]
     },
     {
-      "heading": "Testing follows a rental through the product.",
+      "heading": "Customer journeys gave the developers a way to check their work.",
       "paragraphs": [
-        "Booking, lease signing and payment are connected steps for a customer, so testing needs to follow the work across them. I designed an AI-assisted process that runs those journeys in a browser, records screenshots and reports what passed or failed. Each round starts with a written plan, and fixes are tested again.",
-        "More than a dozen rounds ran between March and April. One booking review followed the work from lease signing through checkout and payment status across 19 cases. It found seven defects with enough detail to reproduce them, and the fixes were retested. The result was a record of how the product behaved that developers could use to make and check repairs.",
-        "The testing process needed checking too. An audit found that one round had passed without a browser run. I tightened the requirements so screenshots must show that the browser tests ran. A pass now needs evidence from using the product."
+        "Booking, lease signing and payment need to work as a connected journey. I built an AI-assisted testing process that follows those steps in a browser, captures what happened and gives developers enough detail to reproduce a failure. Repairs go through the same journey again.",
+        "More than a dozen test rounds ran between March and April. One booking review found seven defects across lease signing, checkout and payment status. Written test plans, browser evidence and retesting made the findings useful for deciding what needed repair and checking that it worked."
       ]
     },
     {
-      "heading": "The systems prepare the work for people to act on.",
+      "heading": "I worked on the repairs and the handoff too.",
       "paragraphs": [
-        "The account-research and support-intake systems have run in production since July. They bring account information and incoming requests into a form staff can review, while the testing process gives developers evidence for repairs. People still decide what to say to customers, which defects to fix first and when to release a change. Hours saved have not been measured yet."
+        "When a login change stopped property imports, I reproduced the failure, built and tested an interim repair, and supplied setup instructions to the team. Another developer then moved the integration to scoped API keys. I also prepared repository-based instructions for a new contractor joining the import work.",
+        "The account-research and support-intake systems have run in production since July. They support the customer work alongside the engineering and testing, while people decide what to say, which defects to fix first and when to release. Hours saved have not been measured yet."
       ]
     }
   ],
@@ -73,5 +72,7 @@ export const mtroWork = {
         ]
       ]
     }
-  ]
+  ],
+  "metaTitle": "MTRO PRO: Customer Support, Engineering and QA | Patrick McHeyser",
+  "description": "Customer onboarding, engineering repairs, account-research automation and browser testing for MTRO PRO, a rental software business."
 } as const;

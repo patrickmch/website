@@ -1,22 +1,26 @@
 import { SecondaryLink } from './Button';
 import { Eyebrow } from './Section';
-import { MtroPreview } from './diagrams/MtroOperations';
-import { mtroWork } from '../content/mtroWork';
+import { clientStories } from '../content/clientStories';
 
-/** The featured MTRO PRO work: text beside its preview figure, on the Home grid the examples used. */
-export function ClientWorkFeature({ nested = false }: { nested?: boolean }) {
+type WorkSummary = { slug: string; client: string; title: string; summary: string };
+
+export function ClientWorkCard({ story, nested = false, featured = false }: { story: WorkSummary; nested?: boolean; featured?: boolean }) {
   const Heading = nested ? 'h3' : 'h2';
   return (
-    <article className="example work-feature" aria-labelledby="mtro-feature-title">
-      <div className="example__text">
-        <Eyebrow>MTRO PRO</Eyebrow>
-        <Heading id="mtro-feature-title">{mtroWork.title}</Heading>
-        <p>{mtroWork.summary}</p>
-        <SecondaryLink to="/work/mtro-pro">See the work</SecondaryLink>
-      </div>
-      <div className="example__figure">
-        <MtroPreview n={nested ? 3 : 1} />
-      </div>
+    <article className={featured ? 'work-feature' : 'work-story-card'} aria-labelledby={`${story.slug}-title`}>
+      <Eyebrow>{story.client}</Eyebrow>
+      <Heading className="card__title" id={`${story.slug}-title`}>{story.title}</Heading>
+      <p>{story.summary}</p>
+      <SecondaryLink to={`/work/${story.slug}`}>See the work</SecondaryLink>
     </article>
   );
+}
+
+/** The same two lead engagements appear on Home and the Client Work index. */
+export function ClientWorkFeature({ nested = false }: { nested?: boolean }) {
+  return <ul className="cards cards--2 work-features">
+    {clientStories.filter(story => story.featured).map(story => <li className="card" key={story.slug}>
+      <ClientWorkCard story={story} nested={nested} featured />
+    </li>)}
+  </ul>;
 }

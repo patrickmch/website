@@ -2,21 +2,19 @@ export const clientStories = [
   {
     "slug": "manufacturing-systems",
     "client": "Custom manufacturing",
-    "title": "Custom quoting software. A repeatable way to build what comes next.",
+    "title": "Technical leadership for a growing manufacturer.",
     "label": "Custom manufacturing",
-    "summary": "I joined a growing manufacturer to assess its existing systems, then stayed on as fractional CTO to lead the improvements. The work connects a quoting application, clearer reporting and a team equipped to maintain both. A spreadsheet with almost 10,000 formulas provided the starting point for the new quoting software, now in operator testing.",
-    "metaTitle": "Manufacturing: Quoting and Software Delivery | Patrick McHeyser",
-    "description": "A manufacturing systems review grows into fractional CTO work, with quoting software, corrected reporting and a team that can maintain the systems.",
+    "summary": "An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.",
+    "metaTitle": "Manufacturing: Technical Leadership and Delivery | Patrick McHeyser",
+    "description": "A systems assessment grows into fractional CTO work: leading delivery, developing internal ownership, building quoting software and improving reporting.",
     "paragraphs": [
-      "A growing manufacturer needed technical leadership to improve the systems its team used every day. I began by assessing the existing software and reporting, then stayed on as fractional CTO to lead the work. Quoting became a central project: how to carry the business's knowledge from a complex spreadsheet into software the team could keep improving.",
-      "**The spreadsheet was the starting point.** With almost 10,000 formulas and 40 macros, the quoting workbook contained much of the detail that went into a price. Experienced staff knew how to use it. Building a replacement meant working through those calculations with the business and writing down the rules behind them.",
-      "I used those rules to build a web application where staff can prepare a quote, compare quantities and return to earlier versions. Keeping each saved version intact means they can see how a quote was priced before making another change. Before operator testing, I checked the application against 99 archived quotes in a browser. It reproduced the spreadsheet's figures with no defects found, giving us a basis for testing it against the team's everyday work.",
-      "**Making the reports easier to check and maintain.** I approached reporting by tracing management figures back to source transactions. The same comparison logic appeared throughout the reports, so correcting it meant updating nearly 30,000 formulas. I also rescheduled daily reports to follow their data updates, so the information was available when the reports were built.",
-      "The numbers needed agreed meanings as well as corrected calculations. The owner and I worked through what on-time delivery should measure, giving the team definitions to use when interpreting the reports. An internal specialist took over with those definitions and corrected comparisons, giving the business someone responsible for maintaining the reports.",
-      "**The team needed a way to keep improving the software.** Once operators began trying the quoting application, their feedback became the next source of changes. Two operators are testing it, and I released fixes from their first round of feedback within two days.",
-      "To support that work, I set up an AI-assisted development process with separate testing and review. About 1,500 automated tests now check the application as it changes, alongside browser testing of the work staff need to complete. Those checks caught rounding and calculation errors, including a change that would have broken new quotes, before operators encountered them. Each release also has a live check and a way to restore the previous version.",
-      "**Keeping the knowledge inside the business matters too.** As fractional CTO, I lead the automation team and hiring alongside the software work. I ran interviews and a paid trial project, managed a developer handover and brought undocumented automation code into company version control. These steps give the team access to the code and knowledge it needs to maintain what has been built.",
-      "The engagement has grown from assessing the systems to building them and helping the business look after them. The quoting application remains in operator testing, and the documented rules still need business approval. The next stage is to work through that feedback and approval so the application can become part of everyday quoting."
+      "The owner of a growing manufacturer wanted a clearer view of the technical work: what needed attention, what the existing team could take on and where to invest next. I began with a systems assessment, then stayed on as fractional CTO to lead the improvements with the team.",
+      "**Taking responsibility for the work.** My role grew to include setting technical priorities, reviewing delivery and helping the owner evaluate software investments. For a major software proposal, I worked through the integrations, migration and internal effort the purchase would require, so the decision could account for the work beyond the license.",
+      "I also ran technical interviews and a paid trial, and managed a developer handover. Capturing undocumented automation code in company version control gave the business a record it could maintain as people changed roles.",
+      "**Turning business knowledge into working software.** Quoting became a central project. A workbook with almost 10,000 formulas held much of the knowledge behind a price. I worked through its calculations and operating rules with the business, then built a web application where staff can prepare quotes, compare quantities and revisit saved versions. Testing it against 99 archived quotes reproduced the workbook's figures before operators began trying it.",
+      "Reporting needed the same attention to what the numbers meant. I traced management figures back to source transactions and corrected comparison logic repeated across nearly 30,000 formulas. The owner and I worked through metric definitions, while an internal specialist took responsibility for the reporting. I arranged read access and a way to check replacement reports alongside the existing ones before switching over.",
+      "**Giving the team a way to keep improving it.** I established a development process that connects each change to a defined need, with separate implementation, testing and review. AI assists the build, while browser checks follow the work an operator needs to complete. Releases include a live check and a way to restore the previous version.",
+      "Those checks and operator feedback now guide changes to the quoting application. Two operators are testing it, and I released fixes from their first round of feedback within two days. The application remains in operator testing, with business approval of the documented rules still ahead."
     ],
     "table": {
       "headers": [
@@ -46,26 +44,25 @@ export const clientStories = [
           "Decide ownership and handoffs"
         ]
       ]
-    }
+    },
+    "featured": true
   },
   {
     "slug": "shared-context",
     "client": "Healthcare services",
     "title": "An AI assistant connected to the information the business runs on.",
     "label": "Healthcare services",
-    "summary": "Preparing profiles and paperwork meant gathering related records from several tools each time. I brought information from four business systems together so the team's AI assistant could use it in the workflows they already knew. The system keeps source references and unresolved questions available for review, with staff rollout now underway.",
+    "summary": "An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.",
     "metaTitle": "Healthcare: Shared Context and AI Workflows | Patrick McHeyser",
-    "description": "Connecting scattered healthcare business records to an AI assistant, so staff can prepare documents and check the information behind them.",
+    "description": "From an operations review to shared information, integrated AI workflows and a staff handoff for a healthcare services team.",
     "paragraphs": [
-      "For this healthcare services team, preparing a profile or a piece of paperwork began with finding the information to put in it. Records lived in one tool, supporting documents in another, and someone had to work out how they fitted together. I built a shared information source that those workflows could use to prepare documents and show staff the supporting records.",
-      "**The information had to fit together.** I connected four business systems, including work-management boards, the CRM and document storage, in the client's own cloud account. The initial collection held millions of rows and tens of thousands of documents. Converting thousands of PDFs to searchable text made their contents available alongside the structured records.",
-      "At that scale, matching records matters as much as collecting them. The same ID in two systems does not necessarily identify the same record. I built checks that merge known duplicates after review and hold conflicting identities for a person to resolve. Source references stay with the information, and unresolved facts remain visible. That gives the assistant a way to assemble related material while showing where questions remain.",
-      "**Staff need to be able to check an answer.** A summary is useful when the person reading it can find the records behind it. The system keeps those references available as staff use the assistant, so they can review the supporting information before making a decision. Access follows each person's role. I tested four permission levels in production, and the connection can read information but cannot change the source records.",
-      "The information refreshes nightly. Each update goes through checks before publication, and a failed run leaves the last good version available. Staff can keep using the system while an update is repaired.",
-      "**The existing workflows now share that preparation.** I moved the team's workflows for profile preparation, recurring paperwork, case summaries and evidence checks onto the shared source. They are installed together so everyone uses the same version. When a task needs a current source document, the workflow can retrieve it through an authorized connection.",
-      "A preparation workflow, for example, gathers the relevant information and drafts a working document. A review workflow then checks the supporting material and returns a checklist with source references and open questions. The person reviewing it has the draft and the information needed to check it together, before deciding what to do next.",
-      "I used AI coding agents to help build the system, with separate review of releases and checks against real cases. More than 800 automated tests support continued development. Four guides cover everyday use and maintenance, and the client owns the cloud account, so the system can be handed to another maintainer.",
-      "The result is a shared source that the team's existing AI workflows can use for both preparation and review. The first staff accounts are live, with rollout to the rest of the team next. Time saved has not been measured yet."
+      "This healthcare services team already had business software, documented processes and people building useful AI workflows. Preparing a profile or recurring paperwork still meant gathering related information from several places. I began by looking at how the work moved between people and systems, then built a shared information source those workflows could use.",
+      "**Starting with the people doing the work.** Staff interviews, process documents and system activity showed where information passed cleanly and where someone had to collect it by hand. That gave the build a practical starting point: make the supporting information available within the work staff were already doing.",
+      "I connected four business systems in the client's own cloud account and converted thousands of PDFs into searchable text. Matching the records required checks for duplicates and conflicting identities. Related information now sits alongside its source references, with unresolved facts left visible for a person to review.",
+      "**Building on the team's existing workflows.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. A preparation workflow can gather the information and draft a document; a review workflow can return the supporting records and open questions alongside it.",
+      "The shared source limits access by role and refreshes nightly. Each update is checked before publication, so a failed refresh leaves the last good version available. Staff can inspect the records behind an answer before relying on it.",
+      "**Preparing the system for the people who will run it.** The engagement also includes account administration and guides for setup, everyday use and technical maintenance. I documented how to update and distribute the workflows so the team has a process for keeping them current, with the infrastructure in the client's own account.",
+      "Staff have reported successful use of several workflows as rollout continues. The next step is to work through the remaining feedback and handoff with the team. Time saved has not been measured yet."
     ],
     "table": {
       "headers": [
@@ -90,23 +87,25 @@ export const clientStories = [
           "Repeated document comparison before a human decision"
         ]
       ]
-    }
+    },
+    "featured": true
   },
   {
     "slug": "psyche-digital",
     "client": "Psyche Digital",
     "title": "Taking AI further into client delivery.",
     "label": "Psyche Digital",
-    "summary": "Psyche Digital built and used a content system I designed, then returned to explore how AI could help with more of its client work. I followed the work from meeting preparation through follow-up and handed over a plan and starter workflows the team could test on a familiar account.",
+    "summary": "Psyche Digital followed my instructions to build a content system, then returned for a broader operations review. I helped the team choose where to go next and supplied workflows, setup guidance and a method for testing and maintaining their own AI tools.",
     "metaTitle": "Psyche Digital: AI in Client Delivery | Patrick McHeyser",
-    "description": "From a content system Psyche Digital built and used to an operations review and starter AI workflows for the coordination around client work.",
+    "description": "An implemented content blueprint leads to an operations review and practical guidance for building, testing and maintaining AI workflows at Psyche Digital.",
     "paragraphs": [
-      "Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The team wanted to take on more client work, and the founders were looking for ways to spend less time coordinating it. Our work grew from a content system for their own marketing into a review of how client work moved through the business.",
-      "In June I designed that first content system and wrote the build instructions. The team built it, used it and returned in July to scope a broader review. That gave us an existing project to build on as we looked beyond content creation.",
-      "I followed 10 examples of actual work across client success, onboarding and social-content production. Looking from start to finish made the work between the documents visible: collecting updates, carrying meeting decisions into tasks and getting approved content ready to schedule.",
-      "A meeting recap illustrates the gap. It can capture a decision accurately, but someone still has to find the relevant tasks, add instructions and give the right people the context. I designed a workflow for that follow-through using the team's existing documents and task system. It gives the team a way to prepare the next actions for review alongside the recap.",
-      "The assessment turned those observations into an implementation guide and five starter AI skills. These cover client success, onboarding, content handoff and time reconciliation, plus a worked example for building the next skill. Each explains what information it needs, how to set it up and how to check its output. That gives the team a way to judge a result before relying on it for client work.",
-      "I recommended beginning with one familiar client account and one round of meeting preparation and follow-through. Because the team knows that work, it can compare the output with what it would normally prepare and spot what needs changing. Psyche has the materials to run that first trial and decide what to expand next. Client commitments, priorities and approval stay with the team."
-    ]
+      "Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The founders wanted to take on more client work while spending less time coordinating it. Our engagement grew from a content system for their own marketing into a review of how AI could carry more of the work through to completion.",
+      "I designed the first content system and wrote the build instructions. The team followed them, got it set up and tested it, then returned to discuss a broader engagement. That experience set the standard for the next deliverable: instructions they could use to build and improve the tools themselves.",
+      "I followed 10 examples of actual work across client success, onboarding and social-content production. A meeting recap showed the opportunity clearly. Recording a decision was only the start; someone still had to find the relevant task, add instructions and give the right person enough context to act.",
+      "The assessment set out a sequence for tackling that work using the team's existing documents and task system. An implementation guide and five starter AI skills explain how to gather the sources, prepare the work and save the result where the team needs it. We refined the setup instructions after reviewing the recommendations together.",
+      "The guide also gives the team a method for maintaining what it builds: make a small change, test a familiar case and an exception, keep the last working version, then check that colleagues receive the update. The person responsible for the workflow reviews changes to its business rules.",
+      "Psyche has the materials to begin with one familiar client account and one cycle of meeting preparation and follow-through. That first trial will show what needs correcting before wider use. The new workflows have not yet been installed in the team's accounts."
+    ],
+    "featured": false
   }
 ] as const;

@@ -245,8 +245,8 @@ export default function WorkingTogetherPage() {
 
       <Section labelledBy="work-example-heading">
         <div className="section__heading"><h2 id="work-example-heading">See how this takes shape in practice.</h2></div>
-        <Prose><p>For MTRO PRO, I built systems for customer-success preparation and browser-based product testing.</p></Prose>
-        <SecondaryLink to="/work/mtro-pro">See the MTRO PRO work</SecondaryLink>
+        <Prose><p>A manufacturer's systems assessment grew into an ongoing fractional CTO role, with quoting software, reporting improvements and technical direction for the team.</p></Prose>
+        <SecondaryLink to="/work/manufacturing-systems">See the work</SecondaryLink>
       </Section>
 
       <Section labelledBy="closing-heading" className="closing">

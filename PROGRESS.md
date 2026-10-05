@@ -1,5 +1,14 @@
 # mcheyser-site: progress
 
+## 2026-10-05: Broader engagement narratives and portfolio emphasis
+
+- Applied Patrick's approved direction: shorter technical examples within stories that explain the broader responsibility, work with existing teams, and handoff. Manufacturing now leads with fractional technical leadership, investment advice, reporting ownership and delivery standards. Healthcare includes operational discovery, staff-built workflows and maintenance guidance. MTRO PRO connects customer support with engineering repairs and QA. Psyche includes implementation guidance and a method for the team to maintain its own tools.
+- Body copy across the four stories is about 24% shorter (1,751 to 1,335 words). Metrics support selected examples. Operator testing, continuing rollout, the uninstalled Psyche workflows and unmeasured time savings remain explicit. Anonymous stories retain generic sector labels and exclude client names, staff names, vendor identities and private research.
+- Home and Client Work lead with manufacturing and healthcare in the existing responsive card grid. MTRO PRO and Psyche follow under "More client work" on the index. Working Together now points to manufacturing. The detailed story figures and tables are unchanged; the MTRO preview is no longer on Home or the index.
+- Updated the copy canon before implementation and checked all 46 story text/metadata strings against it. Typecheck passed. The first production run exposed a missing wait in the new ordering check; fixed it. The next attempt encountered an occupied test port. `BASE_URL=http://127.0.0.1:4173 npm run check` then passed all checks, including story order, five-width layout, navigation, metadata, mocked mail paths and browser errors. Home cold load measured 586 KB, within the existing budget. Reviewed the lead stories and overview in the browser at desktop and narrow widths. Language checks passed; they supplement the editorial and source review.
+- Changed files: `components/ClientWorkFeature.tsx`, `content/clientStories.ts`, `content/mtroWork.ts`, `docs/design-spec.md`, `docs/website-copy-2026-10.md`, `pages/ClientWorkPage.tsx`, `pages/MtroWorkPage.tsx`, `pages/WorkingTogetherPage.tsx`, `scripts/check-production.mjs`, `styles/pages.css` (comment only), and `PROGRESS.md`. Existing untracked `AGENTS.md` and `raw/` are excluded.
+- Review branch: `client-stories-stronger-2026-10`. Preview: `http://localhost:4173/work`. This revision is for review; main and production are unchanged.
+
 ## 2026-10-05: Remaining client story narratives
 
 - Applied the approved manufacturing narrative approach to MTRO PRO, healthcare and Psyche Digital. Updated their summaries and body copy, plus healthcare and Psyche metadata, in the copy canon before updating the content files.

@@ -86,8 +86,8 @@ try {
     '/': 'Patrick McHeyser | Operations and technology consulting',
     '/working-together': 'Working Together | Patrick McHeyser',
     '/work': 'Client Work | Patrick McHeyser',
-    '/work/mtro-pro': 'MTRO PRO: Customer Success and QA Automation | Patrick McHeyser',
-    '/work/manufacturing-systems': 'Manufacturing: Quoting and Software Delivery | Patrick McHeyser',
+    '/work/mtro-pro': 'MTRO PRO: Customer Support, Engineering and QA | Patrick McHeyser',
+    '/work/manufacturing-systems': 'Manufacturing: Technical Leadership and Delivery | Patrick McHeyser',
     '/work/shared-context': 'Healthcare: Shared Context and AI Workflows | Patrick McHeyser',
     '/work/psyche-digital': 'Psyche Digital: AI in Client Delivery | Patrick McHeyser',
     '/about': 'About Patrick McHeyser',
@@ -198,7 +198,8 @@ try {
   expect(fig1?.includes('In this example'), `Fig. 1 caption should say what this example shows, got: ${fig1}`);
   const fig2 = await text(page, '.approach__figure .figure__caption');
   expect(fig2?.includes('first three steps'), `Fig. 2 caption should say which steps the Sprint covers, got: ${fig2}`);
-  expect((await page.locator('.work-feature a[href="/work/mtro-pro"]').count()) === 1, 'Home should link its published client story');
+  expect((await page.locator('.work-feature a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context', 'Home should feature manufacturing then healthcare');
+  expect(await page.locator('main a[href="/work/mtro-pro"]').count() === 0, 'MTRO should be accessible through Client Work, not the Home feature');
   expect(
     (await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)) === 'auto',
     'html should not use smooth scrolling (one motion idea)'
@@ -330,8 +331,10 @@ try {
 
   /* ---------- Published client-work journeys ---------- */
   await page.goto(url('/work'), { waitUntil: 'load' });
-  await page.locator('.work-feature a[href="/work/mtro-pro"]').click();
-  await page.getByRole('heading', { name: 'Automating the work around a growing SaaS platform.', exact: true }).waitFor();
+  await page.getByRole('heading', { name: 'More client work', exact: true }).waitFor();
+  expect((await page.locator('main article a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context /work/mtro-pro /work/psyche-digital', 'Client Work should lead with manufacturing and healthcare, then show MTRO and Psyche');
+  await page.locator('.work-story-card a[href="/work/mtro-pro"]').click();
+  await page.getByRole('heading', { name: 'Helping customers get started and the product keep improving.', exact: true }).waitFor();
   await page.locator('.story-figure').first().waitFor();
   expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
   expect(await page.locator('main figure').count() === 2, 'Story should show customer-success and QA diagrams');
@@ -357,17 +360,17 @@ try {
   for (const route of ['/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
     await page.goto(url('/work'), { waitUntil: 'load' });
     await page.locator(`main a[href="${route}"]`).click();
-    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'Custom quoting software.' : route.includes('shared-context') ? 'An AI assistant' : 'Taking AI further' }).waitFor();
+    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'Technical leadership' : route.includes('shared-context') ? 'An AI assistant' : 'Taking AI further' }).waitFor();
     expect(new URL(page.url()).pathname === route, 'Client Work must open each published story');
     const copy = await page.locator('main').innerText();
     expect(!/prior-year|overstated|consequential calculation errors|cannot be trusted|Internal evidence|clearance|Hi \[Name\]/i.test(copy), `${route}: private details or superseded reporting wording appeared`);
     if (route.includes('manufacturing')) {
-      expect(copy.includes('tracing management figures back to source transactions'), 'Manufacturing should describe the reporting method');
+      expect(copy.includes('traced management figures back to source transactions'), 'Manufacturing should describe the reporting method');
       expect(copy.includes('operator testing'), 'Manufacturing must retain implementation status');
     }
-    if (route.includes('shared-context')) expect(copy.includes('rollout to the rest of the team next') && copy.includes('Time saved has not been measured yet'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
+    if (route.includes('shared-context')) expect(copy.includes('rollout continues') && copy.includes('Time saved has not been measured yet'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
     expect(!copy.includes(' · ') && !/\+ /.test(copy.replace(/\d\+/g, '')), `${route}: no middle-dot labels or plus signs in the words`);
-    if (route.includes('psyche')) expect(copy.includes('Psyche has the materials to run that first trial'), 'Psyche must not imply completed adoption');
+    if (route.includes('psyche')) expect(copy.includes('The new workflows have not yet been installed'), 'Psyche must not imply completed adoption');
     const figures = await page.evaluate(() => ({
       figures: document.querySelectorAll('main figure.story-figure').length,
       circles: document.querySelectorAll('main figure .pen-circle').length,
@@ -550,7 +553,7 @@ try {
     }
   });
   await mpage.waitForTimeout(300);
-  expect(await mpage.locator('.work-preview .node').count() === 3, 'Home should show the three-step client-work preview on mobile');
+  expect((await mpage.locator('.work-feature a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context', 'Home should show both lead engagements on mobile');
   await mpage.goto(url('/working-together'), { waitUntil: 'load' });
   await settle(mpage);
   await mpage.evaluate(async () => {

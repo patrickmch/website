@@ -438,7 +438,7 @@
 }
 
 /* ---------- Client work ---------- */
-/* The feature reuses the Home example grid (.example). Figures are the story-figure class. */
+/* Featured and supporting stories reuse the responsive two-column card grid. */
 .work-feature .eyebrow {
   margin-bottom: 12px;
 }
