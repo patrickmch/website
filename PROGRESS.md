@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-05: Remaining client story narratives
+
+- Applied the approved manufacturing narrative approach to MTRO PRO, healthcare and Psyche Digital. Updated their summaries and body copy, plus healthcare and Psyche metadata, in the copy canon before updating the content files.
+- MTRO connects account preparation with testing the customer journey. Healthcare follows scattered records into a shared source that supports preparation and review. Psyche follows the used content system into the broader assessment and materials for a first trial. Counts explain the scope of the work rather than stand alone as accomplishments.
+- Kept the existing production, rollout and trial boundaries, including unmeasured time savings. The manufacturing story, tables and newly redrawn figures are unchanged.
+- Typecheck, production build/check, exact canonical-copy checks and diff whitespace checks passed. Production checks include five-width story layout and mocked contact-form paths. Read back the three rewritten pages in the local preview with no browser errors.
+- Continued on `client-stories-stronger-2026-10`. Local review starts at `http://localhost:4173/work`; production release remains a separate decision.
+
 ## 2026-10-05: Manufacturing story narrative
 
 - Revised only the manufacturing story, its summary and metadata after feedback that the shorter prose still read as a list. The story now follows the engagement from assessment into technical leadership, carrying spreadsheet knowledge into software and establishing a way to maintain it.

@@ -1,28 +1,28 @@
 export const mtroWork = {
   "title": "Automating the work around a growing SaaS platform.",
-  "summary": "For MTRO PRO, I automated daily account research and built a queue for in-app support requests. Both have run in production since July. I also developed an AI-assisted testing process for booking, lease signing and payments, with browser checks and retesting after fixes.",
-  "intro": "I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. My work covered customer follow-up, support intake and testing the product as it changed.",
+  "summary": "I helped MTRO PRO prepare for customer conversations and check the product behind them. Daily automation gathers account history before follow-up, while browser tests trace the steps from booking to payment. The account-research and support-intake systems have run in production since July.",
+  "intro": "I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. My work connected two parts of the customer experience: helping the team understand each account and checking that customers could complete booking, lease signing and payment.",
   "sections": [
     {
-      "heading": "Customer follow-up starts with the account history.",
+      "heading": "A useful follow-up starts with what has already happened.",
       "paragraphs": [
-        "Before contacting a customer, the team needs to know how setup is going, whether payments are connected and what happened in the last conversation. Those answers sit across several systems.",
-        "I built a daily job that gathers information from seven sources, including product activity, messages, the CRM and calendars. It prepares the account history before someone drafts a follow-up. A separate process checks for in-app help requests every 10 minutes and adds them to a review queue, avoiding duplicate entries. Staff review the information, edit the proposed response and approve what goes to the customer.",
-        "Both processes report their status and raise alerts when something fails. A separate monitor also checks whether the daily job has stopped running."
+        "Before contacting a customer, the team needs to know how setup is going, whether payments are connected and what happened in the last conversation. Those answers live across several systems. Product activity tells part of the story, while a message or a booked call may explain what should happen next.",
+        "I built a daily process that gathers those pieces from seven sources, including product activity, messages, the CRM and calendars. It prepares an account brief for staff to review before drafting a follow-up. In-app help requests join the review queue through a separate process that checks every 10 minutes and avoids duplicate entries. Staff can assess the account, edit the proposed response and approve what goes to the customer.",
+        "The brief needs to stay current to be useful. Both processes report their status and raise alerts when something fails, and a separate monitor checks whether the daily job has stopped running. This makes a missed update visible to the person responsible for keeping it running."
       ]
     },
     {
-      "heading": "Testing covers the work customers need to complete.",
+      "heading": "Testing follows a rental through the product.",
       "paragraphs": [
-        "I designed and ran an AI-assisted testing process for booking, lease signing, payments, calendars and guest-facing features. Each round had a written plan, browser tests, screenshots and a report of what passed or failed. More than a dozen rounds ran between March and April. Fixes were tested again.",
-        "One review followed a booking from lease signing through checkout and payment status across 19 cases. It found seven defects with enough evidence to reproduce them. The fixes were then retested.",
-        "I also tightened the process after an audit found that one round had passed based on code review alone. Screenshots are now required to show that the browser tests ran."
+        "Booking, lease signing and payment are connected steps for a customer, so testing needs to follow the work across them. I designed an AI-assisted process that runs those journeys in a browser, records screenshots and reports what passed or failed. Each round starts with a written plan, and fixes are tested again.",
+        "More than a dozen rounds ran between March and April. One booking review followed the work from lease signing through checkout and payment status across 19 cases. It found seven defects with enough detail to reproduce them, and the fixes were retested. The result was a record of how the product behaved that developers could use to make and check repairs.",
+        "The testing process needed checking too. An audit found that one round had passed without a browser run. I tightened the requirements so screenshots must show that the browser tests ran. A pass now needs evidence from using the product."
       ]
     },
     {
-      "heading": "Staff review the work and decide what happens next.",
+      "heading": "The systems prepare the work for people to act on.",
       "paragraphs": [
-        "The systems gather account information, organize support requests and run repeated product checks. Staff handle customer conversations, decide which defects to fix first and approve releases. Both automations report their health every day. Hours saved have not been measured yet."
+        "The account-research and support-intake systems have run in production since July. They bring account information and incoming requests into a form staff can review, while the testing process gives developers evidence for repairs. People still decide what to say to customers, which defects to fix first and when to release a change. Hours saved have not been measured yet."
       ]
     }
   ],

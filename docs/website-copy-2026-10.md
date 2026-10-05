@@ -71,7 +71,7 @@ My focus is on businesses around $5 million to $25 million in annual revenue, wh
 
 Automating the work around a growing SaaS platform.
 
-For MTRO PRO, I automated daily account research and built a queue for in-app support requests. Both have run in production since July. I also developed an AI-assisted testing process for booking, lease signing and payments, with browser checks and retesting after fixes.
+I helped MTRO PRO prepare for customer conversations and check the product behind them. Daily automation gathers account history before follow-up, while browser tests trace the steps from booking to payment. The account-research and support-intake systems have run in production since July.
 
 Client: MTRO PRO
 
@@ -331,7 +331,7 @@ Featured client: MTRO PRO
 
 Automating the work around a growing SaaS platform.
 
-For MTRO PRO, I automated daily account research and built a queue for in-app support requests. Both have run in production since July. I also developed an AI-assisted testing process for booking, lease signing and payments, with browser checks and retesting after fixes.
+I helped MTRO PRO prepare for customer conversations and check the product behind them. Daily automation gathers account history before follow-up, while browser tests trace the steps from booking to payment. The account-research and support-intake systems have run in production since July.
 
 Link: See the work → /work/mtro-pro
 
@@ -343,27 +343,27 @@ MTRO PRO
 
 External link: Visit MTRO PRO → https://mtropro.com/
 
-I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. My work covered customer follow-up, support intake and testing the product as it changed.
+I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. My work connected two parts of the customer experience: helping the team understand each account and checking that customers could complete booking, lease signing and payment.
 
-### Customer follow-up starts with the account history.
+### A useful follow-up starts with what has already happened.
 
-Before contacting a customer, the team needs to know how setup is going, whether payments are connected and what happened in the last conversation. Those answers sit across several systems.
+Before contacting a customer, the team needs to know how setup is going, whether payments are connected and what happened in the last conversation. Those answers live across several systems. Product activity tells part of the story, while a message or a booked call may explain what should happen next.
 
-I built a daily job that gathers information from seven sources, including product activity, messages, the CRM and calendars. It prepares the account history before someone drafts a follow-up. A separate process checks for in-app help requests every 10 minutes and adds them to a review queue, avoiding duplicate entries. Staff review the information, edit the proposed response and approve what goes to the customer.
+I built a daily process that gathers those pieces from seven sources, including product activity, messages, the CRM and calendars. It prepares an account brief for staff to review before drafting a follow-up. In-app help requests join the review queue through a separate process that checks every 10 minutes and avoids duplicate entries. Staff can assess the account, edit the proposed response and approve what goes to the customer.
 
-Both processes report their status and raise alerts when something fails. A separate monitor also checks whether the daily job has stopped running.
+The brief needs to stay current to be useful. Both processes report their status and raise alerts when something fails, and a separate monitor checks whether the daily job has stopped running. This makes a missed update visible to the person responsible for keeping it running.
 
-### Testing covers the work customers need to complete.
+### Testing follows a rental through the product.
 
-I designed and ran an AI-assisted testing process for booking, lease signing, payments, calendars and guest-facing features. Each round had a written plan, browser tests, screenshots and a report of what passed or failed. More than a dozen rounds ran between March and April. Fixes were tested again.
+Booking, lease signing and payment are connected steps for a customer, so testing needs to follow the work across them. I designed an AI-assisted process that runs those journeys in a browser, records screenshots and reports what passed or failed. Each round starts with a written plan, and fixes are tested again.
 
-One review followed a booking from lease signing through checkout and payment status across 19 cases. It found seven defects with enough evidence to reproduce them. The fixes were then retested.
+More than a dozen rounds ran between March and April. One booking review followed the work from lease signing through checkout and payment status across 19 cases. It found seven defects with enough detail to reproduce them, and the fixes were retested. The result was a record of how the product behaved that developers could use to make and check repairs.
 
-I also tightened the process after an audit found that one round had passed based on code review alone. Screenshots are now required to show that the browser tests ran.
+The testing process needed checking too. An audit found that one round had passed without a browser run. I tightened the requirements so screenshots must show that the browser tests ran. A pass now needs evidence from using the product.
 
-### Staff review the work and decide what happens next.
+### The systems prepare the work for people to act on.
 
-The systems gather account information, organize support requests and run repeated product checks. Staff handle customer conversations, decide which defects to fix first and approve releases. Both automations report their health every day. Hours saved have not been measured yet.
+The account-research and support-intake systems have run in production since July. They bring account information and incoming requests into a form staff can review, while the testing process gives developers evidence for repairs. People still decide what to say to customers, which defects to fix first and when to release a change. Hours saved have not been measured yet.
 
 ### System diagrams
 
@@ -487,27 +487,29 @@ Healthcare services
 
 **An AI assistant connected to the information the business runs on.**
 
-Card: I connected records from four business systems so a healthcare team's AI assistant can use them together. The information refreshes nightly, and each person can access only what their role allows. The team's existing workflows now use it to prepare profiles, draft paperwork and check supporting documents. Staff rollout is underway.
+Card: Preparing profiles and paperwork meant gathering related records from several tools each time. I brought information from four business systems together so the team's AI assistant could use it in the workflows they already knew. The system keeps source references and unresolved questions available for review, with staff rollout now underway.
 
-Answering a routine question meant checking records in one tool, finding documents in another and piecing together what had happened. The next task often meant gathering the same information again.
+For this healthcare services team, preparing a profile or a piece of paperwork began with finding the information to put in it. Records lived in one tool, supporting documents in another, and someone had to work out how they fitted together. I built a shared information source that those workflows could use to prepare documents and show staff the supporting records.
 
-I brought records from four business systems into a shared store in the client's own cloud account. It connects information from work-management boards, the CRM and document storage. The initial collection covered millions of rows and tens of thousands of documents, including thousands of PDFs converted to searchable text.
+**The information had to fit together.** I connected four business systems, including work-management boards, the CRM and document storage, in the client's own cloud account. The initial collection held millions of rows and tens of thousands of documents. Converting thousands of PDFs to searchable text made their contents available alongside the structured records.
 
-**Related records need to match.** I built checks to distinguish records that belong together from those that only share an ID. Known duplicates are merged after review. Conflicting identities wait for a person to resolve them. The system keeps source references and separates confirmed facts from unresolved information. Every nightly update checks fields, source conflicts, documents and redactions before publication. If a run fails, the last good version stays available.
+At that scale, matching records matters as much as collecting them. The same ID in two systems does not necessarily identify the same record. I built checks that merge known duplicates after review and hold conflicting identities for a person to resolve. Source references stay with the information, and unresolved facts remain visible. That gives the assistant a way to assemble related material while showing where questions remain.
 
-**Each person has access appropriate to their role.** Staff use the assistant through their existing AI accounts. The connection can read information but cannot change the source records. Four permission levels control what each person can retrieve. I tested the restrictions in production.
+**Staff need to be able to check an answer.** A summary is useful when the person reading it can find the records behind it. The system keeps those references available as staff use the assistant, so they can review the supporting information before making a decision. Access follows each person's role. I tested four permission levels in production, and the connection can read information but cannot change the source records.
 
-**Existing workflows use the shared information.** I moved the team's AI workflows onto this system for profile preparation, recurring paperwork, case summaries and evidence checks. They are installed together so everyone uses the same version. When a task needs a current source document, the workflow can retrieve it through an authorized connection.
+The information refreshes nightly. Each update goes through checks before publication, and a failed run leaves the last good version available. Staff can keep using the system while an update is repaired.
 
-For example, one workflow gathers information and drafts a working document. Another checks the supporting material and returns a checklist with source references and open questions. A person reviews the output and makes the decision.
+**The existing workflows now share that preparation.** I moved the team's workflows for profile preparation, recurring paperwork, case summaries and evidence checks onto the shared source. They are installed together so everyone uses the same version. When a task needs a current source document, the workflow can retrieve it through an authorized connection.
 
-**Testing and handover are part of the build.** I used AI coding agents to help build the system, then put releases through separate review. Issues found in review were fixed before release. The system has more than 800 automated tests. I also checked it against a sample of real cases. Four guides explain how staff use the system and how maintainers look after it.
+A preparation workflow, for example, gathers the relevant information and drafts a working document. A review workflow then checks the supporting material and returns a checklist with source references and open questions. The person reviewing it has the draft and the information needed to check it together, before deciding what to do next.
 
-The first staff accounts are live, with rollout to the rest of the team next. Time saved has not been measured yet. The client owns the cloud account and has the documentation to hand maintenance to someone else.
+I used AI coding agents to help build the system, with separate review of releases and checks against real cases. More than 800 automated tests support continued development. Four guides cover everyday use and maintenance, and the client owns the cloud account, so the system can be handed to another maintainer.
+
+The result is a shared source that the team's existing AI workflows can use for both preparation and review. The first staff accounts are live, with rollout to the rest of the team next. Time saved has not been measured yet.
 
 Metadata title: Healthcare: Shared Context and AI Workflows | Patrick McHeyser
 
-Metadata description: An AI assistant connected to records from four business systems, with access controls and workflows for profile preparation, paperwork and document checks.
+Metadata description: Connecting scattered healthcare business records to an AI assistant, so staff can prepare documents and check the information behind them.
 
 Figure 1 (drawn with the site's figure components, 4 October):
 
@@ -534,22 +536,22 @@ Psyche Digital
 
 **Taking AI further into client delivery.**
 
-Card: Psyche Digital built and used a content system I designed, then asked me to review more of its client work. I examined client success, onboarding and content production. The team received an operations assessment, a practical implementation guide and five starter AI workflows, with instructions for testing each one.
+Card: Psyche Digital built and used a content system I designed, then returned to explore how AI could help with more of its client work. I followed the work from meeting preparation through follow-up and handed over a plan and starter workflows the team could test on a familiar account.
 
-Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The team wanted to take on more client work and reduce the time founders spent coordinating it.
+Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The team wanted to take on more client work, and the founders were looking for ways to spend less time coordinating it. Our work grew from a content system for their own marketing into a review of how client work moved through the business.
 
-In June I designed a content system for their own marketing and wrote the build instructions. They built it, used it and returned in July to scope a broader review of their operations.
+In June I designed that first content system and wrote the build instructions. The team built it, used it and returned in July to scope a broader review. That gave us an existing project to build on as we looked beyond content creation.
 
-I reviewed client success, onboarding and social-content production, following 10 examples of actual work from start to finish. Much of the work surrounded the writing itself: collecting updates, turning meeting decisions into tasks and getting approved content ready to schedule.
+I followed 10 examples of actual work across client success, onboarding and social-content production. Looking from start to finish made the work between the documents visible: collecting updates, carrying meeting decisions into tasks and getting approved content ready to schedule.
 
-A meeting recap, for example, still leaves someone to find the relevant tasks, add instructions and give the right people the context. I developed a workflow for that follow-through using the team's existing documents and task system.
+A meeting recap illustrates the gap. It can capture a decision accurately, but someone still has to find the relevant tasks, add instructions and give the right people the context. I designed a workflow for that follow-through using the team's existing documents and task system. It gives the team a way to prepare the next actions for review alongside the recap.
 
-I provided an operations assessment, an implementation guide and five starter AI skills. These cover client success, onboarding, content handoff and time reconciliation, plus an example for building another skill. Each includes setup instructions, the source documents it needs and a check the team can run before relying on it. The team still decides priorities, makes client commitments and approves the work.
+The assessment turned those observations into an implementation guide and five starter AI skills. These cover client success, onboarding, content handoff and time reconciliation, plus a worked example for building the next skill. Each explains what information it needs, how to set it up and how to check its output. That gives the team a way to judge a result before relying on it for client work.
 
-I recommended starting with one familiar client account and one round of meeting preparation and follow-through. Psyche has the materials to run that first trial, compare the output with work the team knows and decide what to expand next.
+I recommended beginning with one familiar client account and one round of meeting preparation and follow-through. Because the team knows that work, it can compare the output with what it would normally prepare and spot what needs changing. Psyche has the materials to run that first trial and decide what to expand next. Client commitments, priorities and approval stay with the team.
 
 Metadata title: Psyche Digital: AI in Client Delivery | Patrick McHeyser
 
-Metadata description: An operations assessment, implementation guide and five starter AI workflows for Psyche Digital, following an earlier content-system project.
+Metadata description: From a content system Psyche Digital built and used to an operations review and starter AI workflows for the coordination around client work.
 
 Card link: See the work
