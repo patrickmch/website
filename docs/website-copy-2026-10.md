@@ -77,7 +77,7 @@ Client: MTRO PRO
 
 Link: See the work → /work/mtro-pro
 
-Link: See all client work → /work
+Link: See a sample of client work → /work
 
 ### Start with a Discovery Sprint.
 
@@ -397,7 +397,7 @@ Tell me which part of the work needs to get easier.
 
 Button: Let's talk → /contact
 Link: How we work together → /working-together
-Link: See all client work → /work
+Link: See a sample of client work → /work
 
 ### Links from existing pages
 

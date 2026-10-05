@@ -59,3 +59,8 @@
 - The button and the link share one row class, `.cta-row`, centered on one line; the link drops under the button on phones. That also fixed the About closing, where the button sat lower than the link because the closing's button margin applied inside the row.
 - Copy doc (page sections, shared links table, content brief) and spec 5.3, 7.1, 7.2, 7.3 and 7.6 amended. The check asserts every pair (destinations, wording, one center line at 1280px), that the hero link opens Client Work, that the Client Work closing does not link to itself, and that the phone hero row fits the screen.
 - Typecheck and the production check passed.
+
+## 2026-10-04: Index links say a sample, not all
+
+- Patrick flagged "See all client work": "all" claims the index shows everything, and it shows a sample. The three index links (after the featured work on Home, and above each story's title) now read "See a sample of client work". "A sample of" rather than "sample work", so nobody reads "sample" as mock-up work beside the illustrative examples on Working Together.
+- Copy doc and spec 7.1 and 7.6 amended. The check asserts the index link text on Home and two story pages and that no link on those pages contains "all ... work".

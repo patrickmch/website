@@ -41,7 +41,7 @@ export default function ClientStoryPage({ slug }: { slug: Slug }) {
   return (
     <>
       <Section first className="hero work-story-hero">
-        <SecondaryLink to="/work">See all client work</SecondaryLink>
+        <SecondaryLink to="/work">See a sample of client work</SecondaryLink>
         <div className="hero__text">
           <Eyebrow>{story.label}</Eyebrow>
           <h1>{story.title}</h1>

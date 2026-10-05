@@ -313,6 +313,19 @@ try {
   expect(new URL(page.url()).pathname === '/work', 'the hero call to action should open the client work');
   expect((await page.locator('main .closing a[href="/work"]').count()) === 0, 'the Client Work closing pairs the button with "How we work together", not a link to itself');
 
+  /* ---------- Index links say a sample, never all ---------- */
+  for (const route of ['/', '/work/mtro-pro', '/work/shared-context']) {
+    await page.goto(url(route), { waitUntil: 'load' });
+    await settle(page);
+    const links = await page.evaluate(() => [...document.querySelectorAll('main a')].map((a) => a.textContent?.trim() ?? ''));
+    const claimsAll = links.filter((t) => /\ball\b.*\bwork\b/i.test(t));
+    expect(claimsAll.length === 0, `${route}: no link may claim to show all the work, got ${claimsAll.join(' | ')}`);
+    const index = await page.evaluate(
+      () => document.querySelector('main .work-all a, main .work-story-hero > .section__inner > a.link-secondary')?.textContent?.trim() ?? null
+    );
+    expect(index === 'See a sample of client work', `${route}: the index link should read "See a sample of client work", got ${index}`);
+  }
+
   /* ---------- Published client-work journeys ---------- */
   await page.goto(url('/work'), { waitUntil: 'load' });
   await page.locator('.work-feature a[href="/work/mtro-pro"]').click();
