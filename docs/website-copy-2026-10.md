@@ -71,7 +71,7 @@ My focus is on businesses around $5 million to $25 million in annual revenue, wh
 
 Automating the work around a growing SaaS platform.
 
-For MTRO PRO, I built the daily automation that gathers each customer's account context before follow-up, the intake that turns in-app help requests into a review queue, and an AI-assisted QA practice that tests core product journeys in a real browser. The two automations have run in production since July, with health checks and alerts. The QA work produced more than a dozen test waves with written plans, screenshot evidence and retests.
+For MTRO PRO, I automated daily account research and built a queue for in-app support requests. Both have run in production since July. I also developed an AI-assisted testing process for booking, lease signing and payments, with browser checks and retesting after fixes.
 
 Client: MTRO PRO
 
@@ -331,7 +331,7 @@ Featured client: MTRO PRO
 
 Automating the work around a growing SaaS platform.
 
-For MTRO PRO, I built the daily automation that gathers each customer's account context before follow-up, the intake that turns in-app help requests into a review queue, and an AI-assisted QA practice that tests core product journeys in a real browser. The two automations have run in production since July, with health checks and alerts. The QA work produced more than a dozen test waves with written plans, screenshot evidence and retests.
+For MTRO PRO, I automated daily account research and built a queue for in-app support requests. Both have run in production since July. I also developed an AI-assisted testing process for booking, lease signing and payments, with browser checks and retesting after fixes.
 
 Link: See the work → /work/mtro-pro
 
@@ -343,25 +343,27 @@ MTRO PRO
 
 External link: Visit MTRO PRO → https://mtropro.com/
 
-A rental software business has two recurring jobs: help customers get value from the product, and keep checking that the product works as it changes. I joined MTRO PRO part time in early 2026 as an engineer and technical advisor. Over the following months I shipped about seventy pull requests across five codebases and built the two systems below.
+I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. My work covered customer follow-up, support intake and testing the product as it changed.
 
-### Customer success starts with the account’s actual situation.
+### Customer follow-up starts with the account history.
 
-Has the customer completed setup? Added properties? Connected payments? Replied to the last message or booked a call? The answers sit across product activity, customer records, calendars and communication channels.
+Before contacting a customer, the team needs to know how setup is going, whether payments are connected and what happened in the last conversation. Those answers sit across several systems.
 
-I built a daily job that gathers that context from seven sources, including email, text messages, the customer community, team chat, product activity, the CRM and the calendar, and prepares it before anyone drafts a message. Each part of the job records its own health, failures and recoveries raise alerts, and an external watchdog catches a silent stall. A separate intake process checks for in-app help requests every ten minutes and turns each one into a review-queue card exactly once. People assess the situation, edit the proposed follow-up and approve what goes to the customer.
+I built a daily job that gathers information from seven sources, including product activity, messages, the CRM and calendars. It prepares the account history before someone drafts a follow-up. A separate process checks for in-app help requests every 10 minutes and adds them to a review queue, avoiding duplicate entries. Staff review the information, edit the proposed response and approve what goes to the customer.
 
-### QA follows the journeys customers depend on.
+Both processes report their status and raise alerts when something fails. A separate monitor also checks whether the daily job has stopped running.
 
-I designed and ran an AI-assisted testing practice for the product: a written plan for each wave, automated browser execution of real product journeys, screenshots as evidence, a report with a verdict, and retests after fixes. More than a dozen waves ran between March and April, with over thirty written plans and reports covering booking, lease signing, payments, calendars and guest-facing behavior.
+### Testing covers the work customers need to complete.
 
-One booking-flow review followed a lease from signing through checkout and payment status across nineteen cases, including notification checks and paths where the expected behavior did not occur. It surfaced seven defects, each reproducible with evidence, and the fixes were retested.
+I designed and ran an AI-assisted testing process for booking, lease signing, payments, calendars and guest-facing features. Each round had a written plan, browser tests, screenshots and a report of what passed or failed. More than a dozen rounds ran between March and April. Fixes were tested again.
 
-The rules got stricter as the work went on. When an audit found that one wave had passed without touching a browser, I tightened them: screenshots are required, and code review cannot stand in for a browser run.
+One review followed a booking from lease signing through checkout and payment status across 19 cases. It found seven defects with enough evidence to reproduce them. The fixes were then retested.
 
-### What the systems take on.
+I also tightened the process after an audit found that one round had passed based on code review alone. Screenshots are now required to show that the browser tests ran.
 
-Together, these systems take on account research, queue monitoring and repeated test execution. Human judgment stays in customer conversations, defect prioritization and release decisions. Both automations report their health every day. Hours saved have not been measured yet.
+### Staff review the work and decide what happens next.
+
+The systems gather account information, organize support requests and run repeated product checks. Staff handle customer conversations, decide which defects to fix first and approve releases. Both automations report their health every day. Hours saved have not been measured yet.
 
 ### System diagrams
 
@@ -425,27 +427,27 @@ Custom manufacturing
 
 **Custom quoting software. A repeatable way to build what comes next.**
 
-Card: For a growing custom manufacturer, I serve as fractional CTO: technical direction, the automation team and hiring. Since August I have shipped a quoting application that matches the company's spreadsheet on ninety-nine archived quotes, corrected nearly thirty thousand reporting formulas, and set up an AI-assisted delivery process that runs about 1,500 automated tests and a live check on every release.
+Card: I serve as fractional CTO for a growing manufacturer, leading technical work, the automation team and hiring. I've built a quoting application, corrected reporting calculations and set up an AI-assisted process for building and testing software. The quoting application matched the spreadsheet's results across 99 archived quotes and is now in operator testing.
 
-Quoting depended on a spreadsheet with almost ten thousand formulas and forty macros, and on the experienced people who knew how to use it. Management reporting had a different problem: figures on screen could not be traced back to the transactions behind them. The business needed someone who could work through both the operating details and the software behind them.
+Quoting depended on a spreadsheet with almost 10,000 formulas and 40 macros, and on the experienced people who knew how to use it. Management reports also needed attention. I worked through the calculations behind both and began building software the team could maintain.
 
-I started with an assessment of the existing systems and technical work. The engagement grew into the fractional CTO role: I own the technical direction, lead the automation team, run hiring end to end and sit on the management team. Three connected areas of work followed.
+I started by assessing the existing systems and technical work. The engagement grew into a fractional CTO role. I lead technical direction, manage the automation team, run hiring and sit on the management team.
 
-**A custom quoting application.** I inventoried the spreadsheet's behavior and wrote it down as 111 explicit rules and 37 reference tables, then built a web application around them: quote inputs, pricing calculations, quantity alternatives, vendor and freight lines, saved versions that cannot be overwritten, version comparison, versioned pricing and a customer-facing PDF. Before operators saw it, ninety-nine archived quotes were reproduced in a real browser against the spreadsheet's figures, with zero defects. Two operators are now testing it, and the first round of their feedback was fixed and deployed within two days.
+**A quoting application built from the existing rules.** I documented the spreadsheet's calculations and business rules, then built a web application around them. Staff can compare quantities and quote versions, include vendor and freight costs, and produce a PDF for the customer. Saved versions preserve the quote as it was priced. In browser testing, the application reproduced 99 archived quotes against the spreadsheet's figures with no defects found. Two operators are now testing it. I released fixes from their first round of feedback within two days.
 
-**Reporting that can be checked against its source.** I began by tracing management figures back to source transactions, and corrected nearly thirty thousand comparison formulas along the way. The errors were the kinds that make a dashboard untrustworthy: date cut-offs that dropped late-day transactions from a period comparison, a partial month inside a year-to-date total, a data feed that had stopped updating, duplicates from customer IDs that differed only in capitalization, and a metric counting order lines instead of orders. I also found daily reports being built before the data they depended on had arrived, and rescheduled twenty-three jobs so they run in order. With the owner I ratified a family of seven on-time delivery definitions, and I handed reporting ownership to an internal specialist with scoped read-only access.
+**Reporting figures traced back to transactions.** I began by tracing management figures back to source transactions and corrected nearly 30,000 comparison formulas. Some errors came from date cutoffs, incomplete periods or duplicate customer records. One metric counted order lines instead of orders. I also rescheduled daily reports to run after their source data arrived. The owner and I agreed on how to define on-time delivery, and an internal specialist took over reporting with read-only access.
 
-**An AI-assisted software delivery system.** I built the delivery process the team runs on: a bounded specification for each change, an AI-assisted build in an isolated copy of the code, separate tester and reviewer roles, browser-based QA that cannot start until a pre-check passes, and separate verdicts for the product, the evidence and the release. Findings return to the build for correction. Since mid-September every merge deploys automatically with a recorded live check and a rollback point. In its first four weeks the process ran about 135 QA runs, produced 35 formal summaries and some 2,800 screenshots, and caught a one-cent rounding error, a wrong width formula and a change that would have broken new quotes before any of them reached an operator. The test suite grew from 240 to about 1,500 automated tests across more than seventy merged pull requests.
+**A repeatable way to build and test software.** I set up a process that starts with a written requirement and uses AI to help build the change. Separate testing and review check the result, including in a browser. Each release includes a live check and a way to restore the previous version. Checks caught a one-cent rounding error, an incorrect width formula and a change that would have broken new quotes before operators encountered them. The application now has about 1,500 automated tests.
 
-People supply the business rules, resolve ambiguous decisions and judge whether the result works for the operation. AI handles substantial implementation and checking within that structure.
+The team supplies the business rules and decides whether the software works for the operation. AI helps with implementation and testing.
 
-**Team, transitions and tooling.** Around the software, I ran the hiring process end to end with an evidence-first scoring rubric, interviews and a paid trial project, managed a developer transition with knowledge capture and credential handover into company-owned systems, recovered undocumented automation source into company version control, and ran evaluations of commercial estimating and design software against written go/no-go criteria. A bulk ERP update of more than six hundred records went through the API with a pre-check that rejected hundreds of invalid values and a readback that found zero mismatches.
+**Technical leadership beyond the application.** I ran hiring through interviews and a paid trial project. I also managed a developer handover and brought undocumented automation code into company version control. The work included evaluating estimating and design software against agreed criteria, and checking and updating more than 600 ERP records.
 
-The quoting application is in operator testing, the rules are written down for the business to approve, and the roadmap continues.
+The quoting application remains in operator testing. The business still needs to approve the documented rules, and development continues.
 
 Metadata title: Manufacturing: Quoting and Software Delivery | Patrick McHeyser
 
-Metadata description: As fractional CTO for a manufacturer: a quoting application matched against ninety-nine archived quotes, source-traceable reporting and an AI-assisted delivery process with about 1,500 automated tests.
+Metadata description: Fractional CTO work for a manufacturer: a quoting application checked against 99 archived quotes, reporting corrections and an AI-assisted software development process.
 
 Figure 1 (drawn with the site's figure components, 4 October):
 
@@ -483,27 +485,27 @@ Healthcare services
 
 **An AI assistant connected to the information the business runs on.**
 
-Card: For a healthcare services business, I built the data foundation its AI assistant runs on: records from four business systems matched into one store, refreshed nightly and reached through a read-only connection scoped to each person. I then moved the team's existing AI workflows onto it, so profile preparation, paperwork and evidence checks draw on the same current facts. The first staff seats are live, and rollout to the rest of the team is next.
+Card: I connected records from four business systems so a healthcare team's AI assistant can use them together. The information refreshes nightly, and each person can access only what their role allows. The team's existing workflows now use it to prepare profiles, draft paperwork and check supporting documents. Staff rollout is underway.
 
-Answering a routine operational question could mean checking a record in one tool, finding the supporting document in another and reconstructing what had happened. Preparing the next piece of work meant gathering much of that information again.
+Answering a routine question meant checking records in one tool, finding documents in another and piecing together what had happened. The next task often meant gathering the same information again.
 
-I built a shared context system that connects that information to the team's AI workspace. Collectors pull records from four business systems, including the work-management boards, the CRM and document storage, into one store in the client's own cloud account: millions of rows, tens of thousands of documents, and thousands of PDFs converted to text in a single unattended overnight run.
+I brought records from four business systems into a shared store in the client's own cloud account. It connects information from work-management boards, the CRM and document storage. The initial collection covered millions of rows and tens of thousands of documents, including thousands of PDFs converted to searchable text.
 
-**The foundation makes the information usable.** Matching is the hard part. Records are never joined on an ID alone. Reviewed overrides merge known duplicates, and the few identities that conflict are held for a person to resolve. Along the way I found a source field that had been mislabeled as the identity key and fixed the matching logic. Every answer keeps its source references and distinguishes unresolved information from confirmed facts. A field-validation gate, a source-priority resolver, a document ledger, a redaction hard stop and output checks guard every nightly build, and the nightly publish swaps in under a minute while the last good copy keeps serving if a run fails.
+**Related records need to match.** I built checks to distinguish records that belong together from those that only share an ID. Known duplicates are merged after review. Conflicting identities wait for a person to resolve them. The system keeps source references and separates confirmed facts from unresolved information. Every nightly update checks fields, source conflicts, documents and redactions before publication. If a run fails, the last good version stays available.
 
-**Access is scoped to the person asking.** Staff reach the store from their existing AI seats through a controlled connection: twenty read-only tools behind a read-only database role, with four permission tiers so a person only retrieves what their role allows. Denials were checked live on production. The first seats made more than two hundred queries in their first weeks.
+**Each person has access appropriate to their role.** Staff use the assistant through their existing AI accounts. The connection can read information but cannot change the source records. Four permission levels control what each person can retrieve. I tested the restrictions in production.
 
-**Reusable workflows turn context into work.** I then moved the team's existing AI workflows onto the shared context: profile preparation, several kinds of recurring paperwork, case summaries and a final evidence check, packaged as one versioned plugin so everyone runs the same version. Each workflow can also retrieve current documents through authorized source connections when the task needs them.
+**Existing workflows use the shared information.** I moved the team's AI workflows onto this system for profile preparation, recurring paperwork, case summaries and evidence checks. They are installed together so everyone uses the same version. When a task needs a current source document, the workflow can retrieve it through an authorized connection.
 
-For example, a preparation workflow gathers relevant information and drafts the working document. A review workflow checks the supporting material and returns a checklist with source references and unresolved questions. A person reviews the output and makes the decision.
+For example, one workflow gathers information and drafts a working document. Another checks the supporting material and returns a checklist with source references and open questions. A person reviews the output and makes the decision.
 
-**Built and tested like production software.** The build carries more than 800 automated tests, an acceptance gate of 765 checks over a sample of real cases, a regression canary, and four deployed guides for staff and maintainers. I built it with AI coding agents under my direction and put releases through independent adversarial review. Several came back no-go and were fixed before they shipped.
+**Testing and handover are part of the build.** I used AI coding agents to help build the system, then put releases through separate review. Issues found in review were fixed before release. The system has more than 800 automated tests. I also checked it against a sample of real cases. Four guides explain how staff use the system and how maintainers look after it.
 
-The first staff seats are live, with rollout to the rest of the team next. Time saved has not been measured yet. Everything lives in the client's own account, documented and transferable, with no consultant lock-in.
+The first staff accounts are live, with rollout to the rest of the team next. Time saved has not been measured yet. The client owns the cloud account and has the documentation to hand maintenance to someone else.
 
 Metadata title: Healthcare: Shared Context and AI Workflows | Patrick McHeyser
 
-Metadata description: A client-owned data foundation built from four business systems, reached through a read-only, per-person AI connection, with the team's AI workflows moved onto it.
+Metadata description: An AI assistant connected to records from four business systems, with access controls and workflows for profile preparation, paperwork and document checks.
 
 Figure 1 (drawn with the site's figure components, 4 October):
 
@@ -530,22 +532,22 @@ Psyche Digital
 
 **Taking AI further into client delivery.**
 
-Card: Psyche Digital already used AI for parts of its client work. After building and using a content system I designed for them, the team came back for a full review of how client delivery runs. I examined client success, onboarding and content production, traced ten real workflow instances, and delivered an operations assessment, an implementation guide and five starter skills, each with a pass/fail check.
+Card: Psyche Digital built and used a content system I designed, then asked me to review more of its client work. I examined client success, onboarding and content production. The team received an operations assessment, a practical implementation guide and five starter AI workflows, with instructions for testing each one.
 
-Psyche Digital was already using AI to prepare recaps, kickoff briefs and report highlights. The team wanted to take on more client work without increasing the time founders spent coordinating delivery.
+Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The team wanted to take on more client work and reduce the time founders spent coordinating it.
 
-In June I designed a content system for their own marketing, with written build instructions. They built it, used it, and came back in July to scope a broader review of their operations.
+In June I designed a content system for their own marketing and wrote the build instructions. They built it, used it and returned in July to scope a broader review of their operations.
 
-I examined three recurring workflows: client success, onboarding and social-content production, tracing ten real instances end to end to see where the time went. The useful opportunities sat around the first draft: collecting updates before a meeting, carrying decisions into delivery tasks, preparing client-specific materials and moving approved content toward scheduling.
+I reviewed client success, onboarding and social-content production, following 10 examples of actual work from start to finish. Much of the work surrounded the writing itself: collecting updates, turning meeting decisions into tasks and getting approved content ready to schedule.
 
-For example, a meeting recap still leaves someone to find the relevant tasks, add the agreed instructions and make sure the right people have the context. I developed a workflow for that preparation and follow-through, using the team's existing documents and task system.
+A meeting recap, for example, still leaves someone to find the relevant tasks, add instructions and give the right people the context. I developed a workflow for that follow-through using the team's existing documents and task system.
 
-The delivered package is an operations assessment, an implementation guide and five starter skills: client success, onboarding, content handoff, time reconciliation and a worked example for building the next one. Each skill comes with setup guidance, the source documents it needs and a pass/fail check, so the team can tell whether it is working before relying on it. People keep responsibility for client commitments, priorities and approval.
+I provided an operations assessment, an implementation guide and five starter AI skills. These cover client success, onboarding, content handoff and time reconciliation, plus an example for building another skill. Each includes setup instructions, the source documents it needs and a check the team can run before relying on it. The team still decides priorities, makes client commitments and approves the work.
 
-The recommended starting point is one familiar client account and one cycle of meeting preparation and follow-through. Psyche has the materials to run that first trial, assess the output against work the team knows and decide what to expand next.
+I recommended starting with one familiar client account and one round of meeting preparation and follow-through. Psyche has the materials to run that first trial, compare the output with work the team knows and decide what to expand next.
 
 Metadata title: Psyche Digital: AI in Client Delivery | Patrick McHeyser
 
-Metadata description: A repeat engagement: an operations assessment, implementation guide and five starter AI skills for client delivery at Psyche Digital.
+Metadata description: An operations assessment, implementation guide and five starter AI workflows for Psyche Digital, following an earlier content-system project.
 
 Card link: See the work

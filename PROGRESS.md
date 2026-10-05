@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-05: Client story language review
+
+- Revised the four stories and their summaries on `client-stories-stronger-2026-10`. Updated the canonical copy first, then `content/clientStories.ts` and `content/mtroWork.ts`.
+- Shortened the prose by about 22%. Kept concrete examples while cutting repeated counts of reports, screenshots and code changes. Replaced internal testing terms with explanations a business owner can read, and split long lists into shorter sentences.
+- Retained operator testing, staff rollout, the proposed first trial and unmeasured time savings as distinct statuses. This was an editorial review of the existing branch, not a new audit of the underlying engagement records.
+- Verified canonical copy against all revised summaries, paragraphs, headings and metadata. Typecheck, production build/check and diff whitespace checks passed. The production check covers story navigation, metadata, five-width layout checks and mocked contact-form paths. Reviewed the overview and manufacturing story in the local preview.
+- Ready for copy review at `http://localhost:4173/work`. This revision is on the existing review branch. Production release remains a separate decision.
+
 ## Current state (2026-10-04)
 
 **Phase:** live. The October 2026 redesign was merged into `main` (`a4dd7f8`) and deployed by Railway at 08:52 MDT on 4 October 2026, after two rounds of outside-model review and Patrick's local review.
