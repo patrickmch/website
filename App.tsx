@@ -6,15 +6,16 @@ import HomePage from './pages/HomePage';
 import WorkingTogetherPage from './pages/WorkingTogetherPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import ClientWorkPage from './pages/ClientWorkPage';
-import MtroWorkPage from './pages/MtroWorkPage';
-import ClientStoryPage from './pages/ClientStoryPage';
-import { clientStories } from './content/clientStories';
 import StylePage from './pages/StylePage';
 import OgPage from './pages/OgPage';
 
 // The retained client page loads in its own chunk, so its text is not part of the marketing bundle.
 const IntakePage = lazy(() => import('./pages/IntakePage'));
+
+// The client stories load in their own chunks too, so Home carries only the featured MTRO PRO card, not every story's text and figures.
+const ClientWorkPage = lazy(() => import('./pages/ClientWorkPage'));
+const MtroWorkPage = lazy(() => import('./pages/MtroWorkPage'));
+const ClientStoryRoute = lazy(() => import('./pages/ClientStoryPage').then((m) => ({ default: m.ClientStoryRoute })));
 
 /**
  * On a new page (a link click), scrolls to the top and moves focus to the
@@ -90,7 +91,7 @@ export default function App() {
             <Route path="/working-together" element={<WorkingTogetherPage />} />
             <Route path="/work" element={<ClientWorkPage />} />
             <Route path="/work/mtro-pro" element={<MtroWorkPage />} />
-            {clientStories.map(story => <Route key={story.slug} path={`/work/${story.slug}`} element={<ClientStoryPage slug={story.slug} />} />)}
+            <Route path="/work/:slug" element={<ClientStoryRoute />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/apply" element={<Navigate to="/contact" replace />} />

@@ -96,7 +96,8 @@ try {
 
   for (const [route, title] of Object.entries(expectedTitles)) {
     await page.goto(url(route), { waitUntil: 'load' });
-    await page.waitForTimeout(300);
+    await page.locator('main h1').first().waitFor(); // the Client Work pages load in their own chunk
+    await page.waitForFunction((t) => document.title === t, title, { timeout: 3000 }).catch(() => {});
     expect(new URL(page.url()).pathname === route, `${route}: landed on ${page.url()}, expected the real path`);
     expect((await page.title()) === title, `${route}: title is "${await page.title()}", expected "${title}"`);
     const meta = await page.evaluate(() => ({
@@ -317,6 +318,7 @@ try {
   for (const route of ['/', '/work/mtro-pro', '/work/shared-context']) {
     await page.goto(url(route), { waitUntil: 'load' });
     await settle(page);
+    await page.locator('main h1').first().waitFor(); // story pages load in their own chunk
     const links = await page.evaluate(() => [...document.querySelectorAll('main a')].map((a) => a.textContent?.trim() ?? ''));
     const claimsAll = links.filter((t) => /\ball\b.*\bwork\b/i.test(t));
     expect(claimsAll.length === 0, `${route}: no link may claim to show all the work, got ${claimsAll.join(' | ')}`);
@@ -336,7 +338,7 @@ try {
   expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles the step where a person decides');
   expect(await page.locator('.work-node--human, .story-diagram__image, .work-client').count() === 0, 'no orange box borders, image diagrams or ad-hoc client labels on the work pages');
   expect(await page.locator('a[href="https://mtropro.com/"]').count() === 1, 'Story must link to the client site');
-  expect((await page.locator('main').innerText()).includes('with adoption, business impact and time saved still being assessed'), 'Story must distinguish implemented work from unmeasured outcomes');
+  expect((await page.locator('main').innerText()).includes('Hours saved have not been measured yet'), 'Story must distinguish implemented work from unmeasured outcomes');
   await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
   expect(new URL(page.url()).pathname === '/contact', 'Story CTA must lead to the contact form');
   for (const width of [360, 390, 768, 1024, 1440]) {
@@ -363,7 +365,7 @@ try {
       expect(copy.includes('tracing management figures back to source transactions'), 'Manufacturing should describe the reporting method');
       expect(copy.includes('operator testing'), 'Manufacturing must retain implementation status');
     }
-    if (route.includes('shared-context')) expect(copy.includes('with staff rollout, business impact and time saved still being assessed'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
+    if (route.includes('shared-context')) expect(copy.includes('rollout to the rest of the team next') && copy.includes('Time saved has not been measured yet'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
     expect(!copy.includes(' · ') && !/\+ /.test(copy.replace(/\d\+/g, '')), `${route}: no middle-dot labels or plus signs in the words`);
     if (route.includes('psyche')) expect(copy.includes('Psyche has the materials to run that first trial'), 'Psyche must not imply completed adoption');
     const figures = await page.evaluate(() => ({

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Section, Prose, Eyebrow } from '../components/Section';
 import { ButtonLink, SecondaryLink } from '../components/Button';
@@ -34,6 +35,14 @@ function Body({ text }: { text: string }) {
   );
 }
 
+
+/** Route wrapper: reads the slug from the URL and sends an unknown slug back to the Client Work index. */
+export function ClientStoryRoute() {
+  const { slug } = useParams();
+  const story = clientStories.find((item) => item.slug === slug);
+  if (!story) return <Navigate to="/work" replace />;
+  return <ClientStoryPage slug={story.slug} />;
+}
 
 export default function ClientStoryPage({ slug }: { slug: Slug }) {
   const story = clientStories.find((item) => item.slug === slug)!;
