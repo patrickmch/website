@@ -89,7 +89,7 @@ export default function ClientStoryPage({ slug }: { slug: Slug }) {
         <Prose>
           <p>Tell me which part of the work needs to get easier.</p>
         </Prose>
-        <div className="work-actions">
+        <div className="cta-row">
           <ButtonLink to="/contact">Let's talk</ButtonLink>
           <SecondaryLink to="/working-together">How we work together</SecondaryLink>
         </div>

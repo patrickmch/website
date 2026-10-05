@@ -163,7 +163,7 @@ Each component lists purpose, anatomy, states, responsive behavior, and accessib
 
 ### 5.3 Buttons and links
 - **Primary button:** `--mark` fill, `--ink` text, 2px radius, 14px by 22px padding, 16px/600 sans (the small header size changes padding only). Hover: `--ink` fill, `--paper` text. Disabled while sending: same fill and text, no opacity change (Amended: 0.75 opacity dropped the label to 2.8:1). Focus-visible: 2px `--ink` outline, 2px offset. On ink: same fill and text; hover becomes `--paper` fill, `--ink` text. Used for `Let's talk` and `Send your note` only.
-- **Secondary link:** inline text link in 16px/600 sans with a 2px `--mark` underline and a trailing arrow glyph (→ drawn as a 16px inline SVG, 1.5px stroke). Used for `See how we work together` and `More about Patrick`.
+- **Secondary link:** inline text link in 16px/600 sans with a 2px `--mark` underline and a trailing arrow glyph (→ drawn as a 16px inline SVG, 1.5px stroke). Used for `See how we work together`, `More about Patrick` and, beside `Let's talk` in every hero and closing call outside the Client Work pages, `See how I've worked with others` → Client Work (Amended 4 October 2026). A button and a secondary link that share a row (`.cta-row`) are centred on one line with a 24px gap, and the link drops under the button when the row is narrow.
 - **Text links in prose:** `--ink`, 2px `--mark` underline, 3px offset. Hover: underline turns `--ink`.
 - Buttons are `<a>` when they navigate and `<button>` when they submit. Minimum hit area 44px tall.
 
@@ -287,24 +287,24 @@ Shows tokens as swatches with hex and contrast, the type scale, the wordmark at 
 Section order is the copy doc's order. Every piece of visitor-facing copy comes from the copy doc verbatim. Editorial notes become ProofSlots or production behavior; they are never rendered as text.
 
 ### 7.1 Home
-1. **Hero.** Eyebrow "Operations and technology for growing businesses". H1 "Make it easier to take on more business." Lead paragraph, second paragraph (prose column). Primary button "Let's talk" → Contact. Below the text, Fig. 1 at full container width.
+1. **Hero.** Eyebrow "Operations and technology for growing businesses". H1 "Make it easier to take on more business." Lead paragraph, second paragraph (prose column). Primary button "Let's talk" → Contact with the secondary link "See how I've worked with others" → Client Work beside it (Amended 4 October 2026). Below the text, Fig. 1 at full container width.
 2. **ProofSlot** (quote): "Early trust signal. Use a real, approved client quote with attribution."
 3. **"Where is the extra work coming from?"** H2, then the four problems as an unnumbered 2 by 2 card grid, each an H3 plus paragraph.
 4. **"I help you decide what to change and carry it through."** H2, three paragraphs in the prose column (7 of 12 columns), Fig. 2 beside them in columns 8 to 12 at 1024px and up, below them otherwise.
 5. **"Selected client work."** (Amended 4 October 2026: this slot held "What this can look like" with the three example rows, which moved to Working Together, 7.2.) H2, then the MTRO PRO feature on the example grid: eyebrow, H3 title, summary, "See the work", and the three-node preview figure (Fig. 3 on Home) in 7 columns; then "See all client work". The example row layout that follows still applies to the feature. Original text: an H2, intro line "Here are examples of the kinds of improvements we can make." Three example rows. Each row: text (H3 + paragraph) in 5 columns, figure in 7 columns; rows alternate figure side (right, left, right) at 1024px and up. Stacked, text first, below.
 6. **Ink block.** "Start with a Discovery Sprint." paragraph, secondary link "See how we work together" → Working Together.
 7. **"You'll work directly with me."** Portrait (chair photo, 4:5) in 5 columns; H2, paragraph, secondary link "More about Patrick" → About in 7 columns; then, below the whole row at full container width, a **ProofSlot** (quote): "Approved testimonial about the experience of working with him." The copy's bracket says "photograph of Patrick and an approved testimonial"; the photograph is the portrait and the testimonial is the slot.
-8. **Closing call.** H2 "What is getting harder as your business grows?", paragraph, primary button "Let's talk" → Contact.
+8. **Closing call.** H2 "What is getting harder as your business grows?", paragraph, primary button "Let's talk" → Contact and the secondary link "See how I've worked with others" → Client Work (Amended 4 October 2026).
 
 ### 7.2 Working Together
-1. **Hero.** H1 "Start with the work that's slowing you down." three paragraphs, primary button "Let's talk".
+1. **Hero.** H1 "Start with the work that's slowing you down." three paragraphs, primary button "Let's talk" with the secondary link "See how I've worked with others" → Client Work beside it (Amended 4 October 2026).
 2. **Three stages.** "Understand what needs to change", "Build and put it to work", "Keep improving as the business grows" as a numbered 3-across card grid (01 to 03), each an H2 set at H3 size plus a paragraph (Amended: the section has no heading of its own, so H3s would skip a level). The copy doc gives the section no heading, and no invented one is rendered for screen readers either.
 2b. **"What this can look like."** (Moved here from Home on 4 October 2026.) H2, intro line "Here are examples of the kinds of improvements we can make.", then the three example rows exactly as 7.1 described them: text (H3 + paragraph) in 5 columns, figure in 7, sides alternating. The figures are the quoting tool, the paperwork record and the job board, numbered Figs. 1 to 3 on this page.
 3. **"Begin with a Discovery Sprint."** H2 and the two paragraphs in the prose column. Then the Sprint timeline (Fig. 4 on this page; "Fig. 6" in section 6) at full width. Then the three bold lead-ins as H3s with their paragraphs ("First, we agree on the question." / "Then I work through real examples with your team." / "You leave with a recommendation you can act on." including the four-item bulleted list and the closing sentence). Then a **ProofSlot** (sample): "Place an approved sample findings deliverable here when one is ready. Let visitors inspect it without a signup."
 4. **Two short sections side by side** at 768px and up: "What I need from your team" and "What happens afterward", each H2-styled-as-H3 plus paragraphs.
 5. **ProofSlot** (quote): "Approved testimonial about understanding the business, the usefulness of the work, or follow-through."
 6. **"A few practical questions."** H2 and three Q&A pairs per 5.12.
-7. **Closing call.** H2 "Tell me where the work is getting stuck." paragraph, primary button "Let's talk".
+7. **Closing call.** H2 "Tell me where the work is getting stuck." paragraph, primary button "Let's talk" and the secondary link "See how I've worked with others" → Client Work (Amended 4 October 2026).
 
 The ink block on this page wraps section 3's heading and two paragraphs only (Fig. 6 and the steps sit on paper below it).
 
@@ -313,7 +313,7 @@ The ink block on this page wraps section 3's heading and two paragraphs only (Fi
 2. **"I came to software through customer success."** H2, three paragraphs in the prose column. The climbing photograph (`about-hero.png`, resized) sits beside the NOLS paragraph at 4 columns, 1024px and up only, with no caption. Alt: "Patrick McHeyser in a climbing helmet on a mountain ridge." (See open questions.)
 3. **"How I work with your team."** H2, three paragraphs.
 4. **ProofSlot** (quote): "Approved testimonial that supports these working-style claims."
-5. **Closing call.** H2 "Let's talk about what you want to improve." primary button "Let's talk".
+5. **Closing call.** H2 "Let's talk about what you want to improve." primary button "Let's talk" and the secondary link "See how I've worked with others" → Client Work (Amended 4 October 2026; it replaced "See all client work" there).
 
 ### 7.4 Contact
 1. **Hero.** H1 "What is getting harder as your business grows?" two paragraphs.
@@ -345,7 +345,7 @@ Pages: `/work` (index), `/work/mtro-pro`, and one page per story in `content/cli
 - **Index.** Hero (H1, lead), then the featured MTRO PRO work on the Home example grid (`.example`: text in 5 columns with a mono eyebrow for the client name, the preview figure in 7), then one section per story (eyebrow for the client or sector, H2 title, summary, "Read the story"), then the closing call with the primary button and a secondary link.
 - **Story page.** Hero with "See all client work" above it, the eyebrow (the client or sector only; the kind of engagement was dropped on 4 October), H1 and the first paragraph as the lead. Body in the prose column; a bold lead-in in the copy is a heading over its paragraph (3.2), an H2 set at H3 size because the hero's H1 is the only heading above it. Figures follow the body, then the workflow table in the board style (5.8, Fig. 5), then the closing call.
 - **Figures.** Drawn with the figure primitives only (5.8): no images of diagrams. On these pages the pen has one meaning: it circles the step where a person decides, with the annotation "a person decides" placed below the node (the circled step is the last in its row, so an above-right annotation would run past the container). Node rows use the equal-height, text-sized row (`flow--even`). MTRO PRO: two four-node lanes (customer success, product quality) and a three-node preview. Manufacturing: a four-node delivery flow and a three-node reporting flow ending in a check mark. Healthcare: a four-node flow from collection and validation to human review (five nodes clipped single words at 768px). Psyche Digital: no figure.
-- **Links.** One pattern: "See the work" on every link to a story, "See the MTRO PRO work" where the story is named, "See all client work" for the index.
+- **Links.** One pattern: "See the work" on every link to a story, "See the MTRO PRO work" where the story is named, "See all client work" for the index. Beside "Let's talk" in a hero or closing call the index link is a call to action and reads "See how I've worked with others" (Amended 4 October 2026); the closing calls on the Client Work pages themselves pair the button with "How we work together" instead.
 - **Not used:** orange box borders, pastel fills, a second palette, bold sans labels, middle-dot meta strings, definition-list tables, external SVG files, "+" in figure words (write "and").
 
 ---

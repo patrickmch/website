@@ -153,14 +153,29 @@
   }
 }
 
+/* ---------- Calls to action ---------- */
+/* A primary button with a secondary link beside it, centred on one line.
+   The link drops under the button when the row is narrow. */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
 /* ---------- Closing call ---------- */
 .closing h2 {
   margin-bottom: 16px;
   max-width: 16em;
 }
 
-.closing .btn {
+.closing .btn,
+.closing .cta-row {
   margin-top: 32px;
+}
+
+.closing .cta-row .btn {
+  margin-top: 0;
 }
 
 /* ---------- Working Together ---------- */
@@ -439,13 +454,6 @@
 
 .work-all {
   margin-top: 36px;
-}
-
-.work-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 24px;
 }
 
 .work-story-hero > .section__inner > .link-secondary {

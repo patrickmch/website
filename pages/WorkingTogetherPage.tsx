@@ -60,8 +60,9 @@ export default function WorkingTogetherPage() {
             taking the business in the right direction.
           </p>
           <p>I work with you to understand what's happening, decide what to change, and put the improvements into use.</p>
-          <div className="hero__cta">
+          <div className="hero__cta cta-row">
             <ButtonLink to="/contact">Let's talk</ButtonLink>
+            <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
           </div>
         </div>
       </Section>
@@ -253,7 +254,10 @@ export default function WorkingTogetherPage() {
         <Prose>
           <p>We'll start with a conversation about the problem and whether I can help.</p>
         </Prose>
-        <ButtonLink to="/contact">Let's talk</ButtonLink>
+        <div className="cta-row">
+          <ButtonLink to="/contact">Let's talk</ButtonLink>
+          <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
+        </div>
       </Section>
     </>
   );

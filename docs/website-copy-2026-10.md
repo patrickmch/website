@@ -21,6 +21,7 @@ related: []
 - Preserve the original operations-and-technology positioning. The offer combines understanding an operating problem with hands-on implementation. Discovery Sprint is the promoted first engagement.
 - Home features the published MTRO PRO engagement. Unpublished client material is excluded from site source and builds. The three illustrative examples (a quoting tool, customer paperwork, a shared view) sit on Working Together; they describe possible improvements and are not case studies or measured client results.
 - Bracketed editorial notes are production notes, not visitor-facing copy. Bold button labels have their destinations listed under Shared site copy.
+- Wherever "Let's talk" stands alone in a hero or closing call, "See how I've worked with others" sits beside it and leads to Client Work (4 October). The closing calls on the Client Work pages pair the button with "How we work together" instead.
 - Testimonial and sample placements need real, approved material. Keep those placements identifiable during design review; omit unfilled proof blocks from a published page. No placeholder quotation should appear as a real endorsement.
 - Existing photographs of Patrick may be reused. The copy does not prescribe typography, colors, imagery, or layout.
 
@@ -35,6 +36,8 @@ I help owners and operations leaders get quotes out faster, reduce repetitive pa
 I work with your team to find where things are getting held up, improve the process, and build the software, automation, or AI tools that help the work move forward.
 
 **Let's talk**
+
+**See how I've worked with others**
 
 > [Editorial: early trust signal. Use a real, approved client quote with attribution.]
 
@@ -96,6 +99,8 @@ Tell me what's slowing the work down and what you'd like to change.
 
 **Let's talk**
 
+**See how I've worked with others**
+
 ## Working Together
 
 ### Start with the work that's slowing you down.
@@ -107,6 +112,8 @@ You may also have people working on the technology already, but need help decidi
 I work with you to understand what's happening, decide what to change, and put the improvements into use.
 
 **Let's talk**
+
+**See how I've worked with others**
 
 ### Understand what needs to change
 
@@ -197,6 +204,8 @@ We'll start with a conversation about the problem and whether I can help.
 
 **Let's talk**
 
+**See how I've worked with others**
+
 ## About
 
 ### Hi, I'm Patrick McHeyser.
@@ -226,6 +235,8 @@ You can expect clear explanations, room to question my recommendations, and dire
 ### Let's talk about what you want to improve.
 
 **Let's talk**
+
+**See how I've worked with others**
 
 ## Contact
 
@@ -281,9 +292,11 @@ Something went wrong while sending your note. Please try again or email patrick@
 | --- | --- |
 | McHeyser wordmark | Home |
 | Working Together | Working Together page |
+| Client Work | Client Work page |
 | About | About page |
 | Let's talk | Contact page |
 | See how we work together | Working Together page |
+| See how I've worked with others | Client Work page |
 | More about Patrick | About page |
 | Send your note | Contact form submission |
 | patrick@mcheyser.com | Email Patrick |
@@ -392,7 +405,7 @@ Working Together: See how this takes shape in practice.
 Body: For MTRO PRO, I built systems for customer-success preparation and browser-based product testing.
 Link: See the MTRO PRO work → /work/mtro-pro
 
-About link: See all client work → /work
+About closing: See how I've worked with others → /work (4 October: replaced "See all client work". The same link sits beside "Let's talk" in the Home and Working Together heroes and closing calls, so a visitor who is not ready to talk can look at the work first.)
 
 ### Client Work metadata
 

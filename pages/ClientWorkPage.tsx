@@ -22,7 +22,7 @@ export default function ClientWorkPage() {
     </Section>)}
     <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Have a similar problem?</h2>
       <Prose><p>Tell me which part of the work needs to get easier.</p></Prose>
-      <div className="work-actions"><ButtonLink to="/contact">Let's talk</ButtonLink><SecondaryLink to="/working-together">How we work together</SecondaryLink></div>
+      <div className="cta-row"><ButtonLink to="/contact">Let's talk</ButtonLink><SecondaryLink to="/working-together">How we work together</SecondaryLink></div>
     </Section>
   </>;
 }

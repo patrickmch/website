@@ -50,8 +50,9 @@ export default function HomePage() {
             I work with your team to find where things are getting held up, improve the process, and build the
             software, automation, or AI tools that help the work move forward.
           </p>
-          <div className="hero__cta">
+          <div className="hero__cta cta-row">
             <ButtonLink to="/contact">Let's talk</ButtonLink>
+            <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
           </div>
         </div>
         <div className="hero__figure">
@@ -173,7 +174,10 @@ export default function HomePage() {
         <Prose>
           <p>Tell me what's slowing the work down and what you'd like to change.</p>
         </Prose>
-        <ButtonLink to="/contact">Let's talk</ButtonLink>
+        <div className="cta-row">
+          <ButtonLink to="/contact">Let's talk</ButtonLink>
+          <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
+        </div>
       </Section>
     </>
   );

@@ -279,6 +279,40 @@ try {
   expect(examples.boardCaption === 'Example job board', 'the job board should carry its "Example job board" caption');
   expect(examples.captions.join(' ') === 'Fig. 1 Fig. 2 Fig. 3 Fig. 4', `Working Together figures should be numbered 1 to 4, got ${examples.captions.join(' ')}`);
 
+  /* ---------- Calls to action: the path to the work beside every standalone "Let's talk" ---------- */
+  for (const route of ['/', '/working-together', '/about']) {
+    await page.goto(url(route), { waitUntil: 'load' });
+    await settle(page);
+    const rows = await page.evaluate(() =>
+      [...document.querySelectorAll('main .hero__cta, main .closing .cta-row')].map((row) => {
+        const btn = row.querySelector('a.btn');
+        const link = row.querySelector('a.link-secondary');
+        const b = btn?.getBoundingClientRect();
+        const l = link?.getBoundingClientRect();
+        return {
+          btn: btn?.getAttribute('href') ?? null,
+          link: link?.getAttribute('href') ?? null,
+          text: link?.textContent?.trim() ?? null,
+          apart: b && l ? Math.abs((b.top + b.bottom) / 2 - (l.top + l.bottom) / 2) : null,
+          sameLine: b && l ? l.left > b.right : null,
+        };
+      })
+    );
+    const want = route === '/about' ? 1 : 2;
+    expect(rows.length === want, `${route}: expected ${want} call-to-action row(s), found ${rows.length}`);
+    for (const row of rows) {
+      expect(row.btn === '/contact' && row.link === '/work', `${route}: a call to action pairs Let's talk with the client work, got ${row.btn} and ${row.link}`);
+      expect(row.text === "See how I've worked with others", `${route}: the secondary call to action should read "See how I've worked with others", got ${row.text}`);
+      expect(row.sameLine && row.apart !== null && row.apart <= 2, `${route}: the button and the link should sit on one line, centred (${row.apart}px apart, same line: ${row.sameLine})`);
+    }
+  }
+  await page.goto(url('/'), { waitUntil: 'load' });
+  await settle(page);
+  await page.locator('.hero__cta a[href="/work"]').click();
+  await page.getByRole('heading', { name: 'Client work', exact: true }).waitFor();
+  expect(new URL(page.url()).pathname === '/work', 'the hero call to action should open the client work');
+  expect((await page.locator('main .closing a[href="/work"]').count()) === 0, 'the Client Work closing pairs the button with "How we work together", not a link to itself');
+
   /* ---------- Published client-work journeys ---------- */
   await page.goto(url('/work'), { waitUntil: 'load' });
   await page.locator('.work-feature a[href="/work/mtro-pro"]').click();
@@ -560,6 +594,19 @@ try {
   await mpage.goto(url('/working-together'), { waitUntil: 'load' });
   await settle(mpage);
   expect((await mpage.locator('.fan__label').count()) === 4, 'Working Together phone figures should carry four branch labels (two on the quoting tool, one on the paperwork, one on the Sprint timeline)');
+  await mpage.goto(url('/'), { waitUntil: 'load' });
+  await settle(mpage);
+  const phoneCta = await mpage.evaluate(() => {
+    const row = document.querySelector('.hero__cta');
+    const b = row?.querySelector('a.btn')?.getBoundingClientRect();
+    const l = row?.querySelector('a.link-secondary')?.getBoundingClientRect();
+    if (!b || !l) return null;
+    return {
+      inside: b.left >= 0 && l.left >= 0 && b.right <= window.innerWidth && l.right <= window.innerWidth,
+      clear: l.top >= b.bottom - 1 || l.left >= b.right,
+    };
+  });
+  expect(phoneCta?.inside && phoneCta?.clear, `the phone hero call to action should fit the screen with the link clear of the button, got ${JSON.stringify(phoneCta)}`);
   await mobile.close();
 
   /* ---------- Transfer size of Home, cold cache ---------- */
