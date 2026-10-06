@@ -1,5 +1,11 @@
 # mcheyser-site: progress
 
+## 2026-10-06: Local preview restored
+
+- Investigated a blank manufacturing story in the open review tab. The browser reported `Failed to fetch dynamically imported module` for `ClientStoryPage-OBeECiix.js`; the file existed in `dist/assets/`, but nothing was listening on port 4173.
+- Restarted the existing build with `npm run preview -- --host 127.0.0.1 --port 4173 --strictPort` and reloaded the tab. The story and module returned HTTP 200. Verified the latest manufacturing copy and navigation from Client Work back into the story, with no new browser errors.
+- No application changes or deployment. Only this progress record changed. The preview is a local process and must be restarted if that process stops.
+
 ## 2026-10-05: Broader engagement narratives and portfolio emphasis
 
 - Applied Patrick's approved direction: shorter technical examples within stories that explain the broader responsibility, work with existing teams, and handoff. Manufacturing now leads with fractional technical leadership, investment advice, reporting ownership and delivery standards. Healthcare includes operational discovery, staff-built workflows and maintenance guidance. MTRO PRO connects customer support with engineering repairs and QA. Psyche includes implementation guidance and a method for the team to maintain its own tools.
