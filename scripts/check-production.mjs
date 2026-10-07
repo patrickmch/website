@@ -338,7 +338,7 @@ try {
   await page.locator('.story-figure').first().waitFor();
   expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
   expect(await page.locator('main figure').count() === 2, 'Story should show customer-success and QA diagrams');
-  expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles the step where a person decides');
+  expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles its proof point');
   expect(await page.locator('.work-node--human, .story-diagram__image, .work-client').count() === 0, 'no orange box borders, image diagrams or ad-hoc client labels on the work pages');
   expect(await page.locator('a[href="https://mtropro.com/"]').count() === 1, 'Story must link to the client site');
   expect((await page.locator('main').innerText()).includes('Hours saved have not been measured yet'), 'Story must distinguish implemented work from unmeasured outcomes');
@@ -385,7 +385,7 @@ try {
     const wantFigures = route.includes('manufacturing') ? 3 : route.includes('shared-context') ? 2 : 1;
     expect(figures.figures === wantFigures, `${route}: expected ${wantFigures} drawn figure(s), got ${figures.figures}`);
     expect(figures.images === 0, `${route}: diagrams must be drawn, not images`);
-    if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark where a person decides`);
+    if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark the proof point`);
     if (!route.includes('psyche')) expect(figures.tables === 1, `${route}: the workflow table should use the board style`);
     expect(figures.boldSpans === 0 && (route.includes('psyche') || figures.leadIns >= 2), `${route}: paragraph lead-ins should be headings, not bold spans`);
     await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();

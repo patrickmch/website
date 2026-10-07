@@ -382,7 +382,7 @@ The account-research and support-intake systems have run in production since Jul
 
 ### System diagrams
 
-Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it; the one box without it is where a person acts. The pen circles each figure's proof point with a note that carries the fact (7 October, Patrick: 'a person decides' was the same on every figure and sold nothing). Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Figure 1, the morning account brief (under "Account context ready for the next customer conversation."):
 
@@ -391,8 +391,9 @@ Caption: The morning account brief. Seven sources are gathered automatically eve
 - Record "Gathered every morning" (small print: automatic): Email (tick, ok); Text messages (tick, back up after an alert); Customer forum (tick, ok); Team chat (tick, ok); What they did in the app (tick, ok); Customer records (tick, ok); Calendar (tick, ok)
 - One page per customer (automatic): set up yet? properties added? payments connected? last reply? next call?
 - On the to-do list (automatic): help requests from the app land here too, each one once
-- A person edits and sends (circled; annotation "a person decides")
-- Below 1024px: Seven sources, every morning (automatic) → One page per customer, with the next action (automatic) → A person edits and sends (circled)
+- A person edits and sends
+- Pen: the Text messages row is circled; note "a broken source raises an alert"
+- Below 1024px: Seven sources, every morning (automatic; circled, same note) → One page per customer, with the next action (automatic) → A person edits and sends
 
 Accessible description: A list titled gathered every morning, marked automatic, shows seven sources with check marks: email, text messages (noted back up after an alert), the customer forum, team chat, what the customer did in the app, customer records and the calendar. An arrow leads to one page per customer, marked automatic: set up yet, properties added, payments connected, last reply, next call. Next, on the to-do list, marked automatic: help requests from the app land here too, each one once. Last, a person edits and sends, circled with the note 'a person decides'.
 
@@ -402,9 +403,9 @@ Caption: One round of testing, March 2026. Nineteen booking steps, tried by a co
 
 - I write the plan: 19 things to try: booking, signing the lease, checkout, payment, notifications
 - A computer tries each one (automatic): real clicks in the product; a screenshot at every step
-- Record "The report" (automatic): 14 worked (tick, with screenshots); 7 problems, each with steps to see it again (flagged, to fix); Overall: ready, with cautions
-- Fix, try again, decide: what ships is a person's call (circled; annotation "a person decides")
-- Below 1024px: I write the plan, 19 things to try → A computer tries each one, a screenshot at every step: 14 worked, 7 problems (automatic) → Fix, try again, decide (circled)
+- Record "The report" (automatic): 14 worked (tick, with screenshots); 7 failed (flagged, to fix; circled, note "seven failures, each with steps to repeat it"); Overall: ready, with cautions
+- Fix, try again, decide: what ships is a person's call
+- Below 1024px: I write the plan, 19 things to try → A computer tries each one, a screenshot at every step: 14 worked, 7 failed (automatic; circled, same note) → Fix, try again, decide
 
 Accessible description: Four steps in a row. I write the plan: 19 things to try, covering booking, signing the lease, checkout, payment and notifications. A computer tries each one, marked automatic: real clicks in the product, with a screenshot at every step. The report, marked automatic, lists 14 worked, with screenshots and a check mark; 7 problems, each with steps to see it again, flagged to fix; and the overall result, ready with cautions. Fix, try again, decide is circled with the note 'a person decides': what ships is a person's call.
 
@@ -467,15 +468,15 @@ Metadata title: Manufacturing: Business Priorities into Working Systems | Patric
 
 Metadata description: A systems assessment grows into fractional CTO work: leading delivery, developing internal ownership, building quoting software and improving reporting.
 
-Figure 1, one quote through the new software (under "Pricing expertise turned into working software."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Figure 1, one quote through the new software (under "Pricing expertise turned into working software."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it; the one box without it is where a person acts. The pen circles each figure's proof point with a note that carries the fact (7 October, Patrick: 'a person decides' was the same on every figure and sold nothing). Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Caption: One quote through the new software. Sales types in the request. The rules work out the price, save it as a new version and make the customer's PDF. A person checks it before it goes out. The software was tried on 99 old quotes and matched the spreadsheet every time.
 
 - Record "Quote request" (small print: typed in by sales): What it is, one of six product types; Size, length, width, depth; Material, type and thickness; How many, 250, 500 or 1,000
-- The pricing rules (automatic): 111 rules and 37 lookup tables, written down from the old spreadsheet
+- The pricing rules (automatic): 111 rules and 37 lookup tables, written down from the old spreadsheet (circled; note "99 old quotes, 99 matches")
 - Fan out to four results (small print on the stack: automatic): A priced quote (materials, labor, outside parts, shipping); Prices for all three quantities; Saved as version 3, next to version 2; A PDF for the customer
-- Fan back in to A person checks the quote: before it goes to the customer (circled; annotation "a person decides")
-- Below 1024px: Quote request, typed in by sales → Priced by the rules, 111 rules and 37 lookup tables (automatic) → A person checks the quote (circled)
+- Fan back in to A person checks the quote: before it goes to the customer
+- Below 1024px: Quote request, typed in by sales → Priced by the rules, 111 rules and 37 lookup tables (automatic; circled, same note) → A person checks the quote
 
 Accessible description: A quote request lists four things typed in by sales: what it is, one of six product types; the size, length, width and depth; the material, type and thickness; and how many, 250, 500 or 1,000. An arrow leads to the pricing rules, marked automatic: 111 rules and 37 lookup tables, written down from the old spreadsheet. Arrows fan out to four results, marked automatic: a priced quote with materials, labor, outside parts and shipping; prices for all three quantities; the quote saved as version 3 next to version 2; and a PDF for the customer. The four results fan back in to a person checking the quote before it goes to the customer, which is circled with the note 'a person decides'.
 
@@ -485,9 +486,9 @@ Caption: Making a report number trustworthy. I follow the number back to the ord
 
 - Follow the number back: on-time delivery this month: which orders and dates should count?
 - Record "What I found": Order lines counted instead of orders (tick, fixed); A half month counted as a whole month (tick, fixed); The same customer counted twice (capital letters) (tick, fixed); A data feed that had stopped (tick, restored)
-- The owner and I agreed what counts: seven on-time rules, written down (circled; annotation "a person decides")
-- Reports you can check (automatic, check mark): 29,820 formulas fixed; the reports update on their own
-- Below 1024px: Follow the number back, to the orders behind it → Four errors found and fixed → The owner and I agreed what counts (circled)
+- The owner and I agreed what counts: seven on-time rules, written down
+- Reports you can check (automatic): the reports update on their own (circled; note "four errors found, 29,820 formulas fixed")
+- Below 1024px: Follow the number back, to the orders behind it → Four errors found and fixed (circled; note "29,820 formulas fixed") → The owner and I agreed what counts
 
 Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted instead of orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts, seven on-time rules written down, is circled with the note 'a person decides'. Reports you can check, marked automatic with a check mark: 29,820 formulas fixed, and the reports update on their own.
 
@@ -496,11 +497,11 @@ Figure 3, how a change gets into the software safely (under "A repeatable way to
 Caption: How a change gets into the software safely. Nothing goes live until the automatic checks pass, a computer has tried it the way a user would, and a person has said yes. About 135 of these runs in the first four weeks, with 2,800 screenshots.
 
 - AI writes the change (automatic): in a safe copy, so nothing live is touched
-- The checks must pass (automatic): about 1,500 automatic tests run first
+- The checks must pass (automatic): automatic tests run on every change (circled; note "1,500 tests before anything goes live")
 - A computer tries it out (automatic): clicks through the screens like a user, takes screenshots
-- Fan out to three questions: Does it work? (automatic); Is there proof? (automatic); Should it go live? (circled; annotation "a person decides")
+- Fan out to three questions: Does it work? (automatic); Is there proof? (automatic); Should it go live?
 - Resolved line (check mark): A yes goes live on its own, with a check afterward and a way to undo it.
-- Below 1024px: AI writes the change, in a safe copy (automatic) → Checks and a computer try-out must pass (automatic) → Should it go live? a yes goes live, with a way back (circled)
+- Below 1024px: AI writes the change, in a safe copy (automatic) → Checks and a computer try-out must pass (automatic; circled, same note) → Should it go live? a yes goes live, with a way back
 
 Accessible description: Three steps in a row, then three questions. AI writes the change, marked automatic, in a safe copy so nothing live is touched. The checks must pass, marked automatic: about 1,500 automatic tests run first. A computer tries it out, marked automatic: it clicks through the screens like a user and takes screenshots. Arrows fan out to three questions. Does it work, and is there proof, are marked automatic. Should it go live is circled with the note 'a person decides'. A line beneath, with a check mark, says a yes goes live on its own, with a check afterward and a way to undo it.
 
@@ -539,15 +540,15 @@ Metadata title: Healthcare: Connected Records for Daily Work | Patrick McHeyser
 
 Metadata description: From an operations review to shared information, integrated AI workflows and a staff handoff for a healthcare services team.
 
-Figure 1, how the shared information is built and kept fresh (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Figure 1, how the shared information is built and kept fresh (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it; the one box without it is where a person acts. The pen circles each figure's proof point with a note that carries the fact (7 October, Patrick: 'a person decides' was the same on every figure and sold nothing). Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Caption: How the shared information is built and kept fresh. Four systems are gathered every night into one place the client owns, matched up, checked and published. If a night fails, yesterday's copy keeps working and nobody notices.
 
 - Stack of four sources: Project boards; Customer records; Files and documents; The website
-- Fan in ("gathered every night") to Gather and match up (automatic): records that belong together are joined; a number alone is never enough (circled; annotation "if records disagree, a person decides")
+- Fan in ("gathered every night") to Gather and match up (automatic): records that belong together are joined; if two disagree, a person decides
 - Checked before publishing (automatic): missing fields, which source wins, private details kept out
-- Updated every night (automatic, check mark): the switch takes under a minute; if a night fails, yesterday's copy keeps working
-- Below 1024px: Four systems, gathered every night (automatic) → Matched and checked (automatic; circled "if records disagree, a person decides") → Updated every night, yesterday's copy keeps working if a run fails (automatic, check mark)
+- Updated every night (automatic): the switch takes under a minute (circled; note "a failed night keeps yesterday's copy")
+- Below 1024px: Four systems, gathered every night (automatic) → Matched and checked (automatic; if records disagree, a person decides) → Updated every night (automatic; circled, same note)
 
 Accessible description: Four systems stacked on the left: project boards, customer records, files and documents, and the website. Their arrows merge, labelled gathered every night, into gather and match up, marked automatic: records that belong together are joined, and a number alone is never enough. That step is circled with the note 'if records disagree, a person decides'. Next, checked before publishing, marked automatic: missing fields, which source wins, private details kept out. Last, updated every night, marked automatic with a check mark: the switch takes under a minute, and if a night fails yesterday's copy keeps working.
 
@@ -557,9 +558,9 @@ Caption: What a person sees. Every answer says where it came from. Anything the 
 
 - A staff member asks: in the AI assistant they already use
 - A locked door (automatic): can read, never change; each person sees only what their role allows
-- Record "Answer, case 1234" (automatic): Status (tick, confirmed (board record, 14 May)); Supporting document (tick, on file); Contact preference: two records disagree (flagged, not settled)
-- A person reviews and decides (circled; annotation "a person decides")
-- Below 1024px: A staff member asks → An answer with its sources, read only, limited by role (automatic) → A person reviews and decides (circled)
+- Record "Answer, case 1234" (automatic): Status (tick, confirmed (board record, 14 May)); Supporting document (tick, on file); Contact preference (flagged, not settled; circled, note "two records disagree, so it says so")
+- A person reviews and decides
+- Below 1024px: A staff member asks → An answer with its sources, read only, limited by role (automatic; circled, same note) → A person reviews and decides
 
 Accessible description: Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled. A person reviews and decides, circled with the note 'a person decides'.
 
@@ -591,14 +592,14 @@ The guide also gives the team a method for maintaining what it builds: make a sm
 
 Psyche has the materials to begin with one familiar client account and one cycle of meeting preparation and follow-through. That first trial will show what needs correcting before wider use. The new workflows have not yet been installed in the team's accounts.
 
-Figure 1, after the meeting (after the paragraph with the meeting recap example). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Figure 1, after the meeting (after the paragraph with the meeting recap example). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it; the one box without it is where a person acts. The pen circles each figure's proof point with a note that carries the fact (7 October, Patrick: 'a person decides' was the same on every figure and sold nothing). Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Caption: After the meeting. What a recap still leaves to do gets done from the team's own documents and task list, checked, and approved by a person.
 
 - Record "Meeting recap": Decisions, three agreed; Who owns each, named; Due dates, set
 - Fan out ("carried into") to three results (small print on the stack: automatic): Tasks updated with what was agreed; Materials prepared for that client; The right people get the context
-- Fan back in ("then") to Checked, then a person approves: a quick check runs first (circled; annotation "a person decides")
-- Below 1024px: Meeting recap, decisions, owners, due dates → Tasks, materials and context prepared (automatic) → Checked, then a person approves (circled)
+- Fan back in ("then") to Checked, then a person approves: a quick check runs first (circled; note "five skills, each with a pass or fail check")
+- Below 1024px: Meeting recap, decisions, owners, due dates → Tasks, materials and context prepared (automatic) → Checked, then a person approves (circled, same note)
 
 Accessible description: A meeting recap lists decisions, three agreed; who owns each, named; and due dates, set. Arrows fan out, labelled carried into, to three results marked automatic: tasks updated with what was agreed, materials prepared for that client, and the right people get the context. The three fan back in to checked, then a person approves, where a quick check runs first; it is circled with the note 'a person decides'.
 

@@ -1,5 +1,12 @@
 # mcheyser-site: progress
 
+## 2026-10-07: The pen marks the proof, not the person
+
+- Patrick found the circled "a person decides" repetitive and empty: it marked the one step he did not automate, with the same note on every figure. Approved design: one circle per figure on the detail that proves the work, with a five-or-six-word note carrying the fact and a number where there is one. The human step stays unmarked; it already reads as human as the one box without the automatic small print. Legend: "The pen marks the detail worth checking."
+- Notes: 99 old quotes, 99 matches; four errors found, 29,820 formulas fixed; 1,500 tests before anything goes live; a failed night keeps yesterday's copy; two records disagree, so it says so; a broken source raises an alert; seven failures, each with steps to repeat it; five skills, each with a pass or fail check. The phone versions carry the same note on the matching box.
+- The record card can now circle a row and carry the note beneath its key, as the job-board cell does. Three figures use it. Production check passed; check messages updated. Copy canon and design spec record the new rule.
+- On `pen-notes-2026-10-07`, previewed on port 4174; not released. The Working Together illustration notes are held for a separate decision (Patrick wants benefit wording, not restated problems).
+
 ## 2026-10-07: Client stories live
 
 - Patrick approved the figures branch for release. GitHub `main` fast-forwarded from `49aec9f` to `569ac52` (ten commits: the language review's four stories and the drawn figures with their full and simple versions). Railway rebuilt and the live bundle changed within two minutes of the push.

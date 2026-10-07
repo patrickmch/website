@@ -1320,3 +1320,17 @@ textarea.field__input {
     flex: 1.5 1 0;
   }
 }
+
+/* A record row whose key is circled can carry the pen note beneath the key, as the job-board cell does. */
+.record__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.record__cell .annotation {
+  align-items: flex-start;
+  margin-top: 6px;
+  text-align: left;
+}
