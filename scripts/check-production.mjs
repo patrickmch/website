@@ -367,7 +367,7 @@ try {
     if (route.includes('manufacturing')) {
       expect(copy.includes('traced management figures back to source transactions'), 'Manufacturing should describe the reporting method');
       expect(copy.includes('operator testing'), 'Manufacturing must retain implementation status');
-      expect(await page.locator('.story-body ul > li').count() === 2, 'Manufacturing should use two supporting examples within its narrative');
+      expect(await page.locator('.story-body ul > li').count() === 4, 'Manufacturing should keep metrics and additional work in a supporting list');
       expect(copy.includes('10,000 formulas') && copy.includes('99 archived quotes') && copy.includes('30,000 formulas'), 'Manufacturing examples should retain their scale and validation metrics');
       expect(copy.includes('the aim was more consistent quoting'), 'Manufacturing should distinguish intended business outcomes from completed work');
     }
@@ -387,7 +387,7 @@ try {
     expect(figures.images === 0, `${route}: diagrams must be drawn, not images`);
     if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark where a person decides`);
     if (!route.includes('psyche')) expect(figures.tables === 1, `${route}: the workflow table should use the board style`);
-    expect(figures.boldSpans === 0 && (!route.includes('shared-context') || figures.leadIns >= 2), `${route}: paragraph lead-ins should be headings, not bold spans`);
+    expect(figures.boldSpans === 0 && (route.includes('psyche') || figures.leadIns >= 2), `${route}: paragraph lead-ins should be headings, not bold spans`);
     await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
     await page.locator('#contact-name').waitFor();
     expect(new URL(page.url()).pathname === '/contact', 'Every story should reach the contact form');

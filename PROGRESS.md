@@ -1,5 +1,12 @@
 # mcheyser-site: progress
 
+## 2026-10-06: Fuller manufacturing story with outcome subheadings
+
+- Expanded the manufacturing story from roughly 250 to 370 words before subheadings. The narrative explains the sales handoff, quoting application, reporting ownership and development process. Four supporting bullets retain the metrics and add hiring/handover and software-investment details. The approved main title is unchanged.
+- Added five outcome subheadings above the substantive body paragraphs: "A clearer path from sales into operations", "Pricing expertise turned into working software", "Management reporting with traceable numbers and clear ownership", "A repeatable way to deliver and improve software", and "Technical decisions backed by hands-on delivery". The list introduction remains a short label. The closing paragraph keeps anticipated business gains framed as the aim of the engagement.
+- Updated the copy canon before the content file. Verified exact canon agreement and that all other stories, the main title, summary, metadata, figures and tables are unchanged. Production checks passed, including navigation, five-width layouts, semantic headings and bullets, metrics, metadata and mocked contact paths. Browser readback confirmed all five subheadings. Language analysis flagged only the Markdown emphasis used for headings and metrics; that approved formatting was retained.
+- Changed files: `content/clientStories.ts`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `scripts/check-production.mjs`, and `PROGRESS.md`. Existing untracked `AGENTS.md` and `raw/` remain excluded. This revision stays on `client-stories-stronger-2026-10` for local review; no production release.
+
 ## 2026-10-06: Outcome headings and manufacturing narrative
 
 - Applied Patrick's approved manufacturing narrative: assessment into fractional CTO and management-team work, sales handoffs across CRM and team responsibilities, two supporting examples, and the intended business outcomes. Retained the scale of the quoting workbook (almost 10,000 formulas), comparison against 99 archived quotes, reporting logic repeated across nearly 30,000 formulas, and operator-testing context.

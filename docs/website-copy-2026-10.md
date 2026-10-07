@@ -446,16 +446,22 @@ Card: An assessment of a manufacturer's systems grew into an ongoing fractional 
 
 The owner of a growing manufacturer brought me in to help evaluate the company's systems and decide where to invest next. What began as an assessment grew into an ongoing fractional CTO engagement and an invitation to join the management team.
 
-I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. My role connected those operating decisions with the technical work needed to carry them out.
+**A clearer path from sales into operations.** I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. My role connected those operating decisions with the technical work needed to carry them out.
 
-Two projects illustrate the depth of that work:
+**Pricing expertise turned into working software.** For quoting, much of the company's pricing knowledge lived in a spreadsheet. I worked through its calculations and operating rules with the business, then built an application where staff could prepare quotes, compare quantities and revisit saved versions. Past quotes gave us a way to check that the software preserved the pricing logic before operators tried it.
 
-- **Quoting:** A workbook containing almost **10,000 formulas** held the rules behind the company's prices. I worked through those rules with the business and built a web application, reproducing the workbook's figures across **99 archived quotes** before operator testing.
-- **Reporting:** I traced management figures back to source transactions and corrected comparison logic repeated across nearly **30,000 formulas**. Alongside those repairs, I helped an internal specialist take responsibility for the reports and establish how replacements would be checked.
+**Management reporting with traceable numbers and clear ownership.** In reporting, I traced management figures back to source transactions and worked with the owner on what the metrics should mean. I corrected the calculations and helped an internal specialist take responsibility for the reports. The handoff included read access and a process for checking replacement reports alongside the existing ones before switching over.
 
-Supporting that work also meant helping with hiring, developer handovers and software investment decisions, and establishing how changes would be tested before release. The owner gained a technical counterpart who could help make a decision and take responsibility for carrying it into implementation.
+**A repeatable way to deliver and improve software.** I also established a development process around the work an operator needed to complete. Changes went through implementation, testing and review, with a live check after release and a way to restore the previous version. Operator feedback then informed the next round of improvements.
 
-Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
+Selected details from the engagement:
+
+- The quoting workbook contained almost **10,000 formulas**. The application reproduced its figures across **99 archived quotes** before operator testing.
+- Reporting corrections covered comparison logic repeated across nearly **30,000 formulas**.
+- I supported technical hiring and developer handovers, including capturing undocumented automation code in company version control.
+- I reviewed a major software proposal with the owner, accounting for migration, integrations and the effort required from the internal team.
+
+**Technical decisions backed by hands-on delivery.** The owner gained a technical counterpart who could help make a decision and take responsibility for carrying it into implementation. Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
 
 Metadata title: Manufacturing: Business Priorities into Working Systems | Patrick McHeyser
 
