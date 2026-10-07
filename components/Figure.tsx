@@ -114,6 +114,8 @@ export type RecordRow = {
   state?: 'tick' | 'flag' | 'plain';
   /** Circle the key, as the paperwork figure does for a missing field. */
   marked?: boolean;
+  /** The pen note under a circled row. */
+  annotation?: string;
 };
 
 /** A record card: a titled list of key and value rows, drawn like the customer record on Working Together. */
@@ -136,6 +138,7 @@ export function Record({ title, tag, rows, className = '' }: { title: string; ta
               {row.state === 'flag' ? <span className="record__flag">{row.value}</span> : row.value}
             </span>
           )}
+          {row.marked && row.annotation && <Annotation text={row.annotation} placement="below" />}
         </div>
       ))}
     </div>

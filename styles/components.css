@@ -875,7 +875,7 @@
   font-size: var(--text-label);
   font-weight: 500;
   color: var(--mark-text);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .resolved-line {
@@ -1319,4 +1319,16 @@ textarea.field__input {
   .story-figure .flow > .record {
     flex: 1.5 1 0;
   }
+}
+
+/* A circled record row carries its pen note on a line of its own, under the row. */
+.record__row--marked {
+  flex-wrap: wrap;
+}
+
+.record__row--marked > .annotation {
+  flex-basis: 100%;
+  align-items: flex-start;
+  margin-top: 4px;
+  text-align: left;
 }

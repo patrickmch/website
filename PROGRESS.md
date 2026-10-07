@@ -1,5 +1,11 @@
 # mcheyser-site: progress
 
+## 2026-10-07: Outcome headings and proof callouts
+
+- Patrick reviewed two rounds of heading proposals (saved in the McHeyser wiki, `story-headings-proposal-2026-10-07.md`). Every story title and subheading now states a specific outcome in his chosen words; Psyche gets subheadings for the first time. Narratives, summaries, bullets and status lines are unchanged. Page titles follow the new H1s; the production check's expected titles and heading filters follow.
+- The pen circle no longer repeats "a person decides" on every figure. It marks the proof point in each figure, with a note that states the fact: 10,000 formulas distilled into 111 rules; four errors found, 29,820 formulas fixed; 1,500 tests before anything goes live; a failed night keeps yesterday's copy; two records disagree, so it says so; a broken source raises an alert; seven failures, each with steps to repeat it; five skills, each with a pass or fail check. The human step stays unmarked. Record rows can carry a circle and a note. Legend: the pen marks the detail worth checking.
+- The Working Together illustrations' notes say what happens rather than a state: the quote waits for the owner's price; no PO number, so the invoice waits; waiting on the owner's price; an unusual job, so a person prices it.
+
 ## 2026-10-07: Client stories live
 
 - Patrick approved the figures branch for release. GitHub `main` fast-forwarded from `49aec9f` to `569ac52` (ten commits: the language review's four stories and the drawn figures with their full and simple versions). Railway rebuilt and the live bundle changed within two minutes of the push.

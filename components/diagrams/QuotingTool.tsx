@@ -6,7 +6,7 @@ export function QuotingTool({ n = 1 }: { n?: number } = {}) {
     <Figure
       n={n}
       caption="Routine quotes get drafted. The ones that need judgment get flagged for a person."
-      description="Two inputs, job details and pricing rules, feed a draft quote. The draft goes one of two ways: ready for review, shown with a check mark, or needs a judgment call, which is circled with the note 'goes to a person'."
+      description="Two inputs, job details and pricing rules, feed a draft quote. The draft goes one of two ways: ready for review, shown with a check mark, or needs a judgment call, which is circled with the note 'an unusual job, so a person prices it'."
     >
       <Flow>
         <Stack>
@@ -18,7 +18,7 @@ export function QuotingTool({ n = 1 }: { n?: number } = {}) {
         <Fan count={2} direction="out" mobileLabel="one of these" />
         <Stack>
           <Node label="Ready for review" tick />
-          <Node label="Needs a judgment call" marked annotation="goes to a person" annotationPlacement="below" />
+          <Node label="Needs a judgment call" marked annotation="an unusual job, so a person prices it" annotationPlacement="below" />
         </Stack>
       </Flow>
     </Figure>

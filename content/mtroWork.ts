@@ -1,10 +1,10 @@
 export const mtroWork = {
-  "title": "Customer problems turned into product improvements.",
+  "title": "Customer problems turned into fixes, tests and a morning brief.",
   "summary": "I worked with MTRO PRO's customers and developers, helping operators get set up and turning product problems into repairs and repeatable tests. That work also led to daily account briefs and support intake, giving the team the context for its next customer conversation.",
   "intro": "I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. I worked directly with operators on setup and product use, and brought their feedback to the developers. The work ranged from helping a customer get started to fixing the software behind a stalled onboarding.",
   "sections": [
     {
-      "heading": "Account context ready for the next customer conversation.",
+      "heading": "A seven-source account brief, ready every morning.",
       "paragraphs": [
         "Before following up, I needed to know how an account's setup was going and what had happened in the last conversation. A product event could show that payments were connected, while a message or booked call explained what to do next. Gathering that history repeatedly became a clear task to automate.",
         "I built a daily process that draws from seven sources to prepare an account brief, with incoming help requests collected into a review queue. Staff can check the context and proposed response before contacting the customer. Health checks and alerts make missing updates visible, so an empty brief is not mistaken for an inactive account."
@@ -25,6 +25,6 @@ export const mtroWork = {
       ]
     }
   ],
-  "metaTitle": "MTRO PRO: Customer Problems into Product Improvements | Patrick McHeyser",
+  "metaTitle": "MTRO PRO: Customer Problems into Fixes, Tests and a Morning Brief | Patrick McHeyser",
   "description": "Customer onboarding, engineering repairs, account-research automation and browser testing for MTRO PRO, a rental software business."
 } as const;

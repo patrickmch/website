@@ -16,7 +16,7 @@ export function Paperwork({ n = 2 }: { n?: number } = {}) {
     <Figure
       n={n}
       caption="Information collected once carries into the documents. Missing details are flagged before anything goes out."
-      description="A customer record lists five fields: customer name, site address, contact, PO number, and start date. All are on file except the PO number, whose name is circled; its value is empty and flagged as missing. Arrows carry the record into three documents: a work order, a contract, and an invoice. A note beneath says the paperwork is checked by a person before it goes out."
+      description="A customer record lists five fields: customer name, site address, contact, PO number, and start date. All are on file except the PO number, whose name is circled; its value is empty and flagged 'no PO number, so the invoice waits'. Arrows carry the record into three documents: a work order, a contract, and an invoice. A note beneath says the paperwork is checked by a person before it goes out."
     >
       <Flow>
         <div className="record">
@@ -30,7 +30,7 @@ export function Paperwork({ n = 2 }: { n?: number } = {}) {
               {row.missing ? (
                 <span className="record__val">
                   <span className="record__gap" aria-hidden="true" />
-                  <span className="record__flag">flagged: missing</span>
+                  <span className="record__flag">no PO number, so the invoice waits</span>
                 </span>
               ) : (
                 <span className="record__val">

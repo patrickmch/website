@@ -86,10 +86,10 @@ try {
     '/': 'Patrick McHeyser | Operations and technology consulting',
     '/working-together': 'Working Together | Patrick McHeyser',
     '/work': 'Client Work | Patrick McHeyser',
-    '/work/mtro-pro': 'MTRO PRO: Customer Problems into Product Improvements | Patrick McHeyser',
-    '/work/manufacturing-systems': 'Manufacturing: Business Priorities into Working Systems | Patrick McHeyser',
-    '/work/shared-context': 'Healthcare: Connected Records for Daily Work | Patrick McHeyser',
-    '/work/psyche-digital': 'Psyche Digital: A Team Equipped to Build with AI | Patrick McHeyser',
+    '/work/mtro-pro': 'MTRO PRO: Customer Problems into Fixes, Tests and a Morning Brief | Patrick McHeyser',
+    '/work/manufacturing-systems': 'Manufacturing: From Spreadsheet to Software the Company Owns | Patrick McHeyser',
+    '/work/shared-context': 'Healthcare: Four Systems Answering as One | Patrick McHeyser',
+    '/work/psyche-digital': 'Psyche Digital: Five AI Workflows a Team Can Run Itself | Patrick McHeyser',
     '/about': 'About Patrick McHeyser',
     '/contact': "Let's Talk | Patrick McHeyser",
   };
@@ -334,11 +334,11 @@ try {
   await page.getByRole('heading', { name: 'More client work', exact: true }).waitFor();
   expect((await page.locator('main article a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context /work/mtro-pro /work/psyche-digital', 'Client Work should lead with manufacturing and healthcare, then show MTRO and Psyche');
   await page.locator('.work-story-card a[href="/work/mtro-pro"]').click();
-  await page.getByRole('heading', { name: 'Customer problems turned into product improvements.', exact: true }).waitFor();
+  await page.getByRole('heading', { name: 'Customer problems turned into fixes, tests and a morning brief.', exact: true }).waitFor();
   await page.locator('.story-figure').first().waitFor();
   expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
   expect(await page.locator('main figure').count() === 2, 'Story should show customer-success and QA diagrams');
-  expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles the step where a person decides');
+  expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles its proof point');
   expect(await page.locator('.work-node--human, .story-diagram__image, .work-client').count() === 0, 'no orange box borders, image diagrams or ad-hoc client labels on the work pages');
   expect(await page.locator('a[href="https://mtropro.com/"]').count() === 1, 'Story must link to the client site');
   expect((await page.locator('main').innerText()).includes('Hours saved have not been measured yet'), 'Story must distinguish implemented work from unmeasured outcomes');
@@ -360,7 +360,7 @@ try {
   for (const route of ['/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
     await page.goto(url('/work'), { waitUntil: 'load' });
     await page.locator(`main a[href="${route}"]`).click();
-    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'Business priorities turned' : route.includes('shared-context') ? 'Scattered records' : 'A team equipped' }).waitFor();
+    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'From a 10,000-formula' : route.includes('shared-context') ? 'Four systems answering' : 'Five AI workflows' }).waitFor();
     expect(new URL(page.url()).pathname === route, 'Client Work must open each published story');
     const copy = await page.locator('main').innerText();
     expect(!/prior-year|overstated|consequential calculation errors|cannot be trusted|Internal evidence|clearance|Hi \[Name\]/i.test(copy), `${route}: private details or superseded reporting wording appeared`);
@@ -385,7 +385,7 @@ try {
     const wantFigures = route.includes('manufacturing') ? 3 : route.includes('shared-context') ? 2 : 1;
     expect(figures.figures === wantFigures, `${route}: expected ${wantFigures} drawn figure(s), got ${figures.figures}`);
     expect(figures.images === 0, `${route}: diagrams must be drawn, not images`);
-    if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark where a person decides`);
+    if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark the proof point in each figure`);
     if (!route.includes('psyche')) expect(figures.tables === 1, `${route}: the workflow table should use the board style`);
     expect(figures.boldSpans === 0 && (route.includes('psyche') || figures.leadIns >= 2), `${route}: paragraph lead-ins should be headings, not bold spans`);
     await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();

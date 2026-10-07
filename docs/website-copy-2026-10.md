@@ -72,7 +72,7 @@ My focus is on businesses around $5 million to $25 million in annual revenue, wh
 
 Client: Custom manufacturing
 
-**Business priorities turned into working systems.**
+**From a 10,000-formula spreadsheet to software the company owns.**
 
 An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
 
@@ -80,7 +80,7 @@ Link: See the work → /work/manufacturing-systems
 
 Client: Healthcare services
 
-**Scattered records brought together for daily work.**
+**Four systems answering as one, inside the team's AI assistants.**
 
 An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
 
@@ -342,7 +342,7 @@ Featured stories: Custom manufacturing and Healthcare services, in that order. U
 
 Client: MTRO PRO
 
-**Customer problems turned into product improvements.**
+**Customer problems turned into fixes, tests and a morning brief.**
 
 I worked with MTRO PRO's customers and developers, helping operators get set up and turning product problems into repairs and repeatable tests. That work also led to daily account briefs and support intake, giving the team the context for its next customer conversation.
 
@@ -354,7 +354,7 @@ Use the title, card summary and link from /work/psyche-digital below.
 
 ## MTRO PRO story
 
-### Customer problems turned into product improvements.
+### Customer problems turned into fixes, tests and a morning brief.
 
 MTRO PRO
 
@@ -362,7 +362,7 @@ External link: Visit MTRO PRO → https://mtropro.com/
 
 I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. I worked directly with operators on setup and product use, and brought their feedback to the developers. The work ranged from helping a customer get started to fixing the software behind a stalled onboarding.
 
-### Account context ready for the next customer conversation.
+### A seven-source account brief, ready every morning.
 
 Before following up, I needed to know how an account's setup was going and what had happened in the last conversation. A product event could show that payments were connected, while a message or booked call explained what to do next. Gathering that history repeatedly became a clear task to automate.
 
@@ -382,19 +382,19 @@ The account-research and support-intake systems have run in production since Jul
 
 ### System diagrams
 
-Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Figure 1, the morning account brief (under "Account context ready for the next customer conversation."):
 
 Caption: The morning account brief. Seven sources are gathered automatically every morning, and each one reports whether it worked. A person reads the page, edits the message and sends it.
 
-- Record "Gathered every morning" (small print: automatic): Email (tick, ok); Text messages (tick, back up after an alert); Customer forum (tick, ok); Team chat (tick, ok); What they did in the app (tick, ok); Customer records (tick, ok); Calendar (tick, ok)
+- Record "Gathered every morning" (small print: automatic): Email (tick, ok); Text messages (tick, back up after an alert; circled, note "a broken source raises an alert"); Customer forum (tick, ok); Team chat (tick, ok); What they did in the app (tick, ok); Customer records (tick, ok); Calendar (tick, ok)
 - One page per customer (automatic): set up yet? properties added? payments connected? last reply? next call?
 - On the to-do list (automatic): help requests from the app land here too, each one once
-- A person edits and sends (circled; annotation "a person decides")
-- Below 1024px: Seven sources, every morning (automatic) → One page per customer, with the next action (automatic) → A person edits and sends (circled)
+- A person edits and sends
+- Below 1024px: Seven sources, every morning (automatic; circled, note "a broken source raises an alert") → One page per customer, with the next action (automatic) → A person edits and sends
 
-Accessible description: A list titled gathered every morning, marked automatic, shows seven sources with check marks: email, text messages (noted back up after an alert), the customer forum, team chat, what the customer did in the app, customer records and the calendar. An arrow leads to one page per customer, marked automatic: set up yet, properties added, payments connected, last reply, next call. Next, on the to-do list, marked automatic: help requests from the app land here too, each one once. Last, a person edits and sends, circled with the note 'a person decides'.
+Accessible description: A list titled gathered every morning, marked automatic, shows seven sources with check marks: email, text messages (noted back up after an alert, and circled with the note 'a broken source raises an alert'), the customer forum, team chat, what the customer did in the app, customer records and the calendar. An arrow leads to one page per customer, marked automatic: set up yet, properties added, payments connected, last reply, next call. Next, on the to-do list, marked automatic: help requests from the app land here too, each one once. Last, a person edits and sends.
 
 Figure 2, one round of testing (under "Product defects the developers could reproduce and retest."):
 
@@ -402,11 +402,11 @@ Caption: One round of testing, March 2026. Nineteen booking steps, tried by a co
 
 - I write the plan: 19 things to try: booking, signing the lease, checkout, payment, notifications
 - A computer tries each one (automatic): real clicks in the product; a screenshot at every step
-- Record "The report" (automatic): 14 worked (tick, with screenshots); 7 problems, each with steps to see it again (flagged, to fix); Overall: ready, with cautions
-- Fix, try again, decide: what ships is a person's call (circled; annotation "a person decides")
-- Below 1024px: I write the plan, 19 things to try → A computer tries each one, a screenshot at every step: 14 worked, 7 problems (automatic) → Fix, try again, decide (circled)
+- Record "The report" (automatic): 14 worked (tick, with screenshots); 7 problems, each with steps to see it again (flagged, to fix; circled, note "seven failures, each with steps to repeat it"); Overall: ready, with cautions
+- Fix, try again, decide: what ships is a person's call
+- Below 1024px: I write the plan, 19 things to try → A computer tries each one, a screenshot at every step: 14 worked, 7 problems (automatic; circled, note "seven failures, each with steps to repeat it") → Fix, try again, decide
 
-Accessible description: Four steps in a row. I write the plan: 19 things to try, covering booking, signing the lease, checkout, payment and notifications. A computer tries each one, marked automatic: real clicks in the product, with a screenshot at every step. The report, marked automatic, lists 14 worked, with screenshots and a check mark; 7 problems, each with steps to see it again, flagged to fix; and the overall result, ready with cautions. Fix, try again, decide is circled with the note 'a person decides': what ships is a person's call.
+Accessible description: Four steps in a row. I write the plan: 19 things to try, covering booking, signing the lease, checkout, payment and notifications. A computer tries each one, marked automatic: real clicks in the product, with a screenshot at every step. The report, marked automatic, lists 14 worked, with screenshots and a check mark; 7 problems, each with steps to see it again, flagged to fix and circled with the note 'seven failures, each with steps to repeat it'; and the overall result, ready with cautions. Fix, try again, decide: what ships is a person's call.
 
 ### Story and index closing invitation
 
@@ -430,7 +430,7 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 
 /work title: Client Work | Patrick McHeyser
 /work description: Technical leadership, software and AI engagements, from assessment through delivery and team handoff.
-/work/mtro-pro title: MTRO PRO: Customer Problems into Product Improvements | Patrick McHeyser
+/work/mtro-pro title: MTRO PRO: Customer Problems into Fixes, Tests and a Morning Brief | Patrick McHeyser
 /work/mtro-pro description: Customer onboarding, engineering repairs, account-research automation and browser testing for MTRO PRO, a rental software business.
 
 
@@ -440,19 +440,19 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 
 Custom manufacturing
 
-**Business priorities turned into working systems.**
+**From a 10,000-formula spreadsheet to software the company owns.**
 
 Card: An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
 
 The owner of a growing manufacturer brought me in to help evaluate the company's systems and decide where to invest next. What began as an assessment grew into an ongoing fractional CTO engagement and an invitation to join the management team.
 
-**A clearer path from sales into operations.** I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. My role connected those operating decisions with the technical work needed to carry them out.
+**A sales handoff designed end to end, from CRM to staffing.** I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. My role connected those operating decisions with the technical work needed to carry them out.
 
-**Pricing expertise turned into working software.** For quoting, much of the company's pricing knowledge lived in a spreadsheet. I worked through its calculations and operating rules with the business, then built an application where staff could prepare quotes, compare quantities and revisit saved versions. Past quotes gave us a way to check that the software preserved the pricing logic before operators tried it.
+**Custom quoting software, built to retire the spreadsheets and raise productivity.** For quoting, much of the company's pricing knowledge lived in a spreadsheet. I worked through its calculations and operating rules with the business, then built an application where staff could prepare quotes, compare quantities and revisit saved versions. Past quotes gave us a way to check that the software preserved the pricing logic before operators tried it.
 
-**Management reporting with traceable numbers and clear ownership.** In reporting, I traced management figures back to source transactions and worked with the owner on what the metrics should mean. I corrected the calculations and helped an internal specialist take responsibility for the reports. The handoff included read access and a process for checking replacement reports alongside the existing ones before switching over.
+**Metrics the team can trust and act on, maintained in-house.** In reporting, I traced management figures back to source transactions and worked with the owner on what the metrics should mean. I corrected the calculations and helped an internal specialist take responsibility for the reports. The handoff included read access and a process for checking replacement reports alongside the existing ones before switching over.
 
-**A repeatable way to deliver and improve software.** I also established a development process around the work an operator needed to complete. Changes went through implementation, testing and review, with a live check after release and a way to restore the previous version. Operator feedback then informed the next round of improvements.
+**Software that keeps improving without breaking what works.** I also established a development process around the work an operator needed to complete. Changes went through implementation, testing and review, with a live check after release and a way to restore the previous version. Operator feedback then informed the next round of improvements.
 
 Selected details from the engagement:
 
@@ -461,23 +461,23 @@ Selected details from the engagement:
 - I supported technical hiring and developer handovers, including capturing undocumented automation code in company version control.
 - I reviewed a major software proposal with the owner, accounting for migration, integrations and the effort required from the internal team.
 
-**Technical decisions backed by hands-on delivery.** The owner gained a technical counterpart who could help make a decision and take responsibility for carrying it into implementation. Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
+**Technical decisions made with the owner, then built.** The owner gained a technical counterpart who could help make a decision and take responsibility for carrying it into implementation. Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
 
-Metadata title: Manufacturing: Business Priorities into Working Systems | Patrick McHeyser
+Metadata title: Manufacturing: From Spreadsheet to Software the Company Owns | Patrick McHeyser
 
 Metadata description: A systems assessment grows into fractional CTO work: leading delivery, developing internal ownership, building quoting software and improving reporting.
 
-Figure 1, one quote through the new software (under "Pricing expertise turned into working software."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Figure 1, one quote through the new software (under "Pricing expertise turned into working software."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Caption: One quote through the new software. Sales types in the request. The rules work out the price, save it as a new version and make the customer's PDF. A person checks it before it goes out. The software was tried on 99 old quotes and matched the spreadsheet every time.
 
 - Record "Quote request" (small print: typed in by sales): What it is, one of six product types; Size, length, width, depth; Material, type and thickness; How many, 250, 500 or 1,000
-- The pricing rules (automatic): 111 rules and 37 lookup tables, written down from the old spreadsheet
+- The pricing rules (automatic; circled, note "10,000 formulas distilled into 111 rules"): 111 rules and 37 lookup tables, written down from the old spreadsheet
 - Fan out to four results (small print on the stack: automatic): A priced quote (materials, labor, outside parts, shipping); Prices for all three quantities; Saved as version 3, next to version 2; A PDF for the customer
-- Fan back in to A person checks the quote: before it goes to the customer (circled; annotation "a person decides")
-- Below 1024px: Quote request, typed in by sales → Priced by the rules, 111 rules and 37 lookup tables (automatic) → A person checks the quote (circled)
+- Fan back in to A person checks the quote: before it goes to the customer
+- Below 1024px: Quote request, typed in by sales → Priced by the rules, 111 rules and 37 lookup tables (automatic; circled, note "10,000 formulas distilled into 111 rules") → A person checks the quote
 
-Accessible description: A quote request lists four things typed in by sales: what it is, one of six product types; the size, length, width and depth; the material, type and thickness; and how many, 250, 500 or 1,000. An arrow leads to the pricing rules, marked automatic: 111 rules and 37 lookup tables, written down from the old spreadsheet. Arrows fan out to four results, marked automatic: a priced quote with materials, labor, outside parts and shipping; prices for all three quantities; the quote saved as version 3 next to version 2; and a PDF for the customer. The four results fan back in to a person checking the quote before it goes to the customer, which is circled with the note 'a person decides'.
+Accessible description: A quote request lists four things typed in by sales: what it is, one of six product types; the size, length, width and depth; the material, type and thickness; and how many, 250, 500 or 1,000. An arrow leads to the pricing rules, marked automatic: 111 rules and 37 lookup tables, written down from the old spreadsheet. Arrows fan out to four results, marked automatic: a priced quote with materials, labor, outside parts and shipping; prices for all three quantities; the quote saved as version 3 next to version 2; and a PDF for the customer. The four results fan back in to a person checking the quote before it goes to the customer. The pricing rules are circled with the note '10,000 formulas distilled into 111 rules'.
 
 Figure 2, making a report number trustworthy (under "Management reporting with traceable numbers and clear ownership."):
 
@@ -485,24 +485,24 @@ Caption: Making a report number trustworthy. I follow the number back to the ord
 
 - Follow the number back: on-time delivery this month: which orders and dates should count?
 - Record "What I found": Order lines counted instead of orders (tick, fixed); A half month counted as a whole month (tick, fixed); The same customer counted twice (capital letters) (tick, fixed); A data feed that had stopped (tick, restored)
-- The owner and I agreed what counts: seven on-time rules, written down (circled; annotation "a person decides")
-- Reports you can check (automatic, check mark): 29,820 formulas fixed; the reports update on their own
-- Below 1024px: Follow the number back, to the orders behind it → Four errors found and fixed → The owner and I agreed what counts (circled)
+- The owner and I agreed what counts: seven on-time rules, written down
+- Reports you can check (automatic; circled, note "four errors found, 29,820 formulas fixed"): the reports update on their own
+- Below 1024px: Follow the number back, to the orders behind it → Four errors found and fixed (circled, note "four errors found, 29,820 formulas fixed") → The owner and I agreed what counts
 
-Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted instead of orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts, seven on-time rules written down, is circled with the note 'a person decides'. Reports you can check, marked automatic with a check mark: 29,820 formulas fixed, and the reports update on their own.
+Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted instead of orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own.
 
 Figure 3, how a change gets into the software safely (under "A repeatable way to deliver and improve software."):
 
 Caption: How a change gets into the software safely. Nothing goes live until the automatic checks pass, a computer has tried it the way a user would, and a person has said yes. About 135 of these runs in the first four weeks, with 2,800 screenshots.
 
 - AI writes the change (automatic): in a safe copy, so nothing live is touched
-- The checks must pass (automatic): about 1,500 automatic tests run first
+- The checks must pass (automatic; circled, note "1,500 tests before anything goes live"): about 1,500 automatic tests run first
 - A computer tries it out (automatic): clicks through the screens like a user, takes screenshots
-- Fan out to three questions: Does it work? (automatic); Is there proof? (automatic); Should it go live? (circled; annotation "a person decides")
+- Fan out to three questions: Does it work? (automatic); Is there proof? (automatic); Should it go live? (where a person decides)
 - Resolved line (check mark): A yes goes live on its own, with a check afterward and a way to undo it.
-- Below 1024px: AI writes the change, in a safe copy (automatic) → Checks and a computer try-out must pass (automatic) → Should it go live? a yes goes live, with a way back (circled)
+- Below 1024px: AI writes the change, in a safe copy (automatic) → Checks and a computer try-out must pass (automatic; circled, note "1,500 tests before anything goes live") → Should it go live? a yes goes live, with a way back
 
-Accessible description: Three steps in a row, then three questions. AI writes the change, marked automatic, in a safe copy so nothing live is touched. The checks must pass, marked automatic: about 1,500 automatic tests run first. A computer tries it out, marked automatic: it clicks through the screens like a user and takes screenshots. Arrows fan out to three questions. Does it work, and is there proof, are marked automatic. Should it go live is circled with the note 'a person decides'. A line beneath, with a check mark, says a yes goes live on its own, with a check afterward and a way to undo it.
+Accessible description: Three steps in a row, then three questions. AI writes the change, marked automatic, in a safe copy so nothing live is touched. The checks must pass, marked automatic: about 1,500 automatic tests run first. A computer tries it out, marked automatic: it clicks through the screens like a user and takes screenshots. Arrows fan out to three questions. Does it work, and is there proof, are marked automatic. Should it go live is where a person decides. The checks must pass is circled with the note '1,500 tests before anything goes live'. A line beneath, with a check mark, says a yes goes live on its own, with a check afterward and a way to undo it.
 
 | Manual friction | What the system or engagement handles | Human responsibility |
 | --- | --- | --- |
@@ -517,39 +517,39 @@ Card link: See the work
 
 Healthcare services
 
-**Scattered records brought together for daily work.**
+**Four systems answering as one, inside the team's AI assistants.**
 
 Card: An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
 
 This healthcare services team already had business software, documented processes and people building useful AI workflows. Preparing a profile or recurring paperwork still meant gathering related information from several places. I began by looking at how the work moved between people and systems, then built a shared information source those workflows could use.
 
-**A clear picture of the work and its handoffs.** Staff interviews, process documents and system activity showed where information passed cleanly and where someone had to collect it by hand. That gave the build a practical starting point: make the supporting information available within the work staff were already doing.
+**Every handoff mapped from interviews, documents and system activity.** Staff interviews, process documents and system activity showed where information passed cleanly and where someone had to collect it by hand. That gave the build a practical starting point: make the supporting information available within the work staff were already doing.
 
 I connected four business systems in the client's own cloud account and converted thousands of PDFs into searchable text. Matching the records required checks for duplicates and conflicting identities. Related information now sits alongside its source references, with unresolved facts left visible for a person to review.
 
-**Staff workflows connected to shared information.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. A preparation workflow can gather the information and draft a document; a review workflow can return the supporting records and open questions alongside it.
+**The team's workflows answer from one source.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. A preparation workflow can gather the information and draft a document; a review workflow can return the supporting records and open questions alongside it.
 
-The shared source limits access by role and refreshes nightly. Each update is checked before publication, so a failed refresh leaves the last good version available. Staff can inspect the records behind an answer before relying on it.
+**Current information for the whole team, scoped to each person's role.** The shared source limits access by role and refreshes nightly. Each update is checked before publication, so a failed refresh leaves the last good version available. Staff can inspect the records behind an answer before relying on it.
 
 **The team equipped to run and maintain the system.** The engagement also includes account administration and guides for setup, everyday use and technical maintenance. I documented how to update and distribute the workflows so the team has a process for keeping them current, with the infrastructure in the client's own account.
 
 Staff have reported successful use of several workflows as rollout continues. The next step is to work through the remaining feedback and handoff with the team. Time saved has not been measured yet.
 
-Metadata title: Healthcare: Connected Records for Daily Work | Patrick McHeyser
+Metadata title: Healthcare: Four Systems Answering as One | Patrick McHeyser
 
 Metadata description: From an operations review to shared information, integrated AI workflows and a staff handoff for a healthcare services team.
 
-Figure 1, how the shared information is built and kept fresh (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Figure 1, how the shared information is built and kept fresh (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Caption: How the shared information is built and kept fresh. Four systems are gathered every night into one place the client owns, matched up, checked and published. If a night fails, yesterday's copy keeps working and nobody notices.
 
 - Stack of four sources: Project boards; Customer records; Files and documents; The website
-- Fan in ("gathered every night") to Gather and match up (automatic): records that belong together are joined; a number alone is never enough (circled; annotation "if records disagree, a person decides")
+- Fan in ("gathered every night") to Gather and match up (automatic): records that belong together are joined; a number alone is never enough; if records disagree, a person decides
 - Checked before publishing (automatic): missing fields, which source wins, private details kept out
-- Updated every night (automatic, check mark): the switch takes under a minute; if a night fails, yesterday's copy keeps working
-- Below 1024px: Four systems, gathered every night (automatic) → Matched and checked (automatic; circled "if records disagree, a person decides") → Updated every night, yesterday's copy keeps working if a run fails (automatic, check mark)
+- Updated every night (automatic; circled, note "a failed night keeps yesterday's copy"): the switch takes under a minute
+- Below 1024px: Four systems, gathered every night (automatic) → Matched and checked (automatic; if records disagree, a person decides) → Updated every night (automatic; circled, note "a failed night keeps yesterday's copy")
 
-Accessible description: Four systems stacked on the left: project boards, customer records, files and documents, and the website. Their arrows merge, labelled gathered every night, into gather and match up, marked automatic: records that belong together are joined, and a number alone is never enough. That step is circled with the note 'if records disagree, a person decides'. Next, checked before publishing, marked automatic: missing fields, which source wins, private details kept out. Last, updated every night, marked automatic with a check mark: the switch takes under a minute, and if a night fails yesterday's copy keeps working.
+Accessible description: Four systems stacked on the left: project boards, customer records, files and documents, and the website. Their arrows merge, labelled gathered every night, into gather and match up, marked automatic: records that belong together are joined, and a number alone is never enough. If records disagree, a person decides. Next, checked before publishing, marked automatic: missing fields, which source wins, private details kept out. Last, updated every night, marked automatic and circled with the note 'a failed night keeps yesterday's copy': the switch takes under a minute.
 
 Figure 2, what a person sees (after the paragraph on access by role and the nightly refresh):
 
@@ -557,11 +557,11 @@ Caption: What a person sees. Every answer says where it came from. Anything the 
 
 - A staff member asks: in the AI assistant they already use
 - A locked door (automatic): can read, never change; each person sees only what their role allows
-- Record "Answer, case 1234" (automatic): Status (tick, confirmed (board record, 14 May)); Supporting document (tick, on file); Contact preference: two records disagree (flagged, not settled)
-- A person reviews and decides (circled; annotation "a person decides")
-- Below 1024px: A staff member asks → An answer with its sources, read only, limited by role (automatic) → A person reviews and decides (circled)
+- Record "Answer, case 1234" (automatic): Status (tick, confirmed (board record, 14 May)); Supporting document (tick, on file); Contact preference: two records disagree (flagged, not settled; circled, note "two records disagree, so it says so")
+- A person reviews and decides
+- Below 1024px: A staff member asks → An answer with its sources, read only, limited by role (automatic; circled, note "two records disagree, so it says so") → A person reviews and decides
 
-Accessible description: Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled. A person reviews and decides, circled with the note 'a person decides'.
+Accessible description: Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled and circled with the note 'two records disagree, so it says so'. A person reviews and decides.
 
 | Workflow | What it does | Manual work targeted |
 | --- | --- | --- |
@@ -575,34 +575,34 @@ Card link: See the work
 
 Psyche Digital
 
-**A team equipped to build and improve its own AI tools.**
+**Five AI workflows a small agency can run and improve without a developer.**
 
 Card: Psyche Digital followed my instructions to build a content system, then returned for a broader operations review. I helped the team choose where to go next and supplied workflows, setup guidance and a method for testing and maintaining their own AI tools.
 
 Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The founders wanted to take on more client work while spending less time coordinating it. Our engagement grew from a content system for their own marketing into a review of how AI could carry more of the work through to completion.
 
-I designed the first content system and wrote the build instructions. The team followed them, got it set up and tested it, then returned to discuss a broader engagement. That experience set the standard for the next deliverable: instructions they could use to build and improve the tools themselves.
+**A content system the team built themselves from my instructions.** I designed the first content system and wrote the build instructions. The team followed them, got it set up and tested it, then returned to discuss a broader engagement. That experience set the standard for the next deliverable: instructions they could use to build and improve the tools themselves.
 
-I followed 10 examples of actual work across client success, onboarding and social-content production. A meeting recap showed the opportunity clearly. Recording a decision was only the start; someone still had to find the relevant task, add instructions and give the right person enough context to act.
+**The real bottleneck: what a recap still leaves someone to do.** I followed 10 examples of actual work across client success, onboarding and social-content production. A meeting recap showed the opportunity clearly. Recording a decision was only the start; someone still had to find the relevant task, add instructions and give the right person enough context to act.
 
-The assessment set out a sequence for tackling that work using the team's existing documents and task system. An implementation guide and five starter AI skills explain how to gather the sources, prepare the work and save the result where the team needs it. We refined the setup instructions after reviewing the recommendations together.
+**Five starter skills, each with the sources, steps and a pass or fail check.** The assessment set out a sequence for tackling that work using the team's existing documents and task system. An implementation guide and five starter AI skills explain how to gather the sources, prepare the work and save the result where the team needs it. We refined the setup instructions after reviewing the recommendations together.
 
-The guide also gives the team a method for maintaining what it builds: make a small change, test a familiar case and an exception, keep the last working version, then check that colleagues receive the update. The person responsible for the workflow reviews changes to its business rules.
+**A way to improve each workflow without breaking it.** The guide also gives the team a method for maintaining what it builds: make a small change, test a familiar case and an exception, keep the last working version, then check that colleagues receive the update. The person responsible for the workflow reviews changes to its business rules.
 
-Psyche has the materials to begin with one familiar client account and one cycle of meeting preparation and follow-through. That first trial will show what needs correcting before wider use. The new workflows have not yet been installed in the team's accounts.
+**First trial on one client account, then wider use.** Psyche has the materials to begin with one familiar client account and one cycle of meeting preparation and follow-through. That first trial will show what needs correcting before wider use. The new workflows have not yet been installed in the team's accounts.
 
-Figure 1, after the meeting (after the paragraph with the meeting recap example). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen circle is where a person decides.
+Figure 1, after the meeting (after the paragraph with the meeting recap example). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Caption: After the meeting. What a recap still leaves to do gets done from the team's own documents and task list, checked, and approved by a person.
 
 - Record "Meeting recap": Decisions, three agreed; Who owns each, named; Due dates, set
 - Fan out ("carried into") to three results (small print on the stack: automatic): Tasks updated with what was agreed; Materials prepared for that client; The right people get the context
-- Fan back in ("then") to Checked, then a person approves: a quick check runs first (circled; annotation "a person decides")
-- Below 1024px: Meeting recap, decisions, owners, due dates → Tasks, materials and context prepared (automatic) → Checked, then a person approves (circled)
+- Fan back in ("then") to Checked, then a person approves: a quick check runs first (circled; note "five skills, each with a pass or fail check")
+- Below 1024px: Meeting recap, decisions, owners, due dates → Tasks, materials and context prepared (automatic) → Checked, then a person approves (circled, note "five skills, each with a pass or fail check")
 
-Accessible description: A meeting recap lists decisions, three agreed; who owns each, named; and due dates, set. Arrows fan out, labelled carried into, to three results marked automatic: tasks updated with what was agreed, materials prepared for that client, and the right people get the context. The three fan back in to checked, then a person approves, where a quick check runs first; it is circled with the note 'a person decides'.
+Accessible description: A meeting recap lists decisions, three agreed; who owns each, named; and due dates, set. Arrows fan out, labelled carried into, to three results marked automatic: tasks updated with what was agreed, materials prepared for that client, and the right people get the context. The three fan back in to checked, then a person approves, where a quick check runs first; it is circled with the note 'five skills, each with a pass or fail check'.
 
-Metadata title: Psyche Digital: A Team Equipped to Build with AI | Patrick McHeyser
+Metadata title: Psyche Digital: Five AI Workflows a Team Can Run Itself | Patrick McHeyser
 
 Metadata description: An implemented content blueprint leads to an operations review and practical guidance for building, testing and maintaining AI workflows at Psyche Digital.
 

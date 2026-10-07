@@ -239,7 +239,7 @@ Five nodes, left to right (label / where it happens):
 3. Price decision / waits for the owner (Amended: "Price decided" contradicted its own sublabel)
 4. Quote written / Word template
 5. Quote sent / email, then follow-up
-PenCircle around node 3. Annotation: "work waits here".
+PenCircle around node 3. Annotation: "the quote waits for the owner's price" (amended 7 October 2026: notes say what happens, not a state).
 Small screens: nodes stack vertically, arrows point down, annotation sits under node 3.
 
 ### Fig. 2 — How the work gets looked at (Home, "I help you decide what to change")
@@ -253,12 +253,12 @@ Step 2 has a small PenCircle around its number. No annotation.
 
 ### Fig. 3 — A quoting tool that follows your rules (Home example 1)
 Caption: "Routine quotes get drafted. The ones that need judgment get flagged for a person."
-Left: two input nodes stacked, "Job details" and "Pricing rules". Both connect into a center node "Draft quote" (sublabel "prepared for review"). The center node connects to two output nodes stacked on the right: "Ready for review" (with a `--resolved` PenTick) and "Needs a judgment call" (PenCircle, annotation "goes to a person").
+Left: two input nodes stacked, "Job details" and "Pricing rules". Both connect into a center node "Draft quote" (sublabel "prepared for review"). The center node connects to two output nodes stacked on the right: "Ready for review" (with a `--resolved` PenTick) and "Needs a judgment call" (PenCircle, annotation "an unusual job, so a person prices it").
 Small screens: inputs, center, outputs stack vertically in that order, the fans labelled "both go in" and "one of these".
 
 ### Fig. 4 — Customer paperwork with less retyping (Home example 2)
 Caption: "Information collected once carries into the documents. Missing details are flagged before anything goes out."
-Left: a "Customer record" card listing five fields as mono rows with a tick and "on file", or a gap: Customer name ✓, Site address ✓, Contact ✓, PO number (the field name circled, an empty dashed gap, then the annotation "flagged: missing"), Start date ✓.
+Left: a "Customer record" card listing five fields as mono rows with a tick and "on file", or a gap: Customer name ✓, Site address ✓, Contact ✓, PO number (the field name circled, an empty dashed gap, then the annotation "no PO number, so the invoice waits"), Start date ✓.
 Arrows from the card to three document nodes stacked on the right: "Work order", "Contract", "Invoice".
 Below the documents, a `--resolved-text` mono line with a PenTick: "Checked by a person before it goes out."
 Small screens: the record, then a connector labelled "carries into each", then the three documents.
@@ -269,7 +269,7 @@ A table titled "Example job board" (a visible `<caption>` in the record-title st
 - Quote 118, Hillside | Customer sign-off | Maria | Follow up Thursday
 - Job 2041, Unit 12 | Price decision | Owner | Decide by Friday
 - Order 77, Lot 4 | Nothing | Crew B | Starts Monday
-Row 2's "Price decision" cell gets a PenCircle; annotation "waiting on a decision" beneath the value. Row 3's "Nothing" cell gets a `--resolved` PenTick. The WHO and NEXT columns do not wrap at 640px and up.
+Row 2's "Price decision" cell gets a PenCircle; annotation "waiting on the owner's price" beneath the value. Row 3's "Nothing" cell gets a `--resolved` PenTick. The WHO and NEXT columns do not wrap at 640px and up.
 Small screens: the table becomes a stacked list, each row a card with the four labels and values; the header row stays in the accessibility tree and the table keeps explicit ARIA table roles.
 
 ### Fig. 6 — A Discovery Sprint, start to finish (Working Together)
@@ -345,7 +345,7 @@ Pages: `/work` (index), `/work/mtro-pro`, and one page per story in `content/cli
 - **Index.** (Amended 5 October 2026.) Hero (H1, lead), then the same two featured story cards as Home, with H2 titles set at H3 size. A separate "More client work" section follows with MTRO PRO and Psyche Digital cards, H3 titles, in that order. All cards use the existing responsive two-column grid. The closing call retains the primary button and secondary link.
 - **Story page.** Hero with "See a sample of client work" above it, the eyebrow (the client or sector only; the kind of engagement was dropped on 4 October), H1 and the first paragraph as the lead. Body in the prose column; a bold lead-in in the copy is a heading over its paragraph (3.2), an H2 set at H3 size because the hero's H1 is the only heading above it. Figures follow the body, then the workflow table in the board style (5.8, Fig. 5), then the closing call.
 - **Story copy (amended 6 October 2026).** Titles and editorial section headings state the practical result or capability gained. Manufacturing develops the quoting, reporting and team delivery work in narrative paragraphs, each introduced by an outcome heading for readers who scan. Four supporting bullets carry metrics and additional responsibilities, with bold metrics for emphasis. The closing paragraph distinguishes intended business outcomes from work already delivered. Cards and page titles share the same wording.
-- **Figures.** Drawn with the figure primitives only (5.8): no images of diagrams. On these pages the pen has one meaning: it circles the step where a person decides, with the annotation placed below the node. (Amended 6 October 2026: each figure shows one real mechanism with an example in it, in plain words, under the subheading it illustrates, with a simple three-step version below 1024px and small print marking the automatic steps.) MTRO PRO: the morning account brief and one round of testing, under its first two sections. Manufacturing: one quote through the new software, making a report number trustworthy, and how a change gets into the software safely, under the pricing, reporting and delivery subheadings. Healthcare: how the shared information is built and kept fresh, and what a person sees, after the connected-systems and access paragraphs. Psyche Digital: after the meeting, after the recap example. The workflow table follows the body as before.
+- **Figures.** Drawn with the figure primitives only (5.8): no images of diagrams. On these pages the pen marks the proof point (amended 7 October 2026, Patrick): the one detail in each figure that shows the work holds up, with a note of a few words that states the fact, such as '10,000 formulas distilled into 111 rules' or 'a failed night keeps yesterday's copy'. The human step stays in the drawing but unmarked; it reads as human because it is the box without the automatic small print. A record row can carry the circle and its note. (Amended 6 October 2026: each figure shows one real mechanism with an example in it, in plain words, under the subheading it illustrates, with a simple three-step version below 1024px and small print marking the automatic steps.) MTRO PRO: the morning account brief and one round of testing, under its first two sections. Manufacturing: one quote through the new software, making a report number trustworthy, and how a change gets into the software safely, under the pricing, reporting and delivery subheadings. Healthcare: how the shared information is built and kept fresh, and what a person sees, after the connected-systems and access paragraphs. Psyche Digital: after the meeting, after the recap example. The workflow table follows the body as before.
 - **Links.** One pattern: "See the work" on every link to a story, "See a sample of client work" for the index (Amended 4 October 2026: it said "See all client work"; the page is a sample of the work, not the whole of it, and no link may say "all"). Beside "Let's talk" in a hero or closing call the index link is a call to action and reads "See how I've worked with others" (Amended 4 October 2026); the closing calls on the Client Work pages themselves pair the button with "How we work together" instead.
 - **Not used:** orange box borders, pastel fills, a second palette, bold sans labels, middle-dot meta strings, definition-list tables, external SVG files, "+" in figure words (write "and").
 
