@@ -72,7 +72,7 @@ My focus is on businesses around $5 million to $25 million in annual revenue, wh
 
 Client: Custom manufacturing
 
-**Technical leadership for a growing manufacturer.**
+**Business priorities turned into working systems.**
 
 An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
 
@@ -80,7 +80,7 @@ Link: See the work → /work/manufacturing-systems
 
 Client: Healthcare services
 
-**An AI assistant connected to the information the business runs on.**
+**Scattered records brought together for daily work.**
 
 An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
 
@@ -342,7 +342,7 @@ Featured stories: Custom manufacturing and Healthcare services, in that order. U
 
 Client: MTRO PRO
 
-**Helping customers get started and the product keep improving.**
+**Customer problems turned into product improvements.**
 
 I worked with MTRO PRO's customers and developers, helping operators get set up and turning product problems into repairs and repeatable tests. That work also led to daily account briefs and support intake, giving the team the context for its next customer conversation.
 
@@ -354,7 +354,7 @@ Use the title, card summary and link from /work/psyche-digital below.
 
 ## MTRO PRO story
 
-### Helping customers get started and the product keep improving.
+### Customer problems turned into product improvements.
 
 MTRO PRO
 
@@ -362,19 +362,19 @@ External link: Visit MTRO PRO → https://mtropro.com/
 
 I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. I worked directly with operators on setup and product use, and brought their feedback to the developers. The work ranged from helping a customer get started to fixing the software behind a stalled onboarding.
 
-### Customer work shaped the automation.
+### Account context ready for the next customer conversation.
 
 Before following up, I needed to know how an account's setup was going and what had happened in the last conversation. A product event could show that payments were connected, while a message or booked call explained what to do next. Gathering that history repeatedly became a clear task to automate.
 
 I built a daily process that draws from seven sources to prepare an account brief, with incoming help requests collected into a review queue. Staff can check the context and proposed response before contacting the customer. Health checks and alerts make missing updates visible, so an empty brief is not mistaken for an inactive account.
 
-### Customer journeys gave the developers a way to check their work.
+### Product defects the developers could reproduce and retest.
 
 Booking, lease signing and payment need to work as a connected journey. I built an AI-assisted testing process that follows those steps in a browser, captures what happened and gives developers enough detail to reproduce a failure. Repairs go through the same journey again.
 
 More than a dozen test rounds ran between March and April. One booking review found seven defects across lease signing, checkout and payment status. Written test plans, browser evidence and retesting made the findings useful for deciding what needed repair and checking that it worked.
 
-### I worked on the repairs and the handoff too.
+### Property imports restored, with instructions for the team.
 
 When a login change stopped property imports, I reproduced the failure, built and tested an interim repair, and supplied setup instructions to the team. Another developer then moved the integration to scoped API keys. I also prepared repository-based instructions for a new contractor joining the import work.
 
@@ -430,7 +430,7 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 
 /work title: Client Work | Patrick McHeyser
 /work description: Technical leadership, software and AI engagements, from assessment through delivery and team handoff.
-/work/mtro-pro title: MTRO PRO: Customer Support, Engineering and QA | Patrick McHeyser
+/work/mtro-pro title: MTRO PRO: Customer Problems into Product Improvements | Patrick McHeyser
 /work/mtro-pro description: Customer onboarding, engineering repairs, account-research automation and browser testing for MTRO PRO, a rental software business.
 
 
@@ -440,25 +440,24 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 
 Custom manufacturing
 
-**Technical leadership for a growing manufacturer.**
+**Business priorities turned into working systems.**
 
 Card: An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
 
-The owner of a growing manufacturer wanted a clearer view of the technical work: what needed attention, what the existing team could take on and where to invest next. I began with a systems assessment, then stayed on as fractional CTO to lead the improvements with the team.
+The owner of a growing manufacturer brought me in to help evaluate the company's systems and decide where to invest next. What began as an assessment grew into an ongoing fractional CTO engagement and an invitation to join the management team.
 
-**Taking responsibility for the work.** My role grew to include setting technical priorities, reviewing delivery and helping the owner evaluate software investments. For a major software proposal, I worked through the integrations, migration and internal effort the purchase would require, so the decision could account for the work beyond the license.
+I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. My role connected those operating decisions with the technical work needed to carry them out.
 
-I also ran technical interviews and a paid trial, and managed a developer handover. Capturing undocumented automation code in company version control gave the business a record it could maintain as people changed roles.
+Two projects illustrate the depth of that work:
 
-**Turning business knowledge into working software.** Quoting became a central project. A workbook with almost 10,000 formulas held much of the knowledge behind a price. I worked through its calculations and operating rules with the business, then built a web application where staff can prepare quotes, compare quantities and revisit saved versions. Testing it against 99 archived quotes reproduced the workbook's figures before operators began trying it.
+- **Quoting:** A workbook containing almost **10,000 formulas** held the rules behind the company's prices. I worked through those rules with the business and built a web application, reproducing the workbook's figures across **99 archived quotes** before operator testing.
+- **Reporting:** I traced management figures back to source transactions and corrected comparison logic repeated across nearly **30,000 formulas**. Alongside those repairs, I helped an internal specialist take responsibility for the reports and establish how replacements would be checked.
 
-Reporting needed the same attention to what the numbers meant. I traced management figures back to source transactions and corrected comparison logic repeated across nearly 30,000 formulas. The owner and I worked through metric definitions, while an internal specialist took responsibility for the reporting. I arranged read access and a way to check replacement reports alongside the existing ones before switching over.
+Supporting that work also meant helping with hiring, developer handovers and software investment decisions, and establishing how changes would be tested before release. The owner gained a technical counterpart who could help make a decision and take responsibility for carrying it into implementation.
 
-**Giving the team a way to keep improving it.** I established a development process that connects each change to a defined need, with separate implementation, testing and review. AI assists the build, while browser checks follow the work an operator needs to complete. Releases include a live check and a way to restore the previous version.
+Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
 
-Those checks and operator feedback now guide changes to the quoting application. Two operators are testing it, and I released fixes from their first round of feedback within two days. The application remains in operator testing, with business approval of the documented rules still ahead.
-
-Metadata title: Manufacturing: Technical Leadership and Delivery | Patrick McHeyser
+Metadata title: Manufacturing: Business Priorities into Working Systems | Patrick McHeyser
 
 Metadata description: A systems assessment grows into fractional CTO work: leading delivery, developing internal ownership, building quoting software and improving reporting.
 
@@ -496,25 +495,25 @@ Card link: See the work
 
 Healthcare services
 
-**An AI assistant connected to the information the business runs on.**
+**Scattered records brought together for daily work.**
 
 Card: An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
 
 This healthcare services team already had business software, documented processes and people building useful AI workflows. Preparing a profile or recurring paperwork still meant gathering related information from several places. I began by looking at how the work moved between people and systems, then built a shared information source those workflows could use.
 
-**Starting with the people doing the work.** Staff interviews, process documents and system activity showed where information passed cleanly and where someone had to collect it by hand. That gave the build a practical starting point: make the supporting information available within the work staff were already doing.
+**A clear picture of the work and its handoffs.** Staff interviews, process documents and system activity showed where information passed cleanly and where someone had to collect it by hand. That gave the build a practical starting point: make the supporting information available within the work staff were already doing.
 
 I connected four business systems in the client's own cloud account and converted thousands of PDFs into searchable text. Matching the records required checks for duplicates and conflicting identities. Related information now sits alongside its source references, with unresolved facts left visible for a person to review.
 
-**Building on the team's existing workflows.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. A preparation workflow can gather the information and draft a document; a review workflow can return the supporting records and open questions alongside it.
+**Staff workflows connected to shared information.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. A preparation workflow can gather the information and draft a document; a review workflow can return the supporting records and open questions alongside it.
 
 The shared source limits access by role and refreshes nightly. Each update is checked before publication, so a failed refresh leaves the last good version available. Staff can inspect the records behind an answer before relying on it.
 
-**Preparing the system for the people who will run it.** The engagement also includes account administration and guides for setup, everyday use and technical maintenance. I documented how to update and distribute the workflows so the team has a process for keeping them current, with the infrastructure in the client's own account.
+**The team equipped to run and maintain the system.** The engagement also includes account administration and guides for setup, everyday use and technical maintenance. I documented how to update and distribute the workflows so the team has a process for keeping them current, with the infrastructure in the client's own account.
 
 Staff have reported successful use of several workflows as rollout continues. The next step is to work through the remaining feedback and handoff with the team. Time saved has not been measured yet.
 
-Metadata title: Healthcare: Shared Context and AI Workflows | Patrick McHeyser
+Metadata title: Healthcare: Connected Records for Daily Work | Patrick McHeyser
 
 Metadata description: From an operations review to shared information, integrated AI workflows and a staff handoff for a healthcare services team.
 
@@ -541,7 +540,7 @@ Card link: See the work
 
 Psyche Digital
 
-**Taking AI further into client delivery.**
+**A team equipped to build and improve its own AI tools.**
 
 Card: Psyche Digital followed my instructions to build a content system, then returned for a broader operations review. I helped the team choose where to go next and supplied workflows, setup guidance and a method for testing and maintaining their own AI tools.
 
@@ -557,7 +556,7 @@ The guide also gives the team a method for maintaining what it builds: make a sm
 
 Psyche has the materials to begin with one familiar client account and one cycle of meeting preparation and follow-through. That first trial will show what needs correcting before wider use. The new workflows have not yet been installed in the team's accounts.
 
-Metadata title: Psyche Digital: AI in Client Delivery | Patrick McHeyser
+Metadata title: Psyche Digital: A Team Equipped to Build with AI | Patrick McHeyser
 
 Metadata description: An implemented content blueprint leads to an operations review and practical guidance for building, testing and maintaining AI workflows at Psyche Digital.
 

@@ -20,11 +20,25 @@ const figures: Partial<Record<Slug, ReactNode>> = {
 };
 
 /**
- * A body paragraph. A bold lead-in in the copy becomes a heading over its
+ * A body block. A short bulleted list supports the surrounding narrative.
+ * A bold lead-in in a paragraph becomes a heading over its
  * paragraph (spec 3.2): an H2 set at H3 size, since the page's only heading
  * above it is the H1.
  */
 function Body({ text }: { text: string }) {
+  if (text.startsWith('- ')) {
+    return (
+      <ul>
+        {text.split('\n').map((item) => (
+          <li key={item}>
+            {item.slice(2).split(/(\*\*[^*]+\*\*)/g).map((part, index) => (
+              part.startsWith('**') ? <strong key={index}>{part.slice(2, -2)}</strong> : part
+            ))}
+          </li>
+        ))}
+      </ul>
+    );
+  }
   const lead = text.match(/^\*\*(.+?)\*\* (.*)$/);
   if (!lead) return <p>{text}</p>;
   return (

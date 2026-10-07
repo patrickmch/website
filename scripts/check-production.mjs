@@ -86,10 +86,10 @@ try {
     '/': 'Patrick McHeyser | Operations and technology consulting',
     '/working-together': 'Working Together | Patrick McHeyser',
     '/work': 'Client Work | Patrick McHeyser',
-    '/work/mtro-pro': 'MTRO PRO: Customer Support, Engineering and QA | Patrick McHeyser',
-    '/work/manufacturing-systems': 'Manufacturing: Technical Leadership and Delivery | Patrick McHeyser',
-    '/work/shared-context': 'Healthcare: Shared Context and AI Workflows | Patrick McHeyser',
-    '/work/psyche-digital': 'Psyche Digital: AI in Client Delivery | Patrick McHeyser',
+    '/work/mtro-pro': 'MTRO PRO: Customer Problems into Product Improvements | Patrick McHeyser',
+    '/work/manufacturing-systems': 'Manufacturing: Business Priorities into Working Systems | Patrick McHeyser',
+    '/work/shared-context': 'Healthcare: Connected Records for Daily Work | Patrick McHeyser',
+    '/work/psyche-digital': 'Psyche Digital: A Team Equipped to Build with AI | Patrick McHeyser',
     '/about': 'About Patrick McHeyser',
     '/contact': "Let's Talk | Patrick McHeyser",
   };
@@ -334,7 +334,7 @@ try {
   await page.getByRole('heading', { name: 'More client work', exact: true }).waitFor();
   expect((await page.locator('main article a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context /work/mtro-pro /work/psyche-digital', 'Client Work should lead with manufacturing and healthcare, then show MTRO and Psyche');
   await page.locator('.work-story-card a[href="/work/mtro-pro"]').click();
-  await page.getByRole('heading', { name: 'Helping customers get started and the product keep improving.', exact: true }).waitFor();
+  await page.getByRole('heading', { name: 'Customer problems turned into product improvements.', exact: true }).waitFor();
   await page.locator('.story-figure').first().waitFor();
   expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
   expect(await page.locator('main figure').count() === 2, 'Story should show customer-success and QA diagrams');
@@ -360,13 +360,16 @@ try {
   for (const route of ['/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
     await page.goto(url('/work'), { waitUntil: 'load' });
     await page.locator(`main a[href="${route}"]`).click();
-    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'Technical leadership' : route.includes('shared-context') ? 'An AI assistant' : 'Taking AI further' }).waitFor();
+    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'Business priorities turned' : route.includes('shared-context') ? 'Scattered records' : 'A team equipped' }).waitFor();
     expect(new URL(page.url()).pathname === route, 'Client Work must open each published story');
     const copy = await page.locator('main').innerText();
     expect(!/prior-year|overstated|consequential calculation errors|cannot be trusted|Internal evidence|clearance|Hi \[Name\]/i.test(copy), `${route}: private details or superseded reporting wording appeared`);
     if (route.includes('manufacturing')) {
       expect(copy.includes('traced management figures back to source transactions'), 'Manufacturing should describe the reporting method');
       expect(copy.includes('operator testing'), 'Manufacturing must retain implementation status');
+      expect(await page.locator('.story-body ul > li').count() === 2, 'Manufacturing should use two supporting examples within its narrative');
+      expect(copy.includes('10,000 formulas') && copy.includes('99 archived quotes') && copy.includes('30,000 formulas'), 'Manufacturing examples should retain their scale and validation metrics');
+      expect(copy.includes('the aim was more consistent quoting'), 'Manufacturing should distinguish intended business outcomes from completed work');
     }
     if (route.includes('shared-context')) expect(copy.includes('rollout continues') && copy.includes('Time saved has not been measured yet'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
     expect(!copy.includes(' · ') && !/\+ /.test(copy.replace(/\d\+/g, '')), `${route}: no middle-dot labels or plus signs in the words`);
@@ -384,7 +387,7 @@ try {
     expect(figures.images === 0, `${route}: diagrams must be drawn, not images`);
     if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark where a person decides`);
     if (!route.includes('psyche')) expect(figures.tables === 1, `${route}: the workflow table should use the board style`);
-    expect(figures.boldSpans === 0 && (route.includes('psyche') || figures.leadIns >= 2), `${route}: bold lead-ins should be headings, not bold spans`);
+    expect(figures.boldSpans === 0 && (!route.includes('shared-context') || figures.leadIns >= 2), `${route}: paragraph lead-ins should be headings, not bold spans`);
     await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
     await page.locator('#contact-name').waitFor();
     expect(new URL(page.url()).pathname === '/contact', 'Every story should reach the contact form');

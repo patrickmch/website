@@ -1,5 +1,14 @@
 # mcheyser-site: progress
 
+## 2026-10-06: Outcome headings and manufacturing narrative
+
+- Applied Patrick's approved manufacturing narrative: assessment into fractional CTO and management-team work, sales handoffs across CRM and team responsibilities, two supporting examples, and the intended business outcomes. Retained the scale of the quoting workbook (almost 10,000 formulas), comparison against 99 archived quotes, reporting logic repeated across nearly 30,000 formulas, and operator-testing context.
+- Replaced all four story titles with outcome statements, shared by their cards and detail pages. Manufacturing: "Business priorities turned into working systems." Healthcare: "Scattered records brought together for daily work." MTRO PRO: "Customer problems turned into product improvements." Psyche: "A team equipped to build and improve its own AI tools." Revised healthcare and MTRO editorial section headings in the same direction, along with browser metadata titles.
+- Updated the copy canon first. Added semantic list rendering within the existing story prose so the two manufacturing examples support the narrative. Other story bodies, summaries, figures and tables are unchanged.
+- Typecheck, canonical-copy comparison (38 strings), production checks and normal preview build passed. The production check covers five-width layouts, navigation, metadata, list rendering, retained metrics, intended-outcome wording and mocked mail paths. Browser readback confirmed the manufacturing narrative and all four index titles. No new browser errors were found. The humanizer reported only the explicitly approved bold emphasis and labeled bullets, with no content, language or filler findings; those formatting choices were retained.
+- Changed files: `content/clientStories.ts`, `content/mtroWork.ts`, `docs/website-copy-2026-10.md`, `pages/ClientStoryPage.tsx`, `docs/design-spec.md`, `scripts/check-production.mjs`, and `PROGRESS.md`. Existing untracked `AGENTS.md` and `raw/` remain excluded.
+- Continued on `client-stories-stronger-2026-10` for local review at `http://localhost:4173/work/manufacturing-systems`. No production release.
+
 ## 2026-10-06: Local preview restored
 
 - Investigated a blank manufacturing story in the open review tab. The browser reported `Failed to fetch dynamically imported module` for `ClientStoryPage-OBeECiix.js`; the file existed in `dist/assets/`, but nothing was listening on port 4173.
