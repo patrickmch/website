@@ -1,5 +1,10 @@
 # mcheyser-site: progress
 
+## 2026-10-07: Outcome headings and proof callouts live
+
+- Patrick approved the headings and pen-note branch for release. GitHub `main` fast-forwarded from `bf6b101` to `57f53af`; Railway served the new bundle within a minute. Gate: clean tree, build, production check.
+- Patrick also asked to merge the other active branch, `pen-notes-2026-10-07`. It is the other session's build of the same pen-note design from the same afternoon: the same eight notes, record-row support and legend, in the same eight files, but without the headings and still carrying the "99 old quotes, 99 matches" note Patrick had vetoed. Merging it would have conflicted in every file and reintroduced that note, so it was left unmerged; everything of value in it is in `57f53af`. `claude/inspiring-sagan-4kon9p` (external-review scripts, 4 October) is unrelated to the site pages and was not merged.
+
 ## 2026-10-07: Outcome headings and proof callouts
 
 - Patrick reviewed two rounds of heading proposals (saved in the McHeyser wiki, `story-headings-proposal-2026-10-07.md`). Every story title and subheading now states a specific outcome in his chosen words; Psyche gets subheadings for the first time. Narratives, summaries, bullets and status lines are unchanged. Page titles follow the new H1s; the production check's expected titles and heading filters follow.
