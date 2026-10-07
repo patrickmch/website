@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-06: Figures on the reviewer's text, full on wide screens and simple on phones
+
+- Patrick chose the language-review text over the 4 October narrative and liked its outcome subheadings, so the figures branch now sits on `d9727dd` with that text untouched. Earlier figure work is tagged `story-figures-fixed-canvas-2026-10-06`.
+- Each story figure has two drawings. From 1024px up it shows the full drawing, which is laid out for that width. Below 1024px (phones, tablets, and the app's side pane) it shows a simple three-step version in the same primitives: a `useWideFigure` hook switches them, so only one is in the page at a time. The fixed-canvas scaling is gone.
+- Figures sit under the subheading they illustrate: manufacturing under pricing, reporting and delivery; healthcare after the connected-systems and access paragraphs; Psyche after the recap example; MTRO PRO under its first two sections. Two manufacturing subheadings and the healthcare handover section have no figure on purpose.
+- Pen circles measure layout size now, so a circle inside any transformed ancestor is not scaled twice (the defect Patrick saw as a missing mark). Small print says automatic on the steps that run on their own; a legend under the first figure on each page explains it.
+- Production check passed in the worktree; figure counts three, two, one and two. Copy canon, design spec (5.8, 7.1) and the proposal record the change.
+
 ## 2026-10-06: Fuller manufacturing story with outcome subheadings
 
 - Expanded the manufacturing story from roughly 250 to 370 words before subheadings. The narrative explains the sales handoff, quoting application, reporting ownership and development process. Four supporting bullets retain the metrics and add hiring/handover and software-investment details. The approved main title is unchanged.

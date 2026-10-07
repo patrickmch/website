@@ -1,23 +1,38 @@
-import type { ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Section, Prose, Eyebrow } from '../components/Section';
 import { ButtonLink, SecondaryLink } from '../components/Button';
-import { ManufacturingDelivery, ManufacturingReporting, SharedContext } from '../components/diagrams/ClientStories';
+import { ManufacturingQuote, ManufacturingReporting, ManufacturingDelivery, SharedContextBuild, SharedContextAnswer, PsycheFollowThrough } from '../components/diagrams/ClientStories';
 import { clientStories } from '../content/clientStories';
 
 type Slug = (typeof clientStories)[number]['slug'];
 
-/** The figures each story carries, placed after its body text. */
-const figures: Partial<Record<Slug, ReactNode>> = {
-  'manufacturing-systems': (
-    <>
-      <ManufacturingDelivery />
-      <ManufacturingReporting />
-    </>
-  ),
-  'shared-context': <SharedContext />,
+/**
+ * The figures each story carries, keyed by the index of the paragraph they follow,
+ * so each sits under the subheading it illustrates. A section with nothing a drawing
+ * would add has no figure.
+ */
+const figuresAfter: Partial<Record<Slug, Record<number, ReactNode>>> = {
+  'manufacturing-systems': { 2: <ManufacturingQuote />, 3: <ManufacturingReporting />, 4: <ManufacturingDelivery /> },
+  'shared-context': { 2: <SharedContextBuild />, 4: <SharedContextAnswer /> },
+  'psyche-digital': { 2: <PsycheFollowThrough /> },
 };
+
+/** Body paragraphs grouped into runs, each run ending where a figure goes. */
+function groups(paragraphs: readonly string[], figures: Record<number, ReactNode> | undefined) {
+  const runs: { texts: string[]; figure?: ReactNode }[] = [{ texts: [] }];
+  paragraphs.forEach((text, i) => {
+    const index = i + 1; // the lead paragraph is index 0 and lives in the hero
+    runs[runs.length - 1].texts.push(text);
+    const figure = figures?.[index];
+    if (figure) {
+      runs[runs.length - 1].figure = figure;
+      runs.push({ texts: [] });
+    }
+  });
+  return runs.filter((run) => run.texts.length > 0 || run.figure);
+}
 
 /**
  * A body block. A short bulleted list supports the surrounding narrative.
@@ -73,12 +88,18 @@ export default function ClientStoryPage({ slug }: { slug: Slug }) {
       </Section>
 
       <Section>
-        <Prose className="story-body">
-          {story.paragraphs.slice(1).map((text) => (
-            <Body key={text} text={text} />
-          ))}
-        </Prose>
-        {figures[story.slug]}
+        {groups(story.paragraphs.slice(1), figuresAfter[story.slug]).map((run, i) => (
+          <Fragment key={i}>
+            {run.texts.length > 0 && (
+              <Prose className="story-body">
+                {run.texts.map((text) => (
+                  <Body key={text} text={text} />
+                ))}
+              </Prose>
+            )}
+            {run.figure}
+          </Fragment>
+        ))}
         {'table' in story && (
           <div className="board-wrap story-table">
             <table className="board" role="table">

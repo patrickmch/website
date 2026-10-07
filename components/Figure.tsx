@@ -10,10 +10,12 @@ type FigureProps = {
   caption: string;
   description: string;
   className?: string;
+  /** A short key under the drawing, for example what the small print and the pen circle mean. */
+  legend?: string;
   children: React.ReactNode;
 };
 
-export function Figure({ n, caption, description, className = '', children }: FigureProps) {
+export function Figure({ n, caption, description, className = '', legend, children }: FigureProps) {
   const ref = useDrawOnView<HTMLElement>();
   const id = useId();
   const captionId = `fig-caption-${id}`;
@@ -27,6 +29,7 @@ export function Figure({ n, caption, description, className = '', children }: Fi
       aria-describedby={descId}
     >
       <div className="figure__body">{children}</div>
+      {legend && <p className="figure__legend">{legend}</p>}
       <p id={descId} className="visually-hidden">
         {description}
       </p>
@@ -51,8 +54,13 @@ export function Flow({
   return <div className={`flow ${annotated ? 'flow--annotated' : ''} ${className}`}>{children}</div>;
 }
 
-export function Stack({ className = '', children }: { className?: string; children: React.ReactNode }) {
-  return <div className={`stack ${className}`}>{children}</div>;
+export function Stack({ className = '', tag, children }: { className?: string; tag?: string; children: React.ReactNode }) {
+  return (
+    <div className={`stack ${className}`}>
+      {tag && <div className="stack__tag">{tag}</div>}
+      {children}
+    </div>
+  );
 }
 
 /* ---------- Node ---------- */
@@ -65,6 +73,8 @@ type NodeProps = {
   annotationPlacement?: 'above' | 'below';
   tick?: boolean;
   small?: boolean;
+  /** Small print above the label saying the step runs on its own: true for "automatic", or your own words. */
+  auto?: boolean | string;
   className?: string;
 };
 
@@ -76,11 +86,13 @@ export function Node({
   annotationPlacement = 'above',
   tick = false,
   small = false,
+  auto,
   className = '',
 }: NodeProps) {
   return (
     <div className={`node ${marked ? 'node--marked' : ''} ${small ? 'node--small' : ''} ${className}`}>
       <div className="node__box">
+        {auto && <span className="node__tag">{auto === true ? 'automatic' : auto}</span>}
         <div className={`node__label ${tick ? 'node__label--tick' : ''}`}>
           {tick && <PenTick className="node__tick" />}
           <span>{label}</span>
@@ -89,6 +101,43 @@ export function Node({
         {marked && <PenCircle />}
       </div>
       {marked && annotation && <Annotation text={annotation} placement={annotationPlacement} />}
+    </div>
+  );
+}
+
+/* ---------- Record ---------- */
+
+export type RecordRow = {
+  key: string;
+  value?: string;
+  /** tick: a resolved value with a check mark. flag: a pen-coloured note. plain: just the value. */
+  state?: 'tick' | 'flag' | 'plain';
+  /** Circle the key, as the paperwork figure does for a missing field. */
+  marked?: boolean;
+};
+
+/** A record card: a titled list of key and value rows, drawn like the customer record on Working Together. */
+export function Record({ title, tag, rows, className = '' }: { title: string; tag?: string; rows: RecordRow[]; className?: string }) {
+  return (
+    <div className={`record ${className}`}>
+      <div className="record__title">
+        <span>{title}</span>
+        {tag && <span className="record__tag">{tag}</span>}
+      </div>
+      {rows.map((row) => (
+        <div key={row.key} className={`record__row ${row.marked ? 'record__row--marked' : ''}`}>
+          <span className="record__key">
+            {row.key}
+            {row.marked && <PenCircle padX={8} padY={4} />}
+          </span>
+          {row.value !== undefined && (
+            <span className="record__val">
+              {row.state === 'tick' && <PenTick />}
+              {row.state === 'flag' ? <span className="record__flag">{row.value}</span> : row.value}
+            </span>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

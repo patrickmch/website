@@ -382,7 +382,7 @@ try {
       leadIns: document.querySelectorAll('.story-body h2.story-body__lead').length,
       boldSpans: [...document.querySelectorAll('.story-body p > strong')].length,
     }));
-    const wantFigures = route.includes('manufacturing') ? 2 : route.includes('shared-context') ? 1 : 0;
+    const wantFigures = route.includes('manufacturing') ? 3 : route.includes('shared-context') ? 2 : 1;
     expect(figures.figures === wantFigures, `${route}: expected ${wantFigures} drawn figure(s), got ${figures.figures}`);
     expect(figures.images === 0, `${route}: diagrams must be drawn, not images`);
     if (wantFigures) expect(figures.circles >= 1, `${route}: the pen should mark where a person decides`);

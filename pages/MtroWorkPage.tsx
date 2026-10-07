@@ -1,7 +1,7 @@
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Section, Prose, Eyebrow } from '../components/Section';
 import { ButtonLink, SecondaryLink } from '../components/Button';
-import { MtroOperations } from '../components/diagrams/MtroOperations';
+import { MtroAccountBrief, MtroQaWave } from '../components/diagrams/MtroOperations';
 import { mtroWork } from '../content/mtroWork';
 
 export default function MtroWorkPage() {
@@ -18,7 +18,7 @@ export default function MtroWorkPage() {
     {mtroWork.sections.map((section, index) => <Section key={section.heading} labelledBy={`work-section-${index}`}>
       <div className="section__heading"><h2 id={`work-section-${index}`}>{section.heading}</h2></div>
       <Prose>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</Prose>
-      {index < 2 && <MtroOperations lane={index as 0 | 1} />}
+      {index === 0 && <MtroAccountBrief />}{index === 1 && <MtroQaWave />}
     </Section>)}
     <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Have a similar problem?</h2>
       <Prose><p>Tell me which part of the work needs to get easier.</p></Prose>

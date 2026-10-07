@@ -492,7 +492,12 @@
 }
 
 .story-figure {
-  margin-top: 48px;
+  margin-top: 32px;
+}
+
+/* A figure sits under the subheading it illustrates; the text picks up again below it. */
+.story-figure + .story-body {
+  margin-top: 40px;
 }
 
 .story-table {

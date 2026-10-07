@@ -25,54 +25,6 @@ export const mtroWork = {
       ]
     }
   ],
-  "lanes": [
-    {
-      "title": "Customer success",
-      "caption": "Account context supports the next customer conversation. People review and approve communication.",
-      "description": "Account evidence feeds automated preparation, then a review queue, followed by human review and customer communication. Support requests also enter the review queue.",
-      "nodes": [
-        [
-          "Account evidence",
-          "Product activity, customer records, messages and bookings"
-        ],
-        [
-          "Gather and prepare",
-          "Assemble context and prepare the next action"
-        ],
-        [
-          "Review queue",
-          "Support requests and proposed follow-ups"
-        ],
-        [
-          "Human follow-through",
-          "Review, approve and help the customer"
-        ]
-      ]
-    },
-    {
-      "title": "Product quality",
-      "caption": "Browser testing produces evidence for repairs and release decisions. Repaired behavior is tested again.",
-      "description": "Product journeys and changes guide browser execution. Testing records evidence and reproducible failures, followed by retesting and a human decision on release readiness.",
-      "nodes": [
-        [
-          "Journeys and changes",
-          "Booking, lease signing, payments and guest flows"
-        ],
-        [
-          "Browser execution",
-          "Run scenarios and capture actual behavior"
-        ],
-        [
-          "Findings and retest",
-          "Document failures and check repairs"
-        ],
-        [
-          "Release judgment",
-          "Prioritize defects and decide readiness"
-        ]
-      ]
-    }
-  ],
   "metaTitle": "MTRO PRO: Customer Problems into Product Improvements | Patrick McHeyser",
   "description": "Customer onboarding, engineering repairs, account-research automation and browser testing for MTRO PRO, a rental software business."
 } as const;

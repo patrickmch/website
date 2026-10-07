@@ -1,6 +1,6 @@
 # Story figures: diagnosis and proposed redraw (5 October 2026)
 
-Status: proposal, not built. Branch `client-stories-stronger-2026-10`. Patrick's brief: the
+Status: built and revised. The figures now sit on the reviewer's text (6 October, Patrick's choice), each under the subheading it illustrates, with a full drawing from 1024px up and a simple three-step version below that. The fixed-canvas scaling tried on 5 October is retired (tag story-figures-fixed-canvas-2026-10-06).
 client-story figures read as pretty additions and do not show what he actually does.
 
 ## Why the current figures feel vague

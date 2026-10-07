@@ -13,7 +13,10 @@ export function useParentSize(ref: RefObject<Element | null>) {
 
     let frame = 0;
     const update = () => {
-      const rect = parent.getBoundingClientRect();
+      // Layout size, not screen size, so a pen mark inside a transformed ancestor is not scaled twice.
+      const rect = parent instanceof HTMLElement
+        ? { width: parent.offsetWidth, height: parent.offsetHeight }
+        : parent.getBoundingClientRect();
       const next = { width: Math.round(rect.width), height: Math.round(rect.height) };
       setSize((current) =>
         current && current.width === next.width && current.height === next.height ? current : next
