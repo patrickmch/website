@@ -1,5 +1,11 @@
 # mcheyser-site: progress
 
+## 2026-10-07: Client stories live
+
+- Patrick approved the figures branch for release. GitHub `main` fast-forwarded from `49aec9f` to `569ac52` (ten commits: the language review's four stories and the drawn figures with their full and simple versions). Railway rebuilt and the live bundle changed within two minutes of the push.
+- Pre-deploy gate in the worktree: clean tree, build, production check passed. The deploy was a fast-forward, so no merge commit; the stories branch `client-stories-stronger-2026-10` is fully included.
+- Live checks: Client Work index, the manufacturing story at pane width (simple figures) and at 1280px (full figures), the healthcare story at phone width, console clean.
+
 ## 2026-10-06: Figures on the reviewer's text, full on wide screens and simple on phones
 
 - Patrick chose the language-review text over the 4 October narrative and liked its outcome subheadings, so the figures branch now sits on `d9727dd` with that text untouched. Earlier figure work is tagged `story-figures-fixed-canvas-2026-10-06`.
