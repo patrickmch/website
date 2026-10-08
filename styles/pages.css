@@ -44,12 +44,35 @@
   }
 }
 
-/* ---------- Home: improved quoting flow ---------- */
+/* ---------- Home: quoting before and after ---------- */
+.quote-comparison__row + .quote-comparison__row {
+  margin-top: 40px;
+}
+
+.quote-comparison__label {
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: var(--text-fig);
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
 @media (min-width: 768px) {
-  .quote-flow {
-    padding-top: 60px;
+  .quote-comparison__row {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: start;
   }
 
+  .quote-comparison__row + .quote-comparison__row {
+    margin-top: 80px;
+  }
+
+  .quote-comparison__label {
+    margin: 12px 0 0;
+  }
+
+  .quote-comparison__before > .node,
   .quote-flow > .node {
     flex: 1 1 0;
   }

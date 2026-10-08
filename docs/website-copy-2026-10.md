@@ -119,15 +119,22 @@ Home approach diagram accessible name: From understanding the problem to putting
 
 ### Home diagram and social preview
 
-Dev preview approved for review, 8 October 2026. Show only the improved quoting flow, without the before row, comparison labels or owner-review branch. This is an example of an improvement, not a measured client result. Publication is pending Patrick's review.
+Dev preview approved for review, 8 October 2026. Show Before and After together, with the simpler three-step After flow and no owner-review branch. This is an example of an improvement, not a measured client result. Publication is pending Patrick's review.
 
 Accessible name only: An example of reducing the work involved in preparing a quote.
 
+Before:
+- Request comes in
+- Details retyped
+- Owner decides the price
+- Quote written manually
+
+After:
 - Job details entered once
 - Agreed pricing rules / prepare the quote (circled, note: The team can prepare routine quotes without waiting for the owner.)
 - Team reviews and sends
 
-Accessible description: Three steps show an improved quoting process. Job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'The team can prepare routine quotes without waiting for the owner.'
+Accessible description: Two flows compare preparing a quote before and after an improvement. Before: a request comes in, details are retyped, the owner decides the price, and the quote is written manually. After: job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'The team can prepare routine quotes without waiting for the owner.'
 
 Social preview: Operations and technology for growing businesses. Three steps: Request comes in → Price decision (circled, note: work waits here) → Quote sent.
 

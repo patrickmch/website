@@ -1,8 +1,15 @@
 # mcheyser-site: progress
 
+## 2026-10-08: Keep the comparison and the simpler After flow
+
+- Patrick clarified that he liked Before and After together. Restored the original four-step Before row and both labels, keeping the simplified three-step After row without the owner-review branch. Updated the copy canon, accessible description and design spec to match.
+- Typecheck, build and diff whitespace checks passed. Browser readback confirmed both labels and exactly three After steps. Desktop and phone screenshots passed without overflow, failed requests or console errors. The first production check reported a failed request for the unchanged About portrait; direct readback returned HTTP 200. The unchanged production check passed on rerun (`PORT=4335 npm run check`). No email sent.
+- Still a dev preview at `http://127.0.0.1:4330/?review=0` on `codex/quoting-before-after-preview`; no production deployment.
+- Changed files: `components/diagrams/QuoteFlow.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`. No new source files.
+
 ## 2026-10-08: Simplify the dev preview to the improved flow
 
-- Patrick preferred the after flow by itself and asked to remove the dangling owner-review branch. Home now shows three steps: details entered once, agreed pricing rules preparing the quote, and team review/send. Removed the before row, comparison labels, exception branch and their unused styles. Kept the orange circle and note on the pricing rules, with no visible caption.
+- Interpreted Patrick's request as preferring the after flow by itself, as well as removing the dangling owner-review branch. This interpretation was corrected in the next entry above. At this revision Home showed three steps: details entered once, agreed pricing rules preparing the quote, and team review/send. Removed the before row, comparison labels, exception branch and their unused styles. Kept the orange circle and note on the pricing rules, with no visible caption.
 - Updated canonical copy, accessible description and design spec. Adjusted the existing geometry check to expect three aligned boxes. `npm run typecheck`, `PORT=4333 npm run check` and `git diff --check` passed; browser inspection confirmed desktop and phone layouts. Contact checks were mocked.
 - Remains a dev preview at `http://127.0.0.1:4330/?review=0` on `codex/quoting-before-after-preview`. No production deployment.
 - Changed files: `components/diagrams/QuoteFlow.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `scripts/check-production.mjs`, and `PROGRESS.md`. No new source files.

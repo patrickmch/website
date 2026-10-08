@@ -234,13 +234,14 @@ All diagram text is illustrative and generic across industries. No real client n
 The two Home diagrams omit visible captions and figure numbers (Patrick, 8 October 2026). Their drawings, pen annotations and screen-reader descriptions remain. The former caption text supplies an accessible figure name. Other pages retain their existing captions.
 
 ### Fig. 1 — Quote flow (Home hero)
-**Dev preview, 8 October 2026.** After reviewing the comparison, Patrick chose only the improved flow and removed the owner-review branch. Publication is pending review. The drawing demonstrates an illustrative improvement using the same quoting example.
+**Dev preview, 8 October 2026.** Patrick clarified that he prefers Before and After together, keeping the simpler After flow without the owner-review branch. Publication is pending review. The drawing demonstrates an illustrative improvement using the same quoting example.
 
 Accessible name only: "An example of reducing the work involved in preparing a quote."
-- Job details entered once → Agreed pricing rules / prepare the quote → Team reviews and sends.
+- Before: Request comes in → Details retyped → Owner decides the price → Quote written manually.
+- After: Job details entered once → Agreed pricing rules / prepare the quote → Team reviews and sends.
 - The pen circles the pricing rules, with the note "The team can prepare routine quotes without waiting for the owner."
 
-One horizontal flow at 768px and up, stacked vertically on phones. Keep the existing mono text, paper, ink and pen tokens. No comparison labels, exception branch, visible figure caption or number.
+Two horizontal flows at 768px and up, with Before and After labels aligned at the left. On phones the flows stack vertically. Keep the existing mono text, paper, ink and pen tokens. No exception branch, visible figure caption or number.
 
 The social preview remains the prior quoting illustration restored on 7 October. The growth headline remains on Home.
 
