@@ -53,15 +53,16 @@ export default function AboutPage() {
               </p>
               <p>
                 At NOLS, I led leadership intensives for Fortune 500 executives, military special operations
-                personnel, and participants from Wharton and other leading MBA programs. We used demanding wilderness
-                expeditions to practice making decisions, communicating clearly, and leading a team.
+                personnel, and participants from Wharton and other leading MBA programs. These experiences used
+                demanding wilderness expeditions to develop decision-making, communication, and team leadership.
               </p>
               <p>
-                I also trained and supported instructors, worked with international teams, and coordinated expedition
-                logistics. Alongside handling emergencies and evacuations, I gave difficult performance feedback and
-                helped instructors develop their judgment. I used my software skills to automate repetitive work, too.
-                I still draw on that experience when a technical change depends on people learning new ways to work
-                together.
+                My responsibilities extended to training and supporting instructors, working with international
+                teams, and coordinating complex expedition logistics. I handled emergencies and evacuations,
+                gave difficult performance feedback, and helped instructors develop their judgment and
+                leadership, while using my software skills to automate repetitive work. That experience
+                continues to shape how I work: understanding what people are dealing with, making practical
+                decisions, and carrying improvements through.
               </p>
             </Prose>
           </div>
@@ -92,8 +93,9 @@ export default function AboutPage() {
             are unclear, and what makes a change difficult to put into practice.
           </p>
           <p>
-            I'll explain my recommendations and work through your questions with you. When we put a change in place, I
-            want your team to understand how it works and feel confident using it.
+            You can expect clear explanations, room to question my recommendations, and direct involvement as we
+            put the changes to work. My aim is to leave your team with something they understand and can use with
+            confidence.
           </p>
         </Prose>
         <ProofSlot

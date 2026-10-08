@@ -231,19 +231,18 @@ Figure numbers restart on each page; the "Fig. N" names below are the figures' i
 
 All diagram text is illustrative and generic across industries. No real client names, no numbers that read as results, no currency.
 
-### Fig. 1 — Customer request (Home hero, amended 7 October 2026)
-The Home opening now leads with capacity for growth across industries. Keep the existing drawing and pen style, using a customer request that waits for an owner's decision. Quoting remains a specific example on Working Together and in the manufacturing story.
-
-Caption: "A customer request moving through the business. In this example, the team has the information but needs the owner's decision before work can continue."
+### Fig. 1 — Quote flow (Home hero)
+Caption: "A quote, as it moves through a business. In this example, the work waits for a pricing decision." (Amended: "where work usually waits" stated a diagnosis as a general fact; "Illustrative." removed 4 October.)
 Five nodes, left to right (label / where it happens):
-1. Request comes in / from a customer
-2. Information gathered / from several systems
-3. Decision needed / waits for the owner
-4. Work continues / with the team
-5. Customer updated / on what happens next
-PenCircle around node 3. Annotation: "the team waits for a decision".
+1. Request comes in / email
+2. Job details gathered / re-typed into a spreadsheet
+3. Price decision / waits for the owner (Amended: "Price decided" contradicted its own sublabel)
+4. Quote written / Word template
+5. Quote sent / email, then follow-up
+PenCircle around node 3. Annotation: "the quote waits for the owner's price" (amended 7 October 2026: notes say what happens, not a state).
 Small screens: nodes stack vertically, arrows point down, annotation sits under node 3.
-The social preview uses the approved growth headline and the same request, decision and work-continuing steps.
+
+The prior quote diagram and social preview were restored at Patrick's request on 7 October. The new growth headline remains on Home.
 
 ### Fig. 2 — From understanding to use (Home, "Know what to change, with someone to see it through.")
 Caption: "From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)

@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-07: Restore the copy and diagrams Patrick preferred
+
+- Patrick reviewed the published change list and requested the prior Home quoting diagram and social preview, About biography/body, all four client-story narratives and card summaries, workflow tables, and healthcare/Psyche captions. Restored those from `78109a2`, the version before the tone pass. The new Home opening, About opening, other unmarked copy edits and diagram typecheck fix remain.
+- Updated the copy canon first. The two story data files, story captions, Home diagram, social preview template and social image match the prior version exactly. The About body matches the prior version while its new opening stays. Canonical comparison passed for all 80 story strings, including tables and metadata. Confirmed that the unmarked Home, Working Together, Contact, Client Work, metadata and approach-diagram edits are unchanged.
+- `npm run typecheck`, `PORT=4321 npm run check` and `git diff --check` passed. Production checks cover the routes, five-width layouts, diagram geometry and mocked contact paths. No email was sent.
+- Release target is `patrickmch/website` main. Prior live revision `6d70856` is the rollback reference. Live verification follows publication.
+- Changed files: `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `pages/AboutPage.tsx`, `pages/OgPage.tsx`, `content/clientStories.ts`, `content/mtroWork.ts`, `components/diagrams/QuoteFlow.tsx`, `components/diagrams/ClientStories.tsx`, `public/og.png`, and `PROGRESS.md`.
+
 ## 2026-10-07: Growth capacity positioning and tone
 
 - Applied Patrick's approved opening: "Build the capacity for your next stage of growth", with established businesses under operating pressure as the audience and software, automation and AI as the method. Home, Working Together, About, metadata and the social preview follow that direction. The Home diagram now follows a customer request waiting on an owner's decision. Quoting remains among the specific examples and in the manufacturing story.

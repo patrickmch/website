@@ -7,14 +7,14 @@ export default function OgPage() {
     <div className="og is-drawn" id="og">
       <div>
         <Wordmark size="display" asText />
-        <p className="og__tag">Build the capacity for your next stage of growth.</p>
+        <p className="og__tag">Operations and technology for growing businesses.</p>
       </div>
       <Flow annotated className="flow--even">
         <Node label="Request comes in" />
         <Connector />
-        <Node label="Decision needed" marked annotation="the team waits for a decision" />
+        <Node label="Price decision" marked annotation="work waits here" />
         <Connector />
-        <Node label="Work continues" />
+        <Node label="Quote sent" />
       </Flow>
       <div className="og__foot">
         <span>Patrick McHeyser</span>
