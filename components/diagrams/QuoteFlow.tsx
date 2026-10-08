@@ -1,23 +1,23 @@
 import { Figure, Flow, Node, Connector } from '../Figure';
 
-/** Fig. 1: a quote, as it moves through a business. */
+/** Fig. 1: a customer request waiting on an owner's decision. */
 export function QuoteFlow() {
   return (
     <Figure
       n={1}
-      caption="A quote, as it moves through a business. In this example, the work waits for a pricing decision."
-      description="Five steps in a row. A request comes in by email. Job details are gathered and re-typed into a spreadsheet. A price decision, which waits for the owner; in this example that step is circled with the note 'the quote waits for the owner's price'. The quote is written in a Word template. The quote is sent by email, then followed up."
+      caption="A customer request moving through the business. In this example, the team has the information but needs the owner's decision before work can continue."
+      description="Five steps in a row. A customer request comes in. Information is gathered from several systems. A decision is needed from the owner, circled with the note 'the team waits for a decision'. Once the decision is made, the team continues the work and updates the customer on what happens next."
     >
       <Flow annotated className="flow--even">
-        <Node label="Request comes in" where="email" />
+        <Node label="Request comes in" where="from a customer" />
         <Connector />
-        <Node label="Job details gathered" where="re-typed into a spreadsheet" />
+        <Node label="Information gathered" where="from several systems" />
         <Connector />
-        <Node label="Price decision" where="waits for the owner" marked annotation="the quote waits for the owner's price" />
+        <Node label="Decision needed" where="waits for the owner" marked annotation="the team waits for a decision" />
         <Connector />
-        <Node label="Quote written" where="Word template" />
+        <Node label="Work continues" where="with the team" />
         <Connector />
-        <Node label="Quote sent" where="email, then follow-up" />
+        <Node label="Customer updated" where="on what happens next" />
       </Flow>
     </Figure>
   );

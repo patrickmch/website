@@ -149,7 +149,7 @@ export function SharedContextBuild() {
     <Figure
       n={1}
       legend={LEGEND}
-      caption="How the shared information is built and kept fresh. Four systems are gathered every night into one place the client owns, matched up, checked and published. If a night fails, yesterday's copy keeps working and nobody notices."
+      caption="Records from four systems are brought together every night in the client's own account. They are matched and checked before the update becomes available. If a refresh fails, staff can keep using the last successful version."
       description={wide
         ? "Four systems stacked on the left: project boards, customer records, files and documents, and the website. Their arrows merge, labelled gathered every night, into gather and match up, marked automatic: records that belong together are joined, and a number alone is never enough. If records disagree, a person decides. Next, checked before publishing, marked automatic: missing fields, which source wins, private details kept out. Last, updated every night, marked automatic and circled with the note 'a failed night keeps yesterday's copy': the switch takes under a minute."
         : "Three steps. Four systems, gathered every night, marked automatic. Matched and checked, marked automatic; if records disagree, a person decides. Updated every night, marked automatic and circled with the note 'a failed night keeps yesterday's copy'."}
@@ -189,7 +189,7 @@ export function SharedContextAnswer() {
   return (
     <Figure
       n={2}
-      caption="What a person sees. Every answer says where it came from. Anything the records disagree on is shown, not hidden. Each person can only see what their role allows, and the assistant can read the records but never change them."
+      caption="Each answer includes its sources and flags any disagreements between records. People see only what their role allows. The assistant can read the records but cannot change them."
       description={wide
         ? "Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled and circled with the note 'two records disagree, so it says so'. A person reviews and decides."
         : "Three steps. A staff member asks, in the AI assistant they already use. An answer with its sources, marked automatic and circled with the note 'two records disagree, so it says so': read only, limited by role. A person reviews and decides."}
@@ -229,7 +229,7 @@ export function PsycheFollowThrough() {
     <Figure
       n={1}
       legend={LEGEND}
-      caption="After the meeting. What a recap still leaves to do gets done from the team's own documents and task list, checked, and approved by a person."
+      caption="The proposed workflow after a meeting: use the team's documents and task list to prepare the follow-up work, then check it before a person approves it."
       description={wide
         ? "A meeting recap lists decisions, three agreed; who owns each, named; and due dates, set. Arrows fan out, labelled carried into, to three results marked automatic: tasks updated with what was agreed, materials prepared for that client, and the right people get the context. The three fan back in to checked, then a person approves, where a quick check runs first; it is circled with the note 'five skills, each with a pass or fail check'."
         : "Three steps. A meeting recap. Tasks, materials and context prepared, marked automatic. Checked, then a person approves, circled with the note 'five skills, each with a pass or fail check'."}

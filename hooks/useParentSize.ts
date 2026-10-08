@@ -8,8 +8,8 @@ export function useParentSize(ref: RefObject<Element | null>) {
   const [size, setSize] = useState<{ width: number; height: number } | null>(null);
 
   useLayoutEffect(() => {
-    const parent = ref.current?.parentElement;
-    if (!parent) return;
+    const parent = ref.current?.parentNode;
+    if (!(parent instanceof Element)) return;
 
     let frame = 0;
     const update = () => {

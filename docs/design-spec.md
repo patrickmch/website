@@ -231,19 +231,22 @@ Figure numbers restart on each page; the "Fig. N" names below are the figures' i
 
 All diagram text is illustrative and generic across industries. No real client names, no numbers that read as results, no currency.
 
-### Fig. 1 — Quote flow (Home hero)
-Caption: "A quote, as it moves through a business. In this example, the work waits for a pricing decision." (Amended: "where work usually waits" stated a diagnosis as a general fact; "Illustrative." removed 4 October.)
-Five nodes, left to right (label / where it happens):
-1. Request comes in / email
-2. Job details gathered / re-typed into a spreadsheet
-3. Price decision / waits for the owner (Amended: "Price decided" contradicted its own sublabel)
-4. Quote written / Word template
-5. Quote sent / email, then follow-up
-PenCircle around node 3. Annotation: "the quote waits for the owner's price" (amended 7 October 2026: notes say what happens, not a state).
-Small screens: nodes stack vertically, arrows point down, annotation sits under node 3.
+### Fig. 1 — Customer request (Home hero, amended 7 October 2026)
+The Home opening now leads with capacity for growth across industries. Keep the existing drawing and pen style, using a customer request that waits for an owner's decision. Quoting remains a specific example on Working Together and in the manufacturing story.
 
-### Fig. 2 — How the work gets looked at (Home, "I help you decide what to change")
-Caption: "How the work gets looked at, then changed. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
+Caption: "A customer request moving through the business. In this example, the team has the information but needs the owner's decision before work can continue."
+Five nodes, left to right (label / where it happens):
+1. Request comes in / from a customer
+2. Information gathered / from several systems
+3. Decision needed / waits for the owner
+4. Work continues / with the team
+5. Customer updated / on what happens next
+PenCircle around node 3. Annotation: "the team waits for a decision".
+Small screens: nodes stack vertically, arrows point down, annotation sits under node 3.
+The social preview uses the approved growth headline and the same request, decision and work-continuing steps.
+
+### Fig. 2 — From understanding to use (Home, "Know what to change, with someone to see it through.")
+Caption: "From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
 A vertical numbered strip with a 1.5px `--stroke` line down the left, in two groups so the Sprint's boundary is in the drawing (Amended): under the mono label "Discovery Sprint", steps 1 to 3; under the mono label "Implementation, scoped separately", step 4.
 1. Walk through real examples with the people doing the work
 2. Find where it is held up
@@ -287,10 +290,10 @@ Shows tokens as swatches with hex and contrast, the type scale, the wordmark at 
 Section order is the copy doc's order. Every piece of visitor-facing copy comes from the copy doc verbatim. Editorial notes become ProofSlots or production behavior; they are never rendered as text.
 
 ### 7.1 Home
-1. **Hero.** Eyebrow "Operations and technology for growing businesses". H1 "Make it easier to take on more business." Lead paragraph, second paragraph (prose column). Primary button "Let's talk" → Contact with the secondary link "See how I've worked with others" → Client Work beside it (Amended 4 October 2026). Below the text, Fig. 1 at full container width.
+1. **Hero.** Eyebrow "Operations and technology for growing businesses". H1 "Build the capacity for your next stage of growth." Lead paragraph, second paragraph (prose column). Primary button "Let's talk" → Contact with the secondary link "See how I've worked with others" → Client Work beside it (Amended 4 October 2026). Below the text, Fig. 1 at full container width.
 2. **ProofSlot** (quote): "Early trust signal. Use a real, approved client quote with attribution."
 3. **"Where is the extra work coming from?"** H2, then the four problems as an unnumbered 2 by 2 card grid, each an H3 plus paragraph.
-4. **"I help you decide what to change and carry it through."** H2, three paragraphs in the prose column (7 of 12 columns), Fig. 2 beside them in columns 8 to 12 at 1024px and up, below them otherwise.
+4. **"Know what to change, with someone to see it through."** H2, three paragraphs in the prose column (7 of 12 columns), Fig. 2 beside them in columns 8 to 12 at 1024px and up, below them otherwise.
 5. **"Selected client work."** (Amended 5 October 2026.) H2, then the anonymous manufacturing and healthcare stories in that order, using the existing two-column card grid (`.cards--2`). Each card has the sector eyebrow, H3 title, summary and "See the work" link. They stack below 768px. "See a sample of client work" follows the pair. MTRO PRO and Psyche remain accessible through Client Work. The illustrative example rows remain on Working Together (7.2).
 6. **Ink block.** "Start with a Discovery Sprint." paragraph, secondary link "See how we work together" → Working Together.
 7. **"You'll work directly with me."** Portrait (chair photo, 4:5) in 5 columns; H2, paragraph, secondary link "More about Patrick" → About in 7 columns; then, below the whole row at full container width, a **ProofSlot** (quote): "Approved testimonial about the experience of working with him." The copy's bracket says "photograph of Patrick and an approved testimonial"; the photograph is the portrait and the testimonial is the slot.

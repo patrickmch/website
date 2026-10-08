@@ -32,7 +32,7 @@ const problems = [
 export default function HomePage() {
   usePageMeta(
     'Patrick McHeyser | Operations and technology consulting',
-    'Practical help with the processes, software, and administrative work that make growth harder. Work directly with Patrick McHeyser from discovery through implementation.',
+    'Build capacity for your next stage of growth. Patrick McHeyser works with your team to improve processes and build practical tools using software, automation, and AI.',
     '/'
   );
 
@@ -41,14 +41,13 @@ export default function HomePage() {
       <Section first className="hero">
         <div className="hero__text">
           <Eyebrow>Operations and technology for growing businesses</Eyebrow>
-          <h1>Make it easier to take on more business.</h1>
+          <h1>Build the capacity for your next stage of growth.</h1>
           <p className="lead">
-            I help owners and operations leaders get quotes out faster, reduce repetitive paperwork, and give their
-            teams a clear view of what needs attention.
+            For established businesses where growth is putting pressure on the team, the systems, and the way work gets done.
           </p>
           <p>
-            I work with your team to find where things are getting held up, improve the process, and build the
-            software, automation, or AI tools that help the work move forward.
+            I work with your team to improve processes, connect systems, and build practical tools using software,
+            automation, and AI.
           </p>
           <div className="hero__cta cta-row">
             <ButtonLink to="/contact">Let's talk</ButtonLink>
@@ -83,7 +82,7 @@ export default function HomePage() {
         <div className="approach">
           <div className="approach__text">
             <div className="section__heading">
-              <h2 id="approach-heading">I help you decide what to change and carry it through.</h2>
+              <h2 id="approach-heading">Know what to change, with someone to see it through.</h2>
             </div>
             <Prose>
               <p>
@@ -92,7 +91,7 @@ export default function HomePage() {
               </p>
               <p>
                 I build and test the changes with the people who will use them. We work through the exceptions
-                together and make sure the team knows how to use what's been put in place.
+                together, so the team is ready to use the tools in their day-to-day work.
               </p>
               <p>
                 My focus is on businesses around $5 million to $25 million in annual revenue, where the owners and
@@ -125,8 +124,8 @@ export default function HomePage() {
           <Prose>
             <p>
               A Discovery Sprint is a focused, paid engagement to understand what's holding the work up. We agree on
-              the scope, fee, and timing upfront. You leave with the findings, a recommendation on what to change
-              first, and a defined next step.
+              the scope, fee, and timing upfront. You'll know what I recommend changing first, why, and what it would
+              take.
             </p>
           </Prose>
           <div className="ink-block__cta">

@@ -11,11 +11,11 @@ const supportingStories = [
 ];
 
 export default function ClientWorkPage() {
-  usePageMeta('Client Work | Patrick McHeyser', 'Technical leadership, software and AI engagements, from assessment through delivery and team handoff.', '/work');
+  usePageMeta('Client Work | Patrick McHeyser', 'See how Patrick works with teams on software, automation, and AI, from understanding the problem to building the tools and helping people use them.', '/work');
   return <>
     <Section first className="hero"><div className="hero__text">
       <h1>Client work</h1>
-      <p className="lead">A closer look at the work, from the first assessment to building systems and helping the team take them on.</p>
+      <p className="lead">How I work with teams to understand a problem, build what they need, and put it to use.</p>
     </div></Section>
     <Section><ClientWorkFeature /></Section>
     <Section labelledBy="more-work-heading">

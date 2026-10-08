@@ -1,5 +1,15 @@
 # mcheyser-site: progress
 
+## 2026-10-07: Growth capacity positioning and tone
+
+- Applied Patrick's approved opening: "Build the capacity for your next stage of growth", with established businesses under operating pressure as the audience and software, automation and AI as the method. Home, Working Together, About, metadata and the social preview follow that direction. The Home diagram now follows a customer request waiting on an owner's decision. Quoting remains among the specific examples and in the manufacturing story.
+- Reviewed all nine marketing and story routes. Smoothed choppy or abstract prose, simplified the workflow tables, and made Contact more direct. Kept the latest story titles, subheadings, proof callouts, metrics, design and adoption boundaries. The healthcare caption now says a failed refresh keeps the last successful version available. Psyche's caption identifies the proposed workflow rather than implying it is installed.
+- Updated the copy canon first, then the implementation. Verified all 62 revised phrases and 80 story text/metadata/table strings against the canon, plus unchanged story headings and proof annotations. Local humanizer review supported the editorial pass; its score is not evidence of audience response.
+- Found an existing typecheck failure in `useParentSize`: TypeScript types `parentElement` as `HTMLElement`, making its non-HTML fallback `never`. Read `parentNode` and narrow it to `Element`, preserving both layout-size measurements for HTML and the fallback for other elements. Typecheck now passes.
+- Validation: `npm run typecheck`, `PORT=4314 npm run check`, and `git diff --check` passed. Existing screenshot checks passed at 360, 390, 768, 1024 and 1440 pixels, with no overflow, failed requests or browser errors. Reviewed the new opening at desktop and phone widths, Working Together and About in the browser, and the regenerated social image. Mail checks were mocked; no email was sent.
+- Release target: `patrickmch/website` main, which deploys to Railway. Previous live revision: `78109a2`. Rollback is a reviewed revert of the release commit. Live verification follows publication.
+- Changed files: `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `pages/HomePage.tsx`, `pages/WorkingTogetherPage.tsx`, `pages/AboutPage.tsx`, `pages/ContactPage.tsx`, `pages/ClientWorkPage.tsx`, `pages/OgPage.tsx`, `pages/StylePage.tsx`, `content/clientStories.ts`, `content/mtroWork.ts`, `components/diagrams/QuoteFlow.tsx`, `components/diagrams/SprintSteps.tsx`, `components/diagrams/ClientStories.tsx`, `hooks/useParentSize.ts`, `index.html`, `public/og.png`, and `PROGRESS.md`. No new source files. The hosted talk, retained intake page, dependencies and styles are unchanged.
+
 ## 2026-10-07: Outcome headings and proof callouts live
 
 - Patrick approved the headings and pen-note branch for release. GitHub `main` fast-forwarded from `bf6b101` to `57f53af`; Railway served the new bundle within a minute. Gate: clean tree, build, production check.

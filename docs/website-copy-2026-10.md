@@ -2,8 +2,9 @@
 title: Website Copy for Designer Handoff - October 2026
 type: draft
 created: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-07
 sources:
+  - Patrick's October 7 approval of growth-capacity positioning and a site-wide tone pass
   - Patrick's October 5 approval of broader engagement narratives and manufacturing/healthcare prominence
   - Patrick's October 4 LinkedIn biography and About-page positioning revision
   - Patrick's October 2026 positioning and website copy brief
@@ -13,7 +14,7 @@ related: []
 
 # Website copy for the designer
 
-**Status: complete copy draft for design review.** This document contains the copy for Home, Working Together, About, and Contact, followed by shared labels and page metadata. It is ready to use when exploring the site design with Patrick.
+**Status: approved positioning, with a tone and consistency revision for publication.** This is the canonical visitor copy for the marketing pages, client stories, diagrams and metadata.
 
 ## Content brief
 
@@ -30,11 +31,11 @@ related: []
 
 Operations and technology for growing businesses
 
-### Make it easier to take on more business.
+### Build the capacity for your next stage of growth.
 
-I help owners and operations leaders get quotes out faster, reduce repetitive paperwork, and give their teams a clear view of what needs attention.
+For established businesses where growth is putting pressure on the team, the systems, and the way work gets done.
 
-I work with your team to find where things are getting held up, improve the process, and build the software, automation, or AI tools that help the work move forward.
+I work with your team to improve processes, connect systems, and build practical tools using software, automation, and AI.
 
 **Let's talk**
 
@@ -60,11 +61,11 @@ Someone needs a pricing decision. A customer request falls outside the usual pro
 
 People still move information from one tool to another or build the report by hand. You need to know whether to improve what you have, connect the systems, or change the process before investing again.
 
-### I help you decide what to change and carry it through.
+### Know what to change, with someone to see it through.
 
 We start with real examples of the work and the people responsible for it. I look at the handoffs, information, and systems involved, then recommend where a change is most likely to help.
 
-I build and test the changes with the people who will use them. We work through the exceptions together and make sure the team knows how to use what's been put in place.
+I build and test the changes with the people who will use them. We work through the exceptions together, so the team is ready to use the tools in their day-to-day work.
 
 My focus is on businesses around $5 million to $25 million in annual revenue, where the owners and operations leaders want to grow and are ready to improve how the business runs.
 
@@ -74,7 +75,7 @@ Client: Custom manufacturing
 
 **From a 10,000-formula spreadsheet to software the company owns.**
 
-An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
+An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I work with the owner on software decisions and with the team to put them into practice. Together, we've worked on a quoting application, corrected management reports and a process for testing and releasing software changes.
 
 Link: See the work → /work/manufacturing-systems
 
@@ -82,7 +83,7 @@ Client: Healthcare services
 
 **Four systems answering as one, inside the team's AI assistants.**
 
-An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
+A healthcare team needed information from four business systems to support the AI workflows staff had already built. I connected those systems and worked with the team to use the information in their daily work. Rollout is continuing, alongside account setup and guides for maintaining the system.
 
 Link: See the work → /work/shared-context
 
@@ -90,7 +91,7 @@ Link: See a sample of client work → /work
 
 ### Start with a Discovery Sprint.
 
-A Discovery Sprint is a focused, paid engagement to understand what's holding the work up. We agree on the scope, fee, and timing upfront. You leave with the findings, a recommendation on what to change first, and a defined next step.
+A Discovery Sprint is a focused, paid engagement to understand what's holding the work up. We agree on the scope, fee, and timing upfront. You'll know what I recommend changing first, why, and what it would take.
 
 **See how we work together**
 
@@ -110,15 +111,29 @@ Tell me what's slowing the work down and what you'd like to change.
 
 **See how I've worked with others**
 
+Home approach diagram caption: From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps.
+
+### Home diagram and social preview
+
+Caption: A customer request moving through the business. In this example, the team has the information but needs the owner's decision before work can continue.
+
+- Request comes in / from a customer
+- Information gathered / from several systems
+- Decision needed / waits for the owner (circled, note: the team waits for a decision)
+- Work continues / with the team
+- Customer updated / on what happens next
+
+Accessible description: Five steps in a row. A customer request comes in. Information is gathered from several systems. A decision is needed from the owner, circled with the note 'the team waits for a decision'. Once the decision is made, the team continues the work and updates the customer on what happens next.
+
+Social preview: Build the capacity for your next stage of growth. Three steps: Request comes in → Decision needed (circled, note: the team waits for a decision) → Work continues.
+
 ## Working Together
 
 ### Start with the work that's slowing you down.
 
-You may know where the problem is. Quotes take too long. Each new customer brings more paperwork. Your team spends hours putting together information that should be easy to find.
+Your team is taking on more work, but the way it gets done hasn't kept up. People spend too much time chasing information or waiting for decisions that keep coming back to you.
 
-You may also have people working on the technology already, but need help deciding whether the work is taking the business in the right direction.
-
-I work with you to understand what's happening, decide what to change, and put the improvements into use.
+You may already have people working on the technology and need another pair of eyes on the priorities. I can work alongside them, from deciding what to change through putting it into use.
 
 **Let's talk**
 
@@ -126,7 +141,7 @@ I work with you to understand what's happening, decide what to change, and put t
 
 ### Understand what needs to change
 
-We look at how the work gets done, where it gets held up, and what your team has to do to keep it moving. I assess the process and the technology together, then recommend where to focus.
+We look at recent work with the people who did it, including the steps that took longer than they should. I look at the process and the systems together, then recommend where to focus.
 
 ### Build and put it to work
 
@@ -134,7 +149,7 @@ I build software, connect systems, and set up automation and AI around the work 
 
 ### Keep improving as the business grows
 
-Once a change is in use, we can see what it has resolved and what still needs attention. Further improvements and ongoing support can follow, with the responsibility and scope agreed together.
+Once the team is using a change, we can see what is working and what still needs attention. We can keep improving the systems as the business grows, with a clear agreement on what I am responsible for.
 
 ### What this can look like
 
@@ -156,7 +171,7 @@ The team can see which jobs are waiting for information or a decision, who is re
 
 A Discovery Sprint is a focused, paid engagement to understand an operating problem and decide what to do about it. It gives you a clear first step before committing to a larger project.
 
-We might investigate why quotes take so long, why serving each customer requires so much administration, or whether your existing software can support the way you want to grow.
+We might look at why each new customer adds so much admin, or whether your existing software can support the next stage of growth.
 
 **First, we agree on the question.**
 
@@ -166,13 +181,13 @@ In our initial conversation, we'll discuss what's getting harder, what you've tr
 
 I'll ask people to walk me through recent work: a quote, a customer handoff, a recurring report. We look at the systems and documents involved, including the steps that happen in email, spreadsheets, or someone's memory.
 
-The point is to understand where time goes, why work gets repeated, and what has to be true for a change to help.
+We follow the work closely enough to see why it gets held up or repeated, and what would actually make it easier.
 
 **You leave with a recommendation you can act on.**
 
 The findings explain:
 
-- Where the work is getting held up, with examples that support the diagnosis.
+- Where the work is getting held up, with examples from your business.
 - What I recommend changing first and why.
 - What your existing tools can support and where further work is needed.
 - What the next step involves, who needs to be involved, and what still needs to be confirmed.
@@ -189,7 +204,7 @@ I'll need someone who owns the problem, time with the people doing the work, and
 
 You can take the recommendations forward with your team, use another provider, ask me to scope the next stage, or stop there. The Discovery Sprint ends with the findings and our review of them.
 
-If we continue, we agree on the implementation work separately. If the problem and scope are already clear at the outset, we can discuss a scoped implementation directly.
+If we continue, we agree on the implementation work separately. If you already know what needs doing, we can discuss that work directly.
 
 > [Editorial: approved testimonial about understanding the business, the usefulness of the work, or follow-through.]
 
@@ -197,7 +212,7 @@ If we continue, we agree on the implementation work separately. If the problem a
 
 **Does it have to be an AI project?**
 
-No. The right change might be a simpler process, better use of existing software, a connection between systems, or a custom tool. AI can help with tasks such as finding relevant information or preparing a document for someone to review. We choose it where it serves the work.
+No. The right change might be a simpler process, better use of existing software, a connection between systems, or a custom tool. AI can help with tasks such as finding relevant information or preparing a document for someone to review. We use it when it makes the task easier.
 
 **Can you work with our existing team or technology provider?**
 
@@ -219,7 +234,7 @@ We'll start with a conversation about the problem and whether I can help.
 
 ### Hi, I'm Patrick McHeyser.
 
-I help owners and operations leaders improve how their businesses run and build the capacity to grow. My background spans software engineering, customer success, and executive leadership development.
+I work with owners and operations leaders whose businesses are growing faster than their systems and processes can handle. I've worked in software engineering, customer success, and executive leadership development.
 
 I'm based in Boulder, Colorado. You'll work directly with me.
 
@@ -229,15 +244,15 @@ I'm based in Boulder, Colorado. You'll work directly with me.
 
 I started in customer success and taught myself to code, eventually becoming a senior software engineer. I built custom applications and automated marketing workflows, working directly with business teams to translate their needs into working software.
 
-At NOLS, I led leadership intensives for Fortune 500 executives, military special operations personnel, and participants from Wharton and other leading MBA programs. These experiences used demanding wilderness expeditions to develop decision-making, communication, and team leadership.
+At NOLS, I led leadership intensives for Fortune 500 executives, military special operations personnel, and participants from Wharton and other leading MBA programs. We used demanding wilderness expeditions to practice making decisions, communicating clearly, and leading a team.
 
-My responsibilities extended to training and supporting instructors, working with international teams, and coordinating complex expedition logistics. I handled emergencies and evacuations, gave difficult performance feedback, and helped instructors develop their judgment and leadership, while using my software skills to automate repetitive work. That experience continues to shape how I work: understanding what people are dealing with, making practical decisions, and carrying improvements through.
+I also trained and supported instructors, worked with international teams, and coordinated expedition logistics. Alongside handling emergencies and evacuations, I gave difficult performance feedback and helped instructors develop their judgment. I used my software skills to automate repetitive work, too. I still draw on that experience when a technical change depends on people learning new ways to work together.
 
 ### What that experience brings to your business
 
 I'm comfortable talking through a decision with an owner, working out the details with the team, and building the software myself. I pay attention to what people need to do their jobs, where responsibilities are unclear, and what makes a change difficult to put into practice.
 
-You can expect clear explanations, room to question my recommendations, and direct involvement as we put the changes to work. My aim is to leave your team with something they understand and can use with confidence.
+I'll explain my recommendations and work through your questions with you. When we put a change in place, I want your team to understand how it works and feel confident using it.
 
 > [Editorial: approved testimonial that supports these working-style claims.]
 
@@ -253,7 +268,7 @@ You can expect clear explanations, room to question my recommendations, and dire
 
 Tell me a little about the work that's slowing you down and what you'd like to change. A few sentences is enough to start.
 
-I'll read your note and follow up about a conversation to understand the problem and see whether I can help.
+I'll read your note and get back to you to arrange a conversation.
 
 > [Editorial: form fields.]
 
@@ -324,8 +339,8 @@ patrick@mcheyser.com
 
 | Page | Title | Description |
 | --- | --- | --- |
-| Home | Patrick McHeyser \| Operations and technology consulting | Practical help with the processes, software, and administrative work that make growth harder. Work directly with Patrick McHeyser from discovery through implementation. |
-| Working Together | Working Together \| Patrick McHeyser | Start with a focused Discovery Sprint to understand an operating problem and decide what to change. Explore the process, deliverables, and implementation work. |
+| Home | Patrick McHeyser \| Operations and technology consulting | Build capacity for your next stage of growth. Patrick McHeyser works with your team to improve processes and build practical tools using software, automation, and AI. |
+| Working Together | Working Together \| Patrick McHeyser | Find out what is holding the work up and what to change first. Start with a Discovery Sprint, then build and test improvements with Patrick and your team. |
 | About | About Patrick McHeyser | Meet Patrick McHeyser, a Boulder-based software engineer and operations consultant who works directly with your team to understand problems and implement improvements. |
 | Contact | Let's Talk \| Patrick McHeyser | Tell Patrick what is getting harder to manage as your business grows. Start a conversation about the problem and whether he can help. |
 
@@ -334,7 +349,7 @@ patrick@mcheyser.com
 
 ### Client work
 
-A closer look at the work, from the first assessment to building systems and helping the team take them on.
+How I work with teams to understand a problem, build what they need, and put it to use.
 
 Featured stories: Custom manufacturing and Healthcare services, in that order. Use the titles, summaries and links from Selected client work above.
 
@@ -360,19 +375,19 @@ MTRO PRO
 
 External link: Visit MTRO PRO → https://mtropro.com/
 
-I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. I worked directly with operators on setup and product use, and brought their feedback to the developers. The work ranged from helping a customer get started to fixing the software behind a stalled onboarding.
+I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. I worked directly with operators on setup and product use, and brought their feedback to the developers. Sometimes that meant walking a customer through setup. Other times, it meant fixing the software that had stopped them.
 
 ### A seven-source account brief, ready every morning.
 
-Before following up, I needed to know how an account's setup was going and what had happened in the last conversation. A product event could show that payments were connected, while a message or booked call explained what to do next. Gathering that history repeatedly became a clear task to automate.
+Before following up, I needed to know how an account's setup was going and what had happened in the last conversation. The product could show that payments were connected, but I still needed the messages and booked calls to know what to do next. I was gathering the same history before each conversation, so I built a way to bring it together.
 
 I built a daily process that draws from seven sources to prepare an account brief, with incoming help requests collected into a review queue. Staff can check the context and proposed response before contacting the customer. Health checks and alerts make missing updates visible, so an empty brief is not mistaken for an inactive account.
 
 ### Product defects the developers could reproduce and retest.
 
-Booking, lease signing and payment need to work as a connected journey. I built an AI-assisted testing process that follows those steps in a browser, captures what happened and gives developers enough detail to reproduce a failure. Repairs go through the same journey again.
+Booking, lease signing and payment need to work as a connected journey. I built an AI-assisted testing process that follows those steps in a browser, captures what happened and gives developers enough detail to reproduce a failure. After a repair, the test runs through those steps again.
 
-More than a dozen test rounds ran between March and April. One booking review found seven defects across lease signing, checkout and payment status. Written test plans, browser evidence and retesting made the findings useful for deciding what needed repair and checking that it worked.
+More than a dozen test rounds ran between March and April. One booking review found seven defects across lease signing, checkout and payment status. The test plan and browser evidence gave developers a way to reproduce each problem. Retesting showed whether a repair worked.
 
 ### Property imports restored, with instructions for the team.
 
@@ -384,7 +399,7 @@ The account-research and support-intake systems have run in production since Jul
 
 Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
-Figure 1, the morning account brief (under "Account context ready for the next customer conversation."):
+Figure 1, the morning account brief (under "A seven-source account brief, ready every morning."):
 
 Caption: The morning account brief. Seven sources are gathered automatically every morning, and each one reports whether it worked. A person reads the page, edits the message and sends it.
 
@@ -429,7 +444,7 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 ### Client Work metadata
 
 /work title: Client Work | Patrick McHeyser
-/work description: Technical leadership, software and AI engagements, from assessment through delivery and team handoff.
+/work description: See how Patrick works with teams on software, automation, and AI, from understanding the problem to building the tools and helping people use them.
 /work/mtro-pro title: MTRO PRO: Customer Problems into Fixes, Tests and a Morning Brief | Patrick McHeyser
 /work/mtro-pro description: Customer onboarding, engineering repairs, account-research automation and browser testing for MTRO PRO, a rental software business.
 
@@ -442,17 +457,17 @@ Custom manufacturing
 
 **From a 10,000-formula spreadsheet to software the company owns.**
 
-Card: An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
+Card: An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I work with the owner on software decisions and with the team to put them into practice. Together, we've worked on a quoting application, corrected management reports and a process for testing and releasing software changes.
 
 The owner of a growing manufacturer brought me in to help evaluate the company's systems and decide where to invest next. What began as an assessment grew into an ongoing fractional CTO engagement and an invitation to join the management team.
 
-**A sales handoff designed end to end, from CRM to staffing.** I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. My role connected those operating decisions with the technical work needed to carry them out.
+**A sales handoff designed end to end, from CRM to staffing.** I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. I worked through those decisions with the team and took responsibility for the software changes they required.
 
 **Custom quoting software, built to retire the spreadsheets and raise productivity.** For quoting, much of the company's pricing knowledge lived in a spreadsheet. I worked through its calculations and operating rules with the business, then built an application where staff could prepare quotes, compare quantities and revisit saved versions. Past quotes gave us a way to check that the software preserved the pricing logic before operators tried it.
 
 **Metrics the team can trust and act on, maintained in-house.** In reporting, I traced management figures back to source transactions and worked with the owner on what the metrics should mean. I corrected the calculations and helped an internal specialist take responsibility for the reports. The handoff included read access and a process for checking replacement reports alongside the existing ones before switching over.
 
-**Software that keeps improving without breaking what works.** I also established a development process around the work an operator needed to complete. Changes went through implementation, testing and review, with a live check after release and a way to restore the previous version. Operator feedback then informed the next round of improvements.
+**Software that keeps improving without breaking what works.** I also set up a development process that starts with the task an operator needs to complete. Changes went through implementation, testing and review, with a live check after release and a way to restore the previous version. Operator feedback then informed the next round of improvements.
 
 Selected details from the engagement:
 
@@ -461,13 +476,13 @@ Selected details from the engagement:
 - I supported technical hiring and developer handovers, including capturing undocumented automation code in company version control.
 - I reviewed a major software proposal with the owner, accounting for migration, integrations and the effort required from the internal team.
 
-**Technical decisions made with the owner, then built.** The owner gained a technical counterpart who could help make a decision and take responsibility for carrying it into implementation. Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
+**Technical decisions made with the owner, then built.** The owner had someone to work through technical decisions with and take responsibility for building the changes. Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
 
 Metadata title: Manufacturing: From Spreadsheet to Software the Company Owns | Patrick McHeyser
 
 Metadata description: A systems assessment grows into fractional CTO work: leading delivery, developing internal ownership, building quoting software and improving reporting.
 
-Figure 1, one quote through the new software (under "Pricing expertise turned into working software."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+Figure 1, one quote through the new software (under "Custom quoting software, built to retire the spreadsheets and raise productivity."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
 Caption: One quote through the new software. Sales types in the request. The rules work out the price, save it as a new version and make the customer's PDF. A person checks it before it goes out. The software was tried on 99 old quotes and matched the spreadsheet every time.
 
@@ -479,7 +494,7 @@ Caption: One quote through the new software. Sales types in the request. The rul
 
 Accessible description: A quote request lists four things typed in by sales: what it is, one of six product types; the size, length, width and depth; the material, type and thickness; and how many, 250, 500 or 1,000. An arrow leads to the pricing rules, marked automatic: 111 rules and 37 lookup tables, written down from the old spreadsheet. Arrows fan out to four results, marked automatic: a priced quote with materials, labor, outside parts and shipping; prices for all three quantities; the quote saved as version 3 next to version 2; and a PDF for the customer. The four results fan back in to a person checking the quote before it goes to the customer. The pricing rules are circled with the note '10,000 formulas distilled into 111 rules'.
 
-Figure 2, making a report number trustworthy (under "Management reporting with traceable numbers and clear ownership."):
+Figure 2, making a report number trustworthy (under "Metrics the team can trust and act on, maintained in-house."):
 
 Caption: Making a report number trustworthy. I follow the number back to the orders behind it, fix what is wrong, and agree with the owner what the number should mean. The fixed reports now update on their own.
 
@@ -491,7 +506,7 @@ Caption: Making a report number trustworthy. I follow the number back to the ord
 
 Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted instead of orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own.
 
-Figure 3, how a change gets into the software safely (under "A repeatable way to deliver and improve software."):
+Figure 3, how a change gets into the software safely (under "Software that keeps improving without breaking what works."):
 
 Caption: How a change gets into the software safely. Nothing goes live until the automatic checks pass, a computer has tried it the way a user would, and a person has said yes. About 135 of these runs in the first four weeks, with 2,800 screenshots.
 
@@ -504,12 +519,12 @@ Caption: How a change gets into the software safely. Nothing goes live until the
 
 Accessible description: Three steps in a row, then three questions. AI writes the change, marked automatic, in a safe copy so nothing live is touched. The checks must pass, marked automatic: about 1,500 automatic tests run first. A computer tries it out, marked automatic: it clicks through the screens like a user and takes screenshots. Arrows fan out to three questions. Does it work, and is there proof, are marked automatic. Should it go live is where a person decides. The checks must pass is circled with the note '1,500 tests before anything goes live'. A line beneath, with a check mark, says a yes goes live on its own, with a check afterward and a way to undo it.
 
-| Manual friction | What the system or engagement handles | Human responsibility |
+| Where work gets held up | What changed | What people still decide |
 | --- | --- | --- |
-| Re-explaining quoting rules for each change | Explicit requirements and repeatable checks | Resolve rules and exceptions |
-| Repeating test steps after software changes | Automated checks and browser QA with evidence | Set acceptance criteria; assess gaps |
-| Tracing dashboard figures back to source transactions | Trace transactions, reconcile definitions and correct calculations | Agree business meaning and source practices |
-| Copying information between operational tools | Integration assessment and scoped implementation | Decide ownership and handoffs |
+| Re-explaining quoting rules for each change | Written pricing rules and checks for each change | Agree the pricing rules and handle exceptions |
+| Repeating test steps after software changes | Automatic tests and browser checks with screenshots | Decide what must work before release |
+| Tracing dashboard figures back to source transactions | Figures traced to transactions and calculations corrected | Agree what each figure means and how it is recorded |
+| Copying information between operational tools | Connections assessed and changes built for agreed tasks | Decide who owns each step |
 
 Card link: See the work
 
@@ -519,19 +534,19 @@ Healthcare services
 
 **Four systems answering as one, inside the team's AI assistants.**
 
-Card: An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
+Card: A healthcare team needed information from four business systems to support the AI workflows staff had already built. I connected those systems and worked with the team to use the information in their daily work. Rollout is continuing, alongside account setup and guides for maintaining the system.
 
 This healthcare services team already had business software, documented processes and people building useful AI workflows. Preparing a profile or recurring paperwork still meant gathering related information from several places. I began by looking at how the work moved between people and systems, then built a shared information source those workflows could use.
 
-**Every handoff mapped from interviews, documents and system activity.** Staff interviews, process documents and system activity showed where information passed cleanly and where someone had to collect it by hand. That gave the build a practical starting point: make the supporting information available within the work staff were already doing.
+**Every handoff mapped from interviews, documents and system activity.** I talked with staff and followed the work through their process documents and systems. That showed where people had to collect information by hand, and where connecting it would help them use the workflows they already had.
 
-I connected four business systems in the client's own cloud account and converted thousands of PDFs into searchable text. Matching the records required checks for duplicates and conflicting identities. Related information now sits alongside its source references, with unresolved facts left visible for a person to review.
+I connected four business systems in the client's own cloud account and converted thousands of PDFs into searchable text. Matching the records required checks for duplicates and conflicting identities. Staff can see the related information and the records it came from. If the records disagree, that disagreement stays visible for someone to review.
 
-**The team's workflows answer from one source.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. A preparation workflow can gather the information and draft a document; a review workflow can return the supporting records and open questions alongside it.
+**The team's workflows answer from one source.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. One workflow can gather the information and draft a document. Another checks the supporting records and lists the questions a person still needs to resolve.
 
 **Current information for the whole team, scoped to each person's role.** The shared source limits access by role and refreshes nightly. Each update is checked before publication, so a failed refresh leaves the last good version available. Staff can inspect the records behind an answer before relying on it.
 
-**The team equipped to run and maintain the system.** The engagement also includes account administration and guides for setup, everyday use and technical maintenance. I documented how to update and distribute the workflows so the team has a process for keeping them current, with the infrastructure in the client's own account.
+**The team equipped to run and maintain the system.** I also manage accounts and write guides for setup, everyday use and maintenance. The team has instructions for updating and sharing the workflows, and the infrastructure stays in the client's own account.
 
 Staff have reported successful use of several workflows as rollout continues. The next step is to work through the remaining feedback and handoff with the team. Time saved has not been measured yet.
 
@@ -541,7 +556,7 @@ Metadata description: From an operations review to shared information, integrate
 
 Figure 1, how the shared information is built and kept fresh (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
-Caption: How the shared information is built and kept fresh. Four systems are gathered every night into one place the client owns, matched up, checked and published. If a night fails, yesterday's copy keeps working and nobody notices.
+Caption: Records from four systems are brought together every night in the client's own account. They are matched and checked before the update becomes available. If a refresh fails, staff can keep using the last successful version.
 
 - Stack of four sources: Project boards; Customer records; Files and documents; The website
 - Fan in ("gathered every night") to Gather and match up (automatic): records that belong together are joined; a number alone is never enough; if records disagree, a person decides
@@ -553,7 +568,7 @@ Accessible description: Four systems stacked on the left: project boards, custom
 
 Figure 2, what a person sees (after the paragraph on access by role and the nightly refresh):
 
-Caption: What a person sees. Every answer says where it came from. Anything the records disagree on is shown, not hidden. Each person can only see what their role allows, and the assistant can read the records but never change them.
+Caption: Each answer includes its sources and flags any disagreements between records. People see only what their role allows. The assistant can read the records but cannot change them.
 
 - A staff member asks: in the AI assistant they already use
 - A locked door (automatic): can read, never change; each person sees only what their role allows
@@ -563,11 +578,11 @@ Caption: What a person sees. Every answer says where it came from. Anything the 
 
 Accessible description: Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled and circled with the note 'two records disagree, so it says so'. A person reviews and decides.
 
-| Workflow | What it does | Manual work targeted |
+| Workflow | What it does | Work it is designed to reduce |
 | --- | --- | --- |
-| Record lookup and profile preparation | Retrieve related information and produce a structured summary | Opening several tools and assembling the same context |
-| Document preparation | Gather required inputs and draft the appropriate paperwork | Re-keying facts into recurring documents |
-| Evidence review | Check supporting documents and return a source-linked checklist | Repeated document comparison before a human decision |
+| Record lookup and profile preparation | Find related records and prepare a summary | Opening several tools to collect the same information |
+| Document preparation | Gather the information and draft the paperwork | Retyping facts into recurring documents |
+| Evidence review | Check the documents and give a checklist with sources | Comparing the same documents before making a decision |
 
 Card link: See the work
 
@@ -579,11 +594,11 @@ Psyche Digital
 
 Card: Psyche Digital followed my instructions to build a content system, then returned for a broader operations review. I helped the team choose where to go next and supplied workflows, setup guidance and a method for testing and maintaining their own AI tools.
 
-Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The founders wanted to take on more client work while spending less time coordinating it. Our engagement grew from a content system for their own marketing into a review of how AI could carry more of the work through to completion.
+Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The founders wanted to take on more client work while spending less time coordinating it. We started with a content system for their own marketing, then looked at where AI could help with the work that followed a meeting or client request.
 
-**A content system the team built themselves from my instructions.** I designed the first content system and wrote the build instructions. The team followed them, got it set up and tested it, then returned to discuss a broader engagement. That experience set the standard for the next deliverable: instructions they could use to build and improve the tools themselves.
+**A content system the team built themselves from my instructions.** I designed the first content system and wrote the build instructions. The team followed them, got it set up and tested it, then returned to discuss a broader engagement. For the next piece of work, we kept the same approach: give the team instructions they could use to build and improve the tools themselves.
 
-**The real bottleneck: what a recap still leaves someone to do.** I followed 10 examples of actual work across client success, onboarding and social-content production. A meeting recap showed the opportunity clearly. Recording a decision was only the start; someone still had to find the relevant task, add instructions and give the right person enough context to act.
+**The real bottleneck: what a recap still leaves someone to do.** I followed 10 examples of actual work across client success, onboarding and social-content production. A meeting recap showed the opportunity clearly. Even with a decision written down, someone still had to find the relevant task and give the person doing it enough information to act.
 
 **Five starter skills, each with the sources, steps and a pass or fail check.** The assessment set out a sequence for tackling that work using the team's existing documents and task system. An implementation guide and five starter AI skills explain how to gather the sources, prepare the work and save the result where the team needs it. We refined the setup instructions after reviewing the recommendations together.
 
@@ -593,7 +608,7 @@ Psyche Digital already used AI for recaps, kickoff briefs and report highlights.
 
 Figure 1, after the meeting (after the paragraph with the meeting recap example). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
-Caption: After the meeting. What a recap still leaves to do gets done from the team's own documents and task list, checked, and approved by a person.
+Caption: The proposed workflow after a meeting: use the team's documents and task list to prepare the follow-up work, then check it before a person approves it.
 
 - Record "Meeting recap": Decisions, three agreed; Who owns each, named; Due dates, set
 - Fan out ("carried into") to three results (small print on the stack: automatic): Tasks updated with what was agreed; Materials prepared for that client; The right people get the context

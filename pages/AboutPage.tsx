@@ -18,8 +18,9 @@ export default function AboutPage() {
           <div className="about-hero__text hero__text">
             <h1>Hi, I'm Patrick McHeyser.</h1>
             <p className="lead">
-              I help owners and operations leaders improve how their businesses run and build the capacity to grow.
-              My background spans software engineering, customer success, and executive leadership development.
+              I work with owners and operations leaders whose businesses are growing faster than their systems and
+              processes can handle. I've worked in software engineering, customer success, and executive leadership
+              development.
             </p>
             <p>I'm based in Boulder, Colorado. You'll work directly with me.</p>
           </div>
@@ -52,16 +53,15 @@ export default function AboutPage() {
               </p>
               <p>
                 At NOLS, I led leadership intensives for Fortune 500 executives, military special operations
-                personnel, and participants from Wharton and other leading MBA programs. These experiences used
-                demanding wilderness expeditions to develop decision-making, communication, and team leadership.
+                personnel, and participants from Wharton and other leading MBA programs. We used demanding wilderness
+                expeditions to practice making decisions, communicating clearly, and leading a team.
               </p>
               <p>
-                My responsibilities extended to training and supporting instructors, working with international
-                teams, and coordinating complex expedition logistics. I handled emergencies and evacuations,
-                gave difficult performance feedback, and helped instructors develop their judgment and
-                leadership, while using my software skills to automate repetitive work. That experience
-                continues to shape how I work: understanding what people are dealing with, making practical
-                decisions, and carrying improvements through.
+                I also trained and supported instructors, worked with international teams, and coordinated expedition
+                logistics. Alongside handling emergencies and evacuations, I gave difficult performance feedback and
+                helped instructors develop their judgment. I used my software skills to automate repetitive work, too.
+                I still draw on that experience when a technical change depends on people learning new ways to work
+                together.
               </p>
             </Prose>
           </div>
@@ -92,9 +92,8 @@ export default function AboutPage() {
             are unclear, and what makes a change difficult to put into practice.
           </p>
           <p>
-            You can expect clear explanations, room to question my recommendations, and direct involvement as we
-            put the changes to work. My aim is to leave your team with something they understand and can use with
-            confidence.
+            I'll explain my recommendations and work through your questions with you. When we put a change in place, I
+            want your team to understand how it works and feel confident using it.
           </p>
         </Prose>
         <ProofSlot

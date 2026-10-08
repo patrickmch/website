@@ -135,7 +135,7 @@ export default function ContactPage() {
           Tell me a little about the work that's slowing you down and what you'd like to change. A few sentences is
           enough to start.
         </p>
-        <p>I'll read your note and follow up about a conversation to understand the problem and see whether I can help.</p>
+        <p>I'll read your note and get back to you to arrange a conversation.</p>
       </div>
 
       <div className="contact-form">

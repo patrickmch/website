@@ -12,7 +12,7 @@ import { SharedView } from '../components/diagrams/SharedView';
 const stages = [
   {
     title: 'Understand what needs to change',
-    body: 'We look at how the work gets done, where it gets held up, and what your team has to do to keep it moving. I assess the process and the technology together, then recommend where to focus.',
+    body: 'We look at recent work with the people who did it, including the steps that took longer than they should. I look at the process and the systems together, then recommend where to focus.',
   },
   {
     title: 'Build and put it to work',
@@ -20,14 +20,14 @@ const stages = [
   },
   {
     title: 'Keep improving as the business grows',
-    body: 'Once a change is in use, we can see what it has resolved and what still needs attention. Further improvements and ongoing support can follow, with the responsibility and scope agreed together.',
+    body: 'Once the team is using a change, we can see what is working and what still needs attention. We can keep improving the systems as the business grows, with a clear agreement on what I am responsible for.',
   },
 ];
 
 const questions = [
   {
     q: 'Does it have to be an AI project?',
-    a: 'No. The right change might be a simpler process, better use of existing software, a connection between systems, or a custom tool. AI can help with tasks such as finding relevant information or preparing a document for someone to review. We choose it where it serves the work.',
+    a: 'No. The right change might be a simpler process, better use of existing software, a connection between systems, or a custom tool. AI can help with tasks such as finding relevant information or preparing a document for someone to review. We use it when it makes the task easier.',
   },
   {
     q: 'Can you work with our existing team or technology provider?',
@@ -42,7 +42,7 @@ const questions = [
 export default function WorkingTogetherPage() {
   usePageMeta(
     'Working Together | Patrick McHeyser',
-    'Start with a focused Discovery Sprint to understand an operating problem and decide what to change. Explore the process, deliverables, and implementation work.',
+    'Find out what is holding the work up and what to change first. Start with a Discovery Sprint, then build and test improvements with Patrick and your team.',
     '/working-together'
   );
 
@@ -52,14 +52,13 @@ export default function WorkingTogetherPage() {
         <div className="hero__text">
           <h1>Start with the work that's slowing you down.</h1>
           <p className="lead">
-            You may know where the problem is. Quotes take too long. Each new customer brings more paperwork. Your
-            team spends hours putting together information that should be easy to find.
+            Your team is taking on more work, but the way it gets done hasn't kept up. People spend too much time
+            chasing information or waiting for decisions that keep coming back to you.
           </p>
           <p>
-            You may also have people working on the technology already, but need help deciding whether the work is
-            taking the business in the right direction.
+            You may already have people working on the technology and need another pair of eyes on the priorities. I
+            can work alongside them, from deciding what to change through putting it into use.
           </p>
-          <p>I work with you to understand what's happening, decide what to change, and put the improvements into use.</p>
           <div className="hero__cta cta-row">
             <ButtonLink to="/contact">Let's talk</ButtonLink>
             <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
@@ -139,8 +138,8 @@ export default function WorkingTogetherPage() {
               do about it. It gives you a clear first step before committing to a larger project.
             </p>
             <p>
-              We might investigate why quotes take so long, why serving each customer requires so much
-              administration, or whether your existing software can support the way you want to grow.
+              We might look at why each new customer adds so much admin, or whether your existing software can support
+              the next stage of growth.
             </p>
           </Prose>
         </InkBlock>
@@ -169,8 +168,8 @@ export default function WorkingTogetherPage() {
                 or someone's memory.
               </p>
               <p>
-                The point is to understand where time goes, why work gets repeated, and what has to be true for a
-                change to help.
+                We follow the work closely enough to see why it gets held up or repeated, and what would actually make
+                it easier.
               </p>
             </Prose>
           </div>
@@ -179,7 +178,7 @@ export default function WorkingTogetherPage() {
             <Prose>
               <p>The findings explain:</p>
               <ul>
-                <li>Where the work is getting held up, with examples that support the diagnosis.</li>
+                <li>Where the work is getting held up, with examples from your business.</li>
                 <li>What I recommend changing first and why.</li>
                 <li>What your existing tools can support and where further work is needed.</li>
                 <li>What the next step involves, who needs to be involved, and what still needs to be confirmed.</li>
@@ -216,8 +215,8 @@ export default function WorkingTogetherPage() {
                 next stage, or stop there. The Discovery Sprint ends with the findings and our review of them.
               </p>
               <p>
-                If we continue, we agree on the implementation work separately. If the problem and scope are already
-                clear at the outset, we can discuss a scoped implementation directly.
+                If we continue, we agree on the implementation work separately. If you already know what needs doing,
+                we can discuss that work directly.
               </p>
             </Prose>
           </div>

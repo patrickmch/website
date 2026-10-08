@@ -59,7 +59,7 @@ export default function StylePage() {
         <h2>Type</h2>
         <div className="type-row">
           <p className="eyebrow">Display, serif 500</p>
-          <h1>Make it easier to take on more business.</h1>
+          <h1>Build the capacity for your next stage of growth.</h1>
         </div>
         <div className="type-row">
           <p className="eyebrow">H2, serif 500</p>
@@ -71,13 +71,12 @@ export default function StylePage() {
         </div>
         <div className="type-row">
           <p className="eyebrow">Lead, sans 400</p>
-          <p className="lead">I help owners and operations leaders get quotes out faster.</p>
+          <p className="lead">For established businesses where growth is putting pressure on the team, the systems, and the way work gets done.</p>
         </div>
         <div className="type-row">
           <p className="eyebrow">Body, sans 400</p>
           <p>
-            I work with your team to find where things are getting held up, improve the process, and build the
-            software, automation, or AI tools that help the work move forward. A <a href="/">text link</a> looks like
+            I work with your team to improve processes, connect systems, and build practical tools using software, automation, and AI. A <a href="/">text link</a> looks like
             this.
           </p>
         </div>
