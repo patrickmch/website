@@ -119,15 +119,23 @@ Home approach diagram accessible name: From understanding the problem to putting
 
 ### Home diagram and social preview
 
-Accessible name only: A quote, as it moves through a business. In this example, the work waits for a pricing decision.
+Dev preview approved for review, 8 October 2026. This before-and-after is an example of an improvement, not a measured client result. Publication is pending Patrick's review.
 
-- Request comes in / email
-- Job details gathered / re-typed into a spreadsheet
-- Price decision / waits for the owner (circled, note: the quote waits for the owner's price)
-- Quote written / Word template
-- Quote sent / email, then follow-up
+Accessible name only: An example of reducing the work involved in preparing a quote.
 
-Accessible description: Five steps in a row. A request comes in by email. Job details are gathered and re-typed into a spreadsheet. A price decision, which waits for the owner; in this example that step is circled with the note 'the quote waits for the owner's price'. The quote is written in a Word template. The quote is sent by email, then followed up.
+Before:
+- Request comes in
+- Details retyped
+- Owner decides the price
+- Quote written manually
+
+After:
+- Job details entered once
+- Agreed pricing rules / prepare the quote (circled, note: The team can prepare routine quotes without waiting for the owner.)
+- Team reviews and sends
+- Branch from the pricing rules: Unusual job → Owner reviews / the exception
+
+Accessible description: Two flows compare preparing a quote before and after an improvement. Before: a request comes in, details are retyped, the owner decides the price, and the quote is written manually. After: job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'The team can prepare routine quotes without waiting for the owner.' An unusual job branches from the pricing rules to the owner, who reviews the exception.
 
 Social preview: Operations and technology for growing businesses. Three steps: Request comes in → Price decision (circled, note: work waits here) → Quote sent.
 

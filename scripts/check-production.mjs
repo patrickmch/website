@@ -228,27 +228,33 @@ try {
   await page.waitForTimeout(300);
   const geometry = await page.evaluate(() => {
     const out = {};
-    // Fig. 1: equal-height boxes, one-line "where" text at this width, no overflow.
-    const boxes = Array.from(document.querySelectorAll('.hero__figure .node__box'));
-    const heights = boxes.map((b) => Math.round(b.getBoundingClientRect().height));
-    out.fig1Heights = heights;
+    // Fig. 1: boxes align within each comparison row; the exception is a separate branch.
+    out.fig1RowHeights = ['.quote-comparison__before', '.quote-comparison__after'].map(selector =>
+      Array.from(document.querySelectorAll(`${selector} > .node > .node__box`))
+        .map(box => Math.round(box.getBoundingClientRect().height))
+    );
+    const rules = document.querySelector('.quote-comparison__rules');
+    const exception = document.querySelector('.quote-comparison__exception');
+    const rulesBox = rules?.getBoundingClientRect();
+    const exceptionBox = exception?.getBoundingClientRect();
+    out.fig1ExceptionBelow = rulesBox && exceptionBox && exceptionBox.top >= rulesBox.bottom;
+    out.fig1MarkedRules = !!rules?.querySelector('.pen-circle');
     // Text runs, not boxes: the pen circle is positioned outside its box on purpose.
     out.fig1Overflow = Array.from(document.querySelectorAll('.hero__figure .node__label, .hero__figure .node__where')).some(
       (t) => t.scrollWidth > t.clientWidth + 1
     );
     out.fig1WhereLines = Array.from(document.querySelectorAll('.hero__figure .node__where')).map((w) => Math.round(w.getBoundingClientRect().height));
-    // Annotation leader is an elbow (two segments) at desktop widths.
-    const leader = document.querySelector('.hero__figure .annotation--above .annotation__leader-d');
-    out.leaderD = leader?.getAttribute('d') || '';
     // Fig. 2 sits in grid columns 8 to 12.
     const approachFigure = document.querySelector('.approach__figure');
     out.approachStart = approachFigure ? getComputedStyle(approachFigure).gridColumnStart : '';
     return out;
   });
-  expect(new Set(geometry.fig1Heights).size === 1, `Fig. 1 node boxes should be equal height, got ${geometry.fig1Heights.join(',')}`);
+  expect(geometry.fig1RowHeights.every(heights => heights.length >= 3 && new Set(heights).size === 1),
+    `Fig. 1 boxes should align within each row, got ${JSON.stringify(geometry.fig1RowHeights)}`);
+  expect(geometry.fig1ExceptionBelow, 'Fig. 1 should branch below the pricing rules for an unusual job');
+  expect(geometry.fig1MarkedRules, 'Fig. 1 should circle the improvement in the pricing rules');
   expect(!geometry.fig1Overflow, 'Fig. 1 node text overflows its box');
   expect(geometry.fig1WhereLines.every((h) => h < 22), `Fig. 1 "where" lines should fit on one line at 1280px, heights ${geometry.fig1WhereLines.join(',')}`);
-  expect(/H[^A-Z]*V|V[^A-Z]*H/.test(geometry.leaderD), `annotation leader should be an elbow, got d="${geometry.leaderD}"`);
   expect(geometry.approachStart === '8', `Fig. 2 should start at grid column 8, got ${geometry.approachStart}`);
 
   /* ---------- The three example figures, now on Working Together ---------- */

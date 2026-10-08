@@ -1,25 +1,50 @@
 import { Figure, Flow, Node, Connector } from '../Figure';
 
-/** Fig. 1: a quote, as it moves through a business. */
+/** An illustrative before-and-after, with routine work and exceptions separated. */
 export function QuoteFlow() {
   return (
     <Figure
       n={1}
       showCaption={false}
-      caption="A quote, as it moves through a business. In this example, the work waits for a pricing decision."
-      description="Five steps in a row. A request comes in by email. Job details are gathered and re-typed into a spreadsheet. A price decision, which waits for the owner; in this example that step is circled with the note 'the quote waits for the owner's price'. The quote is written in a Word template. The quote is sent by email, then followed up."
+      className="quote-comparison"
+      caption="An example of reducing the work involved in preparing a quote."
+      description="Two flows compare preparing a quote before and after an improvement. Before: a request comes in, details are retyped, the owner decides the price, and the quote is written manually. After: job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'The team can prepare routine quotes without waiting for the owner.' An unusual job branches from the pricing rules to the owner, who reviews the exception."
     >
-      <Flow annotated className="flow--even">
-        <Node label="Request comes in" where="email" />
-        <Connector />
-        <Node label="Job details gathered" where="re-typed into a spreadsheet" />
-        <Connector />
-        <Node label="Price decision" where="waits for the owner" marked annotation="the quote waits for the owner's price" />
-        <Connector />
-        <Node label="Quote written" where="Word template" />
-        <Connector />
-        <Node label="Quote sent" where="email, then follow-up" />
-      </Flow>
+      <div className="quote-comparison__row">
+        <p className="quote-comparison__label">Before</p>
+        <Flow className="flow--even quote-comparison__before">
+          <Node label="Request comes in" />
+          <Connector />
+          <Node label="Details retyped" />
+          <Connector />
+          <Node label="Owner decides the price" />
+          <Connector />
+          <Node label="Quote written manually" />
+        </Flow>
+      </div>
+      <div className="quote-comparison__row">
+        <p className="quote-comparison__label">After</p>
+        <div className="quote-comparison__after">
+          <Node className="quote-comparison__input" label="Job details entered once" />
+          <Connector className="quote-comparison__to-rules" />
+          <Node
+            className="quote-comparison__rules"
+            label="Agreed pricing rules"
+            where="prepare the quote"
+            marked
+            annotation="The team can prepare routine quotes without waiting for the owner."
+          />
+          <div className="quote-comparison__exception">
+            <div className="quote-comparison__branch">
+              <Connector />
+              <span>Unusual job</span>
+            </div>
+            <Node label="Owner reviews" where="the exception" small />
+          </div>
+          <Connector className="quote-comparison__to-review" />
+          <Node className="quote-comparison__review" label="Team reviews and sends" />
+        </div>
+      </div>
     </Figure>
   );
 }

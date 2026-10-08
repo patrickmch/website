@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-08: Before-and-after quoting diagram, dev preview
+
+- Patrick approved trying the proposed comparison in a dev site. The Home hero now compares manual quoting with entering details once, preparing the quote from agreed pricing rules, and team review. The pen marks the pricing rules. An unusual-job branch retains the owner's judgment. The drawing is illustrative, with no measured-results claim or visible caption.
+- Reused the existing Figure, Node, Connector and pen components. Desktop and tablet show two rows; phone layouts split team review and owner exceptions into separate branches. The social preview and other diagrams are unchanged.
+- Preview: `http://127.0.0.1:4330/?review=0`, served from this worktree by `npm run dev -- --host 127.0.0.1 --port 4330 --strictPort`. Branch: `codex/quoting-before-after-preview`. Publication is pending Patrick's review; production `main` remains at `4d628e3`.
+- Validation: typecheck and diff whitespace checks passed. The first production run found that its old assertion required every Home diagram box to have one height; updated it to check alignment within each comparison row and the separate exception branch. `PORT=4332 npm run check` then passed. Browser review covered desktop, 768px and 390px; saved screenshots at 1440px and 390px showed no overflow, failed requests or browser errors. Contact checks were mocked; no email was sent.
+- Changed files: `components/diagrams/QuoteFlow.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `scripts/check-production.mjs`, and `PROGRESS.md`. No new source files.
+
 ## 2026-10-08: Homepage diagrams without captions
 
 - Patrick asked to remove the captions from both homepage diagrams. Removed their visible caption text and figure numbers. Kept the drawings, pen notes, step numbers, accessible names and screen-reader descriptions. Figures on other public pages retain their captions.

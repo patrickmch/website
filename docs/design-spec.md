@@ -234,17 +234,17 @@ All diagram text is illustrative and generic across industries. No real client n
 The two Home diagrams omit visible captions and figure numbers (Patrick, 8 October 2026). Their drawings, pen annotations and screen-reader descriptions remain. The former caption text supplies an accessible figure name. Other pages retain their existing captions.
 
 ### Fig. 1 — Quote flow (Home hero)
-Accessible name only: "A quote, as it moves through a business. In this example, the work waits for a pricing decision." (Amended: "where work usually waits" stated a diagnosis as a general fact; "Illustrative." removed 4 October.)
-Five nodes, left to right (label / where it happens):
-1. Request comes in / email
-2. Job details gathered / re-typed into a spreadsheet
-3. Price decision / waits for the owner (Amended: "Price decided" contradicted its own sublabel)
-4. Quote written / Word template
-5. Quote sent / email, then follow-up
-PenCircle around node 3. Annotation: "the quote waits for the owner's price" (amended 7 October 2026: notes say what happens, not a state).
-Small screens: nodes stack vertically, arrows point down, annotation sits under node 3.
+**Dev preview, 8 October 2026.** Patrick approved trying a before-and-after in a dev site; publication is pending review. The drawing demonstrates an illustrative improvement using the same quoting example.
 
-The prior quote diagram and social preview were restored at Patrick's request on 7 October. The new growth headline remains on Home.
+Accessible name only: "An example of reducing the work involved in preparing a quote."
+- Before: Request comes in → Details retyped → Owner decides the price → Quote written manually.
+- After: Job details entered once → Agreed pricing rules / prepare the quote → Team reviews and sends.
+- A small branch beneath the pricing rules says "Unusual job" and leads to "Owner reviews / the exception".
+- The pen circles the pricing rules, with the note "The team can prepare routine quotes without waiting for the owner."
+
+Two horizontal flows at 768px and up, with Before and After labels aligned at the left. On phones the flows stack vertically; the After flow splits beneath the pricing rules into team review on the left and the unusual-job branch on the right. Keep the existing mono text, paper, ink and pen tokens. No visible figure caption or number.
+
+The social preview remains the prior quoting illustration restored on 7 October. The growth headline remains on Home.
 
 ### Fig. 2 — From understanding to use (Home, "Know what to change, with someone to see it through.")
 Accessible name only: "From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
