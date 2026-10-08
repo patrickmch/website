@@ -228,17 +228,10 @@ try {
   await page.waitForTimeout(300);
   const geometry = await page.evaluate(() => {
     const out = {};
-    // Fig. 1: boxes align within each comparison row; the exception is a separate branch.
-    out.fig1RowHeights = ['.quote-comparison__before', '.quote-comparison__after'].map(selector =>
-      Array.from(document.querySelectorAll(`${selector} > .node > .node__box`))
-        .map(box => Math.round(box.getBoundingClientRect().height))
-    );
-    const rules = document.querySelector('.quote-comparison__rules');
-    const exception = document.querySelector('.quote-comparison__exception');
-    const rulesBox = rules?.getBoundingClientRect();
-    const exceptionBox = exception?.getBoundingClientRect();
-    out.fig1ExceptionBelow = rulesBox && exceptionBox && exceptionBox.top >= rulesBox.bottom;
-    out.fig1MarkedRules = !!rules?.querySelector('.pen-circle');
+    // Fig. 1: three aligned steps, with the pricing rules marked.
+    out.fig1Heights = Array.from(document.querySelectorAll('.quote-flow > .node > .node__box'))
+      .map(box => Math.round(box.getBoundingClientRect().height));
+    out.fig1MarkedRules = !!document.querySelector('.quote-flow__rules .pen-circle');
     // Text runs, not boxes: the pen circle is positioned outside its box on purpose.
     out.fig1Overflow = Array.from(document.querySelectorAll('.hero__figure .node__label, .hero__figure .node__where')).some(
       (t) => t.scrollWidth > t.clientWidth + 1
@@ -249,9 +242,8 @@ try {
     out.approachStart = approachFigure ? getComputedStyle(approachFigure).gridColumnStart : '';
     return out;
   });
-  expect(geometry.fig1RowHeights.every(heights => heights.length >= 3 && new Set(heights).size === 1),
-    `Fig. 1 boxes should align within each row, got ${JSON.stringify(geometry.fig1RowHeights)}`);
-  expect(geometry.fig1ExceptionBelow, 'Fig. 1 should branch below the pricing rules for an unusual job');
+  expect(geometry.fig1Heights.length === 3 && new Set(geometry.fig1Heights).size === 1,
+    `Fig. 1 should have three aligned boxes, got ${geometry.fig1Heights.join(',')}`);
   expect(geometry.fig1MarkedRules, 'Fig. 1 should circle the improvement in the pricing rules');
   expect(!geometry.fig1Overflow, 'Fig. 1 node text overflows its box');
   expect(geometry.fig1WhereLines.every((h) => h < 22), `Fig. 1 "where" lines should fit on one line at 1280px, heights ${geometry.fig1WhereLines.join(',')}`);

@@ -1,5 +1,12 @@
 # mcheyser-site: progress
 
+## 2026-10-08: Simplify the dev preview to the improved flow
+
+- Patrick preferred the after flow by itself and asked to remove the dangling owner-review branch. Home now shows three steps: details entered once, agreed pricing rules preparing the quote, and team review/send. Removed the before row, comparison labels, exception branch and their unused styles. Kept the orange circle and note on the pricing rules, with no visible caption.
+- Updated canonical copy, accessible description and design spec. Adjusted the existing geometry check to expect three aligned boxes. `npm run typecheck`, `PORT=4333 npm run check` and `git diff --check` passed; browser inspection confirmed desktop and phone layouts. Contact checks were mocked.
+- Remains a dev preview at `http://127.0.0.1:4330/?review=0` on `codex/quoting-before-after-preview`. No production deployment.
+- Changed files: `components/diagrams/QuoteFlow.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `scripts/check-production.mjs`, and `PROGRESS.md`. No new source files.
+
 ## 2026-10-08: Before-and-after quoting diagram, dev preview
 
 - Patrick approved trying the proposed comparison in a dev site. The Home hero now compares manual quoting with entering details once, preparing the quote from agreed pricing rules, and team review. The pen marks the pricing rules. An unusual-job branch retains the owner's judgment. The drawing is illustrative, with no measured-results claim or visible caption.

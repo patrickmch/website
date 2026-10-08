@@ -44,163 +44,34 @@
   }
 }
 
-/* ---------- Home: quoting before and after ---------- */
-.quote-comparison__row + .quote-comparison__row {
-  margin-top: 40px;
-}
-
-.quote-comparison__label {
-  margin-bottom: 16px;
-  font-family: var(--font-mono);
-  font-size: var(--text-fig);
-  font-weight: 500;
-  color: var(--ink-2);
-}
-
-.quote-comparison__after {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr);
-  grid-template-areas:
-    'input input input'
-    'to-rules to-rules to-rules'
-    'rules rules rules'
-    'to-review . exception'
-    'review . exception';
-  align-items: center;
-}
-
-.quote-comparison__input { grid-area: input; }
-.quote-comparison__to-rules { grid-area: to-rules; }
-.quote-comparison__rules { grid-area: rules; margin-bottom: 8px; }
-.quote-comparison__to-review { grid-area: to-review; }
-.quote-comparison__review { grid-area: review; }
-
-.quote-comparison__after > .connector {
-  justify-self: center;
-}
-
-.quote-comparison__exception {
-  grid-area: exception;
-  align-self: start;
-  min-width: 0;
-}
-
-.quote-comparison__branch {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  font-family: var(--font-mono);
-  font-size: var(--text-label);
-  color: var(--ink-2);
-}
-
-.quote-comparison__branch span {
-  position: absolute;
-  left: calc(50% + 12px);
-}
-
-.quote-comparison__branch .connector,
-.quote-comparison__to-review {
-  height: 48px;
-}
-
-.quote-comparison__rules::before,
-.quote-comparison__rules::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-}
-
-.quote-comparison__rules::before {
-  left: 50%;
-  height: 8px;
-  border-left: 1.5px solid var(--stroke);
-}
-
-.quote-comparison__rules::after {
-  left: calc(25% - 4px);
-  right: calc(25% - 4px);
-  border-top: 1.5px solid var(--stroke);
-}
-
-.quote-comparison__rules .annotation {
-  margin-bottom: 8px;
-}
-
+/* ---------- Home: improved quoting flow ---------- */
 @media (min-width: 768px) {
-  .quote-comparison__row {
-    display: grid;
-    grid-template-columns: 72px minmax(0, 1fr);
-    align-items: start;
+  .quote-flow {
+    padding-top: 60px;
   }
 
-  .quote-comparison__label {
-    margin: 12px 0 0;
-  }
-
-  .quote-comparison__row + .quote-comparison__row {
-    margin-top: 80px;
-  }
-
-  .quote-comparison__before > .node {
+  .quote-flow > .node {
     flex: 1 1 0;
   }
 
-  .quote-comparison__after {
-    grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1.25fr) 32px minmax(0, 1fr);
-    grid-template-areas:
-      'input to-rules rules to-review review'
-      '. . exception . .';
-  }
-
-  .quote-comparison__after > .node {
-    display: flex;
-    align-self: stretch;
-    min-width: 0;
-  }
-
-  .quote-comparison__after > .node > .node__box {
+  .quote-flow > .node > .node__box {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1;
   }
 
-  .quote-comparison__rules { margin-bottom: 0; }
-  .quote-comparison__rules::before,
-  .quote-comparison__rules::after { display: none; }
-  .quote-comparison__to-review { height: 16px; }
-
-  .quote-comparison__rules .annotation {
+  .quote-flow__rules .annotation {
     left: 50%;
     bottom: calc(100% + 12px);
     width: min(30em, 44vw);
     transform: translateX(-50%);
-    margin: 0;
     text-align: center;
     white-space: normal;
   }
 
-  .quote-comparison__rules .annotation__leader {
+  .quote-flow__rules .annotation__leader {
     display: none;
   }
-
-  .quote-comparison__exception {
-    margin-left: 0;
-    justify-self: center;
-  }
-
-  .quote-comparison__branch span { white-space: nowrap; }
-
-  .quote-comparison__branch .connector {
-    width: 16px;
-    height: 48px;
-  }
-
-  .quote-comparison__branch .connector__h { display: none; }
-  .quote-comparison__branch .connector__v { display: block; }
 }
 
 /* ---------- Home: approach and examples ---------- */
