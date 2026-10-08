@@ -194,10 +194,13 @@ try {
   await settle(page);
   expect((await page.locator('.cards--2 .card__n').count()) === 0, 'the four problem cards should not carry 01-04 numbers');
   expect((await text(page, '.site-footer__brand'))?.includes('Patrick McHeyser'), 'footer brand column should carry the copy doc line "Patrick McHeyser"');
-  const fig1 = await text(page, '.hero__figure .figure__caption');
-  expect(fig1?.includes('In this example'), `Fig. 1 caption should say what this example shows, got: ${fig1}`);
-  const fig2 = await text(page, '.approach__figure .figure__caption');
-  expect(fig2?.includes('first three steps'), `Fig. 2 caption should say which steps the Sprint covers, got: ${fig2}`);
+  const homeFigures = await page.locator('main figure').evaluateAll(figures => figures.map(figure => ({
+    hasCaption: !!figure.querySelector('figcaption'),
+    name: figure.getAttribute('aria-label')?.trim(),
+    description: document.getElementById(figure.getAttribute('aria-describedby'))?.textContent?.trim(),
+  })));
+  expect(homeFigures.length === 2 && homeFigures.every(figure => !figure.hasCaption), 'Home should have two diagrams without visible captions or figure numbers');
+  expect(homeFigures.every(figure => figure.name && figure.description), 'Home diagrams should retain accessible names and descriptions');
   expect((await page.locator('.work-feature a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context', 'Home should feature manufacturing then healthcare');
   expect(await page.locator('main a[href="/work/mtro-pro"]').count() === 0, 'MTRO should be accessible through Client Work, not the Home feature');
   expect(

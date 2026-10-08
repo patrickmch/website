@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-08: Homepage diagrams without captions
+
+- Patrick asked to remove the captions from both homepage diagrams. Removed their visible caption text and figure numbers. Kept the drawings, pen notes, step numbers, accessible names and screen-reader descriptions. Figures on other public pages retain their captions.
+- Updated the copy canon first. The shared Figure component has an optional caption-display setting, used by the two Home diagrams. Updated the existing production assertions for the new presentation and retained accessible descriptions.
+- `npm run typecheck`, `PORT=4323 npm run check` and `git diff --check` passed. The production suite covers five-width layouts, figure geometry, routes and mocked contact paths. No email sent.
+- Release target: `patrickmch/website` main. Previous live revision `d5b3343` is the rollback reference. Live verification follows publication.
+- Changed files: `components/Figure.tsx`, `components/diagrams/QuoteFlow.tsx`, `components/diagrams/SprintSteps.tsx`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `scripts/check-production.mjs`, and `PROGRESS.md`.
+
 ## 2026-10-07: Restore the copy and diagrams Patrick preferred
 
 - Patrick reviewed the published change list and requested the prior Home quoting diagram and social preview, About biography/body, all four client-story narratives and card summaries, workflow tables, and healthcare/Psyche captions. Restored those from `78109a2`, the version before the tone pass. The new Home opening, About opening, other unmarked copy edits and diagram typecheck fix remain.

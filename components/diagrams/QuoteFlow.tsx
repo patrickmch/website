@@ -5,6 +5,7 @@ export function QuoteFlow() {
   return (
     <Figure
       n={1}
+      showCaption={false}
       caption="A quote, as it moves through a business. In this example, the work waits for a pricing decision."
       description="Five steps in a row. A request comes in by email. Job details are gathered and re-typed into a spreadsheet. A price decision, which waits for the owner; in this example that step is circled with the note 'the quote waits for the owner's price'. The quote is written in a Word template. The quote is sent by email, then followed up."
     >

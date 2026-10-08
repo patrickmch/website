@@ -231,8 +231,10 @@ Figure numbers restart on each page; the "Fig. N" names below are the figures' i
 
 All diagram text is illustrative and generic across industries. No real client names, no numbers that read as results, no currency.
 
+The two Home diagrams omit visible captions and figure numbers (Patrick, 8 October 2026). Their drawings, pen annotations and screen-reader descriptions remain. The former caption text supplies an accessible figure name. Other pages retain their existing captions.
+
 ### Fig. 1 — Quote flow (Home hero)
-Caption: "A quote, as it moves through a business. In this example, the work waits for a pricing decision." (Amended: "where work usually waits" stated a diagnosis as a general fact; "Illustrative." removed 4 October.)
+Accessible name only: "A quote, as it moves through a business. In this example, the work waits for a pricing decision." (Amended: "where work usually waits" stated a diagnosis as a general fact; "Illustrative." removed 4 October.)
 Five nodes, left to right (label / where it happens):
 1. Request comes in / email
 2. Job details gathered / re-typed into a spreadsheet
@@ -245,7 +247,7 @@ Small screens: nodes stack vertically, arrows point down, annotation sits under 
 The prior quote diagram and social preview were restored at Patrick's request on 7 October. The new growth headline remains on Home.
 
 ### Fig. 2 — From understanding to use (Home, "Know what to change, with someone to see it through.")
-Caption: "From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
+Accessible name only: "From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
 A vertical numbered strip with a 1.5px `--stroke` line down the left, in two groups so the Sprint's boundary is in the drawing (Amended): under the mono label "Discovery Sprint", steps 1 to 3; under the mono label "Implementation, scoped separately", step 4.
 1. Walk through real examples with the people doing the work
 2. Find where it is held up

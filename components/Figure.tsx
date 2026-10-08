@@ -8,6 +8,8 @@ import { PenTick } from './marks/PenTick';
 type FigureProps = {
   n: number;
   caption: string;
+  /** Omit the visible caption while keeping its text as the accessible name. */
+  showCaption?: boolean;
   description: string;
   className?: string;
   /** A short key under the drawing, for example what the small print and the pen circle mean. */
@@ -15,7 +17,7 @@ type FigureProps = {
   children: React.ReactNode;
 };
 
-export function Figure({ n, caption, description, className = '', legend, children }: FigureProps) {
+export function Figure({ n, caption, showCaption = true, description, className = '', legend, children }: FigureProps) {
   const ref = useDrawOnView<HTMLElement>();
   const id = useId();
   const captionId = `fig-caption-${id}`;
@@ -25,7 +27,8 @@ export function Figure({ n, caption, description, className = '', legend, childr
     <figure
       ref={ref}
       className={`figure ${className}`}
-      aria-labelledby={captionId}
+      aria-labelledby={showCaption ? captionId : undefined}
+      aria-label={showCaption ? undefined : caption}
       aria-describedby={descId}
     >
       <div className="figure__body">{children}</div>
@@ -33,9 +36,11 @@ export function Figure({ n, caption, description, className = '', legend, childr
       <p id={descId} className="visually-hidden">
         {description}
       </p>
-      <figcaption id={captionId} className="figure__caption">
-        <span className="figure__n">Fig. {n}</span> {caption}
-      </figcaption>
+      {showCaption && (
+        <figcaption id={captionId} className="figure__caption">
+          <span className="figure__n">Fig. {n}</span> {caption}
+        </figcaption>
+      )}
     </figure>
   );
 }

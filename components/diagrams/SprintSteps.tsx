@@ -18,6 +18,7 @@ export function SprintSteps() {
   return (
     <Figure
       n={2}
+      showCaption={false}
       caption="From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps."
       description="Four numbered steps in two groups. Under the label Discovery Sprint: walk through real examples with the people doing the work; find where it is held up (this step is circled); recommend what to change first. Under the label Implementation, scoped separately: build and test it with the team."
     >

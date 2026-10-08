@@ -2,8 +2,9 @@
 title: Website Copy for Designer Handoff - October 2026
 type: draft
 created: 2026-10-03
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
+  - Patrick's October 8 request to remove captions from both homepage diagrams
   - Patrick's October 7 annotated request to restore the prior diagram, social preview, biography, story prose, tables and captions
   - Patrick's October 7 approval of growth-capacity positioning and a site-wide tone pass
   - Patrick's October 5 approval of broader engagement narratives and manufacturing/healthcare prominence
@@ -112,11 +113,13 @@ Tell me what's slowing the work down and what you'd like to change.
 
 **See how I've worked with others**
 
-Home approach diagram caption: From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps.
+Home diagrams have no visible caption or figure number. Keep their accessible names and descriptions for screen readers.
+
+Home approach diagram accessible name: From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps.
 
 ### Home diagram and social preview
 
-Caption: A quote, as it moves through a business. In this example, the work waits for a pricing decision.
+Accessible name only: A quote, as it moves through a business. In this example, the work waits for a pricing decision.
 
 - Request comes in / email
 - Job details gathered / re-typed into a spreadsheet
