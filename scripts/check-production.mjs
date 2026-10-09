@@ -233,10 +233,10 @@ try {
       .map(box => Math.round(box.getBoundingClientRect().height));
     out.fig1MarkedRules = !!document.querySelector('.quote-flow__rules .pen-circle');
     // Text runs, not boxes: the pen circle is positioned outside its box on purpose.
-    out.fig1Overflow = Array.from(document.querySelectorAll('.hero__figure .node__label, .hero__figure .node__where')).some(
+    out.fig1Overflow = Array.from(document.querySelectorAll('.home-outcome__figure .node__label, .home-outcome__figure .node__where')).some(
       (t) => t.scrollWidth > t.clientWidth + 1
     );
-    out.fig1WhereLines = Array.from(document.querySelectorAll('.hero__figure .node__where')).map((w) => Math.round(w.getBoundingClientRect().height));
+    out.fig1WhereLines = Array.from(document.querySelectorAll('.home-outcome__figure .node__where')).map((w) => Math.round(w.getBoundingClientRect().height));
     // Fig. 2 sits in grid columns 8 to 12.
     const approachFigure = document.querySelector('.approach__figure');
     out.approachStart = approachFigure ? getComputedStyle(approachFigure).gridColumnStart : '';

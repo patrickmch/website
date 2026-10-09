@@ -105,7 +105,7 @@ Scale (fluid, `clamp()` between 360px and 1280px viewports):
 - Prose column: 680px max, left-aligned, never centered text (Amended: the Contact success message is left-aligned like everything else).
 - Vertical rhythm: 8px base. Section padding 96px top and bottom at 1024px and up, 64px below. Sections are separated by a 1px `--line` rule across the container, not by background color changes (the ink block is the one exception).
 - Header height 64px. Content starts below it; the header is sticky.
-- Figures span the full container width on Home's hero and the Sprint timeline. In the example rows they take 7 of 12 columns with text in the other 5.
+- Figures span the full container width below the Home quoting example and in the Sprint timeline. In the example rows they take 7 of 12 columns with text in the other 5.
 
 ### 3.4 Shape, lines, elevation
 
@@ -168,7 +168,7 @@ Each component lists purpose, anatomy, states, responsive behavior, and accessib
 - Buttons are `<a>` when they navigate and `<button>` when they submit. Minimum hit area 44px tall.
 
 ### 5.4 Eyebrow and figure caption
-- **Eyebrow:** mono 13px/500 uppercase `--ink-2`, 16px above the heading it labels. Used for the Home hero tagline ("Operations and technology for growing businesses") and for figure numbering on the style page.
+- **Eyebrow:** mono 13px/500 uppercase `--ink-2`, 16px above the heading it labels. Used for the Home hero tagline ("Custom software, automation and AI for growing businesses") and for figure numbering on the style page.
 - **Figure caption:** mono 13px `--ink-2`, placed below the figure, prefixed "Fig. N" in 500 weight followed by a space and the caption text. (Amended 4 October 2026, Patrick: captions no longer end with the word "Illustrative.", which read as an editorial note left in by mistake. That the drawings are examples is carried by the section line "Here are examples of the kinds of improvements we can make.", Fig. 1's "In this example", and Fig. 5's "Example job board" title.)
 
 ### 5.5 Section and prose column
@@ -233,8 +233,8 @@ All diagram text is illustrative and generic across industries. No real client n
 
 The two Home diagrams omit visible captions and figure numbers (Patrick, 8 October 2026). Their drawings, pen annotations and screen-reader descriptions remain. The former caption text supplies an accessible figure name. Other pages retain their existing captions.
 
-### Fig. 1 — Quote flow (Home hero)
-**Dev preview, 8 October 2026.** Patrick clarified that he prefers Before and After together, keeping the simpler After flow without the owner-review branch. Publication is pending review. The drawing demonstrates an illustrative improvement using the same quoting example.
+### Fig. 1 — Quote flow (Home quoting example)
+**Approved for publication, 9 October 2026.** Patrick prefers Before and After together, keeping the simpler After flow without the owner-review branch. The drawing demonstrates an illustrative improvement using the same quoting example.
 
 Accessible name only: "An example of reducing the work involved in preparing a quote."
 - Before: Request comes in → Details retyped → Owner decides the price → Quote written manually.
@@ -243,9 +243,9 @@ Accessible name only: "An example of reducing the work involved in preparing a q
 
 Two horizontal flows at 768px and up, with Before and After labels aligned at the left. On phones the flows stack vertically. Keep the existing mono text, paper, ink and pen tokens. No exception branch, visible figure caption or number.
 
-The social preview remains the prior quoting illustration restored on 7 October. The growth headline remains on Home.
+The social preview remains the prior quoting illustration restored on 7 October. The October 9 homepage headline replaces the growth headline; the quoting comparison now sits beside its example in the page narrative.
 
-### Fig. 2 — From understanding to use (Home, "Know what to change, with someone to see it through.")
+### Fig. 2 — From understanding to use (Home engagement section)
 Accessible name only: "From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
 A vertical numbered strip with a 1.5px `--stroke` line down the left, in two groups so the Sprint's boundary is in the drawing (Amended): under the mono label "Discovery Sprint", steps 1 to 3; under the mono label "Implementation, scoped separately", step 4.
 1. Walk through real examples with the people doing the work
@@ -290,14 +290,17 @@ Shows tokens as swatches with hex and contrast, the type scale, the wordmark at 
 Section order is the copy doc's order. Every piece of visitor-facing copy comes from the copy doc verbatim. Editorial notes become ProofSlots or production behavior; they are never rendered as text.
 
 ### 7.1 Home
-1. **Hero.** Eyebrow "Operations and technology for growing businesses". H1 "Build the capacity for your next stage of growth." Lead paragraph, second paragraph (prose column). Primary button "Let's talk" → Contact with the secondary link "See how I've worked with others" → Client Work beside it (Amended 4 October 2026). Below the text, Fig. 1 at full container width.
-2. **ProofSlot** (quote): "Early trust signal. Use a real, approved client quote with attribution."
-3. **"Where is the extra work coming from?"** H2, then the four problems as an unnumbered 2 by 2 card grid, each an H3 plus paragraph.
-4. **"Know what to change, with someone to see it through."** H2, three paragraphs in the prose column (7 of 12 columns), Fig. 2 beside them in columns 8 to 12 at 1024px and up, below them otherwise.
-5. **"Selected client work."** (Amended 5 October 2026.) H2, then the anonymous manufacturing and healthcare stories in that order, using the existing two-column card grid (`.cards--2`). Each card has the sector eyebrow, H3 title, summary and "See the work" link. They stack below 768px. "See a sample of client work" follows the pair. MTRO PRO and Psyche remain accessible through Client Work. The illustrative example rows remain on Working Together (7.2).
-6. **Ink block.** "Start with a Discovery Sprint." paragraph, secondary link "See how we work together" → Working Together.
-7. **"You'll work directly with me."** Portrait (chair photo, 4:5) in 5 columns; H2, paragraph, secondary link "More about Patrick" → About in 7 columns; then, below the whole row at full container width, a **ProofSlot** (quote): "Approved testimonial about the experience of working with him." The copy's bracket says "photograph of Patrick and an approved testimonial"; the photograph is the portrait and the testimonial is the slot.
-8. **Closing call.** H2 "What is getting harder as your business grows?", paragraph, primary button "Let's talk" → Contact and the secondary link "See how I've worked with others" → Client Work (Amended 4 October 2026).
+
+Amended October 9, 2026: approved build offer, homepage only.
+
+1. **Hero.** "Take on more customers without the admin." Eyebrow and two paragraphs from the copy canon, with the existing paired contact and client-work links. No hero diagram.
+2. **ProofSlot** for a real, approved client quote. Empty slots remain hidden in the public composition.
+3. **Outcome examples.** Section heading and intro, then three short narratives. At desktop widths, each H3 spans four columns and its paragraph spans columns 6 through 12; stack on phones. Separate the narratives with fine rules. Place the accepted Before/After quoting comparison at full width immediately after the quoting paragraph. No visible figure caption.
+4. **Client evidence.** Section heading and intro, then the existing manufacturing and healthcare cards, preserving their shared summaries. Link to the full Client Work index. No MTRO account-brief item.
+5. **Engagement.** "From an operating problem to a system your team can use." Three paragraphs in seven columns, with the existing Sprint diagram in columns 8 to 12; stack below 1024px. Separate Sprint diagram work remains in its dev preview.
+6. **Discovery ink block.** "Know what to build first, and what it will take." Three paragraphs and the existing Working Together link. Keep one ink block on the page.
+7. **Personal introduction.** Existing seated portrait and expanded introduction, About link, then the existing full-width testimonial ProofSlot.
+8. **Closing.** "What would your business be able to do with more capacity?" Paragraph and paired contact/client-work links.
 
 ### 7.2 Working Together
 1. **Hero.** H1 "Start with the work that's slowing you down." three paragraphs, primary button "Let's talk" with the secondary link "See how I've worked with others" → Client Work beside it (Amended 4 October 2026).

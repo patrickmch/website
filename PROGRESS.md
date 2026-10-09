@@ -1,5 +1,14 @@
 # mcheyser-site: progress
 
+## 2026-10-09: Approved homepage build offer
+
+- Patrick approved publishing the proposed homepage and rejected the supplemental MTRO account-brief item. The release leads with "Take on more customers without the admin", explains three operating outcomes, brings the existing manufacturing/healthcare evidence forward, and expands the build, discovery and personal introduction sections.
+- Moved the accepted Before/After quote comparison from the hero to the quoting example. Kept Home captions hidden. The separate Sprint diagram revision remains in its other dev preview; this release preserves the current production Sprint diagram.
+- Updated canonical copy first, then Home and its search/share description. Other page source, client summaries/story narratives, photos, the social image, and shared components are unchanged. The new layout selectors are Home-specific.
+- Validation passed: typecheck; `PORT=4357 npm run check` (production build, routing/metadata, links, focus, diagrams, contact form with mocked mail, no console errors); desktop/phone screenshot review; overflow checks at 360/390/768/1024/1440px; and `git diff --check`. No mail sent. Screenshots were inspected from `/tmp/mcheyser-home-release-20261009` and are reproducible with the existing screenshot script.
+- Release from isolated branch `codex/home-build-offer-release`, based on the accepted quoting preview `5aa9fa6`. The other preview workspace had active Sprint edits and was preserved. Destination verified: `patrickmch/website`, account `patrickmch`, production `main` at `4d628e3` before push. Railway auto-deploys main. Rollback is a normal revert of the release and, if needed, the three quoting-preview commits back to the prior production tree; no history rewrite.
+- Files in this release relative to prior production: `pages/HomePage.tsx`, `index.html`, `components/diagrams/QuoteFlow.tsx`, `styles/pages.css`, `scripts/check-production.mjs`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`. No new public source files. Live verification follows push.
+
 ## 2026-10-08: Keep the comparison and the simpler After flow
 
 - Patrick clarified that he liked Before and After together. Restored the original four-step Before row and both labels, keeping the simplified three-step After row without the owner-review branch. Updated the copy canon, accessible description and design spec to match.
