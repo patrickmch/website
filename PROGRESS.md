@@ -1,5 +1,12 @@
 # mcheyser-site: progress
 
+## 2026-10-09: Publish the AI and automation hero concept
+
+- Patrick approved the revised "AI + automation" label and requested publication. The release adds the accepted three-box conceptual illustration beside the desktop hero and below the copy on smaller screens. No visible caption or extra note.
+- Canonical copy and design spec now record publication approval. Typecheck, `PORT=4340 npm run check` and diff checks passed on the release source. Desktop/phone review of the exact label passed in the preceding preview. Contact checks were mocked; no mail sent.
+- Destination verified: `patrickmch/website`, GitHub account `patrickmch`, Railway production via main. Previous production tree `968b74c04ec6498f4c76a6aefd4ba91d4a54d971` is the rollback reference. Publish by fast-forwarding main; rollback uses normal reverts of this publication record and the two hero commits, newest first, without rewriting history. Live verification follows the push and is recorded in the private project log.
+- New file relative to previous production: `components/diagrams/GrowthConcept.tsx`. Modified: `pages/HomePage.tsx`, `styles/pages.css`, `scripts/check-production.mjs`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`.
+
 ## 2026-10-09: Name AI and automation in the hero diagram
 
 - Patrick found "Systems that fit" vague and asked for a couple of words naming automation and AI. Replaced the middle label with "AI + automation" in the dev preview, including its accessible name/description, canonical copy and design spec. The two outer labels and layout are unchanged.

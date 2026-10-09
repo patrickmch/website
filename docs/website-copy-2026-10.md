@@ -44,7 +44,7 @@ The work starts with understanding how your business runs. I work with your team
 
 **See how I've worked with others**
 
-Hero concept diagram (dev preview approved October 9, 2026):
+Hero concept diagram (approved for publication October 9, 2026):
 
 - Your business
 - AI + automation (circled)
