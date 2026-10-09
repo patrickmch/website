@@ -7,13 +7,13 @@ export function GrowthConcept() {
       n={1}
       showCaption={false}
       className="hero-concept"
-      caption="Your business, systems that fit, room to grow."
-      description="Three connected boxes run from Your business to Systems that fit to Room to grow. Systems that fit is circled in orange. No visible caption or additional note."
+      caption="Your business, AI + automation, room to grow."
+      description="Three connected boxes run from Your business to AI + automation to Room to grow. AI + automation is circled in orange. No visible caption or additional note."
     >
       <Flow>
         <Node label="Your business" />
         <Connector />
-        <Node label="Systems that fit" marked />
+        <Node label="AI + automation" marked />
         <Connector />
         <Node label="Room to grow" />
       </Flow>

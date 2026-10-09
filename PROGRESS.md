@@ -1,5 +1,11 @@
 # mcheyser-site: progress
 
+## 2026-10-09: Name AI and automation in the hero diagram
+
+- Patrick found "Systems that fit" vague and asked for a couple of words naming automation and AI. Replaced the middle label with "AI + automation" in the dev preview, including its accessible name/description, canonical copy and design spec. The two outer labels and layout are unchanged.
+- Typecheck, build and diff checks passed. Browser readback and desktop/phone screenshots confirmed the new label without overflow, failed requests or browser errors. This is a copy-only follow-up to the previously checked layout; no production deployment.
+- Changed files: `components/diagrams/GrowthConcept.tsx`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`. Preview remains `http://127.0.0.1:4330/?review=0` on `codex/hero-concept-preview`.
+
 ## 2026-10-09: LinkedIn-style hero concept in dev
 
 - Patrick approved trying the proposed conceptual banner diagram in dev: "Your business" → "Systems that fit" → "Room to grow", with the middle box circled and no caption or additional note. Added a compact vertical diagram beside the hero copy at desktop widths; it sits centered below the copy and links below 1024px.

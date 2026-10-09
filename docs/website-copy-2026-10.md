@@ -47,12 +47,12 @@ The work starts with understanding how your business runs. I work with your team
 Hero concept diagram (dev preview approved October 9, 2026):
 
 - Your business
-- Systems that fit (circled)
+- AI + automation (circled)
 - Room to grow
 
-Accessible name only: Your business, systems that fit, room to grow.
+Accessible name only: Your business, AI + automation, room to grow.
 
-Accessible description: Three connected boxes run from Your business to Systems that fit to Room to grow. Systems that fit is circled in orange. No visible caption or additional note.
+Accessible description: Three connected boxes run from Your business to AI + automation to Room to grow. AI + automation is circled in orange. No visible caption or additional note.
 
 ### Give your team more capacity, and your customers a better experience.
 
