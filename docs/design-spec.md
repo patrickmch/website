@@ -293,11 +293,11 @@ Section order is the copy doc's order. Every piece of visitor-facing copy comes 
 
 Amended October 9, 2026: approved build offer, homepage only.
 
-1. **Hero.** "Take on more customers without the admin." Eyebrow and two paragraphs from the copy canon, with the existing paired contact and client-work links. No hero diagram.
+1. **Hero.** "Take on more customers without the admin." Eyebrow and two paragraphs from the copy canon, with the existing paired contact and client-work links. Dev preview approved October 9: a compact conceptual diagram sits to the right at 1024px and above. Three vertically connected boxes read "Your business", "Systems that fit", "Room to grow"; circle the middle box. Use the established thin outlines, mono labels and orange pen, with no caption or extra annotation. Keep the text column up to 680px and center the diagram in the remaining right column. Below 1024px, place the diagram beneath the copy and links, centered at a maximum width of 256px.
 2. **ProofSlot** for a real, approved client quote. Empty slots remain hidden in the public composition.
 3. **Outcome examples.** Section heading and intro, then three short narratives. At desktop widths, each H3 spans four columns and its paragraph spans columns 6 through 12; stack on phones. Separate the narratives with fine rules. Place the accepted Before/After quoting comparison at full width immediately after the quoting paragraph. No visible figure caption.
 4. **Client evidence.** Section heading and intro, then the existing manufacturing and healthcare cards, preserving their shared summaries. Link to the full Client Work index. No MTRO account-brief item.
-5. **Engagement.** "From an operating problem to a system your team can use." Three paragraphs in seven columns, with the existing Sprint diagram in columns 8 to 12; stack below 1024px. Separate Sprint diagram work remains in its dev preview.
+5. **Engagement.** "From an operating problem to a system your team can use." Three paragraphs in seven columns, with the existing Sprint diagram in columns 8 to 12; stack below 1024px. The approved three-outcome Sprint diagram is published as of October 9.
 6. **Discovery ink block.** "Know what to build first, and what it will take." Three paragraphs and the existing Working Together link. Keep one ink block on the page.
 7. **Personal introduction.** Existing seated portrait and expanded introduction, About link, then the existing full-width testimonial ProofSlot.
 8. **Closing.** "What would your business be able to do with more capacity?" Paragraph and paired contact/client-work links.

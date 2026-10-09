@@ -6,6 +6,7 @@ import { ProofSlot } from '../components/ProofSlot';
 import { InkBlock } from '../components/InkBlock';
 import { QuoteFlow } from '../components/diagrams/QuoteFlow';
 import { SprintSteps } from '../components/diagrams/SprintSteps';
+import { GrowthConcept } from '../components/diagrams/GrowthConcept';
 import { ClientWorkFeature } from '../components/ClientWorkFeature';
 
 export default function HomePage() {
@@ -18,15 +19,18 @@ export default function HomePage() {
   return (
     <>
       <Section first className="hero">
-        <div className="hero__text">
-          <Eyebrow>Custom software, automation and AI for growing businesses</Eyebrow>
-          <h1>Take on more customers without the admin.</h1>
-          <p className="lead">I design and build software, automation and AI systems that take repetitive work off your team, so they can spend more time on customers and handle more business.</p>
-          <p>The work starts with understanding how your business runs. I work with your team to decide what needs to change, build the system and get it working in their day-to-day jobs.</p>
-          <div className="hero__cta cta-row">
-            <ButtonLink to="/contact">Let's talk</ButtonLink>
-            <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
+        <div className="hero__layout">
+          <div className="hero__text">
+            <Eyebrow>Custom software, automation and AI for growing businesses</Eyebrow>
+            <h1>Take on more customers without the admin.</h1>
+            <p className="lead">I design and build software, automation and AI systems that take repetitive work off your team, so they can spend more time on customers and handle more business.</p>
+            <p>The work starts with understanding how your business runs. I work with your team to decide what needs to change, build the system and get it working in their day-to-day jobs.</p>
+            <div className="hero__cta cta-row">
+              <ButtonLink to="/contact">Let's talk</ButtonLink>
+              <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
+            </div>
           </div>
+          <GrowthConcept />
         </div>
         <ProofSlot kind="quote" className="proof-slot--after-hero"
           note="Early trust signal. Use a real, approved client quote with attribution." />

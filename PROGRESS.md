@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-09: LinkedIn-style hero concept in dev
+
+- Patrick approved trying the proposed conceptual banner diagram in dev: "Your business" → "Systems that fit" → "Room to grow", with the middle box circled and no caption or additional note. Added a compact vertical diagram beside the hero copy at desktop widths; it sits centered below the copy and links below 1024px.
+- Updated canonical copy before implementation and reused the existing Figure, Flow, Node, Connector and pen mark. Hero text and the two published diagrams are unchanged. Updated the existing Home figure-count assertion from two to three, preserving accessibility and caption checks. Corrected a stale design-spec note that still described the now-published Sprint diagram as dev-only.
+- Typecheck, `PORT=4339 npm run check`, diff checks, desktop/phone browser review and the screenshot run passed. The checks found no overflow, failed requests or browser errors. Contact checks were mocked; no email sent.
+- Preview: `http://127.0.0.1:4330/?review=0`, branch `codex/hero-concept-preview`, based on live release `968b74c`. This is a dev preview only; no push to main or production deployment.
+- New file: `components/diagrams/GrowthConcept.tsx`. Modified files: `pages/HomePage.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, `scripts/check-production.mjs`, and `PROGRESS.md`.
+
 ## 2026-10-09: Publish the approved approach diagram
 
 - Patrick approved the rendered diagram and requested immediate publication. Reconciled the preview with current production `c19e0b2`, which already includes the newer homepage copy and accepted quote comparison. Preserved that homepage and added only the approved Sprint outcomes and their scoped styles.

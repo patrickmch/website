@@ -44,6 +44,16 @@ The work starts with understanding how your business runs. I work with your team
 
 **See how I've worked with others**
 
+Hero concept diagram (dev preview approved October 9, 2026):
+
+- Your business
+- Systems that fit (circled)
+- Room to grow
+
+Accessible name only: Your business, systems that fit, room to grow.
+
+Accessible description: Three connected boxes run from Your business to Systems that fit to Room to grow. Systems that fit is circled in orange. No visible caption or additional note.
+
 ### Give your team more capacity, and your customers a better experience.
 
 The effort behind each customer can grow quickly: another document to prepare, another system to check, another handoff to follow up. The right system can carry more of that work. Here are a few examples of what that can make possible.

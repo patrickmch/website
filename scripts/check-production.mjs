@@ -199,7 +199,7 @@ try {
     name: figure.getAttribute('aria-label')?.trim(),
     description: document.getElementById(figure.getAttribute('aria-describedby'))?.textContent?.trim(),
   })));
-  expect(homeFigures.length === 2 && homeFigures.every(figure => !figure.hasCaption), 'Home should have two diagrams without visible captions or figure numbers');
+  expect(homeFigures.length === 3 && homeFigures.every(figure => !figure.hasCaption), 'Home should have three diagrams without visible captions or figure numbers');
   expect(homeFigures.every(figure => figure.name && figure.description), 'Home diagrams should retain accessible names and descriptions');
   expect((await page.locator('.work-feature a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context', 'Home should feature manufacturing then healthcare');
   expect(await page.locator('main a[href="/work/mtro-pro"]').count() === 0, 'MTRO should be accessible through Client Work, not the Home feature');
