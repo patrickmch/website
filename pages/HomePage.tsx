@@ -4,35 +4,14 @@ import { Section, Prose, Eyebrow } from '../components/Section';
 import { ButtonLink, SecondaryLink } from '../components/Button';
 import { ProofSlot } from '../components/ProofSlot';
 import { InkBlock } from '../components/InkBlock';
-import { PenUnderline } from '../components/marks/PenUnderline';
 import { QuoteFlow } from '../components/diagrams/QuoteFlow';
 import { SprintSteps } from '../components/diagrams/SprintSteps';
-
 import { ClientWorkFeature } from '../components/ClientWorkFeature';
-
-const problems = [
-  {
-    title: 'Every new customer brings another round of admin.',
-    body: "Your team prepares the same documents, re-enters information, and chases the next response. The customer list grows, and so does the effort it takes to keep track of everything. You're wondering how much more the team can take on.",
-  },
-  {
-    title: 'A status update takes too much digging.',
-    body: "Before you can answer a customer or decide what needs attention, someone has to check email, spreadsheets, and a business system. You need a dependable view of what's waiting, what's missing, and who needs to act.",
-  },
-  {
-    title: 'Work keeps coming back to you or the same few people.',
-    body: "Someone needs a pricing decision. A customer request falls outside the usual process. The team turns to the person who knows the history, and work waits until they're available.",
-  },
-  {
-    title: "You're spending on systems and still filling the gaps.",
-    body: 'People still move information from one tool to another or build the report by hand. You need to know whether to improve what you have, connect the systems, or change the process before investing again.',
-  },
-];
 
 export default function HomePage() {
   usePageMeta(
     'Patrick McHeyser | Operations and technology consulting',
-    'Build capacity for your next stage of growth. Patrick McHeyser works with your team to improve processes and build practical tools using software, automation, and AI.',
+    "Take on more customers without the admin. Patrick McHeyser designs and builds software, automation and AI systems that take repetitive work off your team.",
     '/'
   );
 
@@ -40,93 +19,71 @@ export default function HomePage() {
     <>
       <Section first className="hero">
         <div className="hero__text">
-          <Eyebrow>Operations and technology for growing businesses</Eyebrow>
-          <h1>Build the capacity for your next stage of growth.</h1>
-          <p className="lead">
-            For established businesses where growth is putting pressure on the team, the systems, and the way work gets done.
-          </p>
-          <p>
-            I work with your team to improve processes, connect systems, and build practical tools using software,
-            automation, and AI.
-          </p>
+          <Eyebrow>Custom software, automation and AI for growing businesses</Eyebrow>
+          <h1>Take on more customers without the admin.</h1>
+          <p className="lead">I design and build software, automation and AI systems that take repetitive work off your team, so they can spend more time on customers and handle more business.</p>
+          <p>The work starts with understanding how your business runs. I work with your team to decide what needs to change, build the system and get it working in their day-to-day jobs.</p>
           <div className="hero__cta cta-row">
             <ButtonLink to="/contact">Let's talk</ButtonLink>
             <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
           </div>
         </div>
-        <div className="hero__figure">
-          <QuoteFlow />
-        </div>
-        <ProofSlot
-          kind="quote"
-          className="proof-slot--after-hero"
-          note="Early trust signal. Use a real, approved client quote with attribution."
-        />
+        <ProofSlot kind="quote" className="proof-slot--after-hero"
+          note="Early trust signal. Use a real, approved client quote with attribution." />
       </Section>
 
-      <Section labelledBy="problems-heading">
-        <div className="section__heading">
-          <h2 id="problems-heading">Where is the extra work coming from?</h2>
-        </div>
-        <ul className="cards cards--2">
-          {problems.map((problem) => (
-            <li key={problem.title} className="card">
-              <h3>{problem.title}</h3>
-              <p>{problem.body}</p>
-            </li>
-          ))}
-        </ul>
+      <Section labelledBy="outcomes-heading">
+        <div className="section__heading"><h2 id="outcomes-heading">Give your team more capacity, and your customers a better experience.</h2></div>
+        <Prose><p>The effort behind each customer can grow quickly: another document to prepare, another system to check, another handoff to follow up. The right system can carry more of that work. Here are a few examples of what that can make possible.</p></Prose>
+        <article className="home-outcome" aria-labelledby="outcome-1">
+          <div className="home-outcome__text">
+            <h3 id="outcome-1">Give customers a faster, more dependable response.</h3>
+            <Prose><p>When a customer asks for an update, the person answering can have the relevant history, outstanding questions and next steps in front of them. Software brings that context together and prepares the routine follow-up. Your team can spend the conversation resolving the issue, with less time spent hunting for information or asking colleagues to reconstruct what happened.</p></Prose>
+          </div>
+        </article>
+        <article className="home-outcome" aria-labelledby="outcome-2">
+          <div className="home-outcome__text">
+            <h3 id="outcome-2">Keep work moving without every decision coming back to you.</h3>
+            <Prose><p>The rules your experienced people use can become part of the system the whole team works with. In a quoting process, that could mean entering the job details once, preparing a price from agreed rules and giving the team a quote to review and send. Routine requests can move forward, while unusual jobs still get the judgment they need.</p></Prose>
+          </div>
+          <div className="home-outcome__figure"><QuoteFlow /></div>
+        </article>
+        <article className="home-outcome" aria-labelledby="outcome-3">
+          <div className="home-outcome__text">
+            <h3 id="outcome-3">See where the business needs attention while there's still time to act.</h3>
+            <Prose><p>A shared view can show which jobs are waiting, what is missing and who needs to act next. Your team can follow up before a delay becomes a customer complaint. When management figures need explaining, the records behind them are available, so the conversation can move toward what to do next.</p></Prose>
+          </div>
+        </article>
+      </Section>
+
+      <Section labelledBy="examples-heading">
+        <div className="section__heading"><h2 id="examples-heading">See what I've built with other teams.</h2></div>
+        <Prose className="home-work-intro"><p>These engagements show how the work develops from understanding the business into software people can use, with testing, rollout and ownership considered along the way.</p></Prose>
+        <ClientWorkFeature nested />
+        <div className="work-all"><SecondaryLink to="/work">See a sample of client work</SecondaryLink></div>
       </Section>
 
       <Section labelledBy="approach-heading">
         <div className="approach">
           <div className="approach__text">
-            <div className="section__heading">
-              <h2 id="approach-heading">Know what to change, with someone to see it through.</h2>
-            </div>
+            <div className="section__heading"><h2 id="approach-heading">From an operating problem to a system your team can use.</h2></div>
             <Prose>
-              <p>
-                We start with real examples of the work and the people responsible for it. I look at the handoffs,
-                information, and systems involved, then recommend where a change is most likely to help.
-              </p>
-              <p>
-                I build and test the changes with the people who will use them. We work through the exceptions
-                together, so the team is ready to use the tools in their day-to-day work.
-              </p>
-              <p>
-                My focus is on businesses around $5 million to $25 million in annual revenue, where the owners and
-                operations leaders want to grow and are ready to improve how the business runs.
-              </p>
+              <p>I work through real examples with the people doing the job: what they need to know, which decisions they make, and where the work gets held up. Together, we decide what the system needs to do and what your existing tools can support.</p>
+              <p>I then design and build the software or integrations, test them against real work, and work through the exceptions with your team. The build includes a plan for putting it into use and clarity about who will maintain it. If you already have a developer or technology provider, I can work alongside them.</p>
+              <p>My focus is on established businesses around $5 million to $25 million in annual revenue, where the owners and operations leaders are ready to invest in how the business runs.</p>
             </Prose>
           </div>
-          <div className="approach__figure">
-            <SprintSteps />
-          </div>
+          <div className="approach__figure"><SprintSteps /></div>
         </div>
-      </Section>
-
-      <Section labelledBy="examples-heading">
-        <div className="section__heading"><h2 id="examples-heading">Selected client work</h2></div>
-        <ClientWorkFeature nested />
-        <div className="work-all"><SecondaryLink to="/work">See a sample of client work</SecondaryLink></div>
       </Section>
 
       <Section labelledBy="sprint-heading">
         <InkBlock>
-          <h2 id="sprint-heading">
-            Start with a{' '}
-            <span className="underlined">
-              Discovery Sprint
-              <PenUnderline />
-            </span>
-            .
-          </h2>
+          <h2 id="sprint-heading">Know what to build first, and what it will take.</h2>
           <Prose>
-            <p>
-              A Discovery Sprint is a focused, paid engagement to understand what's holding the work up. We agree on
-              the scope, fee, and timing upfront. You'll know what I recommend changing first, why, and what it would
-              take.
-            </p>
+              <p>A Discovery Sprint is a focused, paid engagement around an operating problem. It might be why each new customer creates so much admin, or whether your existing software can support the next stage of growth.</p>
+              <p>I review the work and systems with your team, then recommend what to change first. You'll understand what your existing tools can handle, where a build would help, and what implementation would involve. We walk through the findings together so you can question the reasoning and decide how to proceed.</p>
+              <p>We agree on the scope, fee and timing before starting. Implementation is scoped separately. If you already have a clear project in mind, we can discuss the build directly.</p>
           </Prose>
           <div className="ink-block__cta">
             <SecondaryLink to="/working-together">See how we work together</SecondaryLink>
@@ -152,27 +109,19 @@ export default function HomePage() {
           <div className="person__text">
             <h2 id="person-heading">You'll work directly with me.</h2>
             <Prose>
-              <p>
-                I'm Patrick McHeyser, a software engineer and operations consultant based in Boulder, Colorado. I
-                work directly with you and your team, from understanding the problem through putting the changes
-                into practice.
-              </p>
+              <p>I'm Patrick McHeyser, a software engineer and operations consultant based in Boulder, Colorado. My background spans customer success, software engineering and executive leadership development. I'm comfortable talking through a decision with an owner, working out the details with the team, and building the software myself.</p>
+              <p>You can expect clear explanations and room to question my recommendations. I stay involved as the changes are tested and put into use.</p>
             </Prose>
             <SecondaryLink to="/about">More about Patrick</SecondaryLink>
           </div>
         </div>
-        <ProofSlot
-          kind="quote"
-          className="person__proof"
-          note="Approved testimonial about the experience of working with him."
-        />
+        <ProofSlot kind="quote" className="person__proof"
+          note="Approved testimonial about the experience of working with him." />
       </Section>
 
       <Section labelledBy="closing-heading" className="closing">
-        <h2 id="closing-heading">What is getting harder as your business grows?</h2>
-        <Prose>
-          <p>Tell me what's slowing the work down and what you'd like to change.</p>
-        </Prose>
+        <h2 id="closing-heading">What would your business be able to do with more capacity?</h2>
+        <Prose><p>Tell me what's taking too much of your team's time, or what you'd like the business to be able to handle next.</p></Prose>
         <div className="cta-row">
           <ButtonLink to="/contact">Let's talk</ButtonLink>
           <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>

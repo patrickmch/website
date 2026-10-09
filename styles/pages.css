@@ -97,6 +97,39 @@
   }
 }
 
+/* ---------- Home: outcome narratives ---------- */
+.home-outcome {
+  margin-top: 48px;
+}
+
+.home-outcome + .home-outcome {
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.home-outcome__text {
+  display: grid;
+  gap: 20px;
+}
+
+.home-outcome__figure {
+  margin-top: 48px;
+}
+
+.home-work-intro {
+  margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+  .home-outcome__text {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--grid-gap);
+  }
+
+  .home-outcome__text h3 { grid-column: span 4; }
+  .home-outcome__text .prose { grid-column: 6 / span 7; }
+}
+
 /* ---------- Home: approach and examples ---------- */
 .sprint-outcomes {
   max-width: 28rem;

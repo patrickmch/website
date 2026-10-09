@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-09: Publish the approved approach diagram
+
+- Patrick approved the rendered diagram and requested immediate publication. Reconciled the preview with current production `c19e0b2`, which already includes the newer homepage copy and accepted quote comparison. Preserved that homepage and added only the approved Sprint outcomes and their scoped styles.
+- Resolved two documentation conflicts by retaining both progress histories and the new diagram spec. The Home page, metadata, quote diagram and existing checks match current production exactly. Copy canon and design spec now record publication approval.
+- Typecheck, `PORT=4338 npm run check` and diff checks passed on the integrated release. Browser readback confirmed the current headline, both comparison labels, the three Sprint outcomes, no visible Home captions and no overflow. Contact checks were mocked; no mail sent.
+- Target: `patrickmch/website` main, Railway production, authenticated GitHub account `patrickmch`. Previous main `c19e0b23d76993bc0f95b0bd4e72e402d29cf2d1` is the rollback tree. This release merges main into the preview, so a normal revert retaining merge parent 2 restores that production tree without rewriting history.
+- Changed files relative to previous production: `components/diagrams/SprintSteps.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`. Live verification follows the push and is recorded in the private project log.
+
 ## 2026-10-09: Three client outcomes in the Home approach diagram
 
 - Patrick approved the proposed three-box diagram in the dev preview. Discovery Sprint now contains "A clear view of what's slowing the work down" and "A plan for what to change first". Separately scoped implementation leads to "Improvements tested and in use by your team", with the final outcome circled. No extra annotation, visible caption or step numbers.
@@ -7,6 +15,16 @@
 - Validation: `npm run typecheck`, `PORT=4336 npm run check` and `git diff --check` passed. The production check covers five-width layouts, diagram geometry, routes, metadata and mocked contact paths. Desktop and phone browser review and saved screenshots confirmed all three outcomes, separate scope labels, one final circle and no captions, overflow, failed requests or console errors. No email sent.
 - Dev preview: `http://127.0.0.1:4330/?review=0`, branch `codex/quoting-before-after-preview`. No production deployment.
 - Changed files: `components/diagrams/SprintSteps.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`. No new source files.
+
+## 2026-10-09: Approved homepage build offer
+
+- Patrick approved publishing the proposed homepage and rejected the supplemental MTRO account-brief item. The release leads with "Take on more customers without the admin", explains three operating outcomes, brings the existing manufacturing/healthcare evidence forward, and expands the build, discovery and personal introduction sections.
+- Moved the accepted Before/After quote comparison from the hero to the quoting example. Kept Home captions hidden. The separate Sprint diagram revision remains in its other dev preview; this release preserves the current production Sprint diagram.
+- Updated canonical copy first, then Home and its search/share description. Other page source, client summaries/story narratives, photos, the social image, and shared components are unchanged. The new layout selectors are Home-specific.
+- Validation passed: typecheck; `PORT=4357 npm run check` (production build, routing/metadata, links, focus, diagrams, contact form with mocked mail, no console errors); desktop/phone screenshot review; overflow checks at 360/390/768/1024/1440px; and `git diff --check`. No mail sent. Screenshots were inspected from `/tmp/mcheyser-home-release-20261009` and are reproducible with the existing screenshot script.
+- Release from isolated branch `codex/home-build-offer-release`, based on the accepted quoting preview `5aa9fa6`. The other preview workspace had active Sprint edits and was preserved. Destination verified: `patrickmch/website`, account `patrickmch`, production `main` at `4d628e3` before push. Railway auto-deploys main. Rollback is a normal revert of the release and, if needed, the three quoting-preview commits back to the prior production tree; no history rewrite.
+- Live verified: application release `9b52895`, Railway success, bundle `/assets/index-DCegKdt_.js`. Browser readback matched all 16 approved homepage paragraphs and new metadata, confirmed the omitted account-brief item, hidden captions/proof slots, relocated three-step After flow, evidence order, five-width fit, client-story navigation and contact navigation. No browser errors or form submission. An initial browser read loaded the old release while Railway was still pending and timed out waiting for the new heading; a fresh navigation after Railway success passed.
+- Files in this release relative to prior production: `pages/HomePage.tsx`, `index.html`, `components/diagrams/QuoteFlow.tsx`, `styles/pages.css`, `scripts/check-production.mjs`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`. No new public source files. Live verification follows push.
 
 ## 2026-10-08: Keep the comparison and the simpler After flow
 

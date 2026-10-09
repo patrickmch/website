@@ -2,8 +2,9 @@
 title: Website Copy for Designer Handoff - October 2026
 type: draft
 created: 2026-10-03
-updated: 2026-10-08
+updated: 2026-10-09
 sources:
+  - Patrick's October 9 approval to publish the homepage build offer, omitting the MTRO account-brief item
   - Patrick's October 8 request to remove captions from both homepage diagrams
   - Patrick's October 7 annotated request to restore the prior diagram, social preview, biography, story prose, tables and captions
   - Patrick's October 7 approval of growth-capacity positioning and a site-wide tone pass
@@ -16,13 +17,13 @@ related: []
 
 # Website copy for the designer
 
-**Status: growth opening retained, with selected prose and diagrams restored at Patrick's request.** This is the canonical visitor copy for the marketing pages, client stories, diagrams and metadata.
+**Status: homepage build offer approved for publication on October 9; other page copy retained.** This is the canonical visitor copy for the marketing pages, client stories, diagrams and metadata.
 
 ## Content brief
 
 - Write for owners and operations leaders at growth-oriented businesses around $5 million to $25 million in annual revenue. The industry focus remains open.
 - Home is the landing page. Navigation is **Working Together | Client Work | About | Let's talk**, with the McHeyser wordmark linking Home.
-- Preserve the original operations-and-technology positioning. The offer combines understanding an operating problem with hands-on implementation. Discovery Sprint is the promoted first engagement.
+- The homepage leads with design/build engagements: software, automation and AI that improve how the business runs. A Discovery Sprint helps when the problem or build scope needs clarifying; an already-defined project can begin with a build discussion.
 - Home features the anonymous manufacturing and healthcare engagements. Client Work leads with the same pair, followed by MTRO PRO and Psyche Digital as supporting stories. Private research and client-identifying material for the anonymous stories are excluded from site source and builds. The three illustrative examples (a quoting tool, customer paperwork, a shared view) sit on Working Together; they describe possible improvements and are not case studies or measured client results.
 - Bracketed editorial notes are production notes, not visitor-facing copy. Bold button labels have their destinations listed under Shared site copy.
 - Wherever "Let's talk" stands alone in a hero or closing call, "See how I've worked with others" sits beside it and leads to Client Work (4 October). The closing calls on the Client Work pages pair the button with "How we work together" instead.
@@ -31,83 +32,85 @@ related: []
 
 ## Home
 
-Operations and technology for growing businesses
+Custom software, automation and AI for growing businesses
 
-### Build the capacity for your next stage of growth.
+### Take on more customers without the admin.
 
-For established businesses where growth is putting pressure on the team, the systems, and the way work gets done.
+I design and build software, automation and AI systems that take repetitive work off your team, so they can spend more time on customers and handle more business.
 
-I work with your team to improve processes, connect systems, and build practical tools using software, automation, and AI.
+The work starts with understanding how your business runs. I work with your team to decide what needs to change, build the system and get it working in their day-to-day jobs.
 
 **Let's talk**
 
 **See how I've worked with others**
 
-> [Editorial: early trust signal. Use a real, approved client quote with attribution.]
+### Give your team more capacity, and your customers a better experience.
 
-### Where is the extra work coming from?
+The effort behind each customer can grow quickly: another document to prepare, another system to check, another handoff to follow up. The right system can carry more of that work. Here are a few examples of what that can make possible.
 
-**Every new customer brings another round of admin.**
+#### Give customers a faster, more dependable response.
 
-Your team prepares the same documents, re-enters information, and chases the next response. The customer list grows, and so does the effort it takes to keep track of everything. You're wondering how much more the team can take on.
+When a customer asks for an update, the person answering can have the relevant history, outstanding questions and next steps in front of them. Software brings that context together and prepares the routine follow-up. Your team can spend the conversation resolving the issue, with less time spent hunting for information or asking colleagues to reconstruct what happened.
 
-**A status update takes too much digging.**
+#### Keep work moving without every decision coming back to you.
 
-Before you can answer a customer or decide what needs attention, someone has to check email, spreadsheets, and a business system. You need a dependable view of what's waiting, what's missing, and who needs to act.
+The rules your experienced people use can become part of the system the whole team works with. In a quoting process, that could mean entering the job details once, preparing a price from agreed rules and giving the team a quote to review and send. Routine requests can move forward, while unusual jobs still get the judgment they need.
 
-**Work keeps coming back to you or the same few people.**
+#### See where the business needs attention while there's still time to act.
 
-Someone needs a pricing decision. A customer request falls outside the usual process. The team turns to the person who knows the history, and work waits until they're available.
+A shared view can show which jobs are waiting, what is missing and who needs to act next. Your team can follow up before a delay becomes a customer complaint. When management figures need explaining, the records behind them are available, so the conversation can move toward what to do next.
 
-**You're spending on systems and still filling the gaps.**
+### See what I've built with other teams.
 
-People still move information from one tool to another or build the report by hand. You need to know whether to improve what you have, connect the systems, or change the process before investing again.
+These engagements show how the work develops from understanding the business into software people can use, with testing, rollout and ownership considered along the way.
 
-### Know what to change, with someone to see it through.
+Custom manufacturing
 
-We start with real examples of the work and the people responsible for it. I look at the handoffs, information, and systems involved, then recommend where a change is most likely to help.
-
-I build and test the changes with the people who will use them. We work through the exceptions together, so the team is ready to use the tools in their day-to-day work.
-
-My focus is on businesses around $5 million to $25 million in annual revenue, where the owners and operations leaders want to grow and are ready to improve how the business runs.
-
-### Selected client work
-
-Client: Custom manufacturing
-
-**From a 10,000-formula spreadsheet to software the company owns.**
+#### From a 10,000-formula spreadsheet to software the company owns.
 
 An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
 
-Link: See the work → /work/manufacturing-systems
+**See the work** → /work/manufacturing-systems
 
-Client: Healthcare services
+Healthcare services
 
-**Four systems answering as one, inside the team's AI assistants.**
+#### Four systems answering as one, inside the team's AI assistants.
 
 An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
 
-Link: See the work → /work/shared-context
+**See the work** → /work/shared-context
 
-Link: See a sample of client work → /work
+**See a sample of client work** → /work
 
-### Start with a Discovery Sprint.
+### From an operating problem to a system your team can use.
 
-A Discovery Sprint is a focused, paid engagement to understand what's holding the work up. We agree on the scope, fee, and timing upfront. You'll know what I recommend changing first, why, and what it would take.
+I work through real examples with the people doing the job: what they need to know, which decisions they make, and where the work gets held up. Together, we decide what the system needs to do and what your existing tools can support.
 
-**See how we work together**
+I then design and build the software or integrations, test them against real work, and work through the exceptions with your team. The build includes a plan for putting it into use and clarity about who will maintain it. If you already have a developer or technology provider, I can work alongside them.
+
+My focus is on established businesses around $5 million to $25 million in annual revenue, where the owners and operations leaders are ready to invest in how the business runs.
+
+### Know what to build first, and what it will take.
+
+A Discovery Sprint is a focused, paid engagement around an operating problem. It might be why each new customer creates so much admin, or whether your existing software can support the next stage of growth.
+
+I review the work and systems with your team, then recommend what to change first. You'll understand what your existing tools can handle, where a build would help, and what implementation would involve. We walk through the findings together so you can question the reasoning and decide how to proceed.
+
+We agree on the scope, fee and timing before starting. Implementation is scoped separately. If you already have a clear project in mind, we can discuss the build directly.
+
+**See how we work together** → /working-together
 
 ### You'll work directly with me.
 
-I'm Patrick McHeyser, a software engineer and operations consultant based in Boulder, Colorado. I work directly with you and your team, from understanding the problem through putting the changes into practice.
+I'm Patrick McHeyser, a software engineer and operations consultant based in Boulder, Colorado. My background spans customer success, software engineering and executive leadership development. I'm comfortable talking through a decision with an owner, working out the details with the team, and building the software myself.
 
-**More about Patrick**
+You can expect clear explanations and room to question my recommendations. I stay involved as the changes are tested and put into use.
 
-> [Editorial: photograph of Patrick and an approved testimonial about the experience of working with him.]
+**More about Patrick** → /about
 
-### What is getting harder as your business grows?
+### What would your business be able to do with more capacity?
 
-Tell me what's slowing the work down and what you'd like to change.
+Tell me what's taking too much of your team's time, or what you'd like the business to be able to handle next.
 
 **Let's talk**
 
@@ -115,7 +118,7 @@ Tell me what's slowing the work down and what you'd like to change.
 
 Home diagrams have no visible caption or figure number. Keep their accessible names and descriptions for screen readers.
 
-Home approach diagram (approved for dev preview, 9 October 2026):
+Home approach diagram (approved for publication, 9 October 2026):
 
 Accessible name only: From a clear view of the problem to improvements in use by your team.
 
@@ -130,7 +133,7 @@ Accessible description: Three connected boxes in two groups. Discovery Sprint co
 
 ### Home diagram and social preview
 
-Dev preview approved for review, 8 October 2026. Show Before and After together, with the simpler three-step After flow and no owner-review branch. This is an example of an improvement, not a measured client result. Publication is pending Patrick's review.
+Dev preview approved for review, 8 October 2026. Show Before and After together, with the simpler three-step After flow and no owner-review branch. This is an example of an improvement, not a measured client result. Approved for publication with the October 9 homepage release. Place this comparison after the quoting example, outside the hero.
 
 Accessible name only: An example of reducing the work involved in preparing a quote.
 
@@ -361,7 +364,7 @@ patrick@mcheyser.com
 
 | Page | Title | Description |
 | --- | --- | --- |
-| Home | Patrick McHeyser \| Operations and technology consulting | Build capacity for your next stage of growth. Patrick McHeyser works with your team to improve processes and build practical tools using software, automation, and AI. |
+| Home | Patrick McHeyser \| Operations and technology consulting | Take on more customers without the admin. Patrick McHeyser designs and builds software, automation and AI systems that take repetitive work off your team. |
 | Working Together | Working Together \| Patrick McHeyser | Find out what is holding the work up and what to change first. Start with a Discovery Sprint, then build and test improvements with Patrick and your team. |
 | About | About Patrick McHeyser | Meet Patrick McHeyser, a Boulder-based software engineer and operations consultant who works directly with your team to understand problems and implement improvements. |
 | Contact | Let's Talk \| Patrick McHeyser | Tell Patrick what is getting harder to manage as your business grows. Start a conversation about the problem and whether he can help. |
