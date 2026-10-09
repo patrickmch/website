@@ -115,7 +115,18 @@ Tell me what's slowing the work down and what you'd like to change.
 
 Home diagrams have no visible caption or figure number. Keep their accessible names and descriptions for screen readers.
 
-Home approach diagram accessible name: From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps.
+Home approach diagram (approved for dev preview, 9 October 2026):
+
+Accessible name only: From a clear view of the problem to improvements in use by your team.
+
+Discovery Sprint:
+- A clear view of what's slowing the work down
+- A plan for what to change first
+
+Implementation, scoped separately:
+- Improvements tested and in use by your team (circled)
+
+Accessible description: Three connected boxes in two groups. Discovery Sprint covers a clear view of what's slowing the work down, followed by a plan for what to change first. An arrow leads to Implementation, scoped separately: improvements tested and in use by your team. This final outcome is circled. There is no additional annotation or visible caption.
 
 ### Home diagram and social preview
 

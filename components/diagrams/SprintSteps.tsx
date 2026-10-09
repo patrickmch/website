@@ -1,47 +1,35 @@
-import { Figure } from '../Figure';
-import { PenCircle } from '../marks/PenCircle';
+import { Figure, Flow, Node, Connector } from '../Figure';
 
-const groups = [
-  {
-    label: 'Discovery Sprint',
-    steps: ['Walk through real examples with the people doing the work', 'Find where it is held up', 'Recommend what to change first'],
-  },
-  {
-    label: 'Implementation, scoped separately',
-    steps: ['Build and test it with the team'],
-  },
-];
-
-/** Fig. 2: how the work gets looked at, then changed. The Sprint's boundary is drawn, not only captioned. */
+/** Client outcomes from discovery through separately scoped implementation. */
 export function SprintSteps() {
-  let n = 0;
   return (
     <Figure
       n={2}
       showCaption={false}
-      caption="From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps."
-      description="Four numbered steps in two groups. Under the label Discovery Sprint: walk through real examples with the people doing the work; find where it is held up (this step is circled); recommend what to change first. Under the label Implementation, scoped separately: build and test it with the team."
+      className="sprint-outcomes"
+      caption="From a clear view of the problem to improvements in use by your team."
+      description="Three connected boxes in two groups. Discovery Sprint covers a clear view of what's slowing the work down, followed by a plan for what to change first. An arrow leads to Implementation, scoped separately: improvements tested and in use by your team. This final outcome is circled. There is no additional annotation or visible caption."
     >
-      {groups.map((group) => (
-        <div key={group.label} className="steps-group">
-          <p className="steps-group__label">{group.label}</p>
-          <ol className="steps" start={n + 1}>
-            {group.steps.map((text) => {
-              n += 1;
-              const index = n;
-              return (
-                <li key={text} className="steps__item">
-                  <span className="steps__n">
-                    {index}
-                    {index === 2 && <PenCircle />}
-                  </span>
-                  <span className="steps__text">{text}</span>
-                </li>
-              );
-            })}
-          </ol>
+      <div className="sprint-outcomes__group">
+        <p className="sprint-outcomes__label">Discovery Sprint</p>
+        <Flow className="sprint-outcomes__flow">
+          <Node label="A clear view of what's slowing the work down" />
+          <Connector />
+          <Node label="A plan for what to change first" />
+        </Flow>
+      </div>
+      <div className="sprint-outcomes__group">
+        <div className="sprint-outcomes__transition">
+          <div className="connector" aria-hidden="true">
+            <svg className="connector__v" viewBox="0 0 16 80" focusable="false">
+              <path d="M8 0 V76" />
+              <path d="M2 70 L8 77 L14 70" />
+            </svg>
+          </div>
+          <p className="sprint-outcomes__label">Implementation, scoped separately</p>
         </div>
-      ))}
+        <Node label="Improvements tested and in use by your team" marked />
+      </div>
     </Figure>
   );
 }

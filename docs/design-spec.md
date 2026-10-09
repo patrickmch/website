@@ -246,13 +246,13 @@ Two horizontal flows at 768px and up, with Before and After labels aligned at th
 The social preview remains the prior quoting illustration restored on 7 October. The growth headline remains on Home.
 
 ### Fig. 2 — From understanding to use (Home, "Know what to change, with someone to see it through.")
-Accessible name only: "From understanding the problem to putting a change into use. A Discovery Sprint covers the first three steps." (Amended: the old caption made step 4, building, part of the Sprint, which the Working Together page says is scoped separately.)
-A vertical numbered strip with a 1.5px `--stroke` line down the left, in two groups so the Sprint's boundary is in the drawing (Amended): under the mono label "Discovery Sprint", steps 1 to 3; under the mono label "Implementation, scoped separately", step 4.
-1. Walk through real examples with the people doing the work
-2. Find where it is held up
-3. Recommend what to change first
-4. Build and test it with the team
-Step 2 has a small PenCircle around its number. No annotation.
+**Approved for dev preview, 9 October 2026.** Three connected boxes show what the client gets, with the final outcome circled rather than a numbered diagnosis step.
+
+Accessible name only: "From a clear view of the problem to improvements in use by your team."
+- Under "Discovery Sprint": "A clear view of what's slowing the work down" → "A plan for what to change first".
+- Under "Implementation, scoped separately": "Improvements tested and in use by your team".
+
+The boxes run vertically at every width, using the existing Node and Connector components. The implementation label sits beside the connecting arrow to the third box, so the two engagement scopes remain distinct. PenCircle encloses the final outcome. No step numbers, extra annotation, visible caption or figure number.
 
 ### Fig. 3 — A quoting tool that follows your rules (Home example 1)
 Caption: "Routine quotes get drafted. The ones that need judgment get flagged for a person."

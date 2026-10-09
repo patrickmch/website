@@ -98,6 +98,51 @@
 }
 
 /* ---------- Home: approach and examples ---------- */
+.sprint-outcomes {
+  max-width: 28rem;
+}
+
+.sprint-outcomes__label {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.sprint-outcomes__flow {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sprint-outcomes .connector {
+  width: 16px;
+  height: 32px;
+}
+
+.sprint-outcomes .connector__h { display: none; }
+.sprint-outcomes .connector__v { display: block; }
+
+.sprint-outcomes__transition {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.sprint-outcomes__transition .connector {
+  height: 80px;
+}
+
+.sprint-outcomes__transition .sprint-outcomes__label {
+  position: absolute;
+  left: calc(50% + 20px);
+  right: 0;
+  margin: 0;
+}
+
 .approach {
   display: grid;
   gap: var(--grid-gap);

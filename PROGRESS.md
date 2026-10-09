@@ -1,5 +1,13 @@
 # mcheyser-site: progress
 
+## 2026-10-09: Three client outcomes in the Home approach diagram
+
+- Patrick approved the proposed three-box diagram in the dev preview. Discovery Sprint now contains "A clear view of what's slowing the work down" and "A plan for what to change first". Separately scoped implementation leads to "Improvements tested and in use by your team", with the final outcome circled. No extra annotation, visible caption or step numbers.
+- Updated the copy canon before implementation and kept the established box, arrow, pen and typography styles. The connected boxes stack vertically at every width. The accepted quoting Before/After and all other page copy are unchanged.
+- Validation: `npm run typecheck`, `PORT=4336 npm run check` and `git diff --check` passed. The production check covers five-width layouts, diagram geometry, routes, metadata and mocked contact paths. Desktop and phone browser review and saved screenshots confirmed all three outcomes, separate scope labels, one final circle and no captions, overflow, failed requests or console errors. No email sent.
+- Dev preview: `http://127.0.0.1:4330/?review=0`, branch `codex/quoting-before-after-preview`. No production deployment.
+- Changed files: `components/diagrams/SprintSteps.tsx`, `styles/pages.css`, `docs/website-copy-2026-10.md`, `docs/design-spec.md`, and `PROGRESS.md`. No new source files.
+
 ## 2026-10-08: Keep the comparison and the simpler After flow
 
 - Patrick clarified that he liked Before and After together. Restored the original four-step Before row and both labels, keeping the simplified three-step After row without the owner-review branch. Updated the copy canon, accessible description and design spec to match.
