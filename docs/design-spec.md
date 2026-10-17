@@ -291,9 +291,9 @@ Section order is the copy doc's order. Every piece of visitor-facing copy comes 
 
 ### 7.1 Home
 
-Amended October 9, 2026: approved build offer, homepage only.
+Amended October 17, 2026: approved homepage positioning, diagram labels, and metadata update.
 
-1. **Hero.** "Take on more customers without the admin." Eyebrow and two paragraphs from the copy canon, with the existing paired contact and client-work links. Approved for publication October 9: a compact conceptual diagram sits to the right at 1024px and above. Three vertically connected boxes read "Your business", "AI + automation", "Room to grow"; circle the middle box. Use the established thin outlines, mono labels and orange pen, with no caption or extra annotation. Keep the text column up to 680px and center the diagram in the remaining right column. Below 1024px, place the diagram beneath the copy and links, centered at a maximum width of 256px.
+1. **Hero.** "Give your team the systems to handle more business." Eyebrow and two paragraphs from the copy canon, with the existing paired contact and client-work links. Updated October 17: a compact conceptual diagram sits to the right at 1024px and above. Three vertically connected boxes read "Your current systems", "Software + AI", "Room to grow"; circle the middle box. Use the established thin outlines, mono labels and orange pen, with no caption or extra annotation. Keep the text column up to 680px and center the diagram in the remaining right column. Below 1024px, place the diagram beneath the copy and links, centered at a maximum width of 256px.
 2. **ProofSlot** for a real, approved client quote. Empty slots remain hidden in the public composition.
 3. **Outcome examples.** Section heading and intro, then three short narratives. At desktop widths, each H3 spans four columns and its paragraph spans columns 6 through 12; stack on phones. Separate the narratives with fine rules. Place the accepted Before/After quoting comparison at full width immediately after the quoting paragraph. No visible figure caption.
 4. **Client evidence.** Section heading and intro, then the existing manufacturing and healthcare cards, preserving their shared summaries. Link to the full Client Work index. No MTRO account-brief item.
@@ -393,7 +393,7 @@ From the copy doc's table. Set by `usePageMeta`; defaults live in `index.html`.
 
 | Page | Title | Description |
 |---|---|---|
-| Home | Patrick McHeyser \| Operations and technology consulting | Practical help with the processes, software, and administrative work that make growth harder. Work directly with Patrick McHeyser from discovery through implementation. |
+| Home | Patrick McHeyser \| Custom software, automation and AI | Give your team the systems to handle more business. Patrick McHeyser designs and builds custom software, automation, and AI around the systems your business already runs. |
 | Working Together | Working Together \| Patrick McHeyser | Start with a focused Discovery Sprint to understand an operating problem and decide what to change. Explore the process, deliverables, and implementation work. |
 | About | About Patrick McHeyser | Meet Patrick McHeyser, a Boulder-based software engineer and operations consultant who works directly with your team to understand problems and implement improvements. |
 | Contact | Let's Talk \| Patrick McHeyser | Tell Patrick what is getting harder to manage as your business grows. Start a conversation about the problem and whether he can help. |

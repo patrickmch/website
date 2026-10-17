@@ -11,8 +11,8 @@ import { ClientWorkFeature } from '../components/ClientWorkFeature';
 
 export default function HomePage() {
   usePageMeta(
-    'Patrick McHeyser | Operations and technology consulting',
-    "Take on more customers without the admin. Patrick McHeyser designs and builds software, automation and AI systems that take repetitive work off your team.",
+    'Patrick McHeyser | Custom software, automation and AI',
+    'Give your team the systems to handle more business. Patrick McHeyser designs and builds custom software, automation, and AI around the systems your business already runs.',
     '/'
   );
 
@@ -22,9 +22,9 @@ export default function HomePage() {
         <div className="hero__layout">
           <div className="hero__text">
             <Eyebrow>Custom software, automation and AI for growing businesses</Eyebrow>
-            <h1>Take on more customers without the admin.</h1>
-            <p className="lead">I design and build software, automation and AI systems that take repetitive work off your team, so they can spend more time on customers and handle more business.</p>
-            <p>The work starts with understanding how your business runs. I work with your team to decide what needs to change, build the system and get it working in their day-to-day jobs.</p>
+            <h1>Give your team the systems to handle more business.</h1>
+            <p className="lead">As a business grows, critical work starts getting stuck between your existing software, spreadsheets, and a few key people. I design and build custom software, automation, and AI that close those gaps and keep work moving.</p>
+            <p>The work starts with how your operation actually runs. I work with your team to see where quoting, handoffs, or reporting get held up, build what is missing around the systems you already use, and get it working in their day-to-day jobs.</p>
             <div className="hero__cta cta-row">
               <ButtonLink to="/contact">Let's talk</ButtonLink>
               <SecondaryLink to="/work">See how I've worked with others</SecondaryLink>
@@ -74,7 +74,7 @@ export default function HomePage() {
             <Prose>
               <p>I work through real examples with the people doing the job: what they need to know, which decisions they make, and where the work gets held up. Together, we decide what the system needs to do and what your existing tools can support.</p>
               <p>I then design and build the software or integrations, test them against real work, and work through the exceptions with your team. The build includes a plan for putting it into use and clarity about who will maintain it. If you already have a developer or technology provider, I can work alongside them.</p>
-              <p>My focus is on established businesses around $5 million to $25 million in annual revenue, where the owners and operations leaders are ready to invest in how the business runs.</p>
+              <p>My focus is on established businesses, typically around $10 million to $75 million in annual revenue, where the owners and operations leaders have core systems in place and are ready to improve how the work moves across the company.</p>
             </Prose>
           </div>
           <div className="approach__figure"><SprintSteps /></div>

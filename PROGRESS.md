@@ -1,5 +1,12 @@
 # mcheyser-site: progress
 
+## 2026-10-17: Home positioning, hero concept, and revenue range
+
+- Applied Patrick's approved Home opening ("Give your team the systems to handle more business."), updated the three-box hero diagram labels (`Your current systems` -> `Software + AI` -> `Room to grow`), updated the Home metadata title and description, and widened the revenue focus range from `$5 million to $25 million` to `$10 million to $75 million`.
+- Updated canonical copy (`docs/website-copy-2026-10.md`) and design spec (`docs/design-spec.md`) first, then updated `pages/HomePage.tsx`, `components/diagrams/GrowthConcept.tsx`, `index.html`, and `scripts/check-production.mjs`.
+- Validation passed: `npm run typecheck`, `PORT=4350 npm run check`, and `git diff --check`. Contact checks were mocked; no mail sent.
+- Prepared on isolated branch `positioning-2026-10-17` based on production `main` (`e650127`).
+
 ## 2026-10-09: Publish the AI and automation hero concept
 
 - Patrick approved the revised "AI + automation" label and requested publication. The release adds the accepted three-box conceptual illustration beside the desktop hero and below the copy on smaller screens. No visible caption or extra note.

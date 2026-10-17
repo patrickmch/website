@@ -2,8 +2,9 @@
 title: Website Copy for Designer Handoff - October 2026
 type: draft
 created: 2026-10-03
-updated: 2026-10-09
+updated: 2026-10-17
 sources:
+  - Patrick's October 17 approval of the Home hero copy, existing-systems diagram labels, title tag, and updated revenue focus
   - Patrick's October 9 approval to publish the homepage build offer, omitting the MTRO account-brief item
   - Patrick's October 8 request to remove captions from both homepage diagrams
   - Patrick's October 7 annotated request to restore the prior diagram, social preview, biography, story prose, tables and captions
@@ -17,13 +18,13 @@ related: []
 
 # Website copy for the designer
 
-**Status: homepage build offer approved for publication on October 9; other page copy retained.** This is the canonical visitor copy for the marketing pages, client stories, diagrams and metadata.
+**Status: homepage positioning update approved on October 17; Working Together and manufacturing case-study updates in progress.** This is the canonical visitor copy for the marketing pages, client stories, diagrams and metadata.
 
 ## Content brief
 
-- Write for owners and operations leaders at growth-oriented businesses around $5 million to $25 million in annual revenue. The industry focus remains open.
+- Write for owners and operations leaders at established, growth-oriented businesses typically around $10 million to $75 million in annual revenue. The industry focus remains open.
 - Home is the landing page. Navigation is **Working Together | Client Work | About | Let's talk**, with the McHeyser wordmark linking Home.
-- The homepage leads with design/build engagements: software, automation and AI that improve how the business runs. A Discovery Sprint helps when the problem or build scope needs clarifying; an already-defined project can begin with a build discussion.
+- The homepage leads with design/build engagements: software, automation and AI that close the gaps around the systems a business already runs. A Discovery Sprint helps when the problem or build scope needs clarifying; an already-defined project can begin with a build discussion.
 - Home features the anonymous manufacturing and healthcare engagements. Client Work leads with the same pair, followed by MTRO PRO and Psyche Digital as supporting stories. Private research and client-identifying material for the anonymous stories are excluded from site source and builds. The three illustrative examples (a quoting tool, customer paperwork, a shared view) sit on Working Together; they describe possible improvements and are not case studies or measured client results.
 - Bracketed editorial notes are production notes, not visitor-facing copy. Bold button labels have their destinations listed under Shared site copy.
 - Wherever "Let's talk" stands alone in a hero or closing call, "See how I've worked with others" sits beside it and leads to Client Work (4 October). The closing calls on the Client Work pages pair the button with "How we work together" instead.
@@ -34,25 +35,25 @@ related: []
 
 Custom software, automation and AI for growing businesses
 
-### Take on more customers without the admin.
+### Give your team the systems to handle more business.
 
-I design and build software, automation and AI systems that take repetitive work off your team, so they can spend more time on customers and handle more business.
+As a business grows, critical work starts getting stuck between your existing software, spreadsheets, and a few key people. I design and build custom software, automation, and AI that close those gaps and keep work moving.
 
-The work starts with understanding how your business runs. I work with your team to decide what needs to change, build the system and get it working in their day-to-day jobs.
+The work starts with how your operation actually runs. I work with your team to see where quoting, handoffs, or reporting get held up, build what is missing around the systems you already use, and get it working in their day-to-day jobs.
 
 **Let's talk**
 
 **See how I've worked with others**
 
-Hero concept diagram (approved for publication October 9, 2026):
+Hero concept diagram (updated October 17, 2026):
 
-- Your business
-- AI + automation (circled)
+- Your current systems
+- Software + AI (circled)
 - Room to grow
 
-Accessible name only: Your business, AI + automation, room to grow.
+Accessible name only: Your current systems, software + AI, room to grow.
 
-Accessible description: Three connected boxes run from Your business to AI + automation to Room to grow. AI + automation is circled in orange. No visible caption or additional note.
+Accessible description: Three connected boxes run from Your current systems to Software + AI to Room to grow. Software + AI is circled in orange. No visible caption or additional note.
 
 ### Give your team more capacity, and your customers a better experience.
 
@@ -98,7 +99,7 @@ I work through real examples with the people doing the job: what they need to kn
 
 I then design and build the software or integrations, test them against real work, and work through the exceptions with your team. The build includes a plan for putting it into use and clarity about who will maintain it. If you already have a developer or technology provider, I can work alongside them.
 
-My focus is on established businesses around $5 million to $25 million in annual revenue, where the owners and operations leaders are ready to invest in how the business runs.
+My focus is on established businesses, typically around $10 million to $75 million in annual revenue, where the owners and operations leaders have core systems in place and are ready to improve how the work moves across the company.
 
 ### Know what to build first, and what it will take.
 
@@ -374,7 +375,7 @@ patrick@mcheyser.com
 
 | Page | Title | Description |
 | --- | --- | --- |
-| Home | Patrick McHeyser \| Operations and technology consulting | Take on more customers without the admin. Patrick McHeyser designs and builds software, automation and AI systems that take repetitive work off your team. |
+| Home | Patrick McHeyser \| Custom software, automation and AI | Give your team the systems to handle more business. Patrick McHeyser designs and builds custom software, automation, and AI around the systems your business already runs. |
 | Working Together | Working Together \| Patrick McHeyser | Find out what is holding the work up and what to change first. Start with a Discovery Sprint, then build and test improvements with Patrick and your team. |
 | About | About Patrick McHeyser | Meet Patrick McHeyser, a Boulder-based software engineer and operations consultant who works directly with your team to understand problems and implement improvements. |
 | Contact | Let's Talk \| Patrick McHeyser | Tell Patrick what is getting harder to manage as your business grows. Start a conversation about the problem and whether he can help. |

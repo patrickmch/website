@@ -83,7 +83,7 @@ try {
 
   /* ---------- Routes, titles, per-route metadata (real paths) ---------- */
   const expectedTitles = {
-    '/': 'Patrick McHeyser | Operations and technology consulting',
+    '/': 'Patrick McHeyser | Custom software, automation and AI',
     '/working-together': 'Working Together | Patrick McHeyser',
     '/work': 'Client Work | Patrick McHeyser',
     '/work/mtro-pro': 'MTRO PRO: Customer Problems into Fixes, Tests and a Morning Brief | Patrick McHeyser',
