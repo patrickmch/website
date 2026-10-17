@@ -1,11 +1,12 @@
 # mcheyser-site: progress
 
-## 2026-10-17: Home positioning, hero concept, and revenue range
+## 2026-10-17: Home positioning, Working Together entry paths, and Manufacturing walkthrough
 
 - Applied Patrick's approved Home opening ("Give your team the systems to handle more business."), updated the three-box hero diagram labels (`Your current systems` -> `Software + AI` -> `Room to grow`), updated the Home metadata title and description, and widened the revenue focus range from `$5 million to $25 million` to `$10 million to $75 million`.
-- Updated canonical copy (`docs/website-copy-2026-10.md`) and design spec (`docs/design-spec.md`) first, then updated `pages/HomePage.tsx`, `components/diagrams/GrowthConcept.tsx`, `index.html`, and `scripts/check-production.mjs`.
-- Validation passed: `npm run typecheck`, `PORT=4350 npm run check`, and `git diff --check`. Contact checks were mocked; no mail sent.
-- Prepared on isolated branch `positioning-2026-10-17` based on production `main` (`e650127`).
+- Applied Patrick's approved Working Together revision ("Start with a clear first project, or a short sprint to scope it."), framing both direct project scoping and Discovery Sprints clearly and refocusing the example section on how software, automation, and human judgment fit together.
+- Applied Patrick's approved Manufacturing case study walkthrough (`/work/manufacturing-systems`), leading with the concrete 60-to-90-second quoting workflow (extracting 111 rules and 37 lookup tables from a 10,000-formula workbook, pricing three quantities at once, saving versions, generating the customer PDF, and validating across 99 archived quotes), followed by the concrete on-time delivery reporting trace across nearly 30,000 formulas, the 1,500-test release process, and the sales-to-design handoff and fractional CTO leadership.
+- Updated canonical copy (`docs/website-copy-2026-10.md`) and design spec (`docs/design-spec.md`) first, then updated `pages/HomePage.tsx`, `components/diagrams/GrowthConcept.tsx`, `pages/WorkingTogetherPage.tsx`, `content/clientStories.ts`, `pages/ClientStoryPage.tsx`, `index.html`, and `scripts/check-production.mjs`.
+- Validation: `npm run typecheck`, `npm run check`, and `git diff --check`. Contact checks were mocked; no mail sent.
 
 ## 2026-10-09: Publish the AI and automation hero concept
 

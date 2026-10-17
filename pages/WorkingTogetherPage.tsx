@@ -50,14 +50,16 @@ export default function WorkingTogetherPage() {
     <>
       <Section first className="hero">
         <div className="hero__text">
-          <h1>Start with the work that's slowing you down.</h1>
+          <h1>Start with a clear first project, or a short sprint to scope it.</h1>
           <p className="lead">
-            Your team is taking on more work, but the way it gets done hasn't kept up. People spend too much time
-            chasing information or waiting for decisions that keep coming back to you.
+            Some clients come in knowing which workflow needs to be built or fixed first: a quoting tool, a handoff
+            between sales and production, or reporting that still takes days to reconcile by hand. When the target is
+            clear, we scope that project directly and build it.
           </p>
           <p>
-            You may already have people working on the technology and need another pair of eyes on the priorities. I
-            can work alongside them, from deciding what to change through putting it into use.
+            When several problems are competing for attention, or you want an outside read on your systems before
+            committing to a larger build, we start with a paid Discovery Sprint. Either way, I work alongside your
+            team from deciding what to change through getting it working in daily use.
           </p>
           <div className="hero__cta cta-row">
             <ButtonLink to="/contact">Let's talk</ButtonLink>
@@ -82,8 +84,12 @@ export default function WorkingTogetherPage() {
 
       <Section labelledBy="examples-heading">
         <div className="section__heading">
-          <h2 id="examples-heading">What this can look like</h2>
-          <p className="lead">Here are examples of the kinds of improvements we can make.</p>
+          <h2 id="examples-heading">How software, automation, and human judgment fit together</h2>
+          <p className="lead">
+            Whether we build a custom application or connect the tools you already have, the goal is the same: let
+            software handle the repeatable gathering, calculation, and cross-checking, and put clear exceptions in
+            front of the right person.
+          </p>
         </div>
         <div className="example">
           <div className="example__text">
@@ -126,7 +132,7 @@ export default function WorkingTogetherPage() {
       <Section labelledBy="sprint-heading">
         <InkBlock>
           <h2 id="sprint-heading">
-            Begin with a{' '}
+            When to start with a{' '}
             <span className="underlined">
               Discovery Sprint
               <PenUnderline />
@@ -134,12 +140,14 @@ export default function WorkingTogetherPage() {
           </h2>
           <Prose>
             <p>
-              A Discovery Sprint is a focused, paid engagement to understand an operating problem and decide what to
-              do about it. It gives you a clear first step before committing to a larger project.
+              A Discovery Sprint is a focused, paid engagement to map an operating bottleneck and decide the
+              highest-return fix. It is designed for teams that know work is getting stuck between people and systems,
+              and want a concrete plan and working scope before committing to a build.
             </p>
             <p>
-              We might look at why each new customer adds so much admin, or whether your existing software can support
-              the next stage of growth.
+              We might trace why quotes or customer handoffs keep stalling between departments, why management numbers
+              do not match the underlying orders, or whether your current software can support the next stage of
+              growth.
             </p>
           </Prose>
         </InkBlock>

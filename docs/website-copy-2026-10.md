@@ -165,11 +165,11 @@ Social preview: Operations and technology for growing businesses. Three steps: R
 
 ## Working Together
 
-### Start with the work that's slowing you down.
+### Start with a clear first project, or a short sprint to scope it.
 
-Your team is taking on more work, but the way it gets done hasn't kept up. People spend too much time chasing information or waiting for decisions that keep coming back to you.
+Some clients come in knowing which workflow needs to be built or fixed first: a quoting tool, a handoff between sales and production, or reporting that still takes days to reconcile by hand. When the target is clear, we scope that project directly and build it.
 
-You may already have people working on the technology and need another pair of eyes on the priorities. I can work alongside them, from deciding what to change through putting it into use.
+When several problems are competing for attention, or you want an outside read on your systems before committing to a larger build, we start with a paid Discovery Sprint. Either way, I work alongside your team from deciding what to change through getting it working in daily use.
 
 **Let's talk**
 
@@ -187,9 +187,9 @@ I build software, connect systems, and set up automation and AI around the work 
 
 Once the team is using a change, we can see what is working and what still needs attention. We can keep improving the systems as the business grows, with a clear agreement on what I am responsible for.
 
-### What this can look like
+### How software, automation, and human judgment fit together
 
-Here are examples of the kinds of improvements we can make.
+Whether we build a custom application or connect the tools you already have, the goal is the same: let software handle the repeatable gathering, calculation, and cross-checking, and put clear exceptions in front of the right person.
 
 **A quoting tool that follows your rules.**
 
@@ -203,11 +203,11 @@ Information you've already collected carries into the documents your team needs.
 
 The team can see which jobs are waiting for information or a decision, who is responsible, and what needs to happen next.
 
-### Begin with a Discovery Sprint
+### When to start with a Discovery Sprint
 
-A Discovery Sprint is a focused, paid engagement to understand an operating problem and decide what to do about it. It gives you a clear first step before committing to a larger project.
+A Discovery Sprint is a focused, paid engagement to map an operating bottleneck and decide the highest-return fix. It is designed for teams that know work is getting stuck between people and systems, and want a concrete plan and working scope before committing to a build.
 
-We might look at why each new customer adds so much admin, or whether your existing software can support the next stage of growth.
+We might trace why quotes or customer handoffs keep stalling between departments, why management numbers do not match the underlying orders, or whether your current software can support the next stage of growth.
 
 **First, we agree on the question.**
 
@@ -495,15 +495,15 @@ Custom manufacturing
 
 Card: An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
 
-The owner of a growing manufacturer brought me in to help evaluate the company's systems and decide where to invest next. What began as an assessment grew into an ongoing fractional CTO engagement and an invitation to join the management team.
+The owner of a growing custom manufacturer brought me in to evaluate the company's systems and decide where to invest next. What began as an initial assessment grew into an ongoing fractional CTO engagement, leading technical delivery, working alongside the internal team, and joining the management team.
 
-**A sales handoff designed end to end, from CRM to staffing.** I worked alongside the owner and staff on changes that reached across the business. Developing a new sales handoff, for example, involved the CRM, the information people needed, and the responsibilities and staffing around the process. My role connected those operating decisions with the technical work needed to carry them out.
+**Custom quoting software, built to retire the spreadsheets and raise productivity.** Preparing a customer quote meant working through a spreadsheet with nearly 10,000 formulas where pricing rules, material tables, and quantity breaks were tangled together. Comparing three quantities or revisiting an earlier quote meant copying workbooks by hand, and only a few people trusted themselves to change a rule. I worked with the business to extract 111 pricing rules and 37 lookup tables from the workbook and built a web application the company owns. Now a salesperson enters the product type, dimensions, material, and target quantities (such as 250, 500, or 1,000 units). The application calculates materials, labor, outside components, and shipping across all three quantities at once, saves version 3 alongside version 2, and generates the customer PDF for a person to review before sending. Before operator testing began, we checked the application against 99 archived quotes and matched the workbook's figures every time.
 
-**Custom quoting software, built to retire the spreadsheets and raise productivity.** For quoting, much of the company's pricing knowledge lived in a spreadsheet. I worked through its calculations and operating rules with the business, then built an application where staff could prepare quotes, compare quantities and revisit saved versions. Past quotes gave us a way to check that the software preserved the pricing logic before operators tried it.
+**Metrics the team can trust and act on, maintained in-house.** Management reporting had grown hard to reconcile when numbers looked off. Taking monthly on-time delivery as a test case, I traced management figures back to source transactions and found four separate problems across nearly 30,000 formulas: order lines were being counted as full orders, a partial month was compared against a full month, capitalization differences split customer records, and an automated data feed had quietly stopped. I worked with the owner to write down seven explicit rules for what counts as on-time, corrected the calculations, and restored the feed. I then helped an internal specialist take ownership of the reporting, with read access to the source data and a process for checking replacement reports alongside the existing ones before switching over.
 
-**Metrics the team can trust and act on, maintained in-house.** In reporting, I traced management figures back to source transactions and worked with the owner on what the metrics should mean. I corrected the calculations and helped an internal specialist take responsibility for the reports. The handoff included read access and a process for checking replacement reports alongside the existing ones before switching over.
+**Software that keeps improving, with automated checks before anything goes live.** Because operators rely on these tools for daily quoting and reporting, I established a development process built around the actual tasks staff need to complete. Each change runs in an isolated copy against roughly 1,500 automated checks and a browser test that clicks through the screens like a user and records screenshots. A person reviews the evidence and approves the release, with a live check afterward and a way to restore the previous version if needed.
 
-**Software that keeps improving without breaking what works.** I also established a development process around the work an operator needed to complete. Changes went through implementation, testing and review, with a live check after release and a way to restore the previous version. Operator feedback then informed the next round of improvements.
+**Sales and design handoffs, hiring, and software decisions made with the owner.** Beyond the software builds, I worked alongside the owner and staff on operational changes that crossed departments. Redesigning the sales-to-design handoff, for example, meant defining what job details had to be captured in the CRM before work moved downstream, clarifying who owned each step, and adjusting staffing around the process. The owner gained a technical counterpart who could evaluate major vendor proposals, manage developer handovers, and carry operating decisions through to working systems.
 
 Selected details from the engagement:
 
@@ -512,7 +512,7 @@ Selected details from the engagement:
 - I supported technical hiring and developer handovers, including capturing undocumented automation code in company version control.
 - I reviewed a major software proposal with the owner, accounting for migration, integrations and the effort required from the internal team.
 
-**Technical decisions made with the owner, then built.** The owner gained a technical counterpart who could help make a decision and take responsibility for carrying it into implementation. Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
+**Technical decisions made with the owner, then built.** Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
 
 Metadata title: Manufacturing: From Spreadsheet to Software the Company Owns | Patrick McHeyser
 
@@ -542,7 +542,7 @@ Caption: Making a report number trustworthy. I follow the number back to the ord
 
 Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted instead of orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own.
 
-Figure 3, how a change gets into the software safely (under "Software that keeps improving without breaking what works."):
+Figure 3, how a change gets into the software safely (under "Software that keeps improving, with automated checks before anything goes live."):
 
 Caption: How a change gets into the software safely. Nothing goes live until the automatic checks pass, a computer has tried it the way a user would, and a person has said yes. About 135 of these runs in the first four weeks, with 2,800 screenshots.
 

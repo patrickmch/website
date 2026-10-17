@@ -14,7 +14,7 @@ type Slug = (typeof clientStories)[number]['slug'];
  * would add has no figure.
  */
 const figuresAfter: Partial<Record<Slug, Record<number, ReactNode>>> = {
-  'manufacturing-systems': { 2: <ManufacturingQuote />, 3: <ManufacturingReporting />, 4: <ManufacturingDelivery /> },
+  'manufacturing-systems': { 1: <ManufacturingQuote />, 2: <ManufacturingReporting />, 3: <ManufacturingDelivery /> },
   'shared-context': { 2: <SharedContextBuild />, 4: <SharedContextAnswer /> },
   'psyche-digital': { 2: <PsycheFollowThrough /> },
 };
