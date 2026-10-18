@@ -1,25 +1,24 @@
 import { Figure, Flow, Stack, Node, Connector, Fan } from '../Figure';
 
-/** Fig. 6: a Discovery Sprint, start to finish. */
+/** Fig. 4: a Discovery Sprint, start to finish. */
 export function SprintTimeline({ n = 4 }: { n?: number } = {}) {
   return (
     <Figure
       n={n}
-      caption="The Sprint ends with the findings and our review of them. What happens next is your call."
-      description="Three steps in a row: agree on the question; work through real examples with your team; findings and a recommendation, which is circled. From the findings, four branches lead to four choices: take it forward with your team, use another provider, ask me to scope the next stage, or stop here."
+      caption="A Discovery Sprint turns an operational bottleneck into a concrete system map, prioritized recommendations, and a ready-to-build scope."
+      description="Three steps in a row: agree on the question; trace real workflows with your team; architecture and build plan, which is circled. From the plan, three branches show what the Sprint delivers: workflow and system map, prioritized recommendations, and implementation scope and timeline."
     >
       <Flow>
         <Node label="Agree on the question" where="scope, fee, timing, people" />
         <Connector />
-        <Node label="Work through real examples with your team" where="a quote, a handoff, a report" />
+        <Node label="Trace real workflows with your team" where="a quote, a handoff, a report" />
         <Connector />
-        <Node label="Findings and a recommendation" where="reviewed together" marked />
-        <Fan count={4} direction="out" mobileLabel="then one of these" />
+        <Node label="Architecture and build plan" where="reviewed together" marked />
+        <Fan count={3} direction="out" mobileLabel="delivers" />
         <Stack className="stack--outcomes">
-          <Node label="Take it forward with your team" small />
-          <Node label="Use another provider" small />
-          <Node label="Ask me to scope the next stage" small />
-          <Node label="Stop here" small />
+          <Node label="Workflow and system map" small />
+          <Node label="Prioritized recommendations" small />
+          <Node label="Implementation scope and timeline" small />
         </Stack>
       </Flow>
     </Figure>

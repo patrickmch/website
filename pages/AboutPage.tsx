@@ -47,9 +47,10 @@ export default function AboutPage() {
             </div>
             <Prose>
               <p>
-                I started in customer success and taught myself to code, eventually becoming a senior software
-                engineer. I built custom applications and automated marketing workflows, working directly with
-                business teams to translate their needs into working software.
+                My career started on the operational side of software in customer success before moving into senior
+                software engineering. I spent years designing and building custom applications, data pipelines, and
+                workflow automation directly with business teams to turn complex operational rules into reliable
+                software.
               </p>
               <p>
                 At NOLS, I led leadership intensives for Fortune 500 executives, military special operations
@@ -88,14 +89,13 @@ export default function AboutPage() {
         </div>
         <Prose>
           <p>
-            I'm comfortable talking through a decision with an owner, working out the details with the team, and
-            building the software myself. I pay attention to what people need to do their jobs, where responsibilities
-            are unclear, and what makes a change difficult to put into practice.
+            Most growing businesses do not need another slide deck or a disconnected tool. They need a technical
+            partner who can sit with an owner to evaluate a major systems decision, trace a broken workflow with the
+            people doing the job, and write the production code that fixes it.
           </p>
           <p>
-            You can expect clear explanations, room to question my recommendations, and direct involvement as we
-            put the changes to work. My aim is to leave your team with something they understand and can use with
-            confidence.
+            I stay directly involved through testing, rollout, and internal handoff, leaving your team with software
+            and infrastructure they understand, trust, and own.
           </p>
         </Prose>
         <ProofSlot

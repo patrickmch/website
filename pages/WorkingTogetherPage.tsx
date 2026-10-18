@@ -26,8 +26,8 @@ const stages = [
 
 const questions = [
   {
-    q: 'Does it have to be an AI project?',
-    a: 'No. The right change might be a simpler process, better use of existing software, a connection between systems, or a custom tool. AI can help with tasks such as finding relevant information or preparing a document for someone to review. We use it when it makes the task easier.',
+    q: 'How do you decide between custom software, automation, and AI?',
+    a: 'Each tool solves a different part of an operational bottleneck. Deterministic software and business rules handle pricing calculations, permissions, and data pipelines where every run must follow exact logic. AI handles unstructured documents, cross-system synthesis, and first-draft preparation for a person to review. Most engagements combine both around the systems your team already uses.',
   },
   {
     q: 'Can you work with our existing team or technology provider?',
@@ -191,7 +191,7 @@ export default function WorkingTogetherPage() {
                 <li>What your existing tools can support and where further work is needed.</li>
                 <li>What the next step involves, who needs to be involved, and what still needs to be confirmed.</li>
               </ul>
-              <p>We'll walk through the findings together so you can question the recommendations and decide how to proceed.</p>
+              <p>We review the architecture, trade-offs, and implementation plan together so you can decide the next step with complete clarity.</p>
             </Prose>
           </div>
         </div>
@@ -219,12 +219,12 @@ export default function WorkingTogetherPage() {
             <h2 id="afterward-heading">What happens afterward</h2>
             <Prose>
               <p>
-                You can take the recommendations forward with your team, use another provider, ask me to scope the
-                next stage, or stop there. The Discovery Sprint ends with the findings and our review of them.
+                The Discovery Sprint stands on its own: you leave with the system map, prioritized recommendations, and
+                implementation scope whether we build the next stage together or your internal team takes it forward.
               </p>
               <p>
-                If we continue, we agree on the implementation work separately. If you already know what needs doing,
-                we can discuss that work directly.
+                When we continue into implementation, we scope and price that build separately. And if you already have
+                a defined project in mind, we can skip the sprint and scope the build directly.
               </p>
             </Prose>
           </div>

@@ -42,33 +42,33 @@ export default function HomePage() {
 
       <Section labelledBy="outcomes-heading">
         <div className="section__heading"><h2 id="outcomes-heading">Give your team more capacity, and your customers a better experience.</h2></div>
-        <Prose><p>The effort behind each customer can grow quickly: another document to prepare, another system to check, another handoff to follow up. The right system can carry more of that work. Here are a few examples of what that can make possible.</p></Prose>
+        <Prose><p>As customer volume grows, the coordination behind every job multiplies: documents to prepare, systems to cross-check, and handoffs to track. Well-designed software and AI absorb that repeatable load so your team stays focused on customers and exceptions.</p></Prose>
         <article className="home-outcome" aria-labelledby="outcome-1">
           <div className="home-outcome__text">
             <h3 id="outcome-1">Give customers a faster, more dependable response.</h3>
-            <Prose><p>When a customer asks for an update, the person answering can have the relevant history, outstanding questions and next steps in front of them. Software brings that context together and prepares the routine follow-up. Your team can spend the conversation resolving the issue, with less time spent hunting for information or asking colleagues to reconstruct what happened.</p></Prose>
+            <Prose><p>When a customer asks for an update, the person answering has the full history, open questions, and next steps in front of them. Software assembles the context from your existing systems and drafts the routine follow-up, so your team spends the conversation resolving the issue rather than hunting through email threads and spreadsheets.</p></Prose>
           </div>
         </article>
         <article className="home-outcome" aria-labelledby="outcome-2">
           <div className="home-outcome__text">
-            <h3 id="outcome-2">Keep work moving without every decision coming back to you.</h3>
-            <Prose><p>The rules your experienced people use can become part of the system the whole team works with. In a quoting process, that could mean entering the job details once, preparing a price from agreed rules and giving the team a quote to review and send. Routine requests can move forward, while unusual jobs still get the judgment they need.</p></Prose>
+            <h3 id="outcome-2">Turn your best operators' judgment into rules the whole team can run.</h3>
+            <Prose><p>The pricing and routing logic your most experienced people carry in their heads becomes part of the system the whole team uses. In a quoting workflow, sales enters the job details once, the system calculates the price from agreed rules, and the team reviews and sends the quote. Routine requests move immediately, while complex jobs route to the right person for a decision.</p></Prose>
           </div>
           <div className="home-outcome__figure"><QuoteFlow /></div>
         </article>
         <article className="home-outcome" aria-labelledby="outcome-3">
           <div className="home-outcome__text">
             <h3 id="outcome-3">See where the business needs attention while there's still time to act.</h3>
-            <Prose><p>A shared view can show which jobs are waiting, what is missing and who needs to act next. Your team can follow up before a delay becomes a customer complaint. When management figures need explaining, the records behind them are available, so the conversation can move toward what to do next.</p></Prose>
+            <Prose><p>A shared operational view shows which jobs are waiting on information, what is missing, and who owns the next step. Your team follows up before a delay turns into a customer escalation, and every management metric traces directly back to the underlying source records.</p></Prose>
           </div>
         </article>
       </Section>
 
       <Section labelledBy="examples-heading">
         <div className="section__heading"><h2 id="examples-heading">See what I've built with other teams.</h2></div>
-        <Prose className="home-work-intro"><p>These engagements show how the work develops from understanding the business into software people can use, with testing, rollout and ownership considered along the way.</p></Prose>
+        <Prose className="home-work-intro"><p>Two examples of how I work with established teams to replace manual bottlenecks with production software and AI infrastructure they own.</p></Prose>
         <ClientWorkFeature nested />
-        <div className="work-all"><SecondaryLink to="/work">See a sample of client work</SecondaryLink></div>
+        <div className="work-all"><SecondaryLink to="/work">Explore client work</SecondaryLink></div>
       </Section>
 
       <Section labelledBy="approach-heading">
@@ -90,7 +90,7 @@ export default function HomePage() {
           <h2 id="sprint-heading">Know what to build first, and what it will take.</h2>
           <Prose>
               <p>A Discovery Sprint is a focused, paid engagement around an operating problem. It might be why each new customer creates so much admin, or whether your existing software can support the next stage of growth.</p>
-              <p>I review the work and systems with your team, then recommend what to change first. You'll understand what your existing tools can handle, where a build would help, and what implementation would involve. We walk through the findings together so you can question the reasoning and decide how to proceed.</p>
+              <p>I review the work and systems with your team, then recommend what to change first. You'll understand what your existing tools can handle, where a build would help, and what implementation would involve. We review the architecture, trade-offs, and implementation scope together so you have a clear basis for what to build first.</p>
               <p>We agree on the scope, fee and timing before starting. Implementation is scoped separately. If you already have a clear project in mind, we can discuss the build directly.</p>
           </Prose>
           <div className="ink-block__cta">
@@ -118,7 +118,7 @@ export default function HomePage() {
             <h2 id="person-heading">You'll work directly with me.</h2>
             <Prose>
               <p>I'm Patrick McHeyser, a software engineer and operations consultant based in Boulder, Colorado. My background spans customer success, software engineering and executive leadership development. I'm comfortable talking through a decision with an owner, working out the details with the team, and building the software myself.</p>
-              <p>You can expect clear explanations and room to question my recommendations. I stay involved as the changes are tested and put into use.</p>
+              <p>I own the work from architecture and code through testing, rollout, and team handoff, so your business ends up with production systems your people actually use.</p>
             </Prose>
             <SecondaryLink to="/about">More about Patrick</SecondaryLink>
           </div>

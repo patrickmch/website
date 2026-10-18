@@ -15,7 +15,7 @@ export default function ClientWorkPage() {
   return <>
     <Section first className="hero"><div className="hero__text">
       <h1>Client work</h1>
-      <p className="lead">How I work with teams to understand a problem, build what they need, and put it to use.</p>
+      <p className="lead">Production software, systems architecture, and AI workflows built around how each business actually operates.</p>
     </div></Section>
     <Section><ClientWorkFeature /></Section>
     <Section labelledBy="more-work-heading">
@@ -26,8 +26,8 @@ export default function ClientWorkPage() {
         </li>)}
       </ul>
     </Section>
-    <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Have a similar problem?</h2>
-      <Prose><p>Tell me which part of the work needs to get easier.</p></Prose>
+    <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Dealing with a similar bottleneck?</h2>
+      <Prose><p>Tell me where work is getting stuck between your team and your systems.</p></Prose>
       <div className="cta-row"><ButtonLink to="/contact">Let's talk</ButtonLink><SecondaryLink to="/working-together">How we work together</SecondaryLink></div>
     </Section>
   </>;

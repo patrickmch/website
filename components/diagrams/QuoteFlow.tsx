@@ -7,7 +7,7 @@ export function QuoteFlow() {
       n={1}
       showCaption={false}
       caption="An example of reducing the work involved in preparing a quote."
-      description="Two flows compare preparing a quote before and after an improvement. Before: a request comes in, details are retyped, the owner decides the price, and the quote is written manually. After: job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'The team can prepare routine quotes without waiting for the owner.'"
+      description="Two flows compare preparing a quote before and after an improvement. Before: a request comes in, details are retyped, the owner decides the price, and the quote is written manually. After: job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'Routine quotes priced and ready to send in one pass.'"
     >
       <div className="quote-comparison__row">
         <p className="quote-comparison__label">Before</p>
@@ -31,7 +31,7 @@ export function QuoteFlow() {
             label="Agreed pricing rules"
             where="prepare the quote"
             marked
-            annotation="The team can prepare routine quotes without waiting for the owner."
+            annotation="Routine quotes priced and ready to send in one pass."
           />
           <Connector />
           <Node label="Team reviews and sends" />

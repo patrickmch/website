@@ -1,5 +1,15 @@
 # mcheyser-site: progress
 
+## 2026-10-17: Site-wide copy and diagram cleanup pass
+
+- Applied Patrick's approved five-part cleanup across Home, Working Together, Client Work, About, Footer, and all case study diagrams:
+  - **Case study diagram boxes (`components/diagrams/ClientStories.tsx`, `components/diagrams/MtroOperations.tsx`):** Removed the instructional figure legend ("Small print says automatic...") and replaced overly simplified box labels ("A computer tries each one", "A locked door", "Gather and match up", "written down from the old spreadsheet", "two records disagree, so it says so") with operational and architectural labels matching the prose.
+  - **Discovery Sprint framing and deliverables (`pages/HomePage.tsx`, `pages/WorkingTogetherPage.tsx`, `pages/AboutPage.tsx`, `components/diagrams/SprintTimeline.tsx`):** Removed the repeated defensive "so you can question the recommendations" phrasing and replaced the four off-ramp boxes in `SprintTimeline.tsx` with the three concrete Sprint deliverables (`Workflow and system map`, `Prioritized recommendations`, `Implementation scope and timeline`).
+  - **Home outcomes and quoting annotation (`pages/HomePage.tsx`, `components/diagrams/QuoteFlow.tsx`):** Rewrote the three Outcomes in declarative present tense, replaced "Keep work moving without every decision coming back to you" with "Turn your best operators' judgment into rules the whole team can run.", updated the `QuoteFlow.tsx` pen note to "Routine quotes priced and ready to send in one pass.", tightened the Featured Work intro, and updated "See a sample of client work" to "Explore client work".
+  - **Working Together FAQ and Client Work framing (`pages/WorkingTogetherPage.tsx`, `pages/ClientWorkPage.tsx`, `pages/ClientStoryPage.tsx`, `pages/MtroWorkPage.tsx`):** Reframed FAQ #1 to "How do you decide between custom software, automation, and AI?", upgraded the `/work` hero lead, and upgraded the closing CTA across `/work` and story pages.
+  - **About opening and Footer tagline (`pages/AboutPage.tsx`, `components/Footer.tsx`):** Replaced "taught myself to code" with senior software engineering framing, made the "What that experience brings to your business" section distinct from Home, and updated the footer tagline to "Custom software, automation, and AI for growing businesses."
+- Updated canonical copy (`docs/website-copy-2026-10.md`), components, pages, and `scripts/check-production.mjs`.
+
 ## 2026-10-17: Case study transformation narratives, CEO quote, and five-queue intake diagram
 
 - Applied Patrick's approved 10/10 transformation framing across all four case studies (`/work/manufacturing-systems`, `/work/shared-context`, `/work/mtro-pro`, and `/work/psyche-digital`) and the Home featured work cards:

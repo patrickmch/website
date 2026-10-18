@@ -79,7 +79,7 @@ export default function ClientStoryPage({ slug }: { slug: Slug }) {
   return (
     <>
       <Section first className="hero work-story-hero">
-        <SecondaryLink to="/work">See a sample of client work</SecondaryLink>
+        <SecondaryLink to="/work">Explore client work</SecondaryLink>
         <div className="hero__text">
           <Eyebrow>{story.label}</Eyebrow>
           <h1>{story.title}</h1>
@@ -135,9 +135,9 @@ export default function ClientStoryPage({ slug }: { slug: Slug }) {
       </Section>
 
       <Section className="closing" labelledBy="work-contact">
-        <h2 id="work-contact">Have a similar problem?</h2>
+        <h2 id="work-contact">Dealing with a similar bottleneck?</h2>
         <Prose>
-          <p>Tell me which part of the work needs to get easier.</p>
+          <p>Tell me where work is getting stuck between your team and your systems.</p>
         </Prose>
         <div className="cta-row">
           <ButtonLink to="/contact">Let's talk</ButtonLink>

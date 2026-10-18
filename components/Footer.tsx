@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="site-footer__brand">
           <Wordmark size="footer" />
           <p className="site-footer__name">Patrick McHeyser</p>
-          <p className="site-footer__tag">Operations and technology for growing businesses.</p>
+          <p className="site-footer__tag">Custom software, automation, and AI for growing businesses.</p>
         </div>
         <nav className="site-footer__nav" aria-label="Footer">
           <ul>

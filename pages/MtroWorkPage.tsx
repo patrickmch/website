@@ -8,7 +8,7 @@ export default function MtroWorkPage() {
   usePageMeta(mtroWork.metaTitle, mtroWork.description, '/work/mtro-pro');
   return <>
     <Section first className="hero work-story-hero">
-      <SecondaryLink to="/work">See a sample of client work</SecondaryLink>
+      <SecondaryLink to="/work">Explore client work</SecondaryLink>
       <div className="hero__text">
         <Eyebrow>MTRO PRO</Eyebrow>
         <h1>{mtroWork.title}</h1><p className="lead">{mtroWork.intro}</p>
@@ -20,8 +20,8 @@ export default function MtroWorkPage() {
       <Prose>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</Prose>
       {index === 0 && <MtroAccountBrief />}{index === 1 && <MtroQaWave />}
     </Section>)}
-    <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Have a similar problem?</h2>
-      <Prose><p>Tell me which part of the work needs to get easier.</p></Prose>
+    <Section className="closing" labelledBy="work-contact"><h2 id="work-contact">Dealing with a similar bottleneck?</h2>
+      <Prose><p>Tell me where work is getting stuck between your team and your systems.</p></Prose>
       <div className="cta-row"><ButtonLink to="/contact">Let's talk</ButtonLink><SecondaryLink to="/working-together">How we work together</SecondaryLink></div>
     </Section>
   </>;

@@ -61,23 +61,23 @@ Accessible description: Three connected boxes run from Your current systems to S
 
 ### Give your team more capacity, and your customers a better experience.
 
-The effort behind each customer can grow quickly: another document to prepare, another system to check, another handoff to follow up. The right system can carry more of that work. Here are a few examples of what that can make possible.
+As customer volume grows, the coordination behind every job multiplies: documents to prepare, systems to cross-check, and handoffs to track. Well-designed software and AI absorb that repeatable load so your team stays focused on customers and exceptions.
 
 #### Give customers a faster, more dependable response.
 
-When a customer asks for an update, the person answering can have the relevant history, outstanding questions and next steps in front of them. Software brings that context together and prepares the routine follow-up. Your team can spend the conversation resolving the issue, with less time spent hunting for information or asking colleagues to reconstruct what happened.
+When a customer asks for an update, the person answering has the full history, open questions, and next steps in front of them. Software assembles the context from your existing systems and drafts the routine follow-up, so your team spends the conversation resolving the issue rather than hunting through email threads and spreadsheets.
 
-#### Keep work moving without every decision coming back to you.
+#### Turn your best operators' judgment into rules the whole team can run.
 
-The rules your experienced people use can become part of the system the whole team works with. In a quoting process, that could mean entering the job details once, preparing a price from agreed rules and giving the team a quote to review and send. Routine requests can move forward, while unusual jobs still get the judgment they need.
+The pricing and routing logic your most experienced people carry in their heads becomes part of the system the whole team uses. In a quoting workflow, sales enters the job details once, the system calculates the price from agreed rules, and the team reviews and sends the quote. Routine requests move immediately, while complex jobs route to the right person for a decision.
 
 #### See where the business needs attention while there's still time to act.
 
-A shared view can show which jobs are waiting, what is missing and who needs to act next. Your team can follow up before a delay becomes a customer complaint. When management figures need explaining, the records behind them are available, so the conversation can move toward what to do next.
+A shared operational view shows which jobs are waiting on information, what is missing, and who owns the next step. Your team follows up before a delay turns into a customer escalation, and every management metric traces directly back to the underlying source records.
 
 ### See what I've built with other teams.
 
-These engagements show how the work develops from understanding the business into software people can use, with testing, rollout and ownership considered along the way.
+Two examples of how I work with established teams to replace manual bottlenecks with production software and AI infrastructure they own.
 
 Custom manufacturing
 
@@ -95,7 +95,7 @@ A healthcare services team had core software, documented SOPs, and operators bui
 
 **See the work** → /work/shared-context
 
-**See a sample of client work** → /work
+**Explore client work** → /work
 
 ### From an operating problem to a system your team can use.
 
@@ -109,7 +109,7 @@ My focus is on established businesses, typically around $10 million to $75 milli
 
 A Discovery Sprint is a focused, paid engagement around an operating problem. It might be why each new customer creates so much admin, or whether your existing software can support the next stage of growth.
 
-I review the work and systems with your team, then recommend what to change first. You'll understand what your existing tools can handle, where a build would help, and what implementation would involve. We walk through the findings together so you can question the reasoning and decide how to proceed.
+I review the work and systems with your team, then recommend what to change first. You'll understand what your existing tools can handle, where a build would help, and what implementation would involve. We review the architecture, trade-offs, and implementation scope together so you have a clear basis for what to build first.
 
 We agree on the scope, fee and timing before starting. Implementation is scoped separately. If you already have a clear project in mind, we can discuss the build directly.
 
@@ -119,7 +119,7 @@ We agree on the scope, fee and timing before starting. Implementation is scoped 
 
 I'm Patrick McHeyser, a software engineer and operations consultant based in Boulder, Colorado. My background spans customer success, software engineering and executive leadership development. I'm comfortable talking through a decision with an owner, working out the details with the team, and building the software myself.
 
-You can expect clear explanations and room to question my recommendations. I stay involved as the changes are tested and put into use.
+I own the work from architecture and code through testing, rollout, and team handoff, so your business ends up with production systems your people actually use.
 
 **More about Patrick** → /about
 
@@ -160,10 +160,10 @@ Before:
 
 After:
 - Job details entered once
-- Agreed pricing rules / prepare the quote (circled, note: The team can prepare routine quotes without waiting for the owner.)
+- Agreed pricing rules / prepare the quote (circled, note: Routine quotes priced and ready to send in one pass.)
 - Team reviews and sends
 
-Accessible description: Two flows compare preparing a quote before and after an improvement. Before: a request comes in, details are retyped, the owner decides the price, and the quote is written manually. After: job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'The team can prepare routine quotes without waiting for the owner.'
+Accessible description: Two flows compare preparing a quote before and after an improvement. Before: a request comes in, details are retyped, the owner decides the price, and the quote is written manually. After: job details are entered once, agreed pricing rules prepare the quote, and the team reviews and sends it. The pricing rules are circled with the note 'Routine quotes priced and ready to send in one pass.'
 
 Social preview: Operations and technology for growing businesses. Three steps: Request comes in → Price decision (circled, note: work waits here) → Quote sent.
 
@@ -232,7 +232,7 @@ The findings explain:
 - What your existing tools can support and where further work is needed.
 - What the next step involves, who needs to be involved, and what still needs to be confirmed.
 
-We'll walk through the findings together so you can question the recommendations and decide how to proceed.
+We review the architecture, trade-offs, and implementation plan together so you can decide the next step with complete clarity.
 
 > [Editorial: place an approved sample findings deliverable here when one is ready. Let visitors inspect it without a signup.]
 
@@ -242,17 +242,17 @@ I'll need someone who owns the problem, time with the people doing the work, and
 
 ### What happens afterward
 
-You can take the recommendations forward with your team, use another provider, ask me to scope the next stage, or stop there. The Discovery Sprint ends with the findings and our review of them.
+The Discovery Sprint stands on its own: you leave with the system map, prioritized recommendations, and implementation scope whether we build the next stage together or your internal team takes it forward.
 
-If we continue, we agree on the implementation work separately. If you already know what needs doing, we can discuss that work directly.
+When we continue into implementation, we scope and price that build separately. And if you already have a defined project in mind, we can skip the sprint and scope the build directly.
 
 > [Editorial: approved testimonial about understanding the business, the usefulness of the work, or follow-through.]
 
 ### A few practical questions
 
-**Does it have to be an AI project?**
+**How do you decide between custom software, automation, and AI?**
 
-No. The right change might be a simpler process, better use of existing software, a connection between systems, or a custom tool. AI can help with tasks such as finding relevant information or preparing a document for someone to review. We use it when it makes the task easier.
+Each tool solves a different part of an operational bottleneck. Deterministic software and business rules handle pricing calculations, permissions, and data pipelines where every run must follow exact logic. AI handles unstructured documents, cross-system synthesis, and first-draft preparation for a person to review. Most engagements combine both around the systems your team already uses.
 
 **Can you work with our existing team or technology provider?**
 
@@ -282,7 +282,7 @@ I'm based in Boulder, Colorado. You'll work directly with me.
 
 ### A background in software and executive leadership development.
 
-I started in customer success and taught myself to code, eventually becoming a senior software engineer. I built custom applications and automated marketing workflows, working directly with business teams to translate their needs into working software.
+My career started on the operational side of software in customer success before moving into senior software engineering. I spent years designing and building custom applications, data pipelines, and workflow automation directly with business teams to turn complex operational rules into reliable software.
 
 At NOLS, I led leadership intensives for Fortune 500 executives, military special operations personnel, and participants from Wharton and other leading MBA programs. These experiences used demanding wilderness expeditions to develop decision-making, communication, and team leadership.
 
@@ -290,9 +290,9 @@ My responsibilities extended to training and supporting instructors, working wit
 
 ### What that experience brings to your business
 
-I'm comfortable talking through a decision with an owner, working out the details with the team, and building the software myself. I pay attention to what people need to do their jobs, where responsibilities are unclear, and what makes a change difficult to put into practice.
+Most growing businesses do not need another slide deck or a disconnected tool. They need a technical partner who can sit with an owner to evaluate a major systems decision, trace a broken workflow with the people doing the job, and write the production code that fixes it.
 
-You can expect clear explanations, room to question my recommendations, and direct involvement as we put the changes to work. My aim is to leave your team with something they understand and can use with confidence.
+I stay directly involved through testing, rollout, and internal handoff, leaving your team with software and infrastructure they understand, trust, and own.
 
 > [Editorial: approved testimonial that supports these working-style claims.]
 
@@ -369,7 +369,7 @@ Something went wrong while sending your note. Please try again or email patrick@
 
 Patrick McHeyser
 
-Operations and technology for growing businesses.
+Custom software, automation, and AI for growing businesses.
 
 Boulder, Colorado
 
@@ -389,7 +389,7 @@ patrick@mcheyser.com
 
 ### Client work
 
-How I work with teams to understand a problem, build what they need, and put it to use.
+Production software, systems architecture, and AI workflows built around how each business actually operates.
 
 Featured stories: Custom manufacturing and Healthcare services, in that order. Use the titles, summaries and links from Selected client work above.
 
@@ -437,41 +437,41 @@ The account-research and support-intake systems have run in production since Jul
 
 ### System diagrams
 
-Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates.
 
 Figure 1, the morning account brief (under "A seven-source account brief, ready every morning."):
 
-Caption: The morning account brief. Seven sources are gathered automatically every morning, and each one reports whether it worked. A person reads the page, edits the message and sends it.
+Caption: The morning account brief. Seven sources are ingested automatically every morning, with health checks on each feed. The team reviews the unified account brief, edits the drafted reply, and sends it.
 
-- Record "Gathered every morning" (small print: automatic): Email (tick, ok); Text messages (tick, back up after an alert; circled, note "a broken source raises an alert"); Customer forum (tick, ok); Team chat (tick, ok); What they did in the app (tick, ok); Customer records (tick, ok); Calendar (tick, ok)
-- One page per customer (automatic): set up yet? properties added? payments connected? last reply? next call?
-- On the to-do list (automatic): help requests from the app land here too, each one once
-- A person edits and sends
-- Below 1024px: Seven sources, every morning (automatic; circled, note "a broken source raises an alert") → One page per customer, with the next action (automatic) → A person edits and sends
+- Record "Ingested every morning" (small print: automatic): Email (tick, healthy); SMS feed (tick, restored after alert; circled, note "feed health check alerts on any stalled source"); Customer forum (tick, healthy); Team chat (tick, healthy); Product usage telemetry (tick, healthy); CRM account records (tick, healthy); Calendar (tick, healthy)
+- Unified account brief (automatic): onboarding stage, properties, payments, last reply, next call
+- Support intake queue (automatic): incoming requests deduplicated with a drafted reply
+- Team reviews and sends
+- Below 1024px: Seven sources ingested daily (automatic; circled, note "feed health check alerts on any stalled source") → Account brief and support queue, with next action and draft reply (automatic) → Team reviews and sends
 
-Accessible description: A list titled gathered every morning, marked automatic, shows seven sources with check marks: email, text messages (noted back up after an alert, and circled with the note 'a broken source raises an alert'), the customer forum, team chat, what the customer did in the app, customer records and the calendar. An arrow leads to one page per customer, marked automatic: set up yet, properties added, payments connected, last reply, next call. Next, on the to-do list, marked automatic: help requests from the app land here too, each one once. Last, a person edits and sends.
+Accessible description: A list titled Ingested every morning, marked automatic, shows seven sources with check marks: email, SMS feed (noted restored after alert, and circled with the note 'feed health check alerts on any stalled source'), customer forum, team chat, product usage telemetry, CRM account records, and calendar. An arrow leads to unified account brief, marked automatic: onboarding stage, properties, payments, last reply, next call. Next, support intake queue, marked automatic: incoming requests deduplicated with a drafted reply. Last, team reviews and sends.
 
-Figure 2, one round of testing (under "Product defects the developers could reproduce and retest."):
+Figure 2, automated browser QA (under "Product defects the developers could reproduce and retest."):
 
-Caption: One round of testing, March 2026. Nineteen booking steps, tried by a computer in a real browser with a screenshot each time. Seven problems were written up with steps to see them, fixed, and tried again. After one round passed without the browser ever running, the rule became: no screenshots, no pass.
+Caption: Automated browser QA across a 19-step booking journey. An automated browser runner executes real clicks across lease signing, checkout, payment, and notifications, capturing screenshot evidence at every step so developers can reproduce and verify fixes before release.
 
-- I write the plan: 19 things to try: booking, signing the lease, checkout, payment, notifications
-- A computer tries each one (automatic): real clicks in the product; a screenshot at every step
-- Record "The report" (automatic): 14 worked (tick, with screenshots); 7 problems, each with steps to see it again (flagged, to fix; circled, note "seven failures, each with steps to repeat it"); Overall: ready, with cautions
-- Fix, try again, decide: what ships is a person's call
-- Below 1024px: I write the plan, 19 things to try → A computer tries each one, a screenshot at every step: 14 worked, 7 problems (automatic; circled, note "seven failures, each with steps to repeat it") → Fix, try again, decide
+- 19-step booking test plan: booking, lease signing, checkout, payment, notifications
+- Automated browser runner (automatic): executes real clicks with screenshot evidence at every step
+- Record "QA verification report" (automatic): 14 scenarios passed (tick, verified with screenshots); 7 defects isolated with reproduction steps (flagged, queued for fix; circled, note "seven defects isolated with reproduction steps"); Release status: retested before deploy
+- Engineering fixes and retests: every repair runs through the same browser suite
+- Below 1024px: 19-step booking test plan → Automated browser runner, screenshot evidence: 14 passed, 7 defects (automatic; circled, note "seven defects isolated with reproduction steps") → Engineering fixes and retests
 
-Accessible description: Four steps in a row. I write the plan: 19 things to try, covering booking, signing the lease, checkout, payment and notifications. A computer tries each one, marked automatic: real clicks in the product, with a screenshot at every step. The report, marked automatic, lists 14 worked, with screenshots and a check mark; 7 problems, each with steps to see it again, flagged to fix and circled with the note 'seven failures, each with steps to repeat it'; and the overall result, ready with cautions. Fix, try again, decide: what ships is a person's call.
+Accessible description: Four steps in a row. 19-step booking test plan: booking, lease signing, checkout, payment, and notifications. Automated browser runner, marked automatic: executes real clicks with screenshot evidence at every step. QA verification report, marked automatic, lists 14 scenarios passed, verified with screenshots; 7 defects isolated with reproduction steps, queued for fix and circled with the note 'seven defects isolated with reproduction steps'; and release status, retested before deploy. Engineering fixes and retests: every repair runs through the same browser suite.
 
 ### Story and index closing invitation
 
-Have a similar problem?
+Dealing with a similar bottleneck?
 
-Tell me which part of the work needs to get easier.
+Tell me where work is getting stuck between your team and your systems.
 
 Button: Let's talk → /contact
 Link: How we work together → /working-together
-Link: See a sample of client work → /work
+Link: Explore client work → /work
 
 ### Links from existing pages
 
@@ -522,29 +522,29 @@ Metadata title: Manufacturing: From Spreadsheet to Software the Company Owns | P
 
 Metadata description: A systems assessment grows into fractional CTO leadership: custom quoting software across five queues, verified ERP reporting, and company-owned infrastructure.
 
-Figure 1, one quote through the custom application (under "A custom quoting and intake application that replaces a 10,000-formula workbook."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+Figure 1, one quote through the custom application (under "A custom quoting and intake application that replaces a 10,000-formula workbook."):
 
 Caption: One quote through the custom application. Sales enters the product type, dimensions, materials, and three target quantities. The pricing engine applies 111 rules and 37 lookup tables to calculate materials, labor, outside components, and shipping across all three quantities at once, saves the new revision alongside prior versions, and generates a customer-ready PDF.
 
-- Record "Quote request" (small print: typed in by sales): What it is, one of six product types; Size, length, width, depth; Material, type and thickness; How many, 250, 500 or 1,000
-- The pricing rules (automatic; circled, note "10,000 formulas distilled into 111 rules"): 111 rules and 37 lookup tables, written down from the old spreadsheet
-- Fan out to four results (small print on the stack: automatic): A priced quote (materials, labor, outside parts, shipping); Prices for all three quantities; Saved as version 3, next to version 2; A PDF for the customer
-- Fan back in to A person checks the quote: before it goes to the customer
-- Below 1024px: Quote request, typed in by sales → Priced by the rules, 111 rules and 37 lookup tables (automatic; circled, note "10,000 formulas distilled into 111 rules") → A person checks the quote
+- Record "Quote request" (small print: entered by sales): Product type, one of six product families; Dimensions, length, width, depth; Materials, grade and thickness; Quantities, 250, 500, and 1,000 units
+- Pricing engine (automatic; circled, note "10,000 formulas distilled into 111 rules"): 111 pricing rules and 37 lookup tables extracted from the workbook
+- Fan out to four results (small print on the stack: automatic): Materials, labor, outside parts, shipping; Priced across all three quantities; Saved as revision 3 alongside revision 2; Customer-ready PDF quote
+- Fan back in to Sales review and send: exceptions routed to leadership
+- Below 1024px: Quote specs entered, product, dimensions, materials, quantities → Pricing engine, 111 rules and 37 lookup tables (automatic; circled, note "10,000 formulas distilled into 111 rules") → Sales review and PDF
 
-Accessible description: A quote request lists four things typed in by sales: what it is, one of six product types; the size, length, width and depth; the material, type and thickness; and how many, 250, 500 or 1,000. An arrow leads to the pricing rules, marked automatic: 111 rules and 37 lookup tables, written down from the old spreadsheet. Arrows fan out to four results, marked automatic: a priced quote with materials, labor, outside parts and shipping; prices for all three quantities; the quote saved as version 3 next to version 2; and a PDF for the customer. The four results fan back in to a person checking the quote before it goes to the customer. The pricing rules are circled with the note '10,000 formulas distilled into 111 rules'.
+Accessible description: A quote request entered by sales lists product type, dimensions, materials, and quantities (250, 500, and 1,000 units). An arrow leads to the pricing engine, marked automatic and circled with the note '10,000 formulas distilled into 111 rules': 111 pricing rules and 37 lookup tables extracted from the workbook. Arrows fan out to four automatic outputs: materials, labor, outside parts, and shipping; priced across all three quantities; saved as revision 3 alongside revision 2; and a customer-ready PDF quote. The four outputs fan back in to sales review and send, with exceptions routed to leadership.
 
 Figure 2, rebuilding management reporting from raw ERP transactions (under "Management reporting rebuilt on verified ERP transactions and owned in-house."):
 
 Caption: Rebuilding management reporting from raw ERP transactions. Tracing monthly on-time delivery back to source orders exposed four systemic errors across nearly 30,000 spreadsheet formulas. After establishing seven explicit business rules with the owner and restoring the stalled data feed, the reporting pipeline updates automatically in the cloud data warehouse.
 
-- Follow the number back: on-time delivery this month: which orders and dates should count?
-- Record "What I found": Order lines counted as full orders (tick, fixed); A half month counted as a whole month (tick, fixed); The same customer counted twice (capital letters) (tick, fixed); A data feed that had stopped (tick, restored)
-- The owner and I agreed what counts: seven on-time rules, written down
-- Reports you can check (automatic; circled, note "four errors found, 29,820 formulas fixed"): the reports update on their own
-- Below 1024px: Follow the number back, to the orders behind it → Four errors found and fixed (circled, note "four errors found, 29,820 formulas fixed") → The owner and I agreed what counts
+- Trace metric to raw ERP orders: monthly on-time delivery audited against source transactions
+- Record "Four systemic errors uncovered": Order lines counted as full orders (tick, fixed); Partial month compared to full month (tick, fixed); Customer records split by capitalization (tick, fixed); Automated data feed silently stalled (tick, restored)
+- Seven business rules codified: agreed with the owner and built into the pipeline
+- Verified warehouse reporting (automatic; circled, note "four errors resolved across 29,820 formulas"): maintained in-house by internal specialist
+- Below 1024px: Trace metric to raw ERP orders → Four systemic errors resolved, lines as orders, partial month, split records, stalled feed (circled, note "four errors resolved across 29,820 formulas") → Seven rules in cloud warehouse
 
-Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted as full orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own.
+Accessible description: Four steps in a row. Trace metric to raw ERP orders: monthly on-time delivery audited against source transactions. A record titled Four systemic errors uncovered lists order lines counted as full orders (fixed), partial month compared to full month (fixed), customer records split by capitalization (fixed), and automated data feed silently stalled (restored). Next, seven business rules codified: agreed with the owner and built into the pipeline. Last, verified warehouse reporting, marked automatic and circled with the note 'four errors resolved across 29,820 formulas': maintained in-house by internal specialist.
 
 Figure 3, from sales intake to engineering handoff across five operational queues (under "Structured sales-to-engineering handoffs across five operational queues."):
 
@@ -597,29 +597,29 @@ Metadata title: Healthcare: AI Systems Architecture Across Four Platforms | Patr
 
 Metadata description: Unifying a CRM, six project boards, cloud document storage, and a live website into a cloud engine powering 28+ AI workflows and morning operations.
 
-Figure 1, how the cloud data and orchestration engine stays current (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+Figure 1, how the cloud data and orchestration engine stays current (after the paragraph on connecting four systems):
 
 Caption: How the cloud data and orchestration engine stays current. Every night, records from six project boards, the CRM, thousands of PDFs in cloud storage, and the live website are unified in the company's cloud account, matched across systems, and validated before publication. If an upstream feed fails, the engine keeps the prior verified snapshot live.
 
-- Stack of four sources: Project boards; Customer records; Files and documents; The website
-- Fan in ("gathered every night") to Gather and match up (automatic): records that belong together are joined; a number alone is never enough; if records disagree, a person decides
-- Checked before publishing (automatic): missing fields, which source wins, private details kept out
-- Updated every night (automatic; circled, note "a failed night keeps yesterday's copy"): the switch takes under a minute
-- Below 1024px: Four systems, gathered every night (automatic) → Matched and checked (automatic; if records disagree, a person decides) → Updated every night (automatic; circled, note "a failed night keeps yesterday's copy")
+- Stack of four sources: Six project boards; CRM records; Cloud PDF storage; Live website
+- Fan in ("ingested nightly") to Cross-system identity resolution (automatic): links related records and flags source conflicts
+- Pre-publish validation (automatic): verifies completeness, source priority, and role permissions
+- Nightly production snapshot (automatic; circled, note "automated rollback keeps prior verified snapshot live"): atomic switch in under a minute
+- Below 1024px: Four systems ingested nightly (automatic) → Identity resolution and validation, links records and flags source conflicts (automatic) → Nightly production snapshot (automatic; circled, note "automated rollback keeps prior verified snapshot live")
 
-Accessible description: Four systems stacked on the left: project boards, customer records, files and documents, and the website. Their arrows merge, labelled gathered every night, into gather and match up, marked automatic: records that belong together are joined, and a number alone is never enough. If records disagree, a person decides. Next, checked before publishing, marked automatic: missing fields, which source wins, private details kept out. Last, updated every night, marked automatic and circled with the note 'a failed night keeps yesterday's copy': the switch takes under a minute.
+Accessible description: Four systems stacked on the left: six project boards, CRM records, cloud PDF storage, and the live website. Their arrows merge, labelled ingested nightly, into cross-system identity resolution, marked automatic: links related records and flags source conflicts. Next, pre-publish validation, marked automatic: verifies completeness, source priority, and role permissions. Last, nightly production snapshot, marked automatic and circled with the note 'automated rollback keeps prior verified snapshot live': atomic switch in under a minute.
 
 Figure 2, source-cited answers inside the team's AI assistant (after the paragraph on role-scoped answers):
 
 Caption: Source-cited answers inside the team's AI assistant. Every response links directly to the underlying CRM, board, or document record and enforces role-based access through 34+ governed tools. When two systems disagree on a fact, the engine flags both sources side by side so staff can resolve the discrepancy directly.
 
-- A staff member asks: in the AI assistant they already use
-- A locked door (automatic): can read, never change; each person sees only what their role allows
-- Record "Answer, case 1234" (automatic): Status (tick, confirmed (board record, 14 May)); Supporting document (tick, on file); Contact preference: two records disagree (flagged, not settled; circled, note "two records disagree, so it says so")
-- A person reviews and decides
-- Below 1024px: A staff member asks → An answer with its sources, read only, limited by role (automatic; circled, note "two records disagree, so it says so") → A person reviews and decides
+- Coordinator or workflow query: inside the team's AI assistant or morning run
+- 34+ governed tools (automatic): read-only access scoped to the requester's role
+- Record "Source-cited response, Case 1234" (automatic): Case status (tick, confirmed (project board, May 14)); Supporting PDF (tick, verified on file); Contact preference: CRM and board disagree (flagged, flagged with both citations; circled, note "flags conflicting records side by side")
+- Coordinator resolves directly: checks cited sources and updates the record
+- Below 1024px: Coordinator or workflow query → Source-cited response, read-only via 34+ role-scoped tools (automatic; circled, note "flags conflicting records side by side") → Coordinator resolves directly
 
-Accessible description: Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled and circled with the note 'two records disagree, so it says so'. A person reviews and decides.
+Accessible description: Four steps in a row. Coordinator or workflow query: inside the team's AI assistant or morning run. 34+ governed tools, marked automatic: read-only access scoped to the requester's role. Source-cited response for Case 1234, marked automatic, lists three facts: case status, confirmed from project board dated May 14; supporting PDF, verified on file; and contact preference where CRM and board disagree, flagged with both citations and circled with the note 'flags conflicting records side by side'. Coordinator resolves directly: checks cited sources and updates the record.
 
 | Workflow | What the cloud engine and AI skills handle | Manual work retired |
 | --- | --- | --- |
@@ -651,16 +651,16 @@ Psyche Digital already used AI for meeting recaps, kickoff briefs, and report hi
 
 **Staged rollout starting with a single client account.** The delivery package is structured for a controlled rollout: the team starts with one established client account across a single cycle of meeting preparation and follow-through, validates the output against the pass/fail checks, and then expands the workflows across the client roster.
 
-Figure 1, after the meeting (after the paragraph with the meeting recap example). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+Figure 1, from meeting recap to assigned client work (after the paragraph with the meeting recap example):
 
-Caption: After the meeting. What a recap still leaves to do gets done from the team's own documents and task list, checked, and approved by a person.
+Caption: From meeting recap to assigned client work. Decisions from the call automatically draft task updates, client materials, and assignee context, then run through a pass/fail check before account manager approval.
 
-- Record "Meeting recap": Decisions, three agreed; Who owns each, named; Due dates, set
-- Fan out ("carried into") to three results (small print on the stack: automatic): Tasks updated with what was agreed; Materials prepared for that client; The right people get the context
-- Fan back in ("then") to Checked, then a person approves: a quick check runs first (circled; note "five skills, each with a pass or fail check")
-- Below 1024px: Meeting recap, decisions, owners, due dates → Tasks, materials and context prepared (automatic) → Checked, then a person approves (circled, note "five skills, each with a pass or fail check")
+- Record "Meeting recap": Decisions, three agreed; Task owners, assigned; Due dates, set
+- Fan out ("carried into") to three results (small print on the stack: automatic): Task tracker updated with scope; Client deliverable brief drafted; Source context attached for assignee
+- Fan back in ("then") to Pass/fail check and approval: verified against workflow rules before release (circled; note "five AI skills, each with a pass/fail check")
+- Below 1024px: Meeting recap, decisions, owners, due dates → Tasks, briefs, and context drafted (automatic) → Pass/fail check and approval (circled, note "five AI skills, each with a pass/fail check")
 
-Accessible description: A meeting recap lists decisions, three agreed; who owns each, named; and due dates, set. Arrows fan out, labelled carried into, to three results marked automatic: tasks updated with what was agreed, materials prepared for that client, and the right people get the context. The three fan back in to checked, then a person approves, where a quick check runs first; it is circled with the note 'five skills, each with a pass or fail check'.
+Accessible description: A meeting recap lists decisions, three agreed; task owners, assigned; and due dates, set. Arrows fan out, labelled carried into, to three automatic outputs: task tracker updated with scope, client deliverable brief drafted, and source context attached for assignee. The three fan back in to pass/fail check and approval, verified against workflow rules before release and circled with the note 'five AI skills, each with a pass/fail check'.
 
 Metadata title: Psyche Digital: Five AI Workflows a Team Can Run In-House | Patrick McHeyser
 

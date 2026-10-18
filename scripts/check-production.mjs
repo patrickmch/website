@@ -316,7 +316,7 @@ try {
   expect(new URL(page.url()).pathname === '/work', 'the hero call to action should open the client work');
   expect((await page.locator('main .closing a[href="/work"]').count()) === 0, 'the Client Work closing pairs the button with "How we work together", not a link to itself');
 
-  /* ---------- Index links say a sample, never all ---------- */
+  /* ---------- Index links say Explore client work, never all ---------- */
   for (const route of ['/', '/work/mtro-pro', '/work/shared-context']) {
     await page.goto(url(route), { waitUntil: 'load' });
     await settle(page);
@@ -327,7 +327,7 @@ try {
     const index = await page.evaluate(
       () => document.querySelector('main .work-all a, main .work-story-hero > .section__inner > a.link-secondary')?.textContent?.trim() ?? null
     );
-    expect(index === 'See a sample of client work', `${route}: the index link should read "See a sample of client work", got ${index}`);
+    expect(index === 'Explore client work', `${route}: the index link should read "Explore client work", got ${index}`);
   }
 
   /* ---------- Published client-work journeys ---------- */
