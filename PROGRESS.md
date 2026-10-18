@@ -1,5 +1,15 @@
 # mcheyser-site: progress
 
+## 2026-10-17: Case study transformation narratives, CEO quote, and five-queue intake diagram
+
+- Applied Patrick's approved 10/10 transformation framing across all four case studies (`/work/manufacturing-systems`, `/work/shared-context`, `/work/mtro-pro`, and `/work/psyche-digital`) and the Home featured work cards:
+  - **Custom manufacturing (`/work/manufacturing-systems`):** Reframed around moving from a 10,000-formula quoting workbook to a company-owned web application routing work across five operational queues (sales requests, house accounts, engineering, drawings, and samples), rebuilding management reporting on verified ERP transactions and seven explicit business rules, redesigning the sales-to-engineering handoff, and fractional CTO leadership on the management team (infrastructure custody, hiring evaluations, and vendor reviews). Replaced the unit-test/screenshot Figure 3 (`ManufacturingDelivery`) with the five-queue sales-to-engineering handoff diagram.
+  - **Healthcare services (`/work/shared-context`):** Reframed around architecting the cloud data and orchestration engine connecting four systems (CRM, six project boards, thousands of PDFs in cloud document storage, and a live website) to power 28+ AI workflows, 34+ governed tools, overnight case audits, morning inventory reconciliation, and self-service workflow publishing owned by the operations team.
+  - **Client quote:** Added the anonymized healthcare services CEO quote below the Home hero (`HomePage.tsx`) and inside the Healthcare case study hero (`ClientStoryPage.tsx`), preserving the review-mode proof slot under the About/person block on Home.
+  - **MTRO PRO (`/work/mtro-pro`) and Psyche Digital (`/work/psyche-digital`):** Upgraded titles, summaries, and narratives (`content/mtroWork.ts`, `content/clientStories.ts`), removing defensive closers and negative-contrast phrasing.
+  - **Bundle separation:** Moved featured card summaries into `components/ClientWorkFeature.tsx` so `content/clientStories.ts` loads in its lazy route chunk and Home cold load stays well under the 600 KB budget (~585 KB).
+- Updated canonical copy (`docs/website-copy-2026-10.md`), `content/clientStories.ts`, `content/mtroWork.ts`, `components/ClientWorkFeature.tsx`, `components/diagrams/ClientStories.tsx`, `pages/HomePage.tsx`, `pages/ClientStoryPage.tsx`, `pages/WorkingTogetherPage.tsx`, `styles/components.css`, and `scripts/check-production.mjs`.
+
 ## 2026-10-17: Home positioning, Working Together entry paths, and Manufacturing walkthrough
 
 - Applied Patrick's approved Home opening ("Give your team the systems to handle more business."), updated the three-box hero diagram labels (`Your current systems` -> `Software + AI` -> `Room to grow`), updated the Home metadata title and description, and widened the revenue focus range from `$5 million to $25 million` to `$10 million to $75 million`.

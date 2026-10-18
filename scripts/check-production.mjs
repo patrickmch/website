@@ -86,10 +86,10 @@ try {
     '/': 'Patrick McHeyser | Custom software, automation and AI',
     '/working-together': 'Working Together | Patrick McHeyser',
     '/work': 'Client Work | Patrick McHeyser',
-    '/work/mtro-pro': 'MTRO PRO: Customer Problems into Fixes, Tests and a Morning Brief | Patrick McHeyser',
+    '/work/mtro-pro': 'MTRO PRO: Product Repairs, Browser QA, and a Daily Account Brief | Patrick McHeyser',
     '/work/manufacturing-systems': 'Manufacturing: From Spreadsheet to Software the Company Owns | Patrick McHeyser',
-    '/work/shared-context': 'Healthcare: Four Systems Answering as One | Patrick McHeyser',
-    '/work/psyche-digital': 'Psyche Digital: Five AI Workflows a Team Can Run Itself | Patrick McHeyser',
+    '/work/shared-context': 'Healthcare: AI Systems Architecture Across Four Platforms | Patrick McHeyser',
+    '/work/psyche-digital': 'Psyche Digital: Five AI Workflows a Team Can Run In-House | Patrick McHeyser',
     '/about': 'About Patrick McHeyser',
     '/contact': "Let's Talk | Patrick McHeyser",
   };
@@ -335,14 +335,14 @@ try {
   await page.getByRole('heading', { name: 'More client work', exact: true }).waitFor();
   expect((await page.locator('main article a').evaluateAll(links => links.map(link => link.getAttribute('href')))).join(' ') === '/work/manufacturing-systems /work/shared-context /work/mtro-pro /work/psyche-digital', 'Client Work should lead with manufacturing and healthcare, then show MTRO and Psyche');
   await page.locator('.work-story-card a[href="/work/mtro-pro"]').click();
-  await page.getByRole('heading', { name: 'Customer problems turned into fixes, tests and a morning brief.', exact: true }).waitFor();
+  await page.getByRole('heading', { name: 'Product repairs, automated browser QA, and a daily seven-source account brief.', exact: true }).waitFor();
   await page.locator('.story-figure').first().waitFor();
   expect(new URL(page.url()).pathname === '/work/mtro-pro', 'Client work overview must open the MTRO story');
   expect(await page.locator('main figure').count() === 2, 'Story should show customer-success and QA diagrams');
   expect(await page.locator('main figure .pen-circle').count() === 2, 'each MTRO figure circles its proof point');
   expect(await page.locator('.work-node--human, .story-diagram__image, .work-client').count() === 0, 'no orange box borders, image diagrams or ad-hoc client labels on the work pages');
   expect(await page.locator('a[href="https://mtropro.com/"]').count() === 1, 'Story must link to the client site');
-  expect((await page.locator('main').innerText()).includes('Hours saved have not been measured yet'), 'Story must distinguish implemented work from unmeasured outcomes');
+  expect((await page.locator('main').innerText()).includes('run in production since July'), 'Story must state the production status of the account-research and support-intake systems');
   await page.locator('main').getByRole('link', { name: "Let's talk", exact: true }).click();
   expect(new URL(page.url()).pathname === '/contact', 'Story CTA must lead to the contact form');
   for (const width of [360, 390, 768, 1024, 1440]) {
@@ -361,20 +361,23 @@ try {
   for (const route of ['/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
     await page.goto(url('/work'), { waitUntil: 'load' });
     await page.locator(`main a[href="${route}"]`).click();
-    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'From a 10,000-formula' : route.includes('shared-context') ? 'Four systems answering' : 'Five AI workflows' }).waitFor();
+    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'From a 10,000-formula' : route.includes('shared-context') ? 'Architecting the cloud engine' : 'Five AI workflows' }).waitFor();
     expect(new URL(page.url()).pathname === route, 'Client Work must open each published story');
     const copy = await page.locator('main').innerText();
     expect(!/prior-year|overstated|consequential calculation errors|cannot be trusted|Internal evidence|clearance|Hi \[Name\]/i.test(copy), `${route}: private details or superseded reporting wording appeared`);
     if (route.includes('manufacturing')) {
-      expect(copy.includes('traced management figures back to source transactions'), 'Manufacturing should describe the reporting method');
-      expect(copy.includes('operator testing'), 'Manufacturing must retain implementation status');
+      expect(copy.includes('traced management figures back to raw ERP source transactions'), 'Manufacturing should describe the reporting method');
+      expect(copy.includes('five operational queues'), 'Manufacturing must describe the five operational queues');
       expect(await page.locator('.story-body ul > li').count() === 4, 'Manufacturing should keep metrics and additional work in a supporting list');
-      expect(copy.includes('10,000 formulas') && copy.includes('99 archived quotes') && copy.includes('30,000 formulas'), 'Manufacturing examples should retain their scale and validation metrics');
-      expect(copy.includes('the aim was more consistent quoting'), 'Manufacturing should distinguish intended business outcomes from completed work');
+      expect(copy.includes('10,000 formulas') && copy.includes('111 pricing rules') && copy.includes('30,000 formulas'), 'Manufacturing examples should retain their scale and rules metrics');
+      expect(copy.includes('production systems the internal team owns and operates'), 'Manufacturing should state the company-owned outcome');
     }
-    if (route.includes('shared-context')) expect(copy.includes('rollout continues') && copy.includes('Time saved has not been measured yet'), 'Healthcare must retain ongoing rollout and unmeasured outcomes');
+    if (route.includes('shared-context')) {
+      expect(copy.includes('28+ of these operational skills') && copy.includes('34+ governed tools'), 'Healthcare must retain workflow and governed tool counts');
+      expect(copy.includes('He built the engine that put it all together in AWS.'), 'Healthcare must display the anonymized CEO quote');
+    }
     expect(!copy.includes(' · ') && !/\+ /.test(copy.replace(/\d\+/g, '')), `${route}: no middle-dot labels or plus signs in the words`);
-    if (route.includes('psyche')) expect(copy.includes('The new workflows have not yet been installed'), 'Psyche must not imply completed adoption');
+    if (route.includes('psyche')) expect(copy.includes('starts with one established client account'), 'Psyche must describe the staged single-account rollout');
     const figures = await page.evaluate(() => ({
       figures: document.querySelectorAll('main figure.story-figure').length,
       circles: document.querySelectorAll('main figure .pen-circle').length,

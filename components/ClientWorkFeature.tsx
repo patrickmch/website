@@ -1,8 +1,22 @@
 import { SecondaryLink } from './Button';
 import { Eyebrow } from './Section';
-import { clientStories } from '../content/clientStories';
 
 type WorkSummary = { slug: string; client: string; title: string; summary: string };
+
+const featuredClientStories: readonly WorkSummary[] = [
+  {
+    slug: 'manufacturing-systems',
+    client: 'Custom manufacturing',
+    title: 'From a 10,000-formula quoting workbook to company-owned software and fractional CTO leadership.',
+    summary: 'A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team. I built a custom quoting and intake application across five operational queues, rebuilt management reporting on verified ERP transactions, and moved critical infrastructure into company custody.',
+  },
+  {
+    slug: 'shared-context',
+    client: 'Healthcare services',
+    title: "Architecting the cloud engine that powers a healthcare team's 28+ AI workflows and morning operations.",
+    summary: 'A healthcare services team had core software, documented SOPs, and operators building AI workflows, and needed an outside architect to connect their systems. I built a cloud data and orchestration engine that unifies four systems and thousands of PDFs nightly, powers 28+ operational workflows and scheduled morning case audits, and lets operations leaders publish new workflows themselves.',
+  },
+];
 
 export function ClientWorkCard({ story, nested = false, featured = false }: { story: WorkSummary; nested?: boolean; featured?: boolean }) {
   const Heading = nested ? 'h3' : 'h2';
@@ -19,7 +33,7 @@ export function ClientWorkCard({ story, nested = false, featured = false }: { st
 /** The same two lead engagements appear on Home and the Client Work index. */
 export function ClientWorkFeature({ nested = false }: { nested?: boolean }) {
   return <ul className="cards cards--2 work-features">
-    {clientStories.filter(story => story.featured).map(story => <li className="card" key={story.slug}>
+    {featuredClientStories.map(story => <li className="card" key={story.slug}>
       <ClientWorkCard story={story} nested={nested} featured />
     </li>)}
   </ul>;

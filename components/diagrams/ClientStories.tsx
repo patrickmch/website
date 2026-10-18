@@ -1,5 +1,4 @@
 import { Figure, Flow, Stack, Node, Connector, Fan, Record } from '../Figure';
-import { PenTick } from '../marks/PenTick';
 import { useWideFigure } from '../../hooks/useWideFigure';
 
 /* Figures for the client stories, drawn with the same primitives as the Home and Working
@@ -11,14 +10,14 @@ import { useWideFigure } from '../../hooks/useWideFigure';
 
 const LEGEND = 'Small print says automatic when a step runs on its own. The pen marks the detail worth checking.';
 
-/** Manufacturing, figure 1: one quote through the new software. */
+/** Manufacturing, figure 1: one quote through the custom application. */
 export function ManufacturingQuote() {
   const wide = useWideFigure();
   return (
     <Figure
       n={1}
       legend={LEGEND}
-      caption="One quote through the new software. Sales types in the request. The rules work out the price, save it as a new version and make the customer's PDF. A person checks it before it goes out. The software was tried on 99 old quotes and matched the spreadsheet every time."
+      caption="One quote through the custom application. Sales enters the product type, dimensions, materials, and three target quantities. The pricing engine applies 111 rules and 37 lookup tables to calculate materials, labor, outside components, and shipping across all three quantities at once, saves the new revision alongside prior versions, and generates a customer-ready PDF."
       description={wide
         ? "A quote request lists four things typed in by sales: what it is, one of six product types; the size, length, width and depth; the material, type and thickness; and how many, 250, 500 or 1,000. An arrow leads to the pricing rules, marked automatic: 111 rules and 37 lookup tables, written down from the old spreadsheet. Arrows fan out to four results, marked automatic: a priced quote with materials, labor, outside parts and shipping; prices for all three quantities; the quote saved as version 3 next to version 2; and a PDF for the customer. The four results fan back in to a person checking the quote before it goes to the customer. The pricing rules are circled with the note '10,000 formulas distilled into 111 rules'."
         : "Three steps. A quote request, typed in by sales. Priced by the rules, marked automatic: 111 rules and 37 lookup tables. A person checks the quote. The rules step is circled with the note '10,000 formulas distilled into 111 rules'."}
@@ -57,15 +56,15 @@ export function ManufacturingQuote() {
   );
 }
 
-/** Manufacturing, figure 2: making a report number trustworthy. */
+/** Manufacturing, figure 2: rebuilding management reporting from raw ERP transactions. */
 export function ManufacturingReporting() {
   const wide = useWideFigure();
   return (
     <Figure
       n={2}
-      caption="Making a report number trustworthy. I follow the number back to the orders behind it, fix what is wrong, and agree with the owner what the number should mean. The fixed reports now update on their own."
+      caption="Rebuilding management reporting from raw ERP transactions. Tracing monthly on-time delivery back to source orders exposed four systemic errors across nearly 30,000 spreadsheet formulas. After establishing seven explicit business rules with the owner and restoring the stalled data feed, the reporting pipeline updates automatically in the cloud data warehouse."
       description={wide
-        ? "Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted instead of orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own."
+        ? "Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted as full orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own."
         : "Three steps. Follow the number back to the orders behind it. Four errors found and fixed: order lines counted as orders, a half month, duplicates, a stopped feed. Four errors found and fixed is circled with the note 'four errors found, 29,820 formulas fixed'. The owner and I agreed what counts."}
       className="story-figure"
     >
@@ -74,7 +73,7 @@ export function ManufacturingReporting() {
           <Node label="Follow the number back" where="on-time delivery this month: which orders and dates should count?" />
           <Connector />
           <Record title="What I found" rows={[
-            { key: 'Order lines counted instead of orders', value: 'fixed', state: 'tick' },
+            { key: 'Order lines counted as full orders', value: 'fixed', state: 'tick' },
             { key: 'A half month counted as a whole month', value: 'fixed', state: 'tick' },
             { key: 'The same customer counted twice (capital letters)', value: 'fixed', state: 'tick' },
             { key: 'A data feed that had stopped', value: 'restored', state: 'tick' },
@@ -97,59 +96,55 @@ export function ManufacturingReporting() {
   );
 }
 
-/** Manufacturing, figure 3: how a change gets into the software safely. */
+/** Manufacturing, figure 3: sales-to-engineering handoff across five operational queues. */
 export function ManufacturingDelivery() {
   const wide = useWideFigure();
   return (
     <Figure
       n={3}
-      caption="How a change gets into the software safely. Nothing goes live until the automatic checks pass, a computer has tried it the way a user would, and a person has said yes. About 135 of these runs in the first four weeks, with 2,800 screenshots."
+      caption="From sales intake to engineering handoff across five operational queues. Complete job specifications are captured up front, connected to customer and item records, and routed to the right queue so engineering and sample production receive actionable work."
       description={wide
-        ? "Three steps in a row, then three questions. AI writes the change, marked automatic, in a safe copy so nothing live is touched. The checks must pass, marked automatic: about 1,500 automatic tests run first. A computer tries it out, marked automatic: it clicks through the screens like a user and takes screenshots. Arrows fan out to three questions. Does it work, and is there proof, are marked automatic. Should it go live is where a person decides. The checks must pass is circled with the note '1,500 tests before anything goes live'. A line beneath, with a check mark, says a yes goes live on its own, with a check afterward and a way to undo it."
-        : "Three steps. AI writes the change in a safe copy, marked automatic. The checks and a computer try-out must pass, marked automatic: about 1,500 tests, real clicks, screenshots. Should it go live, where a person decides; a yes goes live with a way back. The checks step is circled with the note '1,500 tests before anything goes live'."}
+        ? "Complete job intake in CRM and quoting captures specs, customer records, and item records up front. An arrow leads to routed into five queues, marked automatic and circled with the note 'five operational queues in one shared system'. Arrows fan out to five queues marked automatic: sales requests, house accounts, engineering, drawings, and samples. The five queues fan back in to design and production, where engineering receives complete specs with a clear stage owner."
+        : "Three steps. Complete job intake, with specs captured up front. Routed into five queues, marked automatic and circled with the note 'five operational queues in one shared system': sales, house accounts, engineering, drawings, and samples. Design and production receives complete specs."}
       className="story-figure"
     >
       {wide ? (
-        <>
-          <Flow>
-            <Node label="AI writes the change" auto where="in a safe copy, so nothing live is touched" />
-            <Connector />
-            <Node label="The checks must pass" auto where="about 1,500 automatic tests run first" marked annotation="1,500 tests before anything goes live" annotationPlacement="below" />
-            <Connector />
-            <Node label="A computer tries it out" auto where="clicks through the screens like a user, takes screenshots" />
-            <Fan count={3} direction="out" mobileLabel="then three questions" />
-            <Stack>
-              <Node label="Does it work?" auto small />
-              <Node label="Is there proof?" auto small />
-              <Node label="Should it go live?" small />
-            </Stack>
-          </Flow>
-          <p className="resolved-line">
-            <PenTick />
-            A yes goes live on its own, with a check afterward and a way to undo it.
-          </p>
-        </>
+        <Flow>
+          <Node label="Complete job intake" where="specs, customer and item records captured up front" />
+          <Connector />
+          <Node label="Routed into five queues" auto where="by job type, account, and required engineering work" marked annotation="five operational queues in one shared system" annotationPlacement="below" />
+          <Fan count={5} direction="out" mobileLabel="routed into" />
+          <Stack tag="automatic">
+            <Node label="Sales requests" small />
+            <Node label="House accounts" small />
+            <Node label="Engineering" small />
+            <Node label="Drawings" small />
+            <Node label="Samples" small />
+          </Stack>
+          <Fan count={5} direction="in" mobileLabel="then" />
+          <Node label="Design and production" where="complete specs up front, clear owner at each step" />
+        </Flow>
       ) : (
         <Flow className="flow--even">
-          <Node label="AI writes the change" auto where="in a safe copy" />
+          <Node label="Complete job intake" where="specs captured up front" />
           <Connector />
-          <Node label="Checks and a computer try-out must pass" auto where="about 1,500 tests, real clicks, screenshots" marked annotation="1,500 tests before anything goes live" annotationPlacement="below" />
+          <Node label="Routed into five queues" auto where="sales, house accounts, engineering, drawings, samples" marked annotation="five operational queues in one shared system" annotationPlacement="below" />
           <Connector />
-          <Node label="Should it go live?" where="a yes goes live, with a way back" />
+          <Node label="Design and production" where="clear owner at each step" />
         </Flow>
       )}
     </Figure>
   );
 }
 
-/** Healthcare, figure 1: how the shared information is built and kept fresh. */
+/** Healthcare, figure 1: how the cloud data and orchestration engine stays current. */
 export function SharedContextBuild() {
   const wide = useWideFigure();
   return (
     <Figure
       n={1}
       legend={LEGEND}
-      caption="How the shared information is built and kept fresh. Four systems are gathered every night into one place the client owns, matched up, checked and published. If a night fails, yesterday's copy keeps working and nobody notices."
+      caption="How the cloud data and orchestration engine stays current. Every night, records from six project boards, the CRM, thousands of PDFs in cloud storage, and the live website are unified in the company's cloud account, matched across systems, and validated before publication. If an upstream feed fails, the engine keeps the prior verified snapshot live."
       description={wide
         ? "Four systems stacked on the left: project boards, customer records, files and documents, and the website. Their arrows merge, labelled gathered every night, into gather and match up, marked automatic: records that belong together are joined, and a number alone is never enough. If records disagree, a person decides. Next, checked before publishing, marked automatic: missing fields, which source wins, private details kept out. Last, updated every night, marked automatic and circled with the note 'a failed night keeps yesterday's copy': the switch takes under a minute."
         : "Three steps. Four systems, gathered every night, marked automatic. Matched and checked, marked automatic; if records disagree, a person decides. Updated every night, marked automatic and circled with the note 'a failed night keeps yesterday's copy'."}
@@ -183,13 +178,13 @@ export function SharedContextBuild() {
   );
 }
 
-/** Healthcare, figure 2: what a person sees. */
+/** Healthcare, figure 2: source-cited answers inside the team's AI assistant. */
 export function SharedContextAnswer() {
   const wide = useWideFigure();
   return (
     <Figure
       n={2}
-      caption="What a person sees. Every answer says where it came from. Anything the records disagree on is shown, not hidden. Each person can only see what their role allows, and the assistant can read the records but never change them."
+      caption="Source-cited answers inside the team's AI assistant. Every response links directly to the underlying CRM, board, or document record and enforces role-based access through 34+ governed tools. When two systems disagree on a fact, the engine flags both sources side by side so staff can resolve the discrepancy directly."
       description={wide
         ? "Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled and circled with the note 'two records disagree, so it says so'. A person reviews and decides."
         : "Three steps. A staff member asks, in the AI assistant they already use. An answer with its sources, marked automatic and circled with the note 'two records disagree, so it says so': read only, limited by role. A person reviews and decides."}

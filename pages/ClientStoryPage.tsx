@@ -84,6 +84,12 @@ export default function ClientStoryPage({ slug }: { slug: Slug }) {
           <Eyebrow>{story.label}</Eyebrow>
           <h1>{story.title}</h1>
           <p className="lead">{story.paragraphs[0]}</p>
+          {'quote' in story && (
+            <blockquote className="client-quote client-quote--story">
+              <p className="client-quote__text">“{story.quote.text}”</p>
+              <footer className="client-quote__footer">{story.quote.attribution}</footer>
+            </blockquote>
+          )}
         </div>
       </Section>
 

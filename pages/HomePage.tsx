@@ -32,8 +32,12 @@ export default function HomePage() {
           </div>
           <GrowthConcept />
         </div>
-        <ProofSlot kind="quote" className="proof-slot--after-hero"
-          note="Early trust signal. Use a real, approved client quote with attribution." />
+        <blockquote className="client-quote client-quote--after-hero">
+          <p className="client-quote__text">
+            “We came to Patrick already with data, systems, and skills. He built the engine that put it all together in AWS. Many companies like my own will not have an internal AI architect on their team and will need to outsource.”
+          </p>
+          <footer className="client-quote__footer">CEO, healthcare services business</footer>
+        </blockquote>
       </Section>
 
       <Section labelledBy="outcomes-heading">

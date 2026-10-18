@@ -1100,6 +1100,38 @@
   color: var(--ink-2);
 }
 
+/* ---------- Client quote ---------- */
+.client-quote {
+  max-width: var(--prose);
+  padding: 4px 0 4px 20px;
+  border-left: 2px solid var(--mark);
+}
+
+.client-quote--after-hero {
+  margin-top: 48px;
+}
+
+.client-quote--story {
+  margin-top: 28px;
+}
+
+.client-quote__text {
+  font-family: var(--font-serif);
+  font-size: var(--text-lead);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.client-quote__footer {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
 /* ---------- FAQ ---------- */
 .faq {
   max-width: var(--prose);

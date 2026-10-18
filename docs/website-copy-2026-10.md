@@ -55,6 +55,10 @@ Accessible name only: Your current systems, software + AI, room to grow.
 
 Accessible description: Three connected boxes run from Your current systems to Software + AI to Room to grow. Software + AI is circled in orange. No visible caption or additional note.
 
+> "We came to Patrick already with data, systems, and skills. He built the engine that put it all together in AWS. Many companies like my own will not have an internal AI architect on their team and will need to outsource."
+>
+> CEO, healthcare services business
+
 ### Give your team more capacity, and your customers a better experience.
 
 The effort behind each customer can grow quickly: another document to prepare, another system to check, another handoff to follow up. The right system can carry more of that work. Here are a few examples of what that can make possible.
@@ -77,17 +81,17 @@ These engagements show how the work develops from understanding the business int
 
 Custom manufacturing
 
-#### From a 10,000-formula spreadsheet to software the company owns.
+#### From a 10,000-formula quoting workbook to company-owned software and fractional CTO leadership.
 
-An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
+A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team. I built a custom quoting and intake application across five operational queues, rebuilt management reporting on verified ERP transactions, and moved critical infrastructure into company custody.
 
 **See the work** → /work/manufacturing-systems
 
 Healthcare services
 
-#### Four systems answering as one, inside the team's AI assistants.
+#### Architecting the cloud engine that powers a healthcare team's 28+ AI workflows and morning operations.
 
-An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
+A healthcare services team had core software, documented SOPs, and operators building AI workflows, and needed an outside architect to connect their systems. I built a cloud data and orchestration engine that unifies four systems and thousands of PDFs nightly, powers 28+ operational workflows and scheduled morning case audits, and lets operations leaders publish new workflows themselves.
 
 **See the work** → /work/shared-context
 
@@ -393,9 +397,9 @@ Featured stories: Custom manufacturing and Healthcare services, in that order. U
 
 Client: MTRO PRO
 
-**Customer problems turned into fixes, tests and a morning brief.**
+**Product repairs, automated browser QA, and a daily seven-source account brief.**
 
-I worked with MTRO PRO's customers and developers, helping operators get set up and turning product problems into repairs and repeatable tests. That work also led to daily account briefs and support intake, giving the team the context for its next customer conversation.
+I bridged customer operations and engineering for MTRO PRO, resolving onboarding blockers in the product and turning recurring failures into repeatable browser tests. To support daily customer follow-through, I also built an automated seven-source account brief and support intake queue.
 
 Link: See the work → /work/mtro-pro
 
@@ -405,31 +409,31 @@ Use the title, card summary and link from /work/psyche-digital below.
 
 ## MTRO PRO story
 
-### Customer problems turned into fixes, tests and a morning brief.
+### Product repairs, automated browser QA, and a daily seven-source account brief.
 
 MTRO PRO
 
 External link: Visit MTRO PRO → https://mtropro.com/
 
-I joined MTRO PRO, a rental software business, part time in early 2026 as an engineer and technical advisor. I worked directly with operators on setup and product use, and brought their feedback to the developers. The work ranged from helping a customer get started to fixing the software behind a stalled onboarding.
+I joined MTRO PRO, a rental software business, in early 2026 as an engineer and technical advisor working across customer onboarding and product delivery. I worked directly with rental operators during setup, traced where onboarding stalled in the application, and shipped both product fixes and internal tooling for the team.
 
 ### A seven-source account brief, ready every morning.
 
-Before following up, I needed to know how an account's setup was going and what had happened in the last conversation. A product event could show that payments were connected, while a message or booked call explained what to do next. Gathering that history repeatedly became a clear task to automate.
+Before following up with an operator, I needed to see where setup stood and what had been agreed in the last conversation. A product event showed whether payments were connected, while a message or booked call explained the next step. Assembling that context across accounts every morning was a clear candidate for automation.
 
-I built a daily process that draws from seven sources to prepare an account brief, with incoming help requests collected into a review queue. Staff can check the context and proposed response before contacting the customer. Health checks and alerts make missing updates visible, so an empty brief is not mistaken for an inactive account.
+I built a daily pipeline that pulls from seven sources to generate an account brief and collects incoming help requests into a review queue. Staff review the account history and draft response before replying to the customer. Health checks and alerts flag missing data feeds immediately, distinguishing a quiet account from a broken integration.
 
 ### Product defects the developers could reproduce and retest.
 
-Booking, lease signing and payment need to work as a connected journey. I built an AI-assisted testing process that follows those steps in a browser, captures what happened and gives developers enough detail to reproduce a failure. Repairs go through the same journey again.
+Booking, lease signing, and payment have to work as a single connected journey. I built an AI-assisted browser testing workflow that steps through those flows, records the evidence, and gives developers the exact state needed to reproduce a failure. Every repair runs through the same journey before release.
 
-More than a dozen test rounds ran between March and April. One booking review found seven defects across lease signing, checkout and payment status. Written test plans, browser evidence and retesting made the findings useful for deciding what needed repair and checking that it worked.
+More than a dozen test rounds ran between March and April. One booking review uncovered seven defects across lease signing, checkout, and payment status. Written test plans, browser captures, and automated retesting gave the team a reliable way to prioritize fixes and verify each release.
 
 ### Property imports restored, with instructions for the team.
 
-When a login change stopped property imports, I reproduced the failure, built and tested an interim repair, and supplied setup instructions to the team. Another developer then moved the integration to scoped API keys. I also prepared repository-based instructions for a new contractor joining the import work.
+When an upstream login change broke property imports, I reproduced the failure, shipped and verified an interim repair, and wrote setup documentation for the team. Another developer then migrated the integration to scoped API keys, and I prepared repository-level onboarding instructions for a new contractor joining the import work.
 
-The account-research and support-intake systems have run in production since July. They support the customer work alongside the engineering and testing, while people decide what to say, which defects to fix first and when to release. Hours saved have not been measured yet.
+The account-research and support-intake systems have run in production since July. Every morning, the team starts with current account context and queued support drafts, leaving staff to decide how to respond, which defects to prioritize, and when to release.
 
 ### System diagrams
 
@@ -472,7 +476,7 @@ Link: See a sample of client work → /work
 ### Links from existing pages
 
 Working Together: See how this takes shape in practice.
-Body: A manufacturer's systems assessment grew into an ongoing fractional CTO role, with quoting software, reporting improvements and technical direction for the team.
+Body: A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team, with custom quoting software across five queues, rebuilt ERP reporting, and company-owned infrastructure.
 Link: See the work → /work/manufacturing-systems
 
 About closing: See how I've worked with others → /work (4 October: replaced "See all client work". The same link sits beside "Let's talk" in the Home and Working Together heroes and closing calls, so a visitor who is not ready to talk can look at the work first.)
@@ -481,8 +485,8 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 
 /work title: Client Work | Patrick McHeyser
 /work description: See how Patrick works with teams on software, automation, and AI, from understanding the problem to building the tools and helping people use them.
-/work/mtro-pro title: MTRO PRO: Customer Problems into Fixes, Tests and a Morning Brief | Patrick McHeyser
-/work/mtro-pro description: Customer onboarding, engineering repairs, account-research automation and browser testing for MTRO PRO, a rental software business.
+/work/mtro-pro title: MTRO PRO: Product Repairs, Browser QA, and a Daily Account Brief | Patrick McHeyser
+/work/mtro-pro description: Customer onboarding, engineering repairs, account-research automation, and browser testing for MTRO PRO, a rental software business.
 
 
 ## Additional client stories
@@ -491,36 +495,36 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 
 Custom manufacturing
 
-**From a 10,000-formula spreadsheet to software the company owns.**
+**From a 10,000-formula quoting workbook to company-owned software and fractional CTO leadership.**
 
-Card: An assessment of a manufacturer's systems grew into an ongoing fractional CTO role. I lead technical delivery, work with the internal team and help the owner make software decisions. The work includes a quoting application, corrected management reporting and a development process for the changes that follow.
+Card: A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team. I built a custom quoting and intake application across five operational queues, rebuilt management reporting on verified ERP transactions, and moved critical infrastructure into company custody.
 
-The owner of a growing custom manufacturer brought me in to evaluate the company's systems and decide where to invest next. What began as an initial assessment grew into an ongoing fractional CTO engagement, leading technical delivery, working alongside the internal team, and joining the management team.
+The owner of a growing custom manufacturer brought me in for a systems assessment when the business outgrew its spreadsheets and outside contractors. He needed a technical counterpart to evaluate engineering work, show where existing tools were holding growth back, and set a practical roadmap. That assessment grew into an ongoing fractional CTO role on the management team, leading custom software delivery, rebuilding management reporting, and bringing critical infrastructure under company ownership.
 
-**Custom quoting software, built to retire the spreadsheets and raise productivity.** Preparing a customer quote meant working through a spreadsheet with nearly 10,000 formulas where pricing rules, material tables, and quantity breaks were tangled together. Comparing three quantities or revisiting an earlier quote meant copying workbooks by hand, and only a few people trusted themselves to change a rule. I worked with the business to extract 111 pricing rules and 37 lookup tables from the workbook and built a web application the company owns. Now a salesperson enters the product type, dimensions, material, and target quantities (such as 250, 500, or 1,000 units). The application calculates materials, labor, outside components, and shipping across all three quantities at once, saves version 3 alongside version 2, and generates the customer PDF for a person to review before sending. Before operator testing began, we checked the application against 99 archived quotes and matched the workbook's figures every time.
+**A custom quoting and intake application that replaces a 10,000-formula workbook.** Every customer quote previously ran through a spreadsheet with nearly 10,000 formulas where pricing logic, material costs, and quantity breaks were tangled together. Comparing quantities or revising a quote meant duplicating workbooks by hand, and the quoting and design director spent hours each day fixing broken formulas and reviewing routine quotes. I worked with the team to extract 111 pricing rules and 37 lookup tables and built a custom web application the company owns. Connected to customer and item records, the application routes work across five operational queues: sales requests, house accounts, engineering, drawings, and samples. A salesperson enters the product type, dimensions, materials, and target quantities (such as 250, 500, and 1,000 units). The application calculates materials, labor, outside components, and shipping across all three quantities at once, tracks quote revisions side by side, and generates a customer-ready PDF.
 
-**Metrics the team can trust and act on, maintained in-house.** Management reporting had grown hard to reconcile when numbers looked off. Taking monthly on-time delivery as a test case, I traced management figures back to source transactions and found four separate problems across nearly 30,000 formulas: order lines were being counted as full orders, a partial month was compared against a full month, capitalization differences split customer records, and an automated data feed had quietly stopped. I worked with the owner to write down seven explicit rules for what counts as on-time, corrected the calculations, and restored the feed. I then helped an internal specialist take ownership of the reporting, with read access to the source data and a process for checking replacement reports alongside the existing ones before switching over.
+**Management reporting rebuilt on verified ERP transactions and owned in-house.** The company's ERP lacked usable native management reporting, and the spreadsheets layered on top of it contained nearly 30,000 formulas that failed to reconcile whenever leadership questioned a number. Using monthly on-time delivery as the proving ground, I traced management figures back to raw ERP source transactions and uncovered four systemic errors: individual order lines were counted as full orders, a partial month was compared against a full month, capitalization differences split customer records, and an automated data feed had silently stalled. I worked with the owner to establish seven explicit business rules for on-time delivery, rebuilt the reporting pipeline in a cloud data warehouse, and restored the feed. I then trained an internal specialist to own reporting, equipping her with direct read access to the warehouse and a side-by-side verification process for retiring legacy reports.
 
-**Software that keeps improving, with automated checks before anything goes live.** Because operators rely on these tools for daily quoting and reporting, I established a development process built around the actual tasks staff need to complete. Each change runs in an isolated copy against roughly 1,500 automated checks and a browser test that clicks through the screens like a user and records screenshots. A person reviews the evidence and approves the release, with a live check afterward and a way to restore the previous version if needed.
+**Structured sales-to-engineering handoffs across five operational queues.** Quoting was only half of the intake bottleneck; incomplete job details routinely moved from sales into design and sample production, forcing engineering to chase missing specifications. I worked with leadership and department leads to redesign the sales-to-engineering handoff across the CRM and the new quoting application. Sales now captures complete job specifications up front before routing work into the sales requests, house accounts, engineering, drawings, or samples queues, with explicit ownership at every stage.
 
-**Sales and design handoffs, hiring, and software decisions made with the owner.** Beyond the software builds, I worked alongside the owner and staff on operational changes that crossed departments. Redesigning the sales-to-design handoff, for example, meant defining what job details had to be captured in the CRM before work moved downstream, clarifying who owned each step, and adjusting staffing around the process. The owner gained a technical counterpart who could evaluate major vendor proposals, manage developer handovers, and carry operating decisions through to working systems.
+**Fractional CTO leadership across infrastructure custody, hiring, and vendor decisions.** Joining the management team gave the owner a permanent technical counterpart across operations and engineering. I moved critical automations and cloud infrastructure off outside contractors' personal accounts into company custody and version control, established automated release checks so daily tools stay stable as features ship, led technical hiring evaluations and developer transitions, and sat alongside the owner to evaluate major software vendor proposals before the company committed capital.
 
 Selected details from the engagement:
 
-- The quoting workbook contained almost **10,000 formulas**. The application reproduced its figures across **99 archived quotes** before operator testing.
-- Reporting corrections covered comparison logic repeated across nearly **30,000 formulas**.
-- I supported technical hiring and developer handovers, including capturing undocumented automation code in company version control.
-- I reviewed a major software proposal with the owner, accounting for migration, integrations and the effort required from the internal team.
+- Extracted **111 pricing rules** and **37 lookup tables** from a nearly **10,000-formula** workbook into a custom web application that prices three quantities at once and routes work across **five operational queues**.
+- Traced management metrics across nearly **30,000 spreadsheet formulas** back to raw ERP transactions, resolved **four systemic data errors**, codified **seven business rules** with the owner, and transitioned reporting ownership in-house.
+- Redesigned the **sales-to-engineering handoff** so complete job specifications are captured up front and routed cleanly across sales, design, drawings, and sample production.
+- Moved critical automations and cloud infrastructure off outside contractors' personal accounts into **company custody and version control**, led technical hiring evaluations, and reviewed major vendor proposals alongside the owner.
 
-**Technical decisions made with the owner, then built.** Across the engagement, the aim was more consistent quoting, dependable management information and clearer handoffs, with the team better equipped to maintain and improve its own systems.
+**Technical leadership that builds company-owned assets.** Across quoting, ERP reporting, department handoffs, and vendor evaluation, the engagement replaced fragile spreadsheets and contractor dependencies with production systems the internal team owns and operates.
 
 Metadata title: Manufacturing: From Spreadsheet to Software the Company Owns | Patrick McHeyser
 
-Metadata description: A systems assessment grows into fractional CTO work: leading delivery, developing internal ownership, building quoting software and improving reporting.
+Metadata description: A systems assessment grows into fractional CTO leadership: custom quoting software across five queues, verified ERP reporting, and company-owned infrastructure.
 
-Figure 1, one quote through the new software (under "Custom quoting software, built to retire the spreadsheets and raise productivity."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+Figure 1, one quote through the custom application (under "A custom quoting and intake application that replaces a 10,000-formula workbook."). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
-Caption: One quote through the new software. Sales types in the request. The rules work out the price, save it as a new version and make the customer's PDF. A person checks it before it goes out. The software was tried on 99 old quotes and matched the spreadsheet every time.
+Caption: One quote through the custom application. Sales enters the product type, dimensions, materials, and three target quantities. The pricing engine applies 111 rules and 37 lookup tables to calculate materials, labor, outside components, and shipping across all three quantities at once, saves the new revision alongside prior versions, and generates a customer-ready PDF.
 
 - Record "Quote request" (small print: typed in by sales): What it is, one of six product types; Size, length, width, depth; Material, type and thickness; How many, 250, 500 or 1,000
 - The pricing rules (automatic; circled, note "10,000 formulas distilled into 111 rules"): 111 rules and 37 lookup tables, written down from the old spreadsheet
@@ -530,37 +534,36 @@ Caption: One quote through the new software. Sales types in the request. The rul
 
 Accessible description: A quote request lists four things typed in by sales: what it is, one of six product types; the size, length, width and depth; the material, type and thickness; and how many, 250, 500 or 1,000. An arrow leads to the pricing rules, marked automatic: 111 rules and 37 lookup tables, written down from the old spreadsheet. Arrows fan out to four results, marked automatic: a priced quote with materials, labor, outside parts and shipping; prices for all three quantities; the quote saved as version 3 next to version 2; and a PDF for the customer. The four results fan back in to a person checking the quote before it goes to the customer. The pricing rules are circled with the note '10,000 formulas distilled into 111 rules'.
 
-Figure 2, making a report number trustworthy (under "Metrics the team can trust and act on, maintained in-house."):
+Figure 2, rebuilding management reporting from raw ERP transactions (under "Management reporting rebuilt on verified ERP transactions and owned in-house."):
 
-Caption: Making a report number trustworthy. I follow the number back to the orders behind it, fix what is wrong, and agree with the owner what the number should mean. The fixed reports now update on their own.
+Caption: Rebuilding management reporting from raw ERP transactions. Tracing monthly on-time delivery back to source orders exposed four systemic errors across nearly 30,000 spreadsheet formulas. After establishing seven explicit business rules with the owner and restoring the stalled data feed, the reporting pipeline updates automatically in the cloud data warehouse.
 
 - Follow the number back: on-time delivery this month: which orders and dates should count?
-- Record "What I found": Order lines counted instead of orders (tick, fixed); A half month counted as a whole month (tick, fixed); The same customer counted twice (capital letters) (tick, fixed); A data feed that had stopped (tick, restored)
+- Record "What I found": Order lines counted as full orders (tick, fixed); A half month counted as a whole month (tick, fixed); The same customer counted twice (capital letters) (tick, fixed); A data feed that had stopped (tick, restored)
 - The owner and I agreed what counts: seven on-time rules, written down
 - Reports you can check (automatic; circled, note "four errors found, 29,820 formulas fixed"): the reports update on their own
 - Below 1024px: Follow the number back, to the orders behind it → Four errors found and fixed (circled, note "four errors found, 29,820 formulas fixed") → The owner and I agreed what counts
 
-Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted instead of orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own.
+Accessible description: Four steps in a row. Follow the number back: on-time delivery this month, asking which orders and dates should count. A list titled What I found shows four problems, each marked fixed: order lines counted as full orders; a half month counted as a whole month; the same customer counted twice because of capital letters; and a data feed that had stopped, marked restored. The owner and I agreed what counts: seven on-time rules written down. Reports you can check, marked automatic, is circled with the note 'four errors found, 29,820 formulas fixed': the reports update on their own.
 
-Figure 3, how a change gets into the software safely (under "Software that keeps improving, with automated checks before anything goes live."):
+Figure 3, from sales intake to engineering handoff across five operational queues (under "Structured sales-to-engineering handoffs across five operational queues."):
 
-Caption: How a change gets into the software safely. Nothing goes live until the automatic checks pass, a computer has tried it the way a user would, and a person has said yes. About 135 of these runs in the first four weeks, with 2,800 screenshots.
+Caption: From sales intake to engineering handoff across five operational queues. Complete job specifications are captured up front, connected to customer and item records, and routed to the right queue so engineering and sample production receive actionable work.
 
-- AI writes the change (automatic): in a safe copy, so nothing live is touched
-- The checks must pass (automatic; circled, note "1,500 tests before anything goes live"): about 1,500 automatic tests run first
-- A computer tries it out (automatic): clicks through the screens like a user, takes screenshots
-- Fan out to three questions: Does it work? (automatic); Is there proof? (automatic); Should it go live? (where a person decides)
-- Resolved line (check mark): A yes goes live on its own, with a check afterward and a way to undo it.
-- Below 1024px: AI writes the change, in a safe copy (automatic) → Checks and a computer try-out must pass (automatic; circled, note "1,500 tests before anything goes live") → Should it go live? a yes goes live, with a way back
+- Complete job intake: specs, customer and item records captured up front
+- Routed into five queues (automatic; circled, note "five operational queues in one shared system"): by job type, account, and required engineering work
+- Fan out ("routed into") to five queues (small print on the stack: automatic): Sales requests; House accounts; Engineering; Drawings; Samples
+- Fan back in ("then") to Design and production: complete specs up front, clear owner at each step
+- Below 1024px: Complete job intake, specs captured up front → Routed into five queues, sales, house accounts, engineering, drawings, samples (automatic; circled, note "five operational queues in one shared system") → Design and production, clear owner at each step
 
-Accessible description: Three steps in a row, then three questions. AI writes the change, marked automatic, in a safe copy so nothing live is touched. The checks must pass, marked automatic: about 1,500 automatic tests run first. A computer tries it out, marked automatic: it clicks through the screens like a user and takes screenshots. Arrows fan out to three questions. Does it work, and is there proof, are marked automatic. Should it go live is where a person decides. The checks must pass is circled with the note '1,500 tests before anything goes live'. A line beneath, with a check mark, says a yes goes live on its own, with a check afterward and a way to undo it.
+Accessible description: Complete job intake in CRM and quoting captures specs, customer records, and item records up front. An arrow leads to routed into five queues, marked automatic and circled with the note 'five operational queues in one shared system'. Arrows fan out to five queues marked automatic: sales requests, house accounts, engineering, drawings, and samples. The five queues fan back in to design and production, where engineering receives complete specs with a clear stage owner.
 
-| Manual friction | What the system or engagement handles | Human responsibility |
+| Operational bottleneck | What the system or engagement handles | Ongoing human ownership |
 | --- | --- | --- |
-| Re-explaining quoting rules for each change | Explicit requirements and repeatable checks | Resolve rules and exceptions |
-| Repeating test steps after software changes | Automated checks and browser QA with evidence | Set acceptance criteria; assess gaps |
-| Tracing dashboard figures back to source transactions | Trace transactions, reconcile definitions and correct calculations | Agree business meaning and source practices |
-| Copying information between operational tools | Integration assessment and scoped implementation | Decide ownership and handoffs |
+| Pricing multi-quantity quotes in a 10,000-formula spreadsheet | Custom web app applying 111 pricing rules and 37 lookup tables across three quantities at once, with side-by-side revisions and PDF generation | Sales enters specs and reviews the final quote; leadership approves rule changes and complex custom jobs |
+| Incomplete job specs stalling between sales, design, and sample production | Upfront specification capture in the CRM and structured routing across five operational queues (sales, house accounts, engineering, drawings, and samples) | Department leads manage queue priorities, drawings, and engineering exceptions |
+| Reconciling 30,000 spreadsheet formulas against raw ERP data when metrics look wrong | Automated reporting pipeline in the cloud data warehouse built on verified ERP transactions and seven explicit on-time delivery rules | Internal reporting specialist maintains reports in-house; owner sets business definitions |
+| Automations on contractor accounts and unvetted software vendor proposals | Infrastructure and code moved into company custody, structured developer transitions, and technical evaluation of major vendor proposals | Owner and management team make capital and hiring decisions with clear technical evidence |
 
 Card link: See the work
 
@@ -568,31 +571,35 @@ Card link: See the work
 
 Healthcare services
 
-**Four systems answering as one, inside the team's AI assistants.**
+**Architecting the cloud engine that powers a healthcare team's 28+ AI workflows and morning operations.**
 
-Card: An operations review led to a shared information source for a healthcare team's AI workflows. I worked with staff to understand the handoffs, connected four business systems and integrated the workflows they had already developed. The engagement now includes rollout, account administration and guidance for maintaining the system.
+Card: A healthcare services team had core software, documented SOPs, and operators building AI workflows, and needed an outside architect to connect their systems. I built a cloud data and orchestration engine that unifies four systems and thousands of PDFs nightly, powers 28+ operational workflows and scheduled morning case audits, and lets operations leaders publish new workflows themselves.
 
-This healthcare services team already had business software, documented processes and people building useful AI workflows. Preparing a profile or recurring paperwork still meant gathering related information from several places. I began by looking at how the work moved between people and systems, then built a shared information source those workflows could use.
+This healthcare services company already had core business software, documented SOPs, and capable operators building their own AI prompts and workflows. What they needed was an external AI architect to connect their systems, since every workflow still required staff to pull and cross-check records by hand across a CRM, six project boards, thousands of PDFs in cloud document storage, and a live website. I mapped every cross-department handoff, built a central data and orchestration engine in the company's cloud account, and connected their workflows to live operational data.
 
-**Every handoff mapped from interviews, documents and system activity.** Staff interviews, process documents and system activity showed where information passed cleanly and where someone had to collect it by hand. That gave the build a practical starting point: make the supporting information available within the work staff were already doing.
+> "We came to Patrick already with data, systems, and skills. He built the engine that put it all together in AWS. Many companies like my own will not have an internal AI architect on their team and will need to outsource."
+>
+> CEO, healthcare services business
 
-I connected four business systems in the client's own cloud account and converted thousands of PDFs into searchable text. Matching the records required checks for duplicates and conflicting identities. Related information now sits alongside its source references, with unresolved facts left visible for a person to review.
+**A unified cloud engine connecting four systems and thousands of documents.** I began by mapping every cross-department handoff through staff interviews, SOP reviews, and system logs to see where cases stalled between intake, coordination, and documentation. Using that map, I built a central data and orchestration engine inside the company's cloud account. Every night, the engine ingests records across the CRM, six project boards, thousands of PDFs in cloud document storage, and the live website, converting unstructured files into searchable text.
 
-**The team's workflows answer from one source.** Staff had already worked out how they wanted to prepare profiles, produce paperwork and check supporting evidence. I integrated those instructions with the shared source, preserved working versions and used staff feedback to correct the parts that interrupted their work. A preparation workflow can gather the information and draft a document; a review workflow can return the supporting records and open questions alongside it.
+Matching records across four tools required deterministic identity resolution because names, IDs, and case statuses frequently differed from one system to the next. The engine links related records across systems, attaches source citations to every field, and flags conflicting facts so staff see the exact discrepancy. Before each nightly update goes live, automated validation checks the build and keeps the prior verified snapshot active if an upstream feed fails. The engine exposes 34+ governed tools directly inside the team's AI assistants, enforcing role-based access on every query.
 
-**Current information for the whole team, scoped to each person's role.** The shared source limits access by role and refreshes nightly. Each update is checked before publication, so a failed refresh leaves the last good version available. Staff can inspect the records behind an answer before relying on it.
+**Over 28 AI workflows and scheduled morning operations that run before the workday starts.** Operators had already designed strong workflows for profile preparation, recurring paperwork, and evidence review. I connected 28+ of these operational skills to the cloud engine's 34+ governed tools so a single workflow gathers the complete case record, drafts the required paperwork, and returns a source-linked verification checklist. Beyond on-demand work inside the assistant, the engine runs scheduled morning workflows that audit active cases overnight, reconcile live website inventory against the six internal project boards, verify incoming-call follow-ups, and deliver each coordinator a daily action list in team chat or email.
 
-**The team equipped to run and maintain the system.** The engagement also includes account administration and guides for setup, everyday use and technical maintenance. I documented how to update and distribute the workflows so the team has a process for keeping them current, with the infrastructure in the client's own account.
+**Role-scoped answers with source citations that take leadership out of the lookup loop.** Previously, when the CRM, project boards, and document folders disagreed on a case detail, staff routed the question to the CEO or Operations Director to sort out which system was right. Now every answer inside the AI assistant carries the exact source record and date behind each fact, scoped to the requester's role. When two systems disagree, the assistant surfaces both records side by side so coordinators check the system first and resolve routine discrepancies directly.
 
-Staff have reported successful use of several workflows as rollout continues. The next step is to work through the remaining feedback and handoff with the team. Time saved has not been measured yet.
+**Self-service workflow publishing and scheduling owned by the operations team.** To keep the platform evolving as processes change, I built a permission-scoped publishing and scheduling workflow alongside operator and technical reference guides. Authorized operations leaders can write a new skill, update business rules in an existing workflow, and schedule recurring morning runs from their own workspace. Version controls and role permissions ensure changes are verified before distribution to the wider team.
 
-Metadata title: Healthcare: Four Systems Answering as One | Patrick McHeyser
+**An AI-ready operation backed by production architecture.** Connecting the company's four core systems turned isolated prompts into a shared operational platform: coordinators begin the day with automated case audits, verify cross-system records in seconds, and publish new workflows on their own schedule.
 
-Metadata description: From an operations review to shared information, integrated AI workflows and a staff handoff for a healthcare services team.
+Metadata title: Healthcare: AI Systems Architecture Across Four Platforms | Patrick McHeyser
 
-Figure 1, how the shared information is built and kept fresh (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+Metadata description: Unifying a CRM, six project boards, cloud document storage, and a live website into a cloud engine powering 28+ AI workflows and morning operations.
 
-Caption: How the shared information is built and kept fresh. Four systems are gathered every night into one place the client owns, matched up, checked and published. If a night fails, yesterday's copy keeps working and nobody notices.
+Figure 1, how the cloud data and orchestration engine stays current (after the paragraph on connecting four systems). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
+
+Caption: How the cloud data and orchestration engine stays current. Every night, records from six project boards, the CRM, thousands of PDFs in cloud storage, and the live website are unified in the company's cloud account, matched across systems, and validated before publication. If an upstream feed fails, the engine keeps the prior verified snapshot live.
 
 - Stack of four sources: Project boards; Customer records; Files and documents; The website
 - Fan in ("gathered every night") to Gather and match up (automatic): records that belong together are joined; a number alone is never enough; if records disagree, a person decides
@@ -602,9 +609,9 @@ Caption: How the shared information is built and kept fresh. Four systems are ga
 
 Accessible description: Four systems stacked on the left: project boards, customer records, files and documents, and the website. Their arrows merge, labelled gathered every night, into gather and match up, marked automatic: records that belong together are joined, and a number alone is never enough. If records disagree, a person decides. Next, checked before publishing, marked automatic: missing fields, which source wins, private details kept out. Last, updated every night, marked automatic and circled with the note 'a failed night keeps yesterday's copy': the switch takes under a minute.
 
-Figure 2, what a person sees (after the paragraph on access by role and the nightly refresh):
+Figure 2, source-cited answers inside the team's AI assistant (after the paragraph on role-scoped answers):
 
-Caption: What a person sees. Every answer says where it came from. Anything the records disagree on is shown, not hidden. Each person can only see what their role allows, and the assistant can read the records but never change them.
+Caption: Source-cited answers inside the team's AI assistant. Every response links directly to the underlying CRM, board, or document record and enforces role-based access through 34+ governed tools. When two systems disagree on a fact, the engine flags both sources side by side so staff can resolve the discrepancy directly.
 
 - A staff member asks: in the AI assistant they already use
 - A locked door (automatic): can read, never change; each person sees only what their role allows
@@ -614,11 +621,13 @@ Caption: What a person sees. Every answer says where it came from. Anything the 
 
 Accessible description: Four steps in a row. A staff member asks, in the AI assistant they already use. A locked door, marked automatic: the assistant can read but never change the records, and each person sees only what their role allows. The answer for case 1234, marked automatic, lists three facts: status, confirmed from a board record dated 14 May, with a check mark; the supporting document, on file, with a check mark; and the contact preference, where two records disagree, flagged not settled and circled with the note 'two records disagree, so it says so'. A person reviews and decides.
 
-| Workflow | What it does | Manual work targeted |
+| Workflow | What the cloud engine and AI skills handle | Manual work retired |
 | --- | --- | --- |
-| Record lookup and profile preparation | Retrieve related information and produce a structured summary | Opening several tools and assembling the same context |
-| Document preparation | Gather required inputs and draft the appropriate paperwork | Re-keying facts into recurring documents |
-| Evidence review | Check supporting documents and return a source-linked checklist | Repeated document comparison before a human decision |
+| Cross-system case lookup and profile preparation | Joins records across the CRM, six project boards, thousands of cloud PDFs, and the live website into a source-cited summary | Opening four tools by hand to assemble and cross-check the same case history |
+| Recurring paperwork and evidence verification | Drafts case documents from unified records, checks supporting PDFs, and flags cross-system discrepancies with citations | Re-keying facts into templates and escalating record conflicts to the CEO or Operations Director |
+| Overnight case audits and morning action lists | Audits active cases and incoming-call follow-ups overnight, then delivers each coordinator's daily action list in chat or email | Starting the morning by combing through project boards and call logs to find stalled cases |
+| Website inventory and project board reconciliation | Compares live website listings against six internal project boards on a morning schedule and flags mismatches | Line-by-line manual checks between public website pages and internal tracking boards |
+| Self-service skill publishing and scheduling | Lets authorized operations leaders write, update, and schedule recurring AI workflows with version and permission controls | Waiting on an engineer to update workflow rules or configure a new scheduled run |
 
 Card link: See the work
 
@@ -626,21 +635,21 @@ Card link: See the work
 
 Psyche Digital
 
-**Five AI workflows a small agency can run and improve without a developer.**
+**Five AI workflows an agency team can run, test, and maintain in-house.**
 
-Card: Psyche Digital followed my instructions to build a content system, then returned for a broader operations review. I helped the team choose where to go next and supplied workflows, setup guidance and a method for testing and maintaining their own AI tools.
+Card: After implementing a content system from my initial blueprint, Psyche Digital brought me back for an operations review across client delivery. I mapped their core bottlenecks and delivered an implementation guide, five production-ready AI skills, and a testing method so the team can maintain the workflows in-house.
 
-Psyche Digital already used AI for recaps, kickoff briefs and report highlights. The founders wanted to take on more client work while spending less time coordinating it. Our engagement grew from a content system for their own marketing into a review of how AI could carry more of the work through to completion.
+Psyche Digital already used AI for meeting recaps, kickoff briefs, and report highlights. The founders wanted the capacity to take on more client accounts while reducing internal coordination time. Our engagement expanded from an internal marketing content system into a full review of how AI could carry client delivery work through to completion.
 
-**A content system the team built themselves from my instructions.** I designed the first content system and wrote the build instructions. The team followed them, got it set up and tested it, then returned to discuss a broader engagement. That experience set the standard for the next deliverable: instructions they could use to build and improve the tools themselves.
+**A content architecture built and operated by the internal team.** In our first engagement, I designed the agency's content system and wrote the step-by-step build specifications. The team stood the system up in their own environment, validated it in daily use, and returned to scope a broader operations review. That success established the delivery model for the next phase: clear architecture and build specifications that the team owns and operates directly.
 
-**The real bottleneck: what a recap still leaves someone to do.** I followed 10 examples of actual work across client success, onboarding and social-content production. A meeting recap showed the opportunity clearly. Recording a decision was only the start; someone still had to find the relevant task, add instructions and give the right person enough context to act.
+**Closing the gap between meeting notes and assigned client work.** I traced 10 recent examples of work across client success, onboarding, and social content production. Meeting recaps exposed the central bottleneck: recording a decision still left an account manager to locate the right task, write the execution brief, and assemble context for the assignee.
 
-**Five starter skills, each with the sources, steps and a pass or fail check.** The assessment set out a sequence for tackling that work using the team's existing documents and task system. An implementation guide and five starter AI skills explain how to gather the sources, prepare the work and save the result where the team needs it. We refined the setup instructions after reviewing the recommendations together.
+**Five workflows with defined inputs, execution steps, and pass/fail checks.** The assessment established a rollout sequence tied to the agency's existing documents and task tracker. I delivered an implementation guide and five AI skills that pull the required source material, draft the follow-up work, and place the output directly where the team acts on it. We reviewed the architecture together and finalized the setup specifications for their environment.
 
-**A way to improve each workflow without breaking it.** The guide also gives the team a method for maintaining what it builds: make a small change, test a familiar case and an exception, keep the last working version, then check that colleagues receive the update. The person responsible for the workflow reviews changes to its business rules.
+**A repeatable release process for internal workflow owners.** The guide equips the team with an engineering discipline for updating its own tools: make one scoped change at a time, test against a standard case and a known edge case, retain the prior working version, and verify distribution across the team. Each workflow has a designated owner who approves changes to its business rules.
 
-**First trial on one client account, then wider use.** Psyche has the materials to begin with one familiar client account and one cycle of meeting preparation and follow-through. That first trial will show what needs correcting before wider use. The new workflows have not yet been installed in the team's accounts.
+**Staged rollout starting with a single client account.** The delivery package is structured for a controlled rollout: the team starts with one established client account across a single cycle of meeting preparation and follow-through, validates the output against the pass/fail checks, and then expands the workflows across the client roster.
 
 Figure 1, after the meeting (after the paragraph with the meeting recap example). Every story figure has two drawings (6 October, Patrick): the full one from 1024px up, where it fits, and a simple three-step version below that, because a full drawing restacked or shrunk does not communicate on a phone. Small print in a box says automatic when the step runs on its own, or who does it. Each figure sits under the subheading it illustrates. Legend under the first figure on each page: Small print says automatic when a step runs on its own. The pen marks the detail worth checking.
 
@@ -653,8 +662,8 @@ Caption: After the meeting. What a recap still leaves to do gets done from the t
 
 Accessible description: A meeting recap lists decisions, three agreed; who owns each, named; and due dates, set. Arrows fan out, labelled carried into, to three results marked automatic: tasks updated with what was agreed, materials prepared for that client, and the right people get the context. The three fan back in to checked, then a person approves, where a quick check runs first; it is circled with the note 'five skills, each with a pass or fail check'.
 
-Metadata title: Psyche Digital: Five AI Workflows a Team Can Run Itself | Patrick McHeyser
+Metadata title: Psyche Digital: Five AI Workflows a Team Can Run In-House | Patrick McHeyser
 
-Metadata description: An implemented content blueprint leads to an operations review and practical guidance for building, testing and maintaining AI workflows at Psyche Digital.
+Metadata description: An implemented content blueprint leads to an operations review and practical architecture for running, testing, and maintaining AI workflows at Psyche Digital.
 
 Card link: See the work
