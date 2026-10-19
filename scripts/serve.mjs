@@ -19,7 +19,7 @@
 import { createServer } from 'node:http';
 import { createReadStream, statSync } from 'node:fs';
 import { createGzip } from 'node:zlib';
-import { extname, join, normalize, resolve, sep } from 'node:path';
+import { dirname, extname, join, normalize, relative, resolve, sep } from 'node:path';
 
 const ROOT = resolve(process.env.STATIC_ROOT || 'dist');
 const PORT = Number(process.env.PORT || 3000);
@@ -129,9 +129,12 @@ const server = createServer((req, res) => {
   const file = resolveFile(urlPath);
   if (file) {
     if (file.dir && !urlPath.endsWith('/')) {
-      // A directory's index.html is served at the slash form only, so its relative links resolve inside the directory.
+      // A directory's index.html is served at the slash form only, so its relative links resolve inside the
+      // directory. The target is rebuilt from the resolved directory under ROOT, never from the raw request
+      // path, so a crafted path such as //host/... cannot turn the redirect into an off-site one.
+      const segments = relative(ROOT, dirname(file.path)).split(sep).filter(Boolean);
       const { search } = new URL(req.url, 'http://localhost');
-      res.writeHead(301, { Location: `${urlPath}/${search}`, 'Cache-Control': 'no-cache' });
+      res.writeHead(301, { Location: `/${segments.map(encodeURIComponent).join('/')}/${search}`, 'Cache-Control': 'no-cache' });
       res.end();
       return;
     }
