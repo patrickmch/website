@@ -11,7 +11,8 @@
  * - everything else (images, favicon, og.png): public, max-age=3600.
  * - unknown extensionless paths serve index.html (the app routes them);
  *   a missing file with an extension is a real 404, never HTML.
- * - gzip for text types, ETag + Last-Modified, HEAD, directory index.html.
+ * - gzip for text types, ETag + Last-Modified, HEAD, directory index.html
+ *   (a directory path without a trailing slash redirects to the slash form).
  *
  * Usage: PORT=3000 node scripts/serve.mjs   (npm start)
  */
@@ -42,6 +43,8 @@ const types = {
   '.webmanifest': 'application/manifest+json',
   '.woff2': 'font/woff2',
   '.woff': 'font/woff',
+  '.ttf': 'font/ttf',
+  '.otf': 'font/otf',
   '.pdf': 'application/pdf',
   '.mp4': 'video/mp4',
   '.mp3': 'audio/mpeg',
@@ -73,7 +76,7 @@ function resolveFile(urlPath) {
   if (direct) return { path: full, stat: direct };
   const index = join(full, 'index.html');
   const indexStat = fileInfo(index);
-  if (indexStat) return { path: index, stat: indexStat };
+  if (indexStat) return { path: index, stat: indexStat, dir: true };
   return null;
 }
 
@@ -125,6 +128,13 @@ const server = createServer((req, res) => {
   const urlPath = new URL(req.url, 'http://localhost').pathname;
   const file = resolveFile(urlPath);
   if (file) {
+    if (file.dir && !urlPath.endsWith('/')) {
+      // A directory's index.html is served at the slash form only, so its relative links resolve inside the directory.
+      const { search } = new URL(req.url, 'http://localhost');
+      res.writeHead(301, { Location: `${urlPath}/${search}`, 'Cache-Control': 'no-cache' });
+      res.end();
+      return;
+    }
     send(req, res, file);
     return;
   }

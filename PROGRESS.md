@@ -1,5 +1,11 @@
 # mcheyser-site: progress
 
+## 2026-10-19: Standalone outreach case study at /cases/connected-manufacturing/
+
+- Added `public/cases/connected-manufacturing/index.html` with local fonts under `assets/`: a static, script-free page for one cold-outreach prospect, built on the live site's compiled stylesheet. It carries `noindex, nofollow, noarchive`, no site page links to it, and it has its own Open Graph tags. The editable source and its checks live outside this repository in `mcheyser/biz-dev/outreach/case-studies/connected-manufacturing-2026-10-19/`.
+- `scripts/serve.mjs`: a directory path without a trailing slash now redirects (301) to the slash form, so the page's relative font links resolve. `.ttf` and `.otf` gain font media types. `/stoppromptingstartshipping` therefore redirects to `/stoppromptingstartshipping/`; that page uses absolute links only.
+- Validation: `npm run check` passed, and the page's own check passed (40 checks: overflow at 320 to 1440 px, figures, section links, print, no-JS, contrast, local fonts, confidential terms, approved hosts, no network requests, no percentages, no script). Previous production tree `29e6ce2` is the rollback reference.
+
 ## 2026-10-17: Site-wide copy and diagram cleanup pass
 
 - Applied Patrick's approved five-part cleanup across Home, Working Together, Client Work, About, Footer, and all case study diagrams:
