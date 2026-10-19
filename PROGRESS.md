@@ -272,3 +272,10 @@
 
 - Patrick flagged "See all client work": "all" claims the index shows everything, and it shows a sample. The three index links (after the featured work on Home, and above each story's title) now read "See a sample of client work". "A sample of" rather than "sample work", so nobody reads "sample" as mock-up work beside the illustrative examples on Working Together.
 - Copy doc and spec 7.1 and 7.6 amended. The check asserts the index link text on Home and two story pages and that no link on those pages contains "all ... work".
+
+## 2026-10-19: Publish approved connected-manufacturing revision
+
+- Patrick approved publication of the local case study at source commit `33c19a9`. Replace the existing `/cases/connected-manufacturing/` page, retaining its URL and noindex policy. Approved story, delivered-app framing and three scrollable SVG flowcharts are preserved exactly; only canonical/social metadata is added for the production URL.
+- Package includes approved HTML, CSS, viewer JavaScript, SVGs and existing licensed fonts. Internal evidence, correspondence, review records and screenshots are excluded. Canonical site copy updated before the page.
+- Release baseline: `50ff656ca97ff3b9ee611c1a601791e329f29d37`. Rollback: revert this release commit on main and let Railway redeploy. No site routing or contact-form changes.
+- Pre-release verification passed: `npm run typecheck`, `npm run check` (build plus production browser checks), exact approved-body/asset comparison, production-server slash redirect and all 13 asset fetches. Packaged page expanded-dialog and Escape controls passed in CUA. Live verification follows release. No email requested or sent.

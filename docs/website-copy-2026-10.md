@@ -667,3 +667,166 @@ Metadata title: Psyche Digital: Five AI Workflows a Team Can Run In-House | Patr
 Metadata description: An implemented content blueprint leads to an operations review and practical architecture for running, testing, and maintaining AI workflows at Psyche Digital.
 
 Card link: See the work
+
+
+## Standalone connected-manufacturing case study
+
+Published route: `/cases/connected-manufacturing/`. Approved October 19, 2026.
+
+Client work / Custom manufacturing
+
+## Faster approvals. Less rework.
+
+A custom manufacturer needed requests to move from customer requirements to approved designs with fewer delays and less repeated effort.
+
+### Executive summary
+
+Sales, engineering, and estimating were passing job details between email, drawings, workflow boards, and a large quoting workbook. Each change meant finding the current information and working out what needed to be redone.
+
+I built and delivered a working app for quoting and intake, checked management reporting against ERP source records, and worked with the team on the handoffs between them. Estimators can price quantity options together, revisit saved quotes, compare versions, and produce customer documents from the same calculation.
+
+The app carries customer, specification, drawing, and quote history together through the job, while engineering and commercial decisions stay with the team. The purpose is less repeated employee effort, shorter turnaround, and more capacity for new work.
+
+Working capabilities
+
+### Price options together.
+
+Calculate alternative quantities from the same job details.
+
+### Revise saved work.
+
+Reopen a quote, compare versions, and generate its customer PDF.
+
+Part of the delivered app, alongside intake, engineering handoffs, and management reporting.
+
+Less repeat work How it fits together Handling changes Outcomes & measurement
+
+The quoting work
+
+### Less work to prepare and revise a quote.
+
+Pricing several quantities used to mean duplicating work in a workbook with thousands of formulas. The application brings pricing for the supported product types into one workflow, so a changed quantity or specification can be priced and reviewed without reconstructing the quote.
+
+Prepare and revise a saved quote
+
+Scroll to follow the flow. Use Fit for the whole diagram.
+
+Fig. 1 The quoting change: enter job details, calculate options, review, and generate a customer document. Revisions preserve the earlier quote.
+
+Read the flow in text
+
+Earlier: receive a request, retype details, find the current drawing, rebuild an estimate, and prepare a quote. A specification change sends work back through the drawing and estimate. Delivered quoting: enter details, calculate quantity options, review and revise the saved quote, and generate the customer PDF. Earlier versions remain available.
+
+#### Less preparation per quote
+
+Calculate material yield, setup, labor, and freight across buying quantities in one pass. Internal costs and customer prices come from the same saved calculation.
+
+#### Less work to make a change
+
+Reopen the quote and compare versions. The team can see which lines, quantities, and prices changed before preparing the next customer document.
+
+#### Rules the team can reuse
+
+Material, labor, and pricing calculations are maintained in the application. Estimators use the same calculation logic when preparing a quote or revising it.
+
+The complete system
+
+### Keep the job connected between people and tools.
+
+The next person needs the requirements, the current files, and a clear task. This map shows how the delivered app connects the work. The existing ERP remains the record for parts and orders; engineers keep their specialist design tools.
+
+From customer context to quoting, engineering, and reporting
+
+Arrows trace information and handoffs between the systems Zoom or expand to inspect each handoff.
+
+Fig. 2 The delivered app connects intake, quoting, engineering handoffs, job history, and reporting. Existing systems retain their responsibilities for customer records, engineering drawings, parts, and orders.
+
+Read the system map in text
+
+Customer context feeds intake. A request with a known specification can go to quoting; design or sample work needs a brief and engineering review. The Quote Tool prices quantity options, saves versions, and produces separate customer and internal views. The app links these records to reviewed drawings and an approved ERP handoff. Reporting uses ERP source records. People review drawings and commercial terms before the next handoff.
+
+Start with a usable brief. Intake brings customer and item information, files, and request history into a reviewable record. The handoffs distinguish sales requests, house accounts, engineering, drawings, and samples, with the information each needs.
+
+Give management an answer it can check. Reporting separates existing-customer growth from new business and supports customer-level inspection. I checked 3,304 displayed values against source records. Those checks establish reporting accuracy, with customer-level detail available for inspection.
+
+When the customer changes the job
+
+### Keep a specification change with the job.
+
+A customer changes a dimension after receiving a quote. Engineering may need to check the drawing, and estimating may need to recalculate yield and price. The app keeps the change with the job so the next person has the relevant files and knows what needs review.
+
+One revision, with clear decisions and a retained history
+
+Diamonds mark decisions made by people. Automated alerts notify the next owner.
+
+Fig. 3 A specification-change example through the delivered workflow. The app retains quote versions, flags drawing changes, and notifies the next owner. People review the design and approve the quote.
+
+Read the revision flow in text
+
+A customer changes a dimension. A person checks whether the drawing is affected. If it is, engineering reviews and updates it; otherwise, estimating can proceed. Recalculate the quantity options, save the next quote version, review, and send its customer PDF. Later changes return to the same job, retaining prior versions. The app alerts the next owner.
+
+#### The team owns the decisions
+
+Engineers decide whether a drawing and material are suitable. Estimators review the commercial calculation. Sales confirms what the customer accepts. Clear records support that judgment.
+
+#### The software carries the repeatable work
+
+The application retains calculations, compares versions, and generates customer documents. These capabilities let an estimator reuse earlier work. Linked drawings and cross-team handoffs keep that work with the job.
+
+What this means for the business
+
+### Less time spent preparing, waiting, and redoing.
+
+The app handles repeated calculations, retains revision history, and generates customer documents from the reviewed quote. These capabilities address the work behind each request: preparation, revisions, and handoffs. Employee effort, turnaround, rework, and capacity are the measures of business impact.
+
+#### More work with the same team
+
+The app calculates quantity alternatives and generates quote documents. Employees build on saved work rather than recreating it, leaving their attention for new requests and difficult jobs.
+
+#### A quicker customer response
+
+Quantity options are priced together. Revisions start from a saved quote, and handoffs carry the requirements and files to the next owner. Each step gives the next person the information needed to respond.
+
+#### Less dependence on a few people
+
+Pricing rules and quote history are available in the application. Colleagues can inspect the work instead of depending on someone to reconstruct the calculation.
+
+How to measure the benefit
+
+Measure the business impact through employee effort and elapsed time separately. Compare similar jobs before and after, using the same start and end events. Split repeat work from new designs so a change in job mix does not look like an improvement.
+
+Outcome Measure
+
+Employee time Hands-on minutes spent entering information, estimating, preparing documents, and handling revisions per request.
+
+Approval time Time from request received to approved design. Track the median and slower cases; separate time working from time waiting.
+
+Avoidable rework Repeat effort caused by missing information, an old file, or an incorrect handoff. Keep genuine customer scope changes separate.
+
+Capacity Comparable requests completed per person, alongside backlog age and quality. Faster processing should not move the problem downstream.
+
+For labor savings, multiply the observed reduction in minutes per request by comparable monthly request volume, then divide by 60. Add a labor cost only after the time difference has been measured.
+
+### Compare it with your workflow.
+
+If quoting, design changes, or handoffs take too much of your team's time, I'd welcome your feedback on which part of this approach would help.
+
+Email Patrick
+
+Patrick McHeyser I work with owners and operations teams to understand where work gets held up, build what is missing, and get it into use.
+
+How I work with a team
+
+## Diagram labels
+
+### time-before-after.svg
+
+Earlier workflow · Repeated entry and reconstruction · Customer request · Retype details · Find current drawing · Rebuild estimate · Prepare quote · Spec changed: repeat the work · Delivered quoting workflow · Reuse the saved calculation · Enter job details · Dimensions, material, quantities · Calculate options · One saved quote · Review & revise · Keep earlier versions · Generate customer PDF · From the reviewed version · Revise the record; preserve the history
+
+### connected-system.svg
+
+Existing business systems · Company-owned application · Outputs & management views · Customer records · Existing CRM · Drawings & decisions · Engineering / native CAD · Parts & orders · Existing ERP · Capture the request · Intake: delivered · Work · type? · Price quantity options · Quote Tool: delivered · Prepare design brief · Engineering handoff · Save & compare versions · Quote Tool: delivered · Shared job history · Customer, specifications, files, quotes, owner · Customer quote · Delivered PDF · Internal cost view · Delivered · Source-checked reports · Source values validated · CRM context · Known specification · Design / sample work · Brief & source files · Reviewed drawing · Save version · Linked history · Approved package · ERP source records → reporting checks
+
+### revision-loop.svg
+
+A specification change through the delivered app · Specification-change example · Customer changes · a dimension · Drawing · affected? · Reprice the options · Estimating · Save next version · Quote Tool · Review & send · Sales · Check the design · Engineering · Update drawing · Engineering · Alert next owner · Automated notification · Customer PDF · Saved quote version · No · Yes · Reviewed spec · Another customer change? Return to the same job and retain the previous version.
