@@ -1,5 +1,11 @@
 # mcheyser-site: progress
 
+## 2026-10-19: Case study flowcharts redrawn in the site's figure language; directory redirect hardened
+
+- `public/cases/connected-manufacturing/`: the three flowcharts are regenerated from the outreach folder's `review/build-diagrams.py` in the site's figure vocabulary (mono labels, small-print roles and `automatic`, open chevrons, hairline groups, dashed return arrows). Same nodes, arrows, labels and canvas sizes as the previous release; `assets/case-study.js` and the page copy unchanged apart from two legend lines inside the figure frames. Frames, captions and eyebrows restyled to the site's card and eyebrow conventions. Approved by Patrick on the port 8789 preview.
+- `scripts/serve.mjs`: the trailing-slash redirect now builds its target from the resolved directory under `dist/` instead of the raw request path, so a crafted request cannot produce a protocol-relative `Location`. Verified against plain, query-string, backslash, double-slash and percent-encoded forms on a local server.
+- Validation: `npm run check` passed; the outreach folder's source check passed; zoom, fit, expand and close verified in the browser. Previous production tree `d2c4363` is the rollback reference.
+
 ## 2026-10-19: Standalone outreach case study at /cases/connected-manufacturing/
 
 - Added `public/cases/connected-manufacturing/index.html` with local fonts under `assets/`: a static, script-free page for one cold-outreach prospect, built on the live site's compiled stylesheet. It carries `noindex, nofollow, noarchive`, no site page links to it, and it has its own Open Graph tags. The editable source and its checks live outside this repository in `mcheyser/biz-dev/outreach/case-studies/connected-manufacturing-2026-10-19/`.
