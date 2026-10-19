@@ -279,3 +279,10 @@
 - Package includes approved HTML, CSS, viewer JavaScript, SVGs and existing licensed fonts. Internal evidence, correspondence, review records and screenshots are excluded. Canonical site copy updated before the page.
 - Release baseline: `50ff656ca97ff3b9ee611c1a601791e329f29d37`. Rollback: revert this release commit on main and let Railway redeploy. No site routing or contact-form changes.
 - Pre-release verification passed: `npm run typecheck`, `npm run check` (build plus production browser checks), exact approved-body/asset comparison, production-server slash redirect and all 13 asset fetches. Packaged page expanded-dialog and Escape controls passed in CUA. Live verification follows release. No email requested or sent.
+
+## 2026-10-19: Publish light custom-software framing
+
+- Patrick approved publishing the four focused edits from local source `cc3dd81`: custom-built lead, gasket material/drawing example, manufacturer-specific system label, and broader closing offer. Headline, executive summary, all diagrams and viewer behavior are unchanged. Production metadata and noindex policy retained.
+- Previous live revision `a048ed7`; rollback is a revert of this release commit on main. Only page HTML, its scoped CSS, canonical copy and this record change. No email requested or sent.
+- Versioned the stylesheet URL so returning visitors receive the new callout styles immediately. Approved body remains byte-identical to the local preview.
+- Full production check passed; final build includes the stylesheet version. No changes to routes, forms, diagrams or JavaScript.

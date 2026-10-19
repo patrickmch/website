@@ -671,13 +671,13 @@ Card link: See the work
 
 ## Standalone connected-manufacturing case study
 
-Published route: `/cases/connected-manufacturing/`. Approved October 19, 2026.
+Published route: `/cases/connected-manufacturing/`. Light custom-software framing approved October 19, 2026.
 
 Client work / Custom manufacturing
 
 ## Faster approvals. Less rework.
 
-A custom manufacturer needed requests to move from customer requirements to approved designs with fewer delays and less repeated effort.
+This is one example of the custom-built software I create around a company's people, processes, and existing systems. Here, the work focused on quoting, intake, and the handoffs between sales and engineering.
 
 ### Executive summary
 
@@ -717,6 +717,10 @@ Read the flow in text
 
 Earlier: receive a request, retype details, find the current drawing, rebuild an estimate, and prepare a quote. A specification change sends work back through the drawing and estimate. Delivered quoting: enter details, calculate quantity options, review and revise the saved quote, and generate the customer PDF. Earlier versions remain available.
 
+#### When a customer changes the material or drawing
+
+For a gasket manufacturer, a customer might request a different material, send a revised drawing, or ask for prices at several quantities. The useful question is what each person needs to review, what can be recalculated automatically, and how the next person gets the right information. A custom system can be designed around those decisions and the tools your team already uses.
+
 #### Less preparation per quote
 
 Calculate material yield, setup, labor, and freight across buying quantities in one pass. Internal costs and customer prices come from the same saved calculation.
@@ -729,7 +733,7 @@ Reopen the quote and compare versions. The team can see which lines, quantities,
 
 Material, labor, and pricing calculations are maintained in the application. Estimators use the same calculation logic when preparing a quote or revising it.
 
-The complete system
+How this manufacturer's system fits together
 
 ### Keep the job connected between people and tools.
 
@@ -807,9 +811,9 @@ Capacity Comparable requests completed per person, alongside backlog age and qua
 
 For labor savings, multiply the observed reduction in minutes per request by comparable monthly request volume, then divide by 60. Add a labor cost only after the time difference has been measured.
 
-### Compare it with your workflow.
+### What would we build around your operation?
 
-If quoting, design changes, or handoffs take too much of your team's time, I'd welcome your feedback on which part of this approach would help.
+The starting point is the work your team needs to get done. That might be quoting, customer onboarding, production handoffs, reporting, or another recurring bottleneck. I work with your team to understand the process, decide what needs to change, and build the software, integrations, or automation that fit.
 
 Email Patrick
 
