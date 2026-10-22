@@ -361,16 +361,16 @@ try {
   for (const route of ['/work/manufacturing-systems', '/work/shared-context', '/work/psyche-digital']) {
     await page.goto(url('/work'), { waitUntil: 'load' });
     await page.locator(`main a[href="${route}"]`).click();
-    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'From a 10,000-formula' : route.includes('shared-context') ? 'Architecting the cloud engine' : 'Five AI workflows' }).waitFor();
+    await page.locator('h1').filter({ hasText: route.includes('manufacturing') ? 'From a complex quoting workbook' : route.includes('shared-context') ? 'Architecting the cloud engine' : 'Five AI workflows' }).waitFor();
     expect(new URL(page.url()).pathname === route, 'Client Work must open each published story');
     const copy = await page.locator('main').innerText();
     expect(!/prior-year|overstated|consequential calculation errors|cannot be trusted|Internal evidence|clearance|Hi \[Name\]/i.test(copy), `${route}: private details or superseded reporting wording appeared`);
     if (route.includes('manufacturing')) {
-      expect(copy.includes('traced management figures back to raw ERP source transactions'), 'Manufacturing should describe the reporting method');
-      expect(copy.includes('five operational queues'), 'Manufacturing must describe the five operational queues');
-      expect(await page.locator('.story-body ul > li').count() === 4, 'Manufacturing should keep metrics and additional work in a supporting list');
-      expect(copy.includes('10,000 formulas') && copy.includes('111 pricing rules') && copy.includes('30,000 formulas'), 'Manufacturing examples should retain their scale and rules metrics');
-      expect(copy.includes('production systems the internal team owns and operates'), 'Manufacturing should state the company-owned outcome');
+      expect(copy.includes('traced the reported figures back to raw ERP source transactions'), 'Manufacturing should describe the reporting method');
+      expect(copy.includes('dedicated operational queues'), 'Manufacturing must describe the operational queues');
+      expect(await page.locator('.story-body ul > li').count() === 4, 'Manufacturing should keep system resolutions in a supporting list');
+      expect(!/10,000|111|30,000|29,820/.test(copy), 'Manufacturing should not carry unmeasured formula or rule-count claims');
+      expect(copy.includes('clear, maintainable systems the company owns'), 'Manufacturing should state the company-owned outcome');
     }
     if (route.includes('shared-context')) {
       expect(copy.includes('28+ of these operational skills') && copy.includes('34+ governed tools'), 'Healthcare must retain workflow and governed tool counts');

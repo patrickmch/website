@@ -7,8 +7,8 @@ const featuredClientStories: readonly WorkSummary[] = [
   {
     slug: 'manufacturing-systems',
     client: 'Custom manufacturing',
-    title: 'From a 10,000-formula quoting workbook to company-owned software and fractional CTO leadership.',
-    summary: 'A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team. I built a custom quoting and intake application across five operational queues, rebuilt management reporting on verified ERP transactions, and moved critical infrastructure into company custody.',
+    title: 'From a complex quoting workbook to company-owned software and fractional CTO leadership.',
+    summary: 'A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team. The work spans a custom quoting and intake application, management reporting tied directly to ERP source records, and moving critical infrastructure into company custody.',
   },
   {
     slug: 'shared-context',

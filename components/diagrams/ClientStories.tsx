@@ -7,27 +7,27 @@ export function ManufacturingQuote() {
   return (
     <Figure
       n={1}
-      caption="One quote through the custom application. Sales enters the product type, dimensions, materials, and three target quantities. The pricing engine applies 111 rules and 37 lookup tables to calculate materials, labor, outside components, and shipping across all three quantities at once, saves the new revision alongside prior versions, and generates a customer-ready PDF."
+      caption="One quote through the custom application. The user enters the product type, dimensions, materials, and target quantities. The pricing engine applies the company's pricing rules and lookup tables to calculate materials, labor, outside components, and shipping across quantity options at once, saves the new revision alongside prior versions, and generates a customer-ready PDF."
       description={wide
-        ? "A quote request entered by sales lists product type, dimensions, materials, and quantities (250, 500, and 1,000 units). An arrow leads to the pricing engine, marked automatic and circled with the note '10,000 formulas distilled into 111 rules': 111 pricing rules and 37 lookup tables extracted from the workbook. Arrows fan out to four automatic outputs: materials, labor, outside parts, and shipping; priced across all three quantities; saved as revision 3 alongside revision 2; and a customer-ready PDF quote. The four outputs fan back in to sales review and send, with exceptions routed to leadership."
-        : "Three steps. Quote specs entered: product, dimensions, materials, quantities. Pricing engine, marked automatic and circled with the note '10,000 formulas distilled into 111 rules': 111 rules and 37 lookup tables. Sales review and PDF."}
+        ? "A quote request entered by sales lists product type, dimensions, materials, and target quantities. An arrow leads to the pricing engine, marked automatic and circled with the note 'workbook logic translated into shared rules': pricing rules and material lookup tables from the workbook. Arrows fan out to four automatic outputs: materials, labor, outside parts, and shipping; priced across quantity options at once; saved alongside prior quote revisions; and a customer-ready PDF quote. The four outputs fan back in to sales review and send, with exceptions routed to leadership."
+        : "Three steps. Quote specs entered: product, dimensions, materials, quantities. Pricing engine, marked automatic and circled with the note 'workbook logic translated into shared rules': pricing rules and lookup tables. Sales review and PDF."}
       className="story-figure"
     >
       {wide ? (
         <Flow>
           <Record title="Quote request" tag="entered by sales" rows={[
-            { key: 'Product type', value: 'one of six product families' },
+            { key: 'Product type', value: 'supported product family' },
             { key: 'Dimensions', value: 'length, width, depth' },
             { key: 'Materials', value: 'grade and thickness' },
-            { key: 'Quantities', value: '250, 500, and 1,000 units' },
+            { key: 'Quantities', value: 'multiple quantity breaks' },
           ]} />
           <Connector />
-          <Node label="Pricing engine" auto where="111 pricing rules and 37 lookup tables extracted from the workbook" marked annotation="10,000 formulas distilled into 111 rules" annotationPlacement="below" />
+          <Node label="Pricing engine" auto where="pricing rules and material lookup tables from the workbook" marked annotation="workbook logic translated into shared rules" annotationPlacement="below" />
           <Fan count={4} direction="out" mobileLabel="produces" />
           <Stack tag="automatic">
             <Node label="Materials, labor, outside parts, shipping" small />
-            <Node label="Priced across all three quantities" small />
-            <Node label="Saved as revision 3 alongside revision 2" small />
+            <Node label="Priced across quantity options at once" small />
+            <Node label="Saved alongside prior quote revisions" small />
             <Node label="Customer-ready PDF quote" small />
           </Stack>
           <Fan count={4} direction="in" mobileLabel="then" />
@@ -37,7 +37,7 @@ export function ManufacturingQuote() {
         <Flow className="flow--even">
           <Node label="Quote specs entered" where="product, dimensions, materials, quantities" />
           <Connector />
-          <Node label="Pricing engine" auto where="111 rules and 37 lookup tables" marked annotation="10,000 formulas distilled into 111 rules" annotationPlacement="below" />
+          <Node label="Pricing engine" auto where="pricing rules and lookup tables" marked annotation="workbook logic translated into shared rules" annotationPlacement="below" />
           <Connector />
           <Node label="Sales review and PDF" />
         </Flow>
@@ -46,63 +46,63 @@ export function ManufacturingQuote() {
   );
 }
 
-/** Manufacturing, figure 2: rebuilding management reporting from raw ERP transactions. */
+/** Manufacturing, figure 2: tying management reporting to raw ERP transactions. */
 export function ManufacturingReporting() {
   const wide = useWideFigure();
   return (
     <Figure
       n={2}
-      caption="Rebuilding management reporting from raw ERP transactions. Tracing monthly on-time delivery back to source orders exposed four systemic errors across nearly 30,000 spreadsheet formulas. After establishing seven explicit business rules with the owner and restoring the stalled data feed, the reporting pipeline updates automatically in the cloud data warehouse."
+      caption="Tying management reporting to raw ERP transactions. Tracing delivery and revenue figures back to source orders resolved discrepancies in how order lines, date ranges, customer names, and data feeds were handled. With explicit business definitions built into the cloud data warehouse, leadership can inspect any metric down to the underlying records."
       description={wide
-        ? "Four steps in a row. Trace metric to raw ERP orders: monthly on-time delivery audited against source transactions. A record titled Four systemic errors uncovered lists order lines counted as full orders (fixed), partial month compared to full month (fixed), customer records split by capitalization (fixed), and automated data feed silently stalled (restored). Next, seven business rules codified: agreed with the owner and built into the pipeline. Last, verified warehouse reporting, marked automatic and circled with the note 'four errors resolved across 29,820 formulas': maintained in-house by internal specialist."
-        : "Three steps. Trace metric to raw ERP orders. Four systemic errors resolved: lines as orders, partial month, split records, stalled feed, circled with the note 'four errors resolved across 29,820 formulas'. Seven rules in cloud warehouse."}
+        ? "Four steps in a row. Trace metrics to raw ERP orders: management reports checked against source transactions. A record titled Source discrepancies resolved lists order-level vs. line-level grouping (aligned), comparable date-range windows (standardized), customer name variations (normalized), and automated ERP data sync (restored). Next, explicit business rules codified: agreed with the owner and built into the pipeline. Last, verified warehouse reporting, marked automatic and circled with the note 'every figure traces to source ERP records': maintained in-house with customer-level drilldown."
+        : "Three steps. Trace metrics to raw ERP orders. Source discrepancies resolved: order grouping, date windows, customer records, sync, circled with the note 'every figure traces to source ERP records'. Business rules in cloud warehouse."}
       className="story-figure"
     >
       {wide ? (
         <Flow>
-          <Node label="Trace metric to raw ERP orders" where="monthly on-time delivery audited against source transactions" />
+          <Node label="Trace metrics to raw ERP orders" where="management reports checked against source transactions" />
           <Connector />
-          <Record title="Four systemic errors uncovered" rows={[
-            { key: 'Order lines counted as full orders', value: 'fixed', state: 'tick' },
-            { key: 'Partial month compared to full month', value: 'fixed', state: 'tick' },
-            { key: 'Customer records split by capitalization', value: 'fixed', state: 'tick' },
-            { key: 'Automated data feed silently stalled', value: 'restored', state: 'tick' },
+          <Record title="Source discrepancies resolved" rows={[
+            { key: 'Order-level vs. line-level grouping', value: 'aligned', state: 'tick' },
+            { key: 'Comparable date-range windows', value: 'standardized', state: 'tick' },
+            { key: 'Customer name variations', value: 'normalized', state: 'tick' },
+            { key: 'Automated ERP data sync', value: 'restored', state: 'tick' },
           ]} />
           <Connector />
-          <Node label="Seven business rules codified" where="agreed with the owner and built into the pipeline" />
+          <Node label="Explicit business rules codified" where="agreed with the owner and built into the pipeline" />
           <Connector />
-          <Node label="Verified warehouse reporting" auto where="maintained in-house by internal specialist" marked annotation="four errors resolved across 29,820 formulas" annotationPlacement="below" />
+          <Node label="Verified warehouse reporting" auto where="maintained in-house with customer-level drilldown" marked annotation="every figure traces to source ERP records" annotationPlacement="below" />
         </Flow>
       ) : (
         <Flow className="flow--even">
-          <Node label="Trace metric to raw ERP orders" where="audited against source transactions" />
+          <Node label="Trace metrics to raw ERP orders" where="checked against source transactions" />
           <Connector />
-          <Node label="Four systemic errors resolved" where="lines as orders, partial month, split records, stalled feed" marked annotation="four errors resolved across 29,820 formulas" annotationPlacement="below" />
+          <Node label="Source discrepancies resolved" where="order grouping, date windows, customer records, sync" marked annotation="every figure traces to source ERP records" annotationPlacement="below" />
           <Connector />
-          <Node label="Seven rules in cloud warehouse" />
+          <Node label="Business rules in cloud warehouse" />
         </Flow>
       )}
     </Figure>
   );
 }
 
-/** Manufacturing, figure 3: sales-to-engineering handoff across five operational queues. */
+/** Manufacturing, figure 3: from job intake to engineering and estimating handoffs. */
 export function ManufacturingDelivery() {
   const wide = useWideFigure();
   return (
     <Figure
       n={3}
-      caption="From sales intake to engineering handoff across five operational queues. Complete job specifications are captured up front, connected to customer and item records, and routed to the right queue so engineering and sample production receive actionable work."
+      caption="From job intake to engineering and estimating handoffs. Incoming requests capture specifications, customer context, and files up front, then route into dedicated operational queues so design, sample production, and estimating receive actionable work."
       description={wide
-        ? "Complete job intake in CRM and quoting captures specs, customer records, and item records up front. An arrow leads to routed into five queues, marked automatic and circled with the note 'five operational queues in one shared system'. Arrows fan out to five queues marked automatic: sales requests, house accounts, engineering, drawings, and samples. The five queues fan back in to design and production, where engineering receives complete specs with a clear stage owner."
-        : "Three steps. Complete job intake, with specs captured up front. Routed into five queues, marked automatic and circled with the note 'five operational queues in one shared system': sales, house accounts, engineering, drawings, and samples. Design and production receives complete specs."}
+        ? "Structured job intake captures specs, customer context, and files up front. An arrow leads to routed to the right queue, marked automatic and circled with the note 'dedicated queues in one shared workflow'. Arrows fan out to five queues marked automatic: sales requests, house accounts, engineering, drawings, and samples. The queues fan back in to design, samples, and estimating, where the team receives a complete brief with a clear stage owner."
+        : "Three steps. Structured job intake, with specs and files captured up front. Routed to the right queue, marked automatic and circled with the note 'dedicated queues in one shared workflow': sales, house accounts, engineering, drawings, and samples. Design, samples, and estimating receives a complete brief."}
       className="story-figure"
     >
       {wide ? (
         <Flow>
-          <Node label="Complete job intake" where="specs, customer and item records captured up front" />
+          <Node label="Structured job intake" where="specs, customer context, and files captured up front" />
           <Connector />
-          <Node label="Routed into five queues" auto where="by job type, account, and required engineering work" marked annotation="five operational queues in one shared system" annotationPlacement="below" />
+          <Node label="Routed to the right queue" auto where="by job type, account, and required engineering work" marked annotation="dedicated queues in one shared workflow" annotationPlacement="below" />
           <Fan count={5} direction="out" mobileLabel="routed into" />
           <Stack tag="automatic">
             <Node label="Sales requests" small />
@@ -112,15 +112,15 @@ export function ManufacturingDelivery() {
             <Node label="Samples" small />
           </Stack>
           <Fan count={5} direction="in" mobileLabel="then" />
-          <Node label="Design and production" where="complete specs up front, clear owner at each step" />
+          <Node label="Design, samples, and estimating" where="complete brief up front, clear owner at each step" />
         </Flow>
       ) : (
         <Flow className="flow--even">
-          <Node label="Complete job intake" where="specs captured up front" />
+          <Node label="Structured job intake" where="specs and files captured up front" />
           <Connector />
-          <Node label="Routed into five queues" auto where="sales, house accounts, engineering, drawings, samples" marked annotation="five operational queues in one shared system" annotationPlacement="below" />
+          <Node label="Routed to the right queue" auto where="sales, house accounts, engineering, drawings, samples" marked annotation="dedicated queues in one shared workflow" annotationPlacement="below" />
           <Connector />
-          <Node label="Design and production" where="clear owner at each step" />
+          <Node label="Design, samples, and estimating" where="clear owner at each step" />
         </Flow>
       )}
     </Figure>

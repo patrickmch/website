@@ -476,7 +476,7 @@ Link: Explore client work → /work
 ### Links from existing pages
 
 Working Together: See how this takes shape in practice.
-Body: A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team, with custom quoting software across five queues, rebuilt ERP reporting, and company-owned infrastructure.
+Body: A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team, spanning custom quoting and intake software, ERP-backed management reporting, and company-owned infrastructure.
 Link: See the work → /work/manufacturing-systems
 
 About closing: See how I've worked with others → /work (4 October: replaced "See all client work". The same link sits beside "Let's talk" in the Home and Working Together heroes and closing calls, so a visitor who is not ready to talk can look at the work first.)
@@ -495,75 +495,75 @@ About closing: See how I've worked with others → /work (4 October: replaced "S
 
 Custom manufacturing
 
-**From a 10,000-formula quoting workbook to company-owned software and fractional CTO leadership.**
+**From a complex quoting workbook to company-owned software and fractional CTO leadership.**
 
-Card: A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team. I built a custom quoting and intake application across five operational queues, rebuilt management reporting on verified ERP transactions, and moved critical infrastructure into company custody.
+Card: A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team. The work spans a custom quoting and intake application, management reporting tied directly to ERP source records, and moving critical infrastructure into company custody.
 
-The owner of a growing custom manufacturer brought me in for a systems assessment when the business outgrew its spreadsheets and outside contractors. He needed a technical counterpart to evaluate engineering work, show where existing tools were holding growth back, and set a practical roadmap. That assessment grew into an ongoing fractional CTO role on the management team, leading custom software delivery, rebuilding management reporting, and bringing critical infrastructure under company ownership.
+The owner of a growing custom manufacturer brought me in for a systems assessment as the business outgrew its spreadsheets and outside contractors. He needed a technical counterpart to evaluate engineering work, identify where existing tools were holding the operation back, and set a practical roadmap. That assessment grew into an ongoing fractional CTO role on the management team, building custom software for quoting and intake, tying management reporting directly to ERP records, and bringing critical infrastructure under company ownership.
 
-**A custom quoting and intake application that replaces a 10,000-formula workbook.** Every customer quote previously ran through a spreadsheet with nearly 10,000 formulas where pricing logic, material costs, and quantity breaks were tangled together. Comparing quantities or revising a quote meant duplicating workbooks by hand, and the quoting and design director spent hours each day fixing broken formulas and reviewing routine quotes. I worked with the team to extract 111 pricing rules and 37 lookup tables and built a custom web application the company owns. Connected to customer and item records, the application routes work across five operational queues: sales requests, house accounts, engineering, drawings, and samples. A salesperson enters the product type, dimensions, materials, and target quantities (such as 250, 500, and 1,000 units). The application calculates materials, labor, outside components, and shipping across all three quantities at once, tracks quote revisions side by side, and generates a customer-ready PDF.
+**A custom quoting application built around the team's pricing logic.** Customer quotes were running through a sprawling spreadsheet workbook where pricing logic, material yields, labor, and quantity breaks were tightly coupled. Comparing quantity options or revising an estimate meant duplicating workbooks by hand and re-checking formulas across sheets. I worked with the estimating and design team to translate that workbook logic and its material lookup tables into a custom web application the company owns. An estimator or salesperson enters the product type, dimensions, materials, and target quantities. The system calculates material yield, setup, labor, outside components, and freight across quantity options in one pass, keeps internal cost breakdowns alongside customer pricing, tracks revisions side by side, and generates a customer-ready PDF.
 
-**Management reporting rebuilt on verified ERP transactions and owned in-house.** The company's ERP lacked usable native management reporting, and the spreadsheets layered on top of it contained nearly 30,000 formulas that failed to reconcile whenever leadership questioned a number. Using monthly on-time delivery as the proving ground, I traced management figures back to raw ERP source transactions and uncovered four systemic errors: individual order lines were counted as full orders, a partial month was compared against a full month, capitalization differences split customer records, and an automated data feed had silently stalled. I worked with the owner to establish seven explicit business rules for on-time delivery, rebuilt the reporting pipeline in a cloud data warehouse, and restored the feed. I then trained an internal specialist to own reporting, equipping her with direct read access to the warehouse and a side-by-side verification process for retiring legacy reports.
+**Management reporting tied directly to ERP source transactions.** Because the ERP's built-in reports were difficult to use directly, management reporting relied on multi-sheet workbooks that were hard to reconcile when leadership wanted to inspect a number. Using on-time delivery and customer revenue views as the starting point, I traced the reported figures back to raw ERP source transactions. That audit resolved mismatches where order lines were grouped differently than full orders, partial periods were compared against full months, customer names varied in formatting, or an automated data feed had stalled. I worked with the owner to define explicit business rules for how orders, dates, and customer records are counted, built the reporting pipeline in a cloud data warehouse, and equipped an internal specialist with direct warehouse access and a verification process to maintain reporting in-house.
 
-**Structured sales-to-engineering handoffs across five operational queues.** Quoting was only half of the intake bottleneck; incomplete job details routinely moved from sales into design and sample production, forcing engineering to chase missing specifications. I worked with leadership and department leads to redesign the sales-to-engineering handoff across the CRM and the new quoting application. Sales now captures complete job specifications up front before routing work into the sales requests, house accounts, engineering, drawings, or samples queues, with explicit ownership at every stage.
+**Structured intake and handoffs between sales, design, and estimating.** Quoting is only part of the workflow; custom jobs also stall when requests move between sales, design, sample production, and estimating without complete specifications or clear ownership. I worked with leadership and department leads to design an intake and routing system that connects the CRM, engineering design briefs, and the quoting application. The workflow separates incoming work into dedicated operational queues for sales requests, house accounts, engineering, drawings, and samples, carrying customer records, drawings, and specifications together so each person receives a complete brief and a clear next task.
 
-**Fractional CTO leadership across infrastructure custody, hiring, and vendor decisions.** Joining the management team gave the owner a permanent technical counterpart across operations and engineering. I moved critical automations and cloud infrastructure off outside contractors' personal accounts into company custody and version control, established automated release checks so daily tools stay stable as features ship, led technical hiring evaluations and developer transitions, and sat alongside the owner to evaluate major software vendor proposals before the company committed capital.
+**Fractional CTO leadership across infrastructure custody, hiring, and vendor decisions.** Joining the management team gave the owner an ongoing technical counterpart across operations and engineering. That role resolves day-to-day technical risk alongside new builds: moving automations and cloud infrastructure off outside contractors' accounts into company custody and version control, putting release checks around internal tools so updates do not disrupt daily work, leading technical hiring evaluations and developer transitions, and reviewing software vendor proposals with the owner before the company commits capital.
 
-Selected details from the engagement:
+What these systems resolve across the operation:
 
-- Extracted **111 pricing rules** and **37 lookup tables** from a nearly **10,000-formula** workbook into a custom web application that prices three quantities at once and routes work across **five operational queues**.
-- Traced management metrics across nearly **30,000 spreadsheet formulas** back to raw ERP transactions, resolved **four systemic data errors**, codified **seven business rules** with the owner, and transitioned reporting ownership in-house.
-- Redesigned the **sales-to-engineering handoff** so complete job specifications are captured up front and routed cleanly across sales, design, drawings, and sample production.
-- Moved critical automations and cloud infrastructure off outside contractors' personal accounts into **company custody and version control**, led technical hiring evaluations, and reviewed major vendor proposals alongside the owner.
+- **Multi-quantity quoting and revisions:** Translates spreadsheet pricing logic and material lookup tables into a custom web application that prices quantity options together, preserves version history, and generates customer-ready PDFs.
+- **ERP-backed management reporting:** Connects management reporting directly to raw ERP transactions in a cloud data warehouse with explicit business definitions, resolving spreadsheet discrepancies and enabling in-house maintenance.
+- **Connected intake and engineering handoffs:** Links customer context, specifications, and drawings across dedicated queues for sales requests, house accounts, engineering, drawings, and samples so work moves with a complete brief.
+- **Company-owned infrastructure and technical governance:** Brings cloud accounts, automations, and source code into company custody and version control, while supporting developer transitions and vendor evaluations.
 
-**Technical leadership that builds company-owned assets.** Across quoting, ERP reporting, department handoffs, and vendor evaluation, the engagement replaced fragile spreadsheets and contractor dependencies with production systems the internal team owns and operates.
+**Technical leadership focused on company-owned systems.** Across quoting, intake handoffs, ERP reporting, and infrastructure custody, the work replaces disconnected spreadsheets and contractor dependencies with clear, maintainable systems the company owns.
 
 Metadata title: Manufacturing: From Spreadsheet to Software the Company Owns | Patrick McHeyser
 
-Metadata description: A systems assessment grows into fractional CTO leadership: custom quoting software across five queues, verified ERP reporting, and company-owned infrastructure.
+Metadata description: A systems assessment grows into fractional CTO leadership: custom quoting and intake software, ERP-backed management reporting, and company-owned infrastructure.
 
-Figure 1, one quote through the custom application (under "A custom quoting and intake application that replaces a 10,000-formula workbook."):
+Figure 1, one quote through the custom application (under "A custom quoting application built around the team's pricing logic."):
 
-Caption: One quote through the custom application. Sales enters the product type, dimensions, materials, and three target quantities. The pricing engine applies 111 rules and 37 lookup tables to calculate materials, labor, outside components, and shipping across all three quantities at once, saves the new revision alongside prior versions, and generates a customer-ready PDF.
+Caption: One quote through the custom application. The user enters the product type, dimensions, materials, and target quantities. The pricing engine applies the company's pricing rules and lookup tables to calculate materials, labor, outside components, and shipping across quantity options at once, saves the new revision alongside prior versions, and generates a customer-ready PDF.
 
-- Record "Quote request" (small print: entered by sales): Product type, one of six product families; Dimensions, length, width, depth; Materials, grade and thickness; Quantities, 250, 500, and 1,000 units
-- Pricing engine (automatic; circled, note "10,000 formulas distilled into 111 rules"): 111 pricing rules and 37 lookup tables extracted from the workbook
-- Fan out to four results (small print on the stack: automatic): Materials, labor, outside parts, shipping; Priced across all three quantities; Saved as revision 3 alongside revision 2; Customer-ready PDF quote
+- Record "Quote request" (small print: entered by sales): Product type, supported product family; Dimensions, length, width, depth; Materials, grade and thickness; Quantities, multiple quantity breaks
+- Pricing engine (automatic; circled, note "workbook logic translated into shared rules"): pricing rules and material lookup tables from the workbook
+- Fan out to four results (small print on the stack: automatic): Materials, labor, outside parts, shipping; Priced across quantity options at once; Saved alongside prior quote revisions; Customer-ready PDF quote
 - Fan back in to Sales review and send: exceptions routed to leadership
-- Below 1024px: Quote specs entered, product, dimensions, materials, quantities → Pricing engine, 111 rules and 37 lookup tables (automatic; circled, note "10,000 formulas distilled into 111 rules") → Sales review and PDF
+- Below 1024px: Quote specs entered, product, dimensions, materials, quantities → Pricing engine, pricing rules and lookup tables (automatic; circled, note "workbook logic translated into shared rules") → Sales review and PDF
 
-Accessible description: A quote request entered by sales lists product type, dimensions, materials, and quantities (250, 500, and 1,000 units). An arrow leads to the pricing engine, marked automatic and circled with the note '10,000 formulas distilled into 111 rules': 111 pricing rules and 37 lookup tables extracted from the workbook. Arrows fan out to four automatic outputs: materials, labor, outside parts, and shipping; priced across all three quantities; saved as revision 3 alongside revision 2; and a customer-ready PDF quote. The four outputs fan back in to sales review and send, with exceptions routed to leadership.
+Accessible description: A quote request entered by sales lists product type, dimensions, materials, and target quantities. An arrow leads to the pricing engine, marked automatic and circled with the note 'workbook logic translated into shared rules': pricing rules and material lookup tables from the workbook. Arrows fan out to four automatic outputs: materials, labor, outside parts, and shipping; priced across quantity options at once; saved alongside prior quote revisions; and a customer-ready PDF quote. The four outputs fan back in to sales review and send, with exceptions routed to leadership.
 
-Figure 2, rebuilding management reporting from raw ERP transactions (under "Management reporting rebuilt on verified ERP transactions and owned in-house."):
+Figure 2, tying management reporting to raw ERP transactions (under "Management reporting tied directly to ERP source transactions."):
 
-Caption: Rebuilding management reporting from raw ERP transactions. Tracing monthly on-time delivery back to source orders exposed four systemic errors across nearly 30,000 spreadsheet formulas. After establishing seven explicit business rules with the owner and restoring the stalled data feed, the reporting pipeline updates automatically in the cloud data warehouse.
+Caption: Tying management reporting to raw ERP transactions. Tracing delivery and revenue figures back to source orders resolved discrepancies in how order lines, date ranges, customer names, and data feeds were handled. With explicit business definitions built into the cloud data warehouse, leadership can inspect any metric down to the underlying records.
 
-- Trace metric to raw ERP orders: monthly on-time delivery audited against source transactions
-- Record "Four systemic errors uncovered": Order lines counted as full orders (tick, fixed); Partial month compared to full month (tick, fixed); Customer records split by capitalization (tick, fixed); Automated data feed silently stalled (tick, restored)
-- Seven business rules codified: agreed with the owner and built into the pipeline
-- Verified warehouse reporting (automatic; circled, note "four errors resolved across 29,820 formulas"): maintained in-house by internal specialist
-- Below 1024px: Trace metric to raw ERP orders → Four systemic errors resolved, lines as orders, partial month, split records, stalled feed (circled, note "four errors resolved across 29,820 formulas") → Seven rules in cloud warehouse
+- Trace metrics to raw ERP orders: management reports checked against source transactions
+- Record "Source discrepancies resolved": Order-level vs. line-level grouping (tick, aligned); Comparable date-range windows (tick, standardized); Customer name variations (tick, normalized); Automated ERP data sync (tick, restored)
+- Explicit business rules codified: agreed with the owner and built into the pipeline
+- Verified warehouse reporting (automatic; circled, note "every figure traces to source ERP records"): maintained in-house with customer-level drilldown
+- Below 1024px: Trace metrics to raw ERP orders → Source discrepancies resolved, order grouping, date windows, customer records, sync (circled, note "every figure traces to source ERP records") → Business rules in cloud warehouse
 
-Accessible description: Four steps in a row. Trace metric to raw ERP orders: monthly on-time delivery audited against source transactions. A record titled Four systemic errors uncovered lists order lines counted as full orders (fixed), partial month compared to full month (fixed), customer records split by capitalization (fixed), and automated data feed silently stalled (restored). Next, seven business rules codified: agreed with the owner and built into the pipeline. Last, verified warehouse reporting, marked automatic and circled with the note 'four errors resolved across 29,820 formulas': maintained in-house by internal specialist.
+Accessible description: Four steps in a row. Trace metrics to raw ERP orders: management reports checked against source transactions. A record titled Source discrepancies resolved lists order-level vs. line-level grouping (aligned), comparable date-range windows (standardized), customer name variations (normalized), and automated ERP data sync (restored). Next, explicit business rules codified: agreed with the owner and built into the pipeline. Last, verified warehouse reporting, marked automatic and circled with the note 'every figure traces to source ERP records': maintained in-house with customer-level drilldown.
 
-Figure 3, from sales intake to engineering handoff across five operational queues (under "Structured sales-to-engineering handoffs across five operational queues."):
+Figure 3, from job intake to engineering and estimating handoffs (under "Structured intake and handoffs between sales, design, and estimating."):
 
-Caption: From sales intake to engineering handoff across five operational queues. Complete job specifications are captured up front, connected to customer and item records, and routed to the right queue so engineering and sample production receive actionable work.
+Caption: From job intake to engineering and estimating handoffs. Incoming requests capture specifications, customer context, and files up front, then route into dedicated operational queues so design, sample production, and estimating receive actionable work.
 
-- Complete job intake: specs, customer and item records captured up front
-- Routed into five queues (automatic; circled, note "five operational queues in one shared system"): by job type, account, and required engineering work
+- Structured job intake: specs, customer context, and files captured up front
+- Routed to the right queue (automatic; circled, note "dedicated queues in one shared workflow"): by job type, account, and required engineering work
 - Fan out ("routed into") to five queues (small print on the stack: automatic): Sales requests; House accounts; Engineering; Drawings; Samples
-- Fan back in ("then") to Design and production: complete specs up front, clear owner at each step
-- Below 1024px: Complete job intake, specs captured up front → Routed into five queues, sales, house accounts, engineering, drawings, samples (automatic; circled, note "five operational queues in one shared system") → Design and production, clear owner at each step
+- Fan back in ("then") to Design, samples, and estimating: complete brief up front, clear owner at each step
+- Below 1024px: Structured job intake, specs and files captured up front → Routed to the right queue, sales, house accounts, engineering, drawings, samples (automatic; circled, note "dedicated queues in one shared workflow") → Design, samples, and estimating, clear owner at each step
 
-Accessible description: Complete job intake in CRM and quoting captures specs, customer records, and item records up front. An arrow leads to routed into five queues, marked automatic and circled with the note 'five operational queues in one shared system'. Arrows fan out to five queues marked automatic: sales requests, house accounts, engineering, drawings, and samples. The five queues fan back in to design and production, where engineering receives complete specs with a clear stage owner.
+Accessible description: Structured job intake captures specs, customer context, and files up front. An arrow leads to routed to the right queue, marked automatic and circled with the note 'dedicated queues in one shared workflow'. Arrows fan out to five queues marked automatic: sales requests, house accounts, engineering, drawings, and samples. The queues fan back in to design, samples, and estimating, where the team receives a complete brief with a clear stage owner.
 
 | Operational bottleneck | What the system or engagement handles | Ongoing human ownership |
 | --- | --- | --- |
-| Pricing multi-quantity quotes in a 10,000-formula spreadsheet | Custom web app applying 111 pricing rules and 37 lookup tables across three quantities at once, with side-by-side revisions and PDF generation | Sales enters specs and reviews the final quote; leadership approves rule changes and complex custom jobs |
-| Incomplete job specs stalling between sales, design, and sample production | Upfront specification capture in the CRM and structured routing across five operational queues (sales, house accounts, engineering, drawings, and samples) | Department leads manage queue priorities, drawings, and engineering exceptions |
-| Reconciling 30,000 spreadsheet formulas against raw ERP data when metrics look wrong | Automated reporting pipeline in the cloud data warehouse built on verified ERP transactions and seven explicit on-time delivery rules | Internal reporting specialist maintains reports in-house; owner sets business definitions |
-| Automations on contractor accounts and unvetted software vendor proposals | Infrastructure and code moved into company custody, structured developer transitions, and technical evaluation of major vendor proposals | Owner and management team make capital and hiring decisions with clear technical evidence |
+| Pricing multi-quantity quotes and revisions across duplicated workbooks | Custom web app applying the company's pricing rules and lookup tables across quantity options in one pass, with saved revisions and PDF generation | Estimating and sales review commercial terms; leadership approves rule changes and custom exceptions |
+| Job details stalling between sales, design, sample production, and estimating | Structured intake linking CRM context, drawings, and specifications across dedicated queues for sales, house accounts, engineering, drawings, and samples | Department leads manage queue priorities, drawings, and engineering decisions |
+| Reconciling spreadsheet management reports against raw ERP records | Cloud data warehouse pipeline built on source ERP transactions and explicit business definitions, with customer-level inspection | Internal reporting specialist maintains reports in-house; leadership sets business definitions |
+| Automations on contractor accounts and unvetted software vendor proposals | Infrastructure and source code moved into company custody, structured developer transitions, and technical review of vendor proposals | Owner and management team make capital and hiring decisions with clear technical evidence |
 
 Card link: See the work
 
@@ -705,7 +705,7 @@ The quoting work
 
 ### Less work to prepare and revise a quote.
 
-Pricing several quantities used to mean duplicating work in a workbook with thousands of formulas. The application brings pricing for the supported product types into one workflow, so a changed quantity or specification can be priced and reviewed without reconstructing the quote.
+Pricing several quantities used to mean duplicating work across a complex quoting workbook. The application brings pricing for the supported product types into one workflow, so a changed quantity or specification can be priced and reviewed without reconstructing the quote.
 
 Prepare and revise a saved quote
 
@@ -751,7 +751,7 @@ Customer context feeds intake. A request with a known specification can go to qu
 
 Start with a usable brief. Intake brings customer and item information, files, and request history into a reviewable record. The handoffs distinguish sales requests, house accounts, engineering, drawings, and samples, with the information each needs.
 
-Give management an answer it can check. Reporting separates existing-customer growth from new business and supports customer-level inspection. I checked 3,304 displayed values against source records. Those checks establish reporting accuracy, with customer-level detail available for inspection.
+Give management an answer it can check. Reporting separates existing-customer growth from new business and supports customer-level inspection. Displayed values are checked directly against ERP source records, keeping customer-level detail available for inspection.
 
 When the customer changes the job
 

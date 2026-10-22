@@ -1,5 +1,12 @@
 # mcheyser-site: progress
 
+## 2026-10-21: Remove unmeasured metrics and outcome claims from Custom Manufacturing story
+
+- Updated the Custom manufacturing case study (`/work/manufacturing-systems`), its featured cards (`components/ClientWorkFeature.tsx`, `content/clientStories.ts`), Working Together callout (`pages/WorkingTogetherPage.tsx`), three figures (`components/diagrams/ClientStories.tsx`), and the standalone `/cases/connected-manufacturing/` outreach page (`public/cases/connected-manufacturing/index.html`) to remove formula/rule/error/queue counts (`10,000 formulas`, `111 pricing rules`, `37 lookup tables`, `30,000` / `29,820 formulas`, `four systemic errors`, `seven business rules`, `five queues`, `3,304 displayed values`) and dial back unmeasured outcome/cutover claims.
+- Framed each section, diagram, bullet, and table row around the systems built and what they resolve across the operation (multi-quantity quoting and revisions, ERP-backed management reporting, connected intake and engineering handoffs across dedicated queues, and fractional CTO custody/governance).
+- Updated canonical copy (`docs/website-copy-2026-10.md`) first, then site source and `scripts/check-production.mjs`.
+- Validation: `npm run typecheck`, `npm run check` (587 KB Home cold load, mocked EmailJS, zero overflow across 360/390/768/1024/1280/1440px), and `git diff --check` passed.
+
 ## 2026-10-19: Case study flowcharts redrawn in the site's figure language; directory redirect hardened
 
 - `public/cases/connected-manufacturing/`: the three flowcharts are regenerated from the outreach folder's `review/build-diagrams.py` in the site's figure vocabulary (mono labels, small-print roles and `automatic`, open chevrons, hairline groups, dashed return arrows). Same nodes, arrows, labels and canvas sizes as the previous release; `assets/case-study.js` and the page copy unchanged apart from two legend lines inside the figure frames. Frames, captions and eyebrows restyled to the site's card and eyebrow conventions. Approved by Patrick on the port 8789 preview.

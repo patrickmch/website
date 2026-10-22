@@ -252,7 +252,7 @@ export default function WorkingTogetherPage() {
 
       <Section labelledBy="work-example-heading">
         <div className="section__heading"><h2 id="work-example-heading">See how this takes shape in practice.</h2></div>
-        <Prose><p>A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team, with custom quoting software across five queues, rebuilt ERP reporting, and company-owned infrastructure.</p></Prose>
+        <Prose><p>A systems assessment for a custom manufacturer grew into an ongoing fractional CTO role on the management team, spanning custom quoting and intake software, ERP-backed management reporting, and company-owned infrastructure.</p></Prose>
         <SecondaryLink to="/work/manufacturing-systems">See the work</SecondaryLink>
       </Section>
 
