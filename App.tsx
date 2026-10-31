@@ -11,6 +11,8 @@ import OgPage from './pages/OgPage';
 
 // The retained client page loads in its own chunk, so its text is not part of the marketing bundle.
 const IntakePage = lazy(() => import('./pages/IntakePage'));
+const SmsOptInPage = lazy(() => import('./pages/SmsCompliancePage').then((m) => ({ default: m.SmsOptInPage })));
+const PrivacyPage = lazy(() => import('./pages/SmsCompliancePage').then((m) => ({ default: m.PrivacyPage })));
 
 // The client stories load in their own chunks too, so Home carries only the featured MTRO PRO card, not every story's text and figures.
 const ClientWorkPage = lazy(() => import('./pages/ClientWorkPage'));
@@ -96,6 +98,8 @@ export default function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/apply" element={<Navigate to="/contact" replace />} />
             <Route path="/intake/denver-zen-den" element={<IntakePage />} />
+            <Route path="/sms-opt-in" element={<SmsOptInPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
             {dev && <Route path="/style" element={<StylePage />} />}
             {dev && <Route path="/og" element={<OgPage />} />}
             <Route path="*" element={<Navigate to="/" replace />} />
