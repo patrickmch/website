@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Opt in to receive scheduling and consultation text updates from McHeyser (Odyssey Business Strategy LLC).">
+<meta name="theme-color" content="#F4F2ED">
+<title>Scheduling &amp; Text Updates | Patrick McHeyser (Odyssey Business Strategy LLC)</title>
+<link rel="canonical" href="https://mcheyser.com/sms-opt-in/">
+<link rel="stylesheet" href="/cases/connected-manufacturing/assets/case-study.css">
+<style>
+  .optin-card { max-width: 640px; margin: 2rem 0 4rem; padding: 2rem; border: 1px solid #CFCBC2; background: #F4F2ED; }
+  .form-row { margin-bottom: 1.25rem; }
+  .form-row label { display: block; font-weight: 600; margin-bottom: 0.35rem; color: #16202B; }
+  .form-row .optional { font-weight: 400; color: #6B7682; font-size: 0.9rem; }
+  .form-row input[type="text"],
+  .form-row input[type="email"],
+  .form-row input[type="tel"],
+  .form-row textarea {
+    width: 100%; padding: 0.65rem 0.75rem; border: 1px solid #6B7682; background: #FAF9F6; color: #16202B;
+    font-family: inherit; font-size: 1rem; box-sizing: border-box;
+  }
+  .consent-box { display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; padding: 1rem; border: 1px solid #CFCBC2; background: #FAF9F6; }
+  .consent-box input[type="checkbox"] { margin-top: 0.25rem; width: 18px; height: 18px; flex-shrink: 0; }
+  .consent-box label { font-size: 0.92rem; line-height: 1.5; color: #16202B; font-weight: 400; }
+  .submit-btn {
+    display: inline-block; background: #D9632B; color: #FAF9F6; border: none; padding: 0.75rem 1.5rem;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+  }
+  .Confirmation { display: none; padding: 1.25rem; border: 1px solid #2F6A4A; background: #FAF9F6; margin-top: 1rem; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner">
+<a class="wordmark" href="https://mcheyser.com/" aria-label="McHeyser, home">McHeyser</a>
+<nav class="primary-nav" aria-label="Primary"><a href="https://mcheyser.com/working-together">Working Together</a><a href="https://mcheyser.com/work">Client Work</a><a href="https://mcheyser.com/about">About</a></nav>
+<a class="button" href="https://mcheyser.com/contact">Let's talk</a>
+</div></header>
+
+<main id="main" class="wrap" tabindex="-1">
+<section class="hero" aria-labelledby="title">
+<p class="breadcrumb"><span>Odyssey Business Strategy LLC · DBA McHeyser</span></p>
+<h1 id="title">Scheduling &amp; text message updates</h1>
+<p class="lead">Use this form to coordinate a consultation or request SMS scheduling reminders and project updates from Patrick McHeyser (<strong>Odyssey Business Strategy LLC</strong>, operating as <strong>McHeyser</strong>).</p>
+<p>Providing a mobile phone number and opting into SMS updates is completely optional and is not required to inquire or work together.</p>
+
+<div class="optin-card">
+  <form id="sms-optin-form" action="https://mcheyser.com/sms-opt-in/" method="get" onsubmit="event.preventDefault(); document.getElementById('sms-optin-form').style.display='none'; document.getElementById('sms-confirm').style.display='block';">
+    <div class="form-row">
+      <label for="name">Full Name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+    </div>
+    <div class="form-row">
+      <label for="company">Company <span class="optional">(optional)</span></label>
+      <input id="company" name="company" type="text" autocomplete="organization">
+    </div>
+    <div class="form-row">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <div class="form-row">
+      <label for="phone">Mobile Phone Number <span class="optional">(optional)</span></label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(303) 555-0100">
+    </div>
+    <div class="form-row">
+      <label for="notes">Scheduling Notes or Topic <span class="optional">(optional)</span></label>
+      <textarea id="notes" name="notes" rows="3"></textarea>
+    </div>
+
+    <div class="consent-box">
+      <input id="sms_consent" name="sms_consent" type="checkbox" value="yes">
+      <label for="sms_consent">
+        By checking this box, I consent to receive conversational and appointment-related text messages (including scheduling confirmations, call reminders, and project updates) from <strong>McHeyser (Odyssey Business Strategy LLC)</strong> at the mobile phone number provided. Message frequency varies. Message and data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out at any time. Consent is not a condition of any purchase or service. View our <a href="https://mcheyser.com/privacy/">Privacy Policy</a> and <a href="https://mcheyser.com/privacy/#terms">SMS Messaging Terms</a>.
+      </label>
+    </div>
+
+    <button type="submit" class="submit-btn">Save Communication Preferences</button>
+  </form>
+
+  <div id="sms-confirm" class="Confirmation" role="status">
+    <p><strong>Thank you.</strong> Your communication preferences have been recorded. If you opted into text messages from McHeyser (Odyssey Business Strategy LLC), you may reply <strong>STOP</strong> at any time to unsubscribe or <strong>HELP</strong> for assistance.</p>
+  </div>
+</div>
+
+<p>Questions? Contact Patrick McHeyser at <a href="mailto:patrick@mcheyser.com">patrick@mcheyser.com</a> or (303) 621-4250 · <a href="https://mcheyser.com/privacy/">Privacy Policy &amp; SMS Terms</a></p>
+</section>
+</main>
+</body>
+</html>
