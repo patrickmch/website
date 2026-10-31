@@ -5,6 +5,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/components.css';
 import './styles/pages.css';
+import './styles/blog.css';
 
 // The site used a hash router until October 2026, so links like /#/apply and
 // /#/intake/denver-zen-den exist in the wild. Rewrite them to real paths once,

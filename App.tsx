@@ -10,6 +10,9 @@ import StylePage from './pages/StylePage';
 import OgPage from './pages/OgPage';
 
 // The retained client page loads in its own chunk, so its text is not part of the marketing bundle.
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogPostRoute = lazy(() => import('./pages/BlogPage').then(m => ({ default: m.BlogPostRoute })));
+
 const IntakePage = lazy(() => import('./pages/IntakePage'));
 const SmsOptInPage = lazy(() => import('./pages/SmsCompliancePage').then((m) => ({ default: m.SmsOptInPage })));
 const PrivacyPage = lazy(() => import('./pages/SmsCompliancePage').then((m) => ({ default: m.PrivacyPage })));
@@ -94,6 +97,9 @@ export default function App() {
             <Route path="/work" element={<ClientWorkPage />} />
             <Route path="/work/mtro-pro" element={<MtroWorkPage />} />
             <Route path="/work/:slug" element={<ClientStoryRoute />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostRoute />} />
+            <Route path="/blog/*" element={<BlogPostRoute />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/apply" element={<Navigate to="/contact" replace />} />

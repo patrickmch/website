@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-blog.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "screenshots": "node scripts/screenshots.mjs",
     "review": "node scripts/adversarial-review.mjs",
-    "check": "VITE_EMAILJS_PUBLIC_KEY=check VITE_EMAILJS_SERVICE_ID=check VITE_EMAILJS_TEMPLATE_ID=check vite build && node scripts/check-production.mjs",
-    "start": "node scripts/serve.mjs"
+    "check": "VITE_EMAILJS_PUBLIC_KEY=check VITE_EMAILJS_SERVICE_ID=check VITE_EMAILJS_TEMPLATE_ID=check npm run build && node scripts/check-production.mjs && node scripts/check-blog.mjs",
+    "start": "node scripts/serve.mjs",
+    "check:blog": "node scripts/check-blog.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

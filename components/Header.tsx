@@ -7,6 +7,7 @@ const links = [
   { to: '/working-together', label: 'Working Together' },
   { to: '/work', label: 'Client Work' },
   { to: '/about', label: 'About' },
+  { to: '/blog/', label: 'Blog' },
 ];
 
 function navClass(base: string) {

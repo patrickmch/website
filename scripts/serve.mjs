@@ -86,7 +86,7 @@ function cacheControl(path) {
   return 'public, max-age=3600';
 }
 
-function send(req, res, file) {
+function send(req, res, file, status = 200) {
   const { path, stat } = file;
   const type = types[extname(path).toLowerCase()] || 'application/octet-stream';
   const etag = `"${stat.size.toString(16)}-${Math.floor(stat.mtimeMs).toString(16)}"`;
@@ -98,7 +98,7 @@ function send(req, res, file) {
     'X-Content-Type-Options': 'nosniff',
     Vary: 'Accept-Encoding',
   };
-  if (req.headers['if-none-match'] === etag) {
+  if (status === 200 && req.headers['if-none-match'] === etag) {
     res.writeHead(304, headers);
     res.end();
     return;
@@ -106,7 +106,7 @@ function send(req, res, file) {
   const gzip = compressible.test(type) && /\bgzip\b/.test(req.headers['accept-encoding'] || '');
   if (gzip) headers['Content-Encoding'] = 'gzip';
   else headers['Content-Length'] = stat.size;
-  res.writeHead(200, headers);
+  res.writeHead(status, headers);
   if (req.method === 'HEAD') {
     res.end();
     return;
@@ -139,6 +139,13 @@ const server = createServer((req, res) => {
       return;
     }
     send(req, res, file);
+    return;
+  }
+  // Blog URLs are generated at build time. Missing articles must not be soft 404s.
+  if (/^\/blog(?:\/|$)/.test(urlPath)) {
+    const notFound = resolveFile('/blog/404.html');
+    if (notFound) send(req, res, notFound, 404);
+    else { res.writeHead(404); res.end('Not found'); }
     return;
   }
   // A path with a file extension that does not exist is a real 404; anything else is an app route.

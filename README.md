@@ -2,7 +2,7 @@
 
 The marketing site for McHeyser (Patrick McHeyser): operations and technology consulting for growing businesses. Live at [mcheyser.com](https://mcheyser.com).
 
-Four pages: Home, Working Together, About, Contact. The design concept, tokens, components, and acceptance criteria are in [`docs/design-spec.md`](docs/design-spec.md). The words come from [`docs/website-copy-2026-10.md`](docs/website-copy-2026-10.md).
+Pages include Home, Working Together, Client Work, About, Contact, and Blog. The design concept, tokens, components, and acceptance criteria are in [`docs/design-spec.md`](docs/design-spec.md). The words come from [`docs/website-copy-2026-10.md`](docs/website-copy-2026-10.md).
 
 ## Run
 
@@ -69,3 +69,18 @@ docs/                 design spec, copy doc, review log
 ## Deployment
 
 Railway builds `dist/` and runs `npm start`, which is `scripts/serve.mjs`: a small static server that sends `Cache-Control: no-cache` for `index.html` (so a new deploy is picked up on the next visit), `immutable` for the hashed files under `assets/`, an hour for other files, gzip, ETags, and a real 404 for a missing file. The host's default static serving sent no cache headers at all, which could show a returning visitor the previous build for days. The apex domain points at Railway from Namecheap DNS. Pushes to `main` deploy.
+
+## Publish a blog post
+
+The blog lives at `/blog/`. Each post has a permanent URL at `/blog/<slug>/`. The build renders complete HTML using the same React components as the browser. Search engines and link previews can read the article before JavaScript runs.
+
+1. Add the approved article and summary to `docs/website-copy-2026-10.md`.
+2. Add an entry to `content/blogPosts.json` with a unique lowercase hyphenated slug, title, description, publication date (`YYYY-MM-DD`), author, and paragraphs.
+3. Run `npm run typecheck` and `npm run check`. The checks mock the contact form provider and send no mail.
+4. Review the listing and article at desktop and phone widths. `OUT=screenshots/blog npm run check:blog` saves views of the first post.
+5. Commit and push the reviewed change to `main` when publication is authorized.
+6. Verify Railway reports success, then run `BASE_URL=https://mcheyser.com npm run check:blog` for the live blog checks.
+
+New entries appear first by publication date. Every entry in the file is public, including dates in the future. Keep unpublished drafts outside this file. The current format supports paragraphs, without a separate editor or database.
+
+`npm run build` also writes `dist/sitemap.xml`, `dist/robots.txt`, and a blog-specific 404 page. The production server returns HTTP 404 for unknown blog URLs. The standard site social image remains the article's preview image.

@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "start-with-the-question-your-team-keeps-asking",
+    "title": "Start with the question your team keeps asking",
+    "description": "Turn a question your team keeps asking into a clearer process. Start with one task, use AI to help document it, and test it on real work.",
+    "published": "2026-10-31",
+    "author": "Patrick McHeyser",
+    "paragraphs": [
+      "Someone on your team needs to send a customer a quote. They have done this before, but this request is slightly different. They ask you which price to use.",
+      "You answer, then go back to what you were doing. Later, someone else needs to know where to find the latest customer information. Tomorrow, another quote comes in with the same complication.",
+      "Each question is reasonable. Answering them has become part of your job.",
+      "When you hear that AI can save your business time, this is the kind of thing worth looking at. What keeps bringing work back to you? What do you know that other people need to do their jobs?",
+      "I build software and AI systems, and I keep coming back to how much useful work starts with those questions. Getting information organized, writing down a process, and making a handoff clear can make an immediate difference. They also give you something much better to build on.",
+      "It can be hard to get excited about that when every AI pitch promises a huge leap forward. And if you have tried documenting your business before, you may remember spending hours on instructions that nobody used.",
+      "I think it helps to start with something small enough to try during a normal working week.",
+      "Choose a task that regularly gets stuck. Sending a quote might be a good one. So might scheduling a job or handing a new customer from sales to the person doing the work.",
+      "Then ask whoever knows that task best to walk through a recent example. Have them show the actual work while they explain it. With their agreement, record the conversation.",
+      "Ask where they get the information, how they know it is current, and what they check before passing the work along. Pay attention when they say, \"It depends.\" There is often a decision hiding there that everyone else has to ask them about.",
+      "You can use an AI tool approved for your business information to turn that explanation into a first draft of the instructions. Ask it to flag missing information and unanswered questions. You want to see the gaps.",
+      "The person who explained the work should check that draft. Then give it to someone else and have them use it on a real task.",
+      "This is where you learn whether the instructions help.",
+      "If they stop to ask where the price list lives, add the location. If they find two price lists, decide which one is current. If an unusual request needs your judgment, explain when they should bring it to you.",
+      "Sometimes this exercise reveals that the process itself needs a change. You might discover that sales passes work along before collecting information the next person needs. Adding that information to the handoff could save both people a round of questions.",
+      "You have now improved one piece of the business. Someone can do more of the work themselves, and you have a clearer picture of where your attention is still needed.",
+      "Keep the instructions where people already look for help. Give someone responsibility for updating them. When a new exception comes up, use it to improve the process while the details are fresh.",
+      "From there, you can make a better decision about automation. Perhaps a form could collect the missing information. Perhaps software could move it between systems. An AI assistant might help someone find the right instruction or prepare a draft for review.",
+      "You can choose based on what happens in the work.",
+      "This is what I mean by doing the basics first. You can start while the rest of the business is still messy. AI can help with the cleanup along the way.",
+      "The next time someone asks you a familiar question, it might be worth sitting down together and working through the answer. That gives you a specific place to begin."
+    ]
+  }
+]

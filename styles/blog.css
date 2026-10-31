@@ -1,0 +1,110 @@
+/* The blog uses the site's paper, ink, and type. A single reading column keeps
+   the approved essay intact without cards or a competing sidebar. */
+.blog {
+  padding-block: var(--section-y);
+}
+
+.blog__intro {
+  max-width: var(--prose);
+  margin-bottom: 56px;
+}
+
+.blog__intro .lead {
+  margin-top: 24px;
+  color: var(--ink-2);
+}
+
+.blog__posts {
+  padding: 0;
+  list-style: none;
+}
+
+.blog-entry {
+  display: grid;
+  gap: 16px;
+  padding-block: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.blog-entry h2,
+.blog-entry__summary {
+  max-width: var(--prose);
+}
+
+.blog-entry h2 a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.blog-entry__summary {
+  margin-top: 20px;
+  color: var(--ink-2);
+}
+
+.blog__date,
+.blog-article__meta {
+  color: var(--ink-2);
+  font-size: var(--text-small);
+}
+
+.blog-article {
+  max-width: var(--prose);
+  margin-inline: auto;
+}
+
+.blog__back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--text-ui);
+}
+
+.blog-article__header {
+  margin-top: 28px;
+  margin-bottom: 40px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin-top: 24px;
+}
+
+.blog-article__meta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.blog-article__body {
+  font-family: var(--font-serif);
+  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.blog-article__body p + p {
+  margin-top: 1.2em;
+}
+
+.blog-article__footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .blog-entry {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: var(--grid-gap);
+  }
+}
+
+/* The extra nav item needs more room than the original four-link header. */
+@media (min-width: 768px) and (max-width: 900px) {
+  .site-nav__list { gap: 16px; }
+  .site-nav__link { font-size: var(--text-small); }
+}
