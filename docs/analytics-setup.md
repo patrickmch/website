@@ -4,7 +4,8 @@
 
 Patrick supplied the Umami Cloud tracking code on 4 November 2026.
 The public website ID is `052b579d-8c7a-493b-a013-e6cbdf4bfaf7`.
-The integration is checked and ready for production activation. Live verification follows deployment.
+Tracking is live on mcheyser.com as of 4 November 2026.
+Railway deployment `acb5c16e-c67e-41b3-adb1-47b79aa03a7b` succeeded for commit `5d11651`.
 The current website runs in the existing Railway `mcheyser` project, `website` service, production environment.
 The authenticated Railway account is `patrickmcheyser@gmail.com`. GitHub source is `patrickmch/website`.
 
@@ -63,7 +64,18 @@ Source: https://docs.umami.is/docs/exclude-my-own-visits
 Run `npm run typecheck`, `node scripts/check-analytics.mjs`, and `npm run check`.
 The focused checks cover public pages, excluded pages, campaign labels, private query removal, and missing or invalid configuration.
 They also confirm repeated build injection adds only one loader per page.
-Live collection must be checked after deployment. Dashboard totals require access to Patrick's Umami account.
+Live checks on 4 November 2026 at 17:01 UTC confirmed HTTP 200 acceptance from `https://gateway.umami.is/api/send` for:
+
+- homepage visits with campaign labels
+- client-side navigation to `/about`
+- the published blog article
+- `/cases/connected-manufacturing/`
+
+The sent homepage URL retained `utm_source` and `utm_medium` but removed the test query field and fragment.
+Client intake, review mode, and the retained talk made no Umami requests. No page errors occurred.
+The first live check ran before the deployment finished and timed out. Checks passed after Railway reported success.
+Dashboard totals remain unverified because this session has no authenticated Umami dashboard access.
+These checks created a few real page views. The tagged homepage visit uses `utm_source=setup-check` and `utm_medium=verification`.
 
 Remove `UMAMI_WEBSITE_ID` and rebuild to disable tracking. The missing value adds no tracking script to HTML.
 For a full rollback, revert the integration commit and redeploy. No visitor data is stored in the website repository.

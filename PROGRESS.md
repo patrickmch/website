@@ -8,7 +8,14 @@ Verified GitHub account `patrickmch` and Railway account `patrickmcheyser@gmail.
 Set only `UMAMI_WEBSITE_ID` in the existing service. No password, paid plan, DNS change, or new service is needed.
 Previous main `1ef92f4` and Railway deployment `86bc1e68-846a-4af1-acd7-8bb11565fa91` are the rollback references.
 Remove the variable and rebuild to disable collection. Revert the integration for a complete code rollback.
-Live verification follows deployment. Dashboard totals need Patrick's account access.
+Deployment `acb5c16e-c67e-41b3-adb1-47b79aa03a7b` succeeded for source commit `5d11651`.
+Type checking, analytics checks, production checks, and blog checks passed with the real website ID.
+At 17:01 UTC, Umami returned HTTP 200 for homepage, client-side About navigation, blog article, and card case-study visits.
+Campaign labels survived filtering. The extra query field and fragment were removed before collection.
+Client intake, review mode, and the retained talk made no Umami requests. No page errors occurred.
+The first live check ran during deployment and timed out. The completed deployment passed the same check.
+A separate Python fetch failed because its local certificate store lacked the issuer. Chromium verified the live site normally.
+Dashboard totals need Patrick's account access and remain unverified. The checks created a few real page views.
 This activation updates `docs/analytics-setup.md` and `PROGRESS.md`; the earlier entry lists the integration files.
 
 ## 2026-11-04: Umami website analytics prepared, account connection pending
