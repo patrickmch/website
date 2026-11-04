@@ -2,8 +2,9 @@
 
 ## Current status
 
-Prepared on `codex/site-analytics-umami`. Tracking is not installed on the live site.
-Patrick has no Umami Cloud account. The previous Railway Umami project is absent from the current project list.
+Patrick supplied the Umami Cloud tracking code on 4 November 2026.
+The public website ID is `052b579d-8c7a-493b-a013-e6cbdf4bfaf7`.
+The integration is checked and ready for production activation. Live verification follows deployment.
 The current website runs in the existing Railway `mcheyser` project, `website` service, production environment.
 The authenticated Railway account is `patrickmcheyser@gmail.com`. GitHub source is `patrickmch/website`.
 
@@ -11,7 +12,7 @@ Use the free hosted Hobby plan for one website. No new server or paid subscripti
 Verified provider limits on 4 November 2026: 100,000 monthly events and six months of retention.
 Source: https://umami.is/pricing
 
-## Connect the account
+## Configuration and activation
 
 1. Create an account at https://cloud.umami.is and select the free Hobby plan.
 2. Add a website named `McHeyser` with domain `mcheyser.com`.
@@ -21,8 +22,8 @@ Source: https://umami.is/pricing
 6. Verify the successful Railway deployment, then visit the homepage, a blog post, and `/cases/connected-manufacturing/`.
 7. Confirm those exact page views appear in the Umami dashboard. A successful build alone does not prove collection.
 
-The missing account and website ID prevent live activation. No tracking ID has been invented or provisioned.
-Do not activate with the test UUID used by the checks.
+Use the public website ID above. Do not activate with the test UUID used by the checks.
+The Railway variable is live provider configuration. Its intended value is recorded here in the tracked repository.
 
 ## What you can see
 
@@ -62,7 +63,7 @@ Source: https://docs.umami.is/docs/exclude-my-own-visits
 Run `npm run typecheck`, `node scripts/check-analytics.mjs`, and `npm run check`.
 The focused checks cover public pages, excluded pages, campaign labels, private query removal, and missing or invalid configuration.
 They also confirm repeated build injection adds only one loader per page.
-Until the account is connected, collection and dashboard access remain unverified.
+Live collection must be checked after deployment. Dashboard totals require access to Patrick's Umami account.
 
 Remove `UMAMI_WEBSITE_ID` and rebuild to disable tracking. The missing value adds no tracking script to HTML.
 For a full rollback, revert the integration commit and redeploy. No visitor data is stored in the website repository.

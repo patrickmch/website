@@ -1,5 +1,16 @@
 # mcheyser-site: progress
 
+## 2026-11-04: Activate Umami with Patrick's website ID
+
+Patrick supplied the public Umami website ID `052b579d-8c7a-493b-a013-e6cbdf4bfaf7` to complete the requested setup.
+Release target: `patrickmch/website` main and Railway `mcheyser` / `website` / `production`.
+Verified GitHub account `patrickmch` and Railway account `patrickmcheyser@gmail.com` before activation.
+Set only `UMAMI_WEBSITE_ID` in the existing service. No password, paid plan, DNS change, or new service is needed.
+Previous main `1ef92f4` and Railway deployment `86bc1e68-846a-4af1-acd7-8bb11565fa91` are the rollback references.
+Remove the variable and rebuild to disable collection. Revert the integration for a complete code rollback.
+Live verification follows deployment. Dashboard totals need Patrick's account access.
+This activation updates `docs/analytics-setup.md` and `PROGRESS.md`; the earlier entry lists the integration files.
+
 ## 2026-11-04: Umami website analytics prepared, account connection pending
 
 Patrick requested traffic tracking without Google Analytics, first for outreach and QR codes, then for the whole website.
