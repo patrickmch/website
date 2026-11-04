@@ -245,6 +245,10 @@ export function PrivacyPage() {
           notes regarding your business operations.
         </p>
 
+        <p>
+          We use Umami to understand visits to our website, which pages people read, and which websites or campaigns bring them here. We do not send form contents, contact details, or client intake pages to Umami. We keep campaign labels in links but remove other query parameters before sending page URLs.
+        </p>
+
         <h2>3. How We Use Your Information</h2>
         <p>
           We use the information you provide strictly to respond to your inquiries, schedule and confirm meetings,

@@ -84,3 +84,14 @@ The blog lives at `/blog/`. Each post has a permanent URL at `/blog/<slug>/`. Th
 New entries appear first by publication date. Every entry in the file is public, including dates in the future. Keep unpublished drafts outside this file. The current format supports paragraphs, without a separate editor or database.
 
 `npm run build` also writes `dist/sitemap.xml`, `dist/robots.txt`, and a blog-specific 404 page. The production server returns HTTP 404 for unknown blog URLs. The standard site social image remains the article's preview image.
+
+
+## Website analytics
+
+Umami Cloud is prepared but stays disabled until `UMAMI_WEBSITE_ID` is set at build time.
+Use the public website UUID from the account's tracking code, never a password or API key.
+The build adds the shared loader to the main site, generated blog, and standalone case-study HTML.
+The existing hosted talk and client intake pages stay excluded.
+
+Run `node scripts/check-analytics.mjs` to check activation, URL filtering, and page coverage without sending events.
+Account setup, activation, and verification instructions are in `docs/analytics-setup.md`.

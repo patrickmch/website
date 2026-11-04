@@ -1,5 +1,26 @@
 # mcheyser-site: progress
 
+## 2026-11-04: Umami website analytics prepared, account connection pending
+
+Patrick requested traffic tracking without Google Analytics, first for outreach and QR codes, then for the whole website.
+Prepared Umami Cloud on `codex/site-analytics-umami`. No account exists yet, and production tracking remains disabled.
+The build requires the public `UMAMI_WEBSITE_ID` from Patrick's account before it adds a tracker.
+The old Railway Umami project is absent from the current account. No replacement service, subscription, credential, or DNS change was made.
+
+The loader covers the React site, generated blog, and standalone card case study.
+It excludes client intake, review mode, preview hosts, localhost, and the retained hosted talk.
+It preserves campaign tags and strips other URL query values and fragments. It sends no form fields.
+Added matching disclosure to the canonical copy, React privacy page, and standalone privacy page.
+
+Type checking and focused analytics checks passed. Production and blog checks passed with tracking disabled and with a test website ID.
+The configured build adds one loader to each of seven public HTML files and leaves the retained talk unchanged.
+Live collection and dashboard access remain unverified until Patrick supplies the public tracking code and the site is deployed.
+Setup, checks, coverage, limitations, and rollback are recorded in `docs/analytics-setup.md`.
+
+Changed files: `package.json`, `public/site-analytics.js`, `scripts/build-analytics.mjs`, `scripts/check-analytics.mjs`,
+`pages/SmsCompliancePage.tsx`, `public/privacy/index.html`, `docs/website-copy-2026-10.md`, `docs/analytics-setup.md`, `README.md`, and `PROGRESS.md`.
+The pre-existing untracked `AGENTS.md` and `raw/` remain untouched.
+
 ## 2026-10-19: Case study flowcharts redrawn in the site's figure language; directory redirect hardened
 
 - `public/cases/connected-manufacturing/`: the three flowcharts are regenerated from the outreach folder's `review/build-diagrams.py` in the site's figure vocabulary (mono labels, small-print roles and `automatic`, open chevrons, hairline groups, dashed return arrows). Same nodes, arrows, labels and canvas sizes as the previous release; `assets/case-study.js` and the page copy unchanged apart from two legend lines inside the figure frames. Frames, captions and eyebrows restyled to the site's card and eyebrow conventions. Approved by Patrick on the port 8789 preview.

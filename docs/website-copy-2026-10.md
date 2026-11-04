@@ -897,3 +897,10 @@ You can choose based on what happens in the work.
 This is what I mean by doing the basics first. You can start while the rest of the business is still messy. AI can help with the cleanup along the way.
 
 The next time someone asks you a familiar question, it might be worth sitting down together and working through the answer. That gives you a specific place to begin.
+
+
+## Website analytics disclosure, prepared 4 November 2026
+
+Publish with the Umami integration after the account is connected.
+
+We use Umami to understand visits to our website, which pages people read, and which websites or campaigns bring them here. We do not send form contents, contact details, or client intake pages to Umami. We keep campaign labels in links but remove other query parameters before sending page URLs.
